@@ -75,4 +75,4 @@ vision-lab/                 ← Laboratoire reconnaissance (Python)
 
 ## Licence
 
-Projet privé — © 2026
+© 2026 — Tous droits réservés. Code propriétaire, diffusion non autorisée sans accord écrit.

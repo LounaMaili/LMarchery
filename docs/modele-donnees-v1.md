@@ -119,7 +119,12 @@ Séance de tir à l'arc.
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `date` | LocalDateTime | Date et heure de la séance |
+| `status` | Enum | Statut de la séance (DRAFT / IN_PROGRESS / COMPLETED) |
+| `startedAt` | LocalDateTime? | Heure de début effectif (renseigné quand DRAFT → IN_PROGRESS) |
+| `endedAt` | LocalDateTime? | Heure de fin (renseigné quand IN_PROGRESS → COMPLETED) |
+| `plannedEndCount` | Int? | Nombre de volées prévues (optionnel, ex. 10 pour competition) |
 | `title` | String | Titre / nom de la séance |
 | `targetTypeId` | Long (FK) | Type de cible utilisé |
 | `distanceM` | Int | Distance de tir en mètres |
@@ -145,10 +150,14 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `sessionId` | Long (FK) | Référence vers Session |
 | `index` | Int | Numéro de la volée dans la séance (1, 2, 3…) |
 | `totalScore` | Int | Score total de la volée |
 | `notes` | String? | Notes libres |
+| `status` | Enum | Statut de la volée (EDITING / VALIDATED) |
+| `createdAt` | LocalDateTime | Date de création de la volée |
+| `validatedAt` | LocalDateTime? | Date de validation (renseigné quand EDITING → VALIDATED) |
 | `impacts` | List\<ArrowImpact\> | Impacts de la volée (relation 1:N) |
 
 **Contrainte** : `index` est unique par session.
@@ -162,12 +171,13 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `endId` | Long (FK) | Référence vers End |
 | `index` | Int | Ordre de la flèche dans la volée (1, 2, 3…) |
 | `xNormalized` | Float | Coordonnée X normalisée (-1.0 à 1.0, centre = 0) |
 | `yNormalized` | Float | Coordonnée Y normalisée (-1.0 à 1.0, centre = 0) |
 | `distanceFromCenter` | Float | Distance au centre = sqrt(x² + y²) |
-| `scoreCalculated` | Int | Score calculé automatiquement depuis les coordonnées |
+| `scoreCalculated` | Int | Score courant calculé depuis x/y (recalculé si déplacement, **pas immuable**) |
 | `scoreFinal` | Int | Score validé par l'utilisateur (peut différer si cordon) |
 | `isX` | Boolean | True si l'impact est dans la zone X (centre du 10) |
 | `isMiss` | Boolean | True si hors cible (r > 1.0) |
@@ -177,11 +187,19 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 
 **En V1** : `inputMode` est toujours `MANUAL`. Les champs `isX`, `isMiss` et `isCordDecisionManual` sont calculés ou positionnés automatiquement sauf décision manuelle.
 
-**Pourquoi stocker `scoreCalculated` ET `scoreFinal` ?**
+**Clarification sur `scoreCalculated`** :
 
-- `scoreCalculated` = ce que l'algorithme a proposé (immuable après calcul)
-- `scoreFinal` = ce que l'utilisateur a validé (modifiable)
-- La différence entre les deux mesure la qualité du calcul automatique et, en V3+, de la reconnaissance
+- `scoreCalculated` = score courant calculé depuis `xNormalized`/`yNormalized`. Contrairement à une version précédente de ce document, **il n'est pas immuable** : il est recalculé à chaque déplacement de l'impact sur le blason.
+- `scoreFinal` = score validé par l'utilisateur (modifiable manuellement, ex. décision de cordon).
+- La différence entre les deux mesure la qualité du calcul automatique et, en V3+, de la reconnaissance.
+
+> **V3+ — Champs réservés pour la reconnaissance automatique** (non implémentés en V1) :
+>
+> | Attribut | Type | Description |
+> |----------|------|-------------|
+> | `detectionScoreSuggested` | Int? | Score proposé par le modèle de détection |
+> | `detectionConfidence` | Float? | Confiance du modèle (0.0–1.0) |
+> | `wasUserCorrected` | Boolean? | True si l'utilisateur a corrigé la proposition automatique |
 
 ---
 
@@ -192,6 +210,7 @@ Arc de l'utilisateur.
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `name` | String | Nom donné par l'utilisateur |
 | `type` | String? | Type d'arc (recurve, compound, barebow, longbow, trad) |
 | `drawWeightLbs` | Float? | Puissance en livres |
@@ -211,6 +230,7 @@ Jeu de flèches de l'utilisateur.
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `name` | String | Nom donné par l'utilisateur |
 | `spine` | String? | Spine des flèches |
 | `length` | String? | Longueur |
@@ -230,6 +250,7 @@ Configuration prédéfinie pour créer rapidement une séance.
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `name` | String | Nom du preset (ex. "Salle 18m — 3 flèches") |
 | `targetTypeId` | Long (FK) | Type de cible par défaut |
 | `distanceM` | Int | Distance par défaut |
@@ -259,7 +280,7 @@ L'utilisateur peut créer, modifier et supprimer ses propres presets.
 
 ```kotlin
 enum class ScoringMode {
-    TRAINING,        // Score de la zone donde se trouve l'impact
+    TRAINING,        // Score de la zone où se trouve l'impact
     COMPETITION,     // Cordon = score supérieur
     MANUAL_CORDON    // L'utilisateur tranche sur chaque cordon
 }
@@ -272,6 +293,25 @@ enum class InputMode {
     MANUAL,          // Saisie manuelle (V1 uniquement)
     AUTOMATIC,       // Proposition automatique (V3+)
     CORRECTED        // Correction d'une proposition auto (V3+)
+}
+```
+
+### SessionStatus
+
+```kotlin
+enum class SessionStatus {
+    DRAFT,           // Séance créée mais pas encore démarrée
+    IN_PROGRESS,     // Séance en cours de tir
+    COMPLETED        // Séance terminée
+}
+```
+
+### EndStatus
+
+```kotlin
+enum class EndStatus {
+    EDITING,         // Volée en cours de saisie
+    VALIDATED        // Volée validée par l'utilisateur
 }
 ```
 
@@ -344,9 +384,13 @@ Export en JSON contenant l'intégralité des données utilisateur :
 
 - Les `TargetType` built-in sont inclus dans l'export
 - Les IDs locaux sont préservés pour permettre la réimportation sur le même appareil
-- Pour l'import sur un autre appareil, les IDs devront être remappés
+- **Identifiants stables (`uuid`)** : chaque entité exportable (Session, End, ArrowImpact, Bow, ArrowSet, SessionPreset) possède un `uuid` (UUID v4). L'export utilise le `uuid` comme identifiant principal pour permettre :
+  - L'import sur un autre appareil sans conflit d'IDs locaux (remapping automatique via `uuid`)
+  - La fusion de données issues de plusieurs appareils (multi-appareil)
+  - Le dédoublonnage fiable lors de l'import (recherche par `uuid`, mise à jour si existant)
+- Les clés `id` restent présentes dans l'export pour compatibilité retro mais ne doivent pas être utilisées comme clé de fusion entre appareils
 - Les entités futures (WeatherSnapshot, Photo, DetectionResult) seront ajoutées au format dans les versions ultérieures
 
 ---
 
-*Document version 1.0 — 29 avril 2026*
+*Document version 1.1 — 29 avril 2026*

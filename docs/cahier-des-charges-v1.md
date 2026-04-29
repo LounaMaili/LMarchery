@@ -91,7 +91,7 @@ L'utilisateur ouvre l'application
 - Score calculé selon la distance au centre (coordonnées normalisées)
 - Distinction entre `scoreCalculated` (calcul automatique) et `scoreFinal` (validation utilisateur)
 - Règle du cordon paramétrable :
-  - **Entraînement simple** : score de la zone donde se trouve l'impact
+  - **Entraînement simple** : score de la zone où se trouve l'impact
   - **Compétition** : si l'impact touche la ligne de la zone supérieure, score supérieur
   - **Décision manuelle** : l'application propose le score et l'utilisateur tranche
 - Coordonnées normalisées : centre = (0, 0), bord extérieur = rayon 1.0

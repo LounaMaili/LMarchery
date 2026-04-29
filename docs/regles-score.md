@@ -28,7 +28,7 @@ L'application utilise un système de coordonnées normalisées indépendant de l
 ### Avantages
 
 - Indépendant de la taille d'affichage
-- Compatible avec les futures photos (calibration像素 → normalisé)
+- Compatible avec les futures photos (calibration pixels → normalisé)
 - Permet les calculs de groupement et dispersion
 - Le même impact reste valide même si le blason affiché change de taille
 
@@ -66,14 +66,42 @@ Le blason classique comporte **10 zones concentriques** numérotées de 1 à 10,
 | 9 | 9 | Jaune | 0.10 | 0.20 |
 | 10 | 10 | Jaune | 0.0 | 0.10 |
 
-### Zone X (10+)
+### Zone X (10+) — Configurable via TargetType
 
-En compétition, la zone centrale du 10 (X) sert à départager les égalités. Pour la V1, on peut la traiter comme un 10 avec un flag `isX = true` si `r <= 0.05` (rayon intérieur de la zone 10).
+En compétition, la zone centrale du 10 (X) sert à départager les égalités. Plutôt que de hardcoder `r <= 0.05`, la détection du X est configurable au niveau du `TargetType` :
 
-| Zone | Score | Rayon normalisé |
+|| Champ | Type | Description |
+|-------|------|-------------|
+| `xRingEnabled` | `Boolean` | Active ou désactive la zone X pour ce type de cible |
+| `xRingLabel` | `String` | Libellé affiché (ex. `"X"`, `"10+"`, `""` si désactivé) |
+| `innerTenRadiusNormalized` | `Float` | Rayon normalisé de la zone X (défaut WA : `0.05`) |
+
+Un impact est marqué `isX = true` uniquement si `xRingEnabled == true` **et** `r <= innerTenRadiusNormalized`.
+
+#### Exemple — Cible WA classique
+
+```
+TargetType(
+    xRingEnabled = true,
+    xRingLabel = "X",
+    innerTenRadiusNormalized = 0.05f
+)
+```
+
+|| Zone | Score | Rayon normalisé |
 |------|-------|-----------------|
 | X | 10 | 0.0 – 0.05 |
 | 10 | 10 | 0.05 – 0.10 |
+
+#### Exemple — Cible sans zone X
+
+```
+TargetType(
+    xRingEnabled = false,
+    xRingLabel = "",
+    innerTenRadiusNormalized = 0.0f
+)
+```
 
 > Le X ne change pas le score mais est enregistré pour les futures statistiques et les départages.
 
@@ -112,16 +140,19 @@ data class ScoreResult(
 3. Si `r <= zone.outerRadiusNormalized` → l'impact est dans cette zone
 4. Retourner le score, la zone, et les informations de cordon
 
-### Détection du cordon
+### Détection du cordon — Assistance UX uniquement
 
 Un impact est considéré **proche du cordon** si sa distance au centre est dans une zone de tolérance autour de la limite entre deux zones.
 
+> ⚠️ **Cette tolérance est une assistance UX, pas une preuve réglementaire.**
+> Elle agrège trois incertitudes : la précision du pointage tactile, le diamètre estimé de la flèche, et une marge d'ergonomie. Elle ne permet **pas** de garantir que la flèche touche réellement le trait. En cas de doute, **l'utilisateur tranche**.
+
 ```
-val cordonTolerance = 0.015  // ~1.5% du rayon total
-val isNearCordon = abs(r - zone.innerRadiusNormalized) < cordonTolerance
+val cordonToleranceNormalized = 0.015  // UX : précision tactile + Ø flèche + marge UX
+val isNearCordon = abs(r - zone.innerRadiusNormalized) < cordonToleranceNormalized
 ```
 
-Si `isNearCordon` est vrai, l'application signale visuellement la situation et propose les deux scores selon le mode de comptage.
+Si `isNearCordon` est vrai, l'application signale visuellement la situation et propose les deux scores selon le mode de comptage. **La décision finale appartient toujours à l'utilisateur.**
 
 ---
 
@@ -213,7 +244,7 @@ maxPossible = nombreDeVolées × nombreDeFlèchesParVolée × 10
 
 ---
 
-## 8. Cible campagne (futura — V2+)
+## 8. Cible campagne (future — V2+)
 
 > Non implémentée en V1, mais documentée pour préparer le modèle.
 
