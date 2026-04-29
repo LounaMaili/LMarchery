@@ -15,6 +15,12 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Cahier des charges V1
 - [x] Règles de score
 - [x] Modèle de données V1
+- [x] Parcours utilisateur
+- [x] Backlog V1
+- [x] Tests terrain V1
+- [x] Format d'export V1
+- [x] Roadmap reconnaissance
+- [x] ADR (6 décisions d'architecture)
 - [ ] Wireframes / maquettes
 - [ ] Moteur de score
 - [ ] Blason interactif
@@ -22,16 +28,23 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 
 ## Documentation
 
+Voir [docs/README.md](docs/README.md) pour l'index complet et l'ordre de lecture.
+
 | Document | Description |
-|----------|-------------|
+| --- | --- |
 | [Cahier des charges V1](docs/cahier-des-charges-v1.md) | Périmètre, parcours utilisateur, critères de réussite |
 | [Règles de score](docs/regles-score.md) | Calcul des scores, zones, cordon, modes de comptage |
 | [Modèle de données V1](docs/modele-donnees-v1.md) | Entités, relations, attributs, export/import |
+| [Parcours utilisateur](docs/parcours-utilisateur.md) | 7 parcours détaillés de l'application |
+| [Backlog V1](docs/backlog-v1.md) | 6 epics, ~40 tickets actionnables |
+| [Tests terrain V1](docs/tests-terrain-v1.md) | 5 grilles de test pour les retours réels |
+| [Format d'export V1](docs/export-format-v1.md) | Schéma JSON avec UUID, règles de fusion |
+| [Roadmap reconnaissance](docs/reconnaissance-roadmap.md) | Trajectoire V2→V4 |
 
 ## Stack technique
 
 | Composant | Technologie |
-|-----------|-------------|
+| --- | --- |
 | Langage | Kotlin |
 | UI | Jetpack Compose |
 | Base locale | Room (SQLite) |
