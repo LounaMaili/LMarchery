@@ -10,17 +10,31 @@ L'export permet à l'utilisateur de sauvegarder ses données hors de l'applicati
 
 ### Clés d'identification
 
-Chaque entité possède deux identifiants :
+Chaque entité exportable racine (`TargetType`, `Bow`, `ArrowSet`, `SessionPreset`, `Session`, `End`, `ArrowImpact`) possède deux identifiants :
 
 | Champ | Type | Rôle |
 |-------|------|------|
 | `id` | Long | Clé primaire locale (Room / SQLite). Utilisée en interne, **non stable** entre appareils. |
 | `uuid` | String (UUID v4) | Identifiant universel stable. Utilisé pour la fusion, le dédoublonnage et l'import multi-appareil. |
 
+`TargetZone` n'a pas de `uuid` indépendant en V1 : ses zones sont exportées dans leur `TargetType` parent.
+
+Le champ `id` peut être présent dans un export pour compatibilité locale ou diagnostic, mais les exemples de ce document l'omettent volontairement. Un import doit toujours ignorer `id` pour la fusion et reconstruire les relations avec les `uuid`.
+
 Lors de l'import :
 - Si un `uuid` existe déjà localement → l'entité est mise à jour
 - Si le `uuid` n'existe pas → l'entité est créée avec un `id` local généré
 - Le champ `id` n'est **jamais** utilisé comme clé de fusion
+
+### Horodatage de fusion
+
+Les entités exportables modifiables portent `createdAt` et `updatedAt`.
+
+- `createdAt` est fixé à la création et ne sert pas à résoudre les conflits.
+- `updatedAt` est mis à jour à chaque modification fonctionnelle.
+- En cas d'import d'un même `uuid`, l'entité dont `updatedAt` est le plus récent gagne.
+- Les `TargetType` built-in (`isBuiltIn = true`) ne sont jamais écrasés par un import, même si le fichier importé contient un `updatedAt` plus récent.
+- Pour une séance, toute modification d'une volée ou d'un impact met aussi à jour `Session.updatedAt`, afin de résoudre le conflit au niveau de la séance complète.
 
 ---
 
@@ -58,6 +72,8 @@ Lors de l'import :
   "xRingEnabled": true,
   "xRingLabel": "X",
   "innerTenRadiusNormalized": 0.05,
+  "createdAt": "2026-04-29T10:30:00+02:00",
+  "updatedAt": "2026-04-29T10:30:00+02:00",
   "zones": [
     {
       "score": 10,
@@ -80,7 +96,8 @@ Lors de l'import :
   "brand": "Hoyt",
   "model": "Formula Xi",
   "notes": "Viseur Shibuya Ultima",
-  "createdAt": "2026-03-15T14:00:00+01:00"
+  "createdAt": "2026-03-15T14:00:00+01:00",
+  "updatedAt": "2026-03-15T14:00:00+01:00"
 }
 ```
 
@@ -97,7 +114,8 @@ Lors de l'import :
   "vanes": "Spinwing",
   "material": "carbone",
   "notes": "",
-  "createdAt": "2026-03-15T14:05:00+01:00"
+  "createdAt": "2026-03-15T14:05:00+01:00",
+  "updatedAt": "2026-03-15T14:05:00+01:00"
 }
 ```
 
@@ -109,13 +127,18 @@ Lors de l'import :
   "name": "Salle 18m — 3 flèches",
   "targetTypeUuid": "a1b2c3d4-...",
   "distanceM": 18,
+  "arrowCountMode": "FIXED",
   "arrowCountPerEnd": 3,
   "isIndoor": true,
   "scoringMode": "TRAINING",
   "bowUuid": "e5f6g7h8-...",
-  "arrowSetUuid": "i9j0k1l2-..."
+  "arrowSetUuid": "i9j0k1l2-...",
+  "createdAt": "2026-03-15T14:10:00+01:00",
+  "updatedAt": "2026-03-15T14:10:00+01:00"
 }
 ```
+
+En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
 
 ### Session (avec ends et impacts)
 
@@ -126,6 +149,7 @@ Lors de l'import :
   "title": "Entraînement salle",
   "targetTypeUuid": "a1b2c3d4-...",
   "distanceM": 18,
+  "arrowCountMode": "FIXED",
   "arrowCountPerEnd": 3,
   "isIndoor": true,
   "scoringMode": "COMPETITION",
@@ -149,6 +173,7 @@ Lors de l'import :
       "totalScore": 24,
       "notes": "",
       "createdAt": "2026-04-28T18:05:00+02:00",
+      "updatedAt": "2026-04-28T18:06:00+02:00",
       "validatedAt": "2026-04-28T18:06:00+02:00",
       "impacts": [
         {
@@ -163,13 +188,21 @@ Lors de l'import :
           "isMiss": false,
           "inputMode": "MANUAL",
           "isCordDecisionManual": false,
-          "note": ""
+          "note": "",
+          "createdAt": "2026-04-28T18:05:20+02:00",
+          "updatedAt": "2026-04-28T18:05:20+02:00"
         }
       ]
     }
   ]
 }
 ```
+
+Règle pour `maxPossibleScore` :
+
+- Si `arrowCountMode = "FIXED"` et `plannedEndCount` est renseigné : `plannedEndCount × arrowCountPerEnd × targetType.maxScore`.
+- Si `arrowCountMode = "FIXED"` sans `plannedEndCount` : `nombre de volées enregistrées × arrowCountPerEnd × targetType.maxScore`.
+- Si `arrowCountMode = "FREE"` : `nombre total d'impacts enregistrés × targetType.maxScore`. Le mode libre ne suppose jamais 3 ou 6 flèches par volée.
 
 ---
 
@@ -186,6 +219,7 @@ Lors de l'import :
 ### Résolution des conflits
 
 - En cas de conflit sur une entité (même `uuid`, données différentes) → **version la plus récente gagne** (comparaison `updatedAt`)
+- Si un ancien fichier d'export ne contient pas `updatedAt`, l'entité importée est considérée comme plus ancienne que l'entité locale, sauf si l'entité locale n'existe pas encore
 - Les entités built-in (`isBuiltIn = true`) ne sont pas modifiées lors de l'import
 
 ### Ordre d'import
@@ -206,4 +240,4 @@ Lors de l'import :
 
 ---
 
-*Dernière mise à jour : 29 avril 2026*
+*Dernière mise à jour : 30 mai 2026*
