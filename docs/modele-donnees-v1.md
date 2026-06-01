@@ -53,6 +53,25 @@ Ces entités sont mentionnées pour préparer l'architecture, mais ne sont pas i
 
 ---
 
+### Champs communs des entités exportables
+
+En V1, les entités exportables racines sont `TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet` et `SessionPreset`.
+
+| Champ | Règle |
+|-------|-------|
+| `id` | Clé primaire locale Room. Elle n'est jamais utilisée comme clé de fusion entre appareils. |
+| `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
+| `createdAt` | Date de création locale ou de définition initiale pour les données built-in. |
+| `updatedAt` | Date de dernière modification fonctionnelle, utilisée pour résoudre les conflits d'import. |
+
+À la création d'une entité modifiable, `createdAt` et `updatedAt` ont la même valeur. Toute modification utilisateur met à jour `updatedAt`.
+
+Pour les agrégats de séance, une modification d'un `ArrowImpact` met aussi à jour `updatedAt` de son `End` et de sa `Session`. Une modification d'un `End` met aussi à jour `updatedAt` de sa `Session`. Cela permet de comparer une séance complète pendant l'import même si les volées et impacts sont exportés en structure imbriquée.
+
+`TargetZone` n'est pas une entité exportable racine en V1 : elle est exportée dans son `TargetType` parent et identifiée par ce parent et son score / rayon. Elle ne porte donc pas de `uuid` indépendant en V1.
+
+---
+
 ## 2. Définition détaillée des entités
 
 ### 2.1 TargetType
@@ -62,6 +81,7 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 | Attribut | Type | Description |
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
+| `uuid` | String | Identifiant stable pour export/import (UUID v4, stable aussi pour les cibles built-in) |
 | `name` | String | Nom affiché (ex. "Classique 10 zones") |
 | `discipline` | String | Discipline (ex. "indoor", "outdoor", "field") |
 | `diameterCm` | Int | Diamètre officiel en cm (40, 60, 80, 122) |
@@ -71,6 +91,11 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 | `defaultDistanceM` | Int | Distance de tir par défaut en mètres |
 | `zones` | List\<TargetZone\> | Zones de score (relation 1:N) |
 | `isBuiltIn` | Boolean | True si prédéfini (non modifiable par l'utilisateur) |
+| `xRingEnabled` | Boolean | Active ou désactive la zone X pour ce type de cible |
+| `xRingLabel` | String | Libellé affiché de la zone X (ex. "X", "10+", ou vide si désactivée) |
+| `innerTenRadiusNormalized` | Float | Rayon normalisé de la zone X ; `0.05` pour une cible WA classique, `0.0` si désactivée |
+| `createdAt` | LocalDateTime | Date de création ou de définition initiale |
+| `updatedAt` | LocalDateTime | Date de dernière modification ; les built-in ne sont pas écrasés par l'import |
 
 **Instances V1** :
 
@@ -128,7 +153,8 @@ Séance de tir à l'arc.
 | `title` | String | Titre / nom de la séance |
 | `targetTypeId` | Long (FK) | Type de cible utilisé |
 | `distanceM` | Int | Distance de tir en mètres |
-| `arrowCountPerEnd` | Int | Nombre de flèches par volée |
+| `arrowCountMode` | Enum | Mode de nombre de flèches par volée (FIXED / FREE) |
+| `arrowCountPerEnd` | Int? | Nombre de flèches par volée si `arrowCountMode = FIXED` ; `null` si `FREE` |
 | `isIndoor` | Boolean | True si tir en salle |
 | `scoringMode` | Enum | Mode de comptage (TRAINING / COMPETITION / MANUAL_CORDON) |
 | `bowId` | Long? (FK) | Arc utilisé (optionnel) |
@@ -140,6 +166,12 @@ Séance de tir à l'arc.
 | `createdAt` | LocalDateTime | Date de création |
 | `updatedAt` | LocalDateTime | Date de dernière modification |
 | `ends` | List\<End\> | Volées de la séance (relation 1:N) |
+
+**Règle de `maxPossibleScore`** :
+
+- Si `arrowCountMode = FIXED` et `plannedEndCount` est renseigné, `maxPossibleScore = plannedEndCount × arrowCountPerEnd × targetType.maxScore`.
+- Si `arrowCountMode = FIXED` sans `plannedEndCount`, `maxPossibleScore = nombre de volées enregistrées × arrowCountPerEnd × targetType.maxScore`.
+- Si `arrowCountMode = FREE`, `maxPossibleScore = nombre total d'impacts enregistrés × targetType.maxScore`. Le mode libre ne suppose jamais 3 ou 6 flèches par volée.
 
 ---
 
@@ -157,6 +189,7 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 | `notes` | String? | Notes libres |
 | `status` | Enum | Statut de la volée (EDITING / VALIDATED) |
 | `createdAt` | LocalDateTime | Date de création de la volée |
+| `updatedAt` | LocalDateTime | Date de dernière modification de la volée ou de ses impacts |
 | `validatedAt` | LocalDateTime? | Date de validation (renseigné quand EDITING → VALIDATED) |
 | `impacts` | List\<ArrowImpact\> | Impacts de la volée (relation 1:N) |
 
@@ -184,6 +217,8 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | `inputMode` | Enum | Mode de saisie : MANUAL / AUTOMATIC / CORRECTED |
 | `isCordDecisionManual` | Boolean | True si l'utilisateur a tranché manuellement sur le cordon |
 | `note` | String? | Note libre sur cet impact |
+| `createdAt` | LocalDateTime | Date de création de l'impact |
+| `updatedAt` | LocalDateTime | Date de dernière modification de l'impact |
 
 **En V1** : `inputMode` est toujours `MANUAL`. Les champs `isX`, `isMiss` et `isCordDecisionManual` sont calculés ou positionnés automatiquement sauf décision manuelle.
 
@@ -218,6 +253,7 @@ Arc de l'utilisateur.
 | `model` | String? | Modèle |
 | `notes` | String? | Notes libres |
 | `createdAt` | LocalDateTime | Date de création |
+| `updatedAt` | LocalDateTime | Date de dernière modification |
 
 > Les réglages détaillés (viseur, berger button, band, palette, stabilisation) feront l'objet d'une entité `BowSettings` en V2. En V1, on se contente de notes libres.
 
@@ -240,6 +276,7 @@ Jeu de flèches de l'utilisateur.
 | `material` | String? | Matériau (carbone, aluminium, carbone/aluminium, bois) |
 | `notes` | String? | Notes libres |
 | `createdAt` | LocalDateTime | Date de création |
+| `updatedAt` | LocalDateTime | Date de dernière modification |
 
 ---
 
@@ -254,11 +291,14 @@ Configuration prédéfinie pour créer rapidement une séance.
 | `name` | String | Nom du preset (ex. "Salle 18m — 3 flèches") |
 | `targetTypeId` | Long (FK) | Type de cible par défaut |
 | `distanceM` | Int | Distance par défaut |
-| `arrowCountPerEnd` | Int | Nombre de flèches par volée |
+| `arrowCountMode` | Enum | Mode de nombre de flèches par volée (FIXED / FREE) |
+| `arrowCountPerEnd` | Int? | Nombre de flèches par volée si `FIXED` ; `null` si `FREE` |
 | `isIndoor` | Boolean | Intérieur par défaut |
 | `scoringMode` | Enum | Mode de comptage par défaut |
 | `bowId` | Long? (FK) | Arc par défaut |
 | `arrowSetId` | Long? (FK) | Flèches par défaut |
+| `createdAt` | LocalDateTime | Date de création |
+| `updatedAt` | LocalDateTime | Date de dernière modification |
 
 **Presets suggérés (créés par défaut)** :
 
@@ -275,6 +315,15 @@ L'utilisateur peut créer, modifier et supprimer ses propres presets.
 ---
 
 ## 3. Énumérations
+
+### ArrowCountMode
+
+```kotlin
+enum class ArrowCountMode {
+    FIXED,           // Nombre de flèches par volée connu (ex. 3 ou 6)
+    FREE             // Nombre libre, le score max dépend des impacts réellement saisis
+}
+```
 
 ### ScoringMode
 
@@ -346,26 +395,44 @@ enum class EndStatus {
 
 ### Format V1
 
-Export en JSON contenant l'intégralité des données utilisateur :
+Export en JSON contenant l'intégralité des données utilisateur. Le schéma complet fait foi dans `docs/export-format-v1.md`.
+
+Les relations exportées utilisent les `uuid`, pas les `id` Room :
 
 ```json
 {
   "version": 1,
   "exportDate": "2026-04-29T10:30:00",
-  "targetTypes": [...],
+  "targetTypes": [
+    {
+      "uuid": "a1b2c3d4-...",
+      "name": "Classique 80 cm",
+      "xRingEnabled": true,
+      "xRingLabel": "X",
+      "innerTenRadiusNormalized": 0.05,
+      "createdAt": "2026-04-29T10:30:00+02:00",
+      "updatedAt": "2026-04-29T10:30:00+02:00"
+    }
+  ],
   "bows": [...],
   "arrowSets": [...],
   "sessionPresets": [...],
   "sessions": [
     {
-      "id": 1,
+      "uuid": "q7r8s9t0-...",
       "date": "2026-04-28T18:00:00",
       "title": "Entraînement salle",
+      "targetTypeUuid": "a1b2c3d4-...",
+      "arrowCountMode": "FIXED",
+      "arrowCountPerEnd": 3,
+      "updatedAt": "2026-04-28T19:15:00+02:00",
       "ends": [
         {
+          "uuid": "u1v2w3x4-...",
           "index": 1,
           "impacts": [
             {
+              "uuid": "y5z6a7b8-...",
               "index": 1,
               "xNormalized": 0.05,
               "yNormalized": -0.02,
@@ -383,14 +450,15 @@ Export en JSON contenant l'intégralité des données utilisateur :
 ### Considérations
 
 - Les `TargetType` built-in sont inclus dans l'export
-- Les IDs locaux sont préservés pour permettre la réimportation sur le même appareil
-- **Identifiants stables (`uuid`)** : chaque entité exportable (Session, End, ArrowImpact, Bow, ArrowSet, SessionPreset) possède un `uuid` (UUID v4). L'export utilise le `uuid` comme identifiant principal pour permettre :
+- Les `id` locaux peuvent être inclus pour compatibilité locale ou diagnostic, mais ne doivent jamais servir à la fusion
+- **Identifiants stables (`uuid`)** : chaque entité exportable racine (`TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet`, `SessionPreset`) possède un `uuid` (UUID v4). L'export utilise le `uuid` comme identifiant principal pour permettre :
   - L'import sur un autre appareil sans conflit d'IDs locaux (remapping automatique via `uuid`)
   - La fusion de données issues de plusieurs appareils (multi-appareil)
   - Le dédoublonnage fiable lors de l'import (recherche par `uuid`, mise à jour si existant)
-- Les clés `id` restent présentes dans l'export pour compatibilité retro mais ne doivent pas être utilisées comme clé de fusion entre appareils
+- Les clés `id`, si elles sont présentes dans l'export, ne doivent pas être utilisées comme clé de fusion entre appareils
+- Les conflits d'import sont résolus avec `updatedAt` : l'entité importée remplace l'entité locale uniquement si son `updatedAt` est plus récent, sauf pour les `TargetType` built-in qui ne sont pas écrasés par un fichier importé
 - Les entités futures (WeatherSnapshot, Photo, DetectionResult) seront ajoutées au format dans les versions ultérieures
 
 ---
 
-*Document version 1.1 — 29 avril 2026*
+*Document version 1.2 — 30 mai 2026*

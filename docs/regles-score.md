@@ -70,11 +70,13 @@ Le blason classique comporte **10 zones concentriques** numérotées de 1 à 10,
 
 En compétition, la zone centrale du 10 (X) sert à départager les égalités. Plutôt que de hardcoder `r <= 0.05`, la détection du X est configurable au niveau du `TargetType` :
 
-|| Champ | Type | Description |
+| Champ | Type | Description |
 |-------|------|-------------|
 | `xRingEnabled` | `Boolean` | Active ou désactive la zone X pour ce type de cible |
 | `xRingLabel` | `String` | Libellé affiché (ex. `"X"`, `"10+"`, `""` si désactivé) |
 | `innerTenRadiusNormalized` | `Float` | Rayon normalisé de la zone X (défaut WA : `0.05`) |
+
+Ces champs appartiennent à `TargetType`, qui possède aussi un `uuid` stable pour l'export/import. Les zones de score restent définies par les `TargetZone`.
 
 Un impact est marqué `isX = true` uniquement si `xRingEnabled == true` **et** `r <= innerTenRadiusNormalized`.
 
@@ -88,7 +90,7 @@ TargetType(
 )
 ```
 
-|| Zone | Score | Rayon normalisé |
+| Zone | Score | Rayon normalisé |
 |------|-------|-----------------|
 | X | 10 | 0.0 – 0.05 |
 | 10 | 10 | 0.05 – 0.10 |
@@ -226,15 +228,26 @@ scoreEnd = somme des scoreFinal de chaque ArrowImpact de la volée
 
 ```
 scoreSession = somme des scores de toutes les volées
-maxPossible = nombreDeVolées × nombreDeFlèchesParVolée × 10
 ```
+
+Le score maximum utilise `targetType.maxScore` plutôt qu'une valeur hardcodée, même si les cibles classiques V1 valent 10 points par flèche.
+
+### Score maximum possible
+
+| Cas | Formule |
+|-----|---------|
+| Nombre de flèches fixe avec `plannedEndCount` | `plannedEndCount × arrowCountPerEnd × targetType.maxScore` |
+| Nombre de flèches fixe sans `plannedEndCount` | `nombre de volées enregistrées × arrowCountPerEnd × targetType.maxScore` |
+| Nombre de flèches libre | `nombre total d'impacts enregistrés × targetType.maxScore` |
+
+En mode libre, l'application ne déduit jamais un score maximum à partir de 3 ou 6 flèches par volée. Le maximum progresse avec les impacts réellement saisis.
 
 ### Résumé de séance
 
 | Indicateur | Formule |
 |------------|---------|
 | Score total | Somme des `scoreFinal` de tous les impacts |
-| Score maximal possible | `volées × flèches/volée × 10` |
+| Score maximal possible | Voir les règles ci-dessus selon `arrowCountMode` |
 | Pourcentage | `scoreTotal / maxPossible × 100` |
 | Moyenne par volée | `scoreTotal / nombreDeVolées` |
 | Moyenne par flèche | `scoreTotal / nombreTotalImpact` |
@@ -286,4 +299,4 @@ Aucune modification du code de calcul n'est nécessaire.
 
 ---
 
-*Document version 1.0 — 29 avril 2026*
+*Document version 1.1 — 30 mai 2026*
