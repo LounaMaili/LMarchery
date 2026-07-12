@@ -2,7 +2,7 @@
 
 ## Contexte du projet
 
-LMarchery est une application Android de gestion des scores au tir à l'arc. Le dépôt est actuellement en phase de cadrage fonctionnel : il contient la documentation de référence, mais pas encore le squelette Android.
+LMarchery est une application Android de gestion des scores au tir à l'arc. Le dépôt contient maintenant un socle Gradle/Kotlin, le domaine pur et un premier squelette Android Compose local.
 
 Stack prévue :
 
@@ -37,9 +37,7 @@ Avant toute modification, lire les documents utiles dans cet ordre :
 - Stocker les entités exportables avec UUID v4. Ne jamais utiliser les IDs Room comme clé de fusion entre appareils.
 - Toute nouvelle décision structurante doit être documentée dans un ADR.
 
-## Règles Android futures
-
-Quand le projet Android sera créé :
+## Règles Android
 
 - Garder une architecture claire : `ui`, `domain`, `data`.
 - Utiliser Room pour les données relationnelles.
@@ -50,11 +48,14 @@ Quand le projet Android sera créé :
 
 ## Commandes attendues
 
-Le dépôt ne contient pas encore Gradle. Quand le squelette Android existera, les commandes de référence devront être documentées ici, par exemple :
+Commandes de référence locales :
 
 - `./gradlew test`
-- `./gradlew assembleDebug`
-- `./gradlew lint`
+- `./gradlew :app:assembleDebug`
+- `./gradlew :app:lintDebug`
+- `./scripts/dev-check.sh`
+
+Utiliser un JDK compatible Gradle/AGP, idéalement JDK 21 pour ce dépôt. Si l'environnement ne permet pas d'écrire dans le home utilisateur, définir `GRADLE_USER_HOME` vers un dossier temporaire ; `./scripts/dev-check.sh` isole aussi `ANDROID_SDK_HOME` dans `/tmp/lmarchery-android-home` par défaut.
 
 ## Sécurité et fichiers à ne pas committer
 

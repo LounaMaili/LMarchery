@@ -10,7 +10,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 
 ## État du projet
 
-**Phase 0 — Cadrage fonctionnel** (en cours)
+**V1 — socle local/offline** (en cours)
 
 - [x] Cahier des charges V1
 - [x] Règles de score
@@ -21,9 +21,10 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
 - [x] ADR (6 décisions d'architecture)
-- [ ] Wireframes / maquettes
-- [ ] Moteur de score
-- [ ] Blason interactif
+- [x] Moteur de score Kotlin/JVM
+- [x] Domaine séance Kotlin/JVM
+- [x] Squelette Android Compose
+- [ ] Blason interactif complet
 - [ ] Premier test terrain
 
 ## Documentation
@@ -56,20 +57,12 @@ Voir [docs/README.md](docs/README.md) pour l'index complet et l'ordre de lecture
 
 ```
 docs/                       ← Documentation fonctionnelle
-android/                    ← Application Android
-  app/
-  core/
-    model/
-    scoring/
-    database/
-    vision/
-  feature/
-    sessions/
-    scoring/
-    equipment/
-    presets/
-    statistics/
-    camera/
+app/                        ← Application Android Compose
+core/
+  model/                    ← Modèles métier purs
+  scoring/                  ← Moteur de score Kotlin/JVM
+  database/                 ← Room, futur
+feature/                    ← Fonctionnalités UI, futur
 vision-lab/                 ← Laboratoire reconnaissance (Python)
   datasets/
   notebooks/
@@ -78,6 +71,17 @@ vision-lab/                 ← Laboratoire reconnaissance (Python)
   models/
   evaluation/
 ```
+
+## Commandes de développement
+
+```bash
+./gradlew test
+./gradlew :app:assembleDebug
+./gradlew :app:lintDebug
+./scripts/dev-check.sh
+```
+
+La V1 reste locale/offline : pas de permission réseau, pas de caméra et pas de persistance tant que Room n'est pas introduit. En environnement sandbox, lancer les commandes avec un JDK 21 et un `GRADLE_USER_HOME` writable ; `./scripts/dev-check.sh` isole `ANDROID_SDK_HOME` dans `/tmp/lmarchery-android-home` par défaut et détecte `/tmp/android-sdk` si `ANDROID_HOME` n'est pas défini.
 
 ## Versions
 
