@@ -106,13 +106,13 @@ class ScoringInputIntegrityTest {
             NormalizedPoint(0.05f, -0.02f), NormalizedPoint(0.22f, 0.15f), NormalizedPoint(0.41f, -0.30f),
         )
         assertEquals(23, trainingEnd.sumOf {
-            resolveFinalScore(calculateScore(target, it), ScoringMode.TRAINING).scoreFinal
+            resolveFinalScore(target, it, ScoringMode.TRAINING).scoreFinal
         })
         val competitionEnd = listOf(
             NormalizedPoint(0f, 0f), NormalizedPoint(0.195f, -0.02f), NormalizedPoint(0.85f, 0.50f),
         )
         assertEquals(20, competitionEnd.sumOf {
-            resolveFinalScore(calculateScore(target, it), ScoringMode.COMPETITION).scoreFinal
+            resolveFinalScore(target, it, ScoringMode.COMPETITION).scoreFinal
         })
         assertFalse(calculateScore(target, trainingEnd.first()).isX)
     }

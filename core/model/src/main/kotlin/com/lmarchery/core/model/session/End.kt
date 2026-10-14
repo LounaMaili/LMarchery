@@ -38,6 +38,9 @@ class End(
         require(impacts.all { !it.updatedAt.isAfter(updatedAt) }) {
             "End updatedAt must cover every impact modification."
         }
+        require(impacts.all { it.targetType == impacts.firstOrNull()?.targetType }) {
+            "End impacts must share the same target profile."
+        }
         require(impacts.map { it.uuid }.distinct().size == impacts.size) {
             "End impacts must have unique uuid values."
         }

@@ -218,18 +218,18 @@ class BoundaryHintFinderTest {
         for (radius in listOf(0.049f, 0.051f, 0.095f, 0.105f, 0.195f, 0.995f, 1.005f)) {
             val point = NormalizedPoint(radius, 0f)
             val before = calculateScore(target, point)
-            val decisions = ScoringMode.entries.associateWith { resolveFinalScore(before, it, before.score) }
+            val decisions = ScoringMode.entries.associateWith { resolveFinalScore(target, point, it) }
             findBoundaryHints(target, point, 0.2f)
             val after = calculateScore(target, point)
             assertEquals(before, after)
-            for (mode in ScoringMode.entries) assertEquals(decisions[mode], resolveFinalScore(after, mode, after.score))
+            for (mode in ScoringMode.entries) assertEquals(decisions[mode], resolveFinalScore(target, point, mode))
         }
-        // Characterize the known legacy defect, deliberately left for the next PR.
+        // The old promotion expectation becomes 9: hints still do not make a decision.
         val legacy = calculateScore(target, NormalizedPoint(0.105f, 0f))
         assertEquals(9, legacy.score)
         assertTrue(legacy.isNearCordon)
         assertEquals(10, legacy.cordonZoneAbove)
-        assertEquals(10, resolveFinalScore(legacy, ScoringMode.COMPETITION).scoreFinal)
+        assertEquals(9, resolveFinalScore(target, NormalizedPoint(0.105f, 0f), ScoringMode.COMPETITION).scoreFinal)
     }
 
     @Test

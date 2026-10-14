@@ -1,6 +1,8 @@
 package com.lmarchery.core.scoring
 
 import com.lmarchery.core.model.NormalizedPoint
+import com.lmarchery.core.model.scoring.ScoreDecisionRequest
+import java.time.LocalDateTime
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
 import kotlin.test.Test
@@ -125,7 +127,7 @@ class ScoreCalculatorTest {
     @Test
     fun `training mode keeps calculated score`() {
         val result = calculateScore(target, NormalizedPoint(0.105f, 0f))
-        val decision = resolveFinalScore(result, ScoringMode.TRAINING)
+        val decision = resolveFinalScore(target, NormalizedPoint(0.105f, 0f), ScoringMode.TRAINING)
 
         assertEquals(9, decision.scoreCalculated)
         assertEquals(9, decision.scoreFinal)
@@ -133,12 +135,13 @@ class ScoreCalculatorTest {
     }
 
     @Test
-    fun `competition mode uses upper score on cordon`() {
+    fun `competition keeps geometric score until a human explicitly judges a boundary`() {
         val result = calculateScore(target, NormalizedPoint(0.105f, 0f))
-        val decision = resolveFinalScore(result, ScoringMode.COMPETITION)
+        val decision = resolveFinalScore(target, NormalizedPoint(0.105f, 0f), ScoringMode.COMPETITION)
 
         assertEquals(9, decision.scoreCalculated)
-        assertEquals(10, decision.scoreFinal)
+        // Formerly 10: a UX proximity is not an explicit human judgment.
+        assertEquals(9, decision.scoreFinal)
         assertFalse(decision.isCordDecisionManual)
     }
 
@@ -146,9 +149,12 @@ class ScoreCalculatorTest {
     fun `manual cordon mode uses selected score and records manual decision`() {
         val result = calculateScore(target, NormalizedPoint(0.105f, 0f))
         val decision = resolveFinalScore(
-            result = result,
+            targetType = target,
+            point = NormalizedPoint(0.105f, 0f),
             scoringMode = ScoringMode.MANUAL_CORDON,
-            userSelectedScore = 10,
+            request = ScoreDecisionRequest.JudgeBoundary(
+                BoundaryReference(BoundaryType.SCORE_ZONES, 0.1f), BoundaryValue(10),
+                LocalDateTime.parse("2026-10-15T10:00:00")),
         )
 
         assertEquals(9, decision.scoreCalculated)
@@ -159,7 +165,7 @@ class ScoreCalculatorTest {
     @Test
     fun `manual cordon mode defaults to calculated score without user selection`() {
         val result = calculateScore(target, NormalizedPoint(0.105f, 0f))
-        val decision = resolveFinalScore(result, ScoringMode.MANUAL_CORDON)
+        val decision = resolveFinalScore(target, NormalizedPoint(0.105f, 0f), ScoringMode.MANUAL_CORDON)
 
         assertEquals(9, decision.scoreCalculated)
         assertEquals(9, decision.scoreFinal)

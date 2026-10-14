@@ -261,13 +261,19 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
           "index": 1,
           "xNormalized": 0.05,
           "yNormalized": -0.02,
-          "distanceFromCenter": 0.054,
+          "distanceFromCenter": 0.05385165,
           "scoreCalculated": 10,
           "scoreFinal": 10,
           "isX": false,
           "isMiss": false,
           "inputMode": "MANUAL",
           "isCordDecisionManual": false,
+          "scoreDecision": {
+            "kind": "GEOMETRY",
+            "decidedAt": null,
+            "boundary": null,
+            "reason": null
+          },
           "note": "",
           "createdAt": "2026-04-28T18:05:20+02:00",
           "updatedAt": "2026-04-28T18:05:20+02:00"
@@ -283,6 +289,90 @@ Règle pour `maxPossibleScore` :
 - Si `arrowCountMode = "FIXED"` et `plannedEndCount` est renseigné : `plannedEndCount × arrowCountPerEnd × targetType.maxScore`.
 - Si `arrowCountMode = "FIXED"` sans `plannedEndCount` : `nombre de volées enregistrées × arrowCountPerEnd × targetType.maxScore`.
 - Si `arrowCountMode = "FREE"` : `nombre total d'impacts enregistrés × targetType.maxScore`. Le mode libre ne suppose jamais 3 ou 6 flèches par volée.
+
+### Provenance de la décision finale d'un impact
+
+Les champs racines `scoreFinal`, `isX` et `isMiss` décrivent la valeur **finale**.
+`scoreCalculated` reste géométrique. `scoreDecision` représente la provenance
+du résultat du domaine, séparément d'`inputMode`, qui décrit la position :
+
+| `kind` | Contraintes |
+|--------|-------------|
+| `GEOMETRY` | Valeur géométrique ; date manuelle, limite et motif nuls |
+| `BOUNDARY_JUDGMENT` | Date et référence `(type, radiusNormalized)` obligatoires ; motif nul |
+| `EXCEPTIONAL_CORRECTION` | Date et motif non blanc obligatoires ; limite nulle |
+
+`isCordDecisionManual` est dérivé du seul jugement de limite. Une correction
+exceptionnelle a une provenance manuelle, mais ce booléen vaut faux. Un jugement
+conservant le score numérique conserve sa date et son type manuels.
+
+Exemple de jugement explicite 10/9, après un calcul géométrique de 9 :
+
+```json
+{
+  "uuid": "b1c2d3e4-...",
+  "index": 2,
+  "xNormalized": 0.105,
+  "yNormalized": 0.0,
+  "distanceFromCenter": 0.105,
+  "scoreCalculated": 9,
+  "scoreFinal": 10,
+  "isX": false,
+  "isMiss": false,
+  "inputMode": "MANUAL",
+  "isCordDecisionManual": true,
+  "scoreDecision": {
+    "kind": "BOUNDARY_JUDGMENT",
+    "decidedAt": "2026-04-28T18:05:25+02:00",
+    "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
+    "reason": null
+  },
+  "note": "",
+  "createdAt": "2026-04-28T18:05:20+02:00",
+  "updatedAt": "2026-04-28T18:05:25+02:00"
+}
+```
+
+Exemple de correction exceptionnelle d'un X géométrique en 9 :
+
+```json
+{
+  "uuid": "c1d2e3f4-...",
+  "index": 3,
+  "xNormalized": 0.0,
+  "yNormalized": 0.0,
+  "distanceFromCenter": 0.0,
+  "scoreCalculated": 10,
+  "scoreFinal": 9,
+  "isX": false,
+  "isMiss": false,
+  "inputMode": "MANUAL",
+  "isCordDecisionManual": false,
+  "scoreDecision": {
+    "kind": "EXCEPTIONAL_CORRECTION",
+    "decidedAt": "2026-04-28T18:05:25+02:00",
+    "boundary": null,
+    "reason": "Point initial mal positionné ; score constaté sur le blason"
+  },
+  "note": "",
+  "createdAt": "2026-04-28T18:05:20+02:00",
+  "updatedAt": "2026-04-28T18:05:25+02:00"
+}
+```
+
+La future reconstruction doit retrouver le `TargetType` de la séance, résoudre
+la demande typée, puis comparer les scores, indicateurs et distance stockés aux
+valeurs dérivées. Les valeurs autorisées sont M/0 et les scores réellement
+présents dans le profil. Une référence de limite est revérifiée dans celui-ci ;
+les deux côtés d'un ancien `BoundaryHint` ne sont pas une preuve. La date manuelle
+doit vérifier `createdAt <= decidedAt <= updatedAt`.
+
+Ces exemples ne constituent aucun import/export opérationnel. La politique de
+versionnement des profils et la migration d'anciens fichiers sans `scoreDecision`
+restent à définir ; il ne faut pas inventer un jugement depuis le seul booléen
+historique ou une différence de scores. `LocalDateTime` reste provisoire : les
+offsets illustratifs n'arrêtent pas la convention UTC/fuseau. Voir
+[ADR 011](adr/011-decisions-score-explicites.md).
 
 ---
 
@@ -320,4 +410,4 @@ Règle pour `maxPossibleScore` :
 
 ---
 
-*Dernière mise à jour : 30 mai 2026*
+*Dernière mise à jour : 15 octobre 2026*
