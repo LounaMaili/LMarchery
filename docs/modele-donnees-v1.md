@@ -276,7 +276,7 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | `yNormalized` | Float | Coordonnée Y finie, centre = 0 ; peut dépasser ±1 pour un miss |
 | `distanceFromCenter` | Float | Distance finie et non négative ; calcul intermédiaire en Double, erreur explicite si le rayon dépasse Float.MAX_VALUE |
 | `scoreCalculated` | Int | Score courant calculé depuis x/y (recalculé si déplacement, **pas immuable**) |
-| `scoreFinal` | Int | Score validé par l'utilisateur (peut différer si cordon) |
+| `scoreFinal` | Int | Valeur finale acceptée géométriquement ou par une décision manuelle validée |
 | `isX` | Boolean | Distinction X de la valeur finale, exigeant X activé et score maximal |
 | `isMiss` | Boolean | Indicateur final dérivé de `scoreFinal == 0` |
 | `inputMode` | Enum | Mode de saisie : MANUAL / AUTOMATIC / CORRECTED |
@@ -311,7 +311,7 @@ Voir [ADR 011](adr/011-decisions-score-explicites.md).
 **Clarification sur `scoreCalculated`** :
 
 - `scoreCalculated` = score courant calculé depuis `xNormalized`/`yNormalized`. Contrairement à une version précédente de ce document, **il n'est pas immuable** : il est recalculé à chaque déplacement de l'impact sur le blason.
-- `scoreFinal` = score validé par l'utilisateur (modifiable manuellement, ex. décision de cordon).
+- `scoreFinal` = valeur acceptée géométriquement ou par un jugement/correction explicite validé.
 - La différence entre les deux mesure la qualité du calcul automatique et, en V3+, de la reconnaissance.
 
 > **V3+ — Champs réservés pour la reconnaissance automatique** (non implémentés en V1) :
@@ -415,9 +415,9 @@ enum class ArrowCountMode {
 
 ```kotlin
 enum class ScoringMode {
-    TRAINING,        // Score de la zone où se trouve l'impact
-    COMPETITION,     // Cordon = score supérieur
-    MANUAL_CORDON    // L'utilisateur tranche sur chaque cordon
+    TRAINING,        // Sans demande explicite : valeur géométrique
+    COMPETITION,     // Sans demande explicite : valeur géométrique
+    MANUAL_CORDON    // Modification par demande typée, sans confirmation imposée pour chaque suggestion
 }
 ```
 
@@ -523,6 +523,12 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
               "xNormalized": 0.05,
               "yNormalized": -0.02,
               "scoreFinal": 10,
+              "scoreDecision": {
+                "kind": "GEOMETRY",
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null
+              },
               "inputMode": "MANUAL"
             }
           ]
