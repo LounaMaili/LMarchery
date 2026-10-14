@@ -10,4 +10,10 @@ data class ScoreResult(
     val isMiss: Boolean,
     val isNearCordon: Boolean,
     val cordonZoneAbove: Int?,
-)
+) {
+    init {
+        require(distanceFromCenter.isFinite() && distanceFromCenter >= 0f) {
+            "ScoreResult distanceFromCenter must be finite and >= 0."
+        }
+    }
+}

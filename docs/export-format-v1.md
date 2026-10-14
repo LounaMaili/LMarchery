@@ -80,6 +80,10 @@ est réservée à une tâche distincte avant la persistance. Voir
 
 ### TargetType
 
+La définition ci-dessous couvre le blason complet : aucune zone intermédiaire
+ne peut être omise à la reconstruction du modèle. Les rayons doivent respecter
+les [invariants de cible](regles-score.md#invariants-des-définitions-de-cible).
+
 ```json
 {
   "uuid": "a1b2c3d4-...",
@@ -102,6 +106,60 @@ est réservée à une tâche distincte avant la persistance. Voir
       "innerRadiusNormalized": 0.0,
       "outerRadiusNormalized": 0.1,
       "colorName": "jaune"
+    },
+    {
+      "score": 9,
+      "innerRadiusNormalized": 0.1,
+      "outerRadiusNormalized": 0.2,
+      "colorName": "jaune"
+    },
+    {
+      "score": 8,
+      "innerRadiusNormalized": 0.2,
+      "outerRadiusNormalized": 0.3,
+      "colorName": "rouge"
+    },
+    {
+      "score": 7,
+      "innerRadiusNormalized": 0.3,
+      "outerRadiusNormalized": 0.4,
+      "colorName": "rouge"
+    },
+    {
+      "score": 6,
+      "innerRadiusNormalized": 0.4,
+      "outerRadiusNormalized": 0.5,
+      "colorName": "bleu"
+    },
+    {
+      "score": 5,
+      "innerRadiusNormalized": 0.5,
+      "outerRadiusNormalized": 0.6,
+      "colorName": "bleu"
+    },
+    {
+      "score": 4,
+      "innerRadiusNormalized": 0.6,
+      "outerRadiusNormalized": 0.7,
+      "colorName": "noir"
+    },
+    {
+      "score": 3,
+      "innerRadiusNormalized": 0.7,
+      "outerRadiusNormalized": 0.8,
+      "colorName": "noir"
+    },
+    {
+      "score": 2,
+      "innerRadiusNormalized": 0.8,
+      "outerRadiusNormalized": 0.9,
+      "colorName": "blanc"
+    },
+    {
+      "score": 1,
+      "innerRadiusNormalized": 0.9,
+      "outerRadiusNormalized": 1.0,
+      "colorName": "blanc"
     }
   ]
 }
@@ -183,7 +241,7 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
   "startedAt": "2026-04-28T18:02:00+02:00",
   "endedAt": "2026-04-28T19:15:00+02:00",
   "plannedEndCount": 20,
-  "totalScore": 248,
+  "totalScore": 10,
   "maxPossibleScore": 600,
   "createdAt": "2026-04-28T18:00:00+02:00",
   "updatedAt": "2026-04-28T19:15:00+02:00",
@@ -192,7 +250,7 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
       "uuid": "u1v2w3x4-...",
       "index": 1,
       "status": "VALIDATED",
-      "totalScore": 24,
+      "totalScore": 10,
       "notes": "",
       "createdAt": "2026-04-28T18:05:00+02:00",
       "updatedAt": "2026-04-28T18:06:00+02:00",
@@ -206,7 +264,7 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
           "distanceFromCenter": 0.054,
           "scoreCalculated": 10,
           "scoreFinal": 10,
-          "isX": true,
+          "isX": false,
           "isMiss": false,
           "inputMode": "MANUAL",
           "isCordDecisionManual": false,
