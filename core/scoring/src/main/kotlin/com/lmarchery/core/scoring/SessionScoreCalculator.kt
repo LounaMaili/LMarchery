@@ -1,6 +1,9 @@
 package com.lmarchery.core.scoring
 
 import com.lmarchery.core.model.session.ArrowCountMode
+import com.lmarchery.core.model.session.End
+import com.lmarchery.core.model.session.EndStatus
+import com.lmarchery.core.model.session.Session
 import com.lmarchery.core.model.target.TargetType
 
 fun calculateEndScore(scoreFinals: Iterable<Int>): Int =
@@ -9,11 +12,17 @@ fun calculateEndScore(scoreFinals: Iterable<Int>): Int =
         score
     }
 
+fun calculateEndScore(end: End): Int =
+    calculateEndScore(end.impacts.map { it.scoreFinal })
+
 fun calculateSessionScore(endScores: Iterable<Int>): Int =
     endScores.sumOf { endScore ->
         require(endScore >= 0) { "end score values must be >= 0." }
         endScore
     }
+
+fun calculateSessionScore(session: Session): Int =
+    calculateSessionScore(session.validatedEnds().map(::calculateEndScore))
 
 fun calculateMaxPossibleScore(
     targetType: TargetType,
@@ -45,3 +54,40 @@ fun calculateMaxPossibleScore(
 
     return arrowCount * targetType.maxScore
 }
+
+fun calculateMaxPossibleScore(session: Session): Int =
+    calculateMaxPossibleScore(
+        targetType = session.targetType,
+        arrowCountMode = session.arrowCountMode,
+        arrowCountPerEnd = session.arrowCountPerEnd,
+        plannedEndCount = session.plannedEndCount,
+        recordedEndCount = session.ends.size,
+        totalImpactCount = session.ends.sumOf { it.impacts.size },
+    )
+
+fun summarizeSessionScore(session: Session): SessionScoreSummary {
+    val validatedEnds = session.validatedEnds()
+    val validatedImpacts = validatedEnds.flatMap { it.impacts }
+    val totalScore = calculateSessionScore(session)
+    val maxPossibleScore = calculateMaxPossibleScore(session)
+    val validatedEndCount = validatedEnds.size
+    val validatedImpactCount = validatedImpacts.size
+
+    return SessionScoreSummary(
+        totalScore = totalScore,
+        maxPossibleScore = maxPossibleScore,
+        percentage = maxPossibleScore.takeIf { it > 0 }?.let { totalScore * 100.0 / it },
+        averagePerEnd = validatedEndCount.takeIf { it > 0 }?.let { totalScore.toDouble() / it },
+        averagePerArrow = validatedImpactCount.takeIf { it > 0 }?.let { totalScore.toDouble() / it },
+        validatedEndCount = validatedEndCount,
+        recordedEndCount = session.ends.size,
+        validatedImpactCount = validatedImpactCount,
+        recordedImpactCount = session.ends.sumOf { it.impacts.size },
+        maxScoreCount = validatedImpacts.count { it.scoreFinal == session.targetType.maxScore },
+        xCount = validatedImpacts.count { it.isX },
+        missCount = validatedImpacts.count { it.isMiss },
+    )
+}
+
+private fun Session.validatedEnds(): List<End> =
+    ends.filter { it.status == EndStatus.VALIDATED }
