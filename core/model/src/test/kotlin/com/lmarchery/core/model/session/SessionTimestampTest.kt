@@ -1,6 +1,8 @@
 package com.lmarchery.core.model.session
 
 import com.lmarchery.core.model.NormalizedPoint
+import com.lmarchery.core.model.scoring.BoundaryValue
+import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
 import java.time.LocalDateTime
@@ -27,7 +29,7 @@ class SessionTimestampTest {
         xRingEnabled = false,
         xRingLabel = "",
         innerTenRadiusNormalized = 0f,
-        zones = listOf(TargetZone(10, 0f, 1f, "yellow")),
+        zones = listOf(TargetZone(10, 0f, 0.1f, "yellow"), TargetZone(9, 0.1f, 1f, "yellow")),
     )
 
     @Test
@@ -35,7 +37,7 @@ class SessionTimestampTest {
         val original = impact(updatedAt = tenPast)
 
         assertFailsWith<IllegalArgumentException> {
-            original.withFinalScore(9, true, fivePast)
+            original.withFinalScore(target, correction(fivePast), fivePast)
         }
         assertEquals(tenPast, original.updatedAt)
     }
@@ -45,7 +47,7 @@ class SessionTimestampTest {
         val original = impact(updatedAt = tenPast)
 
         for (time in listOf(tenPast, fifteenPast)) {
-            val revised = original.withFinalScore(9, true, time)
+            val revised = original.withFinalScore(target, correction(time), time)
             assertEquals(ten, revised.createdAt)
             assertEquals(time, revised.updatedAt)
             assertEquals(9, revised.scoreFinal)
@@ -139,7 +141,7 @@ class SessionTimestampTest {
         val originalEnd = end(impacts = listOf(originalImpact))
         val originalSession = session(ends = listOf(originalEnd), startedAt = ten)
 
-        val revisedImpact = originalImpact.withFinalScore(9, true, tenPast)
+        val revisedImpact = originalImpact.withFinalScore(target, correction(tenPast), tenPast)
         val revisedEnd = originalEnd.withImpact(revisedImpact)
         val revisedSession = originalSession.withEnd(revisedEnd)
 
@@ -403,7 +405,10 @@ class SessionTimestampTest {
         createdAt: LocalDateTime = ten,
         updatedAt: LocalDateTime = ten,
     ) = ArrowImpact(uuid, index, NormalizedPoint(0f, 0f), 0f, 10, 10, false, false, InputMode.MANUAL, false,
-        createdAt = createdAt, updatedAt = updatedAt)
+        createdAt = createdAt, updatedAt = updatedAt, targetType = target)
+
+    private fun correction(time: LocalDateTime) =
+        ScoreDecisionRequest.ExceptionalCorrection(BoundaryValue(9), "Timestamp regression fixture", time)
 
     private fun end(
         uuid: String = "end-1",

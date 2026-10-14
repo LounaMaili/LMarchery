@@ -1,6 +1,7 @@
 package com.lmarchery.core.scoring
 
 import com.lmarchery.core.model.NormalizedPoint
+import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import com.lmarchery.core.model.session.ArrowCountMode
 import com.lmarchery.core.model.session.ArrowImpact
 import com.lmarchery.core.model.session.End
@@ -168,7 +169,8 @@ class SessionDomainScoringTest {
             targetType = target,
             point = NormalizedPoint(0.105f, 0f),
             scoringMode = ScoringMode.MANUAL_CORDON,
-            userSelectedScore = 10,
+            decision = ScoreDecisionRequest.JudgeBoundary(
+                BoundaryReference(BoundaryType.SCORE_ZONES, 0.1f), BoundaryValue(10), now),
             createdAt = now,
         )
 
@@ -225,18 +227,22 @@ class SessionDomainScoringTest {
         scoreFinal: Int = scoreCalculated,
         isX: Boolean = false,
         isMiss: Boolean = false,
-    ): ArrowImpact = ArrowImpact(
-        uuid = uuid,
-        index = index,
-        point = NormalizedPoint(0f, 0f),
-        distanceFromCenter = 0f,
-        scoreCalculated = scoreCalculated,
-        scoreFinal = scoreFinal,
-        isX = isX,
-        isMiss = isMiss,
-        inputMode = InputMode.MANUAL,
-        isCordDecisionManual = scoreFinal != scoreCalculated,
-        createdAt = now,
-        updatedAt = now,
-    )
+    ): ArrowImpact {
+        require(isMiss == (scoreFinal == 0))
+        val radius = when (scoreCalculated) {
+            0 -> 1.1f
+            10 -> if (isX) 0.025f else 0.075f
+            else -> target.zones.first { it.score == scoreCalculated }.let {
+                (it.innerRadiusNormalized + it.outerRadiusNormalized) / 2f
+            }
+        }
+        val point = NormalizedPoint(radius, 0f)
+        val geometry = calculateScore(target, point)
+        val selected = BoundaryValue(scoreFinal, isX)
+        val request = if (selected == BoundaryValue(geometry.score, geometry.isX)) {
+            ScoreDecisionRequest.AcceptGeometry
+        } else ScoreDecisionRequest.ExceptionalCorrection(selected, "Aggregate test fixture correction", now)
+        return scoreArrowImpact(uuid, index, target, point, ScoringMode.TRAINING,
+            decision = request, createdAt = now)
+    }
 }

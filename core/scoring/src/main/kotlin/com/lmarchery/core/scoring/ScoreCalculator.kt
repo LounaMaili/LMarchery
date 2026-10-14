@@ -3,6 +3,7 @@ package com.lmarchery.core.scoring
 import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.target.TargetType
+import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import kotlin.math.abs
 
 const val DEFAULT_CORDON_TOLERANCE_NORMALIZED: Float = 0.015f
@@ -52,23 +53,20 @@ fun calculateScore(
 }
 
 fun resolveFinalScore(
+    targetType: TargetType,
+    point: NormalizedPoint,
+    scoringMode: ScoringMode,
+    request: ScoreDecisionRequest = ScoreDecisionRequest.AcceptGeometry,
+): FinalScoreDecision = when (scoringMode) {
+    // Modes do not constitute a human judgment; no UX proximity promotes a score.
+    ScoringMode.TRAINING, ScoringMode.COMPETITION, ScoringMode.MANUAL_CORDON ->
+        FinalScoreDecision.resolve(targetType, point, request)
+}
+
+@Deprecated("Use targetType, point and a typed decision request.")
+@Suppress("UNUSED_PARAMETER")
+fun resolveFinalScore(
     result: ScoreResult,
     scoringMode: ScoringMode,
     userSelectedScore: Int? = null,
-): FinalScoreDecision {
-    require(userSelectedScore == null || userSelectedScore >= 0) {
-        "userSelectedScore must be >= 0."
-    }
-
-    val scoreFinal = when (scoringMode) {
-        ScoringMode.TRAINING -> result.score
-        ScoringMode.COMPETITION -> result.cordonZoneAbove ?: result.score
-        ScoringMode.MANUAL_CORDON -> userSelectedScore ?: result.score
-    }
-
-    return FinalScoreDecision(
-        scoreCalculated = result.score,
-        scoreFinal = scoreFinal,
-        isCordDecisionManual = scoringMode == ScoringMode.MANUAL_CORDON && userSelectedScore != null,
-    )
-}
+): FinalScoreDecision = throw IllegalArgumentException("Target context and a typed score decision are required.")

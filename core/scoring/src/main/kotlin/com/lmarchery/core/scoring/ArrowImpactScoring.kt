@@ -5,6 +5,7 @@ import com.lmarchery.core.model.session.ArrowImpact
 import com.lmarchery.core.model.session.InputMode
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.target.TargetType
+import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import java.time.LocalDateTime
 
 fun scoreArrowImpact(
@@ -19,31 +20,22 @@ fun scoreArrowImpact(
     createdAt: LocalDateTime,
     updatedAt: LocalDateTime = createdAt,
     cordonToleranceNormalized: Float = DEFAULT_CORDON_TOLERANCE_NORMALIZED,
+    decision: ScoreDecisionRequest = ScoreDecisionRequest.AcceptGeometry,
 ): ArrowImpact {
-    val result = calculateScore(
-        targetType = targetType,
-        point = point,
-        cordonToleranceNormalized = cordonToleranceNormalized,
-    )
-    val decision = resolveFinalScore(
-        result = result,
-        scoringMode = scoringMode,
-        userSelectedScore = userSelectedScore,
-    )
+    require(userSelectedScore == null) { "userSelectedScore is closed: use a typed score decision." }
+    // This legacy UX parameter cannot affect the final value.
+    require(cordonToleranceNormalized >= 0f) { "cordonToleranceNormalized must be >= 0." }
+    val resolved = resolveFinalScore(targetType, point, scoringMode, decision)
 
     return ArrowImpact(
         uuid = uuid,
         index = index,
         point = point,
-        distanceFromCenter = result.distanceFromCenter,
-        scoreCalculated = decision.scoreCalculated,
-        scoreFinal = decision.scoreFinal,
-        isX = result.isX,
-        isMiss = result.isMiss,
         inputMode = inputMode,
-        isCordDecisionManual = decision.isCordDecisionManual,
         note = note,
         createdAt = createdAt,
         updatedAt = updatedAt,
+        targetType = targetType,
+        finalScoreDecision = resolved,
     )
 }

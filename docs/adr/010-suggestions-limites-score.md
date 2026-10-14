@@ -1,5 +1,9 @@
 # ADR 010 — Suggestions géométriques et décisions de cordon séparées
 
+> Suite : l'[ADR 011](011-decisions-score-explicites.md) supprime la promotion
+> automatique et ajoute les décisions contextualisées. Le maintien de l'ancienne
+> résolution décrit ici correspond au périmètre de la PR #8.
+
 ## Contexte
 
 Les champs historiques `isNearCordon` et `cordonZoneAbove` détectent certaines

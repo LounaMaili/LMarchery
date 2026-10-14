@@ -1,7 +1,4 @@
 package com.lmarchery.core.scoring
 
-data class FinalScoreDecision(
-    val scoreCalculated: Int,
-    val scoreFinal: Int,
-    val isCordDecisionManual: Boolean,
-)
+typealias FinalScoreDecision = com.lmarchery.core.model.scoring.FinalScoreDecision
+typealias ScoreDecisionKind = com.lmarchery.core.model.scoring.ScoreDecisionKind

@@ -106,6 +106,12 @@ par `End.withImpact`, puis intégrer la volée par `Session.withEnd`. Une ancien
 séance reste inchangée ; construire ou copier un parent avec un enfant plus récent
 sans mettre à jour la date du parent provoque une erreur.
 
+Les décisions manuelles d'impact vérifient aussi
+`createdAt <= decidedAt <= updatedAt`. Une nouvelle décision doit être au moins
+aussi récente que la précédente révision de l'impact, y compris lors d'un
+remplacement reconstruit dans les agrégats. Les copies de métadonnées conservent
+la date de la décision déjà enregistrée. Voir [ADR 011](adr/011-decisions-score-explicites.md).
+
 `LocalDateTime` est conservé provisoirement. La convention UTC/fuseau et une
 éventuelle migration vers `Instant` seront décidées avant la persistance dans une
 tâche distincte. Aucun ajustement automatique de fuseau n'est effectué ici.
@@ -271,15 +277,36 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | `distanceFromCenter` | Float | Distance finie et non négative ; calcul intermédiaire en Double, erreur explicite si le rayon dépasse Float.MAX_VALUE |
 | `scoreCalculated` | Int | Score courant calculé depuis x/y (recalculé si déplacement, **pas immuable**) |
 | `scoreFinal` | Int | Score validé par l'utilisateur (peut différer si cordon) |
-| `isX` | Boolean | True si l'impact est dans la zone X (centre du 10) |
-| `isMiss` | Boolean | True si hors cible (r > 1.0) |
+| `isX` | Boolean | Distinction X de la valeur finale, exigeant X activé et score maximal |
+| `isMiss` | Boolean | Indicateur final dérivé de `scoreFinal == 0` |
 | `inputMode` | Enum | Mode de saisie : MANUAL / AUTOMATIC / CORRECTED |
-| `isCordDecisionManual` | Boolean | True si l'utilisateur a tranché manuellement sur le cordon |
+| `isCordDecisionManual` | Boolean | Dérivé du type de provenance `BOUNDARY_JUDGMENT` |
+| `finalScoreDecision` | FinalScoreDecision | Résultat validé pour le profil et le point, avec géométrie, valeur finale et provenance |
 | `note` | String? | Note libre sur cet impact |
 | `createdAt` | LocalDateTime | Date de création de l'impact |
 | `updatedAt` | LocalDateTime | Date de dernière modification de l'impact |
 
-**En V1** : `inputMode` est toujours `MANUAL`. Les champs `isX`, `isMiss` et `isCordDecisionManual` sont calculés ou positionnés automatiquement sauf décision manuelle.
+**En V1** : la position est saisie avec `InputMode.MANUAL`. La provenance de la
+décision est distincte : `GEOMETRY`, `BOUNDARY_JUDGMENT` ou
+`EXCEPTIONAL_CORRECTION`. Une confirmation du même score reste manuelle. Les
+variantes manuelles conservent leur date, la référence de limite ou le motif
+exceptionnel non blanc. Le maximum ne signifie pas automatiquement X et M exclut X.
+
+Le modèle en mémoire exige un `TargetType` explicite. Les scores, la distance
+et les indicateurs sont dérivés du résultat validé. Les anciennes assertions
+scalaires du constructeur contextualisé doivent coïncider avec ce résultat ;
+elles ne servent pas à corriger un score. `copy` conserve le résultat pour les
+métadonnées et rejette les changements scalaires de scoring. Une modification
+manuelle passe par `withFinalScore(targetType, request, updatedAt)`. Les anciennes
+entrées sans contexte rejettent l'opération. La décomposition et l'égalité par
+contenu sont conservées. Les impacts d'une volée partagent le même profil ;
+la séance exige le profil exact de ses impacts.
+
+La future reconstruction Room/export doit d'abord retrouver le profil, résoudre
+la demande structurée et vérifier les assertions stockées. La version du profil,
+la migration d'anciens instantanés sans provenance et la convention UTC/fuseau
+restent à décider avant Room. Aucun adaptateur de stockage n'est ajouté ici.
+Voir [ADR 011](adr/011-decisions-score-explicites.md).
 
 **Clarification sur `scoreCalculated`** :
 
@@ -520,4 +547,4 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
 
 ---
 
-*Document version 1.2 — 30 mai 2026*
+*Document version 1.3 — 15 octobre 2026*

@@ -177,5 +177,6 @@ class SessionDomainModelTest {
         isCordDecisionManual = false,
         createdAt = now,
         updatedAt = updatedAt,
+        targetType = target,
     )
 }

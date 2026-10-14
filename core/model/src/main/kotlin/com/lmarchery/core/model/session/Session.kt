@@ -69,6 +69,9 @@ class Session(
         require(ends.all { !it.updatedAt.isAfter(updatedAt) }) {
             "Session updatedAt must cover every end modification."
         }
+        require(ends.flatMap { it.impacts }.all { it.targetType == targetType }) {
+            "Session impacts must be validated for this exact target profile."
+        }
         require(ends.map { it.uuid }.distinct().size == ends.size) {
             "Session ends must have unique uuid values."
         }

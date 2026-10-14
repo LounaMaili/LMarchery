@@ -228,9 +228,10 @@ Exemples sur les fixtures classiques actuelles, avec la tolérance par défaut :
 | `0.99` ou `1.01` | `1.00`, `TARGET_EDGE` | 1 | M/0 |
 
 Une suggestion ne prouve jamais le contact physique du tube et ne sélectionne
-aucun score final. Cette API n'est pas reliée au chemin historique ci-dessous.
-Elle ne constitue pas encore une prise en charge complète de la décision de
-cordon. Voir [ADR 010](adr/010-suggestions-limites-score.md).
+aucun score final. La décision explicite ci-dessous retrouve ses propres limites
+canoniques dans le profil ; elle n'exige pas qu'une limite soit dans la tolérance.
+Voir [ADR 010](adr/010-suggestions-limites-score.md) et
+[ADR 011](adr/011-decisions-score-explicites.md).
 
 ### Détection historique du cordon — Migration différée
 
@@ -252,35 +253,55 @@ val isNearCordon = zoneAbove != null &&
     abs(r - zone.innerRadiusNormalized) < cordonToleranceNormalized
 ```
 
-`isNearCordon` et `cordonZoneAbove` alimentent actuellement les modes ci-dessous.
-Le nouveau moteur de suggestions ne renseigne pas ces champs et n'en change
-pas le calcul. Leur migration et la décision finale seront traitées séparément.
+`isNearCordon` et `cordonZoneAbove` restent exposés par `calculateScore` pour
+compatibilité. Leurs calculs sont conservés, mais ils ne sont plus consultés
+pour choisir le score final. Le moteur de suggestions reste distinct.
 
 ---
 
 ## 4. Modes de comptage
 
-### Mode Entraînement simple
+Sans demande explicite, **TRAINING, COMPETITION et MANUAL_CORDON conservent tous
+la valeur géométrique**. À `r = 0.105` sur les fixtures classiques : géométrie 9,
+final 9, et suggestion possible 10/9. L'ancienne promotion automatique en
+`COMPETITION` est supprimée ; la tolérance tactile ne prouve jamais un contact.
 
-- L'impact est dans la zone → score de cette zone
-- Pas de considération de cordon
-- C'est le mode par défaut
+La résolution Kotlin pure est contextualisée :
 
-### Mode Compétition
+```kotlin
+fun resolveFinalScore(
+    targetType: TargetType,
+    point: NormalizedPoint,
+    scoringMode: ScoringMode,
+    request: ScoreDecisionRequest = ScoreDecisionRequest.AcceptGeometry,
+): FinalScoreDecision
+```
 
-- Si l'impact **touche la ligne** de la zone supérieure, le score de la zone supérieure est attribué
-- Règle World Archery : le cordon est considéré comme faisant partie de la zone de score supérieure
-- Comportement actuel du moteur : si `cordonZoneAbove` est renseigné, il devient
-  automatiquement `scoreFinal`. Cette promotion à partir d'une tolérance UX
-  reste un **défaut connu à corriger dans la prochaine PR**, pas une règle métier
-  validée. Les nouvelles suggestions ne déclenchent aucune promotion.
+`ScoreDecisionRequest` distingue trois situations :
 
-### Mode Décision manuelle
+| Demande | Contrôles et résultat |
+|---------|-----------------------|
+| `AcceptGeometry` | Accepte score et X géométriques, sans jugement de limite |
+| `JudgeBoundary` | Retrouve la référence `(type, rayon)` dans le profil, vérifie un des deux côtés réels et conserve la date manuelle |
+| `ExceptionalCorrection` | Vérifie la valeur légale et exige un motif non blanc et une date |
 
-- L'application propose le score calculé
-- Si `isNearCordon` est vrai, l'application propose les deux scores possibles
-- L'utilisateur choisit manuellement
-- Le choix est enregistré dans `isCordDecisionManual = true`
+La date des variantes manuelles est obligatoire. Une confirmation conservant
+le score numérique reste manuelle, notamment entre 10 et 10X. Les valeurs sont
+M/0 et les scores **présents dans les zones** : 6 est invalide sur une cible
+10/8/5, même s'il appartient à l'intervalle des bornes déclarées. X exige un
+profil avec X activé et le score maximal ; il n'ajoute aucun point et n'est pas
+automatique sur un maximum. Les jugements n'imposent pas de scores consécutifs.
+
+Une limite arbitraire fournie par un appelant n'est jamais acceptée comme preuve :
+la référence est retrouvée et les valeurs sont reconstruites depuis `TargetType`.
+Un jugement humain est possible hors de la tolérance UX. Une demande commencée
+avec `selected = null` est rejetée, sans repli vers la géométrie. La présence de
+suggestions n'impose aucune confirmation individuelle avant `End.validate`.
+
+Exemple : `JudgeBoundary(SCORE_ZONES, rayon 0.1, valeur 10 non-X, date)` peut
+produire géométrie 9, final 10. La référence X à `0.05` permet de distinguer
+10/X et 10/non-X ; la référence de bord à `1` distingue le score périphérique
+réel et M. Aucun écran de jugement n'est introduit ici.
 
 ---
 
@@ -291,11 +312,25 @@ L'entité `ArrowImpact` stocke deux valeurs de score :
 | Champ | Description |
 |-------|-------------|
 | `scoreCalculated` | Score calculé automatiquement depuis les coordonnées |
-| `scoreFinal` | Score validé par l'utilisateur (peut différer en cas de cordon) |
-| `isCordDecisionManual` | `true` si l'utilisateur a manuellement tranché sur un cordon |
+| `scoreFinal` | Valeur géométrique acceptée ou valeur d'une décision manuelle validée |
+| `isCordDecisionManual` | Dérivé du seul type `BOUNDARY_JUDGMENT`, même si le score numérique est inchangé |
+| `finalScoreDecision.provenance` | Type `GEOMETRY`, `BOUNDARY_JUDGMENT` ou `EXCEPTIONAL_CORRECTION`, date manuelle, référence ou motif selon le cas |
 | `inputMode` | `manual` (saisie manuelle), `automatic` (reconnaissance), `corrected` (correction d'une proposition auto) |
 
-En V1, `inputMode` est toujours `manual` et `scoreCalculated == scoreFinal` sauf décision sur cordon.
+`InputMode` décrit la provenance de la **position**, distincte de la décision de
+score. La V1 saisit les positions manuellement. `scoreCalculated` reste géométrique
+lors d'une décision finale. Les indicateurs finaux sont dérivés de la valeur
+finale : `isMiss == (scoreFinal == 0)` ; M exclut X. Un X géométrique corrigé en
+9 ou M perd son X final ; un M corrigé valablement en 1 perd son indicateur M.
+
+Le constructeur d'`ArrowImpact` exige un contexte de cible et un résultat validé
+pour son point. Les assertions scalaires contradictoires et les modifications
+de scoring par `copy` sont rejetées. La modification passe par
+`withFinalScore(targetType, request, updatedAt)`. La provenance et `createdAt`
+sont conservés lors des copies de métadonnées ; toute nouvelle décision manuelle
+est au moins aussi récente que la révision précédente. Une provenance manuelle
+ne peut être effacée silencieusement. Le déplacement d'un impact déjà arbitré
+reste réservé à une tâche distincte. Voir [ADR 011](adr/011-decisions-score-explicites.md).
 
 ---
 
@@ -317,14 +352,14 @@ scoreEnd = somme des scoreFinal de chaque ArrowImpact de la volée
 
 ### Exemple — proximité géométrique, moteur actuel en COMPETITION
 
-| Flèche | x | y | r | Zone | scoreCalculated | Cordon ? | scoreFinal |
+| Flèche | x | y | r | Zone | scoreCalculated | Suggestion sans jugement | scoreFinal |
 |---------|---|---|---|------|-----------------|----------|------------|
 | 1 | 0.0 | 0.0 | 0.0 | 10 | 10 | Non | 10 |
-| 2 | 0.195 | -0.02 | 0.196 | 9 | 9 | Près de 9/8 ; non détecté actuellement | 9 |
-| 3 | 0.85 | 0.50 | 0.986 | 1 | 1 | Près de 1/M ; non détecté actuellement | 1 |
+| 2 | 0.195 | -0.02 | 0.196 | 9 | 9 | Limite 9/8 | 9 |
+| 3 | 0.85 | 0.50 | 0.986 | 1 | 1 | Limite 1/M | 1 |
 
-**Score volée : 20** avec le moteur actuel. Ces deux positions ne justifient
-aucune promotion automatique ; l'exemple ne valide pas une règle de cordon.
+**Score volée : 20** sans décision explicite. Le nouveau moteur de suggestions
+signale les limites 9/8 et 1/M, mais n'attribue aucun autre score final.
 
 ---
 
@@ -408,4 +443,4 @@ spécificités réglementaires du 10 en salle restent des tâches distinctes.
 
 ---
 
-*Document version 1.3 — 15 octobre 2026*
+*Document version 1.4 — 15 octobre 2026*
