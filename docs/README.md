@@ -26,7 +26,8 @@ Pour préparer le développement et les validations :
 | 6 | OpenCV + IA + correction manuelle | [adr/006-opencv-plus-ia-plus-correction.md](adr/006-opencv-plus-ia-plus-correction.md) |
 | 7 | Validation locale et CI commune | [adr/007-validation-locale-et-ci.md](adr/007-validation-locale-et-ci.md) |
 | 9 | Intégrité des entrées du scoring | [adr/009-integrite-entrees-scoring.md](adr/009-integrite-entrees-scoring.md) |
+| 10 | Suggestions géométriques et décisions de cordon séparées | [adr/010-suggestions-limites-score.md](adr/010-suggestions-limites-score.md) |
 
 ---
 
-*Dernière mise à jour : 14 octobre 2026*
+*Dernière mise à jour : 15 octobre 2026*
