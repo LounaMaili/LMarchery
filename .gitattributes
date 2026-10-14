@@ -1,0 +1,3 @@
+# Keep generated Gradle launchers consistent on Linux and Windows.
+gradlew text eol=lf
+gradlew.bat text eol=crlf

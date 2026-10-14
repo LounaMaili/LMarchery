@@ -17,6 +17,8 @@ La CI utilise JDK 21, les composants du SDK correspondant à AGP 8.7.3 et le
 Gradle Wrapper du dépôt. Elle se déclenche sur les PR sans filtre de branche de
 base, utilise des actions épinglées par SHA, un seul cache Gradle et aucun secret
 de publication ou de signature. Elle ne publie pas d'APK.
+Le wrapper doit correspondre à un JAR officiel vérifiable ; sa distribution est
+contrôlée par SHA-256 sans modifier la version Gradle déclarée.
 
 ## Conséquences
 

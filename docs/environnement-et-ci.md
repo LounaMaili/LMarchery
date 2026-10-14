@@ -15,6 +15,8 @@
 Ces versions restent celles des configurations Gradle ; cette consolidation ne
 met pas les dépendances à jour. `./gradlew --version` affiche aussi le Kotlin
 embarqué dans Gradle (1.9.24), qui n'est pas le plugin Kotlin 2.0.21 du projet.
+Les scripts et le JAR du wrapper sont générés par Gradle 8.10.2 ; le checksum
+officiel de sa distribution est enregistré dans `gradle-wrapper.properties`.
 
 La validation vérifiée sur Fedora utilise Temurin 21.0.12.1. Le `java` système peut
 rester en version 25 : le script sélectionne JDK 21 pour ses propres processus,
@@ -136,6 +138,21 @@ les releases et les SHA dans leurs dépôts officiels.
 peuvent écrire dans leur cache, limité à leur référence de PR par GitHub ; les PR
 de forks lisent seulement les caches disponibles. Ne pas ajouter en parallèle
 le cache Gradle de `setup-java` ou un second `actions/cache`.
+
+Si le contrôle du JAR échoue, ne pas le désactiver ni autoriser arbitrairement
+son hash. Régénérer le wrapper pour la version déjà déclarée, puis comparer son
+SHA-256 au [checksum officiel](https://services.gradle.org/distributions/gradle-8.10.2-wrapper.jar.sha256)
+et relancer toutes les validations :
+
+```bash
+./gradlew wrapper --gradle-version 8.10.2 --distribution-type bin
+sha256sum gradle/wrapper/gradle-wrapper.jar
+./scripts/dev-check.sh --rerun-tasks --console=plain
+```
+
+Les variables Java/SDK doivent être préparées comme pour les autres commandes
+Gradle directes. Vérifier aussi que le checksum de distribution officiel reste
+présent dans `gradle/wrapper/gradle-wrapper.properties`.
 
 Le workflow dispose uniquement de `contents: read`, ne conserve pas les
 identifiants du checkout et ne demande aucun secret personnalisé. Il n'effectue

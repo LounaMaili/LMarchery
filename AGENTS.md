@@ -82,6 +82,10 @@ configuration concernées et la variante sans Android sans modifier les branches
 de référence. Pour une modification uniquement documentaire, vérifier au minimum
 les liens et `git diff --check` ; relancer le script si elle touche la procédure de validation.
 
+Ne pas désactiver la validation du wrapper pour contourner un échec CI. Régénérer
+les fichiers officiels pour la version Gradle déjà déclarée, vérifier le checksum
+du JAR et conserver le checksum de distribution dans `gradle-wrapper.properties`.
+
 Dans le compte rendu, distinguer tests locaux, compilation Android, lint et CI
 GitHub. Une CI configurée localement n'est pas une CI validée : seul un run GitHub
 réussi sur le commit concerné le confirme. Ne pas publier ou modifier les protections
