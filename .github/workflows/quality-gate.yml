@@ -1,7 +1,10 @@
 name: Quality gate
 
 on:
-  # No base-branch filter: PR #3 targets v1/02-session-domain, not main.
+  push:
+    branches:
+      - main
+  # Cover PRs to main and other development branches.
   pull_request:
   workflow_dispatch:
 
@@ -26,12 +29,18 @@ jobs:
       - name: Detect Android module and prepare preferences
         id: project
         shell: bash
+        env:
+          QUALITY_TARGET_BRANCH: ${{ github.base_ref || github.ref_name }}
         run: |
           if [[ -f app/build.gradle.kts || -f app/build.gradle ]]; then
             echo "has_android=true" >> "$GITHUB_OUTPUT"
             echo "ANDROID_USER_HOME=$RUNNER_TEMP/lmarchery-android-home" >> "$GITHUB_ENV"
             mkdir -p "$RUNNER_TEMP/lmarchery-android-home"
           else
+            if [[ "$QUALITY_TARGET_BRANCH" == "main" ]]; then
+              echo "::error::The Android module is required for validations targeting main."
+              exit 1
+            fi
             echo "has_android=false" >> "$GITHUB_OUTPUT"
           fi
 
