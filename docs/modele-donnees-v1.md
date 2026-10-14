@@ -68,6 +68,48 @@ En V1, les entités exportables racines sont `TargetType`, `Session`, `End`, `Ar
 
 Pour les agrégats de séance, une modification d'un `ArrowImpact` met aussi à jour `updatedAt` de son `End` et de sa `Session`. Une modification d'un `End` met aussi à jour `updatedAt` de sa `Session`. Cela permet de comparer une séance complète pendant l'import même si les volées et impacts sont exportés en structure imbriquée.
 
+### Intégrité temporelle des modèles de séance
+
+Les règles suivantes sont vérifiées par `ArrowImpact`, `End` et `Session` :
+
+- `createdAt <= updatedAt` ; les modifications et `copy` conservent `createdAt`.
+- Un enfant ne peut pas être créé avant son parent. Son `updatedAt` ne peut pas
+  dépasser celui du parent : impact → volée → séance.
+- `validatedAt` couvre toutes les modifications des impacts de la volée et ne
+  dépasse pas `End.updatedAt`. `startedAt <= endedAt <= Session.updatedAt` lorsque
+  ces dates existent ; `endedAt` couvre toutes les modifications des volées.
+- `start`, `complete`, `validate` et `withFinalScore` rejettent une date antérieure
+  à la dernière modification déjà enregistrée. Une date égale est acceptée.
+- `withImpact` et `withEnd` propagent une nouvelle révision avec
+  `max(updatedAt du parent existant, date d'intégration)`. La date d'intégration
+  doit couvrir le `updatedAt` de l'enfant reçu et ne pas précéder la création du
+  parent. Par défaut, elle est le `updatedAt` de l'enfant.
+- Un nouvel enfant peut être plus ancien que la dernière modification du parent :
+  le parent conserve alors sa date la plus récente. En revanche, remplacer un
+  enfant existant par une révision obsolète ou changer son `createdAt` est rejeté,
+  y compris pour les impacts imbriqués dans une volée remplacée.
+
+Les constructeurs servent à reconstruire des instantanés cohérents ; ils ne
+réparent pas automatiquement leurs dates. `copy` représente une modification
+d'une valeur existante et contrôle aussi son historique : aucune régression de
+`updatedAt`, changement de `createdAt`, transition antidatée ou révision obsolète
+d'un descendant. Les collections de descendants sont copiées et non modifiables,
+pour empêcher une mutation externe de contourner ces contrôles.
+
+Les modèles restent des valeurs immuables avec égalité par contenu, décomposition
+et paramètres de copie conservés. La copie automatique des anciennes `data class`
+est remplacée par une copie contrôlée ; voir
+[ADR 008](adr/008-integrite-horodatages-domaine.md).
+
+La propagation est explicite : modifier l'impact, intégrer sa nouvelle valeur
+par `End.withImpact`, puis intégrer la volée par `Session.withEnd`. Une ancienne
+séance reste inchangée ; construire ou copier un parent avec un enfant plus récent
+sans mettre à jour la date du parent provoque une erreur.
+
+`LocalDateTime` est conservé provisoirement. La convention UTC/fuseau et une
+éventuelle migration vers `Instant` seront décidées avant la persistance dans une
+tâche distincte. Aucun ajustement automatique de fuseau n'est effectué ici.
+
 `TargetZone` n'est pas une entité exportable racine en V1 : elle est exportée dans son `TargetType` parent et identifiée par ce parent et son score / rayon. Elle ne porte donc pas de `uuid` indépendant en V1.
 
 ---

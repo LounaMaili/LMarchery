@@ -36,6 +36,28 @@ Les entités exportables modifiables portent `createdAt` et `updatedAt`.
 - Les `TargetType` built-in (`isBuiltIn = true`) ne sont jamais écrasés par un import, même si le fichier importé contient un `updatedAt` plus récent.
 - Pour une séance, toute modification d'une volée ou d'un impact met aussi à jour `Session.updatedAt`, afin de résoudre le conflit au niveau de la séance complète.
 
+### Cohérence des instantanés de séance
+
+Les données reconstruites doivent respecter `createdAt <= updatedAt`, une création
+d'enfant postérieure ou égale à celle du parent et un `updatedAt` parent couvrant
+tous ses enfants. La validation d'une volée couvre ses impacts ; la fin d'une
+séance couvre ses volées. Les dates de début, fin et validation ne dépassent pas
+le `updatedAt` de leur objet.
+
+Les modèles rejettent un instantané incohérent au lieu de corriger silencieusement
+ses dates. Lors de la modification d'une valeur existante, `copy` et les méthodes
+métier interdisent aussi la régression de `updatedAt` et conservent `createdAt`.
+L'intégration d'un nouvel enfant plus ancien peut conserver la date du parent ;
+une révision obsolète d'un enfant déjà présent est rejetée. La future résolution
+des conflits doit sélectionner la révision avant son intégration, sans antidater
+la séance ni écraser une révision plus récente d'un descendant.
+
+Ces règles ne constituent pas une implémentation d'import/export. Les types du
+domaine restent provisoirement `LocalDateTime` ; les offsets des exemples JSON
+ne définissent pas encore une convention UTC/fuseau de conversion. Cette décision
+est réservée à une tâche distincte avant la persistance. Voir
+[ADR 008](adr/008-integrite-horodatages-domaine.md).
+
 ---
 
 ## 2. Schéma JSON
