@@ -11,6 +11,9 @@
 7. **[Format d'export V1](export-format-v1.md)** — Schéma JSON, UUID, fusion multi-appareil
 8. **[Roadmap reconnaissance](reconnaissance-roadmap.md)** — Trajectoire V2→V4 pour la reconnaissance d'image
 
+Pour préparer le développement et les validations :
+[Environnement Fedora et CI](environnement-et-ci.md).
+
 ## Décisions d'architecture (ADR)
 
 | # | Titre | Fichier |
@@ -21,7 +24,8 @@
 | 4 | Room / SQLite | [adr/004-room-sqlite.md](adr/004-room-sqlite.md) |
 | 5 | Export / Import JSON | [adr/005-export-import-json.md](adr/005-export-import-json.md) |
 | 6 | OpenCV + IA + correction manuelle | [adr/006-opencv-plus-ia-plus-correction.md](adr/006-opencv-plus-ia-plus-correction.md) |
+| 7 | Validation locale et CI commune | [adr/007-validation-locale-et-ci.md](adr/007-validation-locale-et-ci.md) |
 
 ---
 
-*Dernière mise à jour : 29 avril 2026*
+*Dernière mise à jour : 14 octobre 2026*

@@ -132,7 +132,7 @@ class SessionDomainModelTest {
         isIndoor = true,
         scoringMode = ScoringMode.TRAINING,
         createdAt = now,
-        updatedAt = now,
+        updatedAt = listOfNotNull(now, startedAt, endedAt).max(),
     )
 
     private fun end(

@@ -10,7 +10,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 
 ## État du projet
 
-**Phase 0 — Cadrage fonctionnel** (en cours)
+**V1 — socle local/offline** (en cours)
 
 - [x] Cahier des charges V1
 - [x] Règles de score
@@ -20,10 +20,11 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (6 décisions d'architecture)
-- [ ] Wireframes / maquettes
-- [ ] Moteur de score
-- [ ] Blason interactif
+- [x] ADR (7 décisions techniques)
+- [x] Moteur de score Kotlin/JVM
+- [x] Domaine séance Kotlin/JVM
+- [x] Squelette Android Compose
+- [ ] Blason interactif complet
 - [ ] Premier test terrain
 
 ## Documentation
@@ -56,20 +57,12 @@ Voir [docs/README.md](docs/README.md) pour l'index complet et l'ordre de lecture
 
 ```
 docs/                       ← Documentation fonctionnelle
-android/                    ← Application Android
-  app/
-  core/
-    model/
-    scoring/
-    database/
-    vision/
-  feature/
-    sessions/
-    scoring/
-    equipment/
-    presets/
-    statistics/
-    camera/
+app/                        ← Application Android Compose
+core/
+  model/                    ← Modèles métier purs
+  scoring/                  ← Moteur de score Kotlin/JVM
+  database/                 ← Room, futur
+feature/                    ← Fonctionnalités UI, futur
 vision-lab/                 ← Laboratoire reconnaissance (Python)
   datasets/
   notebooks/
@@ -78,6 +71,44 @@ vision-lab/                 ← Laboratoire reconnaissance (Python)
   models/
   evaluation/
 ```
+
+## Commandes de développement
+
+Prérequis : **JDK 21 complet**, SDK Android **35** et Build Tools **34.0.0**.
+Le [guide environnement et CI](docs/environnement-et-ci.md) décrit l'installation,
+les variables, les rapports et la stratégie pour les PR empilées.
+
+Commande de référence, également utilisée par GitHub Actions :
+
+```bash
+./scripts/dev-check.sh
+```
+
+Le script détecte un JDK 21 et le SDK installé sur Fedora, affiche les versions,
+puis s'arrête au premier échec. Un `JAVA_HOME` explicite doit désigner un JDK 21.
+Pour lancer les validations individuellement, préparer les variables :
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-21-temurin-jdk
+export ANDROID_HOME="$HOME/Android/Sdk"
+./gradlew test
+./gradlew :app:assembleDebug
+./gradlew :app:lintDebug
+```
+
+Le SDK est désigné par `ANDROID_HOME`. Les préférences Android utilisent
+`ANDROID_USER_HOME`, isolé par défaut dans `/tmp/lmarchery-android-home` (ou sous
+`TMPDIR`). `ANDROID_SDK_HOME` est une ancienne variable de préférences, pas le
+chemin du SDK. En sandbox, définir aussi un `GRADLE_USER_HOME` accessible en écriture.
+
+La V1 reste locale/offline : pas de permission réseau, pas de caméra et pas de
+persistance tant que Room n'est pas introduit. La préparation du build peut
+nécessiter le réseau pour télécharger Gradle, le SDK et les dépendances.
+
+Le workflow `.github/workflows/quality-gate.yml` est configuré pour les PR vers
+toutes les branches, y compris les PR empilées. Sans module `:app`, il exécute
+seulement les tests JVM. **Sa configuration ne prouve pas son exécution : attendre
+un run GitHub réussi avant de déclarer la CI validée.**
 
 ## Versions
 
