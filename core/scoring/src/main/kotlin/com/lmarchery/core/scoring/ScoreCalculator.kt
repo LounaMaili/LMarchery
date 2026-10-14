@@ -4,7 +4,6 @@ import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.target.TargetType
 import kotlin.math.abs
-import kotlin.math.sqrt
 
 const val DEFAULT_CORDON_TOLERANCE_NORMALIZED: Float = 0.015f
 
@@ -72,14 +71,4 @@ fun resolveFinalScore(
         scoreFinal = scoreFinal,
         isCordDecisionManual = scoringMode == ScoringMode.MANUAL_CORDON && userSelectedScore != null,
     )
-}
-
-private fun NormalizedPoint.distanceFromCenter(): Float {
-    val xDouble = x.toDouble()
-    val yDouble = y.toDouble()
-    val distance = sqrt(xDouble * xDouble + yDouble * yDouble)
-    require(distance <= Float.MAX_VALUE.toDouble()) {
-        "Distance from center cannot be represented as a finite Float."
-    }
-    return distance.toFloat()
 }

@@ -183,7 +183,56 @@ data class ScoreResult(
 3. Si `r <= zone.outerRadiusNormalized` → l'impact est dans cette zone
 4. Retourner le score, la zone, et les informations de cordon
 
-### Détection du cordon — Assistance UX uniquement
+### Suggestions symétriques de limites — API indépendante
+
+```kotlin
+fun findBoundaryHints(
+    targetType: TargetType,
+    point: NormalizedPoint,
+    touchToleranceNormalized: Float = DEFAULT_CORDON_TOLERANCE_NORMALIZED,
+): List<BoundaryHint>
+```
+
+Cette API recherche toutes les limites à proximité du point, depuis l'intérieur
+comme depuis l'extérieur : chaque séparation entre zones réelles, le X/non-X
+si activé et le bord du blason/M. Elle reçoit le point directement pour éviter
+un état de géométrie ou un résultat de score incohérent fourni par l'appelant.
+
+| Champ de `BoundaryHint` | Sens |
+|-------------------------|------|
+| `type` | `SCORE_ZONES`, `X_RING` (habituellement X/10) ou `TARGET_EDGE` |
+| `radiusNormalized` | Rayon de la limite |
+| `inner` / `outer` | Valeurs du côté du centre / du côté extérieur : `score`, `isX` et `isMiss` dérivé de `score == 0` |
+| `distanceToBoundaryNormalized` | Écart radial absolu en `Double` |
+
+Le X conserve le même score numérique, avec une distinction `isX`. Les scores
+de part et d'autre sont ceux des zones définies, même s'ils ne sont pas
+consécutifs ; au bord, la valeur extérieure est M/0. Deux limites coïncidentes
+(par exemple X couvrant toute la zone centrale) restent distinctes par leur type
+et décrivent leurs côtés réels, sans région intermédiaire fictive.
+
+Le rayon du point est le même `Float` public que celui du calcul géométrique.
+L'écart est obtenu en convertissant les rayons en `Double` avant soustraction.
+Le seuil est **inclusif** : `écart <= touchToleranceNormalized`, sans epsilon
+ajouté. La tolérance par défaut reste provisoirement `0.015f`. Une tolérance
+nulle ne retient que l'égalité exacte ; les valeurs négatives, NaN et infinies
+sont rejetées. Plusieurs limites peuvent être candidates ; elles sont triées
+par distance, rayon puis type (`SCORE_ZONES`, `X_RING`, `TARGET_EDGE`).
+
+Exemples sur les fixtures classiques actuelles, avec la tolérance par défaut :
+
+| Rayon du point | Limite suggérée | Côté intérieur | Côté extérieur |
+|----------------|-----------------|----------------|----------------|
+| `0.095` ou `0.105` | `0.10`, `SCORE_ZONES` | 10, non-X | 9, non-X |
+| `0.04` ou `0.06` | `0.05`, `X_RING` | 10, X | 10, non-X |
+| `0.99` ou `1.01` | `1.00`, `TARGET_EDGE` | 1 | M/0 |
+
+Une suggestion ne prouve jamais le contact physique du tube et ne sélectionne
+aucun score final. Cette API n'est pas reliée au chemin historique ci-dessous.
+Elle ne constitue pas encore une prise en charge complète de la décision de
+cordon. Voir [ADR 010](adr/010-suggestions-limites-score.md).
+
+### Détection historique du cordon — Migration différée
 
 Cette section décrit un comportement existant qui reste à revoir dans une PR
 dédiée. La proximité actuellement calculée est unilatérale et ne couvre pas la
@@ -204,8 +253,8 @@ val isNearCordon = zoneAbove != null &&
 ```
 
 `isNearCordon` et `cordonZoneAbove` alimentent actuellement les modes ci-dessous.
-La séparation entre assistance tactile, contact physique et décision finale sera
-traitée séparément ; cette correction d'intégrité n'en change pas le calcul.
+Le nouveau moteur de suggestions ne renseigne pas ces champs et n'en change
+pas le calcul. Leur migration et la décision finale seront traitées séparément.
 
 ---
 
@@ -223,7 +272,8 @@ traitée séparément ; cette correction d'intégrité n'en change pas le calcul
 - Règle World Archery : le cordon est considéré comme faisant partie de la zone de score supérieure
 - Comportement actuel du moteur : si `cordonZoneAbove` est renseigné, il devient
   automatiquement `scoreFinal`. Cette promotion à partir d'une tolérance UX
-  est un comportement à corriger ultérieurement, **pas une règle métier validée**.
+  reste un **défaut connu à corriger dans la prochaine PR**, pas une règle métier
+  validée. Les nouvelles suggestions ne déclenchent aucune promotion.
 
 ### Mode Décision manuelle
 
@@ -358,4 +408,4 @@ spécificités réglementaires du 10 en salle restent des tâches distinctes.
 
 ---
 
-*Document version 1.2 — 14 octobre 2026*
+*Document version 1.3 — 15 octobre 2026*
