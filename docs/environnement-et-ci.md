@@ -125,9 +125,16 @@ Temurin 21 et, si `:app` existe, installe Platform Tools, la plateforme Android 
 et Build Tools 34.0.0. Il exécute le même script avec `--no-daemon --console=plain`.
 
 Il écoute `pull_request` sans filtre de branche ni de chemin : les PR vers `main`
-et les branches intermédiaires de la pile sont couvertes. Il teste le commit de
-fusion préparé par GitHub avec la base de la PR. `workflow_dispatch` permet aussi
-une exécution manuelle une fois le workflow disponible sur la branche par défaut.
+et les autres branches de développement sont couvertes. Il teste le commit de
+fusion préparé par GitHub avec la base de la PR. Les pushs vers `main`, notamment
+après fusion d'une PR, déclenchent une validation du commit intégré.
+`workflow_dispatch` conserve le lancement manuel.
+
+Pour une validation visant `main` (PR, push ou lancement manuel), l'absence du
+module Android provoque un échec explicite. Les tests, `:app:assembleDebug` et
+`:app:lintDebug` sont donc requis ; aucun `continue-on-error` ne masque leurs
+échecs. La variante JVM seule reste disponible pour les autres branches sans
+module Android.
 
 Les actions maintenues sont épinglées par SHA : `actions/checkout` v7,
 `actions/setup-java` v6, `android-actions/setup-android` v4 et
