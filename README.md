@@ -20,7 +20,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (6 décisions d'architecture)
+- [x] ADR (7 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
@@ -74,14 +74,41 @@ vision-lab/                 ← Laboratoire reconnaissance (Python)
 
 ## Commandes de développement
 
+Prérequis : **JDK 21 complet**, SDK Android **35** et Build Tools **34.0.0**.
+Le [guide environnement et CI](docs/environnement-et-ci.md) décrit l'installation,
+les variables, les rapports et la stratégie pour les PR empilées.
+
+Commande de référence, également utilisée par GitHub Actions :
+
 ```bash
-./gradlew test
-./gradlew :app:assembleDebug
-./gradlew :app:lintDebug
 ./scripts/dev-check.sh
 ```
 
-La V1 reste locale/offline : pas de permission réseau, pas de caméra et pas de persistance tant que Room n'est pas introduit. En environnement sandbox, lancer les commandes avec un JDK 21 et un `GRADLE_USER_HOME` writable ; `./scripts/dev-check.sh` isole `ANDROID_SDK_HOME` dans `/tmp/lmarchery-android-home` par défaut et détecte `/tmp/android-sdk` si `ANDROID_HOME` n'est pas défini.
+Le script détecte un JDK 21 et le SDK installé sur Fedora, affiche les versions,
+puis s'arrête au premier échec. Un `JAVA_HOME` explicite doit désigner un JDK 21.
+Pour lancer les validations individuellement, préparer les variables :
+
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-21-temurin-jdk
+export ANDROID_HOME="$HOME/Android/Sdk"
+./gradlew test
+./gradlew :app:assembleDebug
+./gradlew :app:lintDebug
+```
+
+Le SDK est désigné par `ANDROID_HOME`. Les préférences Android utilisent
+`ANDROID_USER_HOME`, isolé par défaut dans `/tmp/lmarchery-android-home` (ou sous
+`TMPDIR`). `ANDROID_SDK_HOME` est une ancienne variable de préférences, pas le
+chemin du SDK. En sandbox, définir aussi un `GRADLE_USER_HOME` accessible en écriture.
+
+La V1 reste locale/offline : pas de permission réseau, pas de caméra et pas de
+persistance tant que Room n'est pas introduit. La préparation du build peut
+nécessiter le réseau pour télécharger Gradle, le SDK et les dépendances.
+
+Le workflow `.github/workflows/quality-gate.yml` est configuré pour les PR vers
+toutes les branches, y compris les PR empilées. Sans module `:app`, il exécute
+seulement les tests JVM. **Sa configuration ne prouve pas son exécution : attendre
+un run GitHub réussi avant de déclarer la CI validée.**
 
 ## Versions
 

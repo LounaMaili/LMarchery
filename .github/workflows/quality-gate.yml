@@ -1,0 +1,59 @@
+name: Quality gate
+
+on:
+  # No base-branch filter: PR #3 targets v1/02-session-domain, not main.
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-gate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Detect Android module and prepare preferences
+        id: project
+        shell: bash
+        run: |
+          if [[ -f app/build.gradle.kts || -f app/build.gradle ]]; then
+            echo "has_android=true" >> "$GITHUB_OUTPUT"
+            echo "ANDROID_USER_HOME=$RUNNER_TEMP/lmarchery-android-home" >> "$GITHUB_ENV"
+            mkdir -p "$RUNNER_TEMP/lmarchery-android-home"
+          else
+            echo "has_android=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Android SDK
+        if: steps.project.outputs.has_android == 'true'
+        uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4
+        with:
+          packages: platform-tools platforms;android-35 build-tools;34.0.0
+
+      - name: Set up Gradle cache and validate wrapper
+        uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
+        with:
+          # Same-repository PR caches are scoped by GitHub to their PR ref.
+          # Fork PRs only read caches. Do not add a second Gradle cache.
+          cache-read-only: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork }}
+          validate-wrappers: true
+
+      - name: Tests, debug build and lint
+        run: ./scripts/dev-check.sh --no-daemon --console=plain
