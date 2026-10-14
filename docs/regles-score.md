@@ -15,13 +15,27 @@ L'application utilise un système de coordonnées normalisées indépendant de l
 - Les coordonnées sont stockées en `xNormalized` et `yNormalized`
 - La distance au centre est calculée par : `r = sqrt(x² + y²)`
 
+### Intégrité numérique appliquée
+
+`NormalizedPoint` rejette `NaN` et les infinis, y compris par `copy`. Une
+coordonnée finie n'est pas bornée à `[-1, 1]` : `(1.1, 0)` reste un impact hors
+cible valide. Les carrés et la racine sont calculés en `Double`, puis le rayon
+est arrondi en `Float`, type public conservé. Cela évite les débordements et
+sous-débordements intermédiaires des multiplications en `Float`.
+
+Si le rayon en `Double` dépasse `Float.MAX_VALUE`, le calcul lève explicitement
+`IllegalArgumentException`. Il n'est ni plafonné ni remplacé par une distance
+inventée. `ScoreResult` et `ArrowImpact` exigent aussi une distance finie et
+positive ou nulle lors d'une construction ou d'une copie. Ces contrôles ne
+recalculent pas les scores ou les indicateurs d'un impact reconstruit.
+
 ### Exemples
 
 | Position | x | y | r | Zone |
 |----------|---|---|---|------|
 | Centre exact | 0.0 | 0.0 | 0.0 | 10 |
 | Légèrement décalé | 0.05 | -0.08 | 0.094 | 10 |
-| Zone 8 | 0.30 | 0.20 | 0.360 | 8 |
+| Zone 7 | 0.30 | 0.20 | 0.361 | 7 |
 | Bord de cible | 0.90 | 0.40 | 0.985 | 1 |
 | Hors cible | 1.10 | 0.0 | 1.10 | M (miss) |
 
@@ -66,6 +80,33 @@ Le blason classique comporte **10 zones concentriques** numérotées de 1 à 10,
 | 9 | 9 | Jaune | 0.10 | 0.20 |
 | 10 | 10 | Jaune | 0.0 | 0.10 |
 
+### Invariants des définitions de cible
+
+Les constructeurs et les copies vérifient les règles suivantes :
+
+- Chaque `TargetZone` a un score strictement positif et des rayons finis avec
+  `0 <= innerRadiusNormalized < outerRadiusNormalized <= 1` ; `0` reste réservé
+  au miss hors du disque.
+- Une cible contient au moins une zone et couvre entièrement les rayons de `0`
+  à `1`. Après classement du centre vers l'extérieur, les rayons voisins sont
+  exactement égaux. Un trou ou un chevauchement, même d'un `Float` adjacent,
+  est rejeté. Aucune tolérance tactile ne répare la définition d'une cible.
+- `minScore >= 0`, `maxScore >= minScore` ; les scores des zones sont dans cet
+  intervalle, strictement décroissants vers l'extérieur, et la zone centrale
+  vaut `maxScore`. Il n'est pas imposé de zone pour chaque entier de l'intervalle :
+  les scores réellement présents sont ceux des zones. `minScore = 0` peut
+  inclure le miss dans la borne déclarée sans créer une zone de score zéro.
+- Le rayon X est fini, positif ou nul, et ne dépasse pas le rayon extérieur de
+  la zone centrale. S'il est activé, il est strictement positif. Désactiver le X
+  peut conserver son rayon et son libellé pour une réactivation ultérieure.
+- La liste des zones est copiée défensivement et exposée en lecture seule,
+  y compris par `copy`. Son ordre fourni et l'égalité par contenu sont conservés.
+
+Ces contrôles vérifient la cohérence structurelle, pas la conformité d'un profil
+à une discipline ou à une catégorie d'arc. Les quatre fixtures classiques
+40/60/80/122 cm restent inchangées. Voir
+[ADR 009](adr/009-integrite-entrees-scoring.md).
+
 ### Zone X (10+) — Configurable via TargetType
 
 En compétition, la zone centrale du 10 (X) sert à départager les égalités. Plutôt que de hardcoder `r <= 0.05`, la détection du X est configurable au niveau du `TargetType` :
@@ -74,7 +115,7 @@ En compétition, la zone centrale du 10 (X) sert à départager les égalités. 
 |-------|------|-------------|
 | `xRingEnabled` | `Boolean` | Active ou désactive la zone X pour ce type de cible |
 | `xRingLabel` | `String` | Libellé affiché (ex. `"X"`, `"10+"`, `""` si désactivé) |
-| `innerTenRadiusNormalized` | `Float` | Rayon normalisé de la zone X (défaut WA : `0.05`) |
+| `innerTenRadiusNormalized` | `Float` | Rayon normalisé de la zone X (`0.05` dans les fixtures classiques actuelles) |
 
 Ces champs appartiennent à `TargetType`, qui possède aussi un `uuid` stable pour l'export/import. Les zones de score restent définies par les `TargetZone`.
 
@@ -120,13 +161,13 @@ Si `r > 1.0`, la flèche est comptée comme **M** (miss), score = 0.
 ```
 fun calculateScore(
     targetType: TargetType,
-    xNormalized: Float,
-    yNormalized: Float
+    point: NormalizedPoint,
+    cordonToleranceNormalized: Float = DEFAULT_CORDON_TOLERANCE_NORMALIZED
 ): ScoreResult
 
 data class ScoreResult(
     val score: Int,           // 0 (M) à 10
-    val zone: TargetZone,     // Zone correspondante
+    val zone: TargetZone?,    // null pour un miss
     val distanceFromCenter: Float,  // r
     val isX: Boolean,         // true si zone X
     val isMiss: Boolean,      // true si hors cible
@@ -144,17 +185,27 @@ data class ScoreResult(
 
 ### Détection du cordon — Assistance UX uniquement
 
-Un impact est considéré **proche du cordon** si sa distance au centre est dans une zone de tolérance autour de la limite entre deux zones.
+Cette section décrit un comportement existant qui reste à revoir dans une PR
+dédiée. La proximité actuellement calculée est unilatérale et ne couvre pas la
+limite `1/M`. Elle ne constitue pas une règle de décision de cordon validée.
+
+Le moteur marque un impact **proche du cordon** lorsque sa distance à la limite
+intérieure de sa zone est inférieure à la tolérance et qu'une zone supérieure existe.
 
 > ⚠️ **Cette tolérance est une assistance UX, pas une preuve réglementaire.**
-> Elle agrège trois incertitudes : la précision du pointage tactile, le diamètre estimé de la flèche, et une marge d'ergonomie. Elle ne permet **pas** de garantir que la flèche touche réellement le trait. En cas de doute, **l'utilisateur tranche**.
+> Une proximité issue du pointage tactile ne prouve jamais le contact physique
+> du fût avec le trait. Le moteur actuel ne modélise pas ce contact ; sa tolérance
+> ne peut donc pas servir de justification réglementaire à une promotion de score.
 
 ```
-val cordonToleranceNormalized = 0.015  // UX : précision tactile + Ø flèche + marge UX
-val isNearCordon = abs(r - zone.innerRadiusNormalized) < cordonToleranceNormalized
+val cordonToleranceNormalized = 0.015  // Tolérance UX actuelle, pas une mesure du fût
+val isNearCordon = zoneAbove != null &&
+    abs(r - zone.innerRadiusNormalized) < cordonToleranceNormalized
 ```
 
-Si `isNearCordon` est vrai, l'application signale visuellement la situation et propose les deux scores selon le mode de comptage. **La décision finale appartient toujours à l'utilisateur.**
+`isNearCordon` et `cordonZoneAbove` alimentent actuellement les modes ci-dessous.
+La séparation entre assistance tactile, contact physique et décision finale sera
+traitée séparément ; cette correction d'intégrité n'en change pas le calcul.
 
 ---
 
@@ -170,7 +221,9 @@ Si `isNearCordon` est vrai, l'application signale visuellement la situation et p
 
 - Si l'impact **touche la ligne** de la zone supérieure, le score de la zone supérieure est attribué
 - Règle World Archery : le cordon est considéré comme faisant partie de la zone de score supérieure
-- Dans l'application : si `isNearCordon` est vrai et que l'impact est dans la zone de tolérance supérieure, le score proposé est celui de la zone du dessus
+- Comportement actuel du moteur : si `cordonZoneAbove` est renseigné, il devient
+  automatiquement `scoreFinal`. Cette promotion à partir d'une tolérance UX
+  est un comportement à corriger ultérieurement, **pas une règle métier validée**.
 
 ### Mode Décision manuelle
 
@@ -202,25 +255,26 @@ En V1, `inputMode` est toujours `manual` et `scoreCalculated == scoreFinal` sauf
 scoreEnd = somme des scoreFinal de chaque ArrowImpact de la volée
 ```
 
-### Exemple — 3 flèches
+### Exemple — 3 flèches, mode TRAINING
 
 | Flèche | x | y | r | Zone | scoreCalculated | scoreFinal |
 |---------|---|---|---|------|-----------------|------------|
 | 1 | 0.05 | -0.02 | 0.054 | 10 | 10 | 10 |
 | 2 | 0.22 | 0.15 | 0.266 | 8 | 8 | 8 |
-| 3 | 0.41 | -0.30 | 0.509 | 6 | 6 | 6 |
+| 3 | 0.41 | -0.30 | 0.508 | 5 | 5 | 5 |
 
-**Score volée : 24**
+**Score volée : 23**
 
-### Exemple — avec cordon
+### Exemple — proximité géométrique, moteur actuel en COMPETITION
 
 | Flèche | x | y | r | Zone | scoreCalculated | Cordon ? | scoreFinal |
 |---------|---|---|---|------|-----------------|----------|------------|
 | 1 | 0.0 | 0.0 | 0.0 | 10 | 10 | Non | 10 |
-| 2 | 0.195 | -0.02 | 0.196 | 9 | 9 | Proche cordon 10 | 10 (compétition) |
-| 3 | 0.85 | 0.50 | 0.986 | 2 | 2 | Non | 2 |
+| 2 | 0.195 | -0.02 | 0.196 | 9 | 9 | Près de 9/8 ; non détecté actuellement | 9 |
+| 3 | 0.85 | 0.50 | 0.986 | 1 | 1 | Près de 1/M ; non détecté actuellement | 1 |
 
-**Score volée : 22** (mode compétition)
+**Score volée : 20** avec le moteur actuel. Ces deux positions ne justifient
+aucune promotion automatique ; l'exemple ne valide pas une règle de cordon.
 
 ---
 
@@ -295,8 +349,13 @@ Le moteur de score est conçu pour être **générique** :
 3. Le moteur de score l'utilise automatiquement
 ```
 
-Aucune modification du code de calcul n'est nécessaire.
+Cela ne s'applique actuellement qu'aux profils concentriques complets, couvrant
+`[0, 1]`. Une liste tronquée n'active pas implicitement un blason réduit.
+Les futurs profils réduits devront définir le rayon de référence, la surface
+active et la règle hors surface active ; les multispots devront aussi identifier
+le spot et les contraintes de répartition des flèches. Leur support et les
+spécificités réglementaires du 10 en salle restent des tâches distinctes.
 
 ---
 
-*Document version 1.1 — 30 mai 2026*
+*Document version 1.2 — 14 octobre 2026*

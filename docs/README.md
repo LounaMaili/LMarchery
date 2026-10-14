@@ -25,6 +25,7 @@ Pour préparer le développement et les validations :
 | 5 | Export / Import JSON | [adr/005-export-import-json.md](adr/005-export-import-json.md) |
 | 6 | OpenCV + IA + correction manuelle | [adr/006-opencv-plus-ia-plus-correction.md](adr/006-opencv-plus-ia-plus-correction.md) |
 | 7 | Validation locale et CI commune | [adr/007-validation-locale-et-ci.md](adr/007-validation-locale-et-ci.md) |
+| 9 | Intégrité des entrées du scoring | [adr/009-integrite-entrees-scoring.md](adr/009-integrite-entrees-scoring.md) |
 
 ---
 

@@ -128,14 +128,14 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 | `discipline` | String | Discipline (ex. "indoor", "outdoor", "field") |
 | `diameterCm` | Int | Diamètre officiel en cm (40, 60, 80, 122) |
 | `maxScore` | Int | Score maximum par flèche (10 pour classique) |
-| `minScore` | Int | Score minimum (1, ou 0 si miss compté) |
+| `minScore` | Int | Borne inférieure déclarée des scores de zone (0 peut inclure le miss hors zone) |
 | `defaultArrowCount` | Int | Nombre de flèches par volée par défaut |
 | `defaultDistanceM` | Int | Distance de tir par défaut en mètres |
 | `zones` | List\<TargetZone\> | Zones de score (relation 1:N) |
 | `isBuiltIn` | Boolean | True si prédéfini (non modifiable par l'utilisateur) |
 | `xRingEnabled` | Boolean | Active ou désactive la zone X pour ce type de cible |
 | `xRingLabel` | String | Libellé affiché de la zone X (ex. "X", "10+", ou vide si désactivée) |
-| `innerTenRadiusNormalized` | Float | Rayon normalisé de la zone X ; `0.05` pour une cible WA classique, `0.0` si désactivée |
+| `innerTenRadiusNormalized` | Float | Rayon normalisé du X, contenu dans la zone maximale ; peut être conservé ou mis à zéro si désactivé |
 | `createdAt` | LocalDateTime | Date de création ou de définition initiale |
 | `updatedAt` | LocalDateTime | Date de dernière modification ; les built-in ne sont pas écrasés par l'import |
 
@@ -146,11 +146,28 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 - Classique 60 cm (salle)
 - Classique 40 cm (salle, jeunes)
 
+**Invariants appliqués au domaine** : la liste des zones est une copie non
+modifiable, validée au constructeur comme par `copy`. La cible couvre le disque
+complet `[0, 1]`, sans trou ni chevauchement, avec des scores strictement
+décroissants du centre vers l'extérieur, compris dans `minScore..maxScore`.
+La zone centrale vaut `maxScore`. Le rayon X est fini, non négatif et contenu
+dans cette zone ; il est strictement positif lorsqu'il est activé.
+
+Les paramètres publics, la copie, l'égalité par contenu et la décomposition de
+`TargetType` sont conservés, avec une classe immuable selon le même principe que
+les agrégats de séance. Les rayons réduits et les multispots ne sont pas pris en
+charge implicitement. Voir les [règles détaillées](regles-score.md#invariants-des-définitions-de-cible)
+et [ADR 009](adr/009-integrite-entrees-scoring.md).
+
 ---
 
 ### 2.2 TargetZone
 
 Zone de score d'un type de cible.
+
+Le score est strictement positif ; les rayons sont finis et vérifient
+`0 <= innerRadiusNormalized < outerRadiusNormalized <= 1`, y compris par copie.
+Les limites partagées appartiennent à la zone intérieure au score supérieur.
 
 | Attribut | Type | Description |
 |----------|------|-------------|
@@ -249,9 +266,9 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | `uuid` | String | Identifiant stable pour export/import (UUID v4) |
 | `endId` | Long (FK) | Référence vers End |
 | `index` | Int | Ordre de la flèche dans la volée (1, 2, 3…) |
-| `xNormalized` | Float | Coordonnée X normalisée (-1.0 à 1.0, centre = 0) |
-| `yNormalized` | Float | Coordonnée Y normalisée (-1.0 à 1.0, centre = 0) |
-| `distanceFromCenter` | Float | Distance au centre = sqrt(x² + y²) |
+| `xNormalized` | Float | Coordonnée X finie, centre = 0 ; peut dépasser ±1 pour un miss |
+| `yNormalized` | Float | Coordonnée Y finie, centre = 0 ; peut dépasser ±1 pour un miss |
+| `distanceFromCenter` | Float | Distance finie et non négative ; calcul intermédiaire en Double, erreur explicite si le rayon dépasse Float.MAX_VALUE |
 | `scoreCalculated` | Int | Score courant calculé depuis x/y (recalculé si déplacement, **pas immuable**) |
 | `scoreFinal` | Int | Score validé par l'utilisateur (peut différer si cordon) |
 | `isX` | Boolean | True si l'impact est dans la zone X (centre du 10) |

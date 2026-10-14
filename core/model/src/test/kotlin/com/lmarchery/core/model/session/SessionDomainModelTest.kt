@@ -111,6 +111,17 @@ class SessionDomainModelTest {
         }
     }
 
+    @Test
+    fun `impact constructors and copies reject non finite or negative distances`() {
+        val original = impact(uuid = "impact-1", index = 1)
+        for (distance in listOf(Float.NaN, Float.POSITIVE_INFINITY, Float.NEGATIVE_INFINITY, -1f)) {
+            assertFailsWith<IllegalArgumentException> {
+                impact(uuid = "impact-1", index = 1, distanceFromCenter = distance)
+            }
+            assertFailsWith<IllegalArgumentException> { original.copy(distanceFromCenter = distance) }
+        }
+    }
+
     private fun session(
         status: SessionStatus = SessionStatus.IN_PROGRESS,
         startedAt: LocalDateTime? = now.plusMinutes(1),
@@ -152,11 +163,12 @@ class SessionDomainModelTest {
         uuid: String,
         index: Int,
         updatedAt: LocalDateTime = now,
+        distanceFromCenter: Float = 0f,
     ): ArrowImpact = ArrowImpact(
         uuid = uuid,
         index = index,
         point = NormalizedPoint(0f, 0f),
-        distanceFromCenter = 0f,
+        distanceFromCenter = distanceFromCenter,
         scoreCalculated = 10,
         scoreFinal = 10,
         isX = true,

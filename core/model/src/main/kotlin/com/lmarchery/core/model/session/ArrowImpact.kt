@@ -37,7 +37,9 @@ class ArrowImpact(
     init {
         require(uuid.isNotBlank()) { "ArrowImpact uuid must not be blank." }
         require(index > 0) { "ArrowImpact index must be positive." }
-        require(distanceFromCenter >= 0f) { "ArrowImpact distanceFromCenter must be >= 0." }
+        require(distanceFromCenter.isFinite() && distanceFromCenter >= 0f) {
+            "ArrowImpact distanceFromCenter must be finite and >= 0."
+        }
         require(scoreCalculated >= 0) { "ArrowImpact scoreCalculated must be >= 0." }
         require(scoreFinal >= 0) { "ArrowImpact scoreFinal must be >= 0." }
         require(!updatedAt.isBefore(createdAt)) {

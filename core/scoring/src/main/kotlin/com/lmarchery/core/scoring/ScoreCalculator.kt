@@ -74,5 +74,12 @@ fun resolveFinalScore(
     )
 }
 
-private fun NormalizedPoint.distanceFromCenter(): Float =
-    sqrt((x * x + y * y).toDouble()).toFloat()
+private fun NormalizedPoint.distanceFromCenter(): Float {
+    val xDouble = x.toDouble()
+    val yDouble = y.toDouble()
+    val distance = sqrt(xDouble * xDouble + yDouble * yDouble)
+    require(distance <= Float.MAX_VALUE.toDouble()) {
+        "Distance from center cannot be represented as a finite Float."
+    }
+    return distance.toFloat()
+}
