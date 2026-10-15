@@ -86,6 +86,7 @@ fun summarizeSessionScore(session: Session): SessionScoreSummary {
         maxScoreCount = validatedImpacts.count { it.scoreFinal == session.targetType.maxScore },
         xCount = validatedImpacts.count { it.isX },
         missCount = validatedImpacts.count { it.isMiss },
+        nineCount = validatedImpacts.count { it.scoreFinal == 9 },
     )
 }
 

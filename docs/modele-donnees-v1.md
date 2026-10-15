@@ -145,12 +145,28 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 | `createdAt` | LocalDateTime | Date de création ou de définition initiale |
 | `updatedAt` | LocalDateTime | Date de dernière modification ; les built-in ne sont pas écrasés par l'import |
 
-**Instances V1** :
+**Fixtures historiques conservées** (elles ne sélectionnent pas un règlement indoor) :
 
 - Classique 122 cm (extérieur)
 - Classique 80 cm (extérieur / salle)
 - Classique 60 cm (salle)
 - Classique 40 cm (salle, jeunes)
+
+**Profils indoor datés** : `WorldArcheryIndoorTargetProfiles` définit quatre
+identités distinctes pour classique/poulies en 40 cm à 18 m et 60 cm à 25 m,
+selon l'édition World Archery du 27 janvier 2026. Le choix est explicite et ne
+se déduit pas du diamètre ni de `Session.isIndoor`. Le rayon du 10 vient de la
+zone maximale (`0.10` classique, `0.05` poulies), indépendamment du rayon X.
+Ces profils ont `xRingEnabled = false`, un libellé X vide et un rayon X nul.
+Leur UUID identifie une définition publiée figée ; une évolution réglementaire
+reçoit une nouvelle identité, sans migration implicite des anciennes séances.
+Les UUID et limites sont consignés dans
+[ADR 013](adr/013-profils-indoor-world-archery.md).
+
+`SessionScoreSummary` ajoute `nineCount` aux compteurs existants : il compte
+les valeurs finales égales à 9 dans les volées validées. Les compteurs de maximum,
+X et M conservent leur sens générique ; sur ces profils le maximum est 10 et X
+reste absent, y compris après jugement ou repositionnement.
 
 **Invariants appliqués au domaine** : la liste des zones est une copie non
 modifiable, validée au constructeur comme par `copy`. La cible couvre le disque
@@ -575,4 +591,4 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
 
 ---
 
-*Document version 1.4 — 15 octobre 2026*
+*Document version 1.5 — 15 octobre 2026*
