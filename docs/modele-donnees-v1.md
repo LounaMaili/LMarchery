@@ -2,6 +2,13 @@
 
 > Définition des entités, attributs et relations pour la version 1
 
+**État implémenté** : `TargetType`, `TargetZone`, `Session`, `End`, `ArrowImpact`
+et les valeurs de scoring/temps sont des modèles Kotlin purs. Les IDs/FK Room
+des tableaux et les modèles `Bow`, `ArrowSet`, `SessionPreset` restent prévus,
+sans classes de stockage correspondantes. Le contrat typé de sauvegarde est
+décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md) ; aucun
+import/export de fichier ni migration n'est opérationnel.
+
 ---
 
 ## 1. Vue d'ensemble
@@ -61,10 +68,16 @@ En V1, les entités exportables racines sont `TargetType`, `Session`, `End`, `Ar
 |-------|-------|
 | `id` | Clé primaire locale Room. Elle n'est jamais utilisée comme clé de fusion entre appareils. |
 | `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
-| `createdAt` | Instant UTC de création ou de définition initiale pour les données built-in. |
+| `createdAt` | Instant UTC de création des agrégats modifiables ; absent des profils immuables. |
 | `updatedAt` | Instant UTC de dernière modification fonctionnelle, servant à comparer les révisions. |
 
 À la création d'une entité modifiable, `createdAt` et `updatedAt` ont la même valeur. Toute modification utilisateur met à jour `updatedAt`.
+
+Les profils `TargetType` n'ont ni `id`, ni `createdAt`, ni `updatedAt` dans le
+domaine et le contrat de sauvegarde. Leur UUID désigne une définition complète
+immuable ; l'édition éventuelle est une métadonnée séparée du snapshot. Les
+versions du schéma et du scoring sont également distinctes. Une date de révision
+ne permet jamais de déduire seule la causalité entre appareils.
 
 Pour les agrégats de séance, une modification d'un `ArrowImpact` met aussi à jour `updatedAt` de son `End` et de sa `Session`. Une modification d'un `End` met aussi à jour `updatedAt` de sa `Session`. Cela permet de comparer une séance complète pendant l'import même si les volées et impacts sont exportés en structure imbriquée.
 
@@ -137,7 +150,6 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 
 | Attribut | Type | Description |
 |----------|------|-------------|
-| `id` | Long (PK) | Identifiant unique |
 | `uuid` | String | Identifiant stable pour export/import (UUID v4, stable aussi pour les cibles built-in) |
 | `name` | String | Nom affiché (ex. "Classique 10 zones") |
 | `discipline` | String | Discipline (ex. "indoor", "outdoor", "field") |
@@ -151,8 +163,6 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 | `xRingEnabled` | Boolean | Active ou désactive la zone X pour ce type de cible |
 | `xRingLabel` | String | Libellé affiché de la zone X (ex. "X", "10+", ou vide si désactivée) |
 | `innerTenRadiusNormalized` | Float | Rayon normalisé du X, contenu dans la zone maximale ; peut être conservé ou mis à zéro si désactivé |
-| `createdAt` | Instant | Date de création ou de définition initiale |
-| `updatedAt` | Instant | Date de dernière modification ; les built-in ne sont pas écrasés par l'import |
 
 **Fixtures historiques conservées** (elles ne sélectionnent pas un règlement indoor) :
 
@@ -349,10 +359,11 @@ séance clôturée garde ses volées et sa clôture. Aucun parcours de réouvert
 ou suppression des traces n'est ajouté. Voir
 [ADR 012](adr/012-repositionnement-explicite-impacts.md).
 
-La future reconstruction Room/export doit d'abord retrouver le profil, résoudre
-la demande structurée et vérifier les assertions stockées. La version du profil
-et la migration d'anciens instantanés sans provenance restent à décider avant Room.
-La convention UTC est définie par l'ADR 014. Aucun adaptateur de stockage n'est ajouté ici.
+La reconstruction typée résout d'abord le profil complet et sa définition
+canonique si connue, puis rejoue les décisions et repositionnements et vérifie
+les assertions stockées. Les conflits de révision restent non résolus ; aucune
+provenance manquante n'est inventée. Voir l'ADR 015. La convention UTC est définie
+par l'ADR 014. Aucun adaptateur de stockage n'est ajouté ici.
 Voir [ADR 011](adr/011-decisions-score-explicites.md).
 
 **Clarification sur `scoreCalculated`** :
@@ -526,78 +537,27 @@ enum class EndStatus {
 
 ## 5. Export / Import
 
-### Format V1
+### Contrat typé actuellement pris en charge
 
-Export en JSON contenant l'intégralité des données utilisateur. Le schéma complet fait foi dans `docs/export-format-v1.md`.
+Le [contrat de sauvegarde](export-format-v1.md) fait foi : `schemaVersion = 1`
+et `scoringContractVersion = 1`, profils complets avec édition distincte,
+séances/volées/impacts imbriqués, décisions explicites et traces rejouées.
+Les UUID remplacent toute référence locale ; les profils immuables ne reçoivent
+aucun horodatage artificiel. Les totaux et statistiques sont dérivés.
 
-Les relations exportées utilisent les `uuid`, pas les `id` Room :
+`reconstructArchive(snapshot, known?)` fournit un résultat accepté ou une donnée
+nécessitant intervention avec son problème typé. La source contradictoire est
+conservée ; aucune séance partielle n'est acceptée. Pour une révision existante,
+le référentiel connu doit être fourni : toute divergence reste un conflit,
+indépendamment de l'ordre des `updatedAt`. Les préfixes de traces connus ne
+peuvent être supprimés ni réécrits. Sans référentiel, une restauration indépendante
+ne peut pas découvrir un historique omis de toutes les données reçues.
 
-```json
-{
-  "version": 1,
-  "exportDate": "2026-04-29T08:30:00Z",
-  "targetTypes": [
-    {
-      "uuid": "a1b2c3d4-...",
-      "name": "Classique 80 cm",
-      "xRingEnabled": true,
-      "xRingLabel": "X",
-      "innerTenRadiusNormalized": 0.05,
-      "createdAt": "2026-04-29T08:30:00Z",
-      "updatedAt": "2026-04-29T08:30:00Z"
-    }
-  ],
-  "bows": [...],
-  "arrowSets": [...],
-  "sessionPresets": [...],
-  "sessions": [
-    {
-      "uuid": "q7r8s9t0-...",
-      "date": { "localDateTime": "2026-04-28T18:00:00", "zoneId": "Europe/Paris", "offset": "+02:00" },
-      "title": "Entraînement salle",
-      "targetTypeUuid": "a1b2c3d4-...",
-      "arrowCountMode": "FIXED",
-      "arrowCountPerEnd": 3,
-      "updatedAt": "2026-04-28T17:15:00Z",
-      "ends": [
-        {
-          "uuid": "u1v2w3x4-...",
-          "index": 1,
-          "impacts": [
-            {
-              "uuid": "y5z6a7b8-...",
-              "index": 1,
-              "xNormalized": 0.05,
-              "yNormalized": -0.02,
-              "scoreFinal": 10,
-              "scoreDecision": {
-                "kind": "GEOMETRY",
-                "decidedAt": null,
-                "boundary": null,
-                "reason": null
-              },
-              "inputMode": "MANUAL"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Considérations
-
-- Les `TargetType` built-in sont inclus dans l'export
-- Les `id` locaux peuvent être inclus pour compatibilité locale ou diagnostic, mais ne doivent jamais servir à la fusion
-- **Identifiants stables (`uuid`)** : chaque entité exportable racine (`TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet`, `SessionPreset`) possède un `uuid` (UUID v4). L'export utilise le `uuid` comme identifiant principal pour permettre :
-  - L'import sur un autre appareil sans conflit d'IDs locaux (remapping automatique via `uuid`)
-  - La fusion de données issues de plusieurs appareils (multi-appareil)
-  - Le dédoublonnage fiable lors de l'import (recherche par `uuid`, mise à jour si existant)
-- Les clés `id`, si elles sont présentes dans l'export, ne doivent pas être utilisées comme clé de fusion entre appareils
-- `updatedAt` compare les instants des révisions, sans prouver leur causalité entre appareils. La résolution future devra traiter les horloges décalées, les dates égales avec contenus différents et les anciennes dates non résolues (ADR 014). Les `TargetType` built-in ne sont pas écrasés par un fichier importé.
-- Les entités futures (WeatherSnapshot, Photo, DetectionResult) seront ajoutées au format dans les versions ultérieures
+Le schéma JSON opérationnel, Room, le contenu du matériel/presets et la résolution
+explicite des conflits restent à développer. Aucun ancien exemple documentaire
+incomplet ne fait l'objet d'une migration inventant ses valeurs manquantes.
+Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
 ---
 
-*Document version 1.6 — 15 octobre 2026*
+*Document version 1.7 — 15 octobre 2026*

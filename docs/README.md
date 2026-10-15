@@ -8,7 +8,7 @@
 4. **[Modèle de données V1](modele-donnees-v1.md)** — Entités, relations, attributs, énumérations, export/import
 5. **[Backlog V1](backlog-v1.md)** — Tickets de travail par épic,可直接 actionnable
 6. **[Tests terrain V1](tests-terrain-v1.md)** — Grilles de test pour les premiers retours réels
-7. **[Format d'export V1](export-format-v1.md)** — Schéma JSON, UUID, fusion multi-appareil
+7. **[Contrat de sauvegarde V1](export-format-v1.md)** — Snapshots typés, UUID, reconstruction et conflits ; fichiers encore prévus
 8. **[Roadmap reconnaissance](reconnaissance-roadmap.md)** — Trajectoire V2→V4 pour la reconnaissance d'image
 
 Pour préparer le développement et les validations :
@@ -31,6 +31,7 @@ Pour préparer le développement et les validations :
 | 12 | Repositionnement explicite des impacts | [adr/012-repositionnement-explicite-impacts.md](adr/012-repositionnement-explicite-impacts.md) |
 | 13 | Profils indoor World Archery, édition 2026-01-27 | [adr/013-profils-indoor-world-archery.md](adr/013-profils-indoor-world-archery.md) |
 | 14 | Instants UTC et date civile de séance | [adr/014-convention-temporelle-utc.md](adr/014-convention-temporelle-utc.md) |
+| 15 | Sauvegarde versionnée et reconstruction contextualisée | [adr/015-sauvegarde-versionnee-reconstruction.md](adr/015-sauvegarde-versionnee-reconstruction.md) |
 
 ---
 
