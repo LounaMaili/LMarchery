@@ -36,6 +36,10 @@ Avant toute modification, lire les documents utiles dans cet ordre :
 - Distinguer `scoreCalculated` et `scoreFinal`.
 - Stocker les entités exportables avec UUID v4. Ne jamais utiliser les IDs Room comme clé de fusion entre appareils.
 - Toute nouvelle décision structurante doit être documentée dans un ADR.
+- Les événements et révisions utilisent `Instant` ; `Session.date` est une valeur
+  civile `SessionDateTime` avec fuseau IANA et offset validés (ADR 014). Ne jamais
+  interpréter un `LocalDateTime` sans contexte comme UTC. Les points d'entrée qui
+  créent l'heure courante utilisent une `Clock` injectable, par défaut UTC.
 
 ## Règles Android
 

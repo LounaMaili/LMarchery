@@ -6,7 +6,7 @@ import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
 import com.lmarchery.core.scoring.scoreArrowImpact
-import java.time.LocalDateTime
+import java.time.Clock
 import java.util.UUID
 
 data class ScoringDemoState(
@@ -26,11 +26,12 @@ data class ScoringDemoState(
 
     fun addImpact(
         point: NormalizedPoint,
-        now: LocalDateTime = LocalDateTime.now(),
+        clock: Clock = Clock.systemUTC(),
         uuid: String = UUID.randomUUID().toString(),
     ): ScoringDemoState {
         if (!canAddImpact) return this
 
+        val now = clock.instant()
         val nextIndex = impacts.size + 1
         val impact = scoreArrowImpact(
             uuid = uuid,

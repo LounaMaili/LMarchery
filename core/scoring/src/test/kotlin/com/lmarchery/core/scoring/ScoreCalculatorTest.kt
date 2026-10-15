@@ -2,7 +2,7 @@ package com.lmarchery.core.scoring
 
 import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.ScoreDecisionRequest
-import java.time.LocalDateTime
+import java.time.Instant
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
 import kotlin.test.Test
@@ -154,7 +154,7 @@ class ScoreCalculatorTest {
             scoringMode = ScoringMode.MANUAL_CORDON,
             request = ScoreDecisionRequest.JudgeBoundary(
                 BoundaryReference(BoundaryType.SCORE_ZONES, 0.1f), BoundaryValue(10),
-                LocalDateTime.parse("2026-10-15T10:00:00")),
+                Instant.parse("2026-10-15T10:00:00Z")),
         )
 
         assertEquals(9, decision.scoreCalculated)

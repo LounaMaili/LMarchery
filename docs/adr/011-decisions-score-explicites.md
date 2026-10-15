@@ -134,8 +134,8 @@ version de profil : la politique de versionnement/migration reste à décider.
 Les instantanés historiques sans provenance structurée ne permettent pas de
 reconstituer sûrement un jugement ; leur migration reste une décision distincte.
 
-`LocalDateTime` reste provisoire. La convention UTC/fuseau et les conversions
-des offsets illustratifs de l'export seront définies avant la persistance.
+L'[ADR 014](014-convention-temporelle-utc.md) migre les dates d'événement et de
+décision vers `Instant`, avec conversion stricte des offsets et format UTC prévu.
 Aucun Room, import/export opérationnel, nouvel écran, profil réglementaire,
 blason réduit ou multispot n'est ajouté. La détection tactile reste une aide
 géométrique et ne prouve jamais le contact physique du tube avec un trait.

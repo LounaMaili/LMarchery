@@ -3,14 +3,16 @@ package com.lmarchery.core.model.session
 import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.ZoneId
+import java.time.Instant
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertNull
 
 class SessionDomainModelTest {
-    private val now: LocalDateTime = LocalDateTime.parse("2026-05-30T10:00:00")
+    private val now: Instant = Instant.parse("2026-05-30T10:00:00Z")
     private val target = TargetType(
         uuid = "11111111-1111-4111-8111-111111111111",
         name = "Test target",
@@ -36,15 +38,15 @@ class SessionDomainModelTest {
         assertNull(draft.startedAt)
         assertNull(draft.endedAt)
 
-        val started = draft.start(now.plusMinutes(1))
+        val started = draft.start(now.plusSeconds(60))
         assertEquals(SessionStatus.IN_PROGRESS, started.status)
-        assertEquals(now.plusMinutes(1), started.startedAt)
-        assertEquals(now.plusMinutes(1), started.updatedAt)
+        assertEquals(now.plusSeconds(60), started.startedAt)
+        assertEquals(now.plusSeconds(60), started.updatedAt)
 
-        val completed = started.complete(now.plusHours(1))
+        val completed = started.complete(now.plusSeconds(3600))
         assertEquals(SessionStatus.COMPLETED, completed.status)
-        assertEquals(now.plusHours(1), completed.endedAt)
-        assertEquals(now.plusHours(1), completed.updatedAt)
+        assertEquals(now.plusSeconds(3600), completed.endedAt)
+        assertEquals(now.plusSeconds(3600), completed.updatedAt)
     }
 
     @Test
@@ -53,10 +55,10 @@ class SessionDomainModelTest {
 
         assertNull(editing.validatedAt)
 
-        val validated = editing.validate(now.plusMinutes(5))
+        val validated = editing.validate(now.plusSeconds(300))
         assertEquals(EndStatus.VALIDATED, validated.status)
-        assertEquals(now.plusMinutes(5), validated.validatedAt)
-        assertEquals(now.plusMinutes(5), validated.updatedAt)
+        assertEquals(now.plusSeconds(300), validated.validatedAt)
+        assertEquals(now.plusSeconds(300), validated.updatedAt)
     }
 
     @Test
@@ -90,20 +92,20 @@ class SessionDomainModelTest {
     @Test
     fun `with impact refreshes end updatedAt and keeps unique indexes`() {
         val editing = end(status = EndStatus.EDITING)
-        val newImpact = impact(uuid = "impact-1", index = 1, updatedAt = now.plusMinutes(2))
+        val newImpact = impact(uuid = "impact-1", index = 1, updatedAt = now.plusSeconds(120))
 
         val updated = editing.withImpact(newImpact)
 
         assertEquals(listOf(newImpact), updated.impacts)
-        assertEquals(now.plusMinutes(2), updated.updatedAt)
+        assertEquals(now.plusSeconds(120), updated.updatedAt)
     }
 
     @Test
     fun `completed session cannot be modified`() {
         val completed = session(
             status = SessionStatus.COMPLETED,
-            startedAt = now.plusMinutes(1),
-            endedAt = now.plusHours(1),
+            startedAt = now.plusSeconds(60),
+            endedAt = now.plusSeconds(3600),
         )
 
         assertFailsWith<IllegalArgumentException> {
@@ -124,13 +126,13 @@ class SessionDomainModelTest {
 
     private fun session(
         status: SessionStatus = SessionStatus.IN_PROGRESS,
-        startedAt: LocalDateTime? = now.plusMinutes(1),
-        endedAt: LocalDateTime? = null,
+        startedAt: Instant? = now.plusSeconds(60),
+        endedAt: Instant? = null,
         arrowCountMode: ArrowCountMode = ArrowCountMode.FIXED,
         arrowCountPerEnd: Int? = 3,
     ): Session = Session(
         uuid = "session-1",
-        date = now,
+        date = SessionDateTime.fromInstant(now, ZoneId.of("UTC")),
         status = status,
         startedAt = startedAt,
         endedAt = endedAt,
@@ -162,7 +164,7 @@ class SessionDomainModelTest {
     private fun impact(
         uuid: String,
         index: Int,
-        updatedAt: LocalDateTime = now,
+        updatedAt: Instant = now,
         distanceFromCenter: Float = 0f,
     ): ArrowImpact = ArrowImpact(
         uuid = uuid,

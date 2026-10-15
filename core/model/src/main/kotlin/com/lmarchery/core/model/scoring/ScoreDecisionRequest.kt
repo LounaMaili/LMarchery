@@ -1,6 +1,6 @@
 package com.lmarchery.core.model.scoring
 
-import java.time.LocalDateTime
+import java.time.Instant
 
 /** A started request may be incomplete; only a validated FinalScoreDecision is storable. */
 sealed interface ScoreDecisionRequest {
@@ -9,13 +9,13 @@ sealed interface ScoreDecisionRequest {
     data class JudgeBoundary(
         val boundary: BoundaryReference,
         val selected: BoundaryValue?,
-        val decidedAt: LocalDateTime,
+        val decidedAt: Instant,
     ) : ScoreDecisionRequest
 
     data class ExceptionalCorrection(
         val selected: BoundaryValue?,
         val reason: String,
-        val decidedAt: LocalDateTime,
+        val decidedAt: Instant,
     ) : ScoreDecisionRequest
 }
 
@@ -23,7 +23,7 @@ enum class ScoreDecisionKind { GEOMETRY, BOUNDARY_JUDGMENT, EXCEPTIONAL_CORRECTI
 
 data class ScoreDecisionProvenance(
     val kind: ScoreDecisionKind,
-    val decidedAt: LocalDateTime? = null,
+    val decidedAt: Instant? = null,
     val boundary: BoundaryReference? = null,
     val reason: String? = null,
 ) {

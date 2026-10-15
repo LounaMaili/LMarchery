@@ -13,7 +13,9 @@ import com.lmarchery.core.model.session.SessionStatus
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.ZoneId
+import java.time.Instant
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -23,7 +25,7 @@ import kotlin.test.assertTrue
 
 class ExplicitFinalScoreDecisionTest {
     private val target = ClassicTargetFixtures.classic40
-    private val now = LocalDateTime.parse("2026-10-15T10:00:00")
+    private val now = Instant.parse("2026-10-15T10:00:00Z")
     private val tenNine = BoundaryReference(BoundaryType.SCORE_ZONES, 0.1f)
     private val xTen = BoundaryReference(BoundaryType.X_RING, 0.05f)
     private val edge = BoundaryReference(BoundaryType.TARGET_EDGE, 1f)
@@ -251,9 +253,9 @@ class ExplicitFinalScoreDecisionTest {
 
     @Test
     fun `backdated decisions are rejected even with a newer updatedAt`() {
-        val original = impact(updatedAt = now.plusMinutes(10))
+        val original = impact(updatedAt = now.plusSeconds(600))
         assertFailsWith<IllegalArgumentException> {
-            original.withFinalScore(target, judgment(BoundaryValue(10), now.plusMinutes(5)), now.plusMinutes(15))
+            original.withFinalScore(target, judgment(BoundaryValue(10), now.plusSeconds(300)), now.plusSeconds(900))
         }
         assertEquals(9, original.scoreFinal)
     }
@@ -261,16 +263,16 @@ class ExplicitFinalScoreDecisionTest {
     @Test
     fun `an identical old judgment cannot be resubmitted as a newly backdated action`() {
         val request = judgment(BoundaryValue(10))
-        val original = impact(request = request).copy(note = "Later metadata", updatedAt = now.plusMinutes(10))
+        val original = impact(request = request).copy(note = "Later metadata", updatedAt = now.plusSeconds(600))
         assertFailsWith<IllegalArgumentException> {
-            original.withFinalScore(target, request, now.plusMinutes(15))
+            original.withFinalScore(target, request, now.plusSeconds(900))
         }
     }
 
     @Test
     fun `new decisions preserve creation and require updatedAt to cover their date`() {
         val original = impact()
-        val date = now.plusMinutes(5)
+        val date = now.plusSeconds(300)
         val revised = original.withFinalScore(target, judgment(BoundaryValue(10), date), date)
         assertEquals(original.createdAt, revised.createdAt)
         assertEquals(date, revised.updatedAt)
@@ -283,7 +285,7 @@ class ExplicitFinalScoreDecisionTest {
     @Test
     fun `metadata copies preserve the structured decision and scalar copies cannot change it`() {
         val original = impact(request = judgment(BoundaryValue(10)))
-        val copied = original.copy(note = "Checked", updatedAt = now.plusMinutes(1))
+        val copied = original.copy(note = "Checked", updatedAt = now.plusSeconds(60))
         assertEquals(original.finalScoreDecision, copied.finalScoreDecision)
         assertEquals(original.createdAt, copied.createdAt)
         assertFailsWith<IllegalArgumentException> { original.copy(scoreFinal = 9) }
@@ -296,10 +298,10 @@ class ExplicitFinalScoreDecisionTest {
     fun `manual provenance cannot be erased through a geometric reset`() {
         val original = impact(request = judgment(BoundaryValue(10)))
         assertFailsWith<IllegalArgumentException> {
-            original.withFinalScore(target, ScoreDecisionRequest.AcceptGeometry, now.plusMinutes(1))
+            original.withFinalScore(target, ScoreDecisionRequest.AcceptGeometry, now.plusSeconds(60))
         }
         val container = end(listOf(original), validated = false)
-        assertFailsWith<IllegalArgumentException> { container.withImpact(impact(updatedAt = now.plusMinutes(1))) }
+        assertFailsWith<IllegalArgumentException> { container.withImpact(impact(updatedAt = now.plusSeconds(60))) }
     }
 
     @Test
@@ -307,21 +309,21 @@ class ExplicitFinalScoreDecisionTest {
         val original = impact(request = judgment(BoundaryValue(10)))
         assertFailsWith<IllegalArgumentException> { original.copy(point = NormalizedPoint(0.3f, 0f)) }
         val container = end(listOf(original), validated = false)
-        val moved = impact(radius = 0.3f, request = judgment(BoundaryValue(10), now.plusMinutes(1)),
-            updatedAt = now.plusMinutes(1))
+        val moved = impact(radius = 0.3f, request = judgment(BoundaryValue(10), now.plusSeconds(60)),
+            updatedAt = now.plusSeconds(60))
         assertFailsWith<IllegalArgumentException> { container.withImpact(moved) }
         // ADR 012 adds the explicit move; implicit copies and reconstructed moves remain forbidden.
-        val repositioned = original.reposition(NormalizedPoint(0.3f, 0f), now.plusMinutes(1), "Misplaced point")
+        val repositioned = original.reposition(NormalizedPoint(0.3f, 0f), now.plusSeconds(60), "Misplaced point")
         assertEquals(repositioned, container.withImpact(repositioned).impacts.single())
     }
 
     @Test
     fun `backdated reconstructed decisions cannot bypass deep aggregate replacement checks`() {
-        val original = impact(updatedAt = now.plusMinutes(10))
+        val original = impact(updatedAt = now.plusSeconds(600))
         val previousEnd = end(listOf(original), validated = false)
         val previousSession = session(previousEnd)
-        val stale = impact(request = judgment(BoundaryValue(10), now.plusMinutes(5)),
-            updatedAt = now.plusMinutes(15))
+        val stale = impact(request = judgment(BoundaryValue(10), now.plusSeconds(300)),
+            updatedAt = now.plusSeconds(900))
         assertFailsWith<IllegalArgumentException> { previousEnd.withImpact(stale) }
         assertFailsWith<IllegalArgumentException> { previousSession.withEnd(end(listOf(stale), validated = false)) }
     }
@@ -362,7 +364,7 @@ class ExplicitFinalScoreDecisionTest {
         val originalImpact = impact()
         val originalEnd = end(listOf(originalImpact), validated = false)
         val originalSession = session(originalEnd)
-        val date = now.plusMinutes(5)
+        val date = now.plusSeconds(300)
         val revised = originalImpact.withFinalScore(target, judgment(BoundaryValue(10), date), date)
         val revisedEnd = originalEnd.withImpact(revised).validate(date)
         val revisedSession = originalSession.withEnd(revisedEnd)
@@ -399,14 +401,14 @@ class ExplicitFinalScoreDecisionTest {
         }
     }
 
-    private fun judgment(value: BoundaryValue, date: LocalDateTime = now) =
+    private fun judgment(value: BoundaryValue, date: Instant = now) =
         ScoreDecisionRequest.JudgeBoundary(tenNine, value, date)
 
     private fun correction(value: BoundaryValue) =
         ScoreDecisionRequest.ExceptionalCorrection(value, "Misplaced point", now)
 
     private fun impact(radius: Float = 0.105f, request: ScoreDecisionRequest = ScoreDecisionRequest.AcceptGeometry,
-        profile: TargetType = target, updatedAt: LocalDateTime = now, inputMode: InputMode = InputMode.MANUAL,
+        profile: TargetType = target, updatedAt: Instant = now, inputMode: InputMode = InputMode.MANUAL,
         uuid: String = "impact", index: Int = 1): ArrowImpact =
         scoreArrowImpact(uuid, index, profile, NormalizedPoint(radius, 0f), ScoringMode.COMPETITION,
             decision = request, inputMode = inputMode, createdAt = now, updatedAt = updatedAt)
@@ -417,7 +419,7 @@ class ExplicitFinalScoreDecisionTest {
             createdAt = now, updatedAt = date, validatedAt = if (validated) date else null)
     }
 
-    private fun session(end: End): Session = Session(uuid = "session", date = now,
+    private fun session(end: End): Session = Session(uuid = "session", date = SessionDateTime.fromInstant(now, ZoneId.of("UTC")),
         status = SessionStatus.IN_PROGRESS, startedAt = now, title = "Decision tests", targetType = target,
         distanceM = 18, arrowCountMode = ArrowCountMode.FREE, isIndoor = true, scoringMode = ScoringMode.COMPETITION,
         ends = listOf(end), createdAt = now, updatedAt = end.updatedAt)

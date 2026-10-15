@@ -4,7 +4,7 @@ import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.FinalScoreDecision
 import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import com.lmarchery.core.model.target.TargetType
-import java.time.LocalDateTime
+import java.time.Instant
 import java.util.Collections
 
 class ArrowImpact(
@@ -19,8 +19,8 @@ class ArrowImpact(
     val inputMode: InputMode,
     isCordDecisionManual: Boolean? = null,
     val note: String? = null,
-    val createdAt: LocalDateTime,
-    val updatedAt: LocalDateTime,
+    val createdAt: Instant,
+    val updatedAt: Instant,
     val targetType: TargetType,
     val finalScoreDecision: FinalScoreDecision = FinalScoreDecision.resolve(targetType, point),
     repositions: List<ImpactReposition> = emptyList(),
@@ -83,14 +83,14 @@ class ArrowImpact(
         uuid: String, index: Int, point: NormalizedPoint, distanceFromCenter: Float,
         scoreCalculated: Int, scoreFinal: Int, isX: Boolean, isMiss: Boolean,
         inputMode: InputMode, isCordDecisionManual: Boolean, note: String? = null,
-        createdAt: LocalDateTime, updatedAt: LocalDateTime,
+        createdAt: Instant, updatedAt: Instant,
     ) : this(uuid, index, point, distanceFromCenter, scoreCalculated, scoreFinal, isX, isMiss,
         inputMode, isCordDecisionManual, note, createdAt, updatedAt, targetType = missingTargetContext())
 
     fun withFinalScore(
         targetType: TargetType,
         request: ScoreDecisionRequest,
-        updatedAt: LocalDateTime,
+        updatedAt: Instant,
     ): ArrowImpact {
         require(targetType == this.targetType) { "Score modification requires the impact's target profile." }
         val decision = FinalScoreDecision.resolve(targetType, point, request)
@@ -107,7 +107,7 @@ class ArrowImpact(
     /** Recompute geometry and invalidate the old score decision, retaining position provenance. */
     fun reposition(
         newPoint: NormalizedPoint,
-        changedAt: LocalDateTime,
+        changedAt: Instant,
         reason: String? = null,
     ): ArrowImpact {
         val change = ImpactReposition.from(this, newPoint, changedAt, reason)
@@ -120,7 +120,7 @@ class ArrowImpact(
 
     @Deprecated("Use withFinalScore(targetType, typedRequest, updatedAt).")
     @Suppress("UNUSED_PARAMETER")
-    fun withFinalScore(scoreFinal: Int, isCordDecisionManual: Boolean, updatedAt: LocalDateTime): ArrowImpact =
+    fun withFinalScore(scoreFinal: Int, isCordDecisionManual: Boolean, updatedAt: Instant): ArrowImpact =
         throw IllegalArgumentException("A target context and a structured score decision are required.")
 
     internal fun requireNotOlderThan(previous: ArrowImpact) {
@@ -166,8 +166,8 @@ class ArrowImpact(
         inputMode: InputMode = this.inputMode,
         isCordDecisionManual: Boolean = this.isCordDecisionManual,
         note: String? = this.note,
-        createdAt: LocalDateTime = this.createdAt,
-        updatedAt: LocalDateTime = this.updatedAt,
+        createdAt: Instant = this.createdAt,
+        updatedAt: Instant = this.updatedAt,
     ): ArrowImpact {
         require(distanceFromCenter == this.distanceFromCenter && scoreCalculated == this.scoreCalculated &&
             scoreFinal == this.scoreFinal && isX == this.isX && isMiss == this.isMiss &&
@@ -197,12 +197,12 @@ class ArrowImpact(
     operator fun component9(): InputMode = inputMode
     operator fun component10(): Boolean = isCordDecisionManual
     operator fun component11(): String? = note
-    operator fun component12(): LocalDateTime = createdAt
-    operator fun component13(): LocalDateTime = updatedAt
+    operator fun component12(): Instant = createdAt
+    operator fun component13(): Instant = updatedAt
 
     private data class Snapshot(
         val uuid: String, val index: Int, val point: NormalizedPoint, val inputMode: InputMode,
-        val note: String?, val createdAt: LocalDateTime, val updatedAt: LocalDateTime,
+        val note: String?, val createdAt: Instant, val updatedAt: Instant,
         val targetType: TargetType, val finalScoreDecision: FinalScoreDecision,
         val repositions: List<ImpactReposition>,
     )

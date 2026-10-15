@@ -15,7 +15,9 @@ import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.ZoneId
+import java.time.Instant
 import java.util.UUID
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -25,7 +27,7 @@ import kotlin.test.assertTrue
 
 class WorldArcheryIndoorTargetProfilesTest {
     private val profiles = WorldArcheryIndoorTargetProfiles
-    private val now = LocalDateTime.of(2026, 10, 15, 10, 0)
+    private val now = Instant.parse("2026-10-15T10:00:00Z")
     private val cases = listOf(
         ProfileCase(profiles.recurve40, 40, 18, 0.10f, 4.0, "5d98a517-4b7b-4308-8f4f-af3bd992a285"),
         ProfileCase(profiles.compound40, 40, 18, 0.05f, 2.0, "142a7cf4-1bee-427d-b351-c002c7003b98"),
@@ -205,7 +207,7 @@ class WorldArcheryIndoorTargetProfilesTest {
             val target = case.target
             val original = impact(target, 0.15f).withFinalScore(target, ScoreDecisionRequest.JudgeBoundary(
                 BoundaryReference(BoundaryType.SCORE_ZONES, case.tenRadius), BoundaryValue(10), now), now)
-            val moved = original.reposition(point(0.075f), now.plusMinutes(1), "Corrected point")
+            val moved = original.reposition(point(0.075f), now.plusSeconds(60), "Corrected point")
             assertEquals(target, moved.targetType)
             assertEquals(if (case.tenRadius == 0.1f) 10 else 9, moved.scoreCalculated)
             assertEquals(moved.scoreCalculated, moved.scoreFinal)
@@ -228,8 +230,8 @@ class WorldArcheryIndoorTargetProfilesTest {
             assertEquals(1, before.nineCount)
             assertEquals(0, before.xCount)
             assertEquals(1, before.missCount)
-            val changed = editing.withImpact(original.reposition(point(0.075f), now.plusMinutes(1)))
-            val updated = session(target, listOf(editing)).withEnd(changed).withEnd(changed.validate(now.plusMinutes(1)))
+            val changed = editing.withImpact(original.reposition(point(0.075f), now.plusSeconds(60)))
+            val updated = session(target, listOf(editing)).withEnd(changed).withEnd(changed.validate(now.plusSeconds(60)))
             val after = summarizeSessionScore(updated)
             assertEquals(if (case.tenRadius == 0.1f) 19 else 18, after.totalScore)
             assertEquals(if (case.tenRadius == 0.1f) 1 else 0, after.maxScoreCount)
@@ -341,7 +343,7 @@ class WorldArcheryIndoorTargetProfilesTest {
     private fun end(impacts: List<ArrowImpact>, uuid: String = "end", index: Int = 1) = End(uuid, index,
         EndStatus.EDITING, impacts, createdAt = now, updatedAt = impacts.maxOfOrNull { it.updatedAt } ?: now)
 
-    private fun session(target: TargetType, ends: List<End>) = Session(uuid = "session", date = now,
+    private fun session(target: TargetType, ends: List<End>) = Session(uuid = "session", date = SessionDateTime.fromInstant(now, ZoneId.of("UTC")),
         status = SessionStatus.IN_PROGRESS, startedAt = now, title = "Indoor profiles", targetType = target,
         distanceM = target.defaultDistanceM, arrowCountMode = ArrowCountMode.FREE, isIndoor = true,
         scoringMode = ScoringMode.COMPETITION, ends = ends, createdAt = now,

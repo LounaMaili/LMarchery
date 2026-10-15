@@ -11,7 +11,9 @@ import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.session.Session
 import com.lmarchery.core.model.session.SessionStatus
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.ZoneId
+import java.time.Instant
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -20,7 +22,7 @@ import kotlin.test.assertTrue
 
 class SessionDomainScoringTest {
     private val target = ClassicTargetFixtures.classic40
-    private val now: LocalDateTime = LocalDateTime.parse("2026-05-30T10:00:00")
+    private val now: Instant = Instant.parse("2026-05-30T10:00:00Z")
 
     @Test
     fun `end score uses final scores and not calculated scores`() {
@@ -189,7 +191,7 @@ class SessionDomainScoringTest {
         ends: List<End> = emptyList(),
     ): Session = Session(
         uuid = "session-1",
-        date = now,
+        date = SessionDateTime.fromInstant(now, ZoneId.of("UTC")),
         status = SessionStatus.IN_PROGRESS,
         startedAt = now,
         plannedEndCount = plannedEndCount,

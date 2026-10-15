@@ -30,6 +30,7 @@ Pour préparer le développement et les validations :
 | 11 | Décisions finales explicites et contextualisées | [adr/011-decisions-score-explicites.md](adr/011-decisions-score-explicites.md) |
 | 12 | Repositionnement explicite des impacts | [adr/012-repositionnement-explicite-impacts.md](adr/012-repositionnement-explicite-impacts.md) |
 | 13 | Profils indoor World Archery, édition 2026-01-27 | [adr/013-profils-indoor-world-archery.md](adr/013-profils-indoor-world-archery.md) |
+| 14 | Instants UTC et date civile de séance | [adr/014-convention-temporelle-utc.md](adr/014-convention-temporelle-utc.md) |
 
 ---
 
