@@ -402,6 +402,53 @@ class RoomSessionStoreTest {
         }
     }
 
+    @Test
+    fun `discovery is deterministic read only and includes ongoing and completed sessions after reopen`() = runBlocking<Unit> {
+        val ongoing = populated(seed = 100)
+        val completed = populated(completed = true)
+        openSessionStore(path).use { store ->
+            assertEquals(emptyList(), assertIs<SessionDiscoveryResult.Found>(store.discover()).uuids)
+            assertIs<SessionCreateResult.Created>(store.create(archive(ongoing)))
+            assertIs<SessionCreateResult.Created>(store.create(archive(completed)))
+        }
+        openSessionStore(path).use { store ->
+            val before = contents()
+            tables.forEach { table -> listOf("INSERT", "UPDATE", "DELETE").forEach { operation ->
+                execute("CREATE TRIGGER discovery_${table}_$operation BEFORE $operation ON $table BEGIN SELECT RAISE(ABORT, 'read only'); END")
+            } }
+            assertEquals(listOf(completed.uuid, ongoing.uuid), assertIs<SessionDiscoveryResult.Found>(store.discover()).uuids)
+            assertEquals(completed, assertIs<SessionReadResult.Found>(store.read(completed.uuid)).session)
+            assertEquals(ongoing, assertIs<SessionReadResult.Found>(store.read(ongoing.uuid)).session)
+            assertEquals(before, contents())
+        }
+    }
+
+    @Test
+    fun `discovery retains corrupt entries and orphan identities for explicit read diagnostics`() = runBlocking<Unit> {
+        val missing = draft()
+        val corrupt = draft(seed = 100)
+        openSessionStore(path).use { store ->
+            assertIs<SessionCreateResult.Created>(store.create(archive(missing)))
+            assertIs<SessionCreateResult.Created>(store.create(archive(corrupt)))
+        }
+        execute("DELETE FROM sessions WHERE uuid = '${missing.uuid}'")
+        execute("UPDATE sessions SET status = 'UNKNOWN' WHERE uuid = '${corrupt.uuid}'")
+        val before = contents()
+        openSessionStore(path).use { store ->
+            assertEquals(listOf(missing.uuid, corrupt.uuid), assertIs<SessionDiscoveryResult.Found>(store.discover()).uuids)
+            assertIs<SessionReadResult.NeedsIntervention>(store.read(missing.uuid))
+            assertIs<SessionReadResult.NeedsIntervention>(store.read(corrupt.uuid))
+        }
+        assertEquals(before, contents())
+    }
+
+    @Test
+    fun `closed store discovery reports technical failure`() = runBlocking<Unit> {
+        val store = openSessionStore(path)
+        store.close()
+        assertIs<SessionDiscoveryResult.TechnicalFailure>(store.discover())
+    }
+
     private suspend fun corrupt(sql: String, file: Path = path) {
         val source = populated()
         openSessionStore(file).use { assertIs<SessionCreateResult.Created>(it.create(archive(source))) }

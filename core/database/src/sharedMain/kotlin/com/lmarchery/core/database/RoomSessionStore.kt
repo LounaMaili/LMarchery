@@ -27,6 +27,11 @@ sealed interface SessionReadResult {
     data class TechnicalFailure(val cause: Exception) : SessionReadResult
 }
 
+sealed interface SessionDiscoveryResult {
+    data class Found(val uuids: List<String>) : SessionDiscoveryResult
+    data class TechnicalFailure(val cause: Exception) : SessionDiscoveryResult
+}
+
 sealed interface SessionCreateResult {
     data class Created(val uuid: String) : SessionCreateResult
     data class AlreadyExists(val uuid: String) : SessionCreateResult
@@ -47,6 +52,21 @@ sealed interface SessionUpdateResult {
 /** SQL rows/DAOs stay internal; callers exchange complete, contextualized domain values. */
 class RoomSessionStore internal constructor(private val database: SessionDatabase) : AutoCloseable {
     private val closed = AtomicBoolean(false)
+
+    /** Deterministic UUID discovery only. Each entry still requires contextualized read() validation. */
+    suspend fun discover(): SessionDiscoveryResult = try {
+        val callerContext = currentCoroutineContext()
+        callerContext.ensureActive()
+        check(!closed.get()) { "Session store is closed." }
+        database.useReaderConnection { connection ->
+            connection.deferredTransaction {
+                val uuids = database.records().sessionUuids()
+                callerContext.ensureActive()
+                SessionDiscoveryResult.Found(uuids.toList())
+            }
+        }
+    } catch (error: CancellationException) { throw error }
+    catch (error: Exception) { SessionDiscoveryResult.TechnicalFailure(error) }
 
     suspend fun read(uuid: String): SessionReadResult = try {
         check(!closed.get()) { "Session store is closed." }

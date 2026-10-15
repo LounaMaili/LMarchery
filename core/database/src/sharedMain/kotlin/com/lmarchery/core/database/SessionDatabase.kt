@@ -32,6 +32,9 @@ internal interface SessionDao {
     @Query("SELECT * FROM target_profiles WHERE uuid = :uuid") suspend fun profile(uuid: String): ProfileRow?
     @Query("SELECT * FROM target_zones WHERE profileUuid = :uuid ORDER BY position") suspend fun zones(uuid: String): List<ZoneRow>
     @Query("SELECT * FROM sessions WHERE uuid = :uuid") suspend fun session(uuid: String): SessionRow?
+    // Include orphan session identities so a damaged root is discoverable and diagnosed by read().
+    @Query("SELECT uuid FROM sessions UNION SELECT uuid FROM entity_identities WHERE kind = 'SESSION' ORDER BY uuid")
+    suspend fun sessionUuids(): List<String>
     @Query("SELECT * FROM ends WHERE sessionUuid = :uuid ORDER BY position") suspend fun ends(uuid: String): List<EndRow>
     @Query("SELECT * FROM impacts WHERE endUuid = :uuid ORDER BY position") suspend fun impacts(uuid: String): List<ImpactRow>
     @Query("SELECT * FROM score_decisions WHERE impactUuid = :uuid ORDER BY revision") suspend fun decisions(uuid: String): List<DecisionRow>

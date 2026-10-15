@@ -34,6 +34,7 @@ Pour préparer le développement et les validations :
 | 15 | Sauvegarde versionnée et reconstruction contextualisée | [adr/015-sauvegarde-versionnee-reconstruction.md](adr/015-sauvegarde-versionnee-reconstruction.md) |
 | 16 | Première persistance locale Room / SQLite | [adr/016-persistance-locale-room.md](adr/016-persistance-locale-room.md) |
 | 17 | Mise à jour transactionnelle des séances Room | [adr/017-mise-a-jour-seances-room.md](adr/017-mise-a-jour-seances-room.md) |
+| 18 | Premier parcours Android Compose / Room | [adr/018-integration-android-room.md](adr/018-integration-android-room.md) |
 
 ---
 

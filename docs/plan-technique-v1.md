@@ -30,6 +30,11 @@ UI Compose
 
 Le domaine ne dépend pas d'Android. Les règles de score, les modèles métier et les agrégats de séance doivent pouvoir être testés avec de simples tests unitaires JVM.
 
+Le premier parcours intégré est décrit par l'[ADR 018](adr/018-integration-android-room.md) :
+`app` contient actuellement le ViewModel/contrôleur et le repository léger, qui
+utilise `core:database`. Les modules `feature`/`core:data` ci-dessous restent une
+décomposition future, pas une condition à cette première intégration.
+
 La couche UI ne calcule pas les scores. Elle convertit seulement les interactions écran en coordonnées normalisées, appelle le domaine, puis affiche les résultats.
 
 La couche data ne contient pas de logique de scoring. Elle persiste les données Room, mappe les entités Room vers les modèles métier, et gère l'export/import JSON.
