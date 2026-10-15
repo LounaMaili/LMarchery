@@ -11,6 +11,9 @@
 | Android compileSdk / targetSdk / minSdk | 35 / 35 / 26 |
 | Android SDK Build Tools | 34.0.0, version par défaut d'AGP 8.7 |
 | Compose BOM / Activity Compose | 2024.12.01 / 1.9.3 |
+| Room runtime / compiler / plugin | 2.7.2 |
+| KSP (KSP2 activé) | 2.0.21-1.0.28 |
+| SQLite Bundled | 2.5.2 |
 
 Ces versions restent celles des configurations Gradle ; cette consolidation ne
 met pas les dépendances à jour. `./gradlew --version` affiche aussi le Kotlin
@@ -92,9 +95,22 @@ Depuis le dépôt :
 Le script affiche la branche, les versions Java/Gradle et les chemins utilisés,
 vérifie les permissions du manifeste V1 et les espaces du diff, puis exécute :
 
-1. `./gradlew test` : tests JVM du domaine et tests locaux Android, sans appareil.
-2. `./gradlew :app:assembleDebug` : compilation de l'APK debug.
-3. `./gradlew :app:lintDebug` : analyse statique Android.
+1. `./gradlew test` : domaine, tests locaux Android et `:core:database:jvmTest`
+   sur SQLite natif, sans appareil.
+2. `./gradlew :app:assembleDebug :core:database:assembleDebug` : APK et bibliothèque Room Android.
+3. `./gradlew :app:lintDebug :core:database:lintDebug` : analyses statiques des deux modules.
+
+Les tâches du module database sont ajoutées lorsqu'il est présent. Pour isoler
+les tests de persistance : `./gradlew :core:database:jvmTest --rerun-tasks --console=plain`
+avec les mêmes variables JDK/SDK. Ils ouvrent de vrais fichiers temporaires SQLite,
+les ferment et les rouvrent ; le rapport confirme les tests réellement découverts.
+Le journal contient la preuve du moteur SQLite natif et de l'en-tête sur disque.
+Le workflow existant appelle le même script, donc ces validations lui sont obligatoires.
+
+Le plugin Multiplatform de Kotlin 2.0.21 annonce une plage AGP testée jusqu'à 8.5
+et avertit pour 8.7.3. Cet avertissement n'est pas masqué. La génération KSP et les
+deux compilations sont validées dans ce projet sans changer le toolchain ; voir
+[ADR 016](adr/016-persistance-locale-room.md).
 
 `set -euo pipefail` interrompt le script au premier échec. Les options données au
 script sont transmises à chaque invocation Gradle. Pour forcer une nouvelle
@@ -112,6 +128,8 @@ Les rapports sont disponibles dans :
 
 - `core/model/build/reports/tests/test/index.html` ;
 - `core/scoring/build/reports/tests/test/index.html` ;
+- `core/database/build/reports/tests/jvmTest/index.html` (tests SQLite réels) ;
+- `core/database/build/reports/lint-results-debug.html` ;
 - `app/build/reports/tests/testDebugUnitTest/index.html` et `testReleaseUnitTest/index.html` ;
 - `app/build/reports/lint-results-debug.html`.
 
@@ -165,6 +183,11 @@ Le workflow dispose uniquement de `contents: read`, ne conserve pas les
 identifiants du checkout et ne demande aucun secret personnalisé. Il n'effectue
 ni publication, ni upload d'APK, ni signature de release. Les exécutions dépassées
 d'une même PR sont annulées ; le job est limité à 30 minutes.
+
+Le schéma initial Room est versionné sous `core/database/schemas`. Après une
+modification du stockage, vérifier sa cohérence et ne jamais activer de migration
+destructive. Les versions Room/SQLite, archive, scoring et édition de profil
+restent distinctes ; aucune base utilisateur antérieure à Room 1 n'est inventée.
 
 Références : [événements GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows),
 [cache et validation du wrapper](https://github.com/gradle/actions/blob/main/docs/setup-gradle.md).

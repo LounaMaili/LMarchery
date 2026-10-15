@@ -3,9 +3,11 @@
 > Définition des entités, attributs et relations pour la version 1
 
 **État implémenté** : `TargetType`, `TargetZone`, `Session`, `End`, `ArrowImpact`
-et les valeurs de scoring/temps sont des modèles Kotlin purs. Les IDs/FK Room
-des tableaux et les modèles `Bow`, `ArrowSet`, `SessionPreset` restent prévus,
-sans classes de stockage correspondantes. Le contrat typé de sauvegarde est
+et les valeurs de scoring/temps sont des modèles Kotlin purs. `core:database`
+persiste maintenant des séances complètes en Room/SQLite sans connexion Compose.
+Les anciens IDs/FK numériques des tableaux sont des projections historiques,
+absentes du schéma SQLite 1 qui utilise les UUID (section 4). Les modèles `Bow`,
+`ArrowSet`, `SessionPreset` restent prévus. Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md) ; aucun
 import/export de fichier ni migration n'est opérationnel.
 
@@ -66,7 +68,7 @@ En V1, les entités exportables racines sont `TargetType`, `Session`, `End`, `Ar
 
 | Champ | Règle |
 |-------|-------|
-| `id` | Clé primaire locale Room. Elle n'est jamais utilisée comme clé de fusion entre appareils. |
+| `id` (projection prévue) | Absent du schéma Room 1 actuel ; jamais une clé de fusion entre appareils. |
 | `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
 | `createdAt` | Instant UTC de création des agrégats modifiables ; absent des profils immuables. |
 | `updatedAt` | Instant UTC de dernière modification fonctionnelle, servant à comparer les révisions. |
@@ -133,9 +135,9 @@ est rejetée ; une heure répétée exige un offset explicite. Cette date de sé
 est indépendante de `startedAt` et n'est jamais remplacée par une date seule
 ou par le fuseau de consultation. Voir [ADR 014](adr/014-convention-temporelle-utc.md).
 
-Pour Room, le format prévu des instants est le couple entier `epochSecond`/`nano`,
-et celui de la date civile le triplet local/fuseau/offset. Aucun stockage ni
-convertisseur n'est introduit. Une ancienne valeur sans contexte temporel reste
+Room utilise le couple entier `epochSecond`/`nano`, et le triplet civil
+local/fuseau/offset ; le mapper rejette les couples partiels et les nanos invalides.
+Voir [ADR 016](adr/016-persistance-locale-room.md). Une ancienne valeur sans contexte temporel reste
 non résolue jusqu'à une décision de migration explicite ; elle n'est pas supposée UTC.
 
 `TargetZone` n'est pas une entité exportable racine en V1 : elle est exportée dans son `TargetType` parent et identifiée par ce parent et son score / rayon. Elle ne porte donc pas de `uuid` indépendant en V1.
@@ -510,28 +512,27 @@ enum class EndStatus {
 
 ---
 
-## 4. Relations Room (DAO)
+## 4. Schéma Room / SQLite 1 effectivement implémenté
 
-### Clés étrangères
+Les huit tables sont `entity_identities`, `target_profiles`, `target_zones`,
+`sessions`, `ends`, `impacts`, `score_decisions`, `impact_repositions`.
+Profils, séances, volées et impacts ont leur UUID comme clé primaire et figurent
+dans le registre global des identités. Zones et traces ont des clés composites
+parent/position ; les décisions ont une clé impact/révision.
 
-| Entité | FK vers | Attribut | On delete |
-|--------|---------|----------|-----------|
-| End | Session | `sessionId` | CASCADE |
-| ArrowImpact | End | `endId` | CASCADE |
-| Session | TargetType | `targetTypeId` | RESTRICT |
-| Session | Bow | `bowId` | SET NULL |
-| Session | ArrowSet | `arrowSetId` | SET NULL |
-| TargetZone | TargetType | `targetTypeId` | CASCADE |
-| SessionPreset | TargetType | `targetTypeId` | RESTRICT |
-| SessionPreset | Bow | `bowId` | SET NULL |
-| SessionPreset | ArrowSet | `arrowSetId` | SET NULL |
+Toutes les FK utilisent `RESTRICT` ; aucune suppression fonctionnelle n'est
+implémentée. Les liens principaux sont `profileUuid`, `sessionUuid`, `endUuid`,
+`impactUuid`. Les index métier et positions sont uniques dans chaque parent.
+La position explicite conserve l'ordre des listes, avec un nombre d'enfants
+attendu contrôlé à la lecture. Les décisions antérieures sont reliées à leurs
+repositionnements et la décision courante occupe la révision -1.
 
-### Index recommandés
-
-- `End`: index sur `(sessionId, index)` — unique
-- `ArrowImpact`: index sur `(endId, index)` — unique
-- `Session`: index sur `date` DESC — pour l'historique
-- `TargetZone`: index sur `(targetTypeId, score)` — pour le calcul
+Aucune table de matériel/preset ni FK fictive vers elle : `bowUuid` et
+`arrowSetUuid` sont opaques. Les anciennes projections numériques des tableaux
+ci-dessus ne décrivent pas ce schéma réel et ne doivent pas servir de migration.
+Les versions Room, archive et scoring sont séparées ; le profil garde son UUID
+et son édition distincte. L'export de schéma versionné et les garanties
+transactionnelles sont détaillés dans [ADR 016](adr/016-persistance-locale-room.md).
 
 ---
 
@@ -553,11 +554,11 @@ indépendamment de l'ordre des `updatedAt`. Les préfixes de traces connus ne
 peuvent être supprimés ni réécrits. Sans référentiel, une restauration indépendante
 ne peut pas découvrir un historique omis de toutes les données reçues.
 
-Le schéma JSON opérationnel, Room, le contenu du matériel/presets et la résolution
+Le schéma JSON opérationnel, le contenu du matériel/presets et la résolution
 explicite des conflits restent à développer. Aucun ancien exemple documentaire
 incomplet ne fait l'objet d'une migration inventant ses valeurs manquantes.
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
 ---
 
-*Document version 1.7 — 15 octobre 2026*
+*Document version 1.8 — 15 octobre 2026*

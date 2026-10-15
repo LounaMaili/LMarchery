@@ -19,3 +19,4 @@ rootProject.name = "LMarchery"
 include(":app")
 include(":core:model")
 include(":core:scoring")
+include(":core:database")
