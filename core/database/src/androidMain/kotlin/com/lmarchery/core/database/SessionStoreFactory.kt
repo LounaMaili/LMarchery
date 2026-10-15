@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 
-/** Prepared for future app integration; Compose does not use this store yet. */
+/** Open once per application container, never from a composable or an Activity recreation. */
 fun openSessionStore(context: Context, name: String = "sessions.db"): RoomSessionStore {
     require(name.isNotBlank() && '/' !in name && '\\' !in name && name != "." && name != "..") { "A local database file name is required." }
     val app = context.applicationContext

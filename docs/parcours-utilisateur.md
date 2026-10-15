@@ -4,6 +4,41 @@
 
 ---
 
+## Parcours effectivement implémenté (PR 16)
+
+Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
+Android livré est limité à :
+
+1. Accueil : découverte SQLite et lecture validée de chaque séance, statut affiché ;
+   les entrées illisibles restent visibles avec diagnostic.
+2. Nouvelle séance : titre facultatif, choix explicite d'un des quatre profils
+   indoor WA classique/poulies 40 cm/18 m ou 60 cm/25 m. Trois flèches, entraînement,
+   date civile dans le fuseau du téléphone choisi à la création. La création est
+   confirmée sur disque avant ouverture.
+3. Toucher le blason : chaque impact est enregistré avant affichage comme durable.
+   Pendant l'écriture, les commandes sont bloquées. Les coins hors cercle valent M.
+4. Après trois impacts : valider la volée, puis créer la suivante. Le total de la
+   volée en saisie est provisoire ; le total de séance ne compte que les validées.
+5. Fermer totalement puis relancer : l'accueil redécouvre les séances sans pointeur
+   de séance active. Ouvrir une séance retrouve aussi une volée partielle.
+6. Terminer : interdit avec une volée éditable non vide, possible avec une volée
+   vide qui reste enregistrée. La séance terminée est consultable en lecture seule.
+
+Une erreur de sauvegarde conserve l'action tentée et le dernier état confirmé.
+Une erreur technique permet de retenter exactement la même proposition. Un conflit
+exige une action explicite : consulter la version stockée n'efface pas la proposition ;
+« Abandonner l'action et recharger » prévient avant de l'abandonner. Aucune fusion
+selon l'horodatage. Le bouton Retour demande aussi confirmation d'abandon si nécessaire.
+
+La rotation conserve le ViewModel ; l'arrêt du processus conserve seulement ce qui
+a réellement été committé dans Room. Aucun reset de démo ne supprime les séances.
+Les corrections, déplacements, suppressions, matériel/presets, export et autres
+modes restent hors de ce parcours. Les données sont locales, sans export utilisateur.
+Voir [ADR 018](adr/018-integration-android-room.md) et le
+[protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
+
+---
+
 ## 1. Parcours principal — Saisie d'une séance complète
 
 ```

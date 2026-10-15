@@ -36,12 +36,17 @@ kotlin {
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:scoring"))
+    implementation(project(":core:database"))
 
     val composeBom = platform("androidx.compose:compose-bom:2024.12.01")
     implementation(composeBom)
 
     // Pinned with AGP 8.7.x / compileSdk 35; newer Activity releases require AGP 8.9+ and SDK 36.
     implementation("androidx.activity:activity-compose:1.9.3")
+    // Same Lifecycle / coroutine versions already resolved by Activity, Compose and Room.
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")

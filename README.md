@@ -20,10 +20,11 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (7 décisions techniques)
+- [x] ADR (18 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
+- [x] Premier parcours Compose / Room : création, saisie, validation, reprise et consultation
 - [ ] Blason interactif complet
 - [ ] Premier test terrain
 
@@ -61,7 +62,7 @@ app/                        ← Application Android Compose
 core/
   model/                    ← Modèles métier purs
   scoring/                  ← Moteur de score Kotlin/JVM
-  database/                 ← Room / SQLite, cibles Android et JVM, sans connexion UI
+  database/                 ← Room / SQLite, cibles Android et JVM, utilisé via le repository Android
 feature/                    ← Fonctionnalités UI, futur
 vision-lab/                 ← Laboratoire reconnaissance (Python)
   datasets/
@@ -103,16 +104,40 @@ chemin du SDK. En sandbox, définir aussi un `GRADLE_USER_HOME` accessible en é
 
 La V1 reste locale/offline : pas de permission réseau ni de caméra. Room permet
 de créer, relire et mettre à jour une séance complète avec contrôle optimiste
-et reconstruction validée, sans être encore connecté à la démo Compose. Les tests `:core:database:jvmTest` interrogent
+et reconstruction validée. Compose utilise un ViewModel et un repository injectables ;
+les séances sont redécouvertes dans SQLite après un arrêt complet du processus.
+Les tests `:core:database:jvmTest` interrogent
 SQLite natif sur disque, avec fermeture/réouverture ; ils sont inclus dans `test`.
 Voir [ADR 016](docs/adr/016-persistance-locale-room.md) et
-[ADR 017](docs/adr/017-mise-a-jour-seances-room.md). La préparation du build peut
+[ADR 017](docs/adr/017-mise-a-jour-seances-room.md) et
+[ADR 018](docs/adr/018-integration-android-room.md). La préparation du build peut
 nécessiter le réseau pour télécharger Gradle, le SDK et les dépendances.
 
 Le workflow `.github/workflows/quality-gate.yml` est configuré pour les PR vers
 toutes les branches, y compris les PR empilées. Sans module `:app`, il exécute
 seulement les tests JVM. **Sa configuration ne prouve pas son exécution : attendre
 un run GitHub réussi avant de déclarer la CI validée.**
+
+## Premier parcours persistant sur téléphone
+
+Choisir explicitement classique ou poulies, 40 cm/18 m ou 60 cm/25 m, puis créer
+et démarrer. La saisie est limitée à trois flèches en entraînement. Attendre la
+confirmation après chaque appui, valider la volée, puis en ouvrir une nouvelle.
+Le total provisoire reste séparé du total des volées validées. Une volée partielle
+bloque la clôture ; une volée vide peut rester dans une séance terminée.
+
+Après relancement, ouvrir la séance depuis la liste pour retrouver ses impacts.
+Une séance terminée reste en lecture seule. Les actions en échec sont conservées
+pour une nouvelle tentative explicite ou une relecture avec confirmation d'abandon.
+Les profils/configurations hors de ce premier parcours restent consultables.
+
+L'APK debug est `app/build/outputs/apk/debug/app-debug.apk`. Suivre le
+[protocole téléphone](docs/tests-terrain-v1.md#protocole-android-persistant-pr-16),
+avec rotation et arrêt complet après deux impacts. **Les tests JVM, builds et lint
+ne constituent pas des tests physiques sur téléphone.** Les corrections, déplacements,
+suppressions, matériel/presets et export utilisateur ne sont pas disponibles dans
+ce parcours. Les données sont locales : les effacer ou désinstaller l'application
+peut les perdre, sans possibilité d'export pour l'instant.
 
 ## Versions
 

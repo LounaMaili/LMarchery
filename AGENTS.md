@@ -2,7 +2,7 @@
 
 ## Contexte du projet
 
-LMarchery est une application Android de gestion des scores au tir à l'arc. Le dépôt contient maintenant un socle Gradle/Kotlin, le domaine pur et un premier squelette Android Compose local.
+LMarchery est une application Android de gestion des scores au tir à l'arc. Le dépôt contient maintenant un socle Gradle/Kotlin, le domaine pur et un premier parcours Android Compose persisté localement.
 
 Stack prévue :
 
@@ -63,7 +63,7 @@ et inspecter le résultat de chaque validation. Les étapes exécutées sont :
 - `./gradlew :app:assembleDebug`
 - `./gradlew :app:lintDebug`
 
-Le module `:core:database` fournit Room sans connexion à Compose. `./gradlew test`
+Le module `:core:database` fournit Room, utilisé par Compose via le repository Android. `./gradlew test`
 doit aussi exécuter `:core:database:jvmTest` sur SQLite natif et fichiers disque,
 avec fermeture/réouverture ; inspecter le rapport, pas seulement le statut Gradle.
 Le script compile et linte également sa cible Android. Après modification du
@@ -72,6 +72,12 @@ Les révisions utilisent `update(expected, proposed)` avec état complet et
 `validateSessionUpdate` ; ne pas contourner les conflits, supprimer les descendants
 ni réécrire les traces. Vérifier les tests de concurrence et de rollback sur disque.
 Ne jamais utiliser `REPLACE` ou une migration destructive pour résoudre un conflit.
+L'intégration Android suit l'ADR 018 : magasin unique par processus, ViewModel,
+contrôleur/repository injectables, Clock explicite, affichage durable seulement
+après acquittement. Conserver les propositions échouées et leur expected ; aucune
+relance automatique sur une base plus récente. La découverte doit signaler les
+entrées illisibles. Conserver les tests du contrôleur et distinguer clairement
+validations JVM/SQLite et vérifications physiques décrites dans les tests terrain.
 
 Utiliser un **JDK 21 complet**, le SDK Android 35 et les Build Tools 34.0.0.
 Le script détecte un JDK 21 installé ; un `JAVA_HOME` explicite incompatible

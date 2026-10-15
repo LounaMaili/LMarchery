@@ -14,9 +14,10 @@ sont des données de transfert non fiables et copiables, potentiellement adossé
 à des listes mutables ; ne pas les modifier pendant leur validation.
 
 Le module `core:database` utilise ce contrat pour créer, relire et mettre à jour
-des séances en Room/SQLite, sans branchement à Compose ; voir les
+des séances en Room/SQLite, utilisées par le premier parcours Compose ; voir les
 [ADR 016](adr/016-persistance-locale-room.md) et
-[ADR 017](adr/017-mise-a-jour-seances-room.md). Il n'existe ni lecteur/écrivain JSON,
+[ADR 017](adr/017-mise-a-jour-seances-room.md) et
+[ADR 018](adr/018-integration-android-room.md). Il n'existe ni lecteur/écrivain JSON,
 ni restauration de fichier Android, ni fusion entre appareils.
 L'extension `.lmarchery.json`, UTF-8, MIME `application/json` et
 le partage par intent restent prévus. Aucun format opérationnel antérieur n'a
