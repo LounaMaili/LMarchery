@@ -13,4 +13,5 @@ data class SessionScoreSummary(
     val maxScoreCount: Int,
     val xCount: Int,
     val missCount: Int,
+    val nineCount: Int = 0,
 )

@@ -48,7 +48,7 @@ contextualisé dérive ses scores et indicateurs d'un résultat validé pour son
 
 ---
 
-## 2. Cible classique (V1)
+## 2. Blasons complets et profils (V1)
 
 ### Description
 
@@ -65,7 +65,9 @@ Cible multicolore réglementaire World Archery, utilisée en salle et en extéri
 
 ### Zones de score
 
-Le blason classique comporte **10 zones concentriques** numérotées de 1 à 10, du bord vers le centre.
+Les fixtures historiques et les profils indoor **classique** comportent les
+10 zones ci-dessous. Les profils indoor **poulies** ont un 10 plus petit et un
+9 élargi, définis explicitement après ce tableau.
 
 | Zone | Score | Couleur | Rayon intérieur normalisé | Rayon extérieur normalisé |
 |------|-------|---------|--------------------------|---------------------------|
@@ -79,6 +81,27 @@ Le blason classique comporte **10 zones concentriques** numérotées de 1 à 10,
 | 8 | 8 | Rouge | 0.20 | 0.30 |
 | 9 | 9 | Jaune | 0.10 | 0.20 |
 | 10 | 10 | Jaune | 0.0 | 0.10 |
+
+### Profils indoor World Archery explicites
+
+`WorldArcheryIndoorTargetProfiles` publie `recurve40`, `compound40` (40 cm,
+18 m), `recurve60` et `compound60` (60 cm, 25 m), pour l'édition `2026-01-27`.
+Le 10 classique s'arrête à `0.10` ; le 10 poulies à `0.05`, puis le 9 va jusqu'à
+`0.20`. Le rayon du blason complet reste `1` et la limite exacte revient à la
+zone intérieure. Il n'existe aucune frontière de score à `0.10` en poulies.
+
+| Rayon | Classique | Poulies |
+|-------|-----------|---------|
+| 0.025 | 10 | 10 |
+| 0.075 | 10 | 9 |
+| 0.15 | 9 | 9 |
+
+Ces profils désactivent X, y compris au centre et après décision manuelle.
+Le profil doit être choisi explicitement ; diamètre ou `isIndoor` ne choisissent
+jamais une division. Chaque UUID désigne une définition datée immuable, distincte
+des fixtures historiques conservées. Dimensions physiques, identités, références
+officielles et limites W1 sont détaillées dans
+[ADR 013](adr/013-profils-indoor-world-archery.md).
 
 ### Invariants des définitions de cible
 
@@ -107,9 +130,11 @@ Ces contrôles vérifient la cohérence structurelle, pas la conformité d'un pr
 40/60/80/122 cm restent inchangées. Voir
 [ADR 009](adr/009-integrite-entrees-scoring.md).
 
-### Zone X (10+) — Configurable via TargetType
+### Distinction X — Configurable via TargetType
 
-En compétition, la zone centrale du 10 (X) sert à départager les égalités. Plutôt que de hardcoder `r <= 0.05`, la détection du X est configurable au niveau du `TargetType` :
+Certains profils distinguent X dans le 10. X n'ajoute aucun point et n'est pas
+activé sur les nouveaux profils indoor ci-dessus. Sa détection générique reste
+configurable au niveau du `TargetType` :
 
 | Champ | Type | Description |
 |-------|------|-------------|
@@ -121,7 +146,7 @@ Ces champs appartiennent à `TargetType`, qui possède aussi un `uuid` stable po
 
 Un impact est marqué `isX = true` uniquement si `xRingEnabled == true` **et** `r <= innerTenRadiusNormalized`.
 
-#### Exemple — Cible WA classique
+#### Exemple — Fixture historique avec X
 
 ```
 TargetType(
@@ -146,7 +171,7 @@ TargetType(
 )
 ```
 
-> Le X ne change pas le score mais est enregistré pour les futures statistiques et les départages.
+> Le X ne change pas le score. Son utilisation pour un départage dépend du règlement sélectionné.
 
 ### Miss (flèche hors cible)
 
@@ -406,8 +431,15 @@ En mode libre, l'application ne déduit jamais un score maximum à partir de 3 o
 | Moyenne par volée | `scoreTotal / nombreDeVolées` |
 | Moyenne par flèche | `scoreTotal / nombreTotalImpact` |
 | Nombre de 10 | Comptage des impacts avec `scoreFinal == 10` |
+| Nombre de 9 (`nineCount`) | Comptage des impacts avec `scoreFinal == 9` |
 | Nombre de X | Comptage des impacts avec `isX == true` |
 | Nombre de M (miss) | Comptage des impacts avec `isMiss == true` |
+
+Le résumé du domaine compte uniquement les impacts des volées validées. Sur
+les profils indoor publiés, `maxScoreCount` compte les 10 et `xCount` vaut zéro.
+Les compteurs 10/9 préparent les départages décrits dans l'ADR 013 ; aucun moteur
+de classement ni barrage n'est ajouté. Ils utilisent les valeurs finales après
+jugement ou repositionnement.
 
 ---
 
@@ -453,9 +485,9 @@ Cela ne s'applique actuellement qu'aux profils concentriques complets, couvrant
 `[0, 1]`. Une liste tronquée n'active pas implicitement un blason réduit.
 Les futurs profils réduits devront définir le rayon de référence, la surface
 active et la règle hors surface active ; les multispots devront aussi identifier
-le spot et les contraintes de répartition des flèches. Leur support et les
-spécificités réglementaires du 10 en salle restent des tâches distinctes.
+le spot et les contraintes de répartition des flèches. Leur support reste une
+tâche distincte ; les quatre profils indoor complets de l'ADR 013 sont disponibles.
 
 ---
 
-*Document version 1.5 — 15 octobre 2026*
+*Document version 1.6 — 15 octobre 2026*

@@ -84,6 +84,14 @@ La définition ci-dessous couvre le blason complet : aucune zone intermédiaire
 ne peut être omise à la reconstruction du modèle. Les rayons doivent respecter
 les [invariants de cible](regles-score.md#invariants-des-définitions-de-cible).
 
+Les nouveaux profils indoor de l'[ADR 013](adr/013-profils-indoor-world-archery.md)
+ont des UUID distincts et figés pour l'édition `2026-01-27`. Un futur adaptateur
+devra vérifier leur définition publiée complète, sans la déduire du diamètre ou
+du seul nom. Une révision réglementaire recevra une nouvelle identité ; les
+fixtures et séances historiques ne sont pas converties implicitement. Aucun
+format opérationnel ni migration n'est ajouté ici ; l'exemple générique avec X
+ci-dessous ne représente pas les nouveaux profils indoor.
+
 ```json
 {
   "uuid": "a1b2c3d4-...",

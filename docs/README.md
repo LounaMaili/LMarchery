@@ -29,6 +29,7 @@ Pour préparer le développement et les validations :
 | 10 | Suggestions géométriques et décisions de cordon séparées | [adr/010-suggestions-limites-score.md](adr/010-suggestions-limites-score.md) |
 | 11 | Décisions finales explicites et contextualisées | [adr/011-decisions-score-explicites.md](adr/011-decisions-score-explicites.md) |
 | 12 | Repositionnement explicite des impacts | [adr/012-repositionnement-explicite-impacts.md](adr/012-repositionnement-explicite-impacts.md) |
+| 13 | Profils indoor World Archery, édition 2026-01-27 | [adr/013-profils-indoor-world-archery.md](adr/013-profils-indoor-world-archery.md) |
 
 ---
 
