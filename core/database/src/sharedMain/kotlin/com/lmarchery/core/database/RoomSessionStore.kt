@@ -5,14 +5,18 @@ import androidx.room.deferredTransaction
 import androidx.room.useReaderConnection
 import androidx.room.useWriterConnection
 import com.lmarchery.core.model.session.Session
+import com.lmarchery.core.model.session.validateSessionUpdate
 import com.lmarchery.core.scoring.archive.ArchiveIssue
 import com.lmarchery.core.scoring.archive.ArchiveReconstruction
 import com.lmarchery.core.scoring.archive.ArchiveSnapshot
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.archive.TargetProfileSnapshot
 import com.lmarchery.core.scoring.archive.reconstructArchive
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.ensureActive
 import java.util.concurrent.CancellationException
 import java.util.concurrent.atomic.AtomicBoolean
+import kotlin.coroutines.CoroutineContext
 
 data class StorageDiagnostic(val path: String, val detail: String, val archiveIssue: ArchiveIssue? = null)
 
@@ -31,7 +35,16 @@ sealed interface SessionCreateResult {
     data class TechnicalFailure(val cause: Exception) : SessionCreateResult
 }
 
-/** Creation only. SQL rows/DAOs stay internal; callers exchange validated domain values. */
+sealed interface SessionUpdateResult {
+    data class Updated(val uuid: String) : SessionUpdateResult
+    data class Unchanged(val uuid: String) : SessionUpdateResult
+    data object NotFound : SessionUpdateResult
+    data class Conflict(val diagnostic: StorageDiagnostic) : SessionUpdateResult
+    data class NeedsIntervention(val diagnostic: StorageDiagnostic) : SessionUpdateResult
+    data class TechnicalFailure(val cause: Exception) : SessionUpdateResult
+}
+
+/** SQL rows/DAOs stay internal; callers exchange complete, contextualized domain values. */
 class RoomSessionStore internal constructor(private val database: SessionDatabase) : AutoCloseable {
     private val closed = AtomicBoolean(false)
 
@@ -69,6 +82,66 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
     } catch (error: CorruptStorage) { SessionCreateResult.NeedsIntervention(error.diagnostic) }
     catch (error: CancellationException) { throw error }
     catch (error: Exception) { SessionCreateResult.TechnicalFailure(error) }
+
+    /** Optimistic local revision, including the exact profile definition and edition. No deletion or merge. */
+    suspend fun update(expected: DomainArchive, proposed: DomainArchive): SessionUpdateResult = try {
+        val callerContext = currentCoroutineContext()
+        callerContext.ensureActive()
+        check(!closed.get()) { "Session store is closed." }
+        dataCheck(expected.sessions.size == 1 && expected.profiles.size == 1 &&
+            proposed.sessions.size == 1 && proposed.profiles.size == 1,
+            "archive", "Update requires exactly one expected and proposed session with its profile.")
+        database.useWriterConnection { connection ->
+            connection.immediateTransaction { updateInTransaction(expected, proposed, callerContext) }
+        }
+    } catch (error: CorruptStorage) { SessionUpdateResult.NeedsIntervention(error.diagnostic) }
+    catch (error: CancellationException) { throw error }
+    catch (error: Exception) { SessionUpdateResult.TechnicalFailure(error) }
+
+    private suspend fun updateInTransaction(
+        expected: DomainArchive,
+        proposed: DomainArchive,
+        callerContext: CoroutineContext,
+    ): SessionUpdateResult {
+        // Room changes coroutine context; check the original caller's Job before committing.
+        callerContext.ensureActive()
+        val dao = database.records()
+        val uuid = expected.sessions.single().uuid
+        val row = dao.session(uuid)
+        callerContext.ensureActive()
+        if (row == null) {
+            dataCheck(dao.identities(listOf(uuid)).none { it.kind == "SESSION" },
+                "sessions[$uuid]", "Registered session row is missing.")
+            return SessionUpdateResult.NotFound
+        }
+        val previousSnapshot = dao.sessionSnapshot(row)
+        val stored = validateStored(previousSnapshot)
+        callerContext.ensureActive()
+        if (!stored.sameContent(expected)) return SessionUpdateResult.Conflict(StorageDiagnostic(
+            "sessions[$uuid]", "Stored session or profile differs from the complete expected state; reload before retrying."))
+        if (stored.sameContent(proposed)) return SessionUpdateResult.Unchanged(uuid)
+
+        val nextSnapshot = proposed.toSnapshot()
+        val validated = validateStored(nextSnapshot) // Never use reconstructArchive(..., known) for local revisions.
+        dataCheck(validated.profiles == stored.profiles, "profiles", "A persisted session cannot change profile definition or edition.")
+        decode("sessions[$uuid].transition") {
+            validateSessionUpdate(stored.sessions.single(), validated.sessions.single())
+        }
+        val previousIds = previousSnapshot.identities().map { it.uuid }.toSet()
+        val newIds = nextSnapshot.identities().filterNot { it.uuid in previousIds }
+        val collisions = newIds.chunked(900).flatMap { dao.identities(it.map { identity -> identity.uuid }) }
+        if (collisions.isNotEmpty()) return SessionUpdateResult.Conflict(StorageDiagnostic(
+            "identities", "A new descendant UUID is already owned by stored data."))
+
+        callerContext.ensureActive()
+        newIds.forEach { dao.insertIdentity(it) }
+        dao.updateSessionRows(previousSnapshot.sessionRows(), nextSnapshot.sessionRows())
+        val reloaded = validateStored(dao.sessionSnapshot(requireNotNull(dao.session(uuid))))
+        dataCheck(reloaded.sameContent(validated), "sessions[$uuid]",
+            "Stored values differ from the proposed revision; transaction rolled back.")
+        callerContext.ensureActive()
+        return SessionUpdateResult.Updated(uuid)
+    }
 
     private suspend fun createInTransaction(archive: DomainArchive, snapshot: ArchiveSnapshot): SessionCreateResult {
         val dao = database.records()
@@ -111,6 +184,8 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         if (closed.compareAndSet(false, true)) database.close()
     }
 }
+
+private fun DomainArchive.sameContent(other: DomainArchive): Boolean = sessions == other.sessions && profiles == other.profiles
 
 private fun validateStored(snapshot: ArchiveSnapshot): DomainArchive = when (val result = reconstructArchive(snapshot)) {
     is ArchiveReconstruction.Accepted -> result.archive

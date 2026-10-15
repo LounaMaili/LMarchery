@@ -133,31 +133,54 @@ internal suspend fun SessionDao.writeProfile(value: TargetProfileSnapshot) {
         zone.innerRadiusNormalized.toRawBits(), zone.outerRadiusNormalized.toRawBits(), zone.colorName, zone.colorHex) })
 }
 
-internal suspend fun SessionDao.writeSession(snapshot: ArchiveSnapshot) {
-    val session = snapshot.sessions.single()
+/** One validated snapshot, mapped identically for creation and revision. */
+internal data class SessionRows(
+    val session: SessionRow,
+    val ends: List<EndRow>,
+    val impacts: List<ImpactRow>,
+    val decisions: List<DecisionRow>,
+    val repositions: List<RepositionRow>,
+)
+
+internal fun ArchiveSnapshot.sessionRows(): SessionRows {
+    val session = sessions.single()
     val date = requireNotNull(session.date)
-    insertSession(SessionRow(session.uuid, session.targetTypeUuid, requireNotNull(snapshot.schemaVersion),
-        requireNotNull(snapshot.scoringContractVersion), requireNotNull(date.localDateTime), requireNotNull(date.zoneId),
+    val sessionRow = SessionRow(session.uuid, session.targetTypeUuid, requireNotNull(schemaVersion),
+        requireNotNull(scoringContractVersion), requireNotNull(date.localDateTime), requireNotNull(date.zoneId),
         requireNotNull(date.offset), session.status.name, session.startedAt?.let(::sqlTime), session.endedAt?.let(::sqlTime),
         session.plannedEndCount, session.title, session.distanceM, session.arrowCountMode.name, session.arrowCountPerEnd,
         session.isIndoor.flag(), session.scoringMode.name, session.bowUuid, session.arrowSetUuid, session.locationName,
-        session.notes, sqlTime(requireNotNull(session.createdAt)), sqlTime(requireNotNull(session.updatedAt)), session.ends.size))
+        session.notes, sqlTime(requireNotNull(session.createdAt)), sqlTime(requireNotNull(session.updatedAt)), session.ends.size)
+    val ends = mutableListOf<EndRow>()
+    val impacts = mutableListOf<ImpactRow>()
+    val decisions = mutableListOf<DecisionRow>()
+    val repositions = mutableListOf<RepositionRow>()
     session.ends.forEachIndexed { position, end ->
-        insertEnd(EndRow(end.uuid, session.uuid, position, end.index, end.status.name, end.notes,
-            sqlTime(requireNotNull(end.createdAt)), sqlTime(requireNotNull(end.updatedAt)), end.validatedAt?.let(::sqlTime), end.impacts.size))
+        ends += EndRow(end.uuid, session.uuid, position, end.index, end.status.name, end.notes,
+            sqlTime(requireNotNull(end.createdAt)), sqlTime(requireNotNull(end.updatedAt)), end.validatedAt?.let(::sqlTime), end.impacts.size)
         end.impacts.forEachIndexed { impactPosition, impact ->
-            insertImpact(ImpactRow(impact.uuid, end.uuid, impact.targetTypeUuid, impactPosition, impact.index,
+            impacts += ImpactRow(impact.uuid, end.uuid, impact.targetTypeUuid, impactPosition, impact.index,
                 impact.point.x.toRawBits(), impact.point.y.toRawBits(), impact.inputMode.name, impact.note,
-                sqlTime(requireNotNull(impact.createdAt)), sqlTime(requireNotNull(impact.updatedAt)), impact.repositions.size))
-            insertDecisions(listOf(requireNotNull(impact.decision).row(impact.uuid, -1)) +
-                impact.repositions.mapIndexed { index, trace -> requireNotNull(trace.previousDecision).row(impact.uuid, index) })
-            insertRepositions(impact.repositions.mapIndexed { index, trace ->
-                RepositionRow(trace.impactUuid, index, sqlTime(requireNotNull(trace.impactCreatedAt)), trace.inputMode.name,
+                sqlTime(requireNotNull(impact.createdAt)), sqlTime(requireNotNull(impact.updatedAt)), impact.repositions.size)
+            decisions += requireNotNull(impact.decision).row(impact.uuid, -1)
+            impact.repositions.forEachIndexed { index, trace ->
+                decisions += requireNotNull(trace.previousDecision).row(impact.uuid, index)
+                repositions += RepositionRow(trace.impactUuid, index, sqlTime(requireNotNull(trace.impactCreatedAt)), trace.inputMode.name,
                     trace.previousPoint.x.toRawBits(), trace.previousPoint.y.toRawBits(), sqlTime(requireNotNull(trace.previousUpdatedAt)),
                     trace.newPoint.x.toRawBits(), trace.newPoint.y.toRawBits(), sqlTime(requireNotNull(trace.changedAt)), trace.reason)
-            })
+            }
         }
     }
+    return SessionRows(sessionRow, ends, impacts, decisions, repositions)
+}
+
+internal suspend fun SessionDao.writeSession(snapshot: ArchiveSnapshot) {
+    val rows = snapshot.sessionRows()
+    insertSession(rows.session)
+    rows.ends.forEach { insertEnd(it) }
+    rows.impacts.forEach { insertImpact(it) }
+    insertDecisions(rows.decisions)
+    insertRepositions(rows.repositions)
 }
 
 private fun DecisionSnapshot.row(uuid: String, revision: Int): DecisionRow {

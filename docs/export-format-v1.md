@@ -13,9 +13,10 @@ Les modèles acceptés sont immuables et possèdent leurs collections. Les snaps
 sont des données de transfert non fiables et copiables, potentiellement adossées
 à des listes mutables ; ne pas les modifier pendant leur validation.
 
-Le module `core:database` utilise maintenant ce contrat pour créer et relire
-des séances en Room/SQLite, sans branchement à Compose ; voir
-[ADR 016](adr/016-persistance-locale-room.md). Il n'existe ni lecteur/écrivain JSON,
+Le module `core:database` utilise ce contrat pour créer, relire et mettre à jour
+des séances en Room/SQLite, sans branchement à Compose ; voir les
+[ADR 016](adr/016-persistance-locale-room.md) et
+[ADR 017](adr/017-mise-a-jour-seances-room.md). Il n'existe ni lecteur/écrivain JSON,
 ni restauration de fichier Android, ni fusion entre appareils.
 L'extension `.lmarchery.json`, UTF-8, MIME `application/json` et
 le partage par intent restent prévus. Aucun format opérationnel antérieur n'a
@@ -194,6 +195,10 @@ traces dans des tables reliées par UUID. Les instants sont des couples entiers
 `epochSecond` / `nano`, la date civile garde son triplet et les `Float` leurs bits.
 Le schéma Room exporté est distinct de `schemaVersion` et de `scoringContractVersion`.
 Aucun JSON de données utilisateur n'est employé comme substitut aux relations.
+Les révisions locales passent par `RoomSessionStore.update(expected, proposed)`
+et le validateur indépendant de transition de l’[ADR 017](adr/017-mise-a-jour-seances-room.md),
+sans assouplir les conflits de `reconstructArchive(snapshot, known)`.
+Le format et les versions de sauvegarde restent inchangés.
 
 Restent à réaliser :
 

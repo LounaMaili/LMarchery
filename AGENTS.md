@@ -67,7 +67,10 @@ Le module `:core:database` fournit Room sans connexion à Compose. `./gradlew te
 doit aussi exécuter `:core:database:jvmTest` sur SQLite natif et fichiers disque,
 avec fermeture/réouverture ; inspecter le rapport, pas seulement le statut Gradle.
 Le script compile et linte également sa cible Android. Après modification du
-stockage, vérifier le schéma exporté sous `core/database/schemas` et lire l'ADR 016.
+stockage, vérifier le schéma exporté sous `core/database/schemas` et lire les ADR 016 et 017.
+Les révisions utilisent `update(expected, proposed)` avec état complet et
+`validateSessionUpdate` ; ne pas contourner les conflits, supprimer les descendants
+ni réécrire les traces. Vérifier les tests de concurrence et de rollback sur disque.
 Ne jamais utiliser `REPLACE` ou une migration destructive pour résoudre un conflit.
 
 Utiliser un **JDK 21 complet**, le SDK Android 35 et les Build Tools 34.0.0.

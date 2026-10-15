@@ -240,7 +240,7 @@ class Session(
         return revised
     }
 
-    private fun requireNotOlderThan(previous: Session) {
+    internal fun requireNotOlderThan(previous: Session) {
         if (previous.status == SessionStatus.COMPLETED) {
             require(status == SessionStatus.COMPLETED && endedAt == previous.endedAt && ends == previous.ends) {
                 "A COMPLETED session cannot be reopened or have its ends replaced."

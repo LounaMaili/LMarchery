@@ -4,7 +4,7 @@
 
 **État implémenté** : `TargetType`, `TargetZone`, `Session`, `End`, `ArrowImpact`
 et les valeurs de scoring/temps sont des modèles Kotlin purs. `core:database`
-persiste maintenant des séances complètes en Room/SQLite sans connexion Compose.
+persiste et met à jour des séances complètes en Room/SQLite sans connexion Compose.
 Les anciens IDs/FK numériques des tableaux sont des projections historiques,
 absentes du schéma SQLite 1 qui utilise les UUID (section 4). Les modèles `Bow`,
 `ArrowSet`, `SessionPreset` restent prévus. Le contrat typé de sauvegarde est
@@ -534,6 +534,16 @@ Les versions Room, archive et scoring sont séparées ; le profil garde son UUID
 et son édition distincte. L'export de schéma versionné et les garanties
 transactionnelles sont détaillés dans [ADR 016](adr/016-persistance-locale-room.md).
 
+`update(expected: DomainArchive, proposed: DomainArchive)` compare séance et
+profil complets dans une transaction écrivain. Le validateur pur
+`validateSessionUpdate` contrôle la filiation locale : UUID, propriété des enfants,
+création, chronologie, statuts, décisions et préfixes de traces. Aucun changement
+de profil ni suppression n’est permis. Les mises à jour SQL sont suivies d’une
+relecture avec égalité complète ; conflits et incohérences n’écrasent aucune donnée.
+Voir [ADR 017](adr/017-mise-a-jour-seances-room.md).
+La politique conservatrice de `reconstructArchive(snapshot, known)` reste distincte
+de cette autorisation de révision locale.
+
 ---
 
 ## 5. Export / Import
@@ -561,4 +571,4 @@ Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
 ---
 
-*Document version 1.8 — 15 octobre 2026*
+*Document version 1.9 — 15 octobre 2026*
