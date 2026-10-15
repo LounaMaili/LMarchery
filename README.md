@@ -102,10 +102,11 @@ Le SDK est désigné par `ANDROID_HOME`. Les préférences Android utilisent
 chemin du SDK. En sandbox, définir aussi un `GRADLE_USER_HOME` accessible en écriture.
 
 La V1 reste locale/offline : pas de permission réseau ni de caméra. Room permet
-de créer et relire une séance complète, avec reconstruction validée, sans être
-encore connecté à la démo Compose. Les tests `:core:database:jvmTest` interrogent
+de créer, relire et mettre à jour une séance complète avec contrôle optimiste
+et reconstruction validée, sans être encore connecté à la démo Compose. Les tests `:core:database:jvmTest` interrogent
 SQLite natif sur disque, avec fermeture/réouverture ; ils sont inclus dans `test`.
-Voir [ADR 016](docs/adr/016-persistance-locale-room.md). La préparation du build peut
+Voir [ADR 016](docs/adr/016-persistance-locale-room.md) et
+[ADR 017](docs/adr/017-mise-a-jour-seances-room.md). La préparation du build peut
 nécessiter le réseau pour télécharger Gradle, le SDK et les dépendances.
 
 Le workflow `.github/workflows/quality-gate.yml` est configuré pour les PR vers

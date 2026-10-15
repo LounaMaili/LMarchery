@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.RoomDatabase
+import androidx.room.Update
 
 @Dao
 internal interface SessionDao {
@@ -16,6 +17,16 @@ internal interface SessionDao {
     @Insert suspend fun insertImpact(row: ImpactRow)
     @Insert suspend fun insertDecisions(rows: List<DecisionRow>)
     @Insert suspend fun insertRepositions(rows: List<RepositionRow>)
+    @Update suspend fun updateSession(row: SessionRow): Int
+    @Update suspend fun updateEnd(row: EndRow): Int
+    @Update suspend fun updateImpact(row: ImpactRow): Int
+    @Update suspend fun updateDecision(row: DecisionRow): Int
+    // Temporary disjoint keys avoid immediate UNIQUE conflicts during permutations.
+    // Only visible inside the writer transaction, never committed in this form.
+    @Query("UPDATE ends SET position = -position - 1, `index` = -`index` WHERE sessionUuid = :uuid")
+    suspend fun stageEndOrder(uuid: String)
+    @Query("UPDATE impacts SET position = -position - 1, `index` = -`index` WHERE endUuid = :uuid")
+    suspend fun stageImpactOrder(uuid: String)
     @Query("SELECT * FROM entity_identities WHERE uuid IN (:uuids)")
     suspend fun identities(uuids: List<String>): List<IdentityRow>
     @Query("SELECT * FROM target_profiles WHERE uuid = :uuid") suspend fun profile(uuid: String): ProfileRow?

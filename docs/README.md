@@ -33,6 +33,7 @@ Pour préparer le développement et les validations :
 | 14 | Instants UTC et date civile de séance | [adr/014-convention-temporelle-utc.md](adr/014-convention-temporelle-utc.md) |
 | 15 | Sauvegarde versionnée et reconstruction contextualisée | [adr/015-sauvegarde-versionnee-reconstruction.md](adr/015-sauvegarde-versionnee-reconstruction.md) |
 | 16 | Première persistance locale Room / SQLite | [adr/016-persistance-locale-room.md](adr/016-persistance-locale-room.md) |
+| 17 | Mise à jour transactionnelle des séances Room | [adr/017-mise-a-jour-seances-room.md](adr/017-mise-a-jour-seances-room.md) |
 
 ---
 

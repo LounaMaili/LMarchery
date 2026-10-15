@@ -1,5 +1,8 @@
 # ADR 016 — Première persistance locale Room / SQLite
 
+> Étape suivante : l’[ADR 017](017-mise-a-jour-seances-room.md) ajoute les révisions
+> locales contrôlées, sans modifier le schéma ni les garanties ci-dessous.
+
 ## Choix technique vérifié
 
 Conserver Kotlin **2.0.21**, AGP **8.7.3**, Gradle **8.10.2**, JDK **21**,
