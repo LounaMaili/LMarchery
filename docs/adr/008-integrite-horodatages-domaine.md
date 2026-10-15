@@ -55,7 +55,7 @@ la date de l'événement qui les valide ou clôture.
   régression et de compatibilité de l'égalité/décomposition.
 - La future couche Room/import doit valider ses instantanés puis résoudre les
   conflits avant l'intégration. Aucun stockage ou algorithme d'import n'est ajouté.
-- `LocalDateTime` est conservé ; convention UTC/fuseau et éventuelle migration
-  vers `Instant` restent à décider dans une tâche distincte avant la persistance.
+- L'[ADR 014](014-convention-temporelle-utc.md) applique désormais ces garanties
+  sur des `Instant`, en distinguant la date civile de séance et son fuseau.
 
 *14 octobre 2026*

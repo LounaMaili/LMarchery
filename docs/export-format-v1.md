@@ -32,7 +32,7 @@ Les entités exportables modifiables portent `createdAt` et `updatedAt`.
 
 - `createdAt` est fixé à la création et ne sert pas à résoudre les conflits.
 - `updatedAt` est mis à jour à chaque modification fonctionnelle.
-- En cas d'import d'un même `uuid`, l'entité dont `updatedAt` est le plus récent gagne.
+- Pour un même `uuid`, `updatedAt` est comparé comme un `Instant`, sans garantir la causalité entre appareils ; la résolution des conflits d'horloges reste à définir avant Room.
 - Les `TargetType` built-in (`isBuiltIn = true`) ne sont jamais écrasés par un import, même si le fichier importé contient un `updatedAt` plus récent.
 - Pour une séance, toute modification d'une volée ou d'un impact met aussi à jour `Session.updatedAt`, afin de résoudre le conflit au niveau de la séance complète.
 
@@ -52,11 +52,33 @@ une révision obsolète d'un enfant déjà présent est rejetée. La future rés
 des conflits doit sélectionner la révision avant son intégration, sans antidater
 la séance ni écraser une révision plus récente d'un descendant.
 
-Ces règles ne constituent pas une implémentation d'import/export. Les types du
-domaine restent provisoirement `LocalDateTime` ; les offsets des exemples JSON
-ne définissent pas encore une convention UTC/fuseau de conversion. Cette décision
-est réservée à une tâche distincte avant la persistance. Voir
-[ADR 008](adr/008-integrite-horodatages-domaine.md).
+Ces règles ne constituent pas une implémentation d'import/export. Les invariants
+de l'[ADR 008](adr/008-integrite-horodatages-domaine.md) portent désormais sur des
+`Instant`, selon l'[ADR 014](adr/014-convention-temporelle-utc.md).
+
+### Convention temporelle du format prévu
+
+Les événements (`exportDate`, création/révision, début/fin, validation, décision et
+dates de traces) sont écrits en ISO 8601 UTC avec `Z`. Les fractions de seconde
+sont conservées, sans troncature en millisecondes. `UtcTimestamps.parse` accepte
+un offset explicite tel que `+01:00`, `+02:00` ou `Z` et le convertit en `Instant` ;
+`format` écrit `Z`. Les chaînes invalides, sans offset ou à offset inconnu négatif
+zéro sont rejetées, sans correction ni choix du fuseau de la machine.
+
+`Session.date` reste civile : objet `localDateTime` sans conversion implicite,
+`zoneId` IANA d'origine et `offset` validé. Une heure répétée nécessite un choix
+explicite de l'offset ; une heure inexistante ou un offset incompatible sont
+rejetés. Les exemples français ci-dessous déclarent `Europe/Paris` ; ce n'est pas
+une règle de migration des anciens fichiers. Un offset seul ne révèle pas un
+fuseau IANA. Changer le fuseau de consultation ne réécrit ni l'instant ni ce triplet.
+
+Un triplet reçu est reconstruit par `SessionDateTime` ou `of(local, zone, offset)`
+avec ses valeurs exactes. `fromInstant` sert seulement au parcours partant d'un
+instant et d'un fuseau connus, sans écraser un triplet source contradictoire.
+Une ancienne date naïve ne devient jamais implicitement UTC ou heure de Paris :
+la migration devra disposer d'une provenance fiable et résoudre explicitement
+les ambiguïtés. Le format V1 est encore préparatoire ; l'évolution du format et
+les migrations de fichiers antérieurs devront être définies avant sa publication.
 
 ---
 
@@ -68,7 +90,7 @@ est réservée à une tâche distincte avant la persistance. Voir
 {
   "version": 1,
   "appName": "LMarchery",
-  "exportDate": "2026-04-29T10:30:00+02:00",
+  "exportDate": "2026-04-29T08:30:00Z",
   "deviceInfo": "Samsung Galaxy S24 / Android 15",
   "targetTypes": [...],
   "bows": [...],
@@ -106,8 +128,8 @@ ci-dessous ne représente pas les nouveaux profils indoor.
   "xRingEnabled": true,
   "xRingLabel": "X",
   "innerTenRadiusNormalized": 0.05,
-  "createdAt": "2026-04-29T10:30:00+02:00",
-  "updatedAt": "2026-04-29T10:30:00+02:00",
+  "createdAt": "2026-04-29T08:30:00Z",
+  "updatedAt": "2026-04-29T08:30:00Z",
   "zones": [
     {
       "score": 10,
@@ -184,8 +206,8 @@ ci-dessous ne représente pas les nouveaux profils indoor.
   "brand": "Hoyt",
   "model": "Formula Xi",
   "notes": "Viseur Shibuya Ultima",
-  "createdAt": "2026-03-15T14:00:00+01:00",
-  "updatedAt": "2026-03-15T14:00:00+01:00"
+  "createdAt": "2026-03-15T13:00:00Z",
+  "updatedAt": "2026-03-15T13:00:00Z"
 }
 ```
 
@@ -202,8 +224,8 @@ ci-dessous ne représente pas les nouveaux profils indoor.
   "vanes": "Spinwing",
   "material": "carbone",
   "notes": "",
-  "createdAt": "2026-03-15T14:05:00+01:00",
-  "updatedAt": "2026-03-15T14:05:00+01:00"
+  "createdAt": "2026-03-15T13:05:00Z",
+  "updatedAt": "2026-03-15T13:05:00Z"
 }
 ```
 
@@ -221,8 +243,8 @@ ci-dessous ne représente pas les nouveaux profils indoor.
   "scoringMode": "TRAINING",
   "bowUuid": "e5f6g7h8-...",
   "arrowSetUuid": "i9j0k1l2-...",
-  "createdAt": "2026-03-15T14:10:00+01:00",
-  "updatedAt": "2026-03-15T14:10:00+01:00"
+  "createdAt": "2026-03-15T13:10:00Z",
+  "updatedAt": "2026-03-15T13:10:00Z"
 }
 ```
 
@@ -233,7 +255,7 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
 ```json
 {
   "uuid": "q7r8s9t0-...",
-  "date": "2026-04-28T18:00:00+02:00",
+  "date": { "localDateTime": "2026-04-28T18:00:00", "zoneId": "Europe/Paris", "offset": "+02:00" },
   "title": "Entraînement salle",
   "targetTypeUuid": "a1b2c3d4-...",
   "distanceM": 18,
@@ -246,13 +268,13 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
   "locationName": "Club archerie Ville",
   "notes": "Bon groupement ce soir",
   "status": "COMPLETED",
-  "startedAt": "2026-04-28T18:02:00+02:00",
-  "endedAt": "2026-04-28T19:15:00+02:00",
+  "startedAt": "2026-04-28T16:02:00Z",
+  "endedAt": "2026-04-28T17:15:00Z",
   "plannedEndCount": 20,
   "totalScore": 10,
   "maxPossibleScore": 600,
-  "createdAt": "2026-04-28T18:00:00+02:00",
-  "updatedAt": "2026-04-28T19:15:00+02:00",
+  "createdAt": "2026-04-28T16:00:00Z",
+  "updatedAt": "2026-04-28T17:15:00Z",
   "ends": [
     {
       "uuid": "u1v2w3x4-...",
@@ -260,9 +282,9 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
       "status": "VALIDATED",
       "totalScore": 10,
       "notes": "",
-      "createdAt": "2026-04-28T18:05:00+02:00",
-      "updatedAt": "2026-04-28T18:06:00+02:00",
-      "validatedAt": "2026-04-28T18:06:00+02:00",
+      "createdAt": "2026-04-28T16:05:00Z",
+      "updatedAt": "2026-04-28T16:06:00Z",
+      "validatedAt": "2026-04-28T16:06:00Z",
       "impacts": [
         {
           "uuid": "y5z6a7b8-...",
@@ -283,8 +305,8 @@ En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
             "reason": null
           },
           "note": "",
-          "createdAt": "2026-04-28T18:05:20+02:00",
-          "updatedAt": "2026-04-28T18:05:20+02:00"
+          "createdAt": "2026-04-28T16:05:20Z",
+          "updatedAt": "2026-04-28T16:05:20Z"
         }
       ]
     }
@@ -331,13 +353,13 @@ Exemple de jugement explicite 10/9, après un calcul géométrique de 9 :
   "isCordDecisionManual": true,
   "scoreDecision": {
     "kind": "BOUNDARY_JUDGMENT",
-    "decidedAt": "2026-04-28T18:05:25+02:00",
+    "decidedAt": "2026-04-28T16:05:25Z",
     "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
     "reason": null
   },
   "note": "",
-  "createdAt": "2026-04-28T18:05:20+02:00",
-  "updatedAt": "2026-04-28T18:05:25+02:00"
+  "createdAt": "2026-04-28T16:05:20Z",
+  "updatedAt": "2026-04-28T16:05:25Z"
 }
 ```
 
@@ -358,13 +380,13 @@ Exemple de correction exceptionnelle d'un X géométrique en 9 :
   "isCordDecisionManual": false,
   "scoreDecision": {
     "kind": "EXCEPTIONAL_CORRECTION",
-    "decidedAt": "2026-04-28T18:05:25+02:00",
+    "decidedAt": "2026-04-28T16:05:25Z",
     "boundary": null,
     "reason": "Point initial mal positionné ; score constaté sur le blason"
   },
   "note": "",
-  "createdAt": "2026-04-28T18:05:20+02:00",
-  "updatedAt": "2026-04-28T18:05:25+02:00"
+  "createdAt": "2026-04-28T16:05:20Z",
+  "updatedAt": "2026-04-28T16:05:25Z"
 }
 ```
 
@@ -378,8 +400,8 @@ doit vérifier `createdAt <= decidedAt <= updatedAt`.
 Ces exemples ne constituent aucun import/export opérationnel. La politique de
 versionnement des profils et la migration d'anciens fichiers sans `scoreDecision`
 restent à définir ; il ne faut pas inventer un jugement depuis le seul booléen
-historique ou une différence de scores. `LocalDateTime` reste provisoire : les
-offsets illustratifs n'arrêtent pas la convention UTC/fuseau. Voir
+historique ou une différence de scores. Les décisions utilisent des `Instant`
+et les exemples écrivent `Z`, selon l'ADR 014. Voir
 [ADR 011](adr/011-decisions-score-explicites.md).
 
 ### Traces des corrections de position (contrat à préserver avant Room)
@@ -404,7 +426,7 @@ après le jugement 10/9 ci-dessus, un déplacement vers `(0.25, 0)` donne 8 :
   "scoreDecision": { "kind": "GEOMETRY", "decidedAt": null, "boundary": null, "reason": null },
   "repositions": [{
     "impactUuid": "b1c2d3e4-...",
-    "impactCreatedAt": "2026-04-28T18:05:20+02:00",
+    "impactCreatedAt": "2026-04-28T16:05:20Z",
     "inputMode": "MANUAL",
     "previousPoint": { "xNormalized": 0.105, "yNormalized": 0.0 },
     "previousDecision": {
@@ -414,17 +436,17 @@ après le jugement 10/9 ci-dessus, un déplacement vers `(0.25, 0)` donne 8 :
       "isX": false,
       "scoreDecision": {
         "kind": "BOUNDARY_JUDGMENT",
-        "decidedAt": "2026-04-28T18:05:25+02:00",
+        "decidedAt": "2026-04-28T16:05:25Z",
         "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
         "reason": null
       }
     },
-    "previousUpdatedAt": "2026-04-28T18:05:25+02:00",
+    "previousUpdatedAt": "2026-04-28T16:05:25Z",
     "newPoint": { "xNormalized": 0.25, "yNormalized": 0.0 },
-    "changedAt": "2026-04-28T18:06:00+02:00",
+    "changedAt": "2026-04-28T16:06:00Z",
     "reason": "Position initiale placée dans le mauvais anneau"
   }],
-  "updatedAt": "2026-04-28T18:06:00+02:00"
+  "updatedAt": "2026-04-28T16:06:00Z"
 }
 ```
 
@@ -453,8 +475,8 @@ un sérialiseur ou la migration des fichiers historiques. Voir
 
 ### Résolution des conflits
 
-- En cas de conflit sur une entité (même `uuid`, données différentes) → **version la plus récente gagne** (comparaison `updatedAt`)
-- Si un ancien fichier d'export ne contient pas `updatedAt`, l'entité importée est considérée comme plus ancienne que l'entité locale, sauf si l'entité locale n'existe pas encore
+- Pour un même `uuid`, comparer les `updatedAt` comme des instants ; ne pas comparer lexicalement les chaînes ISO. Les horloges décalées et les contenus différents à date égale nécessitent une politique encore à définir, sans écrasement silencieux présumé sûr.
+- Un ancien fichier sans `updatedAt` fiable ou sans contexte de fuseau reste non résolu. Aucun instant ni ordre de priorité n'est inventé pour le faire entrer dans le modèle validé ; son traitement devra être explicite.
 - Les entités built-in (`isBuiltIn = true`) ne sont pas modifiées lors de l'import
 
 ### Ordre d'import

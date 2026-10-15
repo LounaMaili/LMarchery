@@ -6,7 +6,7 @@ import com.lmarchery.core.model.session.InputMode
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.scoring.ScoreDecisionRequest
-import java.time.LocalDateTime
+import java.time.Instant
 
 fun scoreArrowImpact(
     uuid: String,
@@ -17,8 +17,8 @@ fun scoreArrowImpact(
     userSelectedScore: Int? = null,
     inputMode: InputMode = InputMode.MANUAL,
     note: String? = null,
-    createdAt: LocalDateTime,
-    updatedAt: LocalDateTime = createdAt,
+    createdAt: Instant,
+    updatedAt: Instant = createdAt,
     cordonToleranceNormalized: Float = DEFAULT_CORDON_TOLERANCE_NORMALIZED,
     decision: ScoreDecisionRequest = ScoreDecisionRequest.AcceptGeometry,
 ): ArrowImpact {

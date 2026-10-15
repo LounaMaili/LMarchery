@@ -5,17 +5,19 @@ import com.lmarchery.core.model.scoring.BoundaryValue
 import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.ZoneId
+import java.time.Instant
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class SessionTimestampTest {
-    private val ten = LocalDateTime.parse("2026-10-14T10:00:00")
-    private val fivePast = ten.plusMinutes(5)
-    private val tenPast = ten.plusMinutes(10)
-    private val fifteenPast = ten.plusMinutes(15)
+    private val ten = Instant.parse("2026-10-14T10:00:00Z")
+    private val fivePast = ten.plusSeconds(300)
+    private val tenPast = ten.plusSeconds(600)
+    private val fifteenPast = ten.plusSeconds(900)
     private val target = TargetType(
         uuid = "11111111-1111-4111-8111-111111111111",
         name = "Timestamp test target",
@@ -233,12 +235,12 @@ class SessionTimestampTest {
 
     @Test
     fun `children cannot have been created before their parent`() {
-        val olderImpact = impact(createdAt = ten.minusMinutes(1), updatedAt = ten)
+        val olderImpact = impact(createdAt = ten.minusSeconds(60), updatedAt = ten)
         assertFailsWith<IllegalArgumentException> { end(impacts = listOf(olderImpact)) }
         assertFailsWith<IllegalArgumentException> { end().copy(impacts = listOf(olderImpact)) }
         assertFailsWith<IllegalArgumentException> { end().withImpact(olderImpact) }
 
-        val olderEnd = end(createdAt = ten.minusMinutes(1), updatedAt = ten)
+        val olderEnd = end(createdAt = ten.minusSeconds(60), updatedAt = ten)
         assertFailsWith<IllegalArgumentException> { session(ends = listOf(olderEnd)) }
         assertFailsWith<IllegalArgumentException> { session().copy(ends = listOf(olderEnd)) }
         assertFailsWith<IllegalArgumentException> { session().withEnd(olderEnd) }
@@ -374,7 +376,7 @@ class SessionTimestampTest {
         assertEquals("end-1", endUuid)
         assertEquals(1, endIndex)
         assertEquals("session-1", sessionUuid)
-        assertEquals(ten, date)
+        assertEquals(SessionDateTime.fromInstant(ten, ZoneId.of("UTC")), date)
         assertTrue(originalImpact.toString().startsWith("ArrowImpact("))
         assertTrue(originalEnd.toString().startsWith("End("))
         assertTrue(originalSession.toString().startsWith("Session("))
@@ -402,32 +404,32 @@ class SessionTimestampTest {
     private fun impact(
         uuid: String = "impact-1",
         index: Int = 1,
-        createdAt: LocalDateTime = ten,
-        updatedAt: LocalDateTime = ten,
+        createdAt: Instant = ten,
+        updatedAt: Instant = ten,
     ) = ArrowImpact(uuid, index, NormalizedPoint(0f, 0f), 0f, 10, 10, false, false, InputMode.MANUAL, false,
         createdAt = createdAt, updatedAt = updatedAt, targetType = target)
 
-    private fun correction(time: LocalDateTime) =
+    private fun correction(time: Instant) =
         ScoreDecisionRequest.ExceptionalCorrection(BoundaryValue(9), "Timestamp regression fixture", time)
 
     private fun end(
         uuid: String = "end-1",
         index: Int = 1,
-        createdAt: LocalDateTime = ten,
-        updatedAt: LocalDateTime = ten,
-        validatedAt: LocalDateTime? = null,
+        createdAt: Instant = ten,
+        updatedAt: Instant = ten,
+        validatedAt: Instant? = null,
         impacts: List<ArrowImpact> = emptyList(),
     ) = End(uuid, index, if (validatedAt == null) EndStatus.EDITING else EndStatus.VALIDATED,
         impacts, createdAt = createdAt, updatedAt = updatedAt, validatedAt = validatedAt)
 
     private fun session(
-        createdAt: LocalDateTime = ten,
-        updatedAt: LocalDateTime = ten,
-        startedAt: LocalDateTime? = null,
-        endedAt: LocalDateTime? = null,
+        createdAt: Instant = ten,
+        updatedAt: Instant = ten,
+        startedAt: Instant? = null,
+        endedAt: Instant? = null,
         ends: List<End> = emptyList(),
     ) = Session(
-        uuid = "session-1", date = ten,
+        uuid = "session-1", date = SessionDateTime.fromInstant(ten, ZoneId.of("UTC")),
         status = when {
             endedAt != null -> SessionStatus.COMPLETED
             startedAt != null -> SessionStatus.IN_PROGRESS

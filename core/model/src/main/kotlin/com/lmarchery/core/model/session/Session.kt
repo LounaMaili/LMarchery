@@ -1,15 +1,16 @@
 package com.lmarchery.core.model.session
 
 import com.lmarchery.core.model.target.TargetType
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.Instant
 import java.util.Collections
 
 class Session(
     val uuid: String,
-    val date: LocalDateTime,
+    val date: SessionDateTime,
     val status: SessionStatus,
-    val startedAt: LocalDateTime? = null,
-    val endedAt: LocalDateTime? = null,
+    val startedAt: Instant? = null,
+    val endedAt: Instant? = null,
     val plannedEndCount: Int? = null,
     val title: String,
     val targetType: TargetType,
@@ -23,8 +24,8 @@ class Session(
     val locationName: String? = null,
     val notes: String? = null,
     ends: List<End> = emptyList(),
-    val createdAt: LocalDateTime,
-    val updatedAt: LocalDateTime,
+    val createdAt: Instant,
+    val updatedAt: Instant,
 ) {
     val ends: List<End> =
         Collections.unmodifiableList(ends.toList())
@@ -133,7 +134,7 @@ class Session(
         }
     }
 
-    fun start(startedAt: LocalDateTime): Session {
+    fun start(startedAt: Instant): Session {
         require(status == SessionStatus.DRAFT) { "Only a DRAFT session can be started." }
         require(!startedAt.isBefore(updatedAt)) {
             "Session start must not be before its latest modification."
@@ -146,7 +147,7 @@ class Session(
         )
     }
 
-    fun complete(endedAt: LocalDateTime): Session {
+    fun complete(endedAt: Instant): Session {
         require(status == SessionStatus.IN_PROGRESS) { "Only an IN_PROGRESS session can be completed." }
         val startedAtValue = requireNotNull(startedAt) {
             "startedAt is required before completing a session."
@@ -167,7 +168,7 @@ class Session(
 
     fun withEnd(
         end: End,
-        updatedAt: LocalDateTime = end.updatedAt,
+        updatedAt: Instant = end.updatedAt,
     ): Session {
         require(status != SessionStatus.COMPLETED) { "A COMPLETED session cannot be modified." }
         require(!updatedAt.isBefore(createdAt)) {
@@ -193,10 +194,10 @@ class Session(
     /** Returns a new value while preserving creation time and temporal history. */
     fun copy(
         uuid: String = this.uuid,
-        date: LocalDateTime = this.date,
+        date: SessionDateTime = this.date,
         status: SessionStatus = this.status,
-        startedAt: LocalDateTime? = this.startedAt,
-        endedAt: LocalDateTime? = this.endedAt,
+        startedAt: Instant? = this.startedAt,
+        endedAt: Instant? = this.endedAt,
         plannedEndCount: Int? = this.plannedEndCount,
         title: String = this.title,
         targetType: TargetType = this.targetType,
@@ -210,8 +211,8 @@ class Session(
         locationName: String? = this.locationName,
         notes: String? = this.notes,
         ends: List<End> = this.ends,
-        createdAt: LocalDateTime = this.createdAt,
-        updatedAt: LocalDateTime = this.updatedAt,
+        createdAt: Instant = this.createdAt,
+        updatedAt: Instant = this.updatedAt,
     ): Session {
         val revised = Session(
             uuid = uuid,
@@ -289,10 +290,10 @@ class Session(
     override fun toString(): String = snapshot.toString().replaceFirst("Snapshot(", "Session(")
 
     operator fun component1(): String = uuid
-    operator fun component2(): LocalDateTime = date
+    operator fun component2(): SessionDateTime = date
     operator fun component3(): SessionStatus = status
-    operator fun component4(): LocalDateTime? = startedAt
-    operator fun component5(): LocalDateTime? = endedAt
+    operator fun component4(): Instant? = startedAt
+    operator fun component5(): Instant? = endedAt
     operator fun component6(): Int? = plannedEndCount
     operator fun component7(): String = title
     operator fun component8(): TargetType = targetType
@@ -306,15 +307,15 @@ class Session(
     operator fun component16(): String? = locationName
     operator fun component17(): String? = notes
     operator fun component18(): List<End> = ends
-    operator fun component19(): LocalDateTime = createdAt
-    operator fun component20(): LocalDateTime = updatedAt
+    operator fun component19(): Instant = createdAt
+    operator fun component20(): Instant = updatedAt
 
     private data class Snapshot(
         val uuid: String,
-        val date: LocalDateTime,
+        val date: SessionDateTime,
         val status: SessionStatus,
-        val startedAt: LocalDateTime?,
-        val endedAt: LocalDateTime?,
+        val startedAt: Instant?,
+        val endedAt: Instant?,
         val plannedEndCount: Int?,
         val title: String,
         val targetType: TargetType,
@@ -328,7 +329,7 @@ class Session(
         val locationName: String?,
         val notes: String?,
         val ends: List<End>,
-        val createdAt: LocalDateTime,
-        val updatedAt: LocalDateTime,
+        val createdAt: Instant,
+        val updatedAt: Instant,
     )
 }

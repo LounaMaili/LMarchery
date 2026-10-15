@@ -61,8 +61,8 @@ En V1, les entités exportables racines sont `TargetType`, `Session`, `End`, `Ar
 |-------|-------|
 | `id` | Clé primaire locale Room. Elle n'est jamais utilisée comme clé de fusion entre appareils. |
 | `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
-| `createdAt` | Date de création locale ou de définition initiale pour les données built-in. |
-| `updatedAt` | Date de dernière modification fonctionnelle, utilisée pour résoudre les conflits d'import. |
+| `createdAt` | Instant UTC de création ou de définition initiale pour les données built-in. |
+| `updatedAt` | Instant UTC de dernière modification fonctionnelle, servant à comparer les révisions. |
 
 À la création d'une entité modifiable, `createdAt` et `updatedAt` ont la même valeur. Toute modification utilisateur met à jour `updatedAt`.
 
@@ -112,9 +112,18 @@ aussi récente que la précédente révision de l'impact, y compris lors d'un
 remplacement reconstruit dans les agrégats. Les copies de métadonnées conservent
 la date de la décision déjà enregistrée. Voir [ADR 011](adr/011-decisions-score-explicites.md).
 
-`LocalDateTime` est conservé provisoirement. La convention UTC/fuseau et une
-éventuelle migration vers `Instant` seront décidées avant la persistance dans une
-tâche distincte. Aucun ajustement automatique de fuseau n'est effectué ici.
+Les événements et révisions sont des `Instant`, décisions et traces comprises.
+Le format d'export prévu est ISO 8601 UTC avec `Z`, sans perte de nanosecondes.
+Les dates civiles restent distinctes : `Session.date: SessionDateTime` conserve
+un `LocalDateTime`, un `ZoneId` IANA et l'offset valide choisi. Une heure inexistante
+est rejetée ; une heure répétée exige un offset explicite. Cette date de séance
+est indépendante de `startedAt` et n'est jamais remplacée par une date seule
+ou par le fuseau de consultation. Voir [ADR 014](adr/014-convention-temporelle-utc.md).
+
+Pour Room, le format prévu des instants est le couple entier `epochSecond`/`nano`,
+et celui de la date civile le triplet local/fuseau/offset. Aucun stockage ni
+convertisseur n'est introduit. Une ancienne valeur sans contexte temporel reste
+non résolue jusqu'à une décision de migration explicite ; elle n'est pas supposée UTC.
 
 `TargetZone` n'est pas une entité exportable racine en V1 : elle est exportée dans son `TargetType` parent et identifiée par ce parent et son score / rayon. Elle ne porte donc pas de `uuid` indépendant en V1.
 
@@ -142,8 +151,8 @@ Le type de cible définit les règles officielles. Il est générique et extensi
 | `xRingEnabled` | Boolean | Active ou désactive la zone X pour ce type de cible |
 | `xRingLabel` | String | Libellé affiché de la zone X (ex. "X", "10+", ou vide si désactivée) |
 | `innerTenRadiusNormalized` | Float | Rayon normalisé du X, contenu dans la zone maximale ; peut être conservé ou mis à zéro si désactivé |
-| `createdAt` | LocalDateTime | Date de création ou de définition initiale |
-| `updatedAt` | LocalDateTime | Date de dernière modification ; les built-in ne sont pas écrasés par l'import |
+| `createdAt` | Instant | Date de création ou de définition initiale |
+| `updatedAt` | Instant | Date de dernière modification ; les built-in ne sont pas écrasés par l'import |
 
 **Fixtures historiques conservées** (elles ne sélectionnent pas un règlement indoor) :
 
@@ -226,10 +235,10 @@ Séance de tir à l'arc.
 |----------|------|-------------|
 | `id` | Long (PK) | Identifiant unique |
 | `uuid` | String | Identifiant stable pour export/import (UUID v4) |
-| `date` | LocalDateTime | Date et heure de la séance |
+| `date` | SessionDateTime | Date et heure civiles, fuseau IANA d’origine et offset validé |
 | `status` | Enum | Statut de la séance (DRAFT / IN_PROGRESS / COMPLETED) |
-| `startedAt` | LocalDateTime? | Heure de début effectif (renseigné quand DRAFT → IN_PROGRESS) |
-| `endedAt` | LocalDateTime? | Heure de fin (renseigné quand IN_PROGRESS → COMPLETED) |
+| `startedAt` | Instant? | Heure de début effectif (renseigné quand DRAFT → IN_PROGRESS) |
+| `endedAt` | Instant? | Heure de fin (renseigné quand IN_PROGRESS → COMPLETED) |
 | `plannedEndCount` | Int? | Nombre de volées prévues (optionnel, ex. 10 pour competition) |
 | `title` | String | Titre / nom de la séance |
 | `targetTypeId` | Long (FK) | Type de cible utilisé |
@@ -244,8 +253,8 @@ Séance de tir à l'arc.
 | `notes` | String? | Notes libres |
 | `totalScore` | Int | Score total calculé |
 | `maxPossibleScore` | Int | Score maximum possible |
-| `createdAt` | LocalDateTime | Date de création |
-| `updatedAt` | LocalDateTime | Date de dernière modification |
+| `createdAt` | Instant | Date de création |
+| `updatedAt` | Instant | Date de dernière modification |
 | `ends` | List\<End\> | Volées de la séance (relation 1:N) |
 
 **Règle de `maxPossibleScore`** :
@@ -269,9 +278,9 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 | `totalScore` | Int | Score total de la volée |
 | `notes` | String? | Notes libres |
 | `status` | Enum | Statut de la volée (EDITING / VALIDATED) |
-| `createdAt` | LocalDateTime | Date de création de la volée |
-| `updatedAt` | LocalDateTime | Date de dernière modification de la volée ou de ses impacts |
-| `validatedAt` | LocalDateTime? | Date de validation (renseigné quand EDITING → VALIDATED) |
+| `createdAt` | Instant | Date de création de la volée |
+| `updatedAt` | Instant | Date de dernière modification de la volée ou de ses impacts |
+| `validatedAt` | Instant? | Date de validation (renseigné quand EDITING → VALIDATED) |
 | `impacts` | List\<ArrowImpact\> | Impacts de la volée (relation 1:N) |
 
 **Contrainte** : `index` est unique par session.
@@ -300,8 +309,8 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | `finalScoreDecision` | FinalScoreDecision | Résultat validé pour le profil et le point, avec géométrie, valeur finale et provenance |
 | `repositions` | List\<ImpactReposition\> | Traces immuables des corrections de position, avec anciennes décisions invalidées |
 | `note` | String? | Note libre sur cet impact |
-| `createdAt` | LocalDateTime | Date de création de l'impact |
-| `updatedAt` | LocalDateTime | Date de dernière modification de l'impact |
+| `createdAt` | Instant | Date de création de l'impact |
+| `updatedAt` | Instant | Date de dernière modification de l'impact |
 
 **En V1** : la position est saisie avec `InputMode.MANUAL`. La provenance de la
 décision est distincte : `GEOMETRY`, `BOUNDARY_JUDGMENT` ou
@@ -341,9 +350,9 @@ ou suppression des traces n'est ajouté. Voir
 [ADR 012](adr/012-repositionnement-explicite-impacts.md).
 
 La future reconstruction Room/export doit d'abord retrouver le profil, résoudre
-la demande structurée et vérifier les assertions stockées. La version du profil,
-la migration d'anciens instantanés sans provenance et la convention UTC/fuseau
-restent à décider avant Room. Aucun adaptateur de stockage n'est ajouté ici.
+la demande structurée et vérifier les assertions stockées. La version du profil
+et la migration d'anciens instantanés sans provenance restent à décider avant Room.
+La convention UTC est définie par l'ADR 014. Aucun adaptateur de stockage n'est ajouté ici.
 Voir [ADR 011](adr/011-decisions-score-explicites.md).
 
 **Clarification sur `scoreCalculated`** :
@@ -376,8 +385,8 @@ Arc de l'utilisateur.
 | `brand` | String? | Marque |
 | `model` | String? | Modèle |
 | `notes` | String? | Notes libres |
-| `createdAt` | LocalDateTime | Date de création |
-| `updatedAt` | LocalDateTime | Date de dernière modification |
+| `createdAt` | Instant | Date de création |
+| `updatedAt` | Instant | Date de dernière modification |
 
 > Les réglages détaillés (viseur, berger button, band, palette, stabilisation) feront l'objet d'une entité `BowSettings` en V2. En V1, on se contente de notes libres.
 
@@ -399,8 +408,8 @@ Jeu de flèches de l'utilisateur.
 | `vanes` | String? | Type de plumes/empennage |
 | `material` | String? | Matériau (carbone, aluminium, carbone/aluminium, bois) |
 | `notes` | String? | Notes libres |
-| `createdAt` | LocalDateTime | Date de création |
-| `updatedAt` | LocalDateTime | Date de dernière modification |
+| `createdAt` | Instant | Date de création |
+| `updatedAt` | Instant | Date de dernière modification |
 
 ---
 
@@ -421,8 +430,8 @@ Configuration prédéfinie pour créer rapidement une séance.
 | `scoringMode` | Enum | Mode de comptage par défaut |
 | `bowId` | Long? (FK) | Arc par défaut |
 | `arrowSetId` | Long? (FK) | Flèches par défaut |
-| `createdAt` | LocalDateTime | Date de création |
-| `updatedAt` | LocalDateTime | Date de dernière modification |
+| `createdAt` | Instant | Date de création |
+| `updatedAt` | Instant | Date de dernière modification |
 
 **Presets suggérés (créés par défaut)** :
 
@@ -526,7 +535,7 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
 ```json
 {
   "version": 1,
-  "exportDate": "2026-04-29T10:30:00",
+  "exportDate": "2026-04-29T08:30:00Z",
   "targetTypes": [
     {
       "uuid": "a1b2c3d4-...",
@@ -534,8 +543,8 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
       "xRingEnabled": true,
       "xRingLabel": "X",
       "innerTenRadiusNormalized": 0.05,
-      "createdAt": "2026-04-29T10:30:00+02:00",
-      "updatedAt": "2026-04-29T10:30:00+02:00"
+      "createdAt": "2026-04-29T08:30:00Z",
+      "updatedAt": "2026-04-29T08:30:00Z"
     }
   ],
   "bows": [...],
@@ -544,12 +553,12 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
   "sessions": [
     {
       "uuid": "q7r8s9t0-...",
-      "date": "2026-04-28T18:00:00",
+      "date": { "localDateTime": "2026-04-28T18:00:00", "zoneId": "Europe/Paris", "offset": "+02:00" },
       "title": "Entraînement salle",
       "targetTypeUuid": "a1b2c3d4-...",
       "arrowCountMode": "FIXED",
       "arrowCountPerEnd": 3,
-      "updatedAt": "2026-04-28T19:15:00+02:00",
+      "updatedAt": "2026-04-28T17:15:00Z",
       "ends": [
         {
           "uuid": "u1v2w3x4-...",
@@ -586,9 +595,9 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
   - La fusion de données issues de plusieurs appareils (multi-appareil)
   - Le dédoublonnage fiable lors de l'import (recherche par `uuid`, mise à jour si existant)
 - Les clés `id`, si elles sont présentes dans l'export, ne doivent pas être utilisées comme clé de fusion entre appareils
-- Les conflits d'import sont résolus avec `updatedAt` : l'entité importée remplace l'entité locale uniquement si son `updatedAt` est plus récent, sauf pour les `TargetType` built-in qui ne sont pas écrasés par un fichier importé
+- `updatedAt` compare les instants des révisions, sans prouver leur causalité entre appareils. La résolution future devra traiter les horloges décalées, les dates égales avec contenus différents et les anciennes dates non résolues (ADR 014). Les `TargetType` built-in ne sont pas écrasés par un fichier importé.
 - Les entités futures (WeatherSnapshot, Photo, DetectionResult) seront ajoutées au format dans les versions ultérieures
 
 ---
 
-*Document version 1.5 — 15 octobre 2026*
+*Document version 1.6 — 15 octobre 2026*

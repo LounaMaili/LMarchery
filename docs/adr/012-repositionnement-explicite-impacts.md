@@ -18,7 +18,7 @@ L'opération Kotlin pure réside sur le modèle déjà contextualisé :
 // Méthode d'ArrowImpact
 fun reposition(
     newPoint: NormalizedPoint,
-    changedAt: LocalDateTime,
+    changedAt: Instant,
     reason: String? = null,
 ): ArrowImpact
 ```
@@ -108,8 +108,9 @@ devra retrouver le profil, rejouer et valider les traces et les décisions dans
 l'ordre, puis vérifier l'historique par rapport aux données déjà connues.
 
 Le format de ces traces est décrit comme besoin d'export, sans sérialiseur ni
-import effectif. Versionnement du profil, migration des anciens fichiers et
-convention UTC/fuseau avec `LocalDateTime` restent à définir avant Room. Aucune
+import effectif. L'[ADR 014](014-convention-temporelle-utc.md) fait porter toutes
+les dates de traces et décisions par `Instant`. Versionnement du profil et
+migration des anciens fichiers restent à définir avant Room. Aucune
 interface de déplacement, réouverture, nouvelle cible, dépendance ou règle de
 cordon n'est ajoutée.
 

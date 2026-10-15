@@ -5,7 +5,7 @@ import com.lmarchery.core.model.session.ArrowImpact
 import com.lmarchery.core.model.session.InputMode
 import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
-import java.time.LocalDateTime
+import java.time.Instant
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -14,7 +14,7 @@ import kotlin.test.assertFailsWith
 @Suppress("DEPRECATION")
 class FinalScoreIntegrityRegressionTest {
     private val target = ClassicTargetFixtures.classic40
-    private val now = LocalDateTime.parse("2026-10-15T10:00:00")
+    private val now = Instant.parse("2026-10-15T10:00:00Z")
 
     @Test
     fun `competition keeps geometric nine without an explicit decision`() {
@@ -39,7 +39,7 @@ class FinalScoreIntegrityRegressionTest {
     fun `legacy mutation without target or structured decision cannot set ninety nine`() {
         val impact = geometricImpact()
         assertFailsWith<IllegalArgumentException> {
-            impact.withFinalScore(99, true, now.plusMinutes(1))
+            impact.withFinalScore(99, true, now.plusSeconds(60))
         }
     }
 
@@ -47,7 +47,7 @@ class FinalScoreIntegrityRegressionTest {
     fun `copy cannot make a zero score neither miss nor compatible with X`() {
         val impact = geometricImpact()
         assertFailsWith<IllegalArgumentException> {
-            impact.copy(scoreFinal = 0, isMiss = false, isX = true, updatedAt = now.plusMinutes(1))
+            impact.copy(scoreFinal = 0, isMiss = false, isX = true, updatedAt = now.plusSeconds(60))
         }
     }
 
@@ -67,7 +67,7 @@ class FinalScoreIntegrityRegressionTest {
     fun `a free copy cannot forge manual provenance with a boolean`() {
         val impact = geometricImpact()
         assertFailsWith<IllegalArgumentException> {
-            impact.copy(isCordDecisionManual = true, updatedAt = now.plusMinutes(1))
+            impact.copy(isCordDecisionManual = true, updatedAt = now.plusSeconds(60))
         }
     }
 

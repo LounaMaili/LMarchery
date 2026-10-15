@@ -1,23 +1,36 @@
 package com.lmarchery.feature.scoring
 
 import com.lmarchery.core.model.NormalizedPoint
-import java.time.LocalDateTime
+import java.time.Instant
+import java.time.Clock
+import java.time.ZoneOffset
+import java.time.ZoneId
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class ScoringDemoStateTest {
-    private val now = LocalDateTime.parse("2026-05-30T10:00:00")
+    private val now = Instant.parse("2026-05-30T10:00:00Z")
+    private val clock = Clock.fixed(now, ZoneOffset.UTC)
+
+    @Test
+    fun `injected clock records the same instant regardless of its display zone`() {
+        for (zone in listOf(ZoneId.of("Europe/Paris"), ZoneId.of("Asia/Tokyo"), ZoneId.of("America/New_York"))) {
+            val state = ScoringDemoState().addImpact(NormalizedPoint(0f, 0f), Clock.fixed(now, zone), "impact")
+            assertEquals(now, state.impacts.single().createdAt)
+            assertEquals(now, state.impacts.single().updatedAt)
+        }
+    }
 
     @Test
     fun `adds at most three impacts with stable indexes`() {
         val fullState = ScoringDemoState()
-            .addImpact(NormalizedPoint(0f, 0f), now, "impact-1")
-            .addImpact(NormalizedPoint(0.15f, 0f), now, "impact-2")
-            .addImpact(NormalizedPoint(1.1f, 0f), now, "impact-3")
+            .addImpact(NormalizedPoint(0f, 0f), clock, "impact-1")
+            .addImpact(NormalizedPoint(0.15f, 0f), clock, "impact-2")
+            .addImpact(NormalizedPoint(1.1f, 0f), clock, "impact-3")
 
-        val afterFourthTap = fullState.addImpact(NormalizedPoint(0.25f, 0f), now, "impact-4")
+        val afterFourthTap = fullState.addImpact(NormalizedPoint(0.25f, 0f), clock, "impact-4")
 
         assertEquals(3, afterFourthTap.impacts.size)
         assertFalse(afterFourthTap.canAddImpact)
@@ -28,9 +41,9 @@ class ScoringDemoStateTest {
     @Test
     fun `scores impacts through core scoring`() {
         val state = ScoringDemoState()
-            .addImpact(NormalizedPoint(0f, 0f), now, "impact-1")
-            .addImpact(NormalizedPoint(0.15f, 0f), now, "impact-2")
-            .addImpact(NormalizedPoint(1.1f, 0f), now, "impact-3")
+            .addImpact(NormalizedPoint(0f, 0f), clock, "impact-1")
+            .addImpact(NormalizedPoint(0.15f, 0f), clock, "impact-2")
+            .addImpact(NormalizedPoint(1.1f, 0f), clock, "impact-3")
 
         val center = state.impacts[0]
         val zoneNine = state.impacts[1]
@@ -55,7 +68,7 @@ class ScoringDemoStateTest {
     @Test
     fun `reset clears in memory impacts`() {
         val state = ScoringDemoState()
-            .addImpact(NormalizedPoint(0f, 0f), now, "impact-1")
+            .addImpact(NormalizedPoint(0f, 0f), clock, "impact-1")
             .reset()
 
         assertTrue(state.impacts.isEmpty())

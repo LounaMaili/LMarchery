@@ -13,7 +13,9 @@ import com.lmarchery.core.model.session.ScoringMode
 import com.lmarchery.core.model.session.Session
 import com.lmarchery.core.model.session.SessionStatus
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
-import java.time.LocalDateTime
+import com.lmarchery.core.model.time.SessionDateTime
+import java.time.ZoneId
+import java.time.Instant
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -24,8 +26,8 @@ import kotlin.test.assertTrue
 
 class ImpactRepositionTest {
     private val target = ClassicTargetFixtures.classic40
-    private val now = LocalDateTime.of(2026, 10, 15, 10, 0)
-    private val later = now.plusMinutes(10)
+    private val now = Instant.parse("2026-10-15T10:00:00Z")
+    private val later = now.plusSeconds(600)
     private val eight = NormalizedPoint(0.25f, 0f)
     private val boundary = BoundaryReference(BoundaryType.SCORE_ZONES, 0.1f)
 
@@ -103,7 +105,7 @@ class ImpactRepositionTest {
         val hit = miss.reposition(eight, later)
         assertEquals(8, hit.scoreFinal)
         assertFalse(hit.isMiss)
-        val movedOut = hit.reposition(NormalizedPoint(1.1f, 0f), later.plusMinutes(1))
+        val movedOut = hit.reposition(NormalizedPoint(1.1f, 0f), later.plusSeconds(60))
         assertEquals(0, movedOut.scoreFinal)
         assertTrue(movedOut.isMiss)
         assertFalse(movedOut.isX)
@@ -114,7 +116,7 @@ class ImpactRepositionTest {
     fun `new boundary judgment after reposition retains prior invalidation`() {
         val original = impact().withFinalScore(target, judgment(10, now), now)
         val moved = original.reposition(eight, later, "New position")
-        val judged = moved.withFinalScore(target, judgment(10, later.plusMinutes(1)), later.plusMinutes(1))
+        val judged = moved.withFinalScore(target, judgment(10, later.plusSeconds(60)), later.plusSeconds(60))
         assertEquals(8, judged.scoreCalculated)
         assertEquals(10, judged.scoreFinal)
         assertEquals(moved.repositions, judged.repositions)
@@ -205,7 +207,7 @@ class ImpactRepositionTest {
     fun `valid explicit revision propagates through end and session with parent monotonicity`() {
         val original = impact().withFinalScore(target, judgment(10, now), now)
         val previousEnd = end(listOf(original))
-        val previousSession = session(previousEnd).copy(updatedAt = later.plusHours(1))
+        val previousSession = session(previousEnd).copy(updatedAt = later.plusSeconds(3600))
         val moved = original.reposition(eight, later, "Misplaced point")
         val nextEnd = previousEnd.withImpact(moved)
         val nextSession = previousSession.withEnd(nextEnd)
@@ -229,7 +231,7 @@ class ImpactRepositionTest {
     @Test
     fun `a manual decision then a move can be integrated in one aggregate update`() {
         val original = impact()
-        val judged = original.withFinalScore(target, judgment(10, now.plusMinutes(1)), now.plusMinutes(1))
+        val judged = original.withFinalScore(target, judgment(10, now.plusSeconds(60)), now.plusSeconds(60))
         val moved = judged.reposition(eight, later, "Corrected point")
         assertEquals(moved, end(listOf(original)).withImpact(moved).impacts.single())
         assertEquals(judged.finalScoreDecision, moved.repositions.single().invalidatedManualDecision)
@@ -256,7 +258,7 @@ class ImpactRepositionTest {
     fun `reconstruction cannot erase or truncate earlier invalidations even when point returns to original`() {
         val original = impact().withFinalScore(target, judgment(10, now), now)
         val first = original.reposition(eight, later, "First correction")
-        val second = first.reposition(original.point, later.plusMinutes(1))
+        val second = first.reposition(original.point, later.plusSeconds(60))
         assertNotEquals(original.finalScoreDecision, second.finalScoreDecision)
         val noHistory = rebuild(second, repositions = emptyList())
         val truncated = rebuild(second, repositions = listOf(second.repositions.last()))
@@ -293,7 +295,7 @@ class ImpactRepositionTest {
     @Test
     fun `reordered and future traces and old manual decisions are rejected by construction`() {
         val first = impact().reposition(eight, later)
-        val second = first.reposition(NormalizedPoint(0.35f, 0f), later.plusMinutes(1))
+        val second = first.reposition(NormalizedPoint(0.35f, 0f), later.plusSeconds(60))
         assertFailsWith<IllegalArgumentException> { rebuild(second, repositions = second.repositions.reversed()) }
         assertFailsWith<IllegalArgumentException> { rebuild(first, updatedAt = later.minusSeconds(1)) }
         val backdated = FinalScoreDecision.resolve(target, eight, judgment(10, now))
@@ -307,7 +309,7 @@ class ImpactRepositionTest {
     fun `evidence of an older decision or metadata revision cannot replace a newer baseline`() {
         val old = impact()
         val moved = old.reposition(eight, later)
-        val metadata = old.copy(updatedAt = now.plusMinutes(1))
+        val metadata = old.copy(updatedAt = now.plusSeconds(60))
         assertFailsWith<IllegalArgumentException> { end(listOf(metadata)).withImpact(moved) }
         val judged = old.withFinalScore(target, judgment(10, now), now)
         assertFailsWith<IllegalArgumentException> { end(listOf(judged)).withImpact(moved) }
@@ -373,7 +375,7 @@ class ImpactRepositionTest {
         assertEquals(completed.ends, completed.copy(notes = "Metadata", updatedAt = later).ends)
     }
 
-    private fun judgment(score: Int, date: LocalDateTime) = ScoreDecisionRequest.JudgeBoundary(boundary, BoundaryValue(score), date)
+    private fun judgment(score: Int, date: Instant) = ScoreDecisionRequest.JudgeBoundary(boundary, BoundaryValue(score), date)
 
     private fun impact(radius: Float = 0.15f, inputMode: InputMode = InputMode.MANUAL,
         uuid: String = "impact", index: Int = 1): ArrowImpact =
@@ -381,7 +383,7 @@ class ImpactRepositionTest {
             inputMode = inputMode, createdAt = now)
 
     private fun rebuild(source: ArrowImpact, point: NormalizedPoint = source.point, uuid: String = source.uuid,
-        inputMode: InputMode = source.inputMode, updatedAt: LocalDateTime = source.updatedAt,
+        inputMode: InputMode = source.inputMode, updatedAt: Instant = source.updatedAt,
         repositions: List<ImpactReposition> = source.repositions): ArrowImpact =
         ArrowImpact(uuid, source.index, point, inputMode = inputMode, createdAt = source.createdAt,
             updatedAt = updatedAt, targetType = source.targetType, repositions = repositions)
@@ -389,7 +391,7 @@ class ImpactRepositionTest {
     private fun end(impacts: List<ArrowImpact>, uuid: String = "end") = End(uuid, 1, EndStatus.EDITING,
         impacts, createdAt = now, updatedAt = impacts.maxOfOrNull { it.updatedAt } ?: now)
 
-    private fun session(end: End) = Session(uuid = "session", date = now, status = SessionStatus.IN_PROGRESS,
+    private fun session(end: End) = Session(uuid = "session", date = SessionDateTime.fromInstant(now, ZoneId.of("UTC")), status = SessionStatus.IN_PROGRESS,
         startedAt = now, title = "Reposition tests", targetType = target, distanceM = 18,
         arrowCountMode = ArrowCountMode.FREE, isIndoor = true, scoringMode = ScoringMode.COMPETITION,
         ends = listOf(end), createdAt = now, updatedAt = end.updatedAt)

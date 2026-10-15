@@ -2,17 +2,17 @@ package com.lmarchery.core.model.session
 
 import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.FinalScoreDecision
-import java.time.LocalDateTime
+import java.time.Instant
 
 /** Evidence of a position change, issued only by ArrowImpact.reposition. Not a score-decision log. */
 class ImpactReposition private constructor(
     val impactUuid: String,
-    val impactCreatedAt: LocalDateTime,
+    val impactCreatedAt: Instant,
     val inputMode: InputMode,
     val previousDecision: FinalScoreDecision,
-    val previousUpdatedAt: LocalDateTime,
+    val previousUpdatedAt: Instant,
     val newPoint: NormalizedPoint,
-    val changedAt: LocalDateTime,
+    val changedAt: Instant,
     val reason: String?,
 ) {
     val previousPoint: NormalizedPoint get() = previousDecision.point
@@ -27,7 +27,7 @@ class ImpactReposition private constructor(
     override fun toString(): String = snapshot.toString().replaceFirst("Snapshot(", "ImpactReposition(")
 
     internal companion object {
-        fun from(impact: ArrowImpact, newPoint: NormalizedPoint, changedAt: LocalDateTime, reason: String?): ImpactReposition {
+        fun from(impact: ArrowImpact, newPoint: NormalizedPoint, changedAt: Instant, reason: String?): ImpactReposition {
             require(newPoint != impact.point) { "Reposition requires a different point." }
             require(!changedAt.isBefore(impact.updatedAt)) { "Reposition must not predate the previous impact revision." }
             require(reason == null || reason.isNotBlank()) { "A supplied reposition reason must not be blank." }
@@ -40,8 +40,8 @@ class ImpactReposition private constructor(
     }
 
     private data class Snapshot(
-        val impactUuid: String, val impactCreatedAt: LocalDateTime, val inputMode: InputMode,
-        val previousDecision: FinalScoreDecision, val previousUpdatedAt: LocalDateTime,
-        val newPoint: NormalizedPoint, val changedAt: LocalDateTime, val reason: String?,
+        val impactUuid: String, val impactCreatedAt: Instant, val inputMode: InputMode,
+        val previousDecision: FinalScoreDecision, val previousUpdatedAt: Instant,
+        val newPoint: NormalizedPoint, val changedAt: Instant, val reason: String?,
     )
 }

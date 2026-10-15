@@ -1,6 +1,6 @@
 package com.lmarchery.core.model.session
 
-import java.time.LocalDateTime
+import java.time.Instant
 import java.util.Collections
 
 class End(
@@ -9,9 +9,9 @@ class End(
     val status: EndStatus,
     impacts: List<ArrowImpact> = emptyList(),
     val notes: String? = null,
-    val createdAt: LocalDateTime,
-    val updatedAt: LocalDateTime,
-    val validatedAt: LocalDateTime? = null,
+    val createdAt: Instant,
+    val updatedAt: Instant,
+    val validatedAt: Instant? = null,
 ) {
     val impacts: List<ArrowImpact> =
         Collections.unmodifiableList(impacts.toList())
@@ -66,7 +66,7 @@ class End(
         }
     }
 
-    fun validate(validatedAt: LocalDateTime): End {
+    fun validate(validatedAt: Instant): End {
         require(status == EndStatus.EDITING) { "Only an EDITING end can be validated." }
         require(!validatedAt.isBefore(updatedAt)) {
             "End validation must not be before its latest modification."
@@ -81,7 +81,7 @@ class End(
 
     fun withImpact(
         impact: ArrowImpact,
-        updatedAt: LocalDateTime = impact.updatedAt,
+        updatedAt: Instant = impact.updatedAt,
     ): End {
         require(status == EndStatus.EDITING) { "Only an EDITING end can be modified." }
         require(!updatedAt.isBefore(createdAt)) {
@@ -137,9 +137,9 @@ class End(
         status: EndStatus = this.status,
         impacts: List<ArrowImpact> = this.impacts,
         notes: String? = this.notes,
-        createdAt: LocalDateTime = this.createdAt,
-        updatedAt: LocalDateTime = this.updatedAt,
-        validatedAt: LocalDateTime? = this.validatedAt,
+        createdAt: Instant = this.createdAt,
+        updatedAt: Instant = this.updatedAt,
+        validatedAt: Instant? = this.validatedAt,
     ): End {
         val revised = End(
             uuid = uuid,
@@ -167,9 +167,9 @@ class End(
     operator fun component3(): EndStatus = status
     operator fun component4(): List<ArrowImpact> = impacts
     operator fun component5(): String? = notes
-    operator fun component6(): LocalDateTime = createdAt
-    operator fun component7(): LocalDateTime = updatedAt
-    operator fun component8(): LocalDateTime? = validatedAt
+    operator fun component6(): Instant = createdAt
+    operator fun component7(): Instant = updatedAt
+    operator fun component8(): Instant? = validatedAt
 
     private data class Snapshot(
         val uuid: String,
@@ -177,8 +177,8 @@ class End(
         val status: EndStatus,
         val impacts: List<ArrowImpact>,
         val notes: String?,
-        val createdAt: LocalDateTime,
-        val updatedAt: LocalDateTime,
-        val validatedAt: LocalDateTime?,
+        val createdAt: Instant,
+        val updatedAt: Instant,
+        val validatedAt: Instant?,
     )
 }
