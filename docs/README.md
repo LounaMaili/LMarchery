@@ -28,6 +28,7 @@ Pour préparer le développement et les validations :
 | 9 | Intégrité des entrées du scoring | [adr/009-integrite-entrees-scoring.md](adr/009-integrite-entrees-scoring.md) |
 | 10 | Suggestions géométriques et décisions de cordon séparées | [adr/010-suggestions-limites-score.md](adr/010-suggestions-limites-score.md) |
 | 11 | Décisions finales explicites et contextualisées | [adr/011-decisions-score-explicites.md](adr/011-decisions-score-explicites.md) |
+| 12 | Repositionnement explicite des impacts | [adr/012-repositionnement-explicite-impacts.md](adr/012-repositionnement-explicite-impacts.md) |
 
 ---
 

@@ -374,6 +374,63 @@ historique ou une différence de scores. `LocalDateTime` reste provisoire : les
 offsets illustratifs n'arrêtent pas la convention UTC/fuseau. Voir
 [ADR 011](adr/011-decisions-score-explicites.md).
 
+### Traces des corrections de position (contrat à préserver avant Room)
+
+Un export futur doit conserver `repositions`, vide à la création, dans son ordre
+chronologique. Chaque entrée représente un déplacement explicite ; elle conserve
+l'identité et l'origine de l'impact, l'ancienne position avec sa décision complète,
+sa précédente date de révision, le nouveau point, la date et le motif du déplacement.
+Le score courant ne suffit jamais à reconstruire cette invalidation. Par exemple,
+après le jugement 10/9 ci-dessus, un déplacement vers `(0.25, 0)` donne 8 :
+
+```json
+{
+  "xNormalized": 0.25,
+  "yNormalized": 0.0,
+  "distanceFromCenter": 0.25,
+  "scoreCalculated": 8,
+  "scoreFinal": 8,
+  "isX": false,
+  "isMiss": false,
+  "isCordDecisionManual": false,
+  "scoreDecision": { "kind": "GEOMETRY", "decidedAt": null, "boundary": null, "reason": null },
+  "repositions": [{
+    "impactUuid": "b1c2d3e4-...",
+    "impactCreatedAt": "2026-04-28T18:05:20+02:00",
+    "inputMode": "MANUAL",
+    "previousPoint": { "xNormalized": 0.105, "yNormalized": 0.0 },
+    "previousDecision": {
+      "scoreCalculated": 9,
+      "geometricIsX": false,
+      "scoreFinal": 10,
+      "isX": false,
+      "scoreDecision": {
+        "kind": "BOUNDARY_JUDGMENT",
+        "decidedAt": "2026-04-28T18:05:25+02:00",
+        "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
+        "reason": null
+      }
+    },
+    "previousUpdatedAt": "2026-04-28T18:05:25+02:00",
+    "newPoint": { "xNormalized": 0.25, "yNormalized": 0.0 },
+    "changedAt": "2026-04-28T18:06:00+02:00",
+    "reason": "Position initiale placée dans le mauvais anneau"
+  }],
+  "updatedAt": "2026-04-28T18:06:00+02:00"
+}
+```
+
+Cet extrait complète le même impact : UUID, `createdAt`, profil et `inputMode`
+racines restent ceux de l'exemple précédent. Le profil de la séance est aussi
+celui des anciennes décisions ; rayon et indicateurs se revérifient par recalcul.
+Une nouvelle décision ne doit pas précéder le déplacement qu'elle arbitre.
+Les traces antérieures doivent rester présentes après de nouveaux déplacements
+ou jugements. Un adaptateur devra les rejouer dans le contexte de cible, puis
+comparer les révisions à l'agrégat connu ; un constructeur isolé ne connaît pas
+un historique omis. Cet exemple décrit les informations à préserver, sans figer
+un sérialiseur ou la migration des fichiers historiques. Voir
+[ADR 012](adr/012-repositionnement-explicite-impacts.md).
+
 ---
 
 ## 3. Règles d'import

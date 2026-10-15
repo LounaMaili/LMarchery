@@ -75,6 +75,8 @@ class Session(
         require(ends.map { it.uuid }.distinct().size == ends.size) {
             "Session ends must have unique uuid values."
         }
+        val impactUuids = ends.flatMap { it.impacts }.map { it.uuid }
+        require(impactUuids.distinct().size == impactUuids.size) { "Session impacts must have unique uuid values across ends." }
         require(ends.map { it.index }.distinct().size == ends.size) {
             "Session ends must have unique index values."
         }
@@ -238,6 +240,11 @@ class Session(
     }
 
     private fun requireNotOlderThan(previous: Session) {
+        if (previous.status == SessionStatus.COMPLETED) {
+            require(status == SessionStatus.COMPLETED && endedAt == previous.endedAt && ends == previous.ends) {
+                "A COMPLETED session cannot be reopened or have its ends replaced."
+            }
+        }
         require(createdAt == previous.createdAt) {
             "Session createdAt must be preserved when copying an existing session."
         }
@@ -257,6 +264,20 @@ class Session(
         val previousEnds = previous.ends.associateBy { it.uuid }
         ends.forEach { end ->
             previousEnds[end.uuid]?.let(end::requireNotOlderThan)
+        }
+        // Check impacts across end identities too: a reconstructed end is not a new impact revision context.
+        val previousImpacts = previous.ends.flatMap { it.impacts }.associateBy { it.uuid }
+        val impacts = ends.flatMap { it.impacts }
+        impacts.forEach { impact -> previousImpacts[impact.uuid]?.let(impact::requireNotOlderThan) }
+        previous.ends.forEach { oldEnd ->
+            if (oldEnd.status == EndStatus.VALIDATED) {
+                require(ends.any { it.uuid == oldEnd.uuid && it.impacts == oldEnd.impacts }) {
+                    "A session revision cannot discard or relocate a validated end's impacts."
+                }
+            }
+        }
+        require(previousImpacts.values.filter { it.repositions.isNotEmpty() }.all { old -> impacts.any { it.uuid == old.uuid } }) {
+            "A session revision cannot discard reposition evidence by removing its impact."
         }
     }
 

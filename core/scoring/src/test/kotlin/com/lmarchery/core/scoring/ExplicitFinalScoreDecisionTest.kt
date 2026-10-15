@@ -303,13 +303,16 @@ class ExplicitFinalScoreDecisionTest {
     }
 
     @Test
-    fun `moving an adjudicated impact stays unavailable through copy or reconstruction replacement`() {
+    fun `moving an adjudicated impact requires explicit reposition evidence`() {
         val original = impact(request = judgment(BoundaryValue(10)))
         assertFailsWith<IllegalArgumentException> { original.copy(point = NormalizedPoint(0.3f, 0f)) }
         val container = end(listOf(original), validated = false)
         val moved = impact(radius = 0.3f, request = judgment(BoundaryValue(10), now.plusMinutes(1)),
             updatedAt = now.plusMinutes(1))
         assertFailsWith<IllegalArgumentException> { container.withImpact(moved) }
+        // ADR 012 adds the explicit move; implicit copies and reconstructed moves remain forbidden.
+        val repositioned = original.reposition(NormalizedPoint(0.3f, 0f), now.plusMinutes(1), "Misplaced point")
+        assertEquals(repositioned, container.withImpact(repositioned).impacts.single())
     }
 
     @Test

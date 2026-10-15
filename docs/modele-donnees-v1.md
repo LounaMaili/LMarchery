@@ -78,7 +78,7 @@ Les règles suivantes sont vérifiées par `ArrowImpact`, `End` et `Session` :
 - `validatedAt` couvre toutes les modifications des impacts de la volée et ne
   dépasse pas `End.updatedAt`. `startedAt <= endedAt <= Session.updatedAt` lorsque
   ces dates existent ; `endedAt` couvre toutes les modifications des volées.
-- `start`, `complete`, `validate` et `withFinalScore` rejettent une date antérieure
+- `start`, `complete`, `validate`, `withFinalScore` et `reposition` rejettent une date antérieure
   à la dernière modification déjà enregistrée. Une date égale est acceptée.
 - `withImpact` et `withEnd` propagent une nouvelle révision avec
   `max(updatedAt du parent existant, date d'intégration)`. La date d'intégration
@@ -282,6 +282,7 @@ Impact individuel d'une flèche. C'est l'entité centrale du scoring.
 | `inputMode` | Enum | Mode de saisie : MANUAL / AUTOMATIC / CORRECTED |
 | `isCordDecisionManual` | Boolean | Dérivé du type de provenance `BOUNDARY_JUDGMENT` |
 | `finalScoreDecision` | FinalScoreDecision | Résultat validé pour le profil et le point, avec géométrie, valeur finale et provenance |
+| `repositions` | List\<ImpactReposition\> | Traces immuables des corrections de position, avec anciennes décisions invalidées |
 | `note` | String? | Note libre sur cet impact |
 | `createdAt` | LocalDateTime | Date de création de l'impact |
 | `updatedAt` | LocalDateTime | Date de dernière modification de l'impact |
@@ -301,6 +302,27 @@ manuelle passe par `withFinalScore(targetType, request, updatedAt)`. Les ancienn
 entrées sans contexte rejettent l'opération. La décomposition et l'égalité par
 contenu sont conservées. Les impacts d'une volée partagent le même profil ;
 la séance exige le profil exact de ses impacts.
+
+Toute correction de position utilise `reposition(newPoint, changedAt, reason)`.
+Cette opération conserve UUID, création, profil et origine `InputMode` et remet
+la décision finale à la géométrie recalculée, X/M compris. `copy` ne déplace plus
+aucun impact et ne change pas son origine. Un motif non blanc est obligatoire
+si la décision courante est manuelle ; un point inchangé est rejeté.
+
+Chaque `ImpactReposition` conserve le contexte d'identité, l'ancien résultat
+validé `previousDecision` (donc point, score et provenance), `previousUpdatedAt`,
+`newPoint`, `changedAt` et `reason`. `invalidatedManualDecision` distingue les
+jugements/corrections effectivement invalidés des anciennes valeurs géométriques.
+Les traces s'ajoutent sans écrasement ; elles ne journalisent pas toutes les
+décisions de score. `withFinalScore` et les copies de métadonnées les conservent.
+
+Les agrégats vérifient les révisions par UUID, y compris à travers des volées
+reconstruites différentes ; les UUID d'impacts sont uniques dans une séance.
+Une trace existante ne peut être réécrite, tronquée ou supprimée en retirant son
+impact par copie. Une volée validée garde ses impacts et sa validation ; une
+séance clôturée garde ses volées et sa clôture. Aucun parcours de réouverture
+ou suppression des traces n'est ajouté. Voir
+[ADR 012](adr/012-repositionnement-explicite-impacts.md).
 
 La future reconstruction Room/export doit d'abord retrouver le profil, résoudre
 la demande structurée et vérifier les assertions stockées. La version du profil,
@@ -553,4 +575,4 @@ Les relations exportées utilisent les `uuid`, pas les `id` Room :
 
 ---
 
-*Document version 1.3 — 15 octobre 2026*
+*Document version 1.4 — 15 octobre 2026*
