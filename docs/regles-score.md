@@ -26,8 +26,8 @@ sous-débordements intermédiaires des multiplications en `Float`.
 Si le rayon en `Double` dépasse `Float.MAX_VALUE`, le calcul lève explicitement
 `IllegalArgumentException`. Il n'est ni plafonné ni remplacé par une distance
 inventée. `ScoreResult` et `ArrowImpact` exigent aussi une distance finie et
-positive ou nulle lors d'une construction ou d'une copie. Ces contrôles ne
-recalculent pas les scores ou les indicateurs d'un impact reconstruit.
+positive ou nulle lors d'une construction ou d'une copie. Un `ArrowImpact`
+contextualisé dérive ses scores et indicateurs d'un résultat validé pour son point.
 
 ### Exemples
 
@@ -329,8 +329,23 @@ de scoring par `copy` sont rejetées. La modification passe par
 `withFinalScore(targetType, request, updatedAt)`. La provenance et `createdAt`
 sont conservés lors des copies de métadonnées ; toute nouvelle décision manuelle
 est au moins aussi récente que la révision précédente. Une provenance manuelle
-ne peut être effacée silencieusement. Le déplacement d'un impact déjà arbitré
-reste réservé à une tâche distincte. Voir [ADR 011](adr/011-decisions-score-explicites.md).
+ne peut être effacée silencieusement. Voir [ADR 011](adr/011-decisions-score-explicites.md).
+
+### Correction explicite de position
+
+Tous les déplacements passent par `impact.reposition(newPoint, changedAt, reason)` ;
+`copy(point = …)` est rejeté, même sans jugement manuel. UUID, création, profil et
+origine `InputMode` sont conservés. Le rayon et la géométrie sont recalculés ; le
+score final et X/M prennent la nouvelle valeur géométrique sans réutiliser le
+jugement précédent. Corriger la position reste distinct de corriger le score.
+
+Si l'ancienne décision était manuelle, le motif doit être non blanc. La liste
+immuable `repositions` conserve chaque ancienne position, décision invalidée et
+date de déplacement, même après un nouveau jugement ou plusieurs déplacements.
+La date ne peut précéder la révision courante ; un point identique est rejeté.
+Seules les volées `EDITING` de séances non `COMPLETED` peuvent intégrer la nouvelle
+révision. Copies et remplacements imbriqués contrôlent aussi l'historique, sans
+réouverture des volées validées. Voir [ADR 012](adr/012-repositionnement-explicite-impacts.md).
 
 ---
 
@@ -443,4 +458,4 @@ spécificités réglementaires du 10 en salle restent des tâches distinctes.
 
 ---
 
-*Document version 1.4 — 15 octobre 2026*
+*Document version 1.5 — 15 octobre 2026*

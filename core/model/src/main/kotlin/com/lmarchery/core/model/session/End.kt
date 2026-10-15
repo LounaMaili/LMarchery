@@ -105,6 +105,11 @@ class End(
     }
 
     internal fun requireNotOlderThan(previous: End) {
+        if (previous.status == EndStatus.VALIDATED) {
+            require(status == EndStatus.VALIDATED && validatedAt == previous.validatedAt && impacts == previous.impacts) {
+                "A VALIDATED end cannot be reopened or have its impacts replaced."
+            }
+        }
         require(createdAt == previous.createdAt) {
             "End createdAt must be preserved when replacing an existing end."
         }
@@ -117,6 +122,9 @@ class End(
             }
         }
         val previousImpacts = previous.impacts.associateBy { it.uuid }
+        require(previous.impacts.filter { it.repositions.isNotEmpty() }.all { old -> impacts.any { it.uuid == old.uuid } }) {
+            "An end revision cannot discard reposition evidence by removing its impact."
+        }
         impacts.forEach { impact ->
             previousImpacts[impact.uuid]?.let(impact::requireNotOlderThan)
         }

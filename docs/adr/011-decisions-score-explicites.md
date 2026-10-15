@@ -1,5 +1,9 @@
 # ADR 011 — Décisions finales explicites et contextualisées
 
+> Suite : l'[ADR 012](012-repositionnement-explicite-impacts.md) ajoute le
+> repositionnement explicite avec invalidation tracée. L'interdiction absolue
+> du déplacement décrite ci-dessous correspond au périmètre de la PR #9.
+
 ## Contexte
 
 La résolution historique promeut 9 vers 10 en `COMPETITION` à `r = 0.105` depuis
