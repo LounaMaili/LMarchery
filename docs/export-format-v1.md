@@ -1,500 +1,201 @@
-# Format d'export V1 — LMarchery
+# Contrat de sauvegarde V1 — LMarchery
 
-> Schéma JSON pour l'export et l'import des données, incluant les UUID stables
+> Snapshots Kotlin et reconstruction validée ; aucun fichier importé ou exporté.
 
----
+## 1. État implémenté
 
-## 1. Principe
+Le paquet `core.scoring.archive` fournit `ArchiveSnapshot`,
+`snapshotArchive(profiles, sessions)`, `DomainArchive.toSnapshot()` et
+`reconstructArchive(snapshot, known?)`. Le résultat est `Accepted(archive)` ou
+`NeedsIntervention(source, issue)`, sans I/O ni résolution automatique.
 
-L'export permet à l'utilisateur de sauvegarder ses données hors de l'application. L'import permet de restaurer ou de fusionner sur un autre appareil.
+Les modèles acceptés sont immuables et possèdent leurs collections. Les snapshots
+sont des données de transfert non fiables et copiables, potentiellement adossées
+à des listes mutables ; ne pas les modifier pendant leur validation.
 
-### Clés d'identification
+Il n'existe ni lecteur/écrivain JSON, ni Room, ni restauration Android, ni fusion
+entre appareils. L'extension `.lmarchery.json`, UTF-8, MIME `application/json` et
+le partage par intent restent prévus. Aucun format opérationnel antérieur n'a
+été publié. L'ancien exemple `version: 1` était préparatoire ; aucune migration
+ne lui attribue un fuseau ou une provenance manquante.
 
-Chaque entité exportable racine (`TargetType`, `Bow`, `ArrowSet`, `SessionPreset`, `Session`, `End`, `ArrowImpact`) possède deux identifiants :
+## 2. Identités et versions distinctes
 
-| Champ | Type | Rôle |
-|-------|------|------|
-| `id` | Long | Clé primaire locale (Room / SQLite). Utilisée en interne, **non stable** entre appareils. |
-| `uuid` | String (UUID v4) | Identifiant universel stable. Utilisé pour la fusion, le dédoublonnage et l'import multi-appareil. |
+| Élément | Contrat |
+|---------|---------|
+| Identité du profil | UUID v4 stable d'une définition publiée immuable |
+| Définition | `TargetProfileSnapshot.definition`, `TargetType` complet, zones comprises |
+| Édition réglementaire | `regulatoryEdition: String?` séparée : `2026-01-27` pour les quatre WA, `null` pour les quatre fixtures historiques |
+| Schéma | `schemaVersion: 1`, obligatoire ; toute autre valeur est non prise en charge |
+| Contrat de scoring | `scoringContractVersion: 1`, obligatoire, indépendant du schéma et du règlement |
 
-`TargetZone` n'a pas de `uuid` indépendant en V1 : ses zones sont exportées dans leur `TargetType` parent.
+Le contrat de scoring 1 désigne le calcul radial actuel en `Float` après calcul
+intermédiaire en `Double`, les limites exactes intérieures, les décisions
+contextualisées sans promotion tactile (ADR 011), les invalidations tracées
+(ADR 012) et les événements UTC (ADR 014). Ce numéro ne certifie pas un règlement.
+Un changement de représentation incrémente le schéma ; un changement incompatible
+de cette sémantique exige une nouvelle version du contrat de scoring et une
+stratégie explicite. Aucune compatibilité avec une version inconnue n'est présumée.
 
-Le champ `id` peut être présent dans un export pour compatibilité locale ou diagnostic, mais les exemples de ce document l'omettent volontairement. Un import doit toujours ignorer `id` pour la fusion et reconstruire les relations avec les `uuid`.
+### Profils complets et registre
 
-Lors de l'import :
-- Si un `uuid` existe déjà localement → l'entité est mise à jour
-- Si le `uuid` n'existe pas → l'entité est créée avec un `id` local généré
-- Le champ `id` n'est **jamais** utilisé comme clé de fusion
+`BuiltInTargetRegistry` réunit les huit définitions existantes, sans dépendance
+de `core:model` vers `core:scoring`. Leurs UUID et règles restent inchangés.
+Voir [ADR 013](adr/013-profils-indoor-world-archery.md) pour les identités WA.
 
-### Horodatage de fusion
+Pour un UUID connu, **tous** les champs sont comparés : nom, discipline, diamètre,
+bornes de score, valeurs par défaut, `isBuiltIn`, configuration X et liste complète
+de zones, ordre et couleurs compris. L'édition est vérifiée séparément. Une
+définition altérée échoue, même si elle revendique `isBuiltIn=true`, ou se présente
+comme personnalisée. Aucun profil courant n'est substitué silencieusement.
 
-Les entités exportables modifiables portent `createdAt` et `updatedAt`.
+Un UUID inconnu revendiquant `isBuiltIn=true` reste non résolu. Une définition
+personnalisée structurellement valide, avec une identité propre et `isBuiltIn=false`,
+est conservée intégralement. Son édition éventuelle est déclarative, sans certification.
+Deux contenus ou éditions différents sous le même UUID sont un conflit, dans
+l'archive ou face au référentiel connu fourni. Une nouvelle définition reçoit
+une nouvelle identité.
 
-- `createdAt` est fixé à la création et ne sert pas à résoudre les conflits.
-- `updatedAt` est mis à jour à chaque modification fonctionnelle.
-- Pour un même `uuid`, `updatedAt` est comparé comme un `Instant`, sans garantir la causalité entre appareils ; la résolution des conflits d'horloges reste à définir avant Room.
-- Les `TargetType` built-in (`isBuiltIn = true`) ne sont jamais écrasés par un import, même si le fichier importé contient un `updatedAt` plus récent.
-- Pour une séance, toute modification d'une volée ou d'un impact met aussi à jour `Session.updatedAt`, afin de résoudre le conflit au niveau de la séance complète.
+`TargetType` contient exactement `uuid`, `name`, `discipline`, `diameterCm`,
+`maxScore`, `minScore`, `defaultArrowCount`, `defaultDistanceM`, `isBuiltIn`,
+`xRingEnabled`, `xRingLabel`, `innerTenRadiusNormalized`, `zones`.
+Chaque zone contient `score`, `innerRadiusNormalized`, `outerRadiusNormalized`,
+`colorName`, `colorHex`. Le profil n'a **ni `id`, ni `createdAt`, ni `updatedAt`**.
+L'édition enveloppe sa définition sans modifier artificiellement le modèle.
+Les zones n'ont pas d'UUID autonome. L'ADR 009 impose un blason concentrique complet.
 
-### Cohérence des instantanés de séance
+## 3. Contenu du snapshot 1
 
-Les données reconstruites doivent respecter `createdAt <= updatedAt`, une création
-d'enfant postérieure ou égale à celle du parent et un `updatedAt` parent couvrant
-tous ses enfants. La validation d'une volée couvre ses impacts ; la fin d'une
-séance couvre ses volées. Les dates de début, fin et validation ne dépassent pas
-le `updatedAt` de leur objet.
+Les déclarations dans `ArchiveSnapshot.kt` font foi pour les noms et types du
+contrat typé. La racine contient `schemaVersion`, `scoringContractVersion`,
+`profiles`, `sessions`. Chaque profil inclut sa définition complète et son
+édition explicite ou `null`, même pour un built-in déjà connu.
 
-Les modèles rejettent un instantané incohérent au lieu de corriger silencieusement
-ses dates. Lors de la modification d'une valeur existante, `copy` et les méthodes
-métier interdisent aussi la régression de `updatedAt` et conservent `createdAt`.
-L'intégration d'un nouvel enfant plus ancien peut conserver la date du parent ;
-une révision obsolète d'un enfant déjà présent est rejetée. La future résolution
-des conflits doit sélectionner la révision avant son intégration, sans antidater
-la séance ni écraser une révision plus récente d'un descendant.
+Chaque séance conserve toutes ses propriétés Kotlin : UUID, triplet civil,
+statut, début/fin, nombre prévu de volées, titre, `targetTypeUuid`, distance,
+mode/nombre de flèches, intérieur/extérieur, mode de score, références optionnelles
+de matériel, lieu, notes, volées, création/révision. Chaque volée conserve UUID,
+index, statut, notes, création/révision/validation et impacts. Les relations
+séance → volée → impact sont imbriquées, sans faux IDs Room.
 
-Ces règles ne constituent pas une implémentation d'import/export. Les invariants
-de l'[ADR 008](adr/008-integrite-horodatages-domaine.md) portent désormais sur des
-`Instant`, selon l'[ADR 014](adr/014-convention-temporelle-utc.md).
+Un impact conserve UUID, index, `targetTypeUuid`, `point: {x, y}`, `inputMode`,
+note, création/révision, décision et liste `repositions` ordonnée. Sa référence
+de cible doit être celle de la séance. Toute référence exige la définition dans
+l'archive, même si le registre connaît déjà l'UUID. La capture vérifie que la
+définition fournie est exactement celle de la séance source.
 
-### Convention temporelle du format prévu
+Les UUID définissant profils, séances, volées et impacts sont uniques dans
+toute l'archive, y compris entre types. Ils sont canoniques, minuscules, version 4,
+variante RFC 4122. Les références optionnelles de matériel sont des UUID opaques :
+`Bow`, `ArrowSet`, `SessionPreset` restent prévus et absents du Kotlin actuel.
+Leur contenu et leur résolution complète ne sont pas implémentés par ce contrat.
 
-Les événements (`exportDate`, création/révision, début/fin, validation, décision et
-dates de traces) sont écrits en ISO 8601 UTC avec `Z`. Les fractions de seconde
-sont conservées, sans troncature en millisecondes. `UtcTimestamps.parse` accepte
-un offset explicite tel que `+01:00`, `+02:00` ou `Z` et le convertit en `Instant` ;
-`format` écrit `Z`. Les chaînes invalides, sans offset ou à offset inconnu négatif
-zéro sont rejetées, sans correction ni choix du fuseau de la machine.
+### Décisions et assertions
 
-`Session.date` reste civile : objet `localDateTime` sans conversion implicite,
-`zoneId` IANA d'origine et `offset` validé. Une heure répétée nécessite un choix
-explicite de l'offset ; une heure inexistante ou un offset incompatible sont
-rejetés. Les exemples français ci-dessous déclarent `Europe/Paris` ; ce n'est pas
-une règle de migration des anciens fichiers. Un offset seul ne révèle pas un
-fuseau IANA. Changer le fuseau de consultation ne réécrit ni l'instant ni ce triplet.
-
-Un triplet reçu est reconstruit par `SessionDateTime` ou `of(local, zone, offset)`
-avec ses valeurs exactes. `fromInstant` sert seulement au parcours partant d'un
-instant et d'un fuseau connus, sans écraser un triplet source contradictoire.
-Une ancienne date naïve ne devient jamais implicitement UTC ou heure de Paris :
-la migration devra disposer d'une provenance fiable et résoudre explicitement
-les ambiguïtés. Le format V1 est encore préparatoire ; l'évolution du format et
-les migrations de fichiers antérieurs devront être définies avant sa publication.
-
----
-
-## 2. Schéma JSON
-
-### Structure générale
-
-```json
-{
-  "version": 1,
-  "appName": "LMarchery",
-  "exportDate": "2026-04-29T08:30:00Z",
-  "deviceInfo": "Samsung Galaxy S24 / Android 15",
-  "targetTypes": [...],
-  "bows": [...],
-  "arrowSets": [...],
-  "sessionPresets": [...],
-  "sessions": [...]
-}
-```
-
-### TargetType
-
-La définition ci-dessous couvre le blason complet : aucune zone intermédiaire
-ne peut être omise à la reconstruction du modèle. Les rayons doivent respecter
-les [invariants de cible](regles-score.md#invariants-des-définitions-de-cible).
-
-Les nouveaux profils indoor de l'[ADR 013](adr/013-profils-indoor-world-archery.md)
-ont des UUID distincts et figés pour l'édition `2026-01-27`. Un futur adaptateur
-devra vérifier leur définition publiée complète, sans la déduire du diamètre ou
-du seul nom. Une révision réglementaire recevra une nouvelle identité ; les
-fixtures et séances historiques ne sont pas converties implicitement. Aucun
-format opérationnel ni migration n'est ajouté ici ; l'exemple générique avec X
-ci-dessous ne représente pas les nouveaux profils indoor.
-
-```json
-{
-  "uuid": "a1b2c3d4-...",
-  "name": "Classique 80 cm",
-  "discipline": "indoor",
-  "diameterCm": 80,
-  "maxScore": 10,
-  "minScore": 1,
-  "defaultArrowCount": 3,
-  "defaultDistanceM": 18,
-  "isBuiltIn": true,
-  "xRingEnabled": true,
-  "xRingLabel": "X",
-  "innerTenRadiusNormalized": 0.05,
-  "createdAt": "2026-04-29T08:30:00Z",
-  "updatedAt": "2026-04-29T08:30:00Z",
-  "zones": [
-    {
-      "score": 10,
-      "innerRadiusNormalized": 0.0,
-      "outerRadiusNormalized": 0.1,
-      "colorName": "jaune"
-    },
-    {
-      "score": 9,
-      "innerRadiusNormalized": 0.1,
-      "outerRadiusNormalized": 0.2,
-      "colorName": "jaune"
-    },
-    {
-      "score": 8,
-      "innerRadiusNormalized": 0.2,
-      "outerRadiusNormalized": 0.3,
-      "colorName": "rouge"
-    },
-    {
-      "score": 7,
-      "innerRadiusNormalized": 0.3,
-      "outerRadiusNormalized": 0.4,
-      "colorName": "rouge"
-    },
-    {
-      "score": 6,
-      "innerRadiusNormalized": 0.4,
-      "outerRadiusNormalized": 0.5,
-      "colorName": "bleu"
-    },
-    {
-      "score": 5,
-      "innerRadiusNormalized": 0.5,
-      "outerRadiusNormalized": 0.6,
-      "colorName": "bleu"
-    },
-    {
-      "score": 4,
-      "innerRadiusNormalized": 0.6,
-      "outerRadiusNormalized": 0.7,
-      "colorName": "noir"
-    },
-    {
-      "score": 3,
-      "innerRadiusNormalized": 0.7,
-      "outerRadiusNormalized": 0.8,
-      "colorName": "noir"
-    },
-    {
-      "score": 2,
-      "innerRadiusNormalized": 0.8,
-      "outerRadiusNormalized": 0.9,
-      "colorName": "blanc"
-    },
-    {
-      "score": 1,
-      "innerRadiusNormalized": 0.9,
-      "outerRadiusNormalized": 1.0,
-      "colorName": "blanc"
-    }
-  ]
-}
-```
-
-### Bow
-
-```json
-{
-  "uuid": "e5f6g7h8-...",
-  "name": "Mon recurve",
-  "type": "recurve",
-  "drawWeightLbs": 34.0,
-  "brand": "Hoyt",
-  "model": "Formula Xi",
-  "notes": "Viseur Shibuya Ultima",
-  "createdAt": "2026-03-15T13:00:00Z",
-  "updatedAt": "2026-03-15T13:00:00Z"
-}
-```
-
-### ArrowSet
-
-```json
-{
-  "uuid": "i9j0k1l2-...",
-  "name": "ACE 520",
-  "spine": "520",
-  "length": "28.5",
-  "pointWeight": "100",
-  "nock": "Pin nock",
-  "vanes": "Spinwing",
-  "material": "carbone",
-  "notes": "",
-  "createdAt": "2026-03-15T13:05:00Z",
-  "updatedAt": "2026-03-15T13:05:00Z"
-}
-```
-
-### SessionPreset
-
-```json
-{
-  "uuid": "m3n4o5p6-...",
-  "name": "Salle 18m — 3 flèches",
-  "targetTypeUuid": "a1b2c3d4-...",
-  "distanceM": 18,
-  "arrowCountMode": "FIXED",
-  "arrowCountPerEnd": 3,
-  "isIndoor": true,
-  "scoringMode": "TRAINING",
-  "bowUuid": "e5f6g7h8-...",
-  "arrowSetUuid": "i9j0k1l2-...",
-  "createdAt": "2026-03-15T13:10:00Z",
-  "updatedAt": "2026-03-15T13:10:00Z"
-}
-```
-
-En mode libre, `arrowCountMode` vaut `"FREE"` et `arrowCountPerEnd` vaut `null`.
-
-### Session (avec ends et impacts)
-
-```json
-{
-  "uuid": "q7r8s9t0-...",
-  "date": { "localDateTime": "2026-04-28T18:00:00", "zoneId": "Europe/Paris", "offset": "+02:00" },
-  "title": "Entraînement salle",
-  "targetTypeUuid": "a1b2c3d4-...",
-  "distanceM": 18,
-  "arrowCountMode": "FIXED",
-  "arrowCountPerEnd": 3,
-  "isIndoor": true,
-  "scoringMode": "COMPETITION",
-  "bowUuid": "e5f6g7h8-...",
-  "arrowSetUuid": "i9j0k1l2-...",
-  "locationName": "Club archerie Ville",
-  "notes": "Bon groupement ce soir",
-  "status": "COMPLETED",
-  "startedAt": "2026-04-28T16:02:00Z",
-  "endedAt": "2026-04-28T17:15:00Z",
-  "plannedEndCount": 20,
-  "totalScore": 10,
-  "maxPossibleScore": 600,
-  "createdAt": "2026-04-28T16:00:00Z",
-  "updatedAt": "2026-04-28T17:15:00Z",
-  "ends": [
-    {
-      "uuid": "u1v2w3x4-...",
-      "index": 1,
-      "status": "VALIDATED",
-      "totalScore": 10,
-      "notes": "",
-      "createdAt": "2026-04-28T16:05:00Z",
-      "updatedAt": "2026-04-28T16:06:00Z",
-      "validatedAt": "2026-04-28T16:06:00Z",
-      "impacts": [
-        {
-          "uuid": "y5z6a7b8-...",
-          "index": 1,
-          "xNormalized": 0.05,
-          "yNormalized": -0.02,
-          "distanceFromCenter": 0.05385165,
-          "scoreCalculated": 10,
-          "scoreFinal": 10,
-          "isX": false,
-          "isMiss": false,
-          "inputMode": "MANUAL",
-          "isCordDecisionManual": false,
-          "scoreDecision": {
-            "kind": "GEOMETRY",
-            "decidedAt": null,
-            "boundary": null,
-            "reason": null
-          },
-          "note": "",
-          "createdAt": "2026-04-28T16:05:20Z",
-          "updatedAt": "2026-04-28T16:05:20Z"
-        }
-      ]
-    }
-  ]
-}
-```
-
-Règle pour `maxPossibleScore` :
-
-- Si `arrowCountMode = "FIXED"` et `plannedEndCount` est renseigné : `plannedEndCount × arrowCountPerEnd × targetType.maxScore`.
-- Si `arrowCountMode = "FIXED"` sans `plannedEndCount` : `nombre de volées enregistrées × arrowCountPerEnd × targetType.maxScore`.
-- Si `arrowCountMode = "FREE"` : `nombre total d'impacts enregistrés × targetType.maxScore`. Le mode libre ne suppose jamais 3 ou 6 flèches par volée.
-
-### Provenance de la décision finale d'un impact
-
-Les champs racines `scoreFinal`, `isX` et `isMiss` décrivent la valeur **finale**.
-`scoreCalculated` reste géométrique. `scoreDecision` représente la provenance
-du résultat du domaine, séparément d'`inputMode`, qui décrit la position :
+`DecisionSnapshot` exige une provenance explicite et `selected: BoundaryValue`
+(score et distinction X). Aucun score ou booléen historique ne remplace cette
+provenance. X n'est jamais un point supplémentaire.
 
 | `kind` | Contraintes |
 |--------|-------------|
-| `GEOMETRY` | Valeur géométrique ; date manuelle, limite et motif nuls |
-| `BOUNDARY_JUDGMENT` | Date et référence `(type, radiusNormalized)` obligatoires ; motif nul |
-| `EXCEPTIONAL_CORRECTION` | Date et motif non blanc obligatoires ; limite nulle |
+| `GEOMETRY` | Date manuelle, limite et motif nuls ; valeur égale à la géométrie |
+| `BOUNDARY_JUDGMENT` | Date et référence réelle `(type, radiusNormalized)` ; un des deux côtés ; motif nul |
+| `EXCEPTIONAL_CORRECTION` | Date, valeur légale et motif non blanc ; limite nulle |
 
-`isCordDecisionManual` est dérivé du seul jugement de limite. Une correction
-exceptionnelle a une provenance manuelle, mais ce booléen vaut faux. Un jugement
-conservant le score numérique conserve sa date et son type manuels.
+Le jugement humain reste indépendant de la tolérance UX, qui n'attribue jamais
+de score. Une confirmation de même score reste manuelle. `inputMode` décrit
+séparément la provenance de la position.
 
-Exemple de jugement explicite 10/9, après un calcul géométrique de 9 :
+`ScoreAssertions`, facultatif, peut contenir distance, score calculé, score final,
+X géométrique, X/M finaux et `isCordDecisionManual`. Toute valeur reçue est
+recalculée et comparée exactement dans les types actuels ; une contradiction
+échoue au lieu d'être effacée. Les totaux/statistiques sont recalculés depuis les
+agrégats, sans deuxième source de vérité dans le snapshot.
 
-```json
-{
-  "uuid": "b1c2d3e4-...",
-  "index": 2,
-  "xNormalized": 0.105,
-  "yNormalized": 0.0,
-  "distanceFromCenter": 0.105,
-  "scoreCalculated": 9,
-  "scoreFinal": 10,
-  "isX": false,
-  "isMiss": false,
-  "inputMode": "MANUAL",
-  "isCordDecisionManual": true,
-  "scoreDecision": {
-    "kind": "BOUNDARY_JUDGMENT",
-    "decidedAt": "2026-04-28T16:05:25Z",
-    "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
-    "reason": null
-  },
-  "note": "",
-  "createdAt": "2026-04-28T16:05:20Z",
-  "updatedAt": "2026-04-28T16:05:25Z"
-}
-```
+### Repositionnements
 
-Exemple de correction exceptionnelle d'un X géométrique en 9 :
+Chaque trace conserve `impactUuid`, `impactCreatedAt`, `inputMode`, `previousPoint`,
+`previousDecision` complète avec assertions éventuelles, `previousUpdatedAt`,
+`newPoint`, `changedAt`, `reason`.
 
-```json
-{
-  "uuid": "c1d2e3f4-...",
-  "index": 3,
-  "xNormalized": 0.0,
-  "yNormalized": 0.0,
-  "distanceFromCenter": 0.0,
-  "scoreCalculated": 10,
-  "scoreFinal": 9,
-  "isX": false,
-  "isMiss": false,
-  "inputMode": "MANUAL",
-  "isCordDecisionManual": false,
-  "scoreDecision": {
-    "kind": "EXCEPTIONAL_CORRECTION",
-    "decidedAt": "2026-04-28T16:05:25Z",
-    "boundary": null,
-    "reason": "Point initial mal positionné ; score constaté sur le blason"
-  },
-  "note": "",
-  "createdAt": "2026-04-28T16:05:20Z",
-  "updatedAt": "2026-04-28T16:05:25Z"
-}
-```
+Le rejeu part du premier ancien point, ou du point courant sans trace. Il résout
+la décision précédente, conserve sa révision, puis appelle `ArrowImpact.reposition()`
+pour chaque déplacement. Il vérifie contexte, continuité spatiale, monotonie,
+motif d'invalidation manuelle, date des jugements et point d'arrivée, avant de
+résoudre la décision courante. Les traces opaques sont émises par le domaine ;
+aucune fabrique brute n'est ajoutée. Les parents vérifient ensuite statuts,
+unicité, profil exact et couverture temporelle.
 
-La future reconstruction doit retrouver le `TargetType` de la séance, résoudre
-la demande typée, puis comparer les scores, indicateurs et distance stockés aux
-valeurs dérivées. Les valeurs autorisées sont M/0 et les scores réellement
-présents dans le profil. Une référence de limite est revérifiée dans celui-ci ;
-les deux côtés d'un ancien `BoundaryHint` ne sont pas une preuve. La date manuelle
-doit vérifier `createdAt <= decidedAt <= updatedAt`.
+Ce rejeu conserve les traces reçues ; il ne prouve pas un événement omis de toute
+source connue. Ce n'est ni un journal complet des décisions ni une preuve
+cryptographique. Un remplacement doit être évalué face aux données déjà connues.
 
-Ces exemples ne constituent aucun import/export opérationnel. La politique de
-versionnement des profils et la migration d'anciens fichiers sans `scoreDecision`
-restent à définir ; il ne faut pas inventer un jugement depuis le seul booléen
-historique ou une différence de scores. Les décisions utilisent des `Instant`
-et les exemples écrivent `Z`, selon l'ADR 014. Voir
-[ADR 011](adr/011-decisions-score-explicites.md).
+### Dates et données absentes
 
-### Traces des corrections de position (contrat à préserver avant Room)
+Les événements exigent un offset explicite ; `UtcTimestamps.parse` produit un
+`Instant` et `format` écrit `Z`, sans perte de nanosecondes. Les dates naïves,
+invalides et offsets inconnus négatif zéro sont non résolus. Le triplet civil
+exige date/heure locale, fuseau IANA et offset, même hors changement d'heure.
+Une répétition conserve l'offset choisi ; un trou ou un offset incompatible avec
+les règles IANA disponibles n'est jamais normalisé. Voir
+[ADR 014](adr/014-convention-temporelle-utc.md).
 
-Un export futur doit conserver `repositions`, vide à la création, dans son ordre
-chronologique. Chaque entrée représente un déplacement explicite ; elle conserve
-l'identité et l'origine de l'impact, l'ancienne position avec sa décision complète,
-sa précédente date de révision, le nouveau point, la date et le motif du déplacement.
-Le score courant ne suffit jamais à reconstruire cette invalidation. Par exemple,
-après le jugement 10/9 ci-dessus, un déplacement vers `(0.25, 0)` donne 8 :
+Les propriétés sans valeur par défaut des snapshots sont nécessaires, listes
+et `null` explicites compris. Les versions, dates, définitions et provenances
+nullables permettent de diagnostiquer certaines données manquantes, jamais de les
+valider par défaut. Les propriétés non nullables absentes, enums inconnus,
+coordonnées invalides et définitions impossibles devront être rejetés par le
+futur décodeur avant construction. Celui-ci devra aussi traiter explicitement
+les champs inconnus sans ignorer une provenance nouvelle. Aucune validation
+syntaxique JSON n'est implémentée ici.
 
-```json
-{
-  "xNormalized": 0.25,
-  "yNormalized": 0.0,
-  "distanceFromCenter": 0.25,
-  "scoreCalculated": 8,
-  "scoreFinal": 8,
-  "isX": false,
-  "isMiss": false,
-  "isCordDecisionManual": false,
-  "scoreDecision": { "kind": "GEOMETRY", "decidedAt": null, "boundary": null, "reason": null },
-  "repositions": [{
-    "impactUuid": "b1c2d3e4-...",
-    "impactCreatedAt": "2026-04-28T16:05:20Z",
-    "inputMode": "MANUAL",
-    "previousPoint": { "xNormalized": 0.105, "yNormalized": 0.0 },
-    "previousDecision": {
-      "scoreCalculated": 9,
-      "geometricIsX": false,
-      "scoreFinal": 10,
-      "isX": false,
-      "scoreDecision": {
-        "kind": "BOUNDARY_JUDGMENT",
-        "decidedAt": "2026-04-28T16:05:25Z",
-        "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
-        "reason": null
-      }
-    },
-    "previousUpdatedAt": "2026-04-28T16:05:25Z",
-    "newPoint": { "xNormalized": 0.25, "yNormalized": 0.0 },
-    "changedAt": "2026-04-28T16:06:00Z",
-    "reason": "Position initiale placée dans le mauvais anneau"
-  }],
-  "updatedAt": "2026-04-28T16:06:00Z"
-}
-```
+## 4. Conflits et intervention
 
-Cet extrait complète le même impact : UUID, `createdAt`, profil et `inputMode`
-racines restent ceux de l'exemple précédent. Le profil de la séance est aussi
-celui des anciennes décisions ; rayon et indicateurs se revérifient par recalcul.
-Une nouvelle décision ne doit pas précéder le déplacement qu'elle arbitre.
-Les traces antérieures doivent rester présentes après de nouveaux déplacements
-ou jugements. Un adaptateur devra les rejouer dans le contexte de cible, puis
-comparer les révisions à l'agrégat connu ; un constructeur isolé ne connaît pas
-un historique omis. Cet exemple décrit les informations à préserver, sans figer
-un sérialiseur ou la migration des fichiers historiques. Voir
-[ADR 012](adr/012-repositionnement-explicite-impacts.md).
+`NeedsIntervention` conserve le snapshot reçu et un `ArchiveIssue` avec code,
+chemin et détail. Le premier problème est signalé ; aucune séance partielle
+n'est rendue comme acceptée. Une nouvelle validation après correction reste explicite.
 
----
+| Situation | Code |
+|-----------|------|
+| Version absente / inconnue | `MISSING_FIELD` / `UNSUPPORTED_VERSION` |
+| Définition absente, référence inconnue, faux built-in | `UNKNOWN_PROFILE` |
+| Profil connu de contenu/édition différent | `PROFILE_IDENTITY_CONFLICT` |
+| Provenance absente | `MISSING_PROVENANCE` |
+| Événement naïf/invalide | `TEMPORAL_CONTEXT` |
+| Triplet civil incomplet | `MISSING_FIELD` |
+| Triplet incompatible avec les règles IANA courantes | `CIVIL_CONTEXT_CONFLICT` |
+| Assertion dérivée contradictoire | `CONTRADICTORY_DERIVED_VALUE` |
+| Trace incohérente, supprimée ou réécrite face au connu | `HISTORY_CONFLICT` |
+| Autre divergence d'identité connue, parent compris | `DIVERGENT_REVISION` |
+| Autre violation métier | `INVALID_DOMAIN_VALUE` |
 
-## 3. Règles d'import
+`reconstructArchive(snapshot, known)` exige le référentiel connu complet concerné.
+Un contenu identique est accepté ; toute divergence exige intervention, que
+`updatedAt` soit égal, inférieur ou supérieur. Ni une horloge ni un préfixe de
+traces ne prouvent la causalité. La disparition d'un impact porteur de traces
+dans une séance connue est détectée, ainsi que la réutilisation d'un impact sous
+d'autres identités parentes. Les racines absentes d'une archive partielle ne sont
+pas des instructions de suppression. Aucune fusion ni sélection du plus récent
+n'est effectuée.
 
-### Fusion par UUID
+Sans `known`, il s'agit d'une restauration indépendante, incapable de découvrir
+une histoire absente. Le futur adaptateur de remplacement devra fournir les
+données connues, sans confondre validité structurelle et autorisation d'intégration.
+Une ancienne date ou un triplet devenu incompatible après mise à jour IANA reste
+identifiable dans les données reçues, sans conversion silencieuse en séance valide.
 
-1. Lire le fichier JSON
-2. Pour chaque entité, chercher si le `uuid` existe déjà localement
-3. Si oui → mise à jour des champs modifiables (ne pas écraser `id` local)
-4. Si non → création avec un `id` local auto-généré
-5. Les références entre entités utilisent les `uuid` (ex. `session.targetTypeUuid`)
+## 5. Étapes restantes avant Room et les fichiers
 
-### Résolution des conflits
+- Définir le vrai schéma Room et les relations locales, sans confondre IDs et UUID.
+- Conserver les instants par entiers `epochSecond` / `nano` et le triplet civil.
+- Développer le JSON strict, les limites de taille et les erreurs syntaxiques ;
+  préserver les décimales nécessaires au même `Float`.
+- Définir matériel/presets et portée d'une sauvegarde utilisateur complète.
+- Définir l'intervention sur conflits et l'éventuelle preuve de filiation des
+  révisions, sans écrasement fondé sur la seule horloge.
+- Décider le traitement d'anciens horaires/provenances et des changements IANA
+  à partir de sources fiables, sans migration fictive ni fuseau inventé.
 
-- Pour un même `uuid`, comparer les `updatedAt` comme des instants ; ne pas comparer lexicalement les chaînes ISO. Les horloges décalées et les contenus différents à date égale nécessitent une politique encore à définir, sans écrasement silencieux présumé sûr.
-- Un ancien fichier sans `updatedAt` fiable ou sans contexte de fuseau reste non résolu. Aucun instant ni ordre de priorité n'est inventé pour le faire entrer dans le modèle validé ; son traitement devra être explicite.
-- Les entités built-in (`isBuiltIn = true`) ne sont pas modifiées lors de l'import
-
-### Ordre d'import
-
-1. `TargetType` (référencés par toutes les autres entités)
-2. `Bow` et `ArrowSet` (référencés par presets et sessions)
-3. `SessionPreset` (référence types de cible, arcs, flèches)
-4. `Session` (référence tout le reste)
-
----
-
-## 4. Format de fichier
-
-- **Extension** : `.lmarchery.json`
-- **Encodage** : UTF-8
-- **MIME type** : `application/json`
-- **Partage** : via intent Android (fichier, email, cloud, etc.)
-
----
+Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
 *Dernière mise à jour : 15 octobre 2026*
