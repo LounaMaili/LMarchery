@@ -61,7 +61,7 @@ app/                        ← Application Android Compose
 core/
   model/                    ← Modèles métier purs
   scoring/                  ← Moteur de score Kotlin/JVM
-  database/                 ← Room, futur
+  database/                 ← Room / SQLite, cibles Android et JVM, sans connexion UI
 feature/                    ← Fonctionnalités UI, futur
 vision-lab/                 ← Laboratoire reconnaissance (Python)
   datasets/
@@ -92,8 +92,8 @@ Pour lancer les validations individuellement, préparer les variables :
 export JAVA_HOME=/usr/lib/jvm/java-21-temurin-jdk
 export ANDROID_HOME="$HOME/Android/Sdk"
 ./gradlew test
-./gradlew :app:assembleDebug
-./gradlew :app:lintDebug
+./gradlew :app:assembleDebug :core:database:assembleDebug
+./gradlew :app:lintDebug :core:database:lintDebug
 ```
 
 Le SDK est désigné par `ANDROID_HOME`. Les préférences Android utilisent
@@ -101,8 +101,11 @@ Le SDK est désigné par `ANDROID_HOME`. Les préférences Android utilisent
 `TMPDIR`). `ANDROID_SDK_HOME` est une ancienne variable de préférences, pas le
 chemin du SDK. En sandbox, définir aussi un `GRADLE_USER_HOME` accessible en écriture.
 
-La V1 reste locale/offline : pas de permission réseau, pas de caméra et pas de
-persistance tant que Room n'est pas introduit. La préparation du build peut
+La V1 reste locale/offline : pas de permission réseau ni de caméra. Room permet
+de créer et relire une séance complète, avec reconstruction validée, sans être
+encore connecté à la démo Compose. Les tests `:core:database:jvmTest` interrogent
+SQLite natif sur disque, avec fermeture/réouverture ; ils sont inclus dans `test`.
+Voir [ADR 016](docs/adr/016-persistance-locale-room.md). La préparation du build peut
 nécessiter le réseau pour télécharger Gradle, le SDK et les dépendances.
 
 Le workflow `.github/workflows/quality-gate.yml` est configuré pour les PR vers

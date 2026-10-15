@@ -13,8 +13,11 @@ Les modèles acceptés sont immuables et possèdent leurs collections. Les snaps
 sont des données de transfert non fiables et copiables, potentiellement adossées
 à des listes mutables ; ne pas les modifier pendant leur validation.
 
-Il n'existe ni lecteur/écrivain JSON, ni Room, ni restauration Android, ni fusion
-entre appareils. L'extension `.lmarchery.json`, UTF-8, MIME `application/json` et
+Le module `core:database` utilise maintenant ce contrat pour créer et relire
+des séances en Room/SQLite, sans branchement à Compose ; voir
+[ADR 016](adr/016-persistance-locale-room.md). Il n'existe ni lecteur/écrivain JSON,
+ni restauration de fichier Android, ni fusion entre appareils.
+L'extension `.lmarchery.json`, UTF-8, MIME `application/json` et
 le partage par intent restent prévus. Aucun format opérationnel antérieur n'a
 été publié. L'ancien exemple `version: 1` était préparatoire ; aucune migration
 ne lui attribue un fuseau ou une provenance manquante.
@@ -184,10 +187,17 @@ données connues, sans confondre validité structurelle et autorisation d'intég
 Une ancienne date ou un triplet devenu incompatible après mise à jour IANA reste
 identifiable dans les données reçues, sans conversion silencieuse en séance valide.
 
-## 5. Étapes restantes avant Room et les fichiers
+## 5. Persistance et étapes restantes pour les fichiers
 
-- Définir le vrai schéma Room et les relations locales, sans confondre IDs et UUID.
-- Conserver les instants par entiers `epochSecond` / `nano` et le triplet civil.
+Room/SQLite 1 conserve déjà profils complets, enfants ordonnés, décisions et
+traces dans des tables reliées par UUID. Les instants sont des couples entiers
+`epochSecond` / `nano`, la date civile garde son triplet et les `Float` leurs bits.
+Le schéma Room exporté est distinct de `schemaVersion` et de `scoringContractVersion`.
+Aucun JSON de données utilisateur n'est employé comme substitut aux relations.
+
+Restent à réaliser :
+
+- Prévoir les migrations explicites pour chaque évolution future du schéma Room.
 - Développer le JSON strict, les limites de taille et les erreurs syntaxiques ;
   préserver les décimales nécessaires au même `Float`.
 - Définir matériel/presets et portée d'une sauvegarde utilisateur complète.

@@ -63,6 +63,13 @@ et inspecter le résultat de chaque validation. Les étapes exécutées sont :
 - `./gradlew :app:assembleDebug`
 - `./gradlew :app:lintDebug`
 
+Le module `:core:database` fournit Room sans connexion à Compose. `./gradlew test`
+doit aussi exécuter `:core:database:jvmTest` sur SQLite natif et fichiers disque,
+avec fermeture/réouverture ; inspecter le rapport, pas seulement le statut Gradle.
+Le script compile et linte également sa cible Android. Après modification du
+stockage, vérifier le schéma exporté sous `core/database/schemas` et lire l'ADR 016.
+Ne jamais utiliser `REPLACE` ou une migration destructive pour résoudre un conflit.
+
 Utiliser un **JDK 21 complet**, le SDK Android 35 et les Build Tools 34.0.0.
 Le script détecte un JDK 21 installé ; un `JAVA_HOME` explicite incompatible
 provoque un échec. Les commandes Gradle directes exigent de préparer `JAVA_HOME`.

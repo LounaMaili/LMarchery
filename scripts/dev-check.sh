@@ -137,13 +137,19 @@ echo "== JVM and Android unit tests =="
 ./gradlew test "$@"
 
 if "$has_android"; then
+  android_build_tasks=(:app:assembleDebug)
+  android_lint_tasks=(:app:lintDebug)
+  if [ -f core/database/build.gradle.kts ]; then
+    android_build_tasks+=(:core:database:assembleDebug)
+    android_lint_tasks+=(:core:database:lintDebug)
+  fi
   echo
   echo "== Android debug build =="
-  ./gradlew :app:assembleDebug "$@"
+  ./gradlew "${android_build_tasks[@]}" "$@"
 
   echo
   echo "== Android lint =="
-  ./gradlew :app:lintDebug "$@"
+  ./gradlew "${android_lint_tasks[@]}" "$@"
 fi
 
 echo
