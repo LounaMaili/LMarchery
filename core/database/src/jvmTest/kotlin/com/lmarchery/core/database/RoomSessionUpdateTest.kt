@@ -130,6 +130,85 @@ class RoomSessionUpdateTest {
         assertEquals("Observed five", rows("SELECT reason FROM score_decisions WHERE revision = -1").single())
     }
 
+    @Test fun `same-score manual judgments and exceptional corrections survive independent store reopenings without any move`() = runBlocking<Unit> {
+        val profile = WorldArcheryIndoorTargetProfiles.recurve40
+        val original = arrow(profile = profile, point = NormalizedPoint(0.105f, -0.0f))
+        val old = draft(profile).start(t(1)).withEnd(end(listOf(original)))
+        val decided = t(3).plusNanos(17)
+        val boundary = BoundaryReference(BoundaryType.SCORE_ZONES, 0.1f)
+        val judgedArrow = original.withFinalScore(profile,
+            ScoreDecisionRequest.JudgeBoundary(boundary, BoundaryValue(9), decided), decided)
+        val judged = replace(old, judgedArrow)
+        openSessionStore(path).use { store -> create(store, old); update(store, old, judged) }
+        reopen(judged)
+        val position = rows("SELECT uuid, xBits, yBits, inputMode, created_epochSecond, created_nano, repositionCount FROM impacts")
+        assertEquals(listOf("BOUNDARY_JUDGMENT|9|SCORE_ZONES|${0.1f.toRawBits()}|${decided.epochSecond}|${decided.nano}"),
+            rows("SELECT kind, selectedScore, boundaryType, boundaryRadiusBits, decided_epochSecond, decided_nano FROM score_decisions WHERE revision = -1"))
+        assertEquals(listOf("0"), rows("SELECT COUNT(*) FROM impact_repositions"))
+        val correctedAt = t(4).plusNanos(23)
+        val correctedArrow = judgedArrow.withFinalScore(profile,
+            ScoreDecisionRequest.ExceptionalCorrection(BoundaryValue(9), "Same score explicitly observed", correctedAt), correctedAt)
+        val corrected = replace(judged, correctedArrow)
+        openSessionStore(path).use { store -> update(store, judged, corrected) }
+        reopen(corrected)
+        assertEquals(position, rows("SELECT uuid, xBits, yBits, inputMode, created_epochSecond, created_nano, repositionCount FROM impacts"))
+        assertEquals(listOf("EXCEPTIONAL_CORRECTION|9|Same score explicitly observed|${correctedAt.epochSecond}|${correctedAt.nano}"),
+            rows("SELECT kind, selectedScore, reason, decided_epochSecond, decided_nano FROM score_decisions WHERE revision = -1"))
+        assertEquals(listOf("1"), rows("SELECT COUNT(*) FROM score_decisions"), "Same-position judgments are current decisions, not a full journal.")
+        val moved = replace(corrected, correctedArrow.reposition(NormalizedPoint(0.25f, 0f), t(5), "Position correction after judgment"))
+        openSessionStore(path).use { store -> update(store, corrected, moved) }
+        reopen(moved)
+        assertEquals(correctedArrow.finalScoreDecision, moved.ends[0].impacts[0].repositions.single().invalidatedManualDecision)
+        assertEquals(listOf("EXCEPTIONAL_CORRECTION|Same score explicitly observed"), rows("SELECT kind, reason FROM score_decisions WHERE revision = 0"))
+    }
+
+    @Test fun `score-only update retains all prior trace rows and decisions while later SQL failure rolls back everything`() = runBlocking<Unit> {
+        val original = judge(arrow()).reposition(NormalizedPoint(0.25f, -0.0f), t(4), "Earlier position")
+        val old = replace(graph(), original)
+        val corrected = replace(old, original.withFinalScore(target,
+            ScoreDecisionRequest.ExceptionalCorrection(BoundaryValue(5), "Observed five", t(5)), t(5)))
+        openSessionStore(path).use { store ->
+            create(store, old)
+            val trace = rows("SELECT * FROM impact_repositions")
+            val history = rows("SELECT * FROM score_decisions WHERE revision >= 0")
+            rows("CREATE TRIGGER protect_trace BEFORE UPDATE ON impact_repositions BEGIN SELECT RAISE(ABORT, 'immutable trace'); END")
+            rows("CREATE TRIGGER protect_decision BEFORE UPDATE ON score_decisions WHEN OLD.revision >= 0 BEGIN SELECT RAISE(ABORT, 'immutable decision'); END")
+            rows("CREATE TRIGGER protect_trace_delete BEFORE DELETE ON impact_repositions BEGIN SELECT RAISE(ABORT, 'immutable trace'); END")
+            rows("CREATE TRIGGER protect_decision_delete BEFORE DELETE ON score_decisions BEGIN SELECT RAISE(ABORT, 'immutable decision'); END")
+            // The current decision is updated after the aggregate/impact rows, so this is a late failure.
+            rows("CREATE TRIGGER fail_score BEFORE UPDATE ON score_decisions WHEN OLD.revision = -1 BEGIN SELECT RAISE(ABORT, 'synthetic score failure'); END")
+            val before = contents()
+            assertIs<SessionUpdateResult.TechnicalFailure>(store.update(archive(old), archive(corrected)))
+            assertEquals(before, contents())
+            assertEquals(old, assertIs<SessionReadResult.Found>(store.read(old.uuid)).session)
+            rows("DROP TRIGGER fail_score")
+            update(store, old, corrected)
+            assertEquals(trace, rows("SELECT * FROM impact_repositions"))
+            assertEquals(history, rows("SELECT * FROM score_decisions WHERE revision >= 0"))
+        }
+        reopen(corrected)
+    }
+
+    @Test fun `two manual score writers from one expected revision cannot overwrite each other`() = runBlocking<Unit> {
+        val old = graph()
+        val first = replace(old, judge(old.ends[0].impacts[0]))
+        val second = replace(old, exceptional(old.ends[0].impacts[0]))
+        openSessionStore(path).use { store -> create(store, old) }
+        openSessionStore(path).use { one -> openSessionStore(path).use { two ->
+            val expected = archive(old)
+            val results = coroutineScope {
+                listOf(async(Dispatchers.Default) { one.update(expected, archive(first)) },
+                    async(Dispatchers.Default) { two.update(expected, archive(second)) }).awaitAll()
+            }
+            assertEquals(1, results.count { it is SessionUpdateResult.Updated })
+            assertEquals(1, results.count { it is SessionUpdateResult.Conflict })
+            val winner = if (results[0] is SessionUpdateResult.Updated) first else second
+            assertEquals(winner, assertIs<SessionReadResult.Found>(one.read(old.uuid)).session)
+            assertEquals(winner, assertIs<SessionReadResult.Found>(two.read(old.uuid)).session)
+            assertEquals(listOf("0"), rows("SELECT COUNT(*) FROM impact_repositions"))
+        } }
+    }
+
     @Test fun `multiple moves append invalidated decisions without rewriting existing evidence`() = runBlocking<Unit> {
         val old = graph()
         val judged = replace(old, judge(old.ends[0].impacts[0]))

@@ -326,7 +326,8 @@ suggestions n'impose aucune confirmation individuelle avant `End.validate`.
 Exemple : `JudgeBoundary(SCORE_ZONES, rayon 0.1, valeur 10 non-X, date)` peut
 produire géométrie 9, final 10. La référence X à `0.05` permet de distinguer
 10/X et 10/non-X ; la référence de bord à `1` distingue le score périphérique
-réel et M. Aucun écran de jugement n'est introduit ici.
+réel et M. Le parcours Android de l'[ADR 020](adr/020-decisions-score-android.md)
+expose désormais ces demandes avant validation, sans modifier ce contrat métier.
 
 ---
 
@@ -490,4 +491,4 @@ tâche distincte ; les quatre profils indoor complets de l'ADR 013 sont disponib
 
 ---
 
-*Document version 1.6 — 15 octobre 2026*
+*Document version 1.7 — 16 octobre 2026*

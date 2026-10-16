@@ -35,6 +35,8 @@ Pour préparer le développement et les validations :
 | 16 | Première persistance locale Room / SQLite | [adr/016-persistance-locale-room.md](adr/016-persistance-locale-room.md) |
 | 17 | Mise à jour transactionnelle des séances Room | [adr/017-mise-a-jour-seances-room.md](adr/017-mise-a-jour-seances-room.md) |
 | 18 | Premier parcours Android Compose / Room | [adr/018-integration-android-room.md](adr/018-integration-android-room.md) |
+| 19 | Sélection et repositionnement dans Android | [adr/019-selection-repositionnement-android.md](adr/019-selection-repositionnement-android.md) |
+| 20 | Jugement de limite et correction exceptionnelle dans Android | [adr/020-decisions-score-android.md](adr/020-decisions-score-android.md) |
 
 ---
 
