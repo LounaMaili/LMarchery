@@ -13,6 +13,7 @@ import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.archive.*
 import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
 import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
+import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles
 import com.lmarchery.core.scoring.summarizeSessionScore
 import kotlinx.coroutines.*
 import org.junit.jupiter.api.io.TempDir
@@ -152,6 +153,67 @@ class RoomSessionUpdateTest {
         assertEquals(listOf("0", "1"), rows("SELECT sequence FROM impact_repositions ORDER BY sequence"))
         assertEquals(listOf("-1", "0", "1"), rows("SELECT revision FROM score_decisions ORDER BY revision"))
         assertTrue(corrected.ends[0].impacts[0].repositions.all { it.invalidatedManualDecision != null })
+    }
+
+    @Test fun `single selected indoor impact appends exactly one trace and preserves siblings and history on disk`() = runBlocking<Unit> {
+        val profile = WorldArcheryIndoorTargetProfiles.recurve40
+        val arrows = listOf(
+            arrow(id(11), 1, profile, NormalizedPoint(0f, 0f)),
+            judge(arrow(id(12), 2, profile)),
+            arrow(id(13), 3, profile, NormalizedPoint(1.1f, 0f)),
+        )
+        val old = draft(profile).start(t(1)).withEnd(end(arrows))
+        val changedAt = t(4).plusNanos(17)
+        val moved = arrows[1].reposition(NormalizedPoint(Math.nextUp(0.35f), -0.0f), changedAt, "Wrong position")
+        val next = replace(old, moved)
+        openSessionStore(path).use { store ->
+            create(store, old)
+            update(store, old, next)
+            assertEquals(listOf("1"), rows("SELECT COUNT(*) FROM impact_repositions"))
+            assertEquals(listOf("1"), rows("SELECT repositionCount FROM impacts WHERE uuid = '${moved.uuid}'"))
+            assertEquals(listOf("BOUNDARY_JUDGMENT|10"), rows("SELECT kind, selectedScore FROM score_decisions WHERE revision = 0"))
+            assertEquals(listOf("GEOMETRY|7"), rows("SELECT kind, selectedScore FROM score_decisions WHERE impactUuid = '${moved.uuid}' AND revision = -1"))
+            assertEquals(listOf("${moved.point.x.toRawBits()}|${(-0.0f).toRawBits()}|${changedAt.nano}"),
+                rows("SELECT xBits, yBits, updated_nano FROM impacts WHERE uuid = '${moved.uuid}'"))
+        }
+        reopen(next)
+        val firstTrace = rows("SELECT * FROM impact_repositions")
+        val firstDecision = rows("SELECT * FROM score_decisions WHERE revision = 0")
+        val siblings = rows("SELECT * FROM impacts WHERE uuid != '${moved.uuid}' ORDER BY uuid")
+        val third = replace(next, moved.reposition(NormalizedPoint(1.01f, -0.0f), t(5).plusNanos(23)))
+        openSessionStore(path).use { store ->
+            rows("CREATE TRIGGER immutable_trace_update BEFORE UPDATE ON impact_repositions BEGIN SELECT RAISE(ABORT, 'old trace changed'); END")
+            rows("CREATE TRIGGER immutable_trace_delete BEFORE DELETE ON impact_repositions BEGIN SELECT RAISE(ABORT, 'old trace deleted'); END")
+            rows("CREATE TRIGGER immutable_decision_update BEFORE UPDATE ON score_decisions WHEN OLD.revision >= 0 BEGIN SELECT RAISE(ABORT, 'old decision changed'); END")
+            rows("CREATE TRIGGER immutable_decision_delete BEFORE DELETE ON score_decisions BEGIN SELECT RAISE(ABORT, 'old decision deleted'); END")
+            update(store, next, third)
+            assertEquals(listOf("2"), rows("SELECT COUNT(*) FROM impact_repositions"))
+            assertEquals(firstTrace, rows("SELECT * FROM impact_repositions WHERE sequence = 0"))
+            assertEquals(firstDecision, rows("SELECT * FROM score_decisions WHERE revision = 0"))
+            assertEquals(siblings, rows("SELECT * FROM impacts WHERE uuid != '${moved.uuid}' ORDER BY uuid"))
+        }
+        reopen(third)
+        assertEquals(arrows[0], third.ends[0].impacts[0])
+        assertEquals(arrows[2], third.ends[0].impacts[2])
+        assertTrue(third.ends[0].impacts[1].isMiss)
+        assertEquals(arrows[1].finalScoreDecision, moved.repositions.single().invalidatedManualDecision)
+    }
+
+    @Test fun `failure while appending next selected-impact trace rolls back current decision and leaves prior evidence untouched`() = runBlocking<Unit> {
+        val old = graph()
+        val moved = replace(old, arrow().reposition(NormalizedPoint(0.35f, 0f), t(3)))
+        val next = replace(moved, moved.ends[0].impacts[0].reposition(NormalizedPoint(1.01f, 0f), t(4)))
+        openSessionStore(path).use { store -> create(store, old); update(store, old, moved) }
+        openSessionStore(path).use { store ->
+            rows("CREATE TRIGGER reject_next_trace BEFORE INSERT ON impact_repositions WHEN NEW.sequence = 1 BEGIN SELECT RAISE(ABORT, 'synthetic trace failure'); END")
+            val before = contents()
+            assertIs<SessionUpdateResult.TechnicalFailure>(store.update(archive(moved), archive(next)))
+            assertEquals(before, contents())
+            assertEquals(moved, assertIs<SessionReadResult.Found>(store.read(moved.uuid)).session)
+            rows("DROP TRIGGER reject_next_trace")
+            update(store, moved, next)
+        }
+        reopen(next)
     }
 
     @Test fun `updated nanoseconds adjacent floats and signed zero remain bit exact`() = runBlocking<Unit> {

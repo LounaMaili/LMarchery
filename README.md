@@ -126,6 +126,12 @@ confirmation après chaque appui, valider la volée, puis en ouvrir une nouvelle
 Le total provisoire reste séparé du total des volées validées. Une volée partielle
 bloque la clôture ; une volée vide peut rester dans une séance terminée.
 
+Avant validation, sélectionner une flèche dans la liste puis « Repositionner »
+permet de proposer une autre position, même avec trois flèches. L'aperçu reste
+temporaire : annuler n'écrit rien, confirmer attend l'acquittement Room et conserve
+l'ancienne position/décision dans les traces. Voir
+[ADR 019](docs/adr/019-selection-repositionnement-android.md).
+
 Après relancement, ouvrir la séance depuis la liste pour retrouver ses impacts.
 Une séance terminée reste en lecture seule. Les actions en échec sont conservées
 pour une nouvelle tentative explicite ou une relecture avec confirmation d'abandon.
@@ -134,9 +140,11 @@ Les profils/configurations hors de ce premier parcours restent consultables.
 L'APK debug est `app/build/outputs/apk/debug/app-debug.apk`. Suivre le
 [protocole téléphone](docs/tests-terrain-v1.md#protocole-android-persistant-pr-16),
 avec rotation et arrêt complet après deux impacts. **Les tests JVM, builds et lint
-ne constituent pas des tests physiques sur téléphone.** Les corrections, déplacements,
-suppressions, matériel/presets et export utilisateur ne sont pas disponibles dans
-ce parcours. Les données sont locales : les effacer ou désinstaller l'application
+ne constituent pas des tests physiques sur téléphone.** Le
+[protocole de repositionnement](docs/tests-terrain-v1.md#protocole-selection-et-repositionnement-pr-17)
+distingue aussi automatisation ADB et essais au doigt. Jugement de score,
+glisser-déposer, suppressions, matériel/presets et export utilisateur restent hors
+de ce parcours. Les données sont locales : les effacer ou désinstaller l'application
 peut les perdre, sans possibilité d'export pour l'instant.
 
 ## Versions

@@ -15,15 +15,21 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.feature.scoring.TargetCanvas
+import com.lmarchery.feature.scoring.TargetInteraction
 import com.lmarchery.feature.sessions.*
 
 @Composable
 fun LMarcheryApp(controller: SessionController) {
     val state by controller.state.collectAsStateWithLifecycle()
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
+    var confirmCancelReposition by rememberSaveable { mutableStateOf(false) }
     val back: () -> Unit = {
         if (!state.busy) {
-            if (state.pending != null) confirmLeave = true else controller.returnToList()
+            when {
+                state.pending != null -> confirmLeave = true
+                state.impactEdit != null -> confirmCancelReposition = true
+                else -> controller.returnToList()
+            }
         }
     }
     BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null, onBack = back)
@@ -47,7 +53,7 @@ fun LMarcheryApp(controller: SessionController) {
                             else -> "Opération non confirmée."
                         }, style = MaterialTheme.typography.titleSmall)
                         Text(problem.message)
-                        if (state.pending == null && problem.retryable) {
+                        if (state.pending == null && state.impactEdit == null && problem.retryable) {
                             TextButton(enabled = !state.busy, onClick = {
                                 if (state.screen == SessionScreen.LIST) controller.refresh()
                                 else state.session?.uuid?.let(controller::openSession)
@@ -132,28 +138,46 @@ fun LMarcheryApp(controller: SessionController) {
                         }
                         state.displayedEnd?.let { end -> item(key = "target-${end.uuid}") {
                             Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée" else "En saisie"}", style = MaterialTheme.typography.titleMedium)
-                            TargetCanvas(session.targetType, end.impacts, state.canAddImpact, end.uuid, controller::addImpact,
-                                Modifier.fillMaxWidth().aspectRatio(1f))
-                            Text(if (state.canAddImpact) "Touchez le blason pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs au cercle comptent M."
-                                else "${end.impacts.size} impact(s) enregistré(s).")
+                            if (state.impactEdit != null) ImpactEditPanel(state, controller)
+                            val interaction = when {
+                                state.canProposeReposition -> TargetInteraction.REPOSITION
+                                state.canAddImpact -> TargetInteraction.ADD_IMPACT
+                                else -> TargetInteraction.READ_ONLY
+                            }
+                            TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
+                                Modifier.fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid, state.impactEdit?.candidate)
+                            Text(when {
+                                state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
+                                state.canAddImpact -> "Touchez le blason pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs au cercle comptent M."
+                                else -> "${end.impacts.size} impact(s) enregistré(s)."
+                            })
                             Text(end.impacts.joinToString(" · ") { "#${it.index} : ${it.scoreLabel()}" }.ifEmpty { "Aucun impact enregistré." })
                             Text("Total de cette volée : ${calculateEndScore(end)}${if (end.status == EndStatus.EDITING) " (provisoire)" else " (validé)"}")
                         } }
+                        if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
+                            items(state.displayedEnd!!.impacts, key = { "select-${it.uuid}" }) { impact ->
+                                OutlinedButton(onClick = { controller.selectImpact(state.displayedEnd!!.uuid, impact.uuid) },
+                                    enabled = state.canSelectImpact, modifier = Modifier.fillMaxWidth()) {
+                                    Text("Sélectionner flèche #${impact.index} : ${impact.scoreLabel()}")
+                                }
+                            }
+                        }
                         if (session.status != SessionStatus.COMPLETED) item(key = "session-actions") {
                             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                                 Button(onClick = controller::validateEnd, enabled = state.canValidate) { Text("Valider la volée (3 flèches)") }
                                 Button(onClick = controller::newEnd, enabled = state.canNewEnd) { Text("Nouvelle volée") }
                                 OutlinedButton(onClick = controller::completeSession, enabled = state.canComplete) { Text("Terminer la séance") }
+                                if (state.impactEdit != null) Text("Fermez la sélection ou annulez le repositionnement avant de valider ou changer de volée.")
                                 if (state.editingEnd?.impacts?.isNotEmpty() == true) Text("Validez les trois flèches avant de terminer la séance.", style = MaterialTheme.typography.bodySmall)
                             }
                         }
                         items(session.ends, key = { it.uuid }) { end ->
-                            OutlinedButton(onClick = { controller.selectEnd(end.uuid) }, enabled = state.ready,
+                            OutlinedButton(onClick = { controller.selectEnd(end.uuid) }, enabled = state.canNavigate,
                                 modifier = Modifier.fillMaxWidth()) {
                                 Text("Volée ${end.index} · ${end.impacts.size} flèches · ${calculateEndScore(end)} · ${if (end.status == EndStatus.VALIDATED) "validée" else "provisoire"}")
                             }
                         }
-                        item(key = "limitations") { Text("Correction, déplacement et suppression ne sont pas disponibles dans ce parcours.", style = MaterialTheme.typography.bodySmall) }
+                        item(key = "limitations") { Text("Repositionnement par sélection puis confirmation, avant validation. Suppression et jugement de score indisponibles.", style = MaterialTheme.typography.bodySmall) }
                     }
                 }
             }
@@ -164,6 +188,15 @@ fun LMarcheryApp(controller: SessionController) {
         text = { Text("Son enregistrement n’est pas confirmé. Revenir à la liste abandonne la proposition locale et conserve le contenu présent dans la base.") },
         confirmButton = { TextButton(onClick = { confirmLeave = false; controller.discardAndReturnToList() }) { Text("Abandonner et revenir") } },
         dismissButton = { TextButton(onClick = { confirmLeave = false }) { Text("Conserver l’action") } })
+    if (confirmCancelReposition) AlertDialog(onDismissRequest = { confirmCancelReposition = false },
+        title = { Text("Annuler la correction et revenir ?") },
+        text = { Text("La sélection et la proposition non soumise seront abandonnées. Aucune écriture n’a été demandée.") },
+        confirmButton = { TextButton(onClick = {
+            confirmCancelReposition = false
+            controller.cancelImpactEdit()
+            controller.returnToList()
+        }) { Text("Annuler et revenir") } },
+        dismissButton = { TextButton(onClick = { confirmCancelReposition = false }) { Text("Conserver la correction") } })
     state.storedPreview?.let { archive ->
         val stored = archive.sessions.single()
         AlertDialog(onDismissRequest = controller::closePreview, title = { Text("Version enregistrée") },
@@ -176,6 +209,46 @@ fun LMarcheryApp(controller: SessionController) {
             } },
             confirmButton = { TextButton(onClick = controller::reloadAndDiscard, enabled = !state.busy) { Text("Abandonner l’action et recharger") } },
             dismissButton = { TextButton(onClick = controller::closePreview, enabled = !state.busy) { Text("Conserver l’action locale") } })
+    }
+}
+
+@Composable
+private fun ImpactEditPanel(state: SessionUiState, controller: SessionController) {
+    val edit = state.impactEdit ?: return
+    val impact = state.selectedImpact ?: return
+    Card(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("Flèche #${impact.index} sélectionnée", style = MaterialTheme.typography.titleMedium)
+            Text("Position enregistrée : (${impact.point.x}, ${impact.point.y}) · ${impact.scoreLabel()}")
+            when (edit.phase) {
+                ImpactEditPhase.SELECTED -> Text("Choisissez Repositionner pour corriger cette flèche.")
+                ImpactEditPhase.AWAITING_POINT -> Text("Repositionnement : choisissez une nouvelle position sur le blason.")
+                ImpactEditPhase.CANDIDATE -> Text("Proposition non enregistrée : confirmez ou annulez.")
+                ImpactEditPhase.SAVING -> Text("Sauvegarde en cours. La position enregistrée reste affichée.")
+                ImpactEditPhase.FAILED -> Text("Correction non confirmée. La proposition soumise est conservée.")
+                ImpactEditPhase.CONFIRMED -> Text("Repositionnement enregistré sur cet appareil.")
+            }
+            edit.preview?.let { preview ->
+                Text("Position proposée : (${preview.point.x}, ${preview.point.y}) · ${when {
+                    preview.isMiss -> "M"
+                    preview.isX -> "${preview.scoreFinal}X"
+                    else -> preview.scoreFinal.toString()
+                }} (aperçu géométrique)")
+                Text("L’ancienne décision de score sera invalidée et conservée dans l’historique.")
+                OutlinedTextField(edit.reason, controller::setRepositionReason, enabled = state.canProposeReposition,
+                    label = { Text(if (impact.finalScoreDecision.provenance.isManual) "Motif obligatoire (décision manuelle)" else "Motif facultatif") },
+                    singleLine = true, modifier = Modifier.fillMaxWidth())
+            }
+            if (edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED)) {
+                Button(onClick = controller::beginReposition, enabled = state.canBeginReposition) { Text("Repositionner") }
+            }
+            if (edit.candidate != null) Button(onClick = controller::confirmReposition,
+                enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
+            TextButton(onClick = controller::cancelImpactEdit, enabled = state.ready) {
+                Text(if (edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED)) "Fermer la sélection" else "Annuler le repositionnement")
+            }
+            Text("Cercle orange : flèche sélectionnée. Croix violette : proposition non enregistrée.", style = MaterialTheme.typography.bodySmall)
+        }
     }
 }
 

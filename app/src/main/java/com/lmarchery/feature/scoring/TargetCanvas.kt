@@ -24,16 +24,20 @@ import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
 import java.util.Locale
 
+enum class TargetInteraction { READ_ONLY, ADD_IMPACT, REPOSITION }
+
 @Composable
 fun TargetCanvas(
     targetType: TargetType,
     impacts: List<ArrowImpact>,
-    enabled: Boolean,
+    interaction: TargetInteraction,
     endUuid: String?,
-    onImpactAdded: (NormalizedPoint) -> Unit,
+    onPointSelected: (NormalizedPoint) -> Unit,
     modifier: Modifier = Modifier,
+    selectedImpactUuid: String? = null,
+    candidate: NormalizedPoint? = null,
 ) {
-    val currentOnImpactAdded by rememberUpdatedState(onImpactAdded)
+    val currentOnPointSelected by rememberUpdatedState(onPointSelected)
     val isDark = isSystemInDarkTheme()
     val borderColor = MaterialTheme.colorScheme.outlineVariant
 
@@ -49,11 +53,15 @@ fun TargetCanvas(
         Canvas(
             modifier = Modifier
                 .fillMaxSize()
-                .semantics { contentDescription = if (enabled) "Blason interactif LMarchery" else "Blason enregistré en consultation" }
-                .pointerInput(endUuid, targetType.uuid, impacts.size, enabled) {
+                .semantics { contentDescription = when (interaction) {
+                    TargetInteraction.ADD_IMPACT -> "Blason interactif LMarchery"
+                    TargetInteraction.REPOSITION -> "Blason de repositionnement — proposition non enregistrée"
+                    TargetInteraction.READ_ONLY -> "Blason enregistré en consultation"
+                } }
+                .pointerInput(endUuid, targetType.uuid, impacts.size, interaction, selectedImpactUuid) {
                     detectTapGestures { offset ->
-                        if (enabled) {
-                            currentOnImpactAdded(
+                        if (interaction != TargetInteraction.READ_ONLY) {
+                            currentOnPointSelected(
                                 canvasPointToNormalized(
                                     point = CanvasPoint(offset.x, offset.y),
                                     canvasSize = CanvasSize(
@@ -125,6 +133,19 @@ fun TargetCanvas(
                     center = centerOffset,
                     style = Stroke(width = 1.5.dp.toPx()),
                 )
+                if (impact.uuid == selectedImpactUuid) drawCircle(
+                    color = Color(0xFFFF9800), radius = 13.dp.toPx(), center = centerOffset,
+                    style = Stroke(width = 3.dp.toPx()),
+                )
+            }
+            candidate?.let {
+                val point = normalizedPointToCanvas(it, CanvasSize(size.width, size.height))
+                val offset = Offset(point.x, point.y)
+                drawCircle(Color.White, 12.dp.toPx(), offset, style = Stroke(4.dp.toPx()))
+                drawCircle(Color(0xFFAA00FF), 12.dp.toPx(), offset, style = Stroke(2.dp.toPx()))
+                val delta = Offset(8.dp.toPx(), 8.dp.toPx())
+                drawLine(Color(0xFFAA00FF), offset - delta, offset + delta, 3.dp.toPx())
+                drawLine(Color(0xFFAA00FF), offset + Offset(-delta.x, delta.y), offset + Offset(delta.x, -delta.y), 3.dp.toPx())
             }
         }
     }

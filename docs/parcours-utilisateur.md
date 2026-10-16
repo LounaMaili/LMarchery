@@ -4,7 +4,7 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16)
+## Parcours effectivement implémenté (PR 16 et 17)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
@@ -19,6 +19,8 @@ Android livré est limité à :
    Pendant l'écriture, les commandes sont bloquées. Les coins hors cercle valent M.
 4. Après trois impacts : valider la volée, puis créer la suivante. Le total de la
    volée en saisie est provisoire ; le total de séance ne compte que les validées.
+   Avant validation, sélectionner une flèche depuis son bouton numéroté permet
+   de la repositionner, y compris lorsque les trois flèches sont présentes.
 5. Fermer totalement puis relancer : l'accueil redécouvre les séances sans pointeur
    de séance active. Ouvrir une séance retrouve aussi une volée partielle.
 6. Terminer : interdit avec une volée éditable non vide, possible avec une volée
@@ -32,10 +34,36 @@ selon l'horodatage. Le bouton Retour demande aussi confirmation d'abandon si né
 
 La rotation conserve le ViewModel ; l'arrêt du processus conserve seulement ce qui
 a réellement été committé dans Room. Aucun reset de démo ne supprime les séances.
-Les corrections, déplacements, suppressions, matériel/presets, export et autres
-modes restent hors de ce parcours. Les données sont locales, sans export utilisateur.
+Les suppressions, jugements de score, matériel/presets, export et autres modes
+restent hors de ce parcours. Les données sont locales, sans export utilisateur.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
+
+### Repositionner avant validation (PR 17)
+
+1. Ouvrir une séance en cours et sa volée en saisie. Choisir « Sélectionner
+   flèche #… » dans la liste, même si des impacts se superposent sur le blason.
+2. Choisir « Repositionner », puis toucher la nouvelle position. Ce mode n'ajoute
+   aucune flèche. L'anneau orange conserve la position enregistrée ; la croix
+   violette montre le candidat non enregistré. Les deux positions et scores sont
+   affichés distinctement. Toucher à nouveau change seulement le candidat.
+3. « Annuler le repositionnement » quitte sans écrire. Le retour demande de
+   confirmer l'abandon avant de quitter. La validation, la clôture et le changement
+   de volée attendent la fermeture de la sélection/correction.
+4. Pour confirmer : saisir un motif si l'ancienne décision de score était manuelle
+   (facultatif sinon), puis « Confirmer le repositionnement ». L'ancienne décision
+   sera invalidée et conservée dans les traces ; le score reprend la nouvelle
+   géométrie. Un point identique ou une horloge incohérente donne un diagnostic.
+5. Attendre l'acquittement. Jusque-là, positions, scores et totaux enregistrés
+   restent ceux du dernier succès. Après succès, fermer la sélection ou commencer
+   un autre repositionnement. Une erreur conserve l'action selon la politique
+   décrite plus haut ; aucun abandon silencieux ni retry avec une nouvelle base.
+
+Une rotation conserve le candidat avec le ViewModel. Après arrêt complet du
+processus, seule la dernière position réellement persistée revient. Une volée
+validée ou une séance terminée reste non modifiable. Pas de glisser-déposer,
+suppression, jugement de cordon ou correction directe du score dans ce parcours.
+Voir [ADR 019](adr/019-selection-repositionnement-android.md).
 
 ---
 
