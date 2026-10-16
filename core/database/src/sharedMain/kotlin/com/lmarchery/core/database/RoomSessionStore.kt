@@ -62,6 +62,11 @@ sealed interface ArchiveReadResult {
 class RoomSessionStore internal constructor(private val database: SessionDatabase) : AutoCloseable {
     private val closed = AtomicBoolean(false)
 
+    /** Catalog foundation; JSON V1 deliberately does not back up these records yet. */
+    val equipment: RoomEquipmentCatalog = RoomEquipmentCatalog(database) {
+        check(!closed.get()) { "Session store is closed." }
+    }
+
     /** All roots and descendants from one reader snapshot. No partial archive and no SQL writes. */
     suspend fun readArchive(): ArchiveReadResult = try {
         val callerContext = currentCoroutineContext()
@@ -187,7 +192,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         val rowIds = dao.rowIdentities()
         dataCheck(rowIds.size == knownIds.size && rowIds.all { knownIds[it.uuid] == it },
             "identities", "Stored entity rows include duplicate or unreachable identities.")
-        val registered = archive.toSnapshot().identities().chunked(900).flatMap { chunk -> dao.identities(chunk.map { it.uuid }) }
+        val registered = archive.toSnapshot().identities().chunked(900).flatMap { chunk -> dao.claimedIdentities(chunk.map { it.uuid }) }
         val collisions = registered.filter { knownIds[it.uuid] != it }.map {
             ImportConflict(it.uuid, "REGISTERED_IDENTITY_CONFLICT", "identities[${it.uuid}]", "UUID is already registered outside validated local data.")
         }
@@ -301,7 +306,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         }
         val previousIds = previousSnapshot.identities().map { it.uuid }.toSet()
         val newIds = nextSnapshot.identities().filterNot { it.uuid in previousIds }
-        val collisions = newIds.chunked(900).flatMap { dao.identities(it.map { identity -> identity.uuid }) }
+        val collisions = newIds.chunked(900).flatMap { dao.claimedIdentities(it.map { identity -> identity.uuid }) }
         if (collisions.isNotEmpty()) return SessionUpdateResult.Conflict(StorageDiagnostic(
             "identities", "A new descendant UUID is already owned by stored data."))
 
@@ -337,7 +342,8 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         }
         val expected = snapshot.identities()
         val existing = expected.chunked(900).flatMap { dao.identities(it.map { identity -> identity.uuid }) }
-        if (existing.any { it.uuid != profileUuid || existingProfile == null || it.kind != "PROFILE" }) {
+        val claims = expected.chunked(900).flatMap { dao.claimedIdentities(it.map { identity -> identity.uuid }) }
+        if (claims.any { it.uuid != profileUuid || existingProfile == null || it.kind != "PROFILE" }) {
             return SessionCreateResult.Conflict(StorageDiagnostic("identities", "An entity UUID is already owned by stored data."))
         }
         dataCheck(existingProfile == null || existing.any { it.uuid == profileUuid && it.kind == "PROFILE" },

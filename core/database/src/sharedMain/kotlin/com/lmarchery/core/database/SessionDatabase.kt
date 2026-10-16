@@ -29,8 +29,12 @@ internal interface SessionDao {
     suspend fun stageImpactOrder(uuid: String)
     @Query("SELECT * FROM entity_identities WHERE uuid IN (:uuids)")
     suspend fun identities(uuids: List<String>): List<IdentityRow>
+    // Session-archive scope only: JSON V1 intentionally excludes equipment rows.
     @Query("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts")
     suspend fun rowIdentities(): List<IdentityRow>
+    // Include physical claims when a damaged registry omitted or misclassified an identity.
+    @Query("SELECT uuid, kind FROM entity_identities WHERE uuid IN (:uuids) UNION SELECT uuid, 'PROFILE' AS kind FROM target_profiles WHERE uuid IN (:uuids) UNION SELECT uuid, 'SESSION' AS kind FROM sessions WHERE uuid IN (:uuids) UNION SELECT uuid, 'END' AS kind FROM ends WHERE uuid IN (:uuids) UNION SELECT uuid, 'IMPACT' AS kind FROM impacts WHERE uuid IN (:uuids) UNION SELECT uuid, 'BOW' AS kind FROM bows WHERE uuid IN (:uuids) UNION SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets WHERE uuid IN (:uuids)")
+    suspend fun claimedIdentities(uuids: List<String>): List<IdentityRow>
     @Query("SELECT uuid FROM target_profiles ORDER BY uuid") suspend fun profileUuids(): List<String>
     @Query("SELECT * FROM target_profiles WHERE uuid = :uuid") suspend fun profile(uuid: String): ProfileRow?
     @Query("SELECT * FROM target_zones WHERE profileUuid = :uuid ORDER BY position") suspend fun zones(uuid: String): List<ZoneRow>
@@ -45,7 +49,8 @@ internal interface SessionDao {
 }
 
 @Database(entities = [IdentityRow::class, ProfileRow::class, ZoneRow::class, SessionRow::class,
-    EndRow::class, ImpactRow::class, DecisionRow::class, RepositionRow::class], version = 1, exportSchema = true)
+    EndRow::class, ImpactRow::class, DecisionRow::class, RepositionRow::class, BowRow::class, ArrowSetRow::class], version = 2, exportSchema = true)
 internal abstract class SessionDatabase : RoomDatabase() {
     abstract fun records(): SessionDao
+    abstract fun equipment(): EquipmentDao
 }
