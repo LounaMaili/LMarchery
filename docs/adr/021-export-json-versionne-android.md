@@ -1,5 +1,8 @@
 # ADR 021 — Export JSON versionné des séances Android
 
+> Étape suivante : l’[ADR 022](022-import-json-controle-transactionnel.md) ajoute
+> l’import contrôlé sans écrasement. Le présent ADR décrit l’export livré en PR 19.
+
 ## Portée
 
 Rendre opérationnel le contrat de l'[ADR 015](015-sauvegarde-versionnee-reconstruction.md)

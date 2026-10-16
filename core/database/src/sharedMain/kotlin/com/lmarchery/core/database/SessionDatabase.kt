@@ -29,6 +29,9 @@ internal interface SessionDao {
     suspend fun stageImpactOrder(uuid: String)
     @Query("SELECT * FROM entity_identities WHERE uuid IN (:uuids)")
     suspend fun identities(uuids: List<String>): List<IdentityRow>
+    @Query("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts")
+    suspend fun rowIdentities(): List<IdentityRow>
+    @Query("SELECT uuid FROM target_profiles ORDER BY uuid") suspend fun profileUuids(): List<String>
     @Query("SELECT * FROM target_profiles WHERE uuid = :uuid") suspend fun profile(uuid: String): ProfileRow?
     @Query("SELECT * FROM target_zones WHERE profileUuid = :uuid ORDER BY position") suspend fun zones(uuid: String): List<ZoneRow>
     @Query("SELECT * FROM sessions WHERE uuid = :uuid") suspend fun session(uuid: String): SessionRow?

@@ -2,7 +2,8 @@
 
 > Précisé par les [ADR 015](015-sauvegarde-versionnee-reconstruction.md) et
 > [021](021-export-json-versionne-android.md) : export opérationnel des seuls
-> séances/profils implémentés ; aucun import utilisateur ni fusion automatique.
+> séances/profils implémentés. L’[ADR 022](022-import-json-controle-transactionnel.md)
+> ajoute leur import contrôlé, sans écrasement ni fusion automatique.
 > Un UUID identifie une entité, sans garantir la résolution de ses conflits.
 
 ## Contexte

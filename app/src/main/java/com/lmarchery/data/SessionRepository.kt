@@ -18,11 +18,18 @@ fun interface ArchiveSource {
     suspend fun readArchive(): ArchiveReadResult
 }
 
+interface ArchiveImporter {
+    suspend fun previewImport(archive: DomainArchive): ArchiveImportPreviewResult
+    suspend fun importArchive(preview: ArchiveImportPreview): ArchiveImportResult
+}
+
 /** Process-owned store; disk access and reconstruction never block the UI thread. */
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource {
+) : SessionRepository, ArchiveSource, ArchiveImporter {
+    override suspend fun previewImport(archive: DomainArchive) = withContext(dispatcher) { store.previewImport(archive) }
+    override suspend fun importArchive(preview: ArchiveImportPreview) = withContext(dispatcher) { store.importArchive(preview) }
     override suspend fun readArchive() = withContext(dispatcher) { store.readArchive() }
     override suspend fun discover() = withContext(dispatcher) { store.discover() }
     override suspend fun read(uuid: String) = withContext(dispatcher) { store.read(uuid) }

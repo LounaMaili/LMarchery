@@ -20,7 +20,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (21 décisions techniques)
+- [x] ADR (22 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
@@ -40,7 +40,7 @@ Voir [docs/README.md](docs/README.md) pour l'index complet et l'ordre de lecture
 | [Parcours utilisateur](docs/parcours-utilisateur.md) | 7 parcours détaillés de l'application |
 | [Backlog V1](docs/backlog-v1.md) | 6 epics, ~40 tickets actionnables |
 | [Tests terrain V1](docs/tests-terrain-v1.md) | 5 grilles de test pour les retours réels |
-| [Format d'export V1](docs/export-format-v1.md) | JSON opérationnel avec UUID, décisions et traces ; sans import |
+| [Format d'export V1](docs/export-format-v1.md) | JSON opérationnel avec UUID, décisions et traces ; import contrôlé |
 | [Roadmap reconnaissance](docs/reconnaissance-roadmap.md) | Trajectoire V2→V4 |
 
 ## Stack technique
@@ -173,12 +173,28 @@ Les fournisseurs qui ne permettent pas la relecture ne donnent pas de succès
 confirmé. Aucune permission globale de stockage ni synchronisation propre à
 LMarchery ; Android laisse choisir le fournisseur.
 
-**L’import utilisateur n’est pas disponible.** Seuls séances et profils réellement
+Seuls séances et profils réellement
 implémentés sont sauvegardés. La base Room n’est pas modifiée par l’export. Le
 contrat strict, les limites de taille et les garanties numériques sont détaillés
 dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
 [format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut
-les perdre ; la restauration depuis le fichier reste une fonctionnalité future.
+les perdre ; conserver une sauvegarde validée hors de l’application.
+
+## Import contrôlé des sauvegardes (PR 20)
+
+Depuis la liste, « Importer une sauvegarde » ouvre le sélecteur Android. Le contenu
+réel est lu avec un plafond de 16 MiB, décodé strictement et comparé à SQLite.
+L’aperçu donne nouvelles séances, identiques, conflits et profils. Confirmer
+« Importer les N nouvelles séances » ajoute toute l’archive atomiquement, avec
+UUID, dates et provenances d’origine. Les identiques ne sont pas réécrites.
+
+Toute divergence ou collision refuse l’ensemble ; aucune fusion, suppression ou
+sélection selon `updatedAt`. Un fichier vide ou un profil sans séance est refusé.
+Une modification concurrente invalidant le plan exige un nouvel aperçu. Après
+interruption non confirmée, relire la liste et sélectionner à nouveau le fichier
+pour constater les identiques sans doublon. Rotation : candidat conservé en mémoire ;
+mort du processus : nouvelle sélection. Import et export s’excluent mutuellement.
+Voir [ADR 022](docs/adr/022-import-json-controle-transactionnel.md).
 
 ## Versions
 

@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.lmarchery.feature.sessions.SessionViewModel
 import com.lmarchery.data.export.AndroidDocumentAccess
 import com.lmarchery.data.export.VerifyingDocumentWriter
+import com.lmarchery.data.archiveimport.AndroidImportDocumentAccess
+import com.lmarchery.data.archiveimport.BoundedDocumentReader
 import com.lmarchery.ui.theme.LMarcheryTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,11 +17,12 @@ class MainActivity : ComponentActivity() {
 
         val repository = (application as LMarcheryApplication).sessionRepository
         val writer = VerifyingDocumentWriter(AndroidDocumentAccess(applicationContext.contentResolver))
-        val viewModel = ViewModelProvider(this, SessionViewModel.Factory(repository, repository, writer))[SessionViewModel::class.java]
+        val reader = BoundedDocumentReader(AndroidImportDocumentAccess(applicationContext.contentResolver))
+        val viewModel = ViewModelProvider(this, SessionViewModel.Factory(repository, repository, writer, repository, reader))[SessionViewModel::class.java]
 
         setContent {
             LMarcheryTheme {
-                LMarcheryApp(viewModel.controller, viewModel.exportCoordinator)
+                LMarcheryApp(viewModel.controller, viewModel.exportCoordinator, viewModel.importCoordinator)
             }
         }
     }

@@ -1,6 +1,6 @@
 # Contrat de sauvegarde V1 — LMarchery
 
-> Export JSON UTF-8 opérationnel ; reconstruction indépendante, sans import utilisateur.
+> Export JSON UTF-8 opérationnel ; reconstruction indépendante et import contrôlé sans écrasement.
 
 ## 1. État implémenté
 
@@ -22,7 +22,8 @@ fournit désormais `ArchiveJsonCodec.encode(DomainArchive)` et `decode(ByteArray
 L’[ADR 021](adr/021-export-json-versionne-android.md) définit le fichier opérationnel
 et le parcours Android « Exporter mes séances », via le sélecteur de documents.
 Extension `.lmarchery.json`, UTF-8 sans BOM, MIME `application/json`.
-Il n’existe ni import utilisateur, ni restauration dans Room, ni fusion entre appareils.
+L’import contrôlé de l’[ADR 022](adr/022-import-json-controle-transactionnel.md) ajoute
+uniquement les séances absentes ; aucune mise à jour ni fusion entre appareils.
 L’ancien exemple `version: 1` était préparatoire ; aucune migration ne lui attribue
 un fuseau ou une provenance manquante.
 
@@ -281,7 +282,34 @@ empreinte SHA-256 de contrôle n’est ni une signature ni un chiffrement.
 L’arrêt du processus peut interrompre la sortie ; un fichier non acquitté ne doit
 pas être présumé valide. Les octets préparés ne sont pas un journal durable.
 Seuls les modèles présents sont exportés, sans journal exhaustif des décisions
-successives à position constante. Aucun import n’est disponible dans Android.
+successives à position constante. L’import Android contrôlé est décrit ci-dessous.
+
+### Import opérationnel sans remplacement (PR 20)
+
+`ArchiveJsonCodec.decode(bytes)` reste inchangé et obligatoire ; `Rejected` bloque
+avant SQL. Le lecteur SAF borne la lecture à 16 MiB avant allocation non bornée,
+sans confiance dans nom, MIME ou taille déclarée. Les flux doivent se fermer sans erreur.
+
+`planArchiveImport(received, known)` compare les contenus/parents complets, dates,
+profils/éditions et traces. `RoomSessionStore.previewImport` produit un candidat
+et des comptes sans écrire. `importArchive(confirmed)` recalcule sous **une unique
+transaction écrivain** le même plan et les collisions globales, registre compris,
+puis ajoute seulement les séances/profils absents et relit tout avant commit.
+Les identiques ne sont jamais réécrites ; toute divergence ou plan changé refuse
+l’ensemble. Toute erreur après insertion lance le rollback de toutes les tables.
+
+Archive sans séance : `EMPTY_ARCHIVE`. Profil sans séance correspondante :
+`UNREFERENCED_PROFILE`, sans omission silencieuse. Aucun import autonome de profils.
+L’aperçu et le résultat distinguent nouvelles/identiques/conflits ; la confirmation
+est explicite, le succès attend SQL. Le candidat exact reste en mémoire : aucune
+relecture du fichier à la confirmation, aucune reprise automatique après mort du
+processus. Sélectionner à nouveau établit les identiques après un résultat incertain.
+
+Seuls séances/profils et enfants implémentés sont restaurés. Aucun contrat ancien,
+UUID réinventé, index renuméroté, remplacement, fusion ou arbitrage par date.
+Le schéma, les nombres JSON et les garanties de l’export restent identiques.
+Voir l’[ADR 022](adr/022-import-json-controle-transactionnel.md) pour les résultats,
+les contrôles concurrentiels, les erreurs et les limites de la preuve de provenance.
 
 Restent à réaliser :
 

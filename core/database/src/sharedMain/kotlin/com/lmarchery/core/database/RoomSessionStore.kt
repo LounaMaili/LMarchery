@@ -11,6 +11,9 @@ import com.lmarchery.core.scoring.archive.ArchiveReconstruction
 import com.lmarchery.core.scoring.archive.ArchiveSnapshot
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.archive.TargetProfileSnapshot
+import com.lmarchery.core.scoring.archive.ArchiveImportPlan
+import com.lmarchery.core.scoring.archive.ImportConflict
+import com.lmarchery.core.scoring.archive.planArchiveImport
 import com.lmarchery.core.scoring.archive.reconstructArchive
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
@@ -94,6 +97,113 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
     } catch (error: CorruptStorage) { ArchiveReadResult.NeedsIntervention(error.diagnostic) }
     catch (error: CancellationException) { throw error }
     catch (error: Exception) { ArchiveReadResult.TechnicalFailure(error) }
+
+    /** Preview reads a consistent snapshot and never reserves identities or inserts rows. */
+    suspend fun previewImport(archive: DomainArchive): ArchiveImportPreviewResult = try {
+        val caller = currentCoroutineContext()
+        caller.ensureActive()
+        check(!closed.get()) { "Session store is closed." }
+        val validated = validateStored(archive.toSnapshot())
+        database.useReaderConnection { connection ->
+            connection.deferredTransaction {
+                val plan = importContext(validated, caller).second
+                caller.ensureActive()
+                ArchiveImportPreviewResult.Ready(ArchiveImportPreview(validated, plan))
+            }
+        }
+    } catch (error: CorruptStorage) { ArchiveImportPreviewResult.NeedsIntervention(error.diagnostic) }
+    catch (error: CancellationException) { throw error }
+    catch (error: Exception) { ArchiveImportPreviewResult.TechnicalFailure(error) }
+
+    /** One writer transaction for every new session. All conflicts are detected before the first INSERT. */
+    suspend fun importArchive(confirmed: ArchiveImportPreview): ArchiveImportResult = try {
+        val caller = currentCoroutineContext()
+        caller.ensureActive()
+        check(!closed.get()) { "Session store is closed." }
+        database.useWriterConnection { connection ->
+            connection.immediateTransaction {
+                caller.ensureActive()
+                check(!closed.get()) { "Session store is closed." }
+                val archive = validateStored(confirmed.archive.toSnapshot())
+                val (before, plan) = importContext(archive, caller)
+                if (plan != confirmed.plan || plan.conflicts.isNotEmpty()) {
+                    ArchiveImportResult.Conflict(StorageDiagnostic("import", "Preview no longer valid or contains conflicts; select and preview again."))
+                } else {
+                    val dao = database.records()
+                    val snapshot = archive.toSnapshot()
+                    val ids = snapshot.identities()
+                    val newSessions = snapshot.sessions.filter { it.uuid in plan.newSessionUuids }
+                    val newProfiles = snapshot.profiles.filter { it.definition!!.uuid in plan.newProfileUuids }
+                    val addedEntityUuids = newSessions.flatMap { session ->
+                        listOf(session.uuid) + session.ends.flatMap { end -> listOf(end.uuid) + end.impacts.map { it.uuid } }
+                    }.toSet()
+                    val newIds = ids.filter { it.uuid in addedEntityUuids || it.kind == "PROFILE" && it.uuid in plan.newProfileUuids }
+                    caller.ensureActive()
+                    newIds.forEach { caller.ensureActive(); dao.insertIdentity(it) }
+                    newProfiles.forEach { caller.ensureActive(); dao.writeProfile(it) }
+                    newSessions.forEach { session ->
+                        caller.ensureActive()
+                        dao.writeSession(snapshot.copy(sessions = listOf(session)))
+                    }
+                    // Do not return a conflict after writes: any verification failure must THROW for rollback.
+                    val (after, checked) = importContext(archive, caller)
+                    dataCheck(checked.conflicts.isEmpty() && checked.newSessionUuids.isEmpty() &&
+                        checked.identicalSessionUuids.size == archive.sessions.size && checked.newProfileUuids.isEmpty(),
+                        "import.verification", "Persisted archive differs from accepted source; transaction rolled back.")
+                    val oldSessions = before.sessions.map { it.uuid }.toSet()
+                    val oldProfiles = before.profiles.map { it.definition!!.uuid }.toSet()
+                    dataCheck(after.sessions.filter { it.uuid in oldSessions } == before.sessions &&
+                        after.profiles.filter { it.definition!!.uuid in oldProfiles } == before.profiles &&
+                        after.sessions.size == before.sessions.size + newSessions.size &&
+                        after.profiles.size == before.profiles.size + newProfiles.size,
+                        "import.verification", "Existing local content changed; transaction rolled back.")
+                    caller.ensureActive()
+                    ArchiveImportResult.Imported(plan.newSessionUuids.size, plan.identicalSessionUuids.size)
+                }
+            }
+        }
+    } catch (error: CorruptStorage) { ArchiveImportResult.NeedsIntervention(error.diagnostic) }
+    catch (error: CancellationException) { throw error }
+    catch (error: Exception) { ArchiveImportResult.TechnicalFailure(error) }
+
+    /** Existing helpers keep full SQL validation. All queries share the caller's reader/writer transaction. */
+    private suspend fun importContext(archive: DomainArchive, caller: CoroutineContext): Pair<DomainArchive, ArchiveImportPlan> {
+        val dao = database.records()
+        val profiles = dao.profileUuids().map { uuid ->
+            caller.ensureActive()
+            val profile = dao.profileSnapshot(uuid)
+            dataCheck(dao.identities(listOf(uuid)) == listOf(IdentityRow(uuid, "PROFILE")),
+                "profiles[$uuid].identity", "Stored profile identity is missing or inconsistent.")
+            profile
+        }
+        val sessions = dao.sessionUuids().map { uuid ->
+            caller.ensureActive()
+            val row = dao.session(uuid) ?: throw CorruptStorage(StorageDiagnostic("sessions[$uuid]", "Registered session row is missing."))
+            validateStored(dao.sessionSnapshot(row)).sessions.single()
+        }
+        val known = validateStored(com.lmarchery.core.scoring.archive.snapshotArchive(profiles, sessions))
+        val plan = planArchiveImport(archive, known)
+        val knownIds = known.toSnapshot().identities().associateBy { it.uuid }
+        val rowIds = dao.rowIdentities()
+        dataCheck(rowIds.size == knownIds.size && rowIds.all { knownIds[it.uuid] == it },
+            "identities", "Stored entity rows include duplicate or unreachable identities.")
+        val registered = archive.toSnapshot().identities().chunked(900).flatMap { chunk -> dao.identities(chunk.map { it.uuid }) }
+        val collisions = registered.filter { knownIds[it.uuid] != it }.map {
+            ImportConflict(it.uuid, "REGISTERED_IDENTITY_CONFLICT", "identities[${it.uuid}]", "UUID is already registered outside validated local data.")
+        }
+        caller.ensureActive()
+        val collisionIds = collisions.mapNotNull { it.uuid }.toSet()
+        val blockedSessions = archive.sessions.filter { s ->
+            s.uuid in collisionIds || s.targetType.uuid in collisionIds || s.ends.any { end ->
+                end.uuid in collisionIds || end.impacts.any { it.uuid in collisionIds }
+            }
+        }.map { it.uuid }.toSet()
+        fun <T> owned(values: List<T>): List<T> = java.util.Collections.unmodifiableList(values.toList())
+        return known to plan.copy(newSessionUuids = owned(plan.newSessionUuids.filterNot { it in blockedSessions }),
+            identicalSessionUuids = owned(plan.identicalSessionUuids.filterNot { it in blockedSessions }),
+            newProfileUuids = owned(plan.newProfileUuids.filterNot { it in collisionIds }),
+            conflicts = owned(plan.conflicts + collisions))
+    }
 
     /** Deterministic UUID discovery only. Each entry still requires contextualized read() validation. */
     suspend fun discover(): SessionDiscoveryResult = try {
