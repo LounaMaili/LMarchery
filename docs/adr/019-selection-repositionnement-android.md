@@ -90,6 +90,14 @@ suspendue. Les tests SQLite natifs sur fichiers disque couvrent l'ajout exact de
 traces, décisions précédentes, coordonnées IEEE 754/nanosecondes, réouverture,
 rollbacks et absence de réécriture des anciennes preuves sous triggers.
 
+Le premier run CI a exposé une contention `SQLITE_BUSY`, reproduite localement,
+pendant l'installation des triggers d'un test historique. Sa connexion SQL
+indépendante utilise désormais un
+[`busy_timeout`](https://www.sqlite.org/pragma.html#pragma_busy_timeout) de cinq
+secondes pour attendre un verrou temporaire. Aucun test ni assertion n'est
+ignoré ou réessayé, et les erreurs de contrainte/trigger continuent d'échouer.
+Cette configuration ne concerne que le helper de test, pas le magasin Android.
+
 Les tests ADB et essais tactiles sont consignés séparément dans le
 [protocole terrain](../tests-terrain-v1.md#protocole-selection-et-repositionnement-pr-17).
 ADB ne prouve pas l'ergonomie au doigt, avec gants ou en plein soleil. Le blason

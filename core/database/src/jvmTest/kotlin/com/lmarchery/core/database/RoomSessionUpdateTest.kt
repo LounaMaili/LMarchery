@@ -566,6 +566,9 @@ class RoomSessionUpdateTest {
         s.isIndoor, s.scoringMode, s.bowUuid, s.arrowSetUuid, s.locationName, s.notes, ends, created, updated)
 
     private fun rows(sql: String, file: Path = path): List<String> = BundledSQLiteDriver().open(file.toString()).use { connection ->
+        // This independent diagnostic/DDL connection can briefly contend with Room's connections.
+        // Bound the lock wait; constraint/trigger failures still propagate and no assertion is retried.
+        connection.prepare("PRAGMA busy_timeout = 5000").use { it.step() }
         connection.prepare("PRAGMA foreign_keys = ON").use { it.step() }
         connection.prepare(sql).use { statement -> buildList {
             while (statement.step()) add((0 until statement.getColumnCount()).joinToString("|") { column ->
