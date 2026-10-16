@@ -136,6 +136,58 @@ Voir [ADR 019](adr/019-selection-repositionnement-android.md).
 
 ---
 
+## Protocole décisions de score (PR 18)
+
+Conserver intactes `TEST AUTO PR16` et `TEST AUTO PR17`. Si ADB Wi-Fi est encore
+disponible, inventorier `adb devices -l` et employer la série exacte actuelle.
+Ne pas contourner un verrouillage, désinstaller ou effacer les données. Créer
+**au maximum une** séance synthétique `TEST AUTO PR18`, classique 40 cm/18 m.
+Les copies privées de diagnostic, captures et logs restent hors Git.
+
+1. Installer l'APK validé avec `install -r`. Créer la séance et saisir trois
+   impacts, dont un proche de 10/9. Attendre chaque acquittement. La proximité
+   seule doit conserver le score géométrique.
+2. Sélectionner cette flèche par numéro, « Corriger le score », choisir la limite
+   puis un côté. Vérifier les trois scores affichés et l'absence de déplacement.
+   Annuler ; comparer la base avant/après : aucune modification.
+3. Recommencer et confirmer. Vérifier `BOUNDARY_JUDGMENT`, référence de limite,
+   valeur et date UTC sur disque, sans changement d'UUID, point ou création,
+   sans trace de déplacement. Le total change seulement après acquittement.
+4. Force-stop après confirmation puis relancer. Rouvrir cette seule séance et
+   vérifier exactement la décision précédente. Une rotation pendant une
+   proposition doit conserver les choix dans le ViewModel.
+5. Sélectionner une flèche, choisir « Correction exceptionnelle », une valeur
+   légale et un motif synthétique. Les profils indoor n'offrent pas X. Un motif
+   blanc bloque la confirmation. Confirmer, arrêter puis relancer ; vérifier
+   type, date et motif persistés à coordonnées identiques.
+6. Sur cette flèche manuelle, proposer un repositionnement. Un motif est exigé
+   avant confirmation. Si confirmé, vérifier nouvelle géométrie et ancienne
+   décision conservée dans la trace, avec motif de déplacement distinct.
+7. Vérifier secondairement le choix d'une limite hors suggestions, M au bord,
+   un jugement conservant le même score, le retour avec refus d'abandon et
+   la lisibilité en portrait/paysage. Ne pas modifier les séances protégées.
+
+| Vérification PR 18 | Résultat à renseigner séparément |
+| --- | --- |
+| Contrôleur, SQLite disque, rollback et concurrence | Voir rapports de validation locale/CI |
+| ADB : jugement, annulation sans écriture, confirmation et reprise | Réussi le 16 octobre 2026 sur Pixel 8 / Android 17 : géométrie 9 sans promotion, annulation SQL identique, jugement explicite vers 10 puis reprise avec limite/date/provenance |
+| ADB : correction exceptionnelle, motif persistant et repositionnement motivé | Réussi : correction vers 5, motif obligatoire, reprise exacte sans déplacement ; repositionnement ultérieur vers 8 avec motif distinct et décision exceptionnelle invalidée conservée dans une trace |
+| ADB : préservation complète de PR16 et PR17 | Réussi : comparaison des séances, volées, impacts, décisions et traces avec la référence initiale, sans modification |
+| Au doigt : lisibilité, choix des côtés, petits écrans, gants et soleil | Non couvert par ADB |
+
+Les décisions successives à position constante ne forment pas un journal
+complet ; la nouvelle décision remplace la courante. Les tests d'erreur/conflit
+utilisent des magasins synthétiques : ne pas saturer le stockage personnel.
+La campagne a créé une seule séance PR18 et conservé trois impacts. Les copies
+SQL confirment les mêmes bits de coordonnées, UUID et création après les deux
+décisions de score, et aucune trace avant le déplacement explicite. La rotation
+du nouveau candidat n'a pas été rejouée physiquement dans cette campagne ; la
+conservation du contrôleur est couverte par les tests JVM. Les helpers ADB
+restent hors dépôt et ne constituent pas une suite instrumentée Android.
+Voir [ADR 020](adr/020-decisions-score-android.md).
+
+---
+
 ## Principes
 
 - Les tests terrain commencent **dès la phase 2** (blason interactif), pas uniquement en fin de projet

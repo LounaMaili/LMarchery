@@ -2,6 +2,9 @@ package com.lmarchery.feature.sessions
 
 import com.lmarchery.core.database.*
 import com.lmarchery.core.model.NormalizedPoint
+import com.lmarchery.core.model.scoring.BoundaryReference
+import com.lmarchery.core.model.scoring.BoundaryValue
+import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.archive.*
@@ -93,7 +96,7 @@ class SessionController(
         if (!ui.canSelectImpact) return
         val end = ui.editingEnd!!
         if (end.uuid != endUuid || end.impacts.none { it.uuid == impactUuid }) {
-            invalidReposition("La flèche n’existe pas dans la volée en saisie affichée.")
+            invalidAction("La flèche n’existe pas dans la volée en saisie affichée.")
             return
         }
         ui = ui.copy(impactEdit = ImpactEdit(ui.session!!.uuid, endUuid, impactUuid), problem = null, confirmation = null)
@@ -101,7 +104,7 @@ class SessionController(
     fun beginReposition() {
         if (!ui.canBeginReposition) return
         ui = ui.copy(impactEdit = ui.impactEdit!!.copy(phase = ImpactEditPhase.AWAITING_POINT,
-            candidate = null, preview = null, reason = ""), problem = null, confirmation = null)
+            proposal = ImpactProposal.Reposition()), problem = null, confirmation = null)
     }
     fun targetTapped(point: NormalizedPoint) {
         if (ui.impactEdit == null) addImpact(point) else proposeReposition(point)
@@ -109,21 +112,110 @@ class SessionController(
     fun proposeReposition(point: NormalizedPoint) {
         if (!ui.canProposeReposition) return
         val selection = ui.impactEdit!!
-        ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.AWAITING_POINT, candidate = null, preview = null),
+        val proposal = selection.proposal as ImpactProposal.Reposition
+        ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.AWAITING_POINT,
+            proposal = proposal.copy(point = null, preview = null)),
             problem = null)
         if (point == ui.selectedImpact!!.point) {
-            invalidReposition("Choisissez une position différente : la flèche est déjà à cet endroit.")
+            invalidAction("Choisissez une position différente : la flèche est déjà à cet endroit.")
             return
         }
         try {
             val preview = resolveFinalScore(ui.session!!.targetType, point, ui.session!!.scoringMode)
-            ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.CANDIDATE, candidate = point, preview = preview))
+            ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.CANDIDATE,
+                proposal = proposal.copy(point = point, preview = preview)))
         } catch (error: IllegalArgumentException) {
-            invalidReposition(error.message ?: "Position invalide.")
+            invalidAction(error.message ?: "Position invalide.")
         }
     }
     fun setRepositionReason(reason: String) {
-        if (ui.canProposeReposition) ui = ui.copy(impactEdit = ui.impactEdit!!.copy(reason = reason), problem = null)
+        if (ui.canProposeReposition) ui = ui.copy(impactEdit = ui.impactEdit!!.copy(
+            proposal = (ui.impactEdit!!.proposal as ImpactProposal.Reposition).copy(reason = reason)), problem = null)
+    }
+    fun beginScoreCorrection() {
+        if (!ui.canBeginScoreCorrection) return
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(phase = ImpactEditPhase.CANDIDATE,
+            proposal = ImpactProposal.BoundaryJudgment()), problem = null, confirmation = null)
+    }
+    fun chooseBoundaryJudgment() {
+        if (!ui.canProposeScoreDecision) return
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(proposal = ImpactProposal.BoundaryJudgment()), problem = null)
+    }
+    fun showOtherBoundaries() {
+        if (!ui.canProposeScoreDecision) return
+        val proposal = ui.impactEdit!!.proposal as? ImpactProposal.BoundaryJudgment ?: return
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(proposal = proposal.copy(showOtherBoundaries = true)), problem = null)
+    }
+    fun selectBoundary(reference: BoundaryReference) {
+        if (!ui.canProposeScoreDecision) return
+        val proposal = ui.impactEdit!!.proposal as? ImpactProposal.BoundaryJudgment ?: return
+        if (ui.availableBoundaries.none { it.reference == reference }) {
+            invalidAction("Choisissez une limite réelle parmi les limites affichées du profil.")
+            return
+        }
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(proposal = proposal.copy(boundary = reference, selected = null)), problem = null)
+    }
+    fun chooseExceptionalCorrection() {
+        if (!ui.canProposeScoreDecision) return
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(proposal = ImpactProposal.ExceptionalCorrection()), problem = null)
+    }
+    fun selectScoreValue(value: BoundaryValue) {
+        if (!ui.canProposeScoreDecision) return
+        val proposal = when (val current = ui.impactEdit!!.proposal) {
+            is ImpactProposal.BoundaryJudgment -> {
+                val boundary = ui.selectedBoundary
+                if (boundary == null || (value != boundary.inner && value != boundary.outer)) {
+                    invalidAction("Choisissez d’abord une limite puis l’un de ses deux côtés réels.")
+                    return
+                }
+                current.copy(selected = value)
+            }
+            is ImpactProposal.ExceptionalCorrection -> {
+                if (value !in ui.scoreOptions!!.legalValues) {
+                    invalidAction("Cette valeur n’est pas autorisée par le profil de cible.")
+                    return
+                }
+                current.copy(selected = value)
+            }
+            else -> return
+        }
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(proposal = proposal), problem = null)
+    }
+    fun setExceptionalReason(reason: String) {
+        if (!ui.canProposeScoreDecision) return
+        val proposal = ui.impactEdit!!.proposal as? ImpactProposal.ExceptionalCorrection ?: return
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(proposal = proposal.copy(reason = reason)), problem = null)
+    }
+    fun confirmScoreDecision() {
+        if (!ui.canProposeScoreDecision) return
+        if (!ui.canConfirmScoreDecision) {
+            invalidAction("Choisissez une valeur et, pour une correction exceptionnelle, un motif non vide.")
+            return
+        }
+        val selection = ui.impactEdit!!
+        launchOperation {
+            val expected = requireNotNull(ui.saved)
+            val session = expected.sessions.single()
+            require(session.uuid == selection.sessionUuid) { "La sélection appartient à une autre séance." }
+            val end = session.ends.single { it.uuid == selection.endUuid }
+            val impact = end.impacts.single { it.uuid == selection.impactUuid }
+            val decidedAt = clock.instant()
+            require(!decidedAt.isBefore(impact.updatedAt)) {
+                "L’horloge est antérieure à la dernière modification de cette flèche. Décision non enregistrée."
+            }
+            val request = when (val proposal = selection.proposal) {
+                is ImpactProposal.BoundaryJudgment -> ScoreDecisionRequest.JudgeBoundary(
+                    requireNotNull(proposal.boundary), proposal.selected, decidedAt)
+                is ImpactProposal.ExceptionalCorrection -> ScoreDecisionRequest.ExceptionalCorrection(
+                    proposal.selected, proposal.reason.trim(), decidedAt)
+                else -> error("Une décision de score explicite est nécessaire.")
+            }
+            val revised = impact.withFinalScore(session.targetType, request, decidedAt)
+            val next = session.withEnd(end.withImpact(revised))
+            validateSessionUpdate(session, next)
+            val proposed = archive(next, expected.profiles.single())
+            save(PendingSave("Décision de score de la flèche ${impact.index}", expected, proposed, end.uuid))
+        }
     }
     /** Only an unsubmitted selection/candidate can be cancelled without the PendingSave policy. */
     fun cancelImpactEdit() {
@@ -135,7 +227,7 @@ class SessionController(
         val selection = ui.impactEdit!!
         val original = ui.selectedImpact!!
         if (original.finalScoreDecision.provenance.isManual && selection.reason.isBlank()) {
-            invalidReposition("Un motif est obligatoire pour invalider une décision de score manuelle.")
+            invalidAction("Un motif est obligatoire pour invalider une décision de score manuelle.")
             return
         }
         launchOperation {
@@ -156,7 +248,7 @@ class SessionController(
             save(PendingSave("Repositionner la flèche ${impact.index}", expected, proposed, end.uuid))
         }
     }
-    private fun invalidReposition(message: String) {
+    private fun invalidAction(message: String) {
         ui = ui.copy(problem = UiProblem(ProblemKind.INVALID_ACTION, message))
     }
     fun addImpact(point: NormalizedPoint) {
@@ -227,7 +319,7 @@ class SessionController(
         if (problem != null) ui = ui.copy(problem = problem, impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.FAILED))
         else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, pending = null, problem = null,
             selectedEndUuid = pending.selectedEndUuid, storedPreview = null,
-            impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, candidate = null, preview = null, reason = ""),
+            impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
             confirmation = "${pending.description} : ${if (idempotent) "déjà enregistré, contenu identique" else "enregistré sur cet appareil"}.")
     }
     fun previewStored() {

@@ -4,7 +4,7 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16 et 17)
+## Parcours effectivement implémenté (PR 16 à 18)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
@@ -34,7 +34,7 @@ selon l'horodatage. Le bouton Retour demande aussi confirmation d'abandon si né
 
 La rotation conserve le ViewModel ; l'arrêt du processus conserve seulement ce qui
 a réellement été committé dans Room. Aucun reset de démo ne supprime les séances.
-Les suppressions, jugements de score, matériel/presets, export et autres modes
+Les suppressions, matériel/presets, export et autres modes
 restent hors de ce parcours. Les données sont locales, sans export utilisateur.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
@@ -62,8 +62,34 @@ Voir [ADR 018](adr/018-integration-android-room.md) et le
 Une rotation conserve le candidat avec le ViewModel. Après arrêt complet du
 processus, seule la dernière position réellement persistée revient. Une volée
 validée ou une séance terminée reste non modifiable. Pas de glisser-déposer,
-suppression, jugement de cordon ou correction directe du score dans ce parcours.
+suppression dans ce parcours. La décision de score possède un parcours distinct ci-dessous.
 Voir [ADR 019](adr/019-selection-repositionnement-android.md).
+
+### Décider du score sans déplacer (PR 18)
+
+1. Dans une séance en cours, sélectionner une flèche de la volée en saisie puis
+   « Corriger le score ». Le blason reste en consultation. Score géométrique,
+   score final enregistré et valeur proposée sont distingués.
+2. Pour un jugement : choisir explicitement une limite suggérée puis « Côté
+   intérieur » ou « Côté extérieur ». Chaque limite donne ses valeurs réelles,
+   son type, son rayon et son écart radial. « Choisir une autre limite réelle du
+   profil » donne accès aux autres frontières, même hors tolérance tactile.
+   Une suggestion ne prouve jamais le contact physique du tube avec le trait.
+3. Pour une correction exceptionnelle : choisir l'action secondaire correspondante,
+   une valeur légale et un motif non blanc. Les quatre profils indoor n'offrent
+   aucun X. Cette correction est distincte d'un jugement de trait.
+4. « Annuler la décision de score » n'écrit rien avant soumission. « Confirmer
+   la décision de score » attend l'acquittement Room avant de changer score et
+   totaux affichés. UUID, coordonnées, création et traces restent identiques.
+   La provenance courante et sa date UTC sont consultables dans la sélection.
+   Même une confirmation conservant le score numérique reste manuelle.
+5. Les erreurs, conflits, retry identiques, navigation et rotation suivent les
+   protections décrites plus haut. Après mort du processus, seul le stocké revient.
+   Le repositionnement ultérieur d'une décision manuelle exige un motif et en
+   conserve l'invalidation. Aucune modification après validation/clôture.
+
+Une nouvelle décision à position constante remplace la décision courante, sans
+journal exhaustif des jugements successifs. Voir [ADR 020](adr/020-decisions-score-android.md).
 
 ---
 

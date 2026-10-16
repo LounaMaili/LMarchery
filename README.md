@@ -20,7 +20,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (18 décisions techniques)
+- [x] ADR (20 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
@@ -131,6 +131,16 @@ permet de proposer une autre position, même avec trois flèches. L'aperçu rest
 temporaire : annuler n'écrit rien, confirmer attend l'acquittement Room et conserve
 l'ancienne position/décision dans les traces. Voir
 [ADR 019](docs/adr/019-selection-repositionnement-android.md).
+
+Depuis la même sélection, « Corriger le score » permet de choisir une véritable
+limite et son côté, ou une « Correction exceptionnelle » avec valeur légale et
+motif obligatoire. La géométrie reste intacte ; la proximité ne promeut jamais
+le score. La décision manuelle, sa date UTC et sa limite ou son motif sont
+enregistrés même si le score numérique ne change pas. Voir
+[ADR 020](docs/adr/020-decisions-score-android.md). Les décisions successives à
+position constante remplacent la décision courante : ce n'est pas un journal
+complet. Un repositionnement ultérieur exige un motif et conserve la décision
+manuelle invalidée dans sa trace.
 
 Après relancement, ouvrir la séance depuis la liste pour retrouver ses impacts.
 Une séance terminée reste en lecture seule. Les actions en échec sont conservées

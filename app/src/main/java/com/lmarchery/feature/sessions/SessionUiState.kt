@@ -3,6 +3,8 @@ package com.lmarchery.feature.sessions
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.FinalScoreDecision
+import com.lmarchery.core.model.scoring.BoundaryReference
+import com.lmarchery.core.model.scoring.BoundaryValue
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles as WA
@@ -34,16 +36,32 @@ data class PendingSave(
 
 enum class ImpactEditPhase { SELECTED, AWAITING_POINT, CANDIDATE, SAVING, CONFIRMED, FAILED }
 
+/** One active operation; score candidates never carry a new position. */
+sealed interface ImpactProposal {
+    data object Selection : ImpactProposal
+    data class Reposition(val point: NormalizedPoint? = null, val preview: FinalScoreDecision? = null,
+        val reason: String = "") : ImpactProposal
+    data class BoundaryJudgment(val boundary: BoundaryReference? = null, val selected: BoundaryValue? = null,
+        val showOtherBoundaries: Boolean = false) : ImpactProposal
+    data class ExceptionalCorrection(val selected: BoundaryValue? = null, val reason: String = "") : ImpactProposal
+}
+
 /** Presentation only: never substitutes for the confirmed archive or issues historical evidence. */
 data class ImpactEdit(
     val sessionUuid: String,
     val endUuid: String,
     val impactUuid: String,
     val phase: ImpactEditPhase = ImpactEditPhase.SELECTED,
-    val candidate: NormalizedPoint? = null,
-    val preview: FinalScoreDecision? = null,
-    val reason: String = "",
-)
+    val proposal: ImpactProposal = ImpactProposal.Selection,
+) {
+    val candidate get() = (proposal as? ImpactProposal.Reposition)?.point
+    val preview get() = (proposal as? ImpactProposal.Reposition)?.preview
+    val reason get() = when (proposal) {
+        is ImpactProposal.Reposition -> proposal.reason
+        is ImpactProposal.ExceptionalCorrection -> proposal.reason
+        else -> ""
+    }
+}
 
 data class SessionUiState(
     val screen: SessionScreen = SessionScreen.LIST,
@@ -78,10 +96,35 @@ data class SessionUiState(
         (impactEdit == null || impactEdit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED))
     val canBeginReposition get() = canSelectImpact && selectedImpact != null
     val canProposeReposition get() = canEdit && isEditingDisplayed && selectedImpact != null &&
+        impactEdit?.proposal is ImpactProposal.Reposition &&
         impactEdit?.phase in listOf(ImpactEditPhase.AWAITING_POINT, ImpactEditPhase.CANDIDATE)
     val canConfirmReposition get() = canProposeReposition && impactEdit?.phase == ImpactEditPhase.CANDIDATE &&
         impactEdit.candidate != null && impactEdit.preview != null &&
         (selectedImpact?.finalScoreDecision?.provenance?.isManual != true || impactEdit.reason.isNotBlank())
+    val canBeginScoreCorrection get() = canSelectImpact && selectedImpact != null
+    val canProposeScoreDecision get() = canEdit && isEditingDisplayed && selectedImpact != null &&
+        impactEdit?.phase == ImpactEditPhase.CANDIDATE &&
+        (impactEdit.proposal is ImpactProposal.BoundaryJudgment || impactEdit.proposal is ImpactProposal.ExceptionalCorrection)
+    val scoreOptions get() = selectedImpact?.let { scoreDecisionOptions(it.targetType, it.point) }
+    val availableBoundaries get() = scoreOptions?.let { options ->
+        if ((impactEdit?.proposal as? ImpactProposal.BoundaryJudgment)?.showOtherBoundaries == true)
+            options.nearby + options.other else options.nearby
+    }.orEmpty()
+    val selectedBoundary get() = (impactEdit?.proposal as? ImpactProposal.BoundaryJudgment)?.boundary?.let { reference ->
+        availableBoundaries.singleOrNull { it.reference == reference }
+    }
+    val proposedScore get() = when (val proposal = impactEdit?.proposal) {
+        is ImpactProposal.BoundaryJudgment -> proposal.selected
+        is ImpactProposal.ExceptionalCorrection -> proposal.selected
+        else -> null
+    }
+    val canConfirmScoreDecision get() = canProposeScoreDecision && when (val proposal = impactEdit?.proposal) {
+        is ImpactProposal.BoundaryJudgment -> selectedBoundary?.let {
+            proposal.selected == it.inner || proposal.selected == it.outer
+        } == true
+        is ImpactProposal.ExceptionalCorrection -> proposal.selected in scoreOptions!!.legalValues && proposal.reason.isNotBlank()
+        else -> false
+    }
     val canAddImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.impacts.size < 3
     val canValidate get() = canEdit && impactEdit == null && editingEnd?.impacts?.size == 3 && isEditingDisplayed
     val canNewEnd get() = canEdit && impactEdit == null && editingEnd == null

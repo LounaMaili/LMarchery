@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lmarchery.core.model.session.*
+import com.lmarchery.core.model.scoring.ScoreDecisionKind
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
@@ -22,12 +23,12 @@ import com.lmarchery.feature.sessions.*
 fun LMarcheryApp(controller: SessionController) {
     val state by controller.state.collectAsStateWithLifecycle()
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
-    var confirmCancelReposition by rememberSaveable { mutableStateOf(false) }
+    var confirmCancelCorrection by rememberSaveable { mutableStateOf(false) }
     val back: () -> Unit = {
         if (!state.busy) {
             when {
                 state.pending != null -> confirmLeave = true
-                state.impactEdit != null -> confirmCancelReposition = true
+                state.impactEdit != null -> confirmCancelCorrection = true
                 else -> controller.returnToList()
             }
         }
@@ -167,7 +168,7 @@ fun LMarcheryApp(controller: SessionController) {
                                 Button(onClick = controller::validateEnd, enabled = state.canValidate) { Text("Valider la volée (3 flèches)") }
                                 Button(onClick = controller::newEnd, enabled = state.canNewEnd) { Text("Nouvelle volée") }
                                 OutlinedButton(onClick = controller::completeSession, enabled = state.canComplete) { Text("Terminer la séance") }
-                                if (state.impactEdit != null) Text("Fermez la sélection ou annulez le repositionnement avant de valider ou changer de volée.")
+                                if (state.impactEdit != null) Text("Fermez la sélection ou annulez la correction avant de valider ou changer de volée.")
                                 if (state.editingEnd?.impacts?.isNotEmpty() == true) Text("Validez les trois flèches avant de terminer la séance.", style = MaterialTheme.typography.bodySmall)
                             }
                         }
@@ -177,7 +178,7 @@ fun LMarcheryApp(controller: SessionController) {
                                 Text("Volée ${end.index} · ${end.impacts.size} flèches · ${calculateEndScore(end)} · ${if (end.status == EndStatus.VALIDATED) "validée" else "provisoire"}")
                             }
                         }
-                        item(key = "limitations") { Text("Repositionnement par sélection puis confirmation, avant validation. Suppression et jugement de score indisponibles.", style = MaterialTheme.typography.bodySmall) }
+                        item(key = "limitations") { Text("Corrections explicites avant validation : position ou score. Aucune suppression ni modification après validation.", style = MaterialTheme.typography.bodySmall) }
                     }
                 }
             }
@@ -188,15 +189,15 @@ fun LMarcheryApp(controller: SessionController) {
         text = { Text("Son enregistrement n’est pas confirmé. Revenir à la liste abandonne la proposition locale et conserve le contenu présent dans la base.") },
         confirmButton = { TextButton(onClick = { confirmLeave = false; controller.discardAndReturnToList() }) { Text("Abandonner et revenir") } },
         dismissButton = { TextButton(onClick = { confirmLeave = false }) { Text("Conserver l’action") } })
-    if (confirmCancelReposition) AlertDialog(onDismissRequest = { confirmCancelReposition = false },
+    if (confirmCancelCorrection) AlertDialog(onDismissRequest = { confirmCancelCorrection = false },
         title = { Text("Annuler la correction et revenir ?") },
         text = { Text("La sélection et la proposition non soumise seront abandonnées. Aucune écriture n’a été demandée.") },
         confirmButton = { TextButton(onClick = {
-            confirmCancelReposition = false
+            confirmCancelCorrection = false
             controller.cancelImpactEdit()
             controller.returnToList()
         }) { Text("Annuler et revenir") } },
-        dismissButton = { TextButton(onClick = { confirmCancelReposition = false }) { Text("Conserver la correction") } })
+        dismissButton = { TextButton(onClick = { confirmCancelCorrection = false }) { Text("Conserver la correction") } })
     state.storedPreview?.let { archive ->
         val stored = archive.sessions.single()
         AlertDialog(onDismissRequest = controller::closePreview, title = { Text("Version enregistrée") },
@@ -220,13 +221,22 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Flèche #${impact.index} sélectionnée", style = MaterialTheme.typography.titleMedium)
             Text("Position enregistrée : (${impact.point.x}, ${impact.point.y}) · ${impact.scoreLabel()}")
+            val provenance = impact.finalScoreDecision.provenance
+            Text("Décision enregistrée : ${when (provenance.kind) {
+                ScoreDecisionKind.GEOMETRY -> "Géométrie"
+                ScoreDecisionKind.BOUNDARY_JUDGMENT -> "Jugement de cordon"
+                ScoreDecisionKind.EXCEPTIONAL_CORRECTION -> "Correction exceptionnelle"
+            }}")
+            provenance.decidedAt?.let { Text("Date UTC : $it") }
+            provenance.boundary?.let { Text("Limite enregistrée : ${it.type} · r = ${it.radiusNormalized}") }
+            provenance.reason?.let { Text("Motif enregistré : $it") }
             when (edit.phase) {
-                ImpactEditPhase.SELECTED -> Text("Choisissez Repositionner pour corriger cette flèche.")
+                ImpactEditPhase.SELECTED -> Text("Choisissez Repositionner ou Corriger le score.")
                 ImpactEditPhase.AWAITING_POINT -> Text("Repositionnement : choisissez une nouvelle position sur le blason.")
                 ImpactEditPhase.CANDIDATE -> Text("Proposition non enregistrée : confirmez ou annulez.")
-                ImpactEditPhase.SAVING -> Text("Sauvegarde en cours. La position enregistrée reste affichée.")
+                ImpactEditPhase.SAVING -> Text("Sauvegarde en cours. Position, scores et totaux confirmés restent affichés.")
                 ImpactEditPhase.FAILED -> Text("Correction non confirmée. La proposition soumise est conservée.")
-                ImpactEditPhase.CONFIRMED -> Text("Repositionnement enregistré sur cet appareil.")
+                ImpactEditPhase.CONFIRMED -> Text("Correction enregistrée sur cet appareil.")
             }
             edit.preview?.let { preview ->
                 Text("Position proposée : (${preview.point.x}, ${preview.point.y}) · ${when {
@@ -241,11 +251,18 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
             }
             if (edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED)) {
                 Button(onClick = controller::beginReposition, enabled = state.canBeginReposition) { Text("Repositionner") }
+                OutlinedButton(onClick = controller::beginScoreCorrection, enabled = state.canBeginScoreCorrection) { Text("Corriger le score") }
             }
+            if (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)
+                ScoreDecisionPanel(state, controller)
             if (edit.candidate != null) Button(onClick = controller::confirmReposition,
                 enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
             TextButton(onClick = controller::cancelImpactEdit, enabled = state.ready) {
-                Text(if (edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED)) "Fermer la sélection" else "Annuler le repositionnement")
+                Text(when {
+                    edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED) -> "Fermer la sélection"
+                    edit.proposal is ImpactProposal.Reposition -> "Annuler le repositionnement"
+                    else -> "Annuler la décision de score"
+                })
             }
             Text("Cercle orange : flèche sélectionnée. Croix violette : proposition non enregistrée.", style = MaterialTheme.typography.bodySmall)
         }
