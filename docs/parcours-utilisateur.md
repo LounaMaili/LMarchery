@@ -4,7 +4,7 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16 à 18)
+## Parcours effectivement implémenté (PR 16 à 19)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
@@ -34,8 +34,8 @@ selon l'horodatage. Le bouton Retour demande aussi confirmation d'abandon si né
 
 La rotation conserve le ViewModel ; l'arrêt du processus conserve seulement ce qui
 a réellement été committé dans Room. Aucun reset de démo ne supprime les séances.
-Les suppressions, matériel/presets, export et autres modes
-restent hors de ce parcours. Les données sont locales, sans export utilisateur.
+Les suppressions, matériel/presets et autres modes restent hors de ce parcours.
+Les données sont locales ; l’export global est décrit ci-dessous.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
 
@@ -192,18 +192,26 @@ L'utilisateur ouvre l'application
 
 ---
 
-## 5. Parcours — Exporter ses données
+## 5. Parcours — Exporter ses données (PR 19)
 
-```
-L'utilisateur va dans Paramètres
-├── Section "Export / Import"
-├── Bouton "Exporter"
-│   └── L'application génère un fichier JSON
-│       └── Partage via intent Android (fichier, email, cloud…)
-└── Bouton "Importer"
-    └── L'utilisateur sélectionne un fichier JSON
-        └── Les données sont fusionnées (gestion des doublons)
-```
+1. Choisir « Exporter mes séances ». Si une sauvegarde est en cours/non confirmée
+   ou une correction ouverte, terminer ou résoudre cette action d’abord.
+2. Attendre préparation puis validation : toutes les séances et profils sont lus
+   en transaction et vérifiés par aller-retour JSON. Une base vide ou une seule
+   séance illisible donne un diagnostic ; aucun export partiel présenté comme complet.
+3. Choisir la destination dans le sélecteur Android. Le nom proposé se termine
+   par `.lmarchery.json`. L’annulation n’écrit aucun contenu.
+4. Attendre écriture, fermeture et relecture. Le succès donne nombre de séances,
+   nom si disponible et taille. Le fichier est en clair, potentiellement personnel.
+5. En cas d’échec/interruption, ne pas utiliser le document potentiellement incomplet.
+   Une nouvelle tentative prépare un nouveau choix ; aucune suppression automatique.
+   Un fournisseur refusant la relecture ne permet pas de confirmer la sauvegarde.
+
+Les séances en cours sont incluses ; aucune donnée Room n’est modifiée. La
+rotation conserve la préparation du ViewModel, pas la mort du processus. Aucun
+import utilisateur ni fusion par UUID ou `updatedAt` n’est disponible. La
+restauration et l’intervention sur conflits restent à définir avant import.
+Voir [ADR 021](adr/021-export-json-versionne-android.md).
 
 ---
 

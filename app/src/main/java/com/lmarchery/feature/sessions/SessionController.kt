@@ -34,6 +34,13 @@ class SessionController(
         get() = mutableState.value
         set(value) { mutableState.value = value }
 
+    fun acquireExport(): Boolean {
+        if (!ui.ready || ui.impactEdit != null) return false
+        ui = ui.copy(exportLocked = true)
+        return true
+    }
+    fun releaseExport() { ui = ui.copy(exportLocked = false) }
+
     fun refresh() {
         if (!ui.ready || ui.screen != SessionScreen.LIST) return
         launchOperation { loadEntries() }
@@ -88,7 +95,7 @@ class SessionController(
         }
     }
     fun discardAndReturnToList() {
-        if (ui.busy) return
+        if (ui.busy || ui.exportLocked) return
         ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null)
         returnToList()
     }

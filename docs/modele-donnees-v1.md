@@ -9,8 +9,9 @@ Compose les utilise via ViewModel, contrôleur et repository (ADR 018).
 Les anciens IDs/FK numériques des tableaux sont des projections historiques,
 absentes du schéma SQLite 1 qui utilise les UUID (section 4). Les modèles `Bow`,
 `ArrowSet`, `SessionPreset` restent prévus. Le contrat typé de sauvegarde est
-décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md) ; aucun
-import/export de fichier ni migration n'est opérationnel.
+décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
+JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
+aucun import utilisateur ni migration n’est implémenté.
 
 ---
 
@@ -65,7 +66,11 @@ Ces entités sont mentionnées pour préparer l'architecture, mais ne sont pas i
 
 ### Champs communs des entités exportables
 
-En V1, les entités exportables racines sont `TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet` et `SessionPreset`.
+Le modèle V1 prévoit `TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet`
+et `SessionPreset`. Le fichier opérationnel actuel exporte seulement les profils
+et séances implémentés, avec volées/impacts imbriqués. Les fiches `Bow`, `ArrowSet`
+et `SessionPreset` restent futures ; leurs références UUID opaques ne sont pas
+des objets de matériel exportés.
 
 | Champ | Règle |
 |-------|-------|
@@ -82,7 +87,7 @@ immuable ; l'édition éventuelle est une métadonnée séparée du snapshot. Le
 versions du schéma et du scoring sont également distinctes. Une date de révision
 ne permet jamais de déduire seule la causalité entre appareils.
 
-Pour les agrégats de séance, une modification d'un `ArrowImpact` met aussi à jour `updatedAt` de son `End` et de sa `Session`. Une modification d'un `End` met aussi à jour `updatedAt` de sa `Session`. Cela permet de comparer une séance complète pendant l'import même si les volées et impacts sont exportés en structure imbriquée.
+Pour les agrégats de séance, une modification d'un `ArrowImpact` met aussi à jour `updatedAt` de son `End` et de sa `Session`. Une modification d'un `End` met aussi à jour `updatedAt` de sa `Session`. La comparaison complète reste nécessaire ; un `updatedAt` plus récent ne résout aucun conflit ni ne prouve une filiation de révision.
 
 ### Intégrité temporelle des modèles de séance
 
@@ -570,8 +575,8 @@ indépendamment de l'ordre des `updatedAt`. Les préfixes de traces connus ne
 peuvent être supprimés ni réécrits. Sans référentiel, une restauration indépendante
 ne peut pas découvrir un historique omis de toutes les données reçues.
 
-Le schéma JSON opérationnel, le contenu du matériel/presets et la résolution
-explicite des conflits restent à développer. Aucun ancien exemple documentaire
+Le JSON opérationnel conserve séances/profils, décisions et traces. Le contenu
+du matériel/presets et l’import avec intervention sur conflits restent à développer. Aucun ancien exemple documentaire
 incomplet ne fait l'objet d'une migration inventant ses valeurs manquantes.
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 

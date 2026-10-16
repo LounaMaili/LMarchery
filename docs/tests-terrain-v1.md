@@ -66,8 +66,9 @@ captures, bases ou données personnelles. Aucun compte ni réseau n'est nécessa
 
 Après un arrêt **pendant** une écriture, ne rien présumer : relancer et consulter
 ce que SQL a effectivement committé. Une proposition non confirmée n'est pas un
-journal durable. Les données sont locales, sans export utilisateur ; désinstallation
-et effacement des données peuvent les perdre.
+journal durable. Les données sont locales ; désinstallation et effacement des
+données peuvent les perdre. L’export ajouté en PR 19 est testé dans son protocole
+dédié ci-dessous ; aucun import utilisateur n’est encore disponible.
 
 | Vérification physique | Résultat à renseigner |
 | --- | --- |
@@ -185,6 +186,50 @@ du nouveau candidat n'a pas été rejouée physiquement dans cette campagne ; la
 conservation du contrôleur est couverte par les tests JVM. Les helpers ADB
 restent hors dépôt et ne constituent pas une suite instrumentée Android.
 Voir [ADR 020](adr/020-decisions-score-android.md).
+
+---
+
+## Protocole export JSON (PR 19)
+
+Ne pas créer de nouvelle séance ni modifier `TEST AUTO PR16`, `TEST AUTO PR17`
+ou `TEST AUTO PR18`. Inventorier `adb devices -l` et les services mDNS si le port
+a changé. Utiliser le transport actuel vérifié. Si le téléphone est verrouillé,
+hors ligne ou non autorisé, arrêter les tests dépendants sans contourner l'accès.
+Ne pas désinstaller, exécuter `pm clear`, supprimer la base ou publier un export.
+
+1. Construire et valider l'APK, puis `adb -s <série> install -r ...` si la signature
+   est compatible. Comparer les données Room synthétiques avant/après installation.
+2. Ouvrir l'accueil, retrouver les trois séances protégées et « Exporter mes séances ».
+   Le message rappelle que le fichier est en clair et que l'import reste indisponible.
+3. Tester une annulation du sélecteur : aucun contenu écrit ni succès annoncé.
+4. Relancer l'export global. Choisir un dossier **local de test** dans le sélecteur
+   Android, avec le nom `.lmarchery.json` proposé. Ne pas choisir un service externe.
+5. Attendre le succès après relecture ; relever nombre de séances, taille et nom.
+   Le fichier doit exister et être non vide. Récupérer uniquement ce fichier de
+   test autorisé si l'accès le permet ; garder les preuves privées hors du dépôt.
+6. Décoder/reconstruire indépendamment le fichier sur JVM et comparer profils,
+   séances, coordonnées bit à bit, décisions, dates et traces aux données Room.
+   Aucune donnée utilisateur n'est envoyée sur GitHub ou dans les logs CI.
+7. Comparer toutes les tables Room avant/après : aucune modification. Faire un
+   force-stop après succès, relancer et retrouver les trois séances intactes.
+8. Tester la rotation pendant le choix de destination si sûr : un seul sélecteur,
+   pas de double export. Les interruptions d'écriture, fournisseurs défaillants et
+   conflits restent testés avec flux/magasins synthétiques, sans saturer le téléphone.
+
+| Vérification PR 19 | Résultat physique à renseigner |
+| --- | --- |
+| Téléphone, Android, date | Pixel 8 / Android 17, 16 octobre 2026 ; port Wi-Fi courant identifié par mDNS, téléphone déverrouillé avant interaction ; APK installé avec `install -r` |
+| Annulation SAF sans faux succès | Réussi : retour Android, message d’annulation, aucun succès ; nouvelle tentative possible |
+| Création locale, taille, nombre et relecture indépendante | Réussi dans un dossier local de test choisi via SAF : 19 342 octets, 3 séances, 1 profil, 9 impacts, 2 traces. Relecture Android puis reconstruction JVM indépendante ; égalité complète avec l’archive issue de SQLite source et réencodage identique octet par octet |
+| Tables Room et séances PR16/17/18 intactes | Réussi : toutes les tables comparées avant installation, après export et après relance ; contenu identique, intégrité SQL et clés étrangères vérifiées ; aucun effacement |
+| Force-stop et reprise | Réussi : trois séances synthétiques retrouvées dans la liste après arrêt complet et relance |
+| Rotation pendant le sélecteur | Non exécutée sur téléphone ; conservation de la requête et absence de double lancement testées sur le coordinateur JVM |
+| Autres fournisseurs, manque d'espace, ergonomie au doigt | Non démontrés par les tests JVM |
+
+Un fournisseur sans relecture ne permet pas de confirmer l'export. Après erreur,
+fermeture en échec ou interruption, le document peut être vide/incomplet : ne pas
+l'utiliser. Il n'est pas supprimé automatiquement. Aucune fonction d'import n'est
+ajoutée pour ce test. Voir [ADR 021](adr/021-export-json-versionne-android.md).
 
 ---
 
