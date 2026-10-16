@@ -82,9 +82,9 @@ ne remplacent pas les essais terrain au doigt. Voir
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 4.1 | Créer l'entité `Bow` (Room) | ☐ | Moyenne |
+| 4.1 | Créer l'entité `Bow` (Room) | ✓ fondation sans UI (ADR 025) | Moyenne |
 | 4.2 | Écran « Fiche arc » (nom, type, puissance, notes) | ☐ | Moyenne |
-| 4.3 | Créer l'entité `ArrowSet` (Room) | ☐ | Moyenne |
+| 4.3 | Créer l'entité `ArrowSet` (Room) | ✓ fondation sans UI (ADR 025) | Moyenne |
 | 4.4 | Écran « Fiche flèches » (nom, spine, longueur, notes) | ☐ | Moyenne |
 | 4.5 | Association arc + flèches lors de la création de séance | ☐ | Moyenne |
 | 4.6 | Créer l'entité `SessionPreset` (Room) | ☐ | Moyenne |
@@ -92,6 +92,7 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 4.8 | Écran « Choisir un preset » (sélection rapide) | ☐ | Moyenne |
 | 4.9 | Préremplir les champs de séance depuis un preset | ☐ | Moyenne |
 | 4.10 | Presets par défaut (salle 18m, extérieur 30m, 50m, 70m) | ☐ | Basse |
+| 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ☐ | Haute |
 
 **Critère de sortie** : un utilisateur peut créer un preset et lancer une séance en 2 taps.
 

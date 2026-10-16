@@ -95,8 +95,12 @@ définition fournie est exactement celle de la séance source.
 Les UUID définissant profils, séances, volées et impacts sont uniques dans
 toute l'archive, y compris entre types. Ils sont canoniques, minuscules, version 4,
 variante RFC 4122. Les références optionnelles de matériel sont des UUID opaques :
-`Bow`, `ArrowSet`, `SessionPreset` restent prévus et absents du Kotlin actuel.
-Leur contenu et leur résolution complète ne sont pas implémentés par ce contrat.
+`Bow` et `ArrowSet` existent désormais dans le domaine et SQLite, mais leur
+contenu et leur résolution restent absents du contrat JSON V1 ; `SessionPreset`
+reste prévu. Leurs références opaques sont conservées sans FK ni résolution
+automatique. Le catalogue ne sera exposé dans Compose qu’après une PR dédiée
+d’extension versionnée, rétrocompatible et transactionnelle des sauvegardes
+([ADR 025](adr/025-fondation-catalogue-materiel.md)).
 
 ### Décisions et assertions
 
@@ -248,7 +252,7 @@ identifiable dans les données reçues, sans conversion silencieuse en séance v
 
 ## 5. Collecte, écriture Android et étapes restantes
 
-Room/SQLite 1 conserve déjà profils complets, enfants ordonnés, décisions et
+Room/SQLite 2 conserve profils complets, enfants ordonnés, décisions et
 traces dans des tables reliées par UUID. Les instants sont des couples entiers
 `epochSecond` / `nano`, la date civile garde son triplet et les `Float` leurs bits.
 Le schéma Room exporté est distinct de `schemaVersion` et de `scoringContractVersion`.
@@ -256,7 +260,11 @@ Aucun JSON de données utilisateur n'est employé comme substitut aux relations.
 Les révisions locales passent par `RoomSessionStore.update(expected, proposed)`
 et le validateur indépendant de transition de l’[ADR 017](adr/017-mise-a-jour-seances-room.md),
 sans assouplir les conflits de `reconstructArchive(snapshot, known)`.
-Le format et les versions de sauvegarde restent inchangés.
+Le format et les versions de sauvegarde restent inchangés. La migration SQLite
+1→2 ajoute `bows` et `arrow_sets` sans modifier les huit tables historiques.
+Ces fiches ne sont ni exportées ni créées/mises à jour par l’import V1.
+Leurs identités bloquent toutefois toute collision avec les entités importées ;
+les références matériel opaques d’une séance ne revendiquent pas ces identités.
 
 `RoomSessionStore.readArchive()` lit les racines, profils et descendants dans une
 seule transaction lecteur. Une séance illisible, une identité de séance orpheline

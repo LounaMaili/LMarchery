@@ -45,8 +45,8 @@ class RoomSessionStoreTest {
         assertEquals("SQLite format 3\u0000", Files.readAllBytes(path).take(16).toByteArray().toString(Charsets.US_ASCII))
         val version = scalar("SELECT sqlite_version()")
         assertTrue(version.startsWith("3."))
-        assertEquals("1", scalar("PRAGMA user_version"))
-        println("Real SQLite $version; on-disk header and user_version=1 verified; database closed and reopened")
+        assertEquals("2", scalar("PRAGMA user_version"))
+        println("Real SQLite $version; on-disk header and user_version=2 verified; database closed and reopened")
         openSessionStore(path).use { store ->
             assertEquals(source, assertIs<SessionReadResult.Found>(store.read(source.uuid)).session)
         }
@@ -386,10 +386,10 @@ class RoomSessionStoreTest {
     fun `unsupported Room schema is not destructively recreated`() = runBlocking<Unit> {
         val source = draft()
         openSessionStore(path).use { assertIs<SessionCreateResult.Created>(it.create(archive(source))) }
-        execute("PRAGMA user_version = 2")
+        execute("PRAGMA user_version = 99")
         openSessionStore(path).use { assertIs<SessionReadResult.TechnicalFailure>(it.read(source.uuid)) }
         assertEquals("1", scalar("SELECT count(*) FROM sessions"))
-        assertEquals("2", scalar("PRAGMA user_version"))
+        assertEquals("99", scalar("PRAGMA user_version"))
     }
 
     private suspend fun roundTrip(source: Session): Session {

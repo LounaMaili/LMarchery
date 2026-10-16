@@ -20,13 +20,14 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (23 décisions techniques)
+- [x] ADR (24 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
 - [x] Premier parcours Compose / Room : création, saisie, validation, reprise et consultation
 - [x] Historique chronologique, tableau des volées et résumé des scores validés
 - [x] Sauvegardes JSON : export vérifié et import atomique sans écrasement
+- [x] Fondation du catalogue arcs/flèches : modèles et SQLite 2, sans UI ni sauvegarde du matériel
 - [ ] Blason interactif complet
 - [ ] Premier test terrain
 
@@ -195,8 +196,10 @@ Les fournisseurs qui ne permettent pas la relecture ne donnent pas de succès
 confirmé. Aucune permission globale de stockage ni synchronisation propre à
 LMarchery ; Android laisse choisir le fournisseur.
 
-Seuls séances et profils réellement
-implémentés sont sauvegardés. La base Room n’est pas modifiée par l’export. Le
+Seuls séances et profils sont sauvegardés. Les fiches `Bow` / `ArrowSet` du
+catalogue SQLite 2 restent absentes du JSON V1 et ne sont pas exposées à
+l’utilisateur. Une extension versionnée des sauvegardes est requise avant
+l’interface de catalogue ; voir [ADR 025](docs/adr/025-fondation-catalogue-materiel.md). La base Room n’est pas modifiée par l’export. Le
 contrat strict, les limites de taille et les garanties numériques sont détaillés
 dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
 [format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut

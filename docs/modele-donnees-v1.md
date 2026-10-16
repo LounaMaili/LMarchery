@@ -7,12 +7,13 @@ et les valeurs de scoring/temps sont des modèles Kotlin purs. `core:database`
 persiste et met à jour des séances complètes en Room/SQLite. Le premier parcours
 Compose les utilise via ViewModel, contrôleur et repository (ADR 018).
 Les anciens IDs/FK numériques des tableaux sont des projections historiques,
-absentes du schéma SQLite 1 qui utilise les UUID (section 4). Les modèles `Bow`,
-`ArrowSet`, `SessionPreset` restent prévus. Le contrat typé de sauvegarde est
+absentes du schéma SQLite 2 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
+sont des valeurs Kotlin immuables persistées sans interface utilisateur (ADR 025) ;
+`SessionPreset` reste prévu. Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
 JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
 l’import contrôlé sans écrasement suit l’[ADR 022](adr/022-import-json-controle-transactionnel.md),
-sans migration du schéma.
+sans changement de format JSON V1. La migration SQLite 1→2 ajoute uniquement le catalogue matériel.
 
 ---
 
@@ -69,13 +70,15 @@ Ces entités sont mentionnées pour préparer l'architecture, mais ne sont pas i
 
 Le modèle V1 prévoit `TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet`
 et `SessionPreset`. Le fichier opérationnel actuel exporte seulement les profils
-et séances implémentés, avec volées/impacts imbriqués. Les fiches `Bow`, `ArrowSet`
-et `SessionPreset` restent futures ; leurs références UUID opaques ne sont pas
-des objets de matériel exportés.
+et séances implémentés, avec volées/impacts imbriqués. Les fiches `Bow` et
+`ArrowSet`, désormais persistées, restent absentes du fichier ;
+`SessionPreset` reste futur. Les références UUID opaques ne sont pas des objets
+de matériel exportés. L’extension versionnée des sauvegardes est obligatoire avant
+de rendre le catalogue utilisable dans Compose (ADR 025).
 
 | Champ | Règle |
 |-------|-------|
-| `id` (projection prévue) | Absent du schéma Room 1 actuel ; jamais une clé de fusion entre appareils. |
+| `id` (projection prévue) | Absent du schéma Room 2 actuel ; jamais une clé de fusion entre appareils. |
 | `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
 | `createdAt` | Instant UTC de création des agrégats modifiables ; absent des profils immuables. |
 | `updatedAt` | Instant UTC de dernière modification fonctionnelle, servant à comparer les révisions. |
@@ -393,13 +396,14 @@ Voir [ADR 011](adr/011-decisions-score-explicites.md).
 
 ### 2.6 Bow
 
-Arc de l'utilisateur.
+Arc de l'utilisateur. Modèle implémenté dans `core:model.equipment` et table `bows`,
+sans écran de création ou d’édition. Puissance facultative finie et strictement
+positive ; type, marque, modèle et notes libres conservés tels quels.
 
 | Attribut | Type | Description |
 |----------|------|-------------|
-| `id` | Long (PK) | Identifiant unique |
 | `uuid` | String | Identifiant stable pour export/import (UUID v4) |
-| `name` | String | Nom donné par l'utilisateur |
+| `name` | String | Nom non blanc, conservé tel quel |
 | `type` | String? | Type d'arc (recurve, compound, barebow, longbow, trad) |
 | `drawWeightLbs` | Float? | Puissance en livres |
 | `brand` | String? | Marque |
@@ -414,13 +418,18 @@ Arc de l'utilisateur.
 
 ### 2.7 ArrowSet
 
-Jeu de flèches de l'utilisateur.
+Jeu de flèches de l'utilisateur. Modèle implémenté dans `core:model.equipment` et
+table `arrow_sets`, sans écran. Les champs facultatifs restent textuels : aucune
+unité de longueur, de spine ou de poids n’est déduite ni convertie.
+
+Pour les deux fiches : UUID v4 canonique et création immuables ; `createdAt <= updatedAt`
+et copies/révisions non antidatées. L’égalité couvre tous les champs.
+Voir [ADR 025](adr/025-fondation-catalogue-materiel.md).
 
 | Attribut | Type | Description |
 |----------|------|-------------|
-| `id` | Long (PK) | Identifiant unique |
 | `uuid` | String | Identifiant stable pour export/import (UUID v4) |
-| `name` | String | Nom donné par l'utilisateur |
+| `name` | String | Nom non blanc, conservé tel quel |
 | `spine` | String? | Spine des flèches |
 | `length` | String? | Longueur |
 | `pointWeight` | String? | Poids de la pointe |
@@ -519,9 +528,10 @@ enum class EndStatus {
 
 ---
 
-## 4. Schéma Room / SQLite 1 effectivement implémenté
+## 4. Schéma Room / SQLite 2 effectivement implémenté
 
-Les huit tables sont `entity_identities`, `target_profiles`, `target_zones`,
+Les huit tables historiques, conservées sans modification depuis V1, sont
+`entity_identities`, `target_profiles`, `target_zones`,
 `sessions`, `ends`, `impacts`, `score_decisions`, `impact_repositions`.
 Profils, séances, volées et impacts ont leur UUID comme clé primaire et figurent
 dans le registre global des identités. Zones et traces ont des clés composites
@@ -534,9 +544,18 @@ La position explicite conserve l'ordre des listes, avec un nombre d'enfants
 attendu contrôlé à la lecture. Les décisions antérieures sont reliées à leurs
 repositionnements et la décision courante occupe la révision -1.
 
-Aucune table de matériel/preset ni FK fictive vers elle : `bowUuid` et
-`arrowSetUuid` sont opaques. Les anciennes projections numériques des tableaux
-ci-dessus ne décrivent pas ce schéma réel et ne doivent pas servir de migration.
+`bows` et `arrow_sets` ajoutent les fiches avec UUID primaire et FK `RESTRICT`
+vers le registre, types `BOW` et `ARROW_SET`. La migration explicite 1→2,
+enregistrée dans les fabriques Android/JVM, ajoute seulement ces deux tables.
+Le schéma 1 reste figé et les huit tables antérieures gardent toutes leurs données.
+Aucun preset ni FK des séances vers le matériel : `bowUuid` et
+`arrowSetUuid` restent opaques, y compris lorsqu’une fiche correspondante existe.
+`RoomSessionStore.equipment` fournit création, lecture, découverte et
+`update(expected, proposed)` avec comparaison complète et transaction atomique ;
+aucune suppression, fusion ni réparation implicite. Les collisions d’identité
+sont refusées entre tous les types, même si une ligne physique a perdu son
+registre. Voir [ADR 025](adr/025-fondation-catalogue-materiel.md). Les anciennes
+projections numériques des tableaux ci-dessus ne décrivent pas ce schéma réel et ne doivent pas servir de migration.
 Les versions Room, archive et scoring sont séparées ; le profil garde son UUID
 et son édition distincte. L'export de schéma versionné et les garanties
 transactionnelles sont détaillés dans [ADR 016](adr/016-persistance-locale-room.md).
@@ -553,8 +572,8 @@ de cette autorisation de révision locale.
 
 `discover()` fournit les UUID triés des racines et des identités séance, y compris
 orphelines. Chaque entrée est ensuite relue par `read` : la découverte ne prouve
-pas sa validité. Les erreurs restent visibles dans la sélection Android. Le schéma
-reste identique ; voir [ADR 018](adr/018-integration-android-room.md).
+pas sa validité. Les erreurs restent visibles dans la sélection Android. La
+découverte des séances reste inchangée ; voir [ADR 018](adr/018-integration-android-room.md).
 
 ---
 
@@ -576,8 +595,9 @@ indépendamment de l'ordre des `updatedAt`. Les préfixes de traces connus ne
 peuvent être supprimés ni réécrits. Sans référentiel, une restauration indépendante
 ne peut pas découvrir un historique omis de toutes les données reçues.
 
-Le JSON opérationnel conserve séances/profils, décisions et traces. Le contenu
-du matériel/presets et la résolution interactive des conflits restent à développer.
+Le JSON opérationnel conserve séances/profils, décisions et traces. Les fiches matériel persistées ne sont pas incluses : une extension versionnée
+et rétrocompatible des sauvegardes est requise avant toute UI de catalogue.
+Les presets et la résolution interactive des conflits restent à développer.
 L’import contrôlé ajoute seulement les séances absentes, reconnaît les identiques
 et refuse toute divergence dans une transaction unique (ADR 022). Aucun ancien exemple documentaire
 incomplet ne fait l'objet d'une migration inventant ses valeurs manquantes.
