@@ -68,7 +68,8 @@ Après un arrêt **pendant** une écriture, ne rien présumer : relancer et cons
 ce que SQL a effectivement committé. Une proposition non confirmée n'est pas un
 journal durable. Les données sont locales ; désinstallation et effacement des
 données peuvent les perdre. L’export ajouté en PR 19 est testé dans son protocole
-dédié ci-dessous ; aucun import utilisateur n’est encore disponible.
+dédié ci-dessous ; la restauration contrôlée ajoutée en PR 20 possède aussi son
+protocole dédié.
 
 | Vérification physique | Résultat à renseigner |
 | --- | --- |
@@ -200,7 +201,8 @@ Ne pas désinstaller, exécuter `pm clear`, supprimer la base ou publier un expo
 1. Construire et valider l'APK, puis `adb -s <série> install -r ...` si la signature
    est compatible. Comparer les données Room synthétiques avant/après installation.
 2. Ouvrir l'accueil, retrouver les trois séances protégées et « Exporter mes séances ».
-   Le message rappelle que le fichier est en clair et que l'import reste indisponible.
+   Le message rappelle que le fichier est en clair. Depuis la PR 20, l’import
+   contrôlé est accessible depuis la liste ; son protocole distinct figure ci-dessous.
 3. Tester une annulation du sélecteur : aucun contenu écrit ni succès annoncé.
 4. Relancer l'export global. Choisir un dossier **local de test** dans le sélecteur
    Android, avec le nom `.lmarchery.json` proposé. Ne pas choisir un service externe.
