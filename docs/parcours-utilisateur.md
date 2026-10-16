@@ -4,13 +4,16 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16 à 20)
+## Parcours effectivement implémenté (PR 16 à 21)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
 
-1. Accueil : découverte SQLite et lecture validée de chaque séance, statut affiché ;
-   les entrées illisibles restent visibles avec diagnostic.
+1. Accueil : séances à reprendre (brouillons/en cours), historique terminé et
+   entrées nécessitant une intervention avec UUID/diagnostic. Chaque section lisible
+   est triée par date de séance réelle décroissante (`toInstant()`), puis UUID
+   croissant. Les cartes affichent date civile/fuseau/offset, profil, distance,
+   statut, volées et points validés. « Reprendre » ou « Consulter » ouvre la séance.
 2. Nouvelle séance : titre facultatif, choix explicite d'un des quatre profils
    indoor WA classique/poulies 40 cm/18 m ou 60 cm/25 m. Trois flèches, entraînement,
    date civile dans le fuseau du téléphone choisi à la création. La création est
@@ -38,6 +41,29 @@ Les suppressions, matériel/presets et autres modes restent hors de ce parcours.
 Les données sont locales ; l’export global est décrit ci-dessous.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
+
+### Consulter les scores et l’historique (PR 21)
+
+Le tableau distinct du blason affiche chaque volée, son statut EDITING/VALIDATED,
+ses flèches dans l’ordre conservé, M/X et son total provisoire ou validé. Une volée
+vide n’est pas un zéro validé ; trois flèches ne valident jamais automatiquement.
+« Voir le blason » sélectionne par UUID ; « Revenir à la volée en cours » retrouve
+la saisie après consultation d’une ancienne volée. Les volées validées et séances
+terminées restent non modifiables ; les configurations non éditables restent
+consultables. Aucune écriture n’est demandée par cette navigation.
+
+Le résumé reprend `summarizeSessionScore` : total, volées/flèches validées, nombres
+de 10, 9, M et X si activé, moyennes par flèche/volée. Sans données validées, les
+moyennes sont indisponibles. Le maximum de référence indique s’il porte sur les
+volées prévues/enregistrées (même vides ou provisoires), ou sur les flèches
+enregistrées en mode libre ; aucun pourcentage de réussite n’est affiché.
+
+La saisie présente titre/statut, scores puis blason et commandes avant les détails.
+La rotation conserve la volée consultée et le défilement ; un acquittement de
+sauvegarde ne réinitialise pas le défilement. Les diagnostics et PendingSave restent
+accessibles, avec les mêmes confirmations d’abandon. Les panneaux import/export
+restent dépliés sous « Sauvegardes » sur l’accueil, avec incidents et confirmations.
+Voir [ADR 023](adr/023-historique-et-presentation-scores-android.md).
 
 ### Repositionner avant validation (PR 17)
 
@@ -194,7 +220,7 @@ L'utilisateur ouvre l'application
 
 ## 5. Parcours — Exporter ses données (PR 19)
 
-1. Choisir « Exporter mes séances ». Si une sauvegarde est en cours/non confirmée
+1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter mes séances ». Si une sauvegarde est en cours/non confirmée
    ou une correction ouverte, terminer ou résoudre cette action d’abord.
 2. Attendre préparation puis validation : toutes les séances et profils sont lus
    en transaction et vérifiés par aller-retour JSON. Une base vide ou une seule
@@ -218,7 +244,7 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
 
 1. Revenir à la liste, résoudre toute sauvegarde non confirmée et fermer une
    sélection/correction. Aucun export ou autre import ne doit être actif.
-2. Choisir « Importer une sauvegarde », puis sélectionner explicitement le fichier
+2. Dans la section « Sauvegardes », choisir « Importer une sauvegarde », puis sélectionner explicitement le fichier
    dans Android. Annuler ne demande aucune écriture. Nom/MIME ne prouvent rien :
    octets lus avec plafond de 16 MiB, décodage strict puis comparaison transactionnelle.
 3. Lire les comptes : nouvelles séances, identiques, conflits et profils. Toute

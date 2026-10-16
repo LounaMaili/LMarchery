@@ -40,6 +40,8 @@ Pour préparer le développement et les validations :
 | 21 | Export JSON versionné des séances Android | [adr/021-export-json-versionne-android.md](adr/021-export-json-versionne-android.md) |
 | 22 | Import JSON contrôlé et transactionnel | [adr/022-import-json-controle-transactionnel.md](adr/022-import-json-controle-transactionnel.md) |
 
+| 23 | Historique chronologique et présentation des scores Android | [adr/023-historique-et-presentation-scores-android.md](adr/023-historique-et-presentation-scores-android.md) |
+
 ---
 
 *Dernière mise à jour : 16 octobre 2026*

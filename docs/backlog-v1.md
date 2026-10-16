@@ -1,6 +1,12 @@
 # Backlog V1 — LMarchery
 
-> Tickets de travail organisés par épic, directement actionnables pour le développement
+> État livré et travaux restants ; les critères produit complets dépassent le premier parcours Android.
+
+Légende : ✓ livré ; ◐ partiel, limite explicitée ; ☐ prévu.
+La saisie Android reste à trois flèches en entraînement, avec les quatre profils
+WA indoor ; les autres configurations valides sont consultables. Les tests ADB
+ne remplacent pas les essais terrain au doigt. Voir
+[ADR 023](adr/023-historique-et-presentation-scores-android.md).
 
 ---
 
@@ -10,16 +16,16 @@
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 1.1 | Créer l'entité `TargetType` (Room) | ☐ | Haute |
-| 1.2 | Créer l'entité `TargetZone` (Room) | ☐ | Haute |
-| 1.3 | Pré-remplir les types de cible par défaut (40, 60, 80, 122 cm) | ☐ | Haute |
-| 1.4 | Implémenter `calculateScore(targetType, xNormalized, yNormalized)` | ☐ | Haute |
-| 1.5 | Implémenter la détection du cordon (`isNearCordon`) | ☐ | Haute |
-| 1.6 | Implémenter la zone X / inner 10 (`isX`) configurable via `TargetType` | ☐ | Moyenne |
-| 1.7 | Implémenter le miss (`isMiss` quand r > 1.0) | ☐ | Haute |
-| 1.8 | Tests unitaires : limites de zone (9↔10, 8↔9, etc.) | ☐ | Haute |
-| 1.9 | Tests unitaires : cordon en mode entraînement / compétition / manuel | ☐ | Haute |
-| 1.10 | Tests unitaires : miss et zone X | ☐ | Moyenne |
+| 1.1 | Créer l'entité `TargetType` (Room) | ✓ | Haute |
+| 1.2 | Créer l'entité `TargetZone` (Room) | ✓ | Haute |
+| 1.3 | Pré-remplir les types de cible par défaut (40, 60, 80, 122 cm) | ✓ (fixtures historiques + profils WA distincts) | Haute |
+| 1.4 | Implémenter `calculateScore(targetType, xNormalized, yNormalized)` | ✓ | Haute |
+| 1.5 | Implémenter la détection du cordon (`isNearCordon`) | ✓ (suggestions, sans promotion) | Haute |
+| 1.6 | Implémenter la zone X / inner 10 (`isX`) configurable via `TargetType` | ✓ | Moyenne |
+| 1.7 | Implémenter le miss (`isMiss` quand r > 1.0) | ✓ | Haute |
+| 1.8 | Tests unitaires : limites de zone (9↔10, 8↔9, etc.) | ✓ | Haute |
+| 1.9 | Tests unitaires : cordon en mode entraînement / compétition / manuel | ✓ | Haute |
+| 1.10 | Tests unitaires : miss et zone X | ✓ | Moyenne |
 
 **Critère de sortie** : le moteur calcule correctement un score pour toute position d'impact, avec ou sans cordon, avec ou sans zone X.
 
@@ -31,15 +37,15 @@
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 2.1 | Afficher un blason circulaire avec les zones colorées | ☐ | Haute |
-| 2.2 | Toucher pour placer un impact (coordonnées normalisées) | ☐ | Haute |
-| 2.3 | Afficher le score calculé en temps réel après placement | ☐ | Haute |
+| 2.1 | Afficher un blason circulaire avec les zones colorées | ✓ | Haute |
+| 2.2 | Toucher pour placer un impact (coordonnées normalisées) | ✓ | Haute |
+| 2.3 | Afficher le score calculé en temps réel après placement | ✓ (après acquittement) | Haute |
 | 2.4 | Glisser pour déplacer un impact existant | ☐ | Haute |
 | 2.5 | Appui long ou bouton pour supprimer un impact | ☐ | Haute |
-| 2.6 | Tap sur impact pour voir/corriger le score (modal cordon) | ☐ | Haute |
-| 2.7 | Afficher le nombre d'impacts placés vs attendus | ☐ | Moyenne |
+| 2.6 | Tap sur impact pour voir/corriger le score (modal cordon) | ◐ sélection numérotée + décisions explicites, pas de tap impact | Haute |
+| 2.7 | Afficher le nombre d'impacts placés vs attendus | ✓ | Moyenne |
 | 2.8 | Zoom et panoramique sur le blason | ☐ | Basse |
-| 2.9 | Afficher les impacts de la volée en cours | ☐ | Haute |
+| 2.9 | Afficher les impacts de la volée en cours | ✓ | Haute |
 | 2.10 | Test terrain : saisie rapide entre deux volées réelles | ☐ | Haute |
 
 **Critère de sortie** : un archer peut saisir 3 impacts en quelques secondes, les corriger, et voir le score.
@@ -52,19 +58,19 @@
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 3.1 | Créer l'entité `Session` (Room) avec status DRAFT/IN_PROGRESS/COMPLETED | ☐ | Haute |
-| 3.2 | Créer l'entité `End` (Room) avec status EDITING/VALIDATED | ☐ | Haute |
-| 3.3 | Créer l'entité `ArrowImpact` (Room) | ☐ | Haute |
-| 3.4 | Écran « Créer une séance » (formulaire) | ☐ | Haute |
-| 3.5 | Ajouter une volée à la séance en cours | ☐ | Haute |
-| 3.6 | Valider une volée (EDITING → VALIDATED) | ☐ | Haute |
-| 3.7 | Calcul et affichage du score total et du score max possible | ☐ | Haute |
-| 3.8 | Terminer une séance (IN_PROGRESS → COMPLETED) | ☐ | Haute |
-| 3.9 | Reprendre une séance en cours (DRAFT / IN_PROGRESS) | ☐ | Haute |
-| 3.10 | Historique des séances (liste chronologique) | ☐ | Haute |
-| 3.11 | Détail d'une séance archivée | ☐ | Moyenne |
+| 3.1 | Créer l'entité `Session` (Room) avec status DRAFT/IN_PROGRESS/COMPLETED | ✓ | Haute |
+| 3.2 | Créer l'entité `End` (Room) avec status EDITING/VALIDATED | ✓ | Haute |
+| 3.3 | Créer l'entité `ArrowImpact` (Room) | ✓ | Haute |
+| 3.4 | Écran « Créer une séance » (formulaire) | ◐ 4 profils WA, 3 flèches, entraînement | Haute |
+| 3.5 | Ajouter une volée à la séance en cours | ✓ | Haute |
+| 3.6 | Valider une volée (EDITING → VALIDATED) | ✓ | Haute |
+| 3.7 | Calcul et affichage du score total et du score max possible | ✓ maximum de référence explicité | Haute |
+| 3.8 | Terminer une séance (IN_PROGRESS → COMPLETED) | ✓ | Haute |
+| 3.9 | Reprendre une séance en cours (DRAFT / IN_PROGRESS) | ✓ configurations éditables du parcours | Haute |
+| 3.10 | Historique des séances (liste chronologique) | ✓ | Haute |
+| 3.11 | Détail d'une séance archivée | ✓ lecture seule | Moyenne |
 | 3.12 | Supprimer une séance | ☐ | Basse |
-| 3.13 | Résistance à l'interruption (verrouillage, changement d'appli) | ☐ | Haute |
+| 3.13 | Résistance à l'interruption (verrouillage, changement d'appli) | ◐ ViewModel/Room testés ; terrain réel restant | Haute |
 
 **Critère de sortie** : l'application survit à une vraie séance d'entraînement du début à la fin.
 
@@ -97,11 +103,11 @@
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 5.1 | Définir le schéma JSON d'export (avec UUID) | ☐ | Haute |
-| 5.2 | Implémenter l'export JSON (intent de partage Android) | ☐ | Haute |
-| 5.3 | Implémenter l'import JSON (sélection de fichier) | ☐ | Haute |
-| 5.4 | Gestion des doublons et fusion par UUID | ☐ | Moyenne |
-| 5.5 | Écran Paramètres (section Export/Import) | ☐ | Moyenne |
+| 5.1 | Définir le schéma JSON d'export (avec UUID) | ✓ | Haute |
+| 5.2 | Implémenter l'export JSON (intent de partage Android) | ✓ sélecteur SAF, sans partage direct | Haute |
+| 5.3 | Implémenter l'import JSON (sélection de fichier) | ✓ | Haute |
+| 5.4 | Gestion des doublons et fusion par UUID | ◐ identiques sans écriture, conflits refusés ; fusion exclue | Moyenne |
+| 5.5 | Écran Paramètres (section Export/Import) | ◐ section Sauvegardes sur accueil ; paramètres dédiés prévus | Moyenne |
 
 **Critère de sortie** : l'utilisateur peut exporter vers un fichier et réimporter sur un autre appareil.
 
@@ -113,9 +119,9 @@
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 6.1 | Écran d'accueil (séances récentes + bouton créer) | ☐ | Haute |
-| 6.2 | Tableau des scores par volée | ☐ | Haute |
-| 6.3 | Résumé de séance (score total, %, 10/X/M) | ☐ | Haute |
+| 6.1 | Écran d'accueil (séances récentes + bouton créer) | ✓ | Haute |
+| 6.2 | Tableau des scores par volée | ✓ | Haute |
+| 6.3 | Résumé de séance (score total, %, 10/X/M) | ✓ 10/9/X/M et moyennes ; pas de % de réussite | Haute |
 | 6.4 | Paramètres : mode de comptage par défaut | ☐ | Moyenne |
 | 6.5 | Paramètres : règle du cordon par défaut | ☐ | Moyenne |
 | 6.6 | Thème sombre (optionnel V1) | ☐ | Basse |
@@ -141,4 +147,4 @@ Epic 6 (paramètres/UX) — transversal
 
 ---
 
-*Dernière mise à jour : 29 avril 2026*
+*Dernière mise à jour : 16 octobre 2026*

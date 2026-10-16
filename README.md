@@ -20,11 +20,13 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (22 décisions techniques)
+- [x] ADR (23 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
 - [x] Premier parcours Compose / Room : création, saisie, validation, reprise et consultation
+- [x] Historique chronologique, tableau des volées et résumé des scores validés
+- [x] Sauvegardes JSON : export vérifié et import atomique sans écrasement
 - [ ] Blason interactif complet
 - [ ] Premier test terrain
 
@@ -156,9 +158,29 @@ distingue aussi automatisation ADB et essais au doigt. Le jugement et la correct
 exceptionnelle sont décrits dans l’ADR 020. Glisser-déposer, suppressions et
 matériel/presets restent hors de ce premier parcours.
 
+## Historique et tableau des scores (PR 21)
+
+L’accueil distingue les séances à reprendre, l’historique terminé et les entrées
+nécessitant une intervention. Le tri utilise l’instant réel de la date de séance,
+décroissant, puis l’UUID croissant ; les heures civiles et offsets d’origine restent
+visibles. Les cartes affichent le score et le nombre de volées **validés**.
+
+Dans une séance, le blason précède les informations secondaires. Le tableau donne
+chaque flèche dans son ordre enregistré, M/X, le total et le statut provisoire ou
+validé ; une volée vide reste explicitement vide. Choisir une ligne affiche son
+blason, avec retour à la volée en cours. Une séance terminée reste sans commandes
+d’édition. Consulter ne réécrit aucune donnée.
+
+Le résumé utilise le calculateur métier : points, volées/flèches validées, 10, 9,
+M, X si activé, moyennes (indisponibles sans données validées). Le maximum de
+référence explique sa portée, sans pourcentage de réussite trompeur.
+Import/export sont regroupés dans « Sauvegardes » sur l’accueil, après les séances.
+Voir [ADR 023](docs/adr/023-historique-et-presentation-scores-android.md) et le
+[protocole de consultation](docs/tests-terrain-v1.md#protocole-historique-et-scores-pr-21).
+
 ## Exporter les séances
 
-« Exporter mes séances » prépare toutes les séances Room, y compris celles en
+Depuis l’accueil, section « Sauvegardes », « Exporter mes séances » prépare toutes les séances Room, y compris celles en
 cours, et leurs profils, décisions et traces dans un instantané cohérent.
 L’application vérifie l’aller-retour JSON complet avant de proposer le sélecteur
 Android. Choisir la destination du fichier `.lmarchery.json` ; attendre le message
@@ -182,7 +204,7 @@ les perdre ; conserver une sauvegarde validée hors de l’application.
 
 ## Import contrôlé des sauvegardes (PR 20)
 
-Depuis la liste, « Importer une sauvegarde » ouvre le sélecteur Android. Le contenu
+Depuis l’accueil, section « Sauvegardes », « Importer une sauvegarde » ouvre le sélecteur Android. Le contenu
 réel est lu avec un plafond de 16 MiB, décodé strictement et comparé à SQLite.
 L’aperçu donne nouvelles séances, identiques, conflits et profils. Confirmer
 « Importer les N nouvelles séances » ajoute toute l’archive atomiquement, avec
