@@ -77,6 +77,9 @@ data class SessionUiState(
     val selectedEndUuid: String? = null,
     val confirmation: String? = null,
     val impactEdit: ImpactEdit? = null,
+    val precisionAimEnabled: Boolean = false,
+    val newImpactCandidate: PositionCandidate? = null,
+    val activeAim: ActiveAim? = null,
 ) {
     val session get() = saved?.sessions?.single()
     val editingEnd get() = session?.ends?.singleOrNull { it.status == EndStatus.EDITING }
@@ -85,18 +88,21 @@ data class SessionUiState(
     /** Compatibility read alias; import and export share one operation lock. */
     val exportLocked get() = archiveOperationLocked
     val ready get() = !busy && pending == null && !archiveOperationLocked
-    val canNavigate get() = ready && impactEdit == null
+    val aimContext get() = session?.let { s -> displayedEnd?.let { end -> AimContext(s.uuid, end.uuid, impactEdit?.impactUuid) } }
+    val aimedPoint get() = activeAim?.candidate?.point ?: newImpactCandidate?.point ?: impactEdit?.candidate
+    val hasAimProposal get() = newImpactCandidate != null || activeAim != null
+    val canNavigate get() = ready && impactEdit == null && !hasAimProposal
     val canEdit get() = ready && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
     val isEditingDisplayed get() = editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid
     val selectedImpact get() = impactEdit?.takeIf { it.sessionUuid == session?.uuid && it.endUuid == displayedEnd?.uuid }
         ?.let { selection -> displayedEnd?.impacts?.find { it.uuid == selection.impactUuid } }
-    val canSelectImpact get() = canEdit && isEditingDisplayed &&
+    val canSelectImpact get() = canEdit && isEditingDisplayed && !hasAimProposal &&
         (impactEdit == null || impactEdit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED))
     val canBeginReposition get() = canSelectImpact && selectedImpact != null
     val canProposeReposition get() = canEdit && isEditingDisplayed && selectedImpact != null &&
         impactEdit?.proposal is ImpactProposal.Reposition &&
         impactEdit?.phase in listOf(ImpactEditPhase.AWAITING_POINT, ImpactEditPhase.CANDIDATE)
-    val canConfirmReposition get() = canProposeReposition && impactEdit?.phase == ImpactEditPhase.CANDIDATE &&
+    val canConfirmReposition get() = activeAim == null && canProposeReposition && impactEdit?.phase == ImpactEditPhase.CANDIDATE &&
         impactEdit.candidate != null && impactEdit.preview != null &&
         (selectedImpact?.finalScoreDecision?.provenance?.isManual != true || impactEdit.reason.isNotBlank())
     val canBeginScoreCorrection get() = canSelectImpact && selectedImpact != null
@@ -123,10 +129,17 @@ data class SessionUiState(
         is ImpactProposal.ExceptionalCorrection -> proposal.selected in scoreOptions!!.legalValues && proposal.reason.isNotBlank()
         else -> false
     }
-    val canAddImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.impacts.size < 3
-    val canValidate get() = canEdit && impactEdit == null && editingEnd?.impacts?.size == 3 && isEditingDisplayed
-    val canNewEnd get() = canEdit && impactEdit == null && editingEnd == null
-    val canComplete get() = canEdit && impactEdit == null && session!!.ends.none { it.status == EndStatus.EDITING && it.impacts.isNotEmpty() }
+    private val canPlaceNewImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.impacts.size < 3
+    val canAddImpact get() = canPlaceNewImpact && !precisionAimEnabled && !hasAimProposal
+    val canAimNewImpact get() = canPlaceNewImpact && precisionAimEnabled
+    val canAim get() = precisionAimEnabled && (canAimNewImpact || canProposeReposition)
+    val canChangeAimMode get() = canEdit && isEditingDisplayed && newImpactCandidate == null &&
+        (impactEdit == null || canProposeReposition)
+    val canConfirmNewImpact get() = canAimNewImpact && activeAim == null && newImpactCandidate?.context ==
+        AimContext(session!!.uuid, editingEnd!!.uuid)
+    val canValidate get() = canEdit && impactEdit == null && !hasAimProposal && editingEnd?.impacts?.size == 3 && isEditingDisplayed
+    val canNewEnd get() = canEdit && impactEdit == null && !hasAimProposal && editingEnd == null
+    val canComplete get() = canEdit && impactEdit == null && !hasAimProposal && session!!.ends.none { it.status == EndStatus.EDITING && it.impacts.isNotEmpty() }
     val provisionalTotal get() = editingEnd?.let(::calculateEndScore) ?: 0
     val validatedTotal get() = session?.let(::summarizeSessionScore)?.totalScore ?: 0
 }
