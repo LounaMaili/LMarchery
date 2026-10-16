@@ -8,7 +8,7 @@
 4. **[Modèle de données V1](modele-donnees-v1.md)** — Entités, relations, attributs, énumérations, export/import
 5. **[Backlog V1](backlog-v1.md)** — Tickets de travail par épic,可直接 actionnable
 6. **[Tests terrain V1](tests-terrain-v1.md)** — Grilles de test pour les premiers retours réels
-7. **[Contrat de sauvegarde V1](export-format-v1.md)** — Snapshots typés, UUID, reconstruction et conflits ; fichiers encore prévus
+7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON opérationnel, UUID, reconstruction et limites ; sans import
 8. **[Roadmap reconnaissance](reconnaissance-roadmap.md)** — Trajectoire V2→V4 pour la reconnaissance d'image
 
 Pour préparer le développement et les validations :
@@ -37,6 +37,7 @@ Pour préparer le développement et les validations :
 | 18 | Premier parcours Android Compose / Room | [adr/018-integration-android-room.md](adr/018-integration-android-room.md) |
 | 19 | Sélection et repositionnement dans Android | [adr/019-selection-repositionnement-android.md](adr/019-selection-repositionnement-android.md) |
 | 20 | Jugement de limite et correction exceptionnelle dans Android | [adr/020-decisions-score-android.md](adr/020-decisions-score-android.md) |
+| 21 | Export JSON versionné des séances Android | [adr/021-export-json-versionne-android.md](adr/021-export-json-versionne-android.md) |
 
 ---
 

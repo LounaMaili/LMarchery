@@ -49,9 +49,51 @@ sealed interface SessionUpdateResult {
     data class TechnicalFailure(val cause: Exception) : SessionUpdateResult
 }
 
+sealed interface ArchiveReadResult {
+    data class Found(val archive: DomainArchive) : ArchiveReadResult
+    data class NeedsIntervention(val diagnostic: StorageDiagnostic) : ArchiveReadResult
+    data class TechnicalFailure(val cause: Exception) : ArchiveReadResult
+}
+
 /** SQL rows/DAOs stay internal; callers exchange complete, contextualized domain values. */
 class RoomSessionStore internal constructor(private val database: SessionDatabase) : AutoCloseable {
     private val closed = AtomicBoolean(false)
+
+    /** All roots and descendants from one reader snapshot. No partial archive and no SQL writes. */
+    suspend fun readArchive(): ArchiveReadResult = try {
+        val callerContext = currentCoroutineContext()
+        callerContext.ensureActive()
+        check(!closed.get()) { "Session store is closed." }
+        database.useReaderConnection { connection ->
+            connection.deferredTransaction {
+                val dao = database.records()
+                val profiles = linkedMapOf<String, TargetProfileSnapshot>()
+                val sessions = mutableListOf<Session>()
+                for (uuid in dao.sessionUuids()) {
+                    callerContext.ensureActive()
+                    val row = dao.session(uuid) ?: throw CorruptStorage(
+                        StorageDiagnostic("sessions[$uuid]", "Registered session row is missing."))
+                    val validated = try { validateStored(dao.sessionSnapshot(row)) }
+                    catch (error: CorruptStorage) {
+                        throw CorruptStorage(error.diagnostic.copy(path = "sessions[$uuid].${error.diagnostic.path}"))
+                    }
+                    val profile = validated.profiles.single()
+                    val id = requireNotNull(profile.definition).uuid
+                    dataCheck(profiles[id] == null || profiles[id] == profile,
+                        "sessions[$uuid].profile", "Conflicting definitions for one profile identity.")
+                    profiles[id] = profile
+                    sessions += validated.sessions.single()
+                }
+                val complete = com.lmarchery.core.scoring.archive.snapshotArchive(
+                    profiles.values.sortedBy { it.definition!!.uuid }, sessions)
+                val result = validateStored(complete)
+                callerContext.ensureActive()
+                ArchiveReadResult.Found(result)
+            }
+        }
+    } catch (error: CorruptStorage) { ArchiveReadResult.NeedsIntervention(error.diagnostic) }
+    catch (error: CancellationException) { throw error }
+    catch (error: Exception) { ArchiveReadResult.TechnicalFailure(error) }
 
     /** Deterministic UUID discovery only. Each entry still requires contextualized read() validation. */
     suspend fun discover(): SessionDiscoveryResult = try {

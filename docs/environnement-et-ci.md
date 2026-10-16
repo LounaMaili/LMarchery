@@ -14,6 +14,7 @@
 | Room runtime / compiler / plugin | 2.7.2 |
 | KSP (KSP2 activé) | 2.0.21-1.0.28 |
 | SQLite Bundled | 2.5.2 |
+| JSON de flux, sans mapping réflexif | Gson 2.13.2 |
 
 Ces versions restent celles des configurations Gradle ; cette consolidation ne
 met pas les dépendances à jour. `./gradlew --version` affiche aussi le Kotlin
@@ -97,6 +98,7 @@ vérifie les permissions du manifeste V1 et les espaces du diff, puis exécute :
 
 1. `./gradlew test` : domaine, tests locaux Android et `:core:database:jvmTest`
    sur SQLite natif, sans appareil.
+   Inclut également `:core:export:test` : codec JSON strict et aller-retour complet.
 2. `./gradlew :app:assembleDebug :core:database:assembleDebug` : APK et bibliothèque Room Android.
 3. `./gradlew :app:lintDebug :core:database:lintDebug` : analyses statiques des deux modules.
 
@@ -128,6 +130,7 @@ Les rapports sont disponibles dans :
 
 - `core/model/build/reports/tests/test/index.html` ;
 - `core/scoring/build/reports/tests/test/index.html` ;
+- `core/export/build/reports/tests/test/index.html` ;
 - `core/database/build/reports/tests/jvmTest/index.html` (tests SQLite réels) ;
 - `core/database/build/reports/lint-results-debug.html` ;
 - `app/build/reports/tests/testDebugUnitTest/index.html` et `testReleaseUnitTest/index.html` ;

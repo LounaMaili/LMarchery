@@ -20,7 +20,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (20 décisions techniques)
+- [x] ADR (21 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
@@ -40,7 +40,7 @@ Voir [docs/README.md](docs/README.md) pour l'index complet et l'ordre de lecture
 | [Parcours utilisateur](docs/parcours-utilisateur.md) | 7 parcours détaillés de l'application |
 | [Backlog V1](docs/backlog-v1.md) | 6 epics, ~40 tickets actionnables |
 | [Tests terrain V1](docs/tests-terrain-v1.md) | 5 grilles de test pour les retours réels |
-| [Format d'export V1](docs/export-format-v1.md) | Schéma JSON avec UUID, règles de fusion |
+| [Format d'export V1](docs/export-format-v1.md) | JSON opérationnel avec UUID, décisions et traces ; sans import |
 | [Roadmap reconnaissance](docs/reconnaissance-roadmap.md) | Trajectoire V2→V4 |
 
 ## Stack technique
@@ -152,10 +152,33 @@ L'APK debug est `app/build/outputs/apk/debug/app-debug.apk`. Suivre le
 avec rotation et arrêt complet après deux impacts. **Les tests JVM, builds et lint
 ne constituent pas des tests physiques sur téléphone.** Le
 [protocole de repositionnement](docs/tests-terrain-v1.md#protocole-selection-et-repositionnement-pr-17)
-distingue aussi automatisation ADB et essais au doigt. Jugement de score,
-glisser-déposer, suppressions, matériel/presets et export utilisateur restent hors
-de ce parcours. Les données sont locales : les effacer ou désinstaller l'application
-peut les perdre, sans possibilité d'export pour l'instant.
+distingue aussi automatisation ADB et essais au doigt. Le jugement et la correction
+exceptionnelle sont décrits dans l’ADR 020. Glisser-déposer, suppressions et
+matériel/presets restent hors de ce premier parcours.
+
+## Exporter les séances
+
+« Exporter mes séances » prépare toutes les séances Room, y compris celles en
+cours, et leurs profils, décisions et traces dans un instantané cohérent.
+L’application vérifie l’aller-retour JSON complet avant de proposer le sélecteur
+Android. Choisir la destination du fichier `.lmarchery.json` ; attendre le message
+confirmant l’écriture et la relecture identique, le nombre de séances et la taille.
+Une base vide ou une séance illisible bloque l’export global. Résoudre d’abord
+une sauvegarde en attente et fermer toute proposition de correction.
+
+Le fichier UTF-8 est lisible en clair et peut contenir des informations personnelles.
+Ne pas utiliser un document dont la sauvegarde n’est pas confirmée : après erreur
+ou interruption, il peut être incomplet. Aucun fichier n’est supprimé automatiquement.
+Les fournisseurs qui ne permettent pas la relecture ne donnent pas de succès
+confirmé. Aucune permission globale de stockage ni synchronisation propre à
+LMarchery ; Android laisse choisir le fournisseur.
+
+**L’import utilisateur n’est pas disponible.** Seuls séances et profils réellement
+implémentés sont sauvegardés. La base Room n’est pas modifiée par l’export. Le
+contrat strict, les limites de taille et les garanties numériques sont détaillés
+dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
+[format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut
+les perdre ; la restauration depuis le fichier reste une fonctionnalité future.
 
 ## Versions
 

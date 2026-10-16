@@ -66,6 +66,7 @@ data class ImpactEdit(
 data class SessionUiState(
     val screen: SessionScreen = SessionScreen.LIST,
     val busy: Boolean = false,
+    val exportLocked: Boolean = false,
     val entries: List<SessionEntry> = emptyList(),
     val saved: DomainArchive? = null,
     val pending: PendingSave? = null,
@@ -86,7 +87,7 @@ data class SessionUiState(
             s.ends.count { it.status == EndStatus.EDITING } <= 1 &&
             s.ends.all { end -> end.impacts.size <= 3 && end.impacts.map { it.index }.sorted() == (1..end.impacts.size).toList() }
     } == true
-    val ready get() = !busy && pending == null
+    val ready get() = !busy && pending == null && !exportLocked
     val canNavigate get() = ready && impactEdit == null
     val canEdit get() = ready && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
     val isEditingDisplayed get() = editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid

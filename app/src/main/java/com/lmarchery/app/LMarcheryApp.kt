@@ -18,14 +18,18 @@ import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
 import com.lmarchery.feature.sessions.*
+import com.lmarchery.feature.export.ExportCoordinator
+import com.lmarchery.feature.export.ExportPanel
+import com.lmarchery.feature.export.ExportDestinationEffect
 
 @Composable
-fun LMarcheryApp(controller: SessionController) {
+fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator) {
+    ExportDestinationEffect(exportCoordinator)
     val state by controller.state.collectAsStateWithLifecycle()
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
     var confirmCancelCorrection by rememberSaveable { mutableStateOf(false) }
     val back: () -> Unit = {
-        if (!state.busy) {
+        if (!state.busy && !state.exportLocked) {
             when {
                 state.pending != null -> confirmLeave = true
                 state.impactEdit != null -> confirmCancelCorrection = true
@@ -33,14 +37,15 @@ fun LMarcheryApp(controller: SessionController) {
             }
         }
     }
-    BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null, onBack = back)
+    BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null || state.exportLocked, onBack = back)
     Scaffold { padding ->
         LazyColumn(modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
             item(key = "header") {
                 Text("LMarchery", style = MaterialTheme.typography.headlineMedium)
-                Text("Séances locales sur cet appareil · Aucun export utilisateur disponible.", style = MaterialTheme.typography.bodySmall)
+                Text("Séances locales sur cet appareil · Export JSON disponible, import indisponible.", style = MaterialTheme.typography.bodySmall)
             }
+            item(key = "export") { ExportPanel(exportCoordinator, state) }
             if (state.busy) item(key = "loading") {
                 LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
                 Text(if (state.pending != null) "Enregistrement en cours…" else "Chargement…")
@@ -115,7 +120,7 @@ fun LMarcheryApp(controller: SessionController) {
                         }
                         Text("Sans titre : « Séance salle — ${state.selectedProfile.label} ».", style = MaterialTheme.typography.bodySmall)
                         Button(onClick = controller::createSession, enabled = state.ready) { Text("Créer et démarrer") }
-                        TextButton(onClick = back, enabled = !state.busy) { Text("Retour aux séances") }
+                        TextButton(onClick = back, enabled = !state.busy && !state.exportLocked) { Text("Retour aux séances") }
                     }
                 }
                 SessionScreen.SESSION -> {
@@ -132,7 +137,7 @@ fun LMarcheryApp(controller: SessionController) {
                         }
                         item(key = "navigation") {
                             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                TextButton(onClick = back, enabled = !state.busy) { Text("Retour aux séances") }
+                                TextButton(onClick = back, enabled = !state.busy && !state.exportLocked) { Text("Retour aux séances") }
                                 if (session.status == SessionStatus.DRAFT) Button(onClick = controller::startSession,
                                     enabled = state.ready && state.supportedConfiguration) { Text("Démarrer") }
                             }

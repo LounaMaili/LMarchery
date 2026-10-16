@@ -13,11 +13,17 @@ interface SessionRepository {
     suspend fun update(expected: DomainArchive, proposed: DomainArchive): SessionUpdateResult
 }
 
+/** Separate read-only capability: no discover/read loop pretending to be atomic. */
+fun interface ArchiveSource {
+    suspend fun readArchive(): ArchiveReadResult
+}
+
 /** Process-owned store; disk access and reconstruction never block the UI thread. */
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository {
+) : SessionRepository, ArchiveSource {
+    override suspend fun readArchive() = withContext(dispatcher) { store.readArchive() }
     override suspend fun discover() = withContext(dispatcher) { store.discover() }
     override suspend fun read(uuid: String) = withContext(dispatcher) { store.read(uuid) }
     override suspend fun create(archive: DomainArchive) = withContext(dispatcher) { store.create(archive) }

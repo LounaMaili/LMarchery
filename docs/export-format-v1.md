@@ -1,6 +1,6 @@
 # Contrat de sauvegarde V1 — LMarchery
 
-> Snapshots Kotlin et reconstruction validée ; aucun fichier importé ou exporté.
+> Export JSON UTF-8 opérationnel ; reconstruction indépendante, sans import utilisateur.
 
 ## 1. État implémenté
 
@@ -17,12 +17,14 @@ Le module `core:database` utilise ce contrat pour créer, relire et mettre à jo
 des séances en Room/SQLite, utilisées par le premier parcours Compose ; voir les
 [ADR 016](adr/016-persistance-locale-room.md) et
 [ADR 017](adr/017-mise-a-jour-seances-room.md) et
-[ADR 018](adr/018-integration-android-room.md). Il n'existe ni lecteur/écrivain JSON,
-ni restauration de fichier Android, ni fusion entre appareils.
-L'extension `.lmarchery.json`, UTF-8, MIME `application/json` et
-le partage par intent restent prévus. Aucun format opérationnel antérieur n'a
-été publié. L'ancien exemple `version: 1` était préparatoire ; aucune migration
-ne lui attribue un fuseau ou une provenance manquante.
+[ADR 018](adr/018-integration-android-room.md). Le module JVM `core:export`
+fournit désormais `ArchiveJsonCodec.encode(DomainArchive)` et `decode(ByteArray)`.
+L’[ADR 021](adr/021-export-json-versionne-android.md) définit le fichier opérationnel
+et le parcours Android « Exporter mes séances », via le sélecteur de documents.
+Extension `.lmarchery.json`, UTF-8 sans BOM, MIME `application/json`.
+Il n’existe ni import utilisateur, ni restauration dans Room, ni fusion entre appareils.
+L’ancien exemple `version: 1` était préparatoire ; aucune migration ne lui attribue
+un fuseau ou une provenance manquante.
 
 ## 2. Identités et versions distinctes
 
@@ -145,14 +147,68 @@ Une répétition conserve l'offset choisi ; un trou ou un offset incompatible av
 les règles IANA disponibles n'est jamais normalisé. Voir
 [ADR 014](adr/014-convention-temporelle-utc.md).
 
-Les propriétés sans valeur par défaut des snapshots sont nécessaires, listes
-et `null` explicites compris. Les versions, dates, définitions et provenances
-nullables permettent de diagnostiquer certaines données manquantes, jamais de les
-valider par défaut. Les propriétés non nullables absentes, enums inconnus,
-coordonnées invalides et définitions impossibles devront être rejetés par le
-futur décodeur avant construction. Celui-ci devra aussi traiter explicitement
-les champs inconnus sans ignorer une provenance nouvelle. Aucune validation
-syntaxique JSON n'est implémentée ici.
+Toutes les propriétés nommées dans les snapshots sont **obligatoires dans le
+fichier**, listes et `null` explicites compris. Cela concerne aussi les propriétés
+nullable des assertions quand l’objet existe ; `assertions: null` reste accepté.
+Aucun défaut Kotlin n’est injecté pour un champ absent. Un `null` reçu reste
+identifiable dans la valeur de transfert, puis les invariants de reconstruction
+vérifient s’il est admissible. Versions, dates ou provenances nécessaires nulles
+restent non résolues. Les champs inconnus et clés dupliquées sont rejetés.
+
+### Représentation JSON opérationnelle
+
+Les noms et l’ordre des propriétés sont ceux des adaptateurs explicites de
+[`ArchiveJsonMapping.kt`](../core/export/src/main/kotlin/com/lmarchery/core/export/ArchiveJsonMapping.kt),
+alignés sur [`ArchiveSnapshot.kt`](../core/scoring/src/main/kotlin/com/lmarchery/core/scoring/archive/ArchiveSnapshot.kt).
+La sortie utilise deux espaces d’indentation, sans date d’export variable.
+Les listes métier conservent leur ordre ; la collecte trie les séances et profils
+par UUID et déduplique les profils partagés. Un même état donne les mêmes octets.
+
+- Enums : noms exacts en chaînes, par exemple `IN_PROGRESS`, `MANUAL`,
+  `BOUNDARY_JUDGMENT`, `SCORE_ZONES`. Aucune valeur inconnue n’est ignorée.
+- Entiers : nombres JSON décimaux sans fraction/exposant, dans la plage `Int`.
+- `Float` : nombres JSON finis, représentation décimale `Float.toString`, lus
+  directement vers le même type. Aucun passage intermédiaire par `Double`.
+  Le lexème négatif de zéro est conservé ; NaN, infinis, débordements et
+  sous-débordement non nul vers zéro sont rejetés. Les tests comparent les bits.
+- Instants : chaînes ISO avec offset obligatoire ; sortie UTC `Z`, nanosecondes
+  intactes. Date civile : objet `{localDateTime, zoneId, offset}` validé sans
+  fuseau implicite. Textes Unicode et échappements JSON sont conservés.
+- Objets : propriétés exactes, types exacts, pas de clé Room `id`, total ou
+  statistique stockée. La définition complète du profil reste obligatoire.
+
+Exemple de décision de limite complète sur un profil compatible :
+
+```json
+{
+  "kind": "BOUNDARY_JUDGMENT",
+  "selected": { "score": 10, "isX": false },
+  "decidedAt": "2026-10-16T11:11:47.123456789Z",
+  "boundary": { "type": "SCORE_ZONES", "radiusNormalized": 0.1 },
+  "reason": null,
+  "assertions": {
+    "distanceFromCenter": 0.105,
+    "scoreCalculated": 9,
+    "scoreFinal": 10,
+    "geometricIsX": false,
+    "isX": false,
+    "isMiss": false,
+    "isCordDecisionManual": true
+  }
+}
+```
+
+Budgets par défaut du lecteur et de l’export : 16 MiB, profondeur 32,
+200 000 valeurs JSON, 20 000 éléments par tableau, 64 propriétés par objet,
+16 384 caractères UTF-16 par chaîne/clé, 128 caractères par nombre. UTF-8 invalide,
+BOM, surrogate isolé, JSON tronqué/malformé et contenu après la racine sont refusés.
+Le dépassement échoue entièrement, sans troncature ni export partiel.
+
+`decode` rend `Accepted(snapshot, archive)` seulement après reconstruction totale,
+ou `Rejected(JsonIssue(code, path, detail))`. Les erreurs syntaxiques/structurelles
+ajoutent notamment `INVALID_JSON`, `TYPE`, `UNKNOWN_FIELD`, `DUPLICATE_KEY`,
+`UNKNOWN_ENUM` et `LIMIT` aux diagnostics métier ci-dessous. Aucun résultat accepté
+partiellement n’est fourni. Une validité indépendante n’autorise aucune mise à jour.
 
 ## 4. Conflits et intervention
 
@@ -189,7 +245,7 @@ données connues, sans confondre validité structurelle et autorisation d'intég
 Une ancienne date ou un triplet devenu incompatible après mise à jour IANA reste
 identifiable dans les données reçues, sans conversion silencieuse en séance valide.
 
-## 5. Persistance et étapes restantes pour les fichiers
+## 5. Collecte, écriture Android et étapes restantes
 
 Room/SQLite 1 conserve déjà profils complets, enfants ordonnés, décisions et
 traces dans des tables reliées par UUID. Les instants sont des couples entiers
@@ -201,11 +257,35 @@ et le validateur indépendant de transition de l’[ADR 017](adr/017-mise-a-jour
 sans assouplir les conflits de `reconstructArchive(snapshot, known)`.
 Le format et les versions de sauvegarde restent inchangés.
 
+`RoomSessionStore.readArchive()` lit les racines, profils et descendants dans une
+seule transaction lecteur. Une séance illisible, une identité de séance orpheline
+ou une définition contradictoire fait échouer l’ensemble. Les séances en cours
+et terminées sont incluses ; aucun profil actuel ne remplace un profil absent.
+Le lecteur ne modifie aucune table. Les tests disque contrôlent aussi le cas
+d’une écriture concurrente pendant la collecte et une réouverture exacte.
+
+Avant le sélecteur Android, l’archive est encodée, décodée, reconstruite et comparée
+intégralement à la source. Une base vide est signalée sans présenter une sauvegarde
+contenant des séances. Une sauvegarde de séance non confirmée ou une correction
+temporaire doit être résolue/fermée explicitement avant export.
+
+`CreateDocument` propose un nouveau `.lmarchery.json` et laisse choisir sa
+destination, sans permission globale. Écriture, flush, fermeture et relecture
+identique précèdent tout succès. Un fournisseur sans relecture ne peut pas
+confirmer la sauvegarde dans ce parcours. L’échec laisse éventuellement un fichier
+vide/incomplet : ne pas l’utiliser ; aucune suppression ni réécriture automatique.
+L’annulation n’écrit aucun contenu. La base reste inchangée pendant toutes les étapes.
+Le fichier est en clair et peut contenir des informations personnelles. Une
+empreinte SHA-256 de contrôle n’est ni une signature ni un chiffrement.
+
+L’arrêt du processus peut interrompre la sortie ; un fichier non acquitté ne doit
+pas être présumé valide. Les octets préparés ne sont pas un journal durable.
+Seuls les modèles présents sont exportés, sans journal exhaustif des décisions
+successives à position constante. Aucun import n’est disponible dans Android.
+
 Restent à réaliser :
 
 - Prévoir les migrations explicites pour chaque évolution future du schéma Room.
-- Développer le JSON strict, les limites de taille et les erreurs syntaxiques ;
-  préserver les décimales nécessaires au même `Float`.
 - Définir matériel/presets et portée d'une sauvegarde utilisateur complète.
 - Définir l'intervention sur conflits et l'éventuelle preuve de filiation des
   révisions, sans écrasement fondé sur la seule horloge.
@@ -214,4 +294,4 @@ Restent à réaliser :
 
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
-*Dernière mise à jour : 15 octobre 2026*
+*Dernière mise à jour : 16 octobre 2026*

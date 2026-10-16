@@ -26,6 +26,7 @@ kotlin {
             }
         }
         jvmTest.dependencies {
+            implementation(project(":core:export"))
             implementation(kotlin("test-junit5"))
             runtimeOnly("org.junit.platform:junit-platform-launcher")
         }

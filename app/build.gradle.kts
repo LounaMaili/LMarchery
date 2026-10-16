@@ -37,6 +37,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:scoring"))
     implementation(project(":core:database"))
+    implementation(project(":core:export"))
 
     val composeBom = platform("androidx.compose:compose-bom:2024.12.01")
     implementation(composeBom)

@@ -79,6 +79,15 @@ relance automatique sur une base plus récente. La découverte doit signaler les
 entrées illisibles. Conserver les tests du contrôleur et distinguer clairement
 validations JVM/SQLite et vérifications physiques décrites dans les tests terrain.
 
+L'export JSON suit l'ADR 021 : `:core:export:test` fait partie de `./gradlew test`.
+Vérifier ses aller-retour complets, les bits Float, les dates et les rejets stricts.
+La collecte globale utilise `RoomSessionStore.readArchive()` dans une transaction
+lecteur ; ne jamais la remplacer par une boucle `discover`/`read` non atomique.
+Tester l'absence d'écriture, les orphelins/corruptions et les révisions concurrentes.
+Un succès d'export Android exige la fermeture et une relecture identique du document.
+Un échec peut laisser un fichier incomplet : aucun succès anticipé, effacement ou
+retry automatique. Ne pas ajouter d'import/fusion sans demande distincte.
+
 Utiliser un **JDK 21 complet**, le SDK Android 35 et les Build Tools 34.0.0.
 Le script détecte un JDK 21 installé ; un `JAVA_HOME` explicite incompatible
 provoque un échec. Les commandes Gradle directes exigent de préparer `JAVA_HOME`.
