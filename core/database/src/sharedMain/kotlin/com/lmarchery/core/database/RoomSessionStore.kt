@@ -192,7 +192,17 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
             ImportConflict(it.uuid, "REGISTERED_IDENTITY_CONFLICT", "identities[${it.uuid}]", "UUID is already registered outside validated local data.")
         }
         caller.ensureActive()
-        return known to plan.copy(conflicts = java.util.Collections.unmodifiableList(plan.conflicts + collisions))
+        val collisionIds = collisions.mapNotNull { it.uuid }.toSet()
+        val blockedSessions = archive.sessions.filter { s ->
+            s.uuid in collisionIds || s.targetType.uuid in collisionIds || s.ends.any { end ->
+                end.uuid in collisionIds || end.impacts.any { it.uuid in collisionIds }
+            }
+        }.map { it.uuid }.toSet()
+        fun <T> owned(values: List<T>): List<T> = java.util.Collections.unmodifiableList(values.toList())
+        return known to plan.copy(newSessionUuids = owned(plan.newSessionUuids.filterNot { it in blockedSessions }),
+            identicalSessionUuids = owned(plan.identicalSessionUuids.filterNot { it in blockedSessions }),
+            newProfileUuids = owned(plan.newProfileUuids.filterNot { it in collisionIds }),
+            conflicts = owned(plan.conflicts + collisions))
     }
 
     /** Deterministic UUID discovery only. Each entry still requires contextualized read() validation. */

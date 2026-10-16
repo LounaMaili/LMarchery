@@ -43,10 +43,15 @@ fun planArchiveImport(received: DomainArchive, known: DomainArchive): ArchiveImp
             "Known identity has different content, entity type or parent; no overwrite allowed.")
     }
     val sessions = known.sessions.associateBy { it.uuid }
+    val receivedProfiles = received.profiles.associateBy { it.definition!!.uuid }
+    val knownProfiles = known.profiles.associateBy { it.definition!!.uuid }
+    fun entirelyAbsent(session: com.lmarchery.core.model.session.Session): Boolean =
+        session.uuid !in old && session.ends.all { end -> end.uuid !in old && end.impacts.all { it.uuid !in old } }
+    fun compatibleProfile(uuid: String) = uuid !in old || knownProfiles[uuid] == receivedProfiles[uuid]
     fun <T> owned(values: List<T>): List<T> = Collections.unmodifiableList(values.toList())
     return ArchiveImportPlan(received.sessions.size, received.profiles.size,
-        owned(received.sessions.filter { it.uuid !in sessions }.map { it.uuid }.sorted()),
-        owned(received.sessions.filter { sessions[it.uuid] == it }.map { it.uuid }.sorted()),
+        owned(received.sessions.filter { entirelyAbsent(it) && compatibleProfile(it.targetType.uuid) }.map { it.uuid }.sorted()),
+        owned(received.sessions.filter { sessions[it.uuid] == it && knownProfiles[it.targetType.uuid] == receivedProfiles[it.targetType.uuid] }.map { it.uuid }.sorted()),
         owned(received.profiles.filter { it.definition!!.uuid !in old }.map { it.definition!!.uuid }.sorted()),
         owned(conflicts))
 }

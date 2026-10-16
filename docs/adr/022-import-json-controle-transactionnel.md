@@ -20,9 +20,12 @@ sur des `DomainArchive` validés, sans Android, JSON ni SQL. L’ordre des racin
 profils découverts n’affecte pas la comparaison ; les listes métier d’enfants et
 l’ordre des zones restent significatifs.
 
-- Nouvelle : identité de séance absente. Les collisions éventuelles de ses
-  descendants ou de son profil bloquent néanmoins tout le fichier.
-- Identique : égalité de tout le contenu métier, dates et révisions comprises.
+- Nouvelle : identités de séance et de tous ses descendants absentes, avec un
+  profil absent ou strictement compatible, édition comprise. Un UUID déjà réservé
+  dans le registre ne peut pas être compté comme nouvel objet importable.
+- Identique : égalité de tout le contenu métier, profil et édition, dates et
+  révisions compris. Un conflit de profil interdit aussi de compter ses séances
+  comme identiques, même si leurs seules propriétés de séance coïncident.
 - Conflit : toute divergence de contenu, d’édition, de type d’entité ou de parent.
   Un même score avec une autre provenance est différent. Une trace retirée ou
   réécrite, un autre point, titre ou `updatedAt` reste un conflit.

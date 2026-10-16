@@ -69,9 +69,14 @@ class ArchiveImportPlanTest {
         val s=archive(incoming).toSnapshot();val e=s.sessions.single().ends.single()
         val reused=s.copy(sessions=listOf(s.sessions.single().copy(ends=listOf(e.copy(uuid=old.ends.single().uuid)))))
         val plan=planArchiveImport(accepted(reused),archive(old))
-        assertTrue(plan.conflicts.any { it.uuid==old.ends.single().uuid })
+        assertTrue(plan.conflicts.any { it.uuid==old.ends.single().uuid });assertTrue(plan.newSessionUuids.isEmpty())
         val wrongKind=s.copy(sessions=listOf(s.sessions.single().copy(uuid=old.ends.single().impacts.single().uuid)))
         assertTrue(planArchiveImport(accepted(wrongKind),archive(old)).conflicts.isNotEmpty())
+        val profile=target.copy(uuid=old.ends.single().impacts.single().uuid,isBuiltIn=false)
+        val changed=s.sessions.single().let { session ->session.copy(targetTypeUuid=profile.uuid,
+            ends=session.ends.map { end ->end.copy(impacts=end.impacts.map { it.copy(targetTypeUuid=profile.uuid) }) }) }
+        val profileCollision=planArchiveImport(accepted(s.copy(profiles=listOf(TargetProfileSnapshot(profile,null)),sessions=listOf(changed))),archive(old))
+        assertTrue(profileCollision.conflicts.any { it.uuid==profile.uuid });assertTrue(profileCollision.newSessionUuids.isEmpty())
     }
     @Test fun `custom profiles retain UUID definition and edition while different edition conflicts`() {
         val custom=target.copy(uuid=id(90),isBuiltIn=false,name="Synthetic custom")
@@ -79,7 +84,9 @@ class ArchiveImportPlanTest {
             Session(id(91),SessionDateTime.fromInstant(now,ZoneId.of("UTC")),SessionStatus.DRAFT,title="Custom",targetType=custom,
                 distanceM=18,arrowCountMode=ArrowCountMode.FREE,isIndoor=true,scoringMode=ScoringMode.TRAINING,createdAt=now,updatedAt=now))))
         assertTrue(planArchiveImport(customArchive("edition1"),archive()).canImport)
-        assertTrue(planArchiveImport(customArchive("edition2"),customArchive("edition1")).conflicts.any { it.uuid==custom.uuid })
+        val divergent=planArchiveImport(customArchive("edition2"),customArchive("edition1"))
+        assertTrue(divergent.conflicts.any { it.uuid==custom.uuid })
+        assertTrue(divergent.identicalSessionUuids.isEmpty());assertTrue(divergent.newSessionUuids.isEmpty())
         val altered=archive(seed(1)).toSnapshot().let { it.copy(profiles=listOf(it.profiles.single().copy(definition=target.copy(name="Altered")))) }
         assertIs<ArchiveReconstruction.NeedsIntervention>(reconstructArchive(altered))
     }

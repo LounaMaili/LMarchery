@@ -101,6 +101,9 @@ class RoomArchiveImportTest {
             imported(store,first,1);val before=contents()
             for(p in listOf(profile.copy(regulatoryEdition="club2"),profile.copy(definition=definition.copy(name="Other")))) {
                 val preview=preview(store,custom(2,p));assertTrue(preview.plan.conflicts.any { it.uuid==definition.uuid })
+                assertTrue(preview.plan.newSessionUuids.isEmpty())
+                val existing=preview(store,custom(1,p))
+                assertTrue(existing.plan.identicalSessionUuids.isEmpty())
                 assertIs<ArchiveImportResult.Conflict>(store.importArchive(preview));assertEquals(before,contents())
             }
         }
@@ -180,7 +183,7 @@ class RoomArchiveImportTest {
             assertIs<ArchiveReadResult.Found>(store.readArchive())
             rows("INSERT INTO entity_identities VALUES('$id','END')")
             val before=contents();val p=preview(store,source)
-            assertTrue(p.plan.conflicts.any { it.uuid==id && it.code=="REGISTERED_IDENTITY_CONFLICT" })
+            assertTrue(p.plan.conflicts.any { it.uuid==id && it.code=="REGISTERED_IDENTITY_CONFLICT" });assertTrue(p.plan.newSessionUuids.isEmpty())
             assertIs<ArchiveImportResult.Conflict>(store.importArchive(p));assertEquals(before,contents())
         }
     }
