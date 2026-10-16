@@ -354,7 +354,9 @@ class SessionController(
                 ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, storedPreview = null,
                     pending = if (abandonPending) null else ui.pending, problem = null, confirmation = null,
                     impactEdit = null,
-                    selectedEndUuid = result.session.ends.firstOrNull { it.status == EndStatus.EDITING }?.uuid
+                    selectedEndUuid = ui.selectedEndUuid?.takeIf { selected ->
+                        ui.session?.uuid == result.session.uuid && result.session.ends.any { it.uuid == selected }
+                    } ?: result.session.ends.firstOrNull { it.status == EndStatus.EDITING }?.uuid
                         ?: result.session.ends.lastOrNull()?.uuid)
             }
             else -> ui = ui.copy(problem = readProblem(result))

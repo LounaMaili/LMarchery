@@ -385,3 +385,71 @@ utilisateur, dump SQL ou capture n’est publié sur GitHub/CI. Voir
 ---
 
 *Dernière mise à jour : 29 avril 2026*
+
+## Protocole historique et scores (PR 21)
+
+Cette campagne complète celles des PR 16 à 20, sans les remplacer. Utiliser les
+quatre séances synthétiques existantes si disponibles, sans en créer davantage.
+Ne pas désinstaller ni effacer les données ; captures, bases et exports restent
+hors du dépôt. Identifier à nouveau le numéro de série ADB avant l’installation `-r`.
+
+1. Fermer le processus, copier en privé la base et ses éventuels WAL/SHM, relever
+   toutes les lignes de toutes les tables et vérifier l’intégrité. Ce sera l’attendu.
+2. Vérifier l’accueil : séances à reprendre, historique, intervention, ordre par
+   `SessionDateTime.toInstant()` décroissant puis UUID ; date civile conservée,
+   statut, profil/distance, points et nombre de volées validés.
+3. Ouvrir une séance en cours : titre/scores/blason avant les détails, corrections
+   toujours accessibles. Lire tableau et statistiques, puis revenir sans écrire.
+4. Consulter une volée validée, revenir à l’éditable si présente. Vérifier M/X,
+   l’ordre des flèches, les totaux, la volée vide et les moyennes indisponibles.
+   Ouvrir la séance terminée : aucun bouton d’édition, tous ses blasons consultables.
+5. Faire tourner l’écran pendant une consultation et une correction non soumise :
+   conserver volée, défilement et sélection ; annuler explicitement sans enregistrer.
+   Restaurer les paramètres de rotation initiaux, même en cas d’échec du test.
+6. Fermer totalement puis relancer : quatre séances intactes. Tester Sauvegardes :
+   export de contrôle vers un nouveau fichier, succès après relecture ; import
+   du même fichier en aperçu identique puis fermer sans écrire. Les doubles actions
+   sont bloquées pendant le sélecteur/opération.
+7. Fermer le processus, recopier la base et comparer exactement toutes les tables
+   à l’attendu. Décoder/reconstruire l’export et comparer tout le contenu métier
+   aux séances/profils précédents, pas uniquement les totaux.
+
+Restent des essais au doigt : lisibilité extérieure, grande police, gants,
+petit écran, ergonomie en paysage et rapidité entre deux volées. Une navigation
+ADB réussie et les simulations JVM d’erreurs/PendingSave ne les prouvent pas.
+
+### Résultats ADB — 16 octobre 2026
+
+Pixel 8 / Android 17 (API 37), installation `adb install -r` réussie. Les quatre
+séances synthétiques des PR 16/17/18/20 ont été réutilisées, sans nouvelle séance.
+Classement des cartes comparé aux instants/UUID de SQLite ; tableaux et résumés
+consultés, dont les moyennes indisponibles d’une séance sans volée validée.
+La séance terminée reste sans commande d’édition ; sa volée validée et sa volée
+vide sont accessibles. Sélection par tableau et conservation après rotation
+portrait/paysage vérifiées. Les commandes de correction restent accessibles par
+défilement en paysage.
+
+Un candidat de repositionnement non soumis a survécu à la rotation, puis a été
+annulé explicitement ; aucun enregistrement demandé. Les deux paramètres de
+rotation ont été restaurés à leurs valeurs initiales. Force-stop et relancement
+retrouvent les quatre séances.
+
+Export de contrôle confirmé après fermeture/relecture : quatre séances, un profil,
+12 impacts, trois traces, 25 303 octets. Décodage/reconstruction JVM, réencodage
+canonique et comparaison complète aux bases avant/après réussis, ainsi qu’aux
+preuves de fin de PR 20 : UUID, dates/nanosecondes, points, scores et provenances.
+L’aperçu d’import du même fichier indique zéro nouvelle, quatre identiques et
+zéro conflit ; fermeture explicite sans importer.
+
+Toutes les lignes de toutes les tables SQLite avant/après sont exactement égales,
+contrôles d’intégrité réussis. Les preuves et le fichier restent hors Git. Aucune
+désinstallation, aucun effacement de données ou ajout de séance. La navigation
+ancienne volée active → volée éditable, les PendingSave/erreurs SQL et doubles
+commandes restent contrôlés par les tests JVM, sans modifier les fixtures téléphone.
+
+Validation locale : `./scripts/dev-check.sh --rerun-tasks --console=plain` réussi :
+86 tests modèle, 193 scoring, 10 export, 96 SQLite natif sur disque, 122 Android
+JVM debug et 122 release, zéro échec/erreur/ignoré. Compilation app/database et
+lint réussis ; cinq avertissements de dépendances préexistants, zéro erreur.
+Les 21 nouveaux tests couvrent la présentation et les protections de navigation.
+Ces résultats ADB ne constituent pas des essais au doigt en situation réelle.

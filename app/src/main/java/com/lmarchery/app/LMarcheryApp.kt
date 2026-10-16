@@ -4,17 +4,19 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.scoring.ScoreDecisionKind
-import com.lmarchery.core.scoring.calculateEndScore
+import kotlinx.coroutines.launch
 import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
 import com.lmarchery.feature.sessions.*
@@ -42,153 +44,172 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         }
     }
     BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null || state.archiveOperationLocked, onBack = back)
-    Scaffold { padding ->
-        LazyColumn(modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
-            item(key = "header") {
-                Text("LMarchery", style = MaterialTheme.typography.headlineMedium)
-                Text("Séances locales sur cet appareil · Export et import JSON contrôlé disponibles.", style = MaterialTheme.typography.bodySmall)
+    val scrollStates = rememberSaveableStateHolder()
+    val scope = rememberCoroutineScope()
+    // Key only navigation identity: SQL acknowledgements must not recreate scroll state.
+    scrollStates.SaveableStateProvider("${state.screen}:${state.session?.uuid.orEmpty()}") {
+        val listState = rememberLazyListState()
+        val showEnd: (String) -> Unit = { uuid ->
+            if (state.canNavigate) {
+                controller.selectEnd(uuid)
+                scope.launch { listState.animateScrollToItem(0) }
             }
-            item(key = "export") { ExportPanel(exportCoordinator, state) }
-            if (state.screen == SessionScreen.LIST) item(key = "import") { ImportPanel(importCoordinator, state) }
-            if (state.busy) item(key = "loading") {
-                LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
-                Text(if (state.pending != null) "Enregistrement en cours…" else "Chargement…")
-            }
-            state.problem?.let { problem -> item(key = "problem") {
-                Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)) {
-                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text(when (problem.kind) {
-                            ProblemKind.CONFLICT -> "Conflit : une action explicite est nécessaire."
-                            ProblemKind.INTERVENTION -> "Données nécessitant une intervention. Aucune réparation automatique."
-                            else -> "Opération non confirmée."
-                        }, style = MaterialTheme.typography.titleSmall)
-                        Text(problem.message)
-                        if (state.pending == null && state.impactEdit == null && problem.retryable) {
-                            TextButton(enabled = !state.busy, onClick = {
-                                if (state.screen == SessionScreen.LIST) controller.refresh()
-                                else state.session?.uuid?.let(controller::openSession)
-                            }) { Text("Réessayer la lecture") }
-                        }
-                    }
+        }
+        Scaffold { padding ->
+            LazyColumn(state = listState, modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
+                if (state.screen == SessionScreen.LIST) item(key = "header") {
+                    Text("LMarchery", style = MaterialTheme.typography.headlineMedium)
+                    Text("Séances locales sur cet appareil", style = MaterialTheme.typography.bodySmall)
                 }
-            } }
-            state.pending?.let { pending -> item(key = "pending") {
-                Card {
-                    Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Text("Action non confirmée : ${pending.description}")
-                        Text("Les impacts et totaux ci-dessous sont ceux du dernier enregistrement confirmé.")
-                        if (state.problem?.retryable == true) Button(onClick = controller::retrySave, enabled = !state.busy) { Text("Réessayer la même sauvegarde") }
-                        OutlinedButton(onClick = controller::previewStored, enabled = !state.busy) { Text("Consulter la version enregistrée") }
-                        TextButton(onClick = { confirmLeave = true }, enabled = !state.busy) { Text("Abandonner l’action locale et revenir") }
-                    }
+                if (state.busy) item(key = "loading") {
+                    LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+                    Text(if (state.pending != null) "Enregistrement en cours…" else "Chargement…")
                 }
-            } }
-            state.confirmation?.let { message -> item(key = "confirmation") { Text(message, color = MaterialTheme.colorScheme.primary) } }
-            when (state.screen) {
-                SessionScreen.LIST -> {
-                    item(key = "list-actions") {
-                        Button(onClick = controller::configure, enabled = state.ready) { Text("Nouvelle séance") }
-                        OutlinedButton(onClick = controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
-                        if (!state.busy && state.entries.isEmpty() && state.problem == null) Text("Aucune séance enregistrée.")
-                    }
-                    items(state.entries, key = { it.uuid }) { entry ->
-                        Card(Modifier.fillMaxWidth()) {
-                            Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                                entry.session?.let { s ->
-                                    Text(s.title, style = MaterialTheme.typography.titleMedium)
-                                    Text("${s.date.localDateTime} · ${s.date.zoneId.id} (${s.date.offset})")
-                                    Text("${s.targetType.name} · ${s.distanceM} m")
-                                    Text(s.status.label())
-                                } ?: run {
-                                    Text("Séance illisible : ${entry.uuid}")
-                                    Text(entry.problem?.message ?: "Lecture non résolue.", color = MaterialTheme.colorScheme.error)
-                                }
-                                OutlinedButton(onClick = { controller.openSession(entry.uuid) }, enabled = state.ready) {
-                                    Text(if (entry.session == null) "Réessayer la lecture" else "Ouvrir")
-                                }
+                state.problem?.let { problem -> item(key = "problem") {
+                    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer)) {
+                        Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Text(when (problem.kind) {
+                                ProblemKind.CONFLICT -> "Conflit : une action explicite est nécessaire."
+                                ProblemKind.INTERVENTION -> "Données nécessitant une intervention. Aucune réparation automatique."
+                                else -> "Opération non confirmée."
+                            }, style = MaterialTheme.typography.titleSmall)
+                            Text(problem.message)
+                            if (state.pending == null && state.impactEdit == null && problem.retryable) {
+                                TextButton(enabled = !state.busy, onClick = {
+                                    if (state.screen == SessionScreen.LIST) controller.refresh()
+                                    else state.session?.uuid?.let(controller::openSession)
+                                }) { Text("Réessayer la lecture") }
                             }
                         }
                     }
-                }
-                SessionScreen.CREATE -> item(key = "configuration") {
-                    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Text("Créer et démarrer une séance", style = MaterialTheme.typography.titleLarge)
-                        OutlinedTextField(value = state.title, onValueChange = controller::setTitle, enabled = state.ready,
-                            label = { Text("Titre facultatif") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                        Text("3 flèches par volée · Entraînement · Date dans le fuseau du téléphone à la création.")
-                        IndoorProfile.entries.forEach { profile ->
-                            OutlinedButton(onClick = { controller.selectProfile(profile) }, enabled = state.ready,
-                                modifier = Modifier.fillMaxWidth()) {
-                                Text("${if (state.selectedProfile == profile) "✓ " else ""}${profile.label}")
-                            }
+                } }
+                state.pending?.let { pending -> item(key = "pending") {
+                    Card {
+                        Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Text("Action non confirmée : ${pending.description}")
+                            Text("Les impacts et totaux ci-dessous sont ceux du dernier enregistrement confirmé.")
+                            if (state.problem?.retryable == true) Button(onClick = controller::retrySave, enabled = !state.busy) { Text("Réessayer la même sauvegarde") }
+                            OutlinedButton(onClick = controller::previewStored, enabled = !state.busy) { Text("Consulter la version enregistrée") }
+                            TextButton(onClick = { confirmLeave = true }, enabled = !state.busy) { Text("Abandonner l’action locale et revenir") }
                         }
-                        Text("Sans titre : « Séance salle — ${state.selectedProfile.label} ».", style = MaterialTheme.typography.bodySmall)
-                        Button(onClick = controller::createSession, enabled = state.ready) { Text("Créer et démarrer") }
-                        TextButton(onClick = back, enabled = !state.busy && !state.archiveOperationLocked) { Text("Retour aux séances") }
                     }
-                }
-                SessionScreen.SESSION -> {
-                    val session = state.session
-                    if (session != null) {
-                        item(key = "session-summary") {
-                            Text(session.title, style = MaterialTheme.typography.titleLarge)
-                            Text("${session.targetType.name} · ${session.distanceM} m · ${session.status.label()}")
-                            Text("${session.date.localDateTime} · ${session.date.zoneId.id} (${session.date.offset})", style = MaterialTheme.typography.bodySmall)
-                            Text("Total des volées validées : ${state.validatedTotal}", style = MaterialTheme.typography.titleMedium)
-                            Text("Total provisoire (volée non validée) : ${state.provisionalTotal}")
-                            if (session.status == SessionStatus.COMPLETED) Text("Consultation en lecture seule. La séance est terminée.")
-                            else if (!state.supportedConfiguration) Text("Configuration consultable ; la saisie de ce premier parcours est limitée aux profils indoor proposés, en entraînement, à trois flèches.")
+                } }
+                when (state.screen) {
+                    SessionScreen.LIST -> {
+                        item(key = "list-actions") {
+                            Button(onClick = controller::configure, enabled = state.ready) { Text("Nouvelle séance") }
+                            OutlinedButton(onClick = controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
+                            if (!state.busy && state.entries.isEmpty() && state.problem == null) Text("Aucune séance enregistrée.")
                         }
-                        item(key = "navigation") {
-                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                TextButton(onClick = back, enabled = !state.busy && !state.archiveOperationLocked) { Text("Retour aux séances") }
-                                if (session.status == SessionStatus.DRAFT) Button(onClick = controller::startSession,
-                                    enabled = state.ready && state.supportedConfiguration) { Text("Démarrer") }
+                        val history = presentSessionHistory(state.entries)
+                        val sections = listOf(
+                            "Séances à reprendre" to history.resumable,
+                            "Historique" to history.completed,
+                            "Séances nécessitant une intervention" to history.intervention,
+                        )
+                        sections.forEach { (heading, entries) ->
+                            item(key = heading) {
+                                Text(heading, style = MaterialTheme.typography.titleLarge)
+                                if (entries.isEmpty()) Text("Aucune séance dans cette section.", style = MaterialTheme.typography.bodySmall)
+                            }
+                            items(entries, key = { it.uuid }) { entry ->
+                                SessionHistoryCard(entry, state.canNavigate) { controller.openSession(entry.uuid) }
                             }
                         }
-                        state.displayedEnd?.let { end -> item(key = "target-${end.uuid}") {
-                            Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée" else "En saisie"}", style = MaterialTheme.typography.titleMedium)
-                            if (state.impactEdit != null) ImpactEditPanel(state, controller)
-                            val interaction = when {
-                                state.canProposeReposition -> TargetInteraction.REPOSITION
-                                state.canAddImpact -> TargetInteraction.ADD_IMPACT
-                                else -> TargetInteraction.READ_ONLY
-                            }
-                            TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
-                                Modifier.fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid, state.impactEdit?.candidate)
-                            Text(when {
-                                state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
-                                state.canAddImpact -> "Touchez le blason pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs au cercle comptent M."
-                                else -> "${end.impacts.size} impact(s) enregistré(s)."
-                            })
-                            Text(end.impacts.joinToString(" · ") { "#${it.index} : ${it.scoreLabel()}" }.ifEmpty { "Aucun impact enregistré." })
-                            Text("Total de cette volée : ${calculateEndScore(end)}${if (end.status == EndStatus.EDITING) " (provisoire)" else " (validé)"}")
-                        } }
-                        if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
-                            items(state.displayedEnd!!.impacts, key = { "select-${it.uuid}" }) { impact ->
-                                OutlinedButton(onClick = { controller.selectImpact(state.displayedEnd!!.uuid, impact.uuid) },
-                                    enabled = state.canSelectImpact, modifier = Modifier.fillMaxWidth()) {
-                                    Text("Sélectionner flèche #${impact.index} : ${impact.scoreLabel()}")
+                        // Always expanded: incidents and confirmations stay visible without a disclosure toggle.
+                        item(key = "backups-heading") { Text("Sauvegardes", style = MaterialTheme.typography.titleLarge) }
+                        item(key = "export") { ExportPanel(exportCoordinator, state) }
+                        item(key = "import") { ImportPanel(importCoordinator, state) }
+                    }
+
+                    SessionScreen.CREATE -> item(key = "configuration") {
+                        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                            Text("Créer et démarrer une séance", style = MaterialTheme.typography.titleLarge)
+                            OutlinedTextField(value = state.title, onValueChange = controller::setTitle, enabled = state.ready,
+                                label = { Text("Titre facultatif") }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                            Text("3 flèches par volée · Entraînement · Date dans le fuseau du téléphone à la création.")
+                            IndoorProfile.entries.forEach { profile ->
+                                OutlinedButton(onClick = { controller.selectProfile(profile) }, enabled = state.ready,
+                                    modifier = Modifier.fillMaxWidth()) {
+                                    Text("${if (state.selectedProfile == profile) "✓ " else ""}${profile.label}")
                                 }
                             }
+                            Text("Sans titre : « Séance salle — ${state.selectedProfile.label} ».", style = MaterialTheme.typography.bodySmall)
+                            Button(onClick = controller::createSession, enabled = state.ready) { Text("Créer et démarrer") }
+                            TextButton(onClick = back, enabled = !state.busy && !state.archiveOperationLocked) { Text("Retour aux séances") }
                         }
-                        if (session.status != SessionStatus.COMPLETED) item(key = "session-actions") {
-                            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                Button(onClick = controller::validateEnd, enabled = state.canValidate) { Text("Valider la volée (3 flèches)") }
-                                Button(onClick = controller::newEnd, enabled = state.canNewEnd) { Text("Nouvelle volée") }
-                                OutlinedButton(onClick = controller::completeSession, enabled = state.canComplete) { Text("Terminer la séance") }
-                                if (state.impactEdit != null) Text("Fermez la sélection ou annulez la correction avant de valider ou changer de volée.")
-                                if (state.editingEnd?.impacts?.isNotEmpty() == true) Text("Validez les trois flèches avant de terminer la séance.", style = MaterialTheme.typography.bodySmall)
+                    }
+                    SessionScreen.SESSION -> {
+                        val session = state.session
+                        if (session != null) {
+                            item(key = "session-summary") {
+                                Text(session.title, style = MaterialTheme.typography.titleLarge)
+                                Text(session.status.label())
+                                Text("Score validé : ${state.validatedTotal}", style = MaterialTheme.typography.titleMedium)
+                                if (session.status != SessionStatus.COMPLETED && state.editingEnd != null)
+                                    Text("Volée en cours : ${state.provisionalTotal} point(s) provisoires")
+                                if (session.status == SessionStatus.COMPLETED) Text("Consultation en lecture seule. La séance est terminée.")
+                                else if (!state.supportedConfiguration) Text("Configuration consultable en lecture seule dans cet éditeur.")
                             }
-                        }
-                        items(session.ends, key = { it.uuid }) { end ->
-                            OutlinedButton(onClick = { controller.selectEnd(end.uuid) }, enabled = state.canNavigate,
-                                modifier = Modifier.fillMaxWidth()) {
-                                Text("Volée ${end.index} · ${end.impacts.size} flèches · ${calculateEndScore(end)} · ${if (end.status == EndStatus.VALIDATED) "validée" else "provisoire"}")
+                            state.displayedEnd?.let { end -> item(key = "target") {
+                                Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
+                                val interaction = when {
+                                    state.canProposeReposition -> TargetInteraction.REPOSITION
+                                    state.canAddImpact -> TargetInteraction.ADD_IMPACT
+                                    else -> TargetInteraction.READ_ONLY
+                                }
+                                TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
+                                    Modifier.widthIn(max = 480.dp).fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid, state.impactEdit?.candidate)
+                                Text(when {
+                                    state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
+                                    state.canAddImpact -> "Touchez pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs comptent M."
+                                    else -> "${end.impacts.size} impact(s) enregistré(s)."
+                                }, style = MaterialTheme.typography.bodySmall)
+                                val row = presentEndScore(end)
+                                Text(row.arrowsLabel)
+                                Text(row.totalLabel)
+                            } }
+                            item(key = "navigation") {
+                                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                                    if (session.status == SessionStatus.IN_PROGRESS && state.editingEnd != null && !state.isEditingDisplayed)
+                                        OutlinedButton(onClick = { showEnd(state.editingEnd!!.uuid) }, enabled = state.canNavigate) { Text("Revenir à la volée en cours") }
+                                    TextButton(onClick = back, enabled = !state.busy && !state.archiveOperationLocked) { Text("Retour aux séances") }
+                                    if (session.status == SessionStatus.DRAFT && state.supportedConfiguration)
+                                        Button(onClick = controller::startSession, enabled = state.ready) { Text("Démarrer") }
+                                }
                             }
+                            if (state.impactEdit != null) item(key = "impact-edit") { ImpactEditPanel(state, controller) }
+                            if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
+                                items(state.displayedEnd!!.impacts, key = { "select-${it.uuid}" }) { impact ->
+                                    OutlinedButton(onClick = { controller.selectImpact(state.displayedEnd!!.uuid, impact.uuid) },
+                                        enabled = state.canSelectImpact, modifier = Modifier.fillMaxWidth()) {
+                                        Text("Sélectionner flèche #${impact.index} : ${impact.scoreLabel()}")
+                                    }
+                                }
+                            }
+                            if (session.status == SessionStatus.IN_PROGRESS && state.supportedConfiguration) item(key = "session-actions") {
+                                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    Button(onClick = controller::validateEnd, enabled = state.canValidate) { Text("Valider la volée (3 flèches)") }
+                                    Button(onClick = controller::newEnd, enabled = state.canNewEnd) { Text("Nouvelle volée") }
+                                    OutlinedButton(onClick = controller::completeSession, enabled = state.canComplete) { Text("Terminer la séance") }
+                                    if (state.impactEdit != null) Text("Fermez la sélection ou annulez la correction avant de valider ou changer de volée.")
+                                    if (state.editingEnd?.impacts?.isNotEmpty() == true) Text("Validez les trois flèches avant de terminer la séance.", style = MaterialTheme.typography.bodySmall)
+                                }
+                            }
+                            state.confirmation?.let { message -> item(key = "confirmation") { Text(message, color = MaterialTheme.colorScheme.primary) } }
+                            item(key = "score-table-heading") { Text("Tableau des scores", style = MaterialTheme.typography.titleLarge) }
+                            if (session.ends.isEmpty()) item(key = "no-ends") { Text("Aucune volée enregistrée.") }
+                            items(session.ends, key = { it.uuid }) { end ->
+                                EndScoreCard(presentEndScore(end), end.uuid == state.displayedEnd?.uuid, state.canNavigate) { showEnd(end.uuid) }
+                            }
+                            item(key = "score-details") { SessionScorePanel(session) }
+                            item(key = "session-details") {
+                                Text("${session.targetType.name} · ${session.distanceM} m")
+                                Text(session.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
+                            }
+                            item(key = "limitations") { Text("Corrections explicites avant validation : position ou score. Aucune suppression ni modification après validation.", style = MaterialTheme.typography.bodySmall) }
                         }
-                        item(key = "limitations") { Text("Corrections explicites avant validation : position ou score. Aucune suppression ni modification après validation.", style = MaterialTheme.typography.bodySmall) }
                     }
                 }
             }
@@ -277,15 +298,4 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
             Text("Cercle orange : flèche sélectionnée. Croix violette : proposition non enregistrée.", style = MaterialTheme.typography.bodySmall)
         }
     }
-}
-
-private fun SessionStatus.label() = when (this) {
-    SessionStatus.DRAFT -> "Brouillon"
-    SessionStatus.IN_PROGRESS -> "En cours"
-    SessionStatus.COMPLETED -> "Terminée"
-}
-private fun ArrowImpact.scoreLabel() = when {
-    isMiss -> "M"
-    isX -> "${scoreFinal}X"
-    else -> scoreFinal.toString()
 }

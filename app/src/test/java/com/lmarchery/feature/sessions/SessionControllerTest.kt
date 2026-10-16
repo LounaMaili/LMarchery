@@ -397,6 +397,112 @@ class SessionControllerTest {
         }
     }
 
+    @Test fun `table navigation and return to editing end are read only and UUID based`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); c.validateEnd()
+            val validated = c.state.value.displayedEnd!!
+            c.newEnd(); c.addImpact(NormalizedPoint(.25f, 0f))
+            val editing = c.state.value.editingEnd!!
+            val before = c.state.value.saved!!.toSnapshot()
+            val writes = h.repository.updateCalls.size
+            c.selectEnd(validated.uuid)
+            assertEquals(validated.uuid, c.state.value.displayedEnd!!.uuid)
+            assertFalse(c.state.value.canAddImpact); assertFalse(c.state.value.canSelectImpact)
+            c.targetTapped(NormalizedPoint(0f, 0f)); c.validateEnd()
+            c.selectEnd("missing")
+            assertEquals(validated.uuid, c.state.value.displayedEnd!!.uuid)
+            c.selectEnd(editing.uuid)
+            assertTrue(c.state.value.canAddImpact)
+            assertEquals(before, c.state.value.saved!!.toSnapshot())
+            assertEquals(writes, h.repository.updateCalls.size)
+        }
+    }
+
+    @Test fun `acknowledged completion preserves consulted end rather than selecting empty end`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); c.validateEnd()
+            val first = c.state.value.displayedEnd!!.uuid
+            c.newEnd(); c.selectEnd(first); c.completeSession()
+            assertEquals(first, c.state.value.displayedEnd!!.uuid)
+            assertEquals(SessionStatus.COMPLETED, c.state.value.session!!.status)
+            assertFalse(c.state.value.canEdit)
+            assertEquals(summarizeSessionScore(c.state.value.session!!).totalScore, c.state.value.validatedTotal)
+        }
+    }
+
+    @Test fun `explicit reread of same session preserves selected UUID and refreshed summary`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); c.validateEnd()
+            val first = c.state.value.displayedEnd!!.uuid
+            c.newEnd(); c.selectEnd(first)
+            val saved = c.state.value.saved!!
+            val newer = rearchive(saved.sessions.single().copy(title = "Refreshed title"))
+            h.repository.stored[newer.sessions.single().uuid] = newer
+            val writes = h.repository.updateCalls.size
+            c.openSession(newer.sessions.single().uuid)
+            assertEquals(first, c.state.value.displayedEnd!!.uuid)
+            assertEquals("Refreshed title", c.state.value.session!!.title)
+            assertEquals(summarizeSessionScore(newer.sessions.single()).totalScore, c.state.value.validatedTotal)
+            assertEquals(writes, h.repository.updateCalls.size)
+        }
+    }
+
+    @Test fun `score table cannot silently abandon an ongoing correction`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); c.validateEnd()
+            val first = c.state.value.displayedEnd!!.uuid
+            c.newEnd(); c.addImpact(NormalizedPoint(.15f, 0f))
+            val editing = c.state.value.editingEnd!!
+            c.selectImpact(editing.uuid, editing.impacts.single().uuid); c.beginReposition()
+            c.proposeReposition(NormalizedPoint(.25f, 0f))
+            val selection = c.state.value.impactEdit
+            val before = c.state.value.saved!!.toSnapshot()
+            c.selectEnd(first); c.returnToList()
+            assertSame(selection, c.state.value.impactEdit)
+            assertEquals(editing.uuid, c.state.value.displayedEnd!!.uuid)
+            assertEquals(before, c.state.value.saved!!.toSnapshot())
+            c.cancelImpactEdit(); c.selectEnd(first)
+            assertEquals(first, c.state.value.displayedEnd!!.uuid)
+        }
+    }
+
+    @Test fun `table and navigation cannot lose pending save or queue duplicate commands`() = runBlocking<Unit> {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); c.validateEnd()
+            val first = c.state.value.displayedEnd!!.uuid
+            c.newEnd()
+            val editing = c.state.value.editingEnd!!.uuid
+            val gate = CompletableDeferred<Unit>(); h.repository.updateGate = gate
+            c.addImpact(NormalizedPoint(.25f, 0f))
+            val pending = c.state.value.pending
+            val writes = h.repository.updateCalls.size
+            c.selectEnd(first); c.returnToList(); c.addImpact(NormalizedPoint(0f, 0f)); c.newEnd()
+            assertSame(pending, c.state.value.pending)
+            assertEquals(editing, c.state.value.displayedEnd!!.uuid)
+            assertEquals(writes, h.repository.updateCalls.size)
+            gate.complete(Unit); yield()
+            assertEquals(editing, c.state.value.displayedEnd!!.uuid)
+            assertEquals(1, c.state.value.displayedEnd!!.impacts.size)
+        }
+    }
+
+    @Test fun `completed session table navigation never enables mutation even on preserved editing end`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); c.validateEnd(); c.newEnd(); c.completeSession()
+            val before = c.state.value.saved!!.toSnapshot()
+            val writes = h.repository.updateCalls.size
+            c.returnToList(); c.openSession(before.sessions.single().uuid)
+            c.state.value.session!!.ends.forEach { end ->
+                c.selectEnd(end.uuid)
+                assertFalse(c.state.value.canEdit); assertFalse(c.state.value.canSelectImpact)
+                assertFalse(c.state.value.canValidate); assertFalse(c.state.value.canNewEnd)
+                c.targetTapped(NormalizedPoint(0f, 0f))
+            }
+            assertEquals(before, c.state.value.saved!!.toSnapshot())
+            assertEquals(writes, h.repository.updateCalls.size)
+        }
+    }
+
     private class FakeRepository : SessionRepository {
         val stored = linkedMapOf<String, DomainArchive>()
         val unreadable = linkedMapOf<String, SessionReadResult>()

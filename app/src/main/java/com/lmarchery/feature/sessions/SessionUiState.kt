@@ -81,12 +81,7 @@ data class SessionUiState(
     val session get() = saved?.sessions?.single()
     val editingEnd get() = session?.ends?.singleOrNull { it.status == EndStatus.EDITING }
     val displayedEnd get() = session?.ends?.find { it.uuid == selectedEndUuid } ?: editingEnd ?: session?.ends?.lastOrNull()
-    val supportedConfiguration get() = session?.let { s ->
-        IndoorProfile.entries.any { it.target == s.targetType } && s.arrowCountMode == ArrowCountMode.FIXED &&
-            s.arrowCountPerEnd == 3 && s.scoringMode == ScoringMode.TRAINING &&
-            s.ends.count { it.status == EndStatus.EDITING } <= 1 &&
-            s.ends.all { end -> end.impacts.size <= 3 && end.impacts.map { it.index }.sorted() == (1..end.impacts.size).toList() }
-    } == true
+    val supportedConfiguration get() = session?.supportsSessionEditing() == true
     /** Compatibility read alias; import and export share one operation lock. */
     val exportLocked get() = archiveOperationLocked
     val ready get() = !busy && pending == null && !archiveOperationLocked
