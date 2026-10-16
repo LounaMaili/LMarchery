@@ -37,7 +37,7 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Sauvegarde JSON des séances", style = MaterialTheme.typography.titleMedium)
-            Text("Le fichier est lisible en clair et peut contenir des informations personnelles. L’import n’est pas encore disponible.",
+            Text("Le fichier est lisible en clair et peut contenir des informations personnelles. L’import contrôlé est accessible depuis la liste des séances.",
                 style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
                 ExportState.Available -> "Export disponible : toutes les séances enregistrées, y compris celles en cours."
@@ -45,7 +45,7 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
                 ExportState.Validating -> "Validation : encodage, décodage et reconstruction du contenu…"
                 is ExportState.Choosing -> "Choisissez la destination du fichier ${current.fileName}."
                 ExportState.Writing -> "Écriture et relecture du document… Sauvegarde non encore confirmée."
-                is ExportState.Succeeded -> "Export confirmé après relecture : ${current.sessionCount} séance(s), ${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import n’est pas encore disponible."
+                is ExportState.Succeeded -> "Export confirmé après relecture : ${current.sessionCount} séance(s), ${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import contrôlé est accessible depuis la liste des séances."
                 ExportState.Cancelled -> "Export annulé : aucun contenu écrit par LMarchery."
                 is ExportState.Failed -> current.diagnostic + if (current.potentiallyIncomplete)
                     "\nLe document peut être vide ou incomplet. Ne l’utilisez pas comme sauvegarde ; choisissez un nouveau document lors d’une nouvelle tentative." else ""

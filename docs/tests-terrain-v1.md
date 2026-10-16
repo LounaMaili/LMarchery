@@ -233,6 +233,46 @@ ajoutée pour ce test. Voir [ADR 021](adr/021-export-json-versionne-android.md).
 
 ---
 
+## Protocole import JSON (PR 20)
+
+Utiliser uniquement les sauvegardes synthétiques autorisées, avec preuves hors
+Git. Identifier série/port ADB courants et vérifier le déverrouillage ; aucun
+contournement, désinstallation ou `pm clear`. Installer avec `install -r` après
+validation complète. Ne pas modifier les séances PR16, PR17 et PR18.
+
+1. Capturer les tables avant installation/import. Sélectionner via SAF le fichier
+   PR19 déjà validé. Vérifier trois identiques, zéro nouvelle, zéro conflit et
+   « Aucune importation nécessaire ». Fermer l’aperçu ; toutes les tables inchangées.
+2. Préparer hors téléphone un fichier V1 validé par le codec, avec au maximum une
+   nouvelle séance `TEST AUTO PR20`, UUID distincts choisis à sa création et
+   profil complet. Les UUID ne doivent jamais être régénérés par l’import.
+3. Sélectionner ce fichier via SAF ; vérifier une nouvelle séance puis confirmer
+   explicitement. Aucun affichage durable avant acquittement. Vérifier la liste
+   actualisée, puis faire un force-stop et relancer.
+4. Relire SQLite et comparer au fichier accepté : UUID, dates/nanos, coordonnées,
+   décisions/traces et profil complets. Toutes les anciennes lignes doivent rester
+   identiques ; seules les lignes de la nouvelle séance peuvent être ajoutées.
+5. Réimporter le même fichier : une identique, zéro nouvelle, aucun doublon ni
+   changement de tables. Les conflits et erreurs tardives sont provoqués dans les
+   tests SQLite temporaires, jamais en endommageant le Pixel.
+
+| Vérification PR 20 | Résultat physique à renseigner |
+| --- | --- |
+| Téléphone, Android, date, installation conservant les données | Pixel 8 / Android 17, 16 octobre 2026 ; série/port Wi-Fi actuels identifiés ; `install -r`, aucun effacement |
+| Sauvegarde PR19 : trois identiques, zéro ajout | Réussi : 3 identiques, 0 nouvelle, 0 conflit ; aucune action de commit proposée ; toutes les tables inchangées |
+| Prévisualisation et confirmation de TEST AUTO PR20 | Réussi : 1 nouvelle, 0 identique, 0 conflit ; confirmation explicite, succès après acquittement SQL |
+| Nombre de séances ajoutées | Exactement **1**, aucune duplication |
+| Force-stop/reprise et comparaison complète avec le fichier | Réussi : 4 séances retrouvées ; reconstruction JVM depuis une copie SQLite native et égalité complète avec PR19 + le fichier PR20 (UUID, dates/nanos, impacts, décisions, profil et traces) ; réexport canonique PR20 identique octet par octet |
+| Réimport identique et anciennes tables/lignes intactes | Réussi : 1 identique, 0 nouvelle, 0 conflit ; tables identiques à l’après-import et toutes les anciennes lignes PR16/17/18 conservées. Même contrôle réussi après réinstallation de l’APK final |
+| Rotation réelle, autres fournisseurs et incidents de stockage | Non démontrés par les tests JVM |
+
+Les tests JVM qualifient les états, flux simulés, budgets et transactions natives ;
+ils ne prouvent pas tous les fournisseurs SAF ni l’ergonomie réelle. Aucun fichier
+utilisateur, dump SQL ou capture n’est publié sur GitHub/CI. Voir
+[ADR 022](adr/022-import-json-controle-transactionnel.md).
+
+---
+
 ## Principes
 
 - Les tests terrain commencent **dès la phase 2** (blason interactif), pas uniquement en fin de projet

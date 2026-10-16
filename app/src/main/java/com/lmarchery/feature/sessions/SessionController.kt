@@ -36,10 +36,12 @@ class SessionController(
 
     fun acquireExport(): Boolean {
         if (!ui.ready || ui.impactEdit != null) return false
-        ui = ui.copy(exportLocked = true)
+        ui = ui.copy(archiveOperationLocked = true)
         return true
     }
-    fun releaseExport() { ui = ui.copy(exportLocked = false) }
+    fun releaseExport() = releaseArchiveOperation()
+    fun acquireImport(): Boolean = ui.screen == SessionScreen.LIST && acquireExport()
+    fun releaseArchiveOperation() { ui = ui.copy(archiveOperationLocked = false) }
 
     fun refresh() {
         if (!ui.ready || ui.screen != SessionScreen.LIST) return
@@ -95,7 +97,7 @@ class SessionController(
         }
     }
     fun discardAndReturnToList() {
-        if (ui.busy || ui.exportLocked) return
+        if (ui.busy || ui.archiveOperationLocked) return
         ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null)
         returnToList()
     }

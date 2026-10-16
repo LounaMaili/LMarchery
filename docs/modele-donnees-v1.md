@@ -11,7 +11,8 @@ absentes du schéma SQLite 1 qui utilise les UUID (section 4). Les modèles `Bow
 `ArrowSet`, `SessionPreset` restent prévus. Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
 JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
-aucun import utilisateur ni migration n’est implémenté.
+l’import contrôlé sans écrasement suit l’[ADR 022](adr/022-import-json-controle-transactionnel.md),
+sans migration du schéma.
 
 ---
 
@@ -576,7 +577,9 @@ peuvent être supprimés ni réécrits. Sans référentiel, une restauration ind
 ne peut pas découvrir un historique omis de toutes les données reçues.
 
 Le JSON opérationnel conserve séances/profils, décisions et traces. Le contenu
-du matériel/presets et l’import avec intervention sur conflits restent à développer. Aucun ancien exemple documentaire
+du matériel/presets et la résolution interactive des conflits restent à développer.
+L’import contrôlé ajoute seulement les séances absentes, reconnaît les identiques
+et refuse toute divergence dans une transaction unique (ADR 022). Aucun ancien exemple documentaire
 incomplet ne fait l'objet d'une migration inventant ses valeurs manquantes.
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 

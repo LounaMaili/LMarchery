@@ -86,7 +86,16 @@ lecteur ; ne jamais la remplacer par une boucle `discover`/`read` non atomique.
 Tester l'absence d'écriture, les orphelins/corruptions et les révisions concurrentes.
 Un succès d'export Android exige la fermeture et une relecture identique du document.
 Un échec peut laisser un fichier incomplet : aucun succès anticipé, effacement ou
-retry automatique. Ne pas ajouter d'import/fusion sans demande distincte.
+retry automatique. Ne pas ajouter de fusion/remplacement sans demande distincte.
+
+L’import contrôlé suit l’ADR 022 : planificateur pur, lecture SAF bornée, candidat
+exact conservé jusqu’à confirmation et transaction écrivain unique pour l’archive.
+Recalculer le plan et les collisions sous verrou SQL ; jamais de boucle de `create`
+avec commits séparés, écrasement, `UPDATE`/`DELETE` ou résolution par `updatedAt`.
+Tester l’idempotence sans écriture, les collisions entre types, deux magasins,
+le plan périmé, les contraintes tardives et l’annulation après un véritable INSERT.
+Toute erreur après insertion doit sortir de la transaction pour annuler l’ensemble.
+Conserver tous les tests antérieurs et vérifier le verrou commun import/export.
 
 Utiliser un **JDK 21 complet**, le SDK Android 35 et les Build Tools 34.0.0.
 Le script détecte un JDK 21 installé ; un `JAVA_HOME` explicite incompatible

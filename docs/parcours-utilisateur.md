@@ -4,7 +4,7 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16 à 19)
+## Parcours effectivement implémenté (PR 16 à 20)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
@@ -208,12 +208,35 @@ L'utilisateur ouvre l'application
    Un fournisseur refusant la relecture ne permet pas de confirmer la sauvegarde.
 
 Les séances en cours sont incluses ; aucune donnée Room n’est modifiée. La
-rotation conserve la préparation du ViewModel, pas la mort du processus. Aucun
-import utilisateur ni fusion par UUID ou `updatedAt` n’est disponible. La
-restauration et l’intervention sur conflits restent à définir avant import.
+rotation conserve la préparation du ViewModel, pas la mort du processus. L’import
+contrôlé ci-dessous ajoute uniquement les absentes ; aucune fusion par UUID ou `updatedAt`.
 Voir [ADR 021](adr/021-export-json-versionne-android.md).
 
 ---
+
+## Importer une sauvegarde (PR 20)
+
+1. Revenir à la liste, résoudre toute sauvegarde non confirmée et fermer une
+   sélection/correction. Aucun export ou autre import ne doit être actif.
+2. Choisir « Importer une sauvegarde », puis sélectionner explicitement le fichier
+   dans Android. Annuler ne demande aucune écriture. Nom/MIME ne prouvent rien :
+   octets lus avec plafond de 16 MiB, décodage strict puis comparaison transactionnelle.
+3. Lire les comptes : nouvelles séances, identiques, conflits et profils. Toute
+   divergence/collision bloque l’ensemble avec UUID et diagnostic. Aucun choix
+   d’écrasement. Une archive vide ou un profil non référencé est refusé.
+4. Fermer l’aperçu sans importer, ou confirmer « Importer les N nouvelles séances ».
+   Si tout existe à l’identique, aucune importation n’est nécessaire. Le fichier
+   n’est jamais rouvert silencieusement à la confirmation.
+5. Attendre l’acquittement SQL. Le plan est recontrôlé sous transaction écrivain ;
+   aucune insertion partielle. Après succès, la liste est redécouverte et relue.
+   Les séances terminées restent en lecture seule.
+6. Un plan périmé exige une nouvelle sélection. Après erreur/interruption SQL non
+   confirmée, relire et sélectionner à nouveau le fichier : les séances committées
+   sont reconnues identiques, sans doublon. Aucun retry automatique. La rotation
+   conserve le candidat ; la mort du processus exige une nouvelle sélection.
+
+Seuls les modèles V1 implémentés sont restaurés. Pas de fusion, suppression,
+migration ou résolution par date. Voir [ADR 022](adr/022-import-json-controle-transactionnel.md).
 
 ## 6. Parcours — Gérer le matériel
 
