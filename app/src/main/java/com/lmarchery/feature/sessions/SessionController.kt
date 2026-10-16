@@ -7,6 +7,7 @@ import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.archive.*
 import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
 import com.lmarchery.core.scoring.scoreArrowImpact
+import com.lmarchery.core.scoring.resolveFinalScore
 import com.lmarchery.data.SessionRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -49,12 +50,12 @@ class SessionController(
         }
     }
     fun configure() {
-        if (ui.ready) ui = ui.copy(screen = SessionScreen.CREATE, problem = null, confirmation = null)
+        if (ui.canNavigate) ui = ui.copy(screen = SessionScreen.CREATE, problem = null, confirmation = null)
     }
     fun selectProfile(profile: IndoorProfile) { if (ui.ready) ui = ui.copy(selectedProfile = profile) }
     fun setTitle(title: String) { if (ui.ready) ui = ui.copy(title = title) }
     fun selectEnd(uuid: String) {
-        if (ui.ready && ui.session?.ends?.any { it.uuid == uuid } == true) ui = ui.copy(selectedEndUuid = uuid)
+        if (ui.canNavigate && ui.session?.ends?.any { it.uuid == uuid } == true) ui = ui.copy(selectedEndUuid = uuid)
     }
     fun createSession() {
         if (!ui.ready || ui.screen != SessionScreen.CREATE) return
@@ -73,11 +74,11 @@ class SessionController(
         }
     }
     fun openSession(uuid: String) {
-        if (!ui.ready) return
+        if (!ui.canNavigate) return
         launchOperation { readSaved(uuid, abandonPending = false) }
     }
     fun returnToList() {
-        if (!ui.ready) return // Pending actions require the explicit discard path below.
+        if (!ui.canNavigate) return // Pending actions and selection require explicit abandonment.
         launchOperation {
             ui = ui.copy(screen = SessionScreen.LIST, saved = null, selectedEndUuid = null)
             loadEntries()
@@ -85,8 +86,78 @@ class SessionController(
     }
     fun discardAndReturnToList() {
         if (ui.busy) return
-        ui = ui.copy(pending = null, storedPreview = null, problem = null)
+        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null)
         returnToList()
+    }
+    fun selectImpact(endUuid: String, impactUuid: String) {
+        if (!ui.canSelectImpact) return
+        val end = ui.editingEnd!!
+        if (end.uuid != endUuid || end.impacts.none { it.uuid == impactUuid }) {
+            invalidReposition("La flèche n’existe pas dans la volée en saisie affichée.")
+            return
+        }
+        ui = ui.copy(impactEdit = ImpactEdit(ui.session!!.uuid, endUuid, impactUuid), problem = null, confirmation = null)
+    }
+    fun beginReposition() {
+        if (!ui.canBeginReposition) return
+        ui = ui.copy(impactEdit = ui.impactEdit!!.copy(phase = ImpactEditPhase.AWAITING_POINT,
+            candidate = null, preview = null, reason = ""), problem = null, confirmation = null)
+    }
+    fun targetTapped(point: NormalizedPoint) {
+        if (ui.impactEdit == null) addImpact(point) else proposeReposition(point)
+    }
+    fun proposeReposition(point: NormalizedPoint) {
+        if (!ui.canProposeReposition) return
+        val selection = ui.impactEdit!!
+        ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.AWAITING_POINT, candidate = null, preview = null),
+            problem = null)
+        if (point == ui.selectedImpact!!.point) {
+            invalidReposition("Choisissez une position différente : la flèche est déjà à cet endroit.")
+            return
+        }
+        try {
+            val preview = resolveFinalScore(ui.session!!.targetType, point, ui.session!!.scoringMode)
+            ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.CANDIDATE, candidate = point, preview = preview))
+        } catch (error: IllegalArgumentException) {
+            invalidReposition(error.message ?: "Position invalide.")
+        }
+    }
+    fun setRepositionReason(reason: String) {
+        if (ui.canProposeReposition) ui = ui.copy(impactEdit = ui.impactEdit!!.copy(reason = reason), problem = null)
+    }
+    /** Only an unsubmitted selection/candidate can be cancelled without the PendingSave policy. */
+    fun cancelImpactEdit() {
+        if (!ui.ready) return
+        ui = ui.copy(impactEdit = null, problem = null)
+    }
+    fun confirmReposition() {
+        if (!ui.canProposeReposition || ui.impactEdit?.phase != ImpactEditPhase.CANDIDATE) return
+        val selection = ui.impactEdit!!
+        val original = ui.selectedImpact!!
+        if (original.finalScoreDecision.provenance.isManual && selection.reason.isBlank()) {
+            invalidReposition("Un motif est obligatoire pour invalider une décision de score manuelle.")
+            return
+        }
+        launchOperation {
+            val expected = requireNotNull(ui.saved)
+            val session = expected.sessions.single()
+            require(session.uuid == selection.sessionUuid) { "La sélection appartient à une autre séance." }
+            val end = session.ends.single { it.uuid == selection.endUuid }
+            val impact = end.impacts.single { it.uuid == selection.impactUuid }
+            val changedAt = clock.instant()
+            require(!changedAt.isBefore(impact.updatedAt)) {
+                "L’horloge est antérieure à la dernière modification de cette flèche. Correction non enregistrée."
+            }
+            val moved = impact.reposition(requireNotNull(selection.candidate), changedAt, selection.reason.trim().ifBlank { null })
+            val next = session.withEnd(end.withImpact(moved))
+            validateSessionUpdate(session, next)
+            val proposed = archive(next, expected.profiles.single())
+            ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.SAVING))
+            save(PendingSave("Repositionner la flèche ${impact.index}", expected, proposed, end.uuid))
+        }
+    }
+    private fun invalidReposition(message: String) {
+        ui = ui.copy(problem = UiProblem(ProblemKind.INVALID_ACTION, message))
     }
     fun addImpact(point: NormalizedPoint) {
         if (!ui.canAddImpact) return
@@ -132,7 +203,8 @@ class SessionController(
         launchOperation { save(pending) } // Exact same expected, proposed, UUIDs and timestamps.
     }
     private suspend fun save(pending: PendingSave) {
-        ui = ui.copy(pending = pending, confirmation = null)
+        ui = ui.copy(pending = pending, confirmation = null,
+            impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.SAVING))
         var idempotent = false
         val problem: UiProblem? = if (pending.expected == null) {
             when (val result = repository.create(pending.proposed)) {
@@ -152,9 +224,10 @@ class SessionController(
                 is SessionUpdateResult.TechnicalFailure -> technical(result.cause)
             }
         }
-        if (problem != null) ui = ui.copy(problem = problem)
+        if (problem != null) ui = ui.copy(problem = problem, impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.FAILED))
         else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, pending = null, problem = null,
             selectedEndUuid = pending.selectedEndUuid, storedPreview = null,
+            impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, candidate = null, preview = null, reason = ""),
             confirmation = "${pending.description} : ${if (idempotent) "déjà enregistré, contenu identique" else "enregistré sur cet appareil"}.")
     }
     fun previewStored() {
@@ -179,6 +252,7 @@ class SessionController(
                 val loaded = archive(result.session, result.profile)
                 ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, storedPreview = null,
                     pending = if (abandonPending) null else ui.pending, problem = null, confirmation = null,
+                    impactEdit = null,
                     selectedEndUuid = result.session.ends.firstOrNull { it.status == EndStatus.EDITING }?.uuid
                         ?: result.session.ends.lastOrNull()?.uuid)
             }
@@ -191,13 +265,17 @@ class SessionController(
         scope.launch {
             try { block() }
             catch (error: CancellationException) {
-                ui = ui.copy(problem = UiProblem(ProblemKind.TECHNICAL, "Opération interrompue ; enregistrement non confirmé."))
+                ui = ui.copy(problem = UiProblem(ProblemKind.TECHNICAL, "Opération interrompue ; enregistrement non confirmé."),
+                    impactEdit = failedImpactEdit())
                 throw error
             }
-            catch (error: IllegalArgumentException) { ui = ui.copy(problem = UiProblem(ProblemKind.INVALID_ACTION, error.message ?: "Action invalide.")) }
-            catch (error: Exception) { ui = ui.copy(problem = technical(error)) }
+            catch (error: IllegalArgumentException) { ui = ui.copy(problem = UiProblem(ProblemKind.INVALID_ACTION, error.message ?: "Action invalide."), impactEdit = failedImpactEdit()) }
+            catch (error: Exception) { ui = ui.copy(problem = technical(error), impactEdit = failedImpactEdit()) }
             finally { ui = ui.copy(busy = false) }
         }
+    }
+    private fun failedImpactEdit() = ui.impactEdit?.let {
+        if (ui.pending != null) it.copy(phase = ImpactEditPhase.FAILED) else it
     }
 }
 

@@ -80,6 +80,62 @@ et effacement des données peuvent les perdre.
 
 ---
 
+## Protocole sélection et repositionnement (PR 17)
+
+Ce protocole complète celui de la PR 16. Ne jamais modifier une séance réelle
+ou la séance terminée `TEST AUTO PR16`. Pour la campagne ADB autorisée, créer
+**au maximum une** séance `TEST AUTO PR17`. Réutiliser cette même séance pour
+annuler puis confirmer ; ne pas désinstaller, effacer les données ou migrer la base.
+Identifier le port actuel avec `adb devices -l` et utiliser `adb -s <série exacte>`
+pour toutes les commandes destinées au téléphone. Arrêter les essais dépendants
+du téléphone s'il est verrouillé, hors ligne ou non autorisé, sans contourner l'accès.
+
+1. Installer l'APK debug avec `install -r`, après validation complète. Arrêter si
+   les signatures sont incompatibles ; ne pas désinstaller pour débloquer.
+2. Créer la séance synthétique classique 40 cm/18 m, puis placer trois flèches
+   distinctes. Attendre chaque confirmation SQL ; relever positions et scores.
+3. Choisir la **deuxième** flèche dans la liste et « Repositionner ». Vérifier
+   son anneau de sélection et le mode explicite. Proposer un autre point (par
+   exemple passer du 10 vers le 7), sans ajout de quatrième flèche. Vérifier
+   ancienne position/score et candidat/aperçu clairement séparés, totaux inchangés.
+4. Faire tourner l'écran si sûr, puis restaurer l'orientation initiale. Vérifier
+   que la sélection et le candidat restent ceux de la deuxième flèche.
+5. Annuler : aucune écriture ni trace, les trois flèches et les totaux restent
+   identiques. Recommencer et confirmer. Attendre l'acquittement ; vérifier le
+   nouveau score, les deux autres impacts intacts, même UUID et création, une
+   seule trace ajoutée conservant l'ancienne décision.
+6. Après acquittement, faire un `am force-stop com.lmarchery`, relancer, retrouver
+   la séance et contrôler les trois impacts, leurs UUID/points/scores et la trace
+   persistée si le diagnostic debug le permet. Aucun fichier privé n'est publié.
+7. Valider la volée. La sélection/repositionnement doit être indisponible et le
+   blason consultable seulement. Aucun essai ne rouvre une volée validée.
+
+Vérifier séparément le retour avec abandon/refus d'abandon avant confirmation et
+la sélection depuis la liste de flèches superposées. Sur une fixture contrôlée
+avec ancienne décision manuelle, le motif est obligatoire ; aucun écran de
+jugement n'est ajouté pour fabriquer cette situation. Les tests du contrôleur
+couvrent les conflits, erreurs, retry exact et double confirmation sous sauvegarde
+suspendue, sans saturation du stockage d'un téléphone personnel.
+
+| Vérification PR 17 | Résultat à renseigner séparément |
+| --- | --- |
+| Tests contrôleur et SQLite natif | Voir les rapports de la validation locale/CI |
+| ADB : trois impacts, sélection #2, candidat et annulation | Réussi le 16 octobre 2026 sur Pixel 8 / Android 17 ; comparaison SQL sans changement après annulation |
+| ADB : confirmation, reprise exacte, deux autres flèches préservées | Réussi : 10 → 7 sur #2, trois impacts conservés, une trace, UUID/création conservés ; reprise après force-stop |
+| ADB : rotation du candidat et refus après validation | Réussi ; orientation d'origine restaurée et candidat conservé ; sélection/repositionnement retirés après validation |
+| Au doigt : précision, superposition, lisibilité, gants et soleil | Non couvert par ADB ; test humain requis |
+
+Captures, logs et copies de diagnostic restent hors Git. Une proposition non
+confirmée disparaît après mort du processus ; ne pas la présenter comme durable.
+La campagne ADB a aussi vérifié le refus d'abandon par Retour et la conservation
+intégrale de `TEST AUTO PR16`, sans l'ouvrir pour la modifier. Aucune erreur
+applicative ni crash/ANR observé dans les diagnostics du paquet. Une assertion
+d'automatisation a nécessité de faire défiler jusqu'au message de succès hors
+écran ; elle n'a entraîné aucune deuxième soumission de la correction.
+Voir [ADR 019](adr/019-selection-repositionnement-android.md).
+
+---
+
 ## Principes
 
 - Les tests terrain commencent **dès la phase 2** (blason interactif), pas uniquement en fin de projet

@@ -1,6 +1,8 @@
 package com.lmarchery.feature.sessions
 
 import com.lmarchery.core.model.session.*
+import com.lmarchery.core.model.NormalizedPoint
+import com.lmarchery.core.model.scoring.FinalScoreDecision
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles as WA
@@ -30,6 +32,19 @@ data class PendingSave(
     val selectedEndUuid: String?,
 )
 
+enum class ImpactEditPhase { SELECTED, AWAITING_POINT, CANDIDATE, SAVING, CONFIRMED, FAILED }
+
+/** Presentation only: never substitutes for the confirmed archive or issues historical evidence. */
+data class ImpactEdit(
+    val sessionUuid: String,
+    val endUuid: String,
+    val impactUuid: String,
+    val phase: ImpactEditPhase = ImpactEditPhase.SELECTED,
+    val candidate: NormalizedPoint? = null,
+    val preview: FinalScoreDecision? = null,
+    val reason: String = "",
+)
+
 data class SessionUiState(
     val screen: SessionScreen = SessionScreen.LIST,
     val busy: Boolean = false,
@@ -42,6 +57,7 @@ data class SessionUiState(
     val title: String = "",
     val selectedEndUuid: String? = null,
     val confirmation: String? = null,
+    val impactEdit: ImpactEdit? = null,
 ) {
     val session get() = saved?.sessions?.single()
     val editingEnd get() = session?.ends?.singleOrNull { it.status == EndStatus.EDITING }
@@ -53,11 +69,23 @@ data class SessionUiState(
             s.ends.all { end -> end.impacts.size <= 3 && end.impacts.map { it.index }.sorted() == (1..end.impacts.size).toList() }
     } == true
     val ready get() = !busy && pending == null
-    val canEdit get() = ready && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
-    val canAddImpact get() = canEdit && editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid && editingEnd!!.impacts.size < 3
-    val canValidate get() = canEdit && editingEnd?.impacts?.size == 3 && displayedEnd?.uuid == editingEnd?.uuid
-    val canNewEnd get() = canEdit && editingEnd == null
-    val canComplete get() = canEdit && session!!.ends.none { it.status == EndStatus.EDITING && it.impacts.isNotEmpty() }
+    val canNavigate get() = ready && impactEdit == null
+    val canEdit get() = ready && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
+    val isEditingDisplayed get() = editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid
+    val selectedImpact get() = impactEdit?.takeIf { it.sessionUuid == session?.uuid && it.endUuid == displayedEnd?.uuid }
+        ?.let { selection -> displayedEnd?.impacts?.find { it.uuid == selection.impactUuid } }
+    val canSelectImpact get() = canEdit && isEditingDisplayed &&
+        (impactEdit == null || impactEdit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED))
+    val canBeginReposition get() = canSelectImpact && selectedImpact != null
+    val canProposeReposition get() = canEdit && isEditingDisplayed && selectedImpact != null &&
+        impactEdit?.phase in listOf(ImpactEditPhase.AWAITING_POINT, ImpactEditPhase.CANDIDATE)
+    val canConfirmReposition get() = canProposeReposition && impactEdit?.phase == ImpactEditPhase.CANDIDATE &&
+        impactEdit.candidate != null && impactEdit.preview != null &&
+        (selectedImpact?.finalScoreDecision?.provenance?.isManual != true || impactEdit.reason.isNotBlank())
+    val canAddImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.impacts.size < 3
+    val canValidate get() = canEdit && impactEdit == null && editingEnd?.impacts?.size == 3 && isEditingDisplayed
+    val canNewEnd get() = canEdit && impactEdit == null && editingEnd == null
+    val canComplete get() = canEdit && impactEdit == null && session!!.ends.none { it.status == EndStatus.EDITING && it.impacts.isNotEmpty() }
     val provisionalTotal get() = editingEnd?.let(::calculateEndScore) ?: 0
     val validatedTotal get() = session?.let(::summarizeSessionScore)?.totalScore ?: 0
 }
