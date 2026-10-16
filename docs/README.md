@@ -42,6 +42,8 @@ Pour préparer le développement et les validations :
 
 | 23 | Historique chronologique et présentation des scores Android | [adr/023-historique-et-presentation-scores-android.md](adr/023-historique-et-presentation-scores-android.md) |
 
+| 24 | Visée tactile précise et candidat non destructif | [adr/024-visee-tactile-precise-candidat.md](adr/024-visee-tactile-precise-candidat.md) |
+
 ---
 
 *Dernière mise à jour : 16 octobre 2026*

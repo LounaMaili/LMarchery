@@ -4,7 +4,7 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16 à 21)
+## Parcours effectivement implémenté (PR 16 à 22, visée précise en évaluation)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
@@ -41,6 +41,35 @@ Les suppressions, matériel/presets et autres modes restent hors de ce parcours.
 Les données sont locales ; l’export global est décrit ci-dessous.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
+
+### Viser précisément — PR 22 en brouillon
+
+Le mode rapide reste le comportement par défaut, sans étape supplémentaire.
+Dans une volée éditable, activer la visée précise puis appuyer sur le blason :
+le réticule montre le point et la loupe déportée ×4 agrandit les mêmes anneaux et
+impacts. Le mouvement ajuste l’aperçu géométrique ; relâcher laisse un candidat
+non enregistré. « Confirmer la nouvelle flèche » attend l’acquittement SQL avant
+les totaux durables. « Annuler la nouvelle flèche » n’écrit rien. Un autre geste
+permet d’affiner la position ; son annulation conserve le dernier candidat relâché.
+
+La proposition bloque navigation, changement de mode, sélection contradictoire,
+validation/clôture et import/export. Retour avertit avant abandon. En cas d’erreur,
+candidat et PendingSave restent accessibles pour retry identique ou abandon explicite.
+La rotation conserve une proposition relâchée, mais annule le geste actif ; après
+mort du processus, seul le dernier état SQL est redécouvert, en mode rapide.
+
+Pour une flèche existante : sélectionner, Repositionner, puis viser de la même
+manière. Le candidat et la confirmation restent ceux du repositionnement habituel,
+avec motif requis pour invalider une décision manuelle, UUID et traces conservés.
+Les flèches validées ou séances terminées restent en lecture seule.
+
+Le deuxième doigt et toute sortie du Canvas annulent le geste sans sauvegarder.
+Les coins dans le carré restent des M ; aucun rabattement sur le cercle. Faire
+défiler hors du blason en mode précis ; le blason est réduit en paysage pour
+faciliter la consultation de la loupe. Ni loupe ni proximité tactile ne modifie
+le jugement de cordon. **L’évaluation ergonomique au doigt reste à faire** selon
+le [protocole PR 22](validation-visee-precise-pr22.md). Voir
+[ADR 024](adr/024-visee-tactile-precise-candidat.md).
 
 ### Consulter les scores et l’historique (PR 21)
 

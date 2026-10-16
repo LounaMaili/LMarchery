@@ -4,7 +4,8 @@
 
 Légende : ✓ livré ; ◐ partiel, limite explicitée ; ☐ prévu.
 La saisie Android reste à trois flèches en entraînement, avec les quatre profils
-WA indoor ; les autres configurations valides sont consultables. Les tests ADB
+WA indoor ; les autres configurations valides sont consultables. La visée précise est en évaluation dans la [PR 22](validation-visee-precise-pr22.md) ;
+son implémentation ne vaut pas validation de précision tactile. Les tests ADB
 ne remplacent pas les essais terrain au doigt. Voir
 [ADR 023](adr/023-historique-et-presentation-scores-android.md).
 
@@ -47,6 +48,7 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 2.8 | Zoom et panoramique sur le blason | ☐ | Basse |
 | 2.9 | Afficher les impacts de la volée en cours | ✓ | Haute |
 | 2.10 | Test terrain : saisie rapide entre deux volées réelles | ☐ | Haute |
+| 2.11 | Mode précis facultatif : loupe ×4, réticule et candidat confirmé | ◐ code/tests implémentés ; PR 22 brouillon, essai humain et ADB restant | Haute |
 
 **Critère de sortie** : un archer peut saisir 3 impacts en quelques secondes, les corriger, et voir le score.
 
