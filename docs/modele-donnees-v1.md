@@ -73,8 +73,10 @@ et `SessionPreset`. Le fichier opérationnel actuel exporte seulement les profil
 et séances implémentés, avec volées/impacts imbriqués. Les fiches `Bow` et
 `ArrowSet`, désormais persistées, restent absentes du fichier ;
 `SessionPreset` reste futur. Les références UUID opaques ne sont pas des objets
-de matériel exportés. L’extension versionnée des sauvegardes est obligatoire avant
-de rendre le catalogue utilisable dans Compose (ADR 025).
+de matériel exportés. Le [contrat/codec V2](export-format-v2.md) existe séparément
+(ADR 026), mais
+sa collecte et son import atomiques Room, puis la connexion SAF, restent requis
+avant de rendre le catalogue utilisable dans Compose.
 
 | Champ | Règle |
 |-------|-------|
@@ -595,8 +597,11 @@ indépendamment de l'ordre des `updatedAt`. Les préfixes de traces connus ne
 peuvent être supprimés ni réécrits. Sans référentiel, une restauration indépendante
 ne peut pas découvrir un historique omis de toutes les données reçues.
 
-Le JSON opérationnel conserve séances/profils, décisions et traces. Les fiches matériel persistées ne sont pas incluses : une extension versionnée
-et rétrocompatible des sauvegardes est requise avant toute UI de catalogue.
+Le JSON opérationnel conserve séances/profils, décisions et traces. Les fiches
+matériel persistées ne sont pas incluses dans le V1 opérationnel.
+Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
+sans connexion Room/Android ; cette intégration transactionnelle reste requise
+avant toute UI de catalogue.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import contrôlé ajoute seulement les séances absentes, reconnaît les identiques
 et refuse toute divergence dans une transaction unique (ADR 022). Aucun ancien exemple documentaire

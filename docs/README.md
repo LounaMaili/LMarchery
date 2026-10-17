@@ -8,7 +8,7 @@
 4. **[Modèle de données V1](modele-donnees-v1.md)** — Entités, relations, attributs, énumérations, export/import
 5. **[Backlog V1](backlog-v1.md)** — Tickets de travail par épic,可直接 actionnable
 6. **[Tests terrain V1](tests-terrain-v1.md)** — Grilles de test pour les premiers retours réels
-7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON opérationnel, UUID, reconstruction, import contrôlé et limites
+7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON opérationnel, UUID, reconstruction, import contrôlé et limites ; [contrat V2 matériel](export-format-v2.md) sans intégration Room/Android
 8. **[Roadmap reconnaissance](reconnaissance-roadmap.md)** — Trajectoire V2→V4 pour la reconnaissance d'image
 
 Pour préparer le développement et les validations :
@@ -41,6 +41,7 @@ Pour préparer le développement et les validations :
 | 22 | Import JSON contrôlé et transactionnel | [adr/022-import-json-controle-transactionnel.md](adr/022-import-json-controle-transactionnel.md) |
 | 23 | Historique chronologique et présentation des scores Android | [adr/023-historique-et-presentation-scores-android.md](adr/023-historique-et-presentation-scores-android.md) |
 | 25 | Fondation du catalogue matériel et migration SQLite 1→2 | [adr/025-fondation-catalogue-materiel.md](adr/025-fondation-catalogue-materiel.md) |
+| 26 | Contrat JSON V2 matériel et lecture compatible V1 | [adr/026-contrat-sauvegarde-json-v2.md](adr/026-contrat-sauvegarde-json-v2.md) |
 
 ---
 

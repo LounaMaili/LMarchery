@@ -85,9 +85,26 @@ class ArchiveJsonCodecTest {
             archive(session(custom)), *WA.all.map { archive(session(it)) }.toTypedArray(),
             archive(session(ClassicTargetFixtures.classic40)),
         )
-        fixtures.forEach { source ->
+        // Captured with the unchanged V1 codec at de06429, before adding the V2 contract.
+        val historicalSha256 = listOf(
+            "f6bcea794f8aeb411d5cca6109d0039ee14fd0d5bffe669508f1f07ffaab553c",
+            "e09d35f09e8e3dcfcc539bd885e8eedf9539bb80a1f5fdc2a908422bde9636bc",
+            "ca7f0de865cc8371850dcf053653f8733759b7348a5adf0995e669f2565d959c",
+            "5dcd11afd947e6802f65f4b54e1c43e57244d2256d523ea55d1d2cd7cc15708c",
+            "7a71cdab4d7dfaef0c56c082ffe2dfef81aab19b004c6edd76c001e4140d3964",
+            "72af22e85f08b13025da8acd2f6128db505c49686b1540e9ef38d806de354d42",
+            "8771737c39ac8c173c902e80d3e0409629c4207beb24e6b78a9a7dd5fa2d8da4",
+            "02bd405bc0adb3e382b0501f0ef105f7c1f9fb7a446cd124c8f344e56a03dbd8",
+            "ced7cb8a23118c61fc0c2da72ca69183f660b9c6b7978c47481bf5830b7183e8",
+            "4dca1fb4fb3e50e78fed1e355de55aa9dcca251bd80b6115e25c5505bcef9d68",
+            "f16fac6841fe43508d92ad7e71df0dedf0043c64ac84b36cc548a3dbab2c60cf",
+            "8dbd82d18e36436d9d6bbfbfe847c132d31eecdc6c7eca780da8b5cfb2c7db9e",
+        )
+        fixtures.forEachIndexed { index, source ->
             val expected = source.toSnapshot()
             val bytes = codec.encode(source)
+            assertEquals(historicalSha256[index], java.util.HexFormat.of().formatHex(
+                java.security.MessageDigest.getInstance("SHA-256").digest(bytes)))
             val accepted = assertIs<ArchiveJsonRead.Accepted>(codec.decode(bytes))
             assertEquals(expected, accepted.snapshot)
             assertEquals(expected, accepted.archive.toSnapshot())
