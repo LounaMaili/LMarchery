@@ -86,9 +86,17 @@ class RoomArchiveV2ReadTest {
         openSessionStore(path).use { store ->
             store.restoreV2(rich())
             // Disable FK only on an independent corruption connection; normal store enforcement remains on.
-            raw("PRAGMA foreign_keys=OFF", "UPDATE ends SET sessionUuid='${id(999)}' WHERE uuid='${id(2)}'")
+            // Add an unrelated physical end instead of breaking a known session's child count.
+            // Every known session remains fully valid: only the global reachability audit can reject this omission.
+            raw("PRAGMA foreign_keys=OFF", "INSERT INTO entity_identities VALUES('${id(999)}','END')",
+                """INSERT INTO ends(uuid,sessionUuid,position,`index`,status,notes,created_epochSecond,created_nano,
+                    updated_epochSecond,updated_nano,validated_epochSecond,validated_nano,impactCount)
+                    SELECT '${id(999)}','${id(998)}',0,1,'EDITING',NULL,created_epochSecond,created_nano,
+                    updated_epochSecond,updated_nano,NULL,NULL,0 FROM ends LIMIT 1""")
             val before = contents(path)
-            assertIs<ArchiveV2ReadResult.NeedsIntervention>(store.readArchiveV2())
+            assertEquals(session(), assertIs<SessionReadResult.Found>(store.read(session().uuid)).session)
+            val result = assertIs<ArchiveV2ReadResult.NeedsIntervention>(store.readArchiveV2())
+            assertEquals("identities[${id(999)}]", result.diagnostic.path)
             assertEquals(before, contents(path))
         }
     }
