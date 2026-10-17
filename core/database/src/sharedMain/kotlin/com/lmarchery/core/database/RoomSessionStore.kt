@@ -67,6 +67,13 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         check(!closed.get()) { "Session store is closed." }
     }
 
+    private val archiveV2 = RoomArchiveV2(database) { check(!closed.get()) { "Session store is closed." } }
+
+    suspend fun readArchiveV2(): ArchiveV2ReadResult = archiveV2.read()
+    suspend fun previewImportV2(archive: com.lmarchery.core.scoring.archive.DomainArchiveV2): ArchiveV2PreviewResult =
+        archiveV2.preview(archive)
+    suspend fun importArchiveV2(confirmed: ArchiveV2ImportPreview): ArchiveV2ImportResult = archiveV2.import(confirmed)
+
     /** All roots and descendants from one reader snapshot. No partial archive and no SQL writes. */
     suspend fun readArchive(): ArchiveReadResult = try {
         val callerContext = currentCoroutineContext()

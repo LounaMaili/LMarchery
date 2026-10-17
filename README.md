@@ -199,9 +199,10 @@ LMarchery ; Android laisse choisir le fournisseur.
 Seuls séances et profils sont sauvegardés. Les fiches `Bow` / `ArrowSet` du
 catalogue SQLite 2 restent absentes du JSON V1 et ne sont pas exposées à
 l’utilisateur. Le [contrat/codec V2](docs/export-format-v2.md) inclut le matériel
-dans une API distincte ; sa collecte/import atomiques Room et sa connexion SAF
-restent à développer avant l’interface de catalogue
-([ADR 026](docs/adr/026-contrat-sauvegarde-json-v2.md)). La base Room n’est pas
+dans une API distincte ([ADR 026](docs/adr/026-contrat-sauvegarde-json-v2.md)).
+Sa collecte/import atomiques Room sont disponibles
+([ADR 027](docs/adr/027-archives-room-v2-atomiques.md)) ; sa connexion SAF
+reste à développer avant l’interface de catalogue. La base Room n’est pas
 modifiée par l’export. Le contrat strict, les limites de taille et les garanties numériques sont détaillés
 dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
 [format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut

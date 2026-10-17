@@ -103,10 +103,10 @@ variante RFC 4122. Les références optionnelles de matériel sont des UUID opaq
 `Bow` et `ArrowSet` existent désormais dans le domaine et SQLite, mais leur
 contenu et leur résolution restent absents du contrat JSON V1 ; `SessionPreset`
 reste prévu. Leurs références opaques sont conservées sans FK ni résolution
-automatique. Le catalogue ne sera exposé dans Compose qu’après une PR dédiée
-d’intégration transactionnelle des sauvegardes V2
-([ADR 026](adr/026-contrat-sauvegarde-json-v2.md)). Le contrat/codec V2 existe
-séparément ; l’import/export Android et Room restent V1.
+automatique. Le [contrat/codec V2](export-format-v2.md) et sa collecte/restauration
+Room atomique ([ADR 027](adr/027-archives-room-v2-atomiques.md)) existent dans des
+API distinctes. L’import/export SAF Android reste V1 ; sa connexion V2 reste
+obligatoire avant d’exposer le catalogue dans Compose.
 
 ### Décisions et assertions
 
@@ -328,8 +328,9 @@ les contrôles concurrentiels, les erreurs et les limites de la preuve de proven
 Restent à réaliser :
 
 - Prévoir les migrations explicites pour chaque évolution future du schéma Room.
-- Intégrer le [contrat matériel V2](export-format-v2.md) dans une collecte Room
-  cohérente et un import atomique, puis dans SAF/Android ; les presets restent futurs.
+- Brancher dans SAF/Android le [contrat matériel V2](export-format-v2.md) et sa
+  collecte/restauration Room atomique ([ADR 027](adr/027-archives-room-v2-atomiques.md)) ;
+  les presets restent futurs.
 - Définir l'intervention sur conflits et l'éventuelle preuve de filiation des
   révisions, sans écrasement fondé sur la seule horloge.
 - Décider le traitement d'anciens horaires/provenances et des changements IANA
