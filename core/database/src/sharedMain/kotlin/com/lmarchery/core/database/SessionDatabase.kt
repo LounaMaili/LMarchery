@@ -35,6 +35,14 @@ internal interface SessionDao {
     // Include physical claims when a damaged registry omitted or misclassified an identity.
     @Query("SELECT uuid, kind FROM entity_identities WHERE uuid IN (:uuids) UNION SELECT uuid, 'PROFILE' AS kind FROM target_profiles WHERE uuid IN (:uuids) UNION SELECT uuid, 'SESSION' AS kind FROM sessions WHERE uuid IN (:uuids) UNION SELECT uuid, 'END' AS kind FROM ends WHERE uuid IN (:uuids) UNION SELECT uuid, 'IMPACT' AS kind FROM impacts WHERE uuid IN (:uuids) UNION SELECT uuid, 'BOW' AS kind FROM bows WHERE uuid IN (:uuids) UNION SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets WHERE uuid IN (:uuids)")
     suspend fun claimedIdentities(uuids: List<String>): List<IdentityRow>
+    // Complete V2 ownership audit, independent of the legacy V1 archive scope.
+    @Query("SELECT * FROM entity_identities ORDER BY uuid")
+    suspend fun allIdentities(): List<IdentityRow>
+    @Query("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts UNION ALL SELECT uuid, 'BOW' AS kind FROM bows UNION ALL SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets")
+    suspend fun allRowIdentities(): List<IdentityRow>
+    // Child tables without their own global identity must also be audited, even if FK enforcement was bypassed.
+    @Query("SELECT 'target_zones[' || profileUuid || '][' || position || ']' FROM target_zones WHERE NOT EXISTS (SELECT 1 FROM target_profiles WHERE uuid = profileUuid) UNION ALL SELECT 'score_decisions[' || impactUuid || '][' || revision || ']' FROM score_decisions WHERE NOT EXISTS (SELECT 1 FROM impacts WHERE uuid = impactUuid) UNION ALL SELECT 'impact_repositions[' || impactUuid || '][' || sequence || ']' FROM impact_repositions WHERE NOT EXISTS (SELECT 1 FROM impacts WHERE uuid = impactUuid) ORDER BY 1")
+    suspend fun orphanChildPaths(): List<String>
     @Query("SELECT uuid FROM target_profiles ORDER BY uuid") suspend fun profileUuids(): List<String>
     @Query("SELECT * FROM target_profiles WHERE uuid = :uuid") suspend fun profile(uuid: String): ProfileRow?
     @Query("SELECT * FROM target_zones WHERE profileUuid = :uuid ORDER BY position") suspend fun zones(uuid: String): List<ZoneRow>

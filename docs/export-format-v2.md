@@ -1,11 +1,12 @@
 # Contrat de sauvegarde JSON V2 — LMarchery
 
-> Contrat typé et codec disponibles. **La collecte/restauration Room V2 et le parcours
-> Android ne sont pas encore implémentés. L'application utilise toujours JSON V1.**
+> Contrat, codec et collecte/restauration atomique Room V2 disponibles.
+> **Le parcours SAF/Android utilise toujours JSON V1, sans sauvegarder le matériel.**
 
 Le [contrat V1](export-format-v1.md) conserve sa validité et ses octets d'export.
 L'[ADR 026](adr/026-contrat-sauvegarde-json-v2.md) définit la séparation des types,
-la lecture des deux versions et les préalables transactionnels avant Android.
+la lecture des deux versions. L’[ADR 027](adr/027-archives-room-v2-atomiques.md)
+décrit leur intégration transactionnelle Room, avant le branchement Android.
 
 ## Racine V2
 
@@ -96,10 +97,22 @@ par tableau, 64 propriétés par objet, 16 384 caractères par chaîne/clé et
 128 caractères par nombre. Ces limites s'appliquent au document entier et à
 l'encodage, sans troncature ni acceptation partielle.
 
-## Limite opérationnelle
+## Intégration Room et limite Android
 
-Room reste en version 2, le scoring en version 1. Les migrations et transactions
-existantes ne changent pas. Aucun nouvel import/export SAF ni écran de catalogue
-n'est ajouté. La prochaine étape devra apporter collecte cohérente de toute la
-base, planification globale et import atomique sans écrasement avant de brancher
-le V2 dans Android. Le codec seul ne constitue pas une restauration opérationnelle.
+`RoomSessionStore.readArchiveV2()` restitue tous les profils stockés (même non
+référencés), séances et fiches dans une seule transaction lecteur. Les racines
+sont triées par UUID. Toute incohérence de registre, ligne manquante, collision,
+orphelin ou valeur illisible bloque l'archive entière, sans réparation.
+
+`planArchiveImportV2` classe les quatre catégories en nouvelles/identiques/conflits.
+`previewImportV2` lit sans écrire ; `importArchiveV2` exige cet aperçu exact,
+revérifie l'état complet sous verrou écrivain, insère seulement l'absent puis
+relit/vérifie toute la base avant commit. Les archives de matériel seul ou de
+profils seuls sont prises en charge. Une archive vide donne un no-op explicite ;
+les listes vides ne suppriment rien. Voir l'[ADR 027](adr/027-archives-room-v2-atomiques.md)
+pour résultats, annulation, rollback et incertitude après perte d'acquittement.
+
+Room reste en version 2 et le scoring en version 1 ; aucune migration nouvelle.
+**Aucun import/export SAF V2 ni écran de catalogue n'est ajouté.** La prochaine
+étape doit conserver la version décodée et brancher ces API au parcours Android,
+avec confirmation et acquittement, sans rétrogradation V2→V1.

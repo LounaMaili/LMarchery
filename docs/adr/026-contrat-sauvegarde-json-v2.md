@@ -1,5 +1,8 @@
 # ADR 026 — Contrat de sauvegarde JSON V2 avec matériel
 
+> Suite : l’[ADR 027](027-archives-room-v2-atomiques.md) ajoute la collecte et
+> restauration Room V2. Le parcours SAF/Android reste V1.
+
 ## Portée
 
 L'[ADR 025](025-fondation-catalogue-materiel.md) ajoute `Bow`, `ArrowSet` et le
