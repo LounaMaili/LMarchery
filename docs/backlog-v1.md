@@ -92,7 +92,7 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 4.8 | Écran « Choisir un preset » (sélection rapide) | ☐ | Moyenne |
 | 4.9 | Préremplir les champs de séance depuis un preset | ☐ | Moyenne |
 | 4.10 | Presets par défaut (salle 18m, extérieur 30m, 50m, 70m) | ☐ | Basse |
-| 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ☐ | Haute |
+| 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | Partiel : contrat/codec V2 (ADR 026), Room/SAF à faire | Haute |
 
 **Critère de sortie** : un utilisateur peut créer un preset et lancer une séance en 2 taps.
 

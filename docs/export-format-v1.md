@@ -2,6 +2,11 @@
 
 > Export JSON UTF-8 opérationnel ; reconstruction indépendante et import contrôlé sans écrasement.
 
+Le [contrat JSON V2](export-format-v2.md) ajoute le matériel dans une API distincte
+(ADR 026). Le présent contrat et le parcours Android restent V1, sans conversion
+ni rétrogradation automatique. V1 ne fournit pas de catalogue matériel ; son
+absence ne demande jamais de vider une base existante.
+
 ## 1. État implémenté
 
 Le paquet `core.scoring.archive` fournit `ArchiveSnapshot`,
@@ -99,8 +104,9 @@ variante RFC 4122. Les références optionnelles de matériel sont des UUID opaq
 contenu et leur résolution restent absents du contrat JSON V1 ; `SessionPreset`
 reste prévu. Leurs références opaques sont conservées sans FK ni résolution
 automatique. Le catalogue ne sera exposé dans Compose qu’après une PR dédiée
-d’extension versionnée, rétrocompatible et transactionnelle des sauvegardes
-([ADR 025](adr/025-fondation-catalogue-materiel.md)).
+d’intégration transactionnelle des sauvegardes V2
+([ADR 026](adr/026-contrat-sauvegarde-json-v2.md)). Le contrat/codec V2 existe
+séparément ; l’import/export Android et Room restent V1.
 
 ### Décisions et assertions
 
@@ -322,7 +328,8 @@ les contrôles concurrentiels, les erreurs et les limites de la preuve de proven
 Restent à réaliser :
 
 - Prévoir les migrations explicites pour chaque évolution future du schéma Room.
-- Définir matériel/presets et portée d'une sauvegarde utilisateur complète.
+- Intégrer le [contrat matériel V2](export-format-v2.md) dans une collecte Room
+  cohérente et un import atomique, puis dans SAF/Android ; les presets restent futurs.
 - Définir l'intervention sur conflits et l'éventuelle preuve de filiation des
   révisions, sans écrasement fondé sur la seule horloge.
 - Décider le traitement d'anciens horaires/provenances et des changements IANA
@@ -330,4 +337,4 @@ Restent à réaliser :
 
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
-*Dernière mise à jour : 16 octobre 2026*
+*Dernière mise à jour : 17 octobre 2026*

@@ -12,7 +12,9 @@ import com.lmarchery.core.model.session.SessionStatus
 import com.lmarchery.core.model.target.TargetType
 
 object ArchiveContractVersions {
+    // Keep the operational V1 path pinned; adding V2 must not silently upgrade Room/Android.
     const val SCHEMA: Int = 1
+    const val SCHEMA_V2: Int = 2
     const val SCORING: Int = 1
 }
 

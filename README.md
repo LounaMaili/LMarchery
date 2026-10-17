@@ -20,7 +20,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (24 décisions techniques)
+- [x] ADR (25 décisions techniques)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
@@ -198,9 +198,11 @@ LMarchery ; Android laisse choisir le fournisseur.
 
 Seuls séances et profils sont sauvegardés. Les fiches `Bow` / `ArrowSet` du
 catalogue SQLite 2 restent absentes du JSON V1 et ne sont pas exposées à
-l’utilisateur. Une extension versionnée des sauvegardes est requise avant
-l’interface de catalogue ; voir [ADR 025](docs/adr/025-fondation-catalogue-materiel.md). La base Room n’est pas modifiée par l’export. Le
-contrat strict, les limites de taille et les garanties numériques sont détaillés
+l’utilisateur. Le [contrat/codec V2](docs/export-format-v2.md) inclut le matériel
+dans une API distincte ; sa collecte/import atomiques Room et sa connexion SAF
+restent à développer avant l’interface de catalogue
+([ADR 026](docs/adr/026-contrat-sauvegarde-json-v2.md)). La base Room n’est pas
+modifiée par l’export. Le contrat strict, les limites de taille et les garanties numériques sont détaillés
 dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
 [format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut
 les perdre ; conserver une sauvegarde validée hors de l’application.

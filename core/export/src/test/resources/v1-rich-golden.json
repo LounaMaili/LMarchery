@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "scoringContractVersion": 1,
+  "profiles": [
+    {
+      "definition": {
+        "uuid": "11111111-1111-4111-8111-111111111111",
+        "name": "Classique 40 cm",
+        "discipline": "indoor",
+        "diameterCm": 40,
+        "maxScore": 10,
+        "minScore": 1,
+        "defaultArrowCount": 3,
+        "defaultDistanceM": 18,
+        "isBuiltIn": true,
+        "xRingEnabled": true,
+        "xRingLabel": "X",
+        "innerTenRadiusNormalized": 0.05,
+        "zones": [
+          {
+            "score": 10,
+            "innerRadiusNormalized": 0.0,
+            "outerRadiusNormalized": 0.1,
+            "colorName": "yellow",
+            "colorHex": "#FFD400"
+          },
+          {
+            "score": 9,
+            "innerRadiusNormalized": 0.1,
+            "outerRadiusNormalized": 0.2,
+            "colorName": "yellow",
+            "colorHex": "#FFD400"
+          },
+          {
+            "score": 8,
+            "innerRadiusNormalized": 0.2,
+            "outerRadiusNormalized": 0.3,
+            "colorName": "red",
+            "colorHex": "#E53935"
+          },
+          {
+            "score": 7,
+            "innerRadiusNormalized": 0.3,
+            "outerRadiusNormalized": 0.4,
+            "colorName": "red",
+            "colorHex": "#E53935"
+          },
+          {
+            "score": 6,
+            "innerRadiusNormalized": 0.4,
+            "outerRadiusNormalized": 0.5,
+            "colorName": "blue",
+            "colorHex": "#1E88E5"
+          },
+          {
+            "score": 5,
+            "innerRadiusNormalized": 0.5,
+            "outerRadiusNormalized": 0.6,
+            "colorName": "blue",
+            "colorHex": "#1E88E5"
+          },
+          {
+            "score": 4,
+            "innerRadiusNormalized": 0.6,
+            "outerRadiusNormalized": 0.7,
+            "colorName": "black",
+            "colorHex": "#212121"
+          },
+          {
+            "score": 3,
+            "innerRadiusNormalized": 0.7,
+            "outerRadiusNormalized": 0.8,
+            "colorName": "black",
+            "colorHex": "#212121"
+          },
+          {
+            "score": 2,
+            "innerRadiusNormalized": 0.8,
+            "outerRadiusNormalized": 0.9,
+            "colorName": "white",
+            "colorHex": "#FFFFFF"
+          },
+          {
+            "score": 1,
+            "innerRadiusNormalized": 0.9,
+            "outerRadiusNormalized": 1.0,
+            "colorName": "white",
+            "colorHex": "#FFFFFF"
+          }
+        ]
+      },
+      "regulatoryEdition": null
+    }
+  ],
+  "sessions": [
+    {
+      "uuid": "10000000-0000-4000-8000-000000000137",
+      "date": {
+        "localDateTime": "2026-10-25T02:30",
+        "zoneId": "Europe/Paris",
+        "offset": "+02:00"
+      },
+      "status": "IN_PROGRESS",
+      "startedAt": "2026-10-25T00:00:01.123456789Z",
+      "endedAt": null,
+      "plannedEndCount": null,
+      "title": "Séance synthétique — 東京 🎯 \"quotes\"\nligne",
+      "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+      "distanceM": 18,
+      "arrowCountMode": "FREE",
+      "arrowCountPerEnd": null,
+      "isIndoor": true,
+      "scoringMode": "COMPETITION",
+      "bowUuid": "10000000-0000-4000-8000-000000000138",
+      "arrowSetUuid": "10000000-0000-4000-8000-000000000139",
+      "locationName": "Terrain synthétique",
+      "notes": "éà<&>\\\t",
+      "ends": [
+        {
+          "uuid": "10000000-0000-4000-8000-000000000142",
+          "index": 1,
+          "status": "EDITING",
+          "notes": "Volée synthétique",
+          "createdAt": "2026-10-25T00:00:02.123456789Z",
+          "updatedAt": "2026-10-25T00:00:07.123456789Z",
+          "validatedAt": null,
+          "impacts": [
+            {
+              "uuid": "10000000-0000-4000-8000-000000000140",
+              "index": 1,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 0.10000001,
+                "y": -0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:04.123456789Z",
+              "decision": {
+                "kind": "BOUNDARY_JUDGMENT",
+                "selected": {
+                  "score": 9,
+                  "isX": false
+                },
+                "decidedAt": "2026-10-25T00:00:04.123456789Z",
+                "boundary": {
+                  "type": "SCORE_ZONES",
+                  "radiusNormalized": 0.1
+                },
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 0.10000001,
+                  "scoreCalculated": 9,
+                  "scoreFinal": 9,
+                  "geometricIsX": false,
+                  "isX": false,
+                  "isMiss": false,
+                  "isCordDecisionManual": true
+                }
+              },
+              "repositions": []
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000141",
+              "index": 2,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 0.35,
+                "y": -0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:07.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 7,
+                  "isX": false
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 0.35,
+                  "scoreCalculated": 7,
+                  "scoreFinal": 7,
+                  "geometricIsX": false,
+                  "isX": false,
+                  "isMiss": false,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": [
+                {
+                  "impactUuid": "10000000-0000-4000-8000-000000000141",
+                  "impactCreatedAt": "2026-10-25T00:00:03.123456789Z",
+                  "inputMode": "CORRECTED",
+                  "previousPoint": {
+                    "x": 0.1,
+                    "y": -0.0
+                  },
+                  "previousDecision": {
+                    "kind": "BOUNDARY_JUDGMENT",
+                    "selected": {
+                      "score": 10,
+                      "isX": false
+                    },
+                    "decidedAt": "2026-10-25T00:00:04.123456789Z",
+                    "boundary": {
+                      "type": "SCORE_ZONES",
+                      "radiusNormalized": 0.1
+                    },
+                    "reason": null,
+                    "assertions": {
+                      "distanceFromCenter": 0.1,
+                      "scoreCalculated": 10,
+                      "scoreFinal": 10,
+                      "geometricIsX": false,
+                      "isX": false,
+                      "isMiss": false,
+                      "isCordDecisionManual": true
+                    }
+                  },
+                  "previousUpdatedAt": "2026-10-25T00:00:04.123456789Z",
+                  "newPoint": {
+                    "x": 0.25,
+                    "y": -0.0
+                  },
+                  "changedAt": "2026-10-25T00:00:05.123456789Z",
+                  "reason": "Position initiale erronée"
+                },
+                {
+                  "impactUuid": "10000000-0000-4000-8000-000000000141",
+                  "impactCreatedAt": "2026-10-25T00:00:03.123456789Z",
+                  "inputMode": "CORRECTED",
+                  "previousPoint": {
+                    "x": 0.25,
+                    "y": -0.0
+                  },
+                  "previousDecision": {
+                    "kind": "EXCEPTIONAL_CORRECTION",
+                    "selected": {
+                      "score": 10,
+                      "isX": false
+                    },
+                    "decidedAt": "2026-10-25T00:00:06.123456789Z",
+                    "boundary": null,
+                    "reason": "Observation exceptionnelle 東京",
+                    "assertions": {
+                      "distanceFromCenter": 0.25,
+                      "scoreCalculated": 8,
+                      "scoreFinal": 10,
+                      "geometricIsX": false,
+                      "isX": false,
+                      "isMiss": false,
+                      "isCordDecisionManual": false
+                    }
+                  },
+                  "previousUpdatedAt": "2026-10-25T00:00:06.123456789Z",
+                  "newPoint": {
+                    "x": 0.35,
+                    "y": -0.0
+                  },
+                  "changedAt": "2026-10-25T00:00:07.123456789Z",
+                  "reason": "Deuxième repositionnement"
+                }
+              ]
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000143",
+              "index": 3,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 1.1,
+                "y": 0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:03.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 0,
+                  "isX": false
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 1.1,
+                  "scoreCalculated": 0,
+                  "scoreFinal": 0,
+                  "geometricIsX": false,
+                  "isX": false,
+                  "isMiss": true,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": []
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000144",
+              "index": 4,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 0.0,
+                "y": -0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:03.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 10,
+                  "isX": true
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 0.0,
+                  "scoreCalculated": 10,
+                  "scoreFinal": 10,
+                  "geometricIsX": true,
+                  "isX": true,
+                  "isMiss": false,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": []
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000145",
+              "index": 5,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 1.4E-45,
+                "y": -0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:03.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 10,
+                  "isX": true
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 1.4E-45,
+                  "scoreCalculated": 10,
+                  "scoreFinal": 10,
+                  "geometricIsX": true,
+                  "isX": true,
+                  "isMiss": false,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": []
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000146",
+              "index": 6,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 1.7014117E38,
+                "y": 0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:03.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 0,
+                  "isX": false
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 1.7014117E38,
+                  "scoreCalculated": 0,
+                  "scoreFinal": 0,
+                  "geometricIsX": false,
+                  "isX": false,
+                  "isMiss": true,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": []
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000147",
+              "index": 7,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 0.099999994,
+                "y": 0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:03.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 10,
+                  "isX": false
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 0.099999994,
+                  "scoreCalculated": 10,
+                  "scoreFinal": 10,
+                  "geometricIsX": false,
+                  "isX": false,
+                  "isMiss": false,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": []
+            },
+            {
+              "uuid": "10000000-0000-4000-8000-000000000148",
+              "index": 8,
+              "targetTypeUuid": "11111111-1111-4111-8111-111111111111",
+              "point": {
+                "x": 0.1,
+                "y": 0.0
+              },
+              "inputMode": "CORRECTED",
+              "note": "Flèche synthétique 🎯",
+              "createdAt": "2026-10-25T00:00:03.123456789Z",
+              "updatedAt": "2026-10-25T00:00:03.123456789Z",
+              "decision": {
+                "kind": "GEOMETRY",
+                "selected": {
+                  "score": 10,
+                  "isX": false
+                },
+                "decidedAt": null,
+                "boundary": null,
+                "reason": null,
+                "assertions": {
+                  "distanceFromCenter": 0.1,
+                  "scoreCalculated": 10,
+                  "scoreFinal": 10,
+                  "geometricIsX": false,
+                  "isX": false,
+                  "isMiss": false,
+                  "isCordDecisionManual": false
+                }
+              },
+              "repositions": []
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-10-25T00:00:00.123456789Z",
+      "updatedAt": "2026-10-25T00:00:07.123456789Z"
+    }
+  ]
+}
