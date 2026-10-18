@@ -287,6 +287,12 @@ Séance de tir à l'arc.
 
 ---
 
+Les références réelles `bowUuid` et `arrowSetUuid` restent opaques et sans FK vers
+le catalogue. `withEquipmentReferences(..., changedAt)` modifie uniquement ces
+métadonnées et la révision, même après clôture, sans changement d’enfant, score
+ou date de fin. Les fiches manquantes ne sont jamais remplacées par `null`.
+Le parcours Android exige une sélection et confirmation explicites (ADR 031).
+
 ### 2.4 End (Volée)
 
 Une volée = un ensemble de flèches tirées avant d'aller marquer.

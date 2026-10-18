@@ -26,6 +26,26 @@ class SessionUpdateTest {
         listOf(impact), createdAt = now, updatedAt = impact.updatedAt)
     private fun populated() = draft().start(now).withEnd(end())
 
+    @Test fun `explicit equipment operation changes only metadata in every lifecycle status`() {
+        for (old in listOf(draft(), populated(), populated().complete(now.plusSeconds(1)))) {
+            val next = old.withEquipmentReferences("opaque-bow", "opaque-arrows", now.plusSeconds(2))
+            validateSessionUpdate(old, next)
+            assertEquals(old.copy(bowUuid = "opaque-bow", arrowSetUuid = "opaque-arrows", updatedAt = now.plusSeconds(2)), next)
+            assertEquals(old.ends, next.ends); assertEquals(old.endedAt, next.endedAt); assertEquals(old.status, next.status)
+        }
+    }
+    @Test fun `equipment metadata rejects backdating while unchanged references keep the original value`() {
+        val old = populated().copy(updatedAt = now.plusSeconds(1))
+        assertFailsWith<IllegalArgumentException> { old.withEquipmentReferences("bow", null, now) }
+        assertSame(old, old.withEquipmentReferences(old.bowUuid, old.arrowSetUuid, now))
+    }
+    @Test fun `equipment revision never reopens score editing after completion`() {
+        val old = populated().complete(now.plusSeconds(1)).withEquipmentReferences("bow", null, now.plusSeconds(2))
+        assertFailsWith<IllegalArgumentException> { old.withEnd(end()) }
+        assertFailsWith<IllegalArgumentException> { old.copy(status = SessionStatus.IN_PROGRESS, endedAt = null) }
+        assertFailsWith<IllegalArgumentException> { old.copy(ends = emptyList()) }
+    }
+
     // Deliberately reconstruct isolated snapshots: unlike copy, this has no previous-state context.
     private fun rebuild(s: Session, uuid: String = s.uuid, target: TargetType = s.targetType,
         status: SessionStatus = s.status, started: Instant? = s.startedAt, ended: Instant? = s.endedAt,

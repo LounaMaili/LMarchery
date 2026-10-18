@@ -16,7 +16,7 @@ import com.lmarchery.feature.export.ExportCoordinator
 import com.lmarchery.feature.export.ExportDocumentWriter
 
 class SessionViewModel(repository: SessionRepository, source: ArchiveSource, writer: ExportDocumentWriter, importer: ArchiveImporter, reader: ImportDocumentReader, v2Source: ArchiveV2Source? = null, v2Importer: ArchiveV2Importer? = null, equipmentRepository: EquipmentRepository? = null) : ViewModel() {
-    val controller = SessionController(repository, viewModelScope).also { it.refresh() }
+    val controller = SessionController(repository, viewModelScope, equipmentRepository = equipmentRepository).also { it.refresh() }
     val equipmentController = equipmentRepository?.let { EquipmentController(it, viewModelScope, controller::acquireImport, controller::releaseArchiveOperation) }
     val exportCoordinator = ExportCoordinator(source, writer, viewModelScope,
         controller::acquireExport, controller::releaseExport, v2Source = v2Source)

@@ -86,7 +86,7 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 4.2 | Écran « Fiche arc » (nom, type, puissance, notes) | ✓ (ADR 030, essais physiques à faire) | Moyenne |
 | 4.3 | Créer l'entité `ArrowSet` (Room) | ✓ fondation sans UI (ADR 025) | Moyenne |
 | 4.4 | Écran « Fiche flèches » (nom, spine, longueur, notes) | ✓ (ADR 030, essais physiques à faire) | Moyenne |
-| 4.5 | Association arc + flèches lors de la création de séance | ☐ | Moyenne |
+| 4.5 | Association arc + flèches lors de la création de séance | ✓ facultative, aussi après clôture (ADR 031) | Moyenne |
 | 4.6 | Créer l'entité `SessionPreset` (Room) | ☐ | Moyenne |
 | 4.7 | Écran « Créer un preset » | ☐ | Moyenne |
 | 4.8 | Écran « Choisir un preset » (sélection rapide) | ☐ | Moyenne |
