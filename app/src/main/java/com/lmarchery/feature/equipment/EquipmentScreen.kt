@@ -44,6 +44,7 @@ fun EquipmentScreen(controller: EquipmentController) {
                 if (state.problem == EquipmentProblem.TECHNICAL)
                     OutlinedButton(onClick = controller::retry, enabled = !state.busy) { Text("Réessayer exactement la même proposition") }
                 OutlinedButton(onClick = controller::inspectStored, enabled = !state.busy) { Text("Consulter la version enregistrée") }
+                state.storedDiagnostic?.let { Text("Relecture : $it", color = MaterialTheme.colorScheme.error) }
                 state.stored?.let { EquipmentDetails(it, "Version relue — proposition locale conservée") }
             }
             when (state.page) {

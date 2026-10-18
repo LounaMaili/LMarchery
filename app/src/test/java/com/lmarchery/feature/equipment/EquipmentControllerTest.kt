@@ -19,6 +19,7 @@ class EquipmentControllerTest {
         val values = linkedMapOf<String, Equipment>(bow().uuid to bow(), arrows().uuid to arrows())
         var gate: CompletableDeferred<Unit>? = null; var readGate: CompletableDeferred<Unit>? = null
         var createResult: EquipmentCreateResult? = null; var updateResult: EquipmentUpdateResult? = null
+        var readThrown: Exception? = null
         var readResult: EquipmentReadResult<Equipment>? = null; var discoveryFailure = false
         var locked = false; var allowed = true; var releases = 0; var sequence = 20
         val writes = mutableListOf<EquipmentRevision>(); var reads = 0
@@ -26,7 +27,7 @@ class EquipmentControllerTest {
             override suspend fun discover(kind: EquipmentKind) = if (discoveryFailure) EquipmentDiscoveryResult.TechnicalFailure(IOException("Synthetic"))
                 else EquipmentDiscoveryResult.Found(values.values.filter { it.kind() == kind }.map { it.uuid })
             override suspend fun read(kind: EquipmentKind, uuid: String): EquipmentReadResult<Equipment> {
-                reads++; readGate?.await(); return readResult ?: values[uuid]?.let { EquipmentReadResult.Found(it) } ?: EquipmentReadResult.NotFound
+                reads++; readGate?.await(); readThrown?.let { throw it }; return readResult ?: values[uuid]?.let { EquipmentReadResult.Found(it) } ?: EquipmentReadResult.NotFound
             }
             override suspend fun create(value: Equipment): EquipmentCreateResult {
                 writes += EquipmentRevision(null, value); gate?.await(); createResult?.let { return it }
@@ -135,6 +136,62 @@ class EquipmentControllerTest {
             EquipmentUpdateResult.Conflict(StorageDiagnostic("bows", "Changed"))).forEach { result ->
             Harness().use { h -> h.editBow(); h.updateResult = result; h.controller.save(); assertNotNull(h.state.pending)
                 assertEquals(bow(), h.state.original); h.controller.retry(); assertEquals(1, h.writes.size) }
+        }
+    }
+    @Test fun `inspecting after lost create acknowledgement retains write diagnosis and exact retry capability`() {
+        Harness().use { h ->
+            h.newBow(); h.createResult = EquipmentCreateResult.TechnicalFailure(IOException("Lost acknowledgement")); h.controller.save()
+            val pending = h.state.pending!!; h.values[pending.proposed.uuid] = pending.proposed
+            h.controller.inspectStored()
+            assertEquals(EquipmentProblem.TECHNICAL, h.state.problem)
+            assertSame(pending, h.state.pending); assertEquals(pending.proposed, h.state.stored)
+            h.createResult = null; h.controller.retry()
+            assertEquals(2, h.writes.size); assertSame(pending.proposed, h.writes.last().proposed)
+            assertEquals(pending.proposed, h.state.original); assertNull(h.state.pending)
+        }
+    }
+    @Test fun `absent inspection after technical create failure never hides the pending write diagnosis`() {
+        Harness().use { h ->
+            h.newBow(); h.createResult = EquipmentCreateResult.TechnicalFailure(IOException("Not confirmed")); h.controller.save()
+            val pending = h.state.pending!!; h.controller.inspectStored()
+            assertEquals(EquipmentProblem.TECHNICAL, h.state.problem); assertSame(pending, h.state.pending)
+        }
+    }
+    @Test fun `inspection failures keep conflict distinct and never enable an inappropriate retry`() {
+        listOf<EquipmentReadResult<Equipment>>(EquipmentReadResult.NotFound,
+            EquipmentReadResult.TechnicalFailure(IOException("Read failure")),
+            EquipmentReadResult.NeedsIntervention(StorageDiagnostic("bows", "Corrupt read"))).forEach { read ->
+            Harness().use { h ->
+                h.editBow(); h.updateResult = EquipmentUpdateResult.Conflict(StorageDiagnostic("bows", "Write conflict")); h.controller.save()
+                val pending = h.state.pending!!; val writeDiagnostic = h.state.diagnostic
+                h.readResult = read; h.controller.inspectStored()
+                assertEquals(EquipmentProblem.CONFLICT, h.state.problem); assertEquals(writeDiagnostic, h.state.diagnostic)
+                assertSame(pending, h.state.pending); assertNotNull(h.state.storedDiagnostic)
+                h.controller.retry(); assertEquals(1, h.writes.size)
+            }
+        }
+    }
+    @Test fun `thrown inspection error preserves write outcome and has a separate read diagnostic`() {
+        Harness().use { h ->
+            h.editBow(); h.updateResult = EquipmentUpdateResult.Conflict(StorageDiagnostic("bows", "Write conflict")); h.controller.save()
+            val pending = h.state.pending!!; h.readThrown = IOException("Read threw"); h.controller.inspectStored()
+            assertEquals(EquipmentProblem.CONFLICT, h.state.problem); assertSame(pending, h.state.pending)
+            assertTrue(h.state.storedDiagnostic!!.contains("Relecture impossible")); h.controller.retry(); assertEquals(1, h.writes.size)
+        }
+    }
+    @Test fun `inspection cancellation preserves conflict pending draft and releases busy without a write`() = runBlocking<Unit> {
+        val h = Harness(); h.editBow(); h.updateResult = EquipmentUpdateResult.Conflict(StorageDiagnostic("bows", "Write conflict")); h.controller.save()
+        val pending = h.state.pending; val draft = h.state.draft
+        h.readGate = CompletableDeferred(); h.controller.inspectStored(); assertTrue(h.state.busy); h.close(); yield()
+        assertEquals(EquipmentProblem.CONFLICT, h.state.problem); assertSame(pending, h.state.pending); assertEquals(draft, h.state.draft)
+        assertFalse(h.state.busy); assertTrue(h.state.storedDiagnostic!!.contains("interrompue")); assertEquals(1, h.writes.size)
+    }
+    @Test fun `failed subsequent inspection clears the old read value without clearing the write diagnosis`() {
+        Harness().use { h ->
+            h.editBow(); h.updateResult = EquipmentUpdateResult.TechnicalFailure(IOException("Write")); h.controller.save()
+            h.controller.inspectStored(); assertNotNull(h.state.stored); assertNull(h.state.storedDiagnostic)
+            h.readResult = EquipmentReadResult.NotFound; h.controller.inspectStored()
+            assertNull(h.state.stored); assertNotNull(h.state.storedDiagnostic); assertEquals(EquipmentProblem.TECHNICAL, h.state.problem)
         }
     }
     @Test fun `catalog gate excludes SAF session commands and entry from any other screen`() {
