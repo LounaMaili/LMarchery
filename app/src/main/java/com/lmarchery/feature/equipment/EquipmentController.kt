@@ -14,7 +14,7 @@ data class EquipmentEntry(val kind: EquipmentKind, val uuid: String, val value: 
 data class EquipmentRevision(val expected: Equipment?, val proposed: Equipment)
 data class EquipmentUiState(val open: Boolean = false, val page: EquipmentPage = EquipmentPage.LIST,
     val busy: Boolean = false, val entries: List<EquipmentEntry> = emptyList(), val original: Equipment? = null,
-    val draft: EquipmentDraft? = null, val pending: EquipmentRevision? = null, val stored: Equipment? = null,
+    val draft: EquipmentDraft? = null, val pending: EquipmentRevision? = null, val stored: Equipment? = null, val storedDiagnostic: String? = null,
     val problem: EquipmentProblem? = null, val diagnostic: String? = null, val confirmation: String? = null) {
     val editable get() = open && !busy && pending == null
 }
@@ -61,13 +61,13 @@ class EquipmentController(private val repository: EquipmentRepository, private v
     }
     private suspend fun readDetail(kind: EquipmentKind, uuid: String): Boolean = when (val result = repository.read(kind, uuid)) {
         is EquipmentReadResult.Found -> {
-            ui = ui.copy(page = EquipmentPage.DETAIL, original = result.value, draft = null, pending = null, stored = null); true
+            ui = ui.copy(page = EquipmentPage.DETAIL, original = result.value, draft = null, pending = null, stored = null, storedDiagnostic = null); true
         }
         else -> { problem(readProblem(result), readDiagnostic(result)); false }
     }
     fun list() {
         if (!ui.editable || ui.draft != null) return
-        ui = ui.copy(page = EquipmentPage.LIST, original = null, stored = null)
+        ui = ui.copy(page = EquipmentPage.LIST, original = null, stored = null, storedDiagnostic = null)
         refresh()
     }
     fun add(kind: EquipmentKind) {
@@ -113,15 +113,15 @@ class EquipmentController(private val repository: EquipmentRepository, private v
     private fun acknowledge(uuid: String, revision: EquipmentRevision) {
         check(uuid == revision.proposed.uuid) { "Unexpected equipment acknowledgement." }
         ui = ui.copy(page = EquipmentPage.DETAIL, original = revision.proposed, draft = null, pending = null,
-            stored = null, confirmation = "Fiche enregistrée et confirmée.")
+            stored = null, storedDiagnostic = null, confirmation = "Fiche enregistrée et confirmée.")
     }
     fun inspectStored() {
         val value = ui.pending?.proposed ?: return
         if (ui.busy) return
-        operation {
+        operation(inspection = true) {
             when (val result = repository.read(value.kind(), value.uuid)) {
-                is EquipmentReadResult.Found -> ui = ui.copy(stored = result.value)
-                else -> problem(readProblem(result), readDiagnostic(result))
+                is EquipmentReadResult.Found -> ui = ui.copy(stored = result.value, storedDiagnostic = null)
+                else -> ui = ui.copy(stored = null, storedDiagnostic = readDiagnostic(result))
             }
         }
     }
@@ -131,18 +131,26 @@ class EquipmentController(private val repository: EquipmentRepository, private v
         val original = ui.original
         operation {
             if (original == null) {
-                ui = ui.copy(page = EquipmentPage.LIST, draft = null, pending = null, stored = null)
+                ui = ui.copy(page = EquipmentPage.LIST, draft = null, pending = null, stored = null, storedDiagnostic = null)
                 loadEntries()
             } else readDetail(original.kind(), original.uuid)
         }
     }
-    private fun operation(block: suspend () -> Unit) {
+    private fun operation(inspection: Boolean = false, block: suspend () -> Unit) {
         if (ui.busy) return
-        ui = ui.copy(busy = true, problem = null, diagnostic = null)
+        ui = ui.copy(busy = true, problem = if (inspection) ui.problem else null,
+            diagnostic = if (inspection) ui.diagnostic else null, storedDiagnostic = null)
         scope.launch {
             try { block(); currentCoroutineContext().ensureActive() }
-            catch (e: CancellationException) { problem(EquipmentProblem.TECHNICAL, "Opération interrompue, non confirmée. Relire avant toute nouvelle tentative."); throw e }
-            catch (_: Exception) { problem(EquipmentProblem.TECHNICAL, "Opération non confirmée. Saisie et proposition conservées.") }
+            catch (e: CancellationException) {
+                if (inspection) ui = ui.copy(stored = null, storedDiagnostic = "Relecture interrompue. Le résultat de la sauvegarde reste inchangé.")
+                else problem(EquipmentProblem.TECHNICAL, "Opération interrompue, non confirmée. Relire avant toute nouvelle tentative.")
+                throw e
+            }
+            catch (_: Exception) {
+                if (inspection) ui = ui.copy(stored = null, storedDiagnostic = "Relecture impossible. Le résultat de la sauvegarde reste inchangé.")
+                else problem(EquipmentProblem.TECHNICAL, "Opération non confirmée. Saisie et proposition conservées.")
+            }
             finally { ui = ui.copy(busy = false) }
         }
     }

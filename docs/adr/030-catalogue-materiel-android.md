@@ -50,7 +50,10 @@ ne peuvent ainsi pas être déclenchées simultanément par l’interface.
 - Échec technique : proposition, UUID, dates et état attendu conservés. Une relance
   explicite réutilise le même couple. Conflit/intervention/absence : aucune
   recréation ni relance sur une base récente. « Consulter la version enregistrée »
-  conserve la proposition séparément. L’abandon est confirmé par dialogue ; pour
+  conserve la proposition séparément. Son résultat et ses erreurs de lecture ne
+  remplacent pas le diagnostic de l’écriture : une erreur technique garde sa
+  relance exacte, un conflit n’acquiert pas une relance technique. Une relecture
+  échouée retire la valeur précédemment lue et affiche son propre diagnostic. L’abandon est confirmé par dialogue ; pour
   une fiche existante, il attend une lecture réussie avant d’effacer la saisie.
 
 ## Cycle de vie et limites
