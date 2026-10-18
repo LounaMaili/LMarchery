@@ -36,16 +36,16 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
     val state by coordinator.state.collectAsStateWithLifecycle()
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Sauvegarde JSON des séances", style = MaterialTheme.typography.titleMedium)
+            Text("Sauvegardes JSON V2 / V1", style = MaterialTheme.typography.titleMedium)
             Text("Le fichier est lisible en clair et peut contenir des informations personnelles. L’import contrôlé est accessible depuis la liste des séances.",
                 style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
-                ExportState.Available -> "Export disponible : toutes les séances enregistrées, y compris celles en cours."
-                ExportState.Preparing -> "Préparation : lecture cohérente des séances…"
+                ExportState.Available -> "V2 : toutes les séances, tous les profils et le catalogue matériel, y compris sans séance. V1 : séances et profils associés uniquement, sans matériel."
+                ExportState.Preparing -> "Préparation : lecture d’un instantané cohérent…"
                 ExportState.Validating -> "Validation : encodage, décodage et reconstruction du contenu…"
                 is ExportState.Choosing -> "Choisissez la destination du fichier ${current.fileName}."
                 ExportState.Writing -> "Écriture et relecture du document… Sauvegarde non encore confirmée."
-                is ExportState.Succeeded -> "Export confirmé après relecture : ${current.sessionCount} séance(s), ${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import contrôlé est accessible depuis la liste des séances."
+                is ExportState.Succeeded -> "Export V${current.schemaVersion} confirmé après relecture : ${current.sessionCount} séance(s), ${current.profileCount} profil(s), ${current.bowCount} arc(s), ${current.arrowSetCount} jeu(x) de flèches, ${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import contrôlé est accessible depuis la liste des séances."
                 ExportState.Cancelled -> "Export annulé : aucun contenu écrit par LMarchery."
                 is ExportState.Failed -> current.diagnostic + if (current.potentiallyIncomplete)
                     "\nLe document peut être vide ou incomplet. Ne l’utilisez pas comme sauvegarde ; choisissez un nouveau document lors d’une nouvelle tentative." else ""
@@ -53,8 +53,10 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
             if (state.active && state !is ExportState.Choosing) LinearProgressIndicator(Modifier.fillMaxWidth())
             if (sessionState.busy || sessionState.pending != null || sessionState.impactEdit != null)
                 Text("Pour exporter, terminez l’opération en cours, résolvez toute sauvegarde non confirmée et fermez la sélection/correction. Un candidat non enregistré n’est pas exporté.")
-            Button(onClick = coordinator::begin,
-                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter mes séances") }
+            Button(onClick = coordinator::beginV2,
+                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter la sauvegarde complète V2") }
+            OutlinedButton(onClick = coordinator::begin,
+                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter V1 — sans catalogue matériel") }
         }
     }
 }

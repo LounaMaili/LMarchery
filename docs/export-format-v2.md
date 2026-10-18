@@ -1,12 +1,12 @@
 # Contrat de sauvegarde JSON V2 — LMarchery
 
 > Contrat, codec et collecte/restauration atomique Room V2 disponibles.
-> **Le parcours SAF/Android utilise toujours JSON V1, sans sauvegarder le matériel.**
+> Le parcours SAF Android propose V2 complet et conserve un export V1 explicitement sans matériel.
 
 Le [contrat V1](export-format-v1.md) conserve sa validité et ses octets d'export.
 L'[ADR 026](adr/026-contrat-sauvegarde-json-v2.md) définit la séparation des types,
 la lecture des deux versions. L’[ADR 027](adr/027-archives-room-v2-atomiques.md)
-décrit leur intégration transactionnelle Room, avant le branchement Android.
+décrit leur intégration transactionnelle Room. L’[ADR 029](adr/029-saf-android-archives-v2.md) décrit le branchement SAF Android.
 
 ## Racine V2
 
@@ -82,7 +82,7 @@ ses listes immuables et ne peut pas être transmis aux API Room V1.
 
 - `encode(DomainArchive)` : V1 inchangé, y compris octets historiques.
 - `encode(DomainArchiveV2)` : V2 complet, sans rétrogradation implicite.
-- `decode(bytes)` : V1 seulement, toujours utilisé par Android ; V2 est rejeté.
+- `decode(bytes)` : V1 seulement, conservé pour compatibilité ; V2 est rejeté.
 - `decodeVersioned(bytes)` : `VersionedArchiveJsonRead.V1`, `.V2` ou `.Rejected`.
 
 `.V1` signifie « matériel non fourni dans cette version », jamais « catalogue
@@ -97,7 +97,7 @@ par tableau, 64 propriétés par objet, 16 384 caractères par chaîne/clé et
 128 caractères par nombre. Ces limites s'appliquent au document entier et à
 l'encodage, sans troncature ni acceptation partielle.
 
-## Intégration Room et limite Android
+## Intégration Room et Android
 
 `RoomSessionStore.readArchiveV2()` restitue tous les profils stockés (même non
 référencés), séances et fiches dans une seule transaction lecteur. Les racines
@@ -113,6 +113,9 @@ les listes vides ne suppriment rien. Voir l'[ADR 027](adr/027-archives-room-v2-a
 pour résultats, annulation, rollback et incertitude après perte d'acquittement.
 
 Room reste en version 2 et le scoring en version 1 ; aucune migration nouvelle.
-**Aucun import/export SAF V2 ni écran de catalogue n'est ajouté.** La prochaine
-étape doit conserver la version décodée et brancher ces API au parcours Android,
-avec confirmation et acquittement, sans rétrogradation V2→V1.
+Android propose « Exporter la sauvegarde complète V2 » et un choix V1 distinct,
+excluant le catalogue. Une V2 de matériel seul, profils seuls ou vide est valide.
+L’import conserve la version décodée, présente les quatre catégories V2 et exige
+une confirmation avant l’appel transactionnel correspondant. Un aperçu périmé
+ou un commit non confirmé n’est jamais relancé automatiquement. Voir l’[ADR 029](adr/029-saf-android-archives-v2.md).
+Aucun écran de gestion du catalogue n’est ajouté dans cette étape.

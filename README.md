@@ -27,7 +27,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Premier parcours Compose / Room : création, saisie, validation, reprise et consultation
 - [x] Historique chronologique, tableau des volées et résumé des scores validés
 - [x] Sauvegardes JSON : export vérifié et import atomique sans écrasement
-- [x] Fondation du catalogue arcs/flèches : modèles et SQLite 2, sans UI ni sauvegarde du matériel
+- [x] Fondation du catalogue arcs/flèches : modèles et SQLite 2, sans UI ; sauvegardes SAF V2
 - [ ] Blason interactif complet
 - [ ] Premier test terrain
 
@@ -179,50 +179,35 @@ Import/export sont regroupés dans « Sauvegardes » sur l’accueil, après les
 Voir [ADR 023](docs/adr/023-historique-et-presentation-scores-android.md) et le
 [protocole de consultation](docs/tests-terrain-v1.md#protocole-historique-et-scores-pr-21).
 
-## Exporter les séances
+## Sauvegardes Android V2 et compatibilité V1
 
-Depuis l’accueil, section « Sauvegardes », « Exporter mes séances » prépare toutes les séances Room, y compris celles en
-cours, et leurs profils, décisions et traces dans un instantané cohérent.
-L’application vérifie l’aller-retour JSON complet avant de proposer le sélecteur
-Android. Choisir la destination du fichier `.lmarchery.json` ; attendre le message
-confirmant l’écriture et la relecture identique, le nombre de séances et la taille.
-Une base vide ou une séance illisible bloque l’export global. Résoudre d’abord
-une sauvegarde en attente et fermer toute proposition de correction.
+Depuis l’accueil, section « Sauvegardes », « Exporter la sauvegarde complète V2 »
+prépare un seul instantané Room contenant tous les profils, séances, descendants,
+arcs et jeux de flèches. Le matériel seul, les profils seuls ou une base vide sont
+exportables. « Exporter V1 — sans catalogue matériel » conserve le format historique
+(séances et profils associés ; une base sans séance reste refusée).
 
-Le fichier UTF-8 est lisible en clair et peut contenir des informations personnelles.
-Ne pas utiliser un document dont la sauvegarde n’est pas confirmée : après erreur
-ou interruption, il peut être incomplet. Aucun fichier n’est supprimé automatiquement.
-Les fournisseurs qui ne permettent pas la relecture ne donnent pas de succès
-confirmé. Aucune permission globale de stockage ni synchronisation propre à
-LMarchery ; Android laisse choisir le fournisseur.
+L’aller-retour JSON strict est vérifié avant le sélecteur Android ; le succès
+exige écriture, fermeture et relecture exacte du document. Le message précise
+version, comptes et octets. Le fichier en clair peut être personnel. Ne pas
+utiliser un fichier non confirmé : il peut être incomplet. Aucune suppression ou
+relance automatique. Le fournisseur doit autoriser la relecture.
 
-Seuls séances et profils sont sauvegardés. Les fiches `Bow` / `ArrowSet` du
-catalogue SQLite 2 restent absentes du JSON V1 et ne sont pas exposées à
-l’utilisateur. Le [contrat/codec V2](docs/export-format-v2.md) inclut le matériel
-dans une API distincte ([ADR 026](docs/adr/026-contrat-sauvegarde-json-v2.md)).
-Sa collecte/import atomiques Room sont disponibles
-([ADR 027](docs/adr/027-archives-room-v2-atomiques.md)) ; sa connexion SAF
-reste à développer avant l’interface de catalogue. La base Room n’est pas
-modifiée par l’export. Le contrat strict, les limites de taille et les garanties numériques sont détaillés
-dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
-[format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut
-les perdre ; conserver une sauvegarde validée hors de l’application.
+« Importer une sauvegarde » lit au plus 16 MiB et distingue les versions.
+V1 conserve son contrat historique ; l’absence de matériel ne vide jamais le
+catalogue. V2 présente nouveaux/identiques/conflits séparément pour séances,
+profils, arcs et flèches. Confirmer ajoute seulement l’absent dans une transaction
+unique ; toute divergence bloque l’ensemble, sans remplacement ni réparation.
+Une V2 vide ou identique donne une vérification sans écriture après confirmation.
+Le fichier n’est pas rouvert à la confirmation. Un aperçu périmé exige une nouvelle
+sélection. Un résultat SQL incertain exige une relecture, jamais un retry implicite.
 
-## Import contrôlé des sauvegardes (PR 20)
-
-Depuis l’accueil, section « Sauvegardes », « Importer une sauvegarde » ouvre le sélecteur Android. Le contenu
-réel est lu avec un plafond de 16 MiB, décodé strictement et comparé à SQLite.
-L’aperçu donne nouvelles séances, identiques, conflits et profils. Confirmer
-« Importer les N nouvelles séances » ajoute toute l’archive atomiquement, avec
-UUID, dates et provenances d’origine. Les identiques ne sont pas réécrites.
-
-Toute divergence ou collision refuse l’ensemble ; aucune fusion, suppression ou
-sélection selon `updatedAt`. Un fichier vide ou un profil sans séance est refusé.
-Une modification concurrente invalidant le plan exige un nouvel aperçu. Après
-interruption non confirmée, relire la liste et sélectionner à nouveau le fichier
-pour constater les identiques sans doublon. Rotation : candidat conservé en mémoire ;
-mort du processus : nouvelle sélection. Import et export s’excluent mutuellement.
-Voir [ADR 022](docs/adr/022-import-json-controle-transactionnel.md).
+Import, export et écritures de séance s’excluent. Résoudre les sauvegardes en
+attente et fermer les corrections. Le candidat est conservé pendant la rotation,
+pas après la mort du processus. Aucun écran de catalogue n’est encore ajouté.
+Voir les [formats V1](docs/export-format-v1.md), [V2](docs/export-format-v2.md) et
+l’[ADR 029](docs/adr/029-saf-android-archives-v2.md). Les essais SAF physiques
+restent distincts des tests JVM/SQLite et de la compilation Android.
 
 ## Versions
 

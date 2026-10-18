@@ -220,11 +220,12 @@ L'utilisateur ouvre l'application
 
 ## 5. Parcours — Exporter ses données (PR 19)
 
-1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter mes séances ». Si une sauvegarde est en cours/non confirmée
+1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter la sauvegarde complète V2 » (ou « Exporter V1 — sans catalogue matériel »). Si une sauvegarde est en cours/non confirmée
    ou une correction ouverte, terminer ou résoudre cette action d’abord.
-2. Attendre préparation puis validation : toutes les séances et profils sont lus
-   en transaction et vérifiés par aller-retour JSON. Une base vide ou une seule
-   séance illisible donne un diagnostic ; aucun export partiel présenté comme complet.
+2. Attendre préparation puis validation : V2 lit tous les profils, séances et
+   fiches matériel en une transaction et vérifie l’aller-retour JSON. Une base
+   vide est exportable en V2 ; V1 exige une séance. Toute donnée illisible bloque
+   l’ensemble ; aucun export partiel présenté comme complet.
 3. Choisir la destination dans le sélecteur Android. Le nom proposé se termine
    par `.lmarchery.json`. L’annulation n’écrit aucun contenu.
 4. Attendre écriture, fermeture et relecture. Le succès donne nombre de séances,
@@ -247,10 +248,12 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
 2. Dans la section « Sauvegardes », choisir « Importer une sauvegarde », puis sélectionner explicitement le fichier
    dans Android. Annuler ne demande aucune écriture. Nom/MIME ne prouvent rien :
    octets lus avec plafond de 16 MiB, décodage strict puis comparaison transactionnelle.
-3. Lire les comptes : nouvelles séances, identiques, conflits et profils. Toute
+3. Lire la version et les comptes : V2 sépare séances, profils, arcs et flèches,
+   chacun en nouveaux/identiques/conflits. V1 conserve son aperçu de séances. Toute
    divergence/collision bloque l’ensemble avec UUID et diagnostic. Aucun choix
-   d’écrasement. Une archive vide ou un profil non référencé est refusé.
-4. Fermer l’aperçu sans importer, ou confirmer « Importer les N nouvelles séances ».
+   d’écrasement. V1 refuse une archive vide ou un profil non référencé ; V2 accepte
+   matériel seul, profils seuls ou une archive vide explicite sans effacement.
+4. Fermer l’aperçu sans importer, ou confirmer l’import de la version affichée.
    Si tout existe à l’identique, aucune importation n’est nécessaire. Le fichier
    n’est jamais rouvert silencieusement à la confirmation.
 5. Attendre l’acquittement SQL. Le plan est recontrôlé sous transaction écrivain ;
@@ -261,8 +264,10 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
    sont reconnues identiques, sans doublon. Aucun retry automatique. La rotation
    conserve le candidat ; la mort du processus exige une nouvelle sélection.
 
-Seuls les modèles V1 implémentés sont restaurés. Pas de fusion, suppression,
-migration ou résolution par date. Voir [ADR 022](adr/022-import-json-controle-transactionnel.md).
+V1 ne fournit pas de matériel et ne modifie pas le catalogue. V2 restaure aussi les
+fiches et profils non référencés. Pas de fusion, suppression ni résolution par date.
+Voir [ADR 022](adr/022-import-json-controle-transactionnel.md) et
+[ADR 029](adr/029-saf-android-archives-v2.md).
 
 ## 6. Parcours — Gérer le matériel
 
