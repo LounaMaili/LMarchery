@@ -37,7 +37,7 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Restaurer une sauvegarde JSON", style = MaterialTheme.typography.titleMedium)
-            Text("Ajout de séances absentes uniquement. Aucun écrasement, fusion ou suppression.", style = MaterialTheme.typography.bodySmall)
+            Text("V1 : séances et profils associés ; matériel non fourni. V2 : séances, profils et matériel absents. Aucun écrasement, fusion ou suppression.", style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
                 ImportState.Available -> "Import disponible depuis un fichier .lmarchery.json."
                 is ImportState.Choosing -> "Sélectionnez explicitement votre sauvegarde."
@@ -46,6 +46,13 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
                 is ImportState.Preview -> if (current.plan.newSessionUuids.isEmpty())
                     "Toutes les séances existent déjà à l’identique. Aucune importation nécessaire."
                     else "Prévisualisation prête. Confirmez pour ajouter uniquement les nouvelles séances."
+                is ImportState.PreviewV2 -> when {
+                    current.plan.isEmptyArchive -> "Archive V2 vide explicitement déclarée. La confirmation vérifie l’état local sans écriture."
+                    !current.plan.hasAdditions -> "V2 : tous les éléments existent à l’identique. La confirmation vérifie l’état local sans écriture."
+                    else -> "Aperçu V2 prêt. Confirmez l’ajout atomique des éléments absents."
+                }
+                is ImportState.ConflictV2 -> current.diagnostic
+                is ImportState.SucceededV2 -> v2SuccessText(current)
                 ImportState.Confirming -> "Confirmation reçue ; préparation de la transaction…"
                 ImportState.Importing -> "Importation en cours… Résultat SQL non encore confirmé."
                 is ImportState.Conflict -> current.diagnostic
@@ -54,7 +61,7 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
                 ImportState.Cancelled -> "Import annulé : aucune écriture demandée."
                 is ImportState.Failed -> current.diagnostic
                 is ImportState.Unconfirmed -> if (current.mayHaveCommitted)
-                    "Importation non confirmée après erreur ou interruption. Relisez la liste puis sélectionnez à nouveau le fichier pour constater les séances identiques. Aucune relance automatique."
+                    "Importation non confirmée après erreur ou interruption. Relisez la liste puis sélectionnez à nouveau le fichier pour constater les éléments identiques. Aucune relance automatique."
                     else "Lecture interrompue. Aucune écriture demandée ; sélectionnez à nouveau le fichier."
             })
             val plan = (state as? ImportState.Preview)?.plan ?: (state as? ImportState.Conflict)?.plan
@@ -63,11 +70,21 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
                 plan.conflicts.take(20).forEach { Text("${it.code} · ${it.uuid ?: "archive"} · ${it.path} : ${it.detail}", style = MaterialTheme.typography.bodySmall) }
                 if (plan.conflicts.size > 20) Text("${plan.conflicts.size - 20} autre(s) conflit(s). Aucun import possible.")
             }
+            val planV2 = (state as? ImportState.PreviewV2)?.plan ?: (state as? ImportState.ConflictV2)?.plan
+            if (planV2 != null) {
+                v2PlanLines(planV2).forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
+                planV2.conflicts.take(20).forEach { Text("${it.code} · ${it.uuid ?: "archive"} · ${it.path} : ${it.detail}", style = MaterialTheme.typography.bodySmall) }
+                if (planV2.conflicts.size > 20) Text("${planV2.conflicts.size - 20} autre(s) conflit(s). Aucun import possible.")
+            }
+            if (state is ImportState.PreviewV2) {
+                Button(onClick = coordinator::confirm) { Text(if (planV2!!.hasAdditions) "Confirmer l’import V2 complet" else "Confirmer la vérification sans écriture") }
+                TextButton(onClick = coordinator::cancel) { Text("Fermer l’aperçu sans importer") }
+            }
             if (state is ImportState.Preview) {
                 if (plan!!.canImport) Button(onClick = coordinator::confirm) { Text("Importer les ${plan.newSessionUuids.size} nouvelles séances") }
                 TextButton(onClick = coordinator::cancel) { Text("Fermer l’aperçu sans importer") }
             }
-            if (state.active && state !is ImportState.Choosing && state !is ImportState.Preview) LinearProgressIndicator(Modifier.fillMaxWidth())
+            if (state.active && state !is ImportState.Choosing && state !is ImportState.Preview && state !is ImportState.PreviewV2) LinearProgressIndicator(Modifier.fillMaxWidth())
             if (sessionState.busy || sessionState.pending != null || sessionState.impactEdit != null || sessionState.archiveOperationLocked && !state.active)
                 Text("Terminez l’opération en cours et résolvez toute sauvegarde ou correction avant d’importer.")
             Button(onClick = coordinator::begin, enabled = !state.active && sessionState.canNavigate) { Text("Importer une sauvegarde") }
