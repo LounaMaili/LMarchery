@@ -27,7 +27,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Premier parcours Compose / Room : création, saisie, validation, reprise et consultation
 - [x] Historique chronologique, tableau des volées et résumé des scores validés
 - [x] Sauvegardes JSON : export vérifié et import atomique sans écrasement
-- [x] Fondation du catalogue arcs/flèches : modèles et SQLite 2, sans UI ; sauvegardes SAF V2
+- [x] Fondation du catalogue arcs/flèches : modèles, SQLite 2, fiches Compose et sauvegardes SAF V2
 - [ ] Blason interactif complet
 - [ ] Premier test terrain
 
@@ -204,10 +204,25 @@ sélection. Un résultat SQL incertain exige une relecture, jamais un retry impl
 
 Import, export et écritures de séance s’excluent. Résoudre les sauvegardes en
 attente et fermer les corrections. Le candidat est conservé pendant la rotation,
-pas après la mort du processus. Aucun écran de catalogue n’est encore ajouté.
+pas après la mort du processus. Le catalogue est accessible depuis « Matériel » à l’accueil.
 Voir les [formats V1](docs/export-format-v1.md), [V2](docs/export-format-v2.md) et
 l’[ADR 029](docs/adr/029-saf-android-archives-v2.md). Les essais SAF physiques
 restent distincts des tests JVM/SQLite et de la compilation Android.
+
+## Catalogue matériel Android
+
+« Matériel » ouvre les listes d’arcs et de jeux de flèches. Ajouter une fiche ou
+ouvrir une fiche puis « Modifier la fiche ». Les UUID distinguent les homonymes ;
+aucune suppression ni fusion. Les champs facultatifs ont un choix « Renseigner » :
+décoché signifie non renseigné, un texte coché vide reste vide. Le spine, la
+longueur et les pointes conservent leurs unités saisies. La puissance en livres
+est facultative, finie et positive. Confirmer explicitement l’enregistrement.
+
+Un conflit conserve la proposition et son état attendu. Consulter la version
+stockée ne remplace pas la saisie ; l’abandon exige confirmation. La rotation
+conserve le formulaire dans le ViewModel, pas l’arrêt complet du processus.
+Revenir aux séances avant d’exporter une sauvegarde complète V2. Voir l’[ADR 030](docs/adr/030-catalogue-materiel-android.md).
+Les associations aux séances restent une étape distincte.
 
 ## Versions
 

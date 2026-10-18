@@ -20,6 +20,8 @@ import kotlinx.coroutines.launch
 import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
 import com.lmarchery.feature.sessions.*
+import com.lmarchery.feature.equipment.EquipmentController
+import com.lmarchery.feature.equipment.EquipmentScreen
 import com.lmarchery.feature.archiveimport.ImportCoordinator
 import com.lmarchery.feature.archiveimport.ImportPanel
 import com.lmarchery.feature.archiveimport.ImportSelectionEffect
@@ -28,10 +30,15 @@ import com.lmarchery.feature.export.ExportPanel
 import com.lmarchery.feature.export.ExportDestinationEffect
 
 @Composable
-fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator, importCoordinator: ImportCoordinator) {
+fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator, importCoordinator: ImportCoordinator, equipmentController: EquipmentController? = null) {
     ExportDestinationEffect(exportCoordinator)
     ImportSelectionEffect(importCoordinator)
     val state by controller.state.collectAsStateWithLifecycle()
+    val equipmentState = equipmentController?.state?.collectAsStateWithLifecycle()?.value
+    if (equipmentState?.open == true) {
+        EquipmentScreen(equipmentController)
+        return
+    }
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
     var confirmCancelCorrection by rememberSaveable { mutableStateOf(false) }
     val back: () -> Unit = {
@@ -98,6 +105,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                 when (state.screen) {
                     SessionScreen.LIST -> {
                         item(key = "list-actions") {
+                            if (equipmentController != null) OutlinedButton(onClick = equipmentController::open, enabled = state.canNavigate) { Text("Matériel") }
                             Button(onClick = controller::configure, enabled = state.ready) { Text("Nouvelle séance") }
                             OutlinedButton(onClick = controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
                             if (!state.busy && state.entries.isEmpty() && state.problem == null) Text("Aucune séance enregistrée.")

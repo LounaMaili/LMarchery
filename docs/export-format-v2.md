@@ -118,4 +118,4 @@ excluant le catalogue. Une V2 de matériel seul, profils seuls ou vide est valid
 L’import conserve la version décodée, présente les quatre catégories V2 et exige
 une confirmation avant l’appel transactionnel correspondant. Un aperçu périmé
 ou un commit non confirmé n’est jamais relancé automatiquement. Voir l’[ADR 029](adr/029-saf-android-archives-v2.md).
-Aucun écran de gestion du catalogue n’est ajouté dans cette étape.
+Le catalogue Compose est décrit séparément dans l’[ADR 030](adr/030-catalogue-materiel-android.md).

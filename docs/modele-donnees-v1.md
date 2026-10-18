@@ -8,7 +8,8 @@ persiste et met à jour des séances complètes en Room/SQLite. Le premier parco
 Compose les utilise via ViewModel, contrôleur et repository (ADR 018).
 Les anciens IDs/FK numériques des tableaux sont des projections historiques,
 absentes du schéma SQLite 2 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
-sont des valeurs Kotlin immuables persistées sans interface utilisateur (ADR 025) ;
+sont des valeurs Kotlin immuables persistées (ADR 025), consultables et modifiables
+dans le catalogue Compose (ADR 030) ;
 `SessionPreset` reste prévu. Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
 JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
@@ -69,14 +70,11 @@ Ces entités sont mentionnées pour préparer l'architecture, mais ne sont pas i
 ### Champs communs des entités exportables
 
 Le modèle V1 prévoit `TargetType`, `Session`, `End`, `ArrowImpact`, `Bow`, `ArrowSet`
-et `SessionPreset`. Le fichier opérationnel actuel exporte seulement les profils
-et séances implémentés, avec volées/impacts imbriqués. Les fiches `Bow` et
-`ArrowSet`, désormais persistées, restent absentes du fichier ;
-`SessionPreset` reste futur. Les références UUID opaques ne sont pas des objets
-de matériel exportés. Le [contrat/codec V2](export-format-v2.md) existe séparément
-(ADR 026), avec collecte/import Room atomiques
-([ADR 027](adr/027-archives-room-v2-atomiques.md)) ; la connexion SAF reste requise
-avant de rendre le catalogue utilisable dans Compose.
+et `SessionPreset`. Le fichier V1 exporte seulement les profils et séances,
+avec volées/impacts imbriqués. Le [contrat V2](export-format-v2.md) ajoute les
+fiches `Bow` et `ArrowSet` (ADR 026), via collecte/import Room atomiques (ADR 027)
+et parcours SAF Android (ADR 029). Les références UUID restent opaques : une
+archive ne doit pas fabriquer les fiches manquantes. `SessionPreset` reste futur.
 
 | Champ | Règle |
 |-------|-------|
@@ -399,7 +397,7 @@ Voir [ADR 011](adr/011-decisions-score-explicites.md).
 ### 2.6 Bow
 
 Arc de l'utilisateur. Modèle implémenté dans `core:model.equipment` et table `bows`,
-sans écran de création ou d’édition. Puissance facultative finie et strictement
+avec fiche Compose de création/édition (ADR 030). Puissance facultative finie et strictement
 positive ; type, marque, modèle et notes libres conservés tels quels.
 
 | Attribut | Type | Description |
@@ -421,7 +419,7 @@ positive ; type, marque, modèle et notes libres conservés tels quels.
 ### 2.7 ArrowSet
 
 Jeu de flèches de l'utilisateur. Modèle implémenté dans `core:model.equipment` et
-table `arrow_sets`, sans écran. Les champs facultatifs restent textuels : aucune
+table `arrow_sets`, avec fiche Compose (ADR 030). Les champs facultatifs restent textuels : aucune
 unité de longueur, de spine ou de poids n’est déduite ni convertie.
 
 Pour les deux fiches : UUID v4 canonique et création immuables ; `createdAt <= updatedAt`
