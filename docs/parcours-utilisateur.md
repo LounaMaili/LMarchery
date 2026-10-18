@@ -271,16 +271,21 @@ Voir [ADR 022](adr/022-import-json-controle-transactionnel.md) et
 
 ## 6. Parcours — Gérer le matériel
 
-```
-L'utilisateur va dans la section "Matériel"
-├── Liste des arcs
-│   ├── Ajouter un arc (nom, type, puissance, notes)
-│   └── Modifier / Supprimer un arc
-├── Liste des jeux de flèches
-│   ├── Ajouter un jeu (nom, spine, longueur, notes)
-│   └── Modifier / Supprimer un jeu
-└── Associés aux séances lors de la création
-```
+1. Depuis l’accueil, « Matériel » ouvre les deux listes. Les fiches illisibles
+   restent visibles avec diagnostic ; aucun contenu n’est réparé silencieusement.
+2. « Ajouter un arc » / « Ajouter un jeu de flèches », ou ouvrir une fiche puis
+   « Modifier la fiche ». Le nom est obligatoire. Chaque champ facultatif distingue
+   non renseigné et texte vide ; aucune unité n’est déduite.
+3. Confirmer l’enregistrement, attendre l’acquittement. Un double appui ne crée pas
+   une deuxième commande. En cas d’erreur la proposition exacte reste disponible ;
+   aucun remplacement ou retry automatique après conflit.
+4. Le retour depuis le formulaire demande confirmation de l’abandon. Une fiche
+   déjà enregistrée est relue avant d’effacer la proposition. La rotation conserve
+   la saisie ; l’arrêt du processus ne la rend pas durable.
+5. Revenir à l’accueil pour exporter V2. L’export V1 ne contient pas le catalogue.
+
+Pas de suppression, fusion d’homonymes ni association à une séance dans cette
+étape. Voir [ADR 030](adr/030-catalogue-materiel-android.md).
 
 ---
 

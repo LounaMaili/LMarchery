@@ -33,6 +33,8 @@ class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
 ) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer {
+    val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
+
     override suspend fun readArchiveV2() = withContext(dispatcher) { store.readArchiveV2() }
     override suspend fun previewImportV2(archive: DomainArchiveV2): PreparedV2Result = withContext(dispatcher) {
         when (val result = store.previewImportV2(archive)) {

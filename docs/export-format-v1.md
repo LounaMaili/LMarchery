@@ -3,7 +3,7 @@
 > Export JSON UTF-8 opérationnel ; reconstruction indépendante et import contrôlé sans écrasement.
 
 Le [contrat JSON V2](export-format-v2.md) ajoute le matériel dans une API distincte
-(ADR 026). Le présent contrat et le parcours Android restent V1, sans conversion
+(ADR 026). Le présent contrat reste V1 ; Android propose aussi le parcours V2 (ADR 029), sans conversion
 ni rétrogradation automatique. V1 ne fournit pas de catalogue matériel ; son
 absence ne demande jamais de vider une base existante.
 
@@ -105,8 +105,8 @@ contenu et leur résolution restent absents du contrat JSON V1 ; `SessionPreset`
 reste prévu. Leurs références opaques sont conservées sans FK ni résolution
 automatique. Le [contrat/codec V2](export-format-v2.md) et sa collecte/restauration
 Room atomique ([ADR 027](adr/027-archives-room-v2-atomiques.md)) existent dans des
-API distinctes. L’import/export SAF Android reste V1 ; sa connexion V2 reste
-obligatoire avant d’exposer le catalogue dans Compose.
+API distinctes. L’import/export SAF Android distingue désormais les deux versions
+([ADR 029](adr/029-saf-android-archives-v2.md)). Seule la sauvegarde V2 contient le catalogue.
 
 ### Décisions et assertions
 
@@ -328,9 +328,8 @@ les contrôles concurrentiels, les erreurs et les limites de la preuve de proven
 Restent à réaliser :
 
 - Prévoir les migrations explicites pour chaque évolution future du schéma Room.
-- Brancher dans SAF/Android le [contrat matériel V2](export-format-v2.md) et sa
-  collecte/restauration Room atomique ([ADR 027](adr/027-archives-room-v2-atomiques.md)) ;
-  les presets restent futurs.
+- Les presets restent futurs ; le [parcours SAF V2](adr/029-saf-android-archives-v2.md)
+  sauvegarde le catalogue distinctement du présent contrat V1.
 - Définir l'intervention sur conflits et l'éventuelle preuve de filiation des
   révisions, sans écrasement fondé sur la seule horloge.
 - Décider le traitement d'anciens horaires/provenances et des changements IANA
