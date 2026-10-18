@@ -14,6 +14,11 @@
 Pour préparer le développement et les validations :
 [Environnement Fedora et CI](environnement-et-ci.md).
 
+## Préparation des évolutions Android
+
+- [Conception des séances personnalisables](conception-seances-personnalisables.md) : proposition de configurations par volée, migrations et archives futures.
+- [Audit d’intégration Android #22 / matériel](audit-integration-android-pr22-materiel.md) : preuves locales, CI des branches et limites physiques.
+
 ## Décisions d'architecture (ADR)
 
 | # | Titre | Fichier |
