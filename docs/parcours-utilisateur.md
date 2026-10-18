@@ -284,8 +284,21 @@ Voir [ADR 022](adr/022-import-json-controle-transactionnel.md) et
    la saisie ; l’arrêt du processus ne la rend pas durable.
 5. Revenir à l’accueil pour exporter V2. L’export V1 ne contient pas le catalogue.
 
-Pas de suppression, fusion d’homonymes ni association à une séance dans cette
-étape. Voir [ADR 030](adr/030-catalogue-materiel-android.md).
+Pas de suppression ni fusion d’homonymes. Voir [ADR 030](adr/030-catalogue-materiel-android.md).
+
+### Associer du matériel à une séance
+
+- À la création, choisir facultativement un arc, un jeu de flèches, les deux ou
+  aucun. Le chargement du catalogue n’empêche pas la création sans matériel.
+- Dans une séance, « Consulter / modifier les associations » ouvre une proposition.
+  Les UUID non résolus restent affichés et conservés ; choisir « Aucun » ou une
+  autre fiche est volontaire, puis confirmer. Annuler n’écrit rien.
+- Une séance terminée accepte cette modification de métadonnées uniquement.
+  Statut, clôture, scores, impacts, décisions et traces restent identiques.
+- En cas de conflit, conserver la proposition et consulter le stocké sans rebase
+  automatique. Rotation : candidat au ViewModel ; arrêt du processus : relecture.
+
+Voir [ADR 031](adr/031-associations-materiel-seances.md).
 
 ---
 

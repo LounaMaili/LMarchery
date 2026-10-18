@@ -46,6 +46,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             when {
                 state.pending != null -> confirmLeave = true
                 state.impactEdit != null -> confirmCancelCorrection = true
+                state.equipmentEdit != null -> controller.cancelEquipmentEdit()
                 else -> controller.returnToList()
             }
         }
@@ -144,6 +145,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 }
                             }
                             Text("Sans titre : « Séance salle — ${state.selectedProfile.label} ».", style = MaterialTheme.typography.bodySmall)
+                            if (state.equipmentChoicesLoading) Text("Chargement facultatif du catalogue… Vous pouvez créer sans matériel.")
+                            EquipmentChoiceFields(state.equipmentChoices, state.creationEquipment, state.ready, choose = controller::chooseCreationEquipment)
                             Button(onClick = controller::createSession, enabled = state.ready) { Text("Créer et démarrer") }
                             TextButton(onClick = back, enabled = !state.busy && !state.archiveOperationLocked) { Text("Retour aux séances") }
                         }
@@ -157,9 +160,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 Text("Score validé : ${state.validatedTotal}", style = MaterialTheme.typography.titleMedium)
                                 if (session.status != SessionStatus.COMPLETED && state.editingEnd != null)
                                     Text("Volée en cours : ${state.provisionalTotal} point(s) provisoires")
-                                if (session.status == SessionStatus.COMPLETED) Text("Consultation en lecture seule. La séance est terminée.")
+                                if (session.status == SessionStatus.COMPLETED) Text("Scores en lecture seule. La séance est terminée ; seules les associations de matériel restent modifiables.")
                                 else if (!state.supportedConfiguration) Text("Configuration consultable en lecture seule dans cet éditeur.")
                             }
+                            item(key = "session-equipment") { SessionEquipmentPanel(state, controller) }
                             state.displayedEnd?.let { end -> item(key = "target") {
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
                                 val interaction = when {
@@ -243,6 +247,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             text = { Column(Modifier.heightIn(max = 320.dp).verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("${stored.title} · ${stored.status.label()}\nRecharger abandonnera la proposition locale non confirmée.")
+                equipmentAssociationLines(state.equipmentChoices, EquipmentSelection(stored.bowUuid, stored.arrowSetUuid)).forEach { Text(it) }
+                Text("Révision enregistrée UTC : ${stored.updatedAt}")
                 if (state.busy) Text("Relecture en cours…")
                 state.problem?.let { problem -> Text(problem.message, color = MaterialTheme.colorScheme.error) }
                 stored.ends.forEach { end -> Text("Volée ${end.index} (${end.status}) : ${end.impacts.joinToString { "#${it.index} ${it.scoreLabel()}" }}") }

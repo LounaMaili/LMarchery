@@ -77,6 +77,10 @@ data class SessionUiState(
     val selectedEndUuid: String? = null,
     val confirmation: String? = null,
     val impactEdit: ImpactEdit? = null,
+    val creationEquipment: EquipmentSelection = EquipmentSelection(),
+    val equipmentChoices: EquipmentChoices = EquipmentChoices(),
+    val equipmentEdit: EquipmentSelection? = null,
+    val equipmentChoicesLoading: Boolean = false,
 ) {
     val session get() = saved?.sessions?.single()
     val editingEnd get() = session?.ends?.singleOrNull { it.status == EndStatus.EDITING }
@@ -85,8 +89,9 @@ data class SessionUiState(
     /** Compatibility read alias; import and export share one operation lock. */
     val exportLocked get() = archiveOperationLocked
     val ready get() = !busy && pending == null && !archiveOperationLocked
-    val canNavigate get() = ready && impactEdit == null
-    val canEdit get() = ready && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
+    val canNavigate get() = ready && impactEdit == null && equipmentEdit == null
+    val canEdit get() = ready && equipmentEdit == null && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
+    val canEditEquipment get() = ready && screen == SessionScreen.SESSION && session != null && impactEdit == null && equipmentEdit == null
     val isEditingDisplayed get() = editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid
     val selectedImpact get() = impactEdit?.takeIf { it.sessionUuid == session?.uuid && it.endUuid == displayedEnd?.uuid }
         ?.let { selection -> displayedEnd?.impacts?.find { it.uuid == selection.impactUuid } }

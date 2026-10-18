@@ -222,7 +222,12 @@ Un conflit conserve la proposition et son état attendu. Consulter la version
 stockée ne remplace pas la saisie ; l’abandon exige confirmation. La rotation
 conserve le formulaire dans le ViewModel, pas l’arrêt complet du processus.
 Revenir aux séances avant d’exporter une sauvegarde complète V2. Voir l’[ADR 030](docs/adr/030-catalogue-materiel-android.md).
-Les associations aux séances restent une étape distincte.
+La création de séance propose un arc et des flèches facultatifs. Une lecture lente
+ou impossible du catalogue n’empêche pas de créer sans matériel. Sur une séance
+existante, « Consulter / modifier les associations » confirme uniquement ces
+métadonnées, y compris après clôture : scores et traces restent protégés.
+Les références sans fiche restent visibles et conservées jusqu’à un retrait ou
+remplacement explicite. Voir l’[ADR 031](docs/adr/031-associations-materiel-seances.md).
 
 ## Versions
 
