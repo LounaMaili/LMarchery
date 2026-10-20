@@ -453,3 +453,17 @@ JVM debug et 122 release, zéro échec/erreur/ignoré. Compilation app/database 
 lint réussis ; cinq avertissements de dépendances préexistants, zéro erreur.
 Les 21 nouveaux tests couvrent la présentation et les protections de navigation.
 Ces résultats ADB ne constituent pas des essais au doigt en situation réelle.
+
+## Protocole visée précise (PR 22)
+
+**Non exécuté : Pixel indisponible, PR en brouillon sans fusion.** Suivre le
+[protocole dédié](validation-visee-precise-pr22.md) : identification ADB ponctuelle,
+installation `-r`, conservation des quatre séances synthétiques, captures privées
+de toutes les tables SQLite avant/après annulation, au maximum une TEST AUTO PR22,
+rotation avec restauration des paramètres, confirmation/double appui et reprise.
+Les coordonnées ADB et les tests JVM ne qualifient pas la précision au doigt.
+
+Les prévisualisations Compose petite dalle et paysage sont compilées, non rendues
+ici. Aucun émulateur préconfiguré trouvé. Relever séparément les essais humains
+classique/poulies, durée de saisie, corrections, masquage par la loupe, extérieur
+et gants. Ne pas transformer une réussite automatisée en résultat physique validé.

@@ -13,8 +13,8 @@ data class CanvasSize(
     val heightPx: Float,
 ) {
     init {
-        require(widthPx > 0f) { "widthPx must be positive." }
-        require(heightPx > 0f) { "heightPx must be positive." }
+        require(widthPx.isFinite() && widthPx > 0f) { "widthPx must be positive." }
+        require(heightPx.isFinite() && heightPx > 0f) { "heightPx must be positive." }
     }
 
     val diameterPx: Float = min(widthPx, heightPx)
