@@ -45,6 +45,8 @@ Pour préparer le développement et les validations :
 
 | 34 | Scoring par volée et statistiques mixtes | [adr/034-scoring-par-volee-statistiques-mixtes.md](adr/034-scoring-par-volee-statistiques-mixtes.md) |
 
+| 35 | Agrégat métier des séances à configurations mixtes | [adr/035-agregat-seances-configurations-mixtes.md](adr/035-agregat-seances-configurations-mixtes.md) |
+
 ---
 
 *Dernière mise à jour : 20 octobre 2026*
