@@ -306,6 +306,19 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 
 ---
 
+### Fondation autonome : EndConfiguration
+
+`core:model.session.EndConfiguration` conserve une configuration de prochaine
+volée (profil complet/édition, distance, FIXED/FREE et nombre, indoor, mode de
+score). Héritage, remplacement explicite, raccourcis 3/6/libre, diagnostics et
+comparaison sont des opérations pures. Cette valeur n’est **pas encore une
+propriété de Session ou End**, ni stockée/exportée. Le contrat homogène existant
+reste en vigueur ; aucune ancienne séance n’est convertie implicitement.
+Voir [ADR 033](adr/033-fondation-configurations-par-volee.md) pour les invariants,
+les frontières de conformité réglementaire et les étapes futures.
+
+---
+
 ### 2.5 ArrowImpact
 
 Impact individuel d'une flèche. C'est l'entité centrale du scoring.

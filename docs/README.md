@@ -39,9 +39,10 @@ Pour préparer le développement et les validations :
 | 20 | Jugement de limite et correction exceptionnelle dans Android | [adr/020-decisions-score-android.md](adr/020-decisions-score-android.md) |
 | 21 | Export JSON versionné des séances Android | [adr/021-export-json-versionne-android.md](adr/021-export-json-versionne-android.md) |
 | 22 | Import JSON contrôlé et transactionnel | [adr/022-import-json-controle-transactionnel.md](adr/022-import-json-controle-transactionnel.md) |
-
 | 23 | Historique chronologique et présentation des scores Android | [adr/023-historique-et-presentation-scores-android.md](adr/023-historique-et-presentation-scores-android.md) |
+
+| 33 | Fondation des configurations par volée | [adr/033-fondation-configurations-par-volee.md](adr/033-fondation-configurations-par-volee.md) |
 
 ---
 
-*Dernière mise à jour : 16 octobre 2026*
+*Dernière mise à jour : 20 octobre 2026*
