@@ -20,7 +20,7 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (25 décisions techniques)
+- [x] ADR (registre des décisions dans `docs/adr/`)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
@@ -178,6 +178,33 @@ référence explique sa portée, sans pourcentage de réussite trompeur.
 Import/export sont regroupés dans « Sauvegardes » sur l’accueil, après les séances.
 Voir [ADR 023](docs/adr/023-historique-et-presentation-scores-android.md) et le
 [protocole de consultation](docs/tests-terrain-v1.md#protocole-historique-et-scores-pr-21).
+
+## Visée précise — PR 22 en évaluation
+
+Le mode rapide reste le défaut. « Activer la visée précise » permet d’appuyer,
+déplacer puis relâcher sur le blason : réticule et loupe ×4 déportée utilisent la
+même coordonnée normalisée. Le relâchement laisse une proposition **non enregistrée**.
+Confirmer ajoute une seule flèche après acquittement SQL ; annuler n’écrit rien.
+Un autre geste affine le candidat. Pendant la proposition, navigation, clôture,
+validation et sauvegardes attendent une résolution explicite.
+
+Après sélection d’une flèche et « Repositionner », la visée précise utilise le
+candidat, le motif et la confirmation existants, sans créer d’impact supplémentaire.
+Les coordonnées et indicateurs sont recalculés par le moteur métier inchangé.
+La loupe ne décide pas d’un cordon et ne prouve aucun contact physique du tube.
+
+Un deuxième doigt, une sortie du carré ou une interruption annule le geste ; les
+coins du carré restent disponibles pour M. Une proposition déjà relâchée reste
+dans le ViewModel pendant la rotation, tandis qu’un geste actif n’est jamais
+confirmé par la rotation. Après arrêt du processus, seul le confirmé SQL revient.
+Un échec SQL conserve candidat et PendingSave pour un retry strictement identique.
+
+Voir [ADR 024](docs/adr/024-visee-tactile-precise-candidat.md) et le
+[protocole Pixel / essai au doigt](docs/validation-visee-precise-pr22.md).
+**PR en brouillon, sans fusion : tests automatisés et previews compilées ne valident
+pas la précision tactile réelle.** Aucun ADB exécuté pour cette intégration.
+Le [protocole de la combinaison matériel / SAF V2](docs/validation-integration-visee-materiel.md)
+prévoit une installation isolée et interdit de rouvrir Room 2 avec l’ancien APK Room 1.
 
 ## Sauvegardes Android V2 et compatibilité V1
 

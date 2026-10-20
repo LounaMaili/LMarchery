@@ -40,9 +40,17 @@ Pour préparer le développement et les validations :
 | 21 | Export JSON versionné des séances Android | [adr/021-export-json-versionne-android.md](adr/021-export-json-versionne-android.md) |
 | 22 | Import JSON contrôlé et transactionnel | [adr/022-import-json-controle-transactionnel.md](adr/022-import-json-controle-transactionnel.md) |
 | 23 | Historique chronologique et présentation des scores Android | [adr/023-historique-et-presentation-scores-android.md](adr/023-historique-et-presentation-scores-android.md) |
+| 24 | Visée tactile précise et candidat non destructif | [adr/024-visee-tactile-precise-candidat.md](adr/024-visee-tactile-precise-candidat.md) |
 | 25 | Fondation du catalogue matériel et migration SQLite 1→2 | [adr/025-fondation-catalogue-materiel.md](adr/025-fondation-catalogue-materiel.md) |
 | 26 | Contrat JSON V2 matériel et lecture compatible V1 | [adr/026-contrat-sauvegarde-json-v2.md](adr/026-contrat-sauvegarde-json-v2.md) |
+| 27 | Archives Room V2 atomiques | [adr/027-archives-room-v2-atomiques.md](adr/027-archives-room-v2-atomiques.md) |
+| 29 | Sauvegardes SAF Android V2 | [adr/029-saf-android-archives-v2.md](adr/029-saf-android-archives-v2.md) |
+| 30 | Catalogue matériel Android | [adr/030-catalogue-materiel-android.md](adr/030-catalogue-materiel-android.md) |
+| 31 | Associations matériel/séances | [adr/031-associations-materiel-seances.md](adr/031-associations-materiel-seances.md) |
+| 32 | Intégration visée précise et matériel | [adr/032-integration-visee-materiel.md](adr/032-integration-visee-materiel.md) |
+
+Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-visee-materiel.md).
 
 ---
 
-*Dernière mise à jour : 17 octobre 2026*
+*Dernière mise à jour : 20 octobre 2026*
