@@ -43,6 +43,8 @@ Pour préparer le développement et les validations :
 
 | 33 | Fondation des configurations par volée | [adr/033-fondation-configurations-par-volee.md](adr/033-fondation-configurations-par-volee.md) |
 
+| 34 | Scoring par volée et statistiques mixtes | [adr/034-scoring-par-volee-statistiques-mixtes.md](adr/034-scoring-par-volee-statistiques-mixtes.md) |
+
 ---
 
 *Dernière mise à jour : 20 octobre 2026*
