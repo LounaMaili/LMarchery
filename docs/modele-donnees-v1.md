@@ -317,6 +317,19 @@ reste en vigueur ; aucune ancienne séance n’est convertie implicitement.
 Voir [ADR 033](adr/033-fondation-configurations-par-volee.md) pour les invariants,
 les frontières de conformité réglementaire et les étapes futures.
 
+### Agrégat autonome : ConfiguredSession
+
+`core.scoring.configured.ConfiguredSession` possède une configuration initiale et
+chaque `ConfiguredEnd` avec son propriétaire, son `End` existant, sa configuration
+effective et son origine typée. Il n’enveloppe pas `Session` et ne modifie aucune
+entité historique. Les transitions sont contrôlées, les décisions et traces
+conservées, et le calcul délègue au moteur mixte de l’ADR 034.
+La conversion explicite exige une `DomainArchive` validée fournissant le profil
+historique complet et son édition ; une `Session` seule ne suffit pas.
+Cet agrégat n’est ni persisté, ni exportable en JSON V1/V2, ni utilisé par Compose.
+Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
+les limites de provenance et l’intégration future avec la branche Android #32.
+
 ---
 
 ### 2.5 ArrowImpact
