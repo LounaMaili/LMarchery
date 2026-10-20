@@ -185,7 +185,38 @@ class RoomArchiveV2ReadTest {
             assertEquals(before, contents(path))
         }
     }
-    private fun raw(vararg sql: String, file: Path = path) {
-        androidx.sqlite.driver.bundled.BundledSQLiteDriver().open(file.toString()).use { c -> sql.forEach { query -> c.prepare(query).use { it.step() } } }
+    @Test fun `raw corruption waits for a transient writer before checking the missing identity diagnostic`() = runBlocking<Unit> {
+        openSessionStore(path).use { store ->
+            assertIs<ArchiveV2ImportResult.Imported>(store.restoreV2(rich()))
+            val attempting = CountDownLatch(1); val finished = CountDownLatch(1)
+            androidx.sqlite.driver.bundled.BundledSQLiteDriver().open(path.toString()).use { writer ->
+                writer.prepare("PRAGMA busy_timeout = 5000").use { it.step() }
+                writer.prepare("BEGIN IMMEDIATE").use { it.step() }
+                val corruption = async(Dispatchers.IO) {
+                    try { runCatching {
+                        raw("PRAGMA foreign_keys=OFF", "DELETE FROM entity_identities WHERE uuid='${id(800)}'",
+                            beforeStep = { if (it.startsWith("DELETE")) attempting.countDown() })
+                    } } finally { finished.countDown() }
+                }
+                try {
+                    assertTrue(withContext(Dispatchers.IO) { attempting.await(20, TimeUnit.SECONDS) })
+                    val prematurelyFinished = withContext(Dispatchers.IO) { finished.await(200, TimeUnit.MILLISECONDS) }
+                    assertFalse(prematurelyFinished,
+                        "Corruption connection must wait for the writer; result: ${if (prematurelyFinished) corruption.await() else "pending"}")
+                } finally { writer.prepare("COMMIT").use { it.step() } }
+                corruption.await().getOrThrow()
+            }
+            val before = contents(path)
+            assertEquals("identities[${id(800)}]", assertIs<ArchiveV2ReadResult.NeedsIntervention>(store.readArchiveV2()).diagnostic.path)
+            assertEquals(before, contents(path))
+        }
+    }
+    private fun raw(vararg sql: String, file: Path = path, beforeStep: (String) -> Unit = {}) {
+        androidx.sqlite.driver.bundled.BundledSQLiteDriver().open(file.toString()).use { c ->
+            // Same bounded wait as EquipmentTestData.rows: a transient Room/WAL writer is not fixture corruption.
+            // FK bypass remains confined to this synthetic corruption connection, never the production store.
+            c.prepare("PRAGMA busy_timeout = 5000").use { it.step() }
+            sql.forEach { query -> c.prepare(query).use { beforeStep(query); it.step() } }
+        }
     }
 }

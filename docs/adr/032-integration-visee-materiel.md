@@ -90,3 +90,19 @@ Les erreurs de fournisseur SAF, le dispatch Android, le multitouch, les rotation
 réelles, le clavier et l’ergonomie de l’ensemble attendent le
 [protocole Pixel 8 / Android 17](../validation-integration-visee-materiel.md).
 Ne pas rétrograder une base Room 2 avec l’ancien APK #22 limité à Room 1.
+
+## Fiabilité de la fixture de corruption en CI
+
+Le premier run de la combinaison échoue dans `physical bow with missing registry`
+(ancienne suite de lecture V2), sur la connexion SQL brute qui prépare une corruption
+synthétique. Contrairement au helper `rows`, ce helper n’avait aucune attente de
+verrou. Un nouveau test tient un vrai verrou écrivain et reproduit avant correction
+`SQLITE_BUSY / database is locked` : la corruption échouait immédiatement, avant
+que le lecteur d’archive puisse vérifier son diagnostic.
+
+Le helper **de test uniquement** reçoit le même `busy_timeout = 5000` borné que les
+autres fixtures. Le test exige que l’opération ne termine pas pendant le verrou,
+relâche celui-ci, puis vérifie la corruption effective, son diagnostic exact et
+l’absence de réparation. Aucun retry de suite, skip, délai global, changement
+Room/DAO/transaction ou assouplissement d’assertion n’est ajouté. Treize cas sont
+donc nouveaux pour l’intégration : dix Android et trois SQLite.

@@ -140,19 +140,20 @@ JDK Temurin 21.0.12.1, Wrapper Gradle 8.10.2, SDK 35 / Build Tools 34.0.0.
 | Modèle | PASS — 103 |
 | Scoring et reconstruction | PASS — 223 |
 | Codec JSON V1/V2, golden et empreintes V1 | PASS — 34 |
-| SQLite natif sur disque, dont migration V1→V2 | PASS — 176 |
+| SQLite natif sur disque, dont migration V1→V2 | PASS — 177 |
 | Présentation/contrôleurs Android JVM | PASS — 228 debug + 228 release |
 | `:app:assembleDebug` et `:core:database:assembleDebug` | PASS |
-| `:app:lintDebug` et `:core:database:lintDebug` | PASS — zéro erreur, aucun issue dans les deux XML locaux |
+| `:app:lintDebug` et `:core:database:lintDebug` | PASS — zéro erreur, 3 avertissements GradleDependency dans app ; aucun issue dans database |
 | Schémas, code métier/codec/stockage et dépendances | Inchangés face à #30 |
 | Liens locaux et `git diff --check` | PASS |
 | Appareil, gestes humains, SAF Android réel | NON TESTÉ |
 
-Total : **992 exécutions**, sans échec, erreur ni test ignoré. Les variantes
-Android exécutent les mêmes suites deux fois. Dix cas croisés Android et deux
+Total : **993 exécutions**, sans échec, erreur ni test ignoré. Les variantes
+Android exécutent les mêmes suites deux fois. Dix cas croisés Android et trois
 cas SQLite sont nouveaux pour l’intégration ; les 32 tests de #22 et toutes les
-suites de #30 sont conservés. La compilation signale seulement les bibliothèques
-natives non strippées, empaquetées telles quelles ; aucune dépendance n’est changée.
+suites de #30 sont conservés. Les messages de compatibilité KMP/AGP et les
+bibliothèques natives non strippées, empaquetées telles quelles, restent présents ;
+aucune dépendance n’est changée.
 Les avertissements disponibles peuvent différer en CI selon les métadonnées réseau :
 consulter aussi le run du commit publié, sans assimiler CI source et CI intégrée.
 Les previews sont compilées, pas rendues. Aucun résultat physique n’est inféré.
