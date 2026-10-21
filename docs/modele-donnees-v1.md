@@ -315,6 +315,32 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 
 ---
 
+### Fondation autonome : EndConfiguration
+
+`core:model.session.EndConfiguration` conserve une configuration de prochaine
+volée (profil complet/édition, distance, FIXED/FREE et nombre, indoor, mode de
+score). Héritage, remplacement explicite, raccourcis 3/6/libre, diagnostics et
+comparaison sont des opérations pures. Cette valeur n’est **pas encore une
+propriété de Session ou End**, ni stockée/exportée. Le contrat homogène existant
+reste en vigueur ; aucune ancienne séance n’est convertie implicitement.
+Voir [ADR 033](adr/033-fondation-configurations-par-volee.md) pour les invariants,
+les frontières de conformité réglementaire et les étapes futures.
+
+### Agrégat autonome : ConfiguredSession
+
+`core.scoring.configured.ConfiguredSession` possède une configuration initiale et
+chaque `ConfiguredEnd` avec son propriétaire, son `End` existant, sa configuration
+effective et son origine typée. Il n’enveloppe pas `Session` et ne modifie aucune
+entité historique. Les transitions sont contrôlées, les décisions et traces
+conservées, et le calcul délègue au moteur mixte de l’ADR 034.
+La conversion explicite exige une `DomainArchive` validée fournissant le profil
+historique complet et son édition ; une `Session` seule ne suffit pas.
+Cet agrégat n’est ni persisté, ni exportable en JSON V1/V2, ni utilisé par Compose.
+Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
+les limites de provenance et l’intégration future avec la branche Android #32.
+
+---
+
 ### 2.5 ArrowImpact
 
 Impact individuel d'une flèche. C'est l'entité centrale du scoring.
@@ -605,7 +631,7 @@ Le JSON opérationnel conserve séances/profils, décisions et traces. Les fiche
 matériel persistées ne sont pas incluses dans le V1 opérationnel.
 Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
 avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomiques.md)).
-La connexion SAF/Android reste requise avant toute UI de catalogue.
+Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android ; les séances mixtes ne sont pas persistées.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import contrôlé ajoute seulement les séances absentes, reconnaît les identiques
 et refuse toute divergence dans une transaction unique (ADR 022). Aucun ancien exemple documentaire
