@@ -15,12 +15,12 @@ internal fun jsonV2(value: ArchiveV2Snapshot): JsonElement = record(
     "arrowSets" to value.arrowSets?.let { values -> JsonArray().also { array -> values.forEach { array.add(arrows(it)) } } },
 )
 
-private fun bow(value: BowSnapshot) = record(
+internal fun bow(value: BowSnapshot) = record(
     "uuid" to value.uuid, "name" to value.name, "type" to value.type, "drawWeightLbs" to value.drawWeightLbs,
     "brand" to value.brand, "model" to value.model, "notes" to value.notes,
     "createdAt" to value.createdAt, "updatedAt" to value.updatedAt,
 )
-private fun arrows(value: ArrowSetSnapshot) = record(
+internal fun arrows(value: ArrowSetSnapshot) = record(
     "uuid" to value.uuid, "name" to value.name, "spine" to value.spine, "length" to value.length,
     "pointWeight" to value.pointWeight, "nock" to value.nock, "vanes" to value.vanes,
     "material" to value.material, "notes" to value.notes, "createdAt" to value.createdAt, "updatedAt" to value.updatedAt,
@@ -38,14 +38,14 @@ internal fun readArchiveV2Snapshot(element: JsonElement, path: String): ArchiveV
         list("bows", ::readBowSnapshot), list("arrowSets", ::readArrowSetSnapshot),
     )
 }
-private fun readBowSnapshot(element: JsonElement, path: String): BowSnapshot = checkedObject(element, path,
+internal fun readBowSnapshot(element: JsonElement, path: String): BowSnapshot = checkedObject(element, path,
     "uuid", "name", "type", "drawWeightLbs", "brand", "model", "notes", "createdAt", "updatedAt") {
     BowSnapshot(nullable("uuid") { string("uuid") }, nullable("name") { string("name") },
         nullable("type") { string("type") }, nullable("drawWeightLbs") { float("drawWeightLbs") },
         nullable("brand") { string("brand") }, nullable("model") { string("model") }, nullable("notes") { string("notes") },
         nullable("createdAt") { string("createdAt") }, nullable("updatedAt") { string("updatedAt") })
 }
-private fun readArrowSetSnapshot(element: JsonElement, path: String): ArrowSetSnapshot = checkedObject(element, path,
+internal fun readArrowSetSnapshot(element: JsonElement, path: String): ArrowSetSnapshot = checkedObject(element, path,
     "uuid", "name", "spine", "length", "pointWeight", "nock", "vanes", "material", "notes", "createdAt", "updatedAt") {
     ArrowSetSnapshot(nullable("uuid") { string("uuid") }, nullable("name") { string("name") },
         nullable("spine") { string("spine") }, nullable("length") { string("length") },
