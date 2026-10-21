@@ -41,8 +41,7 @@ internal interface ConfigurationDao : ConfigurationReadQueries {
     override suspend fun orphanConfigurationPaths(): List<String>
     @Query("SELECT sessionUuid FROM session_configurations WHERE representation != 'LEGACY_HOMOGENEOUS' ORDER BY sessionUuid")
     override suspend fun nonLegacyConfigurationUuids(): List<String>
-    // These row-level operations are internal and used ONLY for the legacy homogeneous projection.
-    // There is intentionally no create/update ConfiguredSession storage API in this release.
+    // Internal row operations: legacy projections may be synchronized; configured captures are insert-only.
     @Insert suspend fun insertSessionConfiguration(row: SessionConfigurationRow)
     @Insert suspend fun insertEndConfiguration(row: EndConfigurationRow)
     @Update suspend fun updateSessionConfiguration(row: SessionConfigurationRow): Int

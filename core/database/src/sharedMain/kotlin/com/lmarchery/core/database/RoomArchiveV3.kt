@@ -126,7 +126,7 @@ internal fun validateStoredV3(snapshot: ArchiveV3Snapshot, limits: ArchiveV3Limi
             ArchiveV3StorageIssueKind.DOMAIN, result.issue.path, result.issue.detail, result.issue))
     }
 
-private fun DomainArchiveV3.identitiesV3(): Map<String, IdentityRow> = buildMap {
+internal fun DomainArchiveV3.identitiesV3(): Map<String, IdentityRow> = buildMap {
     profiles.forEach { put(it.definition!!.uuid, IdentityRow(it.definition!!.uuid, "PROFILE")) }
     sessions.forEach { s -> put(s.uuid, IdentityRow(s.uuid,"SESSION")); s.ends.forEach { e ->
         put(e.uuid, IdentityRow(e.uuid,"END")); e.end.impacts.forEach { put(it.uuid,IdentityRow(it.uuid,"IMPACT")) }

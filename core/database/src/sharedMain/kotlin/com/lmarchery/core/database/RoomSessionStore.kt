@@ -77,6 +77,17 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         return archiveV3.read(limits)
     }
 
+    private val configuredWriter = RoomConfiguredWriter(database) { check(!closed.get()) { "Session store is closed." } }
+
+    /** Domain creation only. Historical archive restoration is a separate, unavailable operation. */
+    suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession): ConfiguredWriteResult =
+        configuredWriter.write(ConfiguredWriteRequest.Create(session))
+
+    /** Exact immutable revisions, including idempotent reconciliation after lost acknowledgement. */
+    suspend fun updateConfiguredSession(expected: com.lmarchery.core.scoring.configured.ConfiguredSession,
+        proposed: com.lmarchery.core.scoring.configured.ConfiguredSession): ConfiguredWriteResult =
+        configuredWriter.write(ConfiguredWriteRequest.Update(expected, proposed))
+
     suspend fun readArchiveV2(): ArchiveV2ReadResult = archiveV2.read()
     suspend fun previewImportV2(archive: com.lmarchery.core.scoring.archive.DomainArchiveV2): ArchiveV2PreviewResult =
         archiveV2.preview(archive)

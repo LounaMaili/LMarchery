@@ -1,5 +1,9 @@
 # ADR 039 — Migration Room 2→3 et lecture des séances configurables
 
+> Suite : l’[ADR 040](040-ecritures-room-v3-configurables.md) ajoute les écritures
+> métier locales, sans import/restauration V3 ni connexion Android. Le statut
+> ci-dessous décrit le périmètre livré par la PR #39.
+
 Statut : migration additive et lecture complète implémentées. **Aucune écriture
 de séance mixte, restauration/import V3, SAF V3 ou UI configurable.**
 Base exacte #38 : `e3b381027a79a6a2d56827b6ebe7f5e262d2e0ab`.

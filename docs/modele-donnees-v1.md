@@ -337,7 +337,8 @@ conservées, et le calcul délègue au moteur mixte de l’ADR 034.
 La conversion explicite exige une `DomainArchive` validée fournissant le profil
 historique complet et son édition ; une `Session` seule ne suffit pas.
 Cet agrégat n’est ni exportable en JSON V1/V2, ni utilisé par Compose. Room V3
-reconstruit les séances historiques sous cette forme ; aucune écriture mixte n’est exposée.
+reconstruit les séances historiques sous cette forme et propose des écritures métier
+configurables distinctes, sans branchement aux contrôleurs Android (ADR 040).
 Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
 les limites de provenance et l’intégration future avec la branche Android #32.
 Le contrat métier autonome `DomainArchiveV3` conserve ces agrégats, leurs captures
@@ -345,7 +346,8 @@ et le catalogue complet via un snapshot et une reconstruction stricte ; voir
 [ADR 037](adr/037-contrat-archive-seances-configurables-v3.md). Le codec autonome
 `ArchiveV3JsonCodec` est décrit dans l’[ADR 038](adr/038-codec-json-v3-strict.md),
 avec lecture cohérente Room V3 selon l’[ADR 039](adr/039-room-v3-migration-lecture.md),
-sans écriture/restauration de séance mixte ni parcours Android V3. La conversion V1 reste
+avec écritures locales selon l’[ADR 040](adr/040-ecritures-room-v3-configurables.md),
+sans restauration de séance mixte ni parcours Android V3. La conversion V1 reste
 un contenu partiel avec matériel non fourni, distinct d’une V3 complète.
 
 ---
@@ -619,12 +621,18 @@ mode de score et origine. La volée nomme son propriétaire et son éventuelle p
 Les lignes migrées sont marquées `LEGACY_HOMOGENEOUS` / `LEGACY_DERIVED`.
 Leur projection suit le contrat homogène historique ; les colonnes de séance ne
 sont jamais utilisées comme configuration effective d’une future volée mixte.
-Les futures lignes `CONFIGURED` sont lues seulement avec leurs captures complètes.
+Les lignes `CONFIGURED` sont lues et révisées seulement avec leurs captures complètes.
 Les API V1/V2 les refusent, y compris à l’import, sans omission ni homogénéisation.
 `readArchiveV3()` lit tous profils, séances, captures, descendants et matériel dans
 une transaction lecteur unique, puis appelle `reconstructArchiveV3()` ; aucune
 écriture ni archive partielle. Voir [ADR 039](adr/039-room-v3-migration-lecture.md).
-Aucun chemin de création/mise à jour de `ConfiguredSession` n’est livré dans Room.
+`createConfiguredSession` et `updateConfiguredSession(expected, proposed)` ajoutent
+les écritures locales contrôlées : création `CREATION`, captures immuables, état
+expected complet et validation de transition, transaction écrivain unique puis
+égalité V3 et contrôle des lignes hors delta. Les acquittements incertains conservent
+l’intention exacte ; aucune relance automatique. Voir
+[ADR 040](adr/040-ecritures-room-v3-configurables.md). Ces API ne sont pas connectées
+à Android et ne restaurent pas les archives historiques.
 
 `discover()` fournit les UUID triés des racines et des identités séance, y compris
 orphelines. Chaque entrée est ensuite relue par `read` : la découverte ne prouve
