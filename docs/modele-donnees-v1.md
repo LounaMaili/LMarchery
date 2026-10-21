@@ -340,9 +340,10 @@ Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat
 les limites de provenance et l’intégration future avec la branche Android #32.
 Le contrat métier autonome `DomainArchiveV3` conserve ces agrégats, leurs captures
 et le catalogue complet via un snapshot et une reconstruction stricte ; voir
-[ADR 037](adr/037-contrat-archive-seances-configurables-v3.md). Il n’a pas encore
-de codec JSON, stockage Room ou parcours Android. La conversion V1 reste un
-contenu partiel avec matériel non fourni, distinct d’une V3 complète.
+[ADR 037](adr/037-contrat-archive-seances-configurables-v3.md). Le codec autonome
+`ArchiveV3JsonCodec` est décrit dans l’[ADR 038](adr/038-codec-json-v3-strict.md),
+sans collecte/restauration Room ni parcours Android V3. La conversion V1 reste
+un contenu partiel avec matériel non fourni, distinct d’une V3 complète.
 
 ---
 

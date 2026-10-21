@@ -53,6 +53,7 @@ Pour préparer le développement et les validations :
 | 35 | Agrégat des séances à configurations mixtes | [adr/035-agregat-seances-configurations-mixtes.md](adr/035-agregat-seances-configurations-mixtes.md) |
 | 36 | Réconciliation Android et domaine configurable | [adr/036-reconciliation-android-configurations.md](adr/036-reconciliation-android-configurations.md) |
 | 37 | Contrat métier d’archive V3 des séances configurables | [adr/037-contrat-archive-seances-configurables-v3.md](adr/037-contrat-archive-seances-configurables-v3.md) |
+| 38 | Codec JSON V3 strict et autonome | [adr/038-codec-json-v3-strict.md](adr/038-codec-json-v3-strict.md) |
 
 Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-visee-materiel.md).
 

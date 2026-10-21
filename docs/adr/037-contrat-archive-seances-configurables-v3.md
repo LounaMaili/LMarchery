@@ -1,5 +1,9 @@
 # ADR 037 — Contrat métier d’archive V3 des séances configurables
 
+> Suite : l’[ADR 038](038-codec-json-v3-strict.md) ajoute le codec JSON autonome,
+> sans collecte/restauration Room ni connexion Android V3. Le statut ci-dessous
+> décrit le périmètre livré par la PR #37.
+
 Statut : transfert et reconstruction Kotlin purs implémentés. **Aucun codec JSON
 V3, stockage Room nouveau, import transactionnel ou parcours Android V3.**
 Base exacte : #36 `d9443b54f307ab8767beebe8728e17a20079041d` ; PR empilée sur
