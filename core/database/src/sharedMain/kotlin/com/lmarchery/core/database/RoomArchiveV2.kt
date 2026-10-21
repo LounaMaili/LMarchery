@@ -87,6 +87,7 @@ internal class RoomArchiveV2(private val database: SessionDatabase, private val 
     /** Includes every physical profile, even unreferenced ones; a stored root is never silently omitted. */
     private suspend fun collect(caller: CoroutineContext): DomainArchiveV2 {
         val dao = database.records()
+        dao.requireLegacyArchive()
         caller.ensureActive()
         val registered = dao.allIdentities()
         val physical = dao.allRowIdentities()

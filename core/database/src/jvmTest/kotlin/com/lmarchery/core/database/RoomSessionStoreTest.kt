@@ -45,8 +45,8 @@ class RoomSessionStoreTest {
         assertEquals("SQLite format 3\u0000", Files.readAllBytes(path).take(16).toByteArray().toString(Charsets.US_ASCII))
         val version = scalar("SELECT sqlite_version()")
         assertTrue(version.startsWith("3."))
-        assertEquals("2", scalar("PRAGMA user_version"))
-        println("Real SQLite $version; on-disk header and user_version=2 verified; database closed and reopened")
+        assertEquals("3", scalar("PRAGMA user_version"))
+        println("Real SQLite $version; on-disk header and user_version=3 verified; database closed and reopened")
         openSessionStore(path).use { store ->
             assertEquals(source, assertIs<SessionReadResult.Found>(store.read(source.uuid)).session)
         }
@@ -310,6 +310,8 @@ class RoomSessionStoreTest {
     fun `registered session with missing root row is distinguished from an absent UUID`() = runBlocking<Unit> {
         val source = draft()
         openSessionStore(path).use { assertIs<SessionCreateResult.Created>(it.create(archive(source))) }
+        // Remove the new FK child too, retaining the original missing-root corruption scenario.
+        execute("DELETE FROM session_configurations")
         execute("DELETE FROM sessions")
         openSessionStore(path).use { store ->
             assertIs<SessionReadResult.NeedsIntervention>(store.read(source.uuid))
@@ -431,6 +433,7 @@ class RoomSessionStoreTest {
             assertIs<SessionCreateResult.Created>(store.create(archive(missing)))
             assertIs<SessionCreateResult.Created>(store.create(archive(corrupt)))
         }
+        execute("DELETE FROM session_configurations WHERE sessionUuid = '${missing.uuid}'")
         execute("DELETE FROM sessions WHERE uuid = '${missing.uuid}'")
         execute("UPDATE sessions SET status = 'UNKNOWN' WHERE uuid = '${corrupt.uuid}'")
         val before = contents()

@@ -68,9 +68,9 @@ class RoomEquipmentMigrationTest {
             assertEquals(emptyList(), assertIs<EquipmentDiscoveryResult.Found>(store.equipment.discoverArrowSets()).uuids)
         }
         assertEquals(before, contents(path, oldTables))
-        assertEquals(listOf("2"), rows(path, "PRAGMA user_version"))
-        assertEquals(oldSchema, rows(path, "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
-        assertEquals(10, rows(path, "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
+        assertEquals(listOf("3"), rows(path, "PRAGMA user_version"))
+        assertEquals(oldSchema, rows(path, "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
+        assertEquals(12, rows(path, "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
         assertEquals(emptyList(), rows(path, "PRAGMA foreign_key_check"))
         openSessionStore(path).use { store ->
             assertContentEquals(originalBytes, ArchiveJsonCodec().encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive))
@@ -189,7 +189,7 @@ class RoomEquipmentMigrationTest {
             v1Bytes = codec.encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive)
             v2Bytes = codec.encode(store.fullV2())
         }
-        assertEquals(listOf("2"), rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("3"), rows(path, "PRAGMA user_version"))
         openSessionStore(path).use { store ->
             assertEquals(finalSession, assertIs<SessionReadResult.Found>(store.read(finalSession.uuid)).session)
             assertContentEquals(v1Bytes, codec.encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive))
