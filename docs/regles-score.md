@@ -444,6 +444,24 @@ jugement ou repositionnement.
 
 ---
 
+## Calcul contextualisé par volée (API autonome)
+
+`core.scoring.mixed` associe explicitement chaque `End` à son
+`EndConfiguration` par UUID. Le score somme les valeurs finales déjà validées
+pour le profil exact, sans rejouer ni modifier les décisions ou traces.
+Les totaux validés, provisoires et enregistrés ont chacun leurs compteurs et
+leurs dénominateurs. FIXED distingue capacité déclarée et impacts présents ;
+FREE utilise tous les impacts présents, M compris. Un maximum nul donne un
+pourcentage indéfini (`null`). Aucun maximum planifié ni comparabilité
+réglementaire d’un total mixte n’est déduit.
+
+Les nouvelles sommes/produits sont exacts en Long et rejettent les débordements.
+Les quatre API historiques restent inchangées ; `Session` et son stockage
+n’acceptent pas encore de configurations mixtes. Voir [ADR 034](adr/034-scoring-par-volee-statistiques-mixtes.md)
+pour les API, les regroupements et les arbitrages de validation encore ouverts.
+
+---
+
 ## 8. Cible campagne (future — V2+)
 
 > Non implémentée en V1, mais documentée pour préparer le modèle.
