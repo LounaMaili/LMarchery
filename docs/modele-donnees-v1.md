@@ -633,9 +633,11 @@ Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
 avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomiques.md)).
 Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android ; les séances mixtes ne sont pas persistées.
 Les presets et la résolution interactive des conflits restent à développer.
-L’import contrôlé ajoute seulement les séances absentes, reconnaît les identiques
-et refuse toute divergence dans une transaction unique (ADR 022). Aucun ancien exemple documentaire
-incomplet ne fait l'objet d'une migration inventant ses valeurs manquantes.
+L’import V1 conserve son périmètre historique : séances absentes et profils
+nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux
+de flèches (ADR 027). Dans les deux cas, les identiques ne sont pas réécrits et
+toute divergence bloque l’ensemble sous une transaction unique. Aucun ancien
+exemple documentaire incomplet n’est migré en inventant ses valeurs manquantes.
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
 ---
