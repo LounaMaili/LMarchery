@@ -2,6 +2,12 @@ package com.lmarchery.core.database
 
 /** Explicit UPDATE/INSERT only. Existing historical rows are never updated or removed. */
 internal suspend fun SessionDao.updateSessionRows(previous: SessionRows, proposed: SessionRows) {
+    updatePhysicalSessionRows(previous, proposed)
+    syncLegacyConfigurations(previous, proposed)
+}
+
+/** Caller validates ownership, captures and transitions before any relational delta. */
+internal suspend fun SessionDao.updatePhysicalSessionRows(previous: SessionRows, proposed: SessionRows) {
     val oldEnds = previous.ends.associateBy { it.uuid }
     val oldImpacts = previous.impacts.associateBy { it.uuid }
     val stageEnds = proposed.ends.any { row -> oldEnds[row.uuid]?.let {
@@ -24,7 +30,6 @@ internal suspend fun SessionDao.updateSessionRows(previous: SessionRows, propose
         if (old == null) insertImpact(row)
         else if (row.endUuid in stagedImpactParents || old != row) changed(updateImpact(row), "impacts[${row.uuid}]")
     }
-    syncLegacyConfigurations(previous, proposed)
     val oldDecisions = previous.decisions.associateBy { it.impactUuid to it.revision }
     proposed.decisions.forEach { row ->
         val old = oldDecisions[row.impactUuid to row.revision]

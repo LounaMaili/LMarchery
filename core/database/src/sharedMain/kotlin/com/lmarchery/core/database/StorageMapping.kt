@@ -157,12 +157,17 @@ internal fun ArchiveSnapshot.sessionRows(): SessionRows {
         session.plannedEndCount, session.title, session.distanceM, session.arrowCountMode.name, session.arrowCountPerEnd,
         session.isIndoor.flag(), session.scoringMode.name, session.bowUuid, session.arrowSetUuid, session.locationName,
         session.notes, sqlTime(requireNotNull(session.createdAt)), sqlTime(requireNotNull(session.updatedAt)), session.ends.size)
+    return physicalSessionRows(sessionRow, session.ends)
+}
+
+/** Shared relational child mapping, without projecting a configurable session into SessionSnapshot. */
+internal fun physicalSessionRows(sessionRow: SessionRow, snapshots: List<EndSnapshot>): SessionRows {
     val ends = mutableListOf<EndRow>()
     val impacts = mutableListOf<ImpactRow>()
     val decisions = mutableListOf<DecisionRow>()
     val repositions = mutableListOf<RepositionRow>()
-    session.ends.forEachIndexed { position, end ->
-        ends += EndRow(end.uuid, session.uuid, position, end.index, end.status.name, end.notes,
+    snapshots.forEachIndexed { position, end ->
+        ends += EndRow(end.uuid, sessionRow.uuid, position, end.index, end.status.name, end.notes,
             sqlTime(requireNotNull(end.createdAt)), sqlTime(requireNotNull(end.updatedAt)), end.validatedAt?.let(::sqlTime), end.impacts.size)
         end.impacts.forEachIndexed { impactPosition, impact ->
             impacts += ImpactRow(impact.uuid, end.uuid, impact.targetTypeUuid, impactPosition, impact.index,

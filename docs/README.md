@@ -55,6 +55,7 @@ Pour préparer le développement et les validations :
 | 37 | Contrat métier d’archive V3 des séances configurables | [adr/037-contrat-archive-seances-configurables-v3.md](adr/037-contrat-archive-seances-configurables-v3.md) |
 | 38 | Codec JSON V3 strict et autonome | [adr/038-codec-json-v3-strict.md](adr/038-codec-json-v3-strict.md) |
 | 39 | Migration Room 2→3 et lecture des séances configurables | [adr/039-room-v3-migration-lecture.md](adr/039-room-v3-migration-lecture.md) |
+| 40 | Écritures transactionnelles des séances configurables Room V3 | [adr/040-ecritures-room-v3-configurables.md](adr/040-ecritures-room-v3-configurables.md) |
 
 Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-visee-materiel.md).
 
