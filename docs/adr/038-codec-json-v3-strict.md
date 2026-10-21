@@ -1,5 +1,8 @@
 # ADR 038 — Codec JSON V3 strict et autonome
 
+> Suite : l’[ADR 039](039-room-v3-migration-lecture.md) ajoute la migration Room
+> 2→3 et la lecture V3, sans écriture de séance mixte, import ou SAF V3.
+
 Statut : implémenté dans `core:export`, sans connexion Room, SAF ou Android V3.
 Base exacte #37 : `300389654daf659eae66cd58d2216f78da94bb82`.
 PR en brouillon vers `codex/configured-archive-v3-contract`, sans fusion/auto-merge.

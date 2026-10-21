@@ -7,14 +7,15 @@ et les valeurs de scoring/temps sont des modèles Kotlin purs. `core:database`
 persiste et met à jour des séances complètes en Room/SQLite. Le premier parcours
 Compose les utilise via ViewModel, contrôleur et repository (ADR 018).
 Les anciens IDs/FK numériques des tableaux sont des projections historiques,
-absentes du schéma SQLite 2 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
+absentes du schéma SQLite 3 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
 sont des valeurs Kotlin immuables persistées (ADR 025), consultables et modifiables
 dans le catalogue Compose (ADR 030) ;
 `SessionPreset` reste prévu. Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
 JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
 l’import contrôlé sans écrasement suit l’[ADR 022](adr/022-import-json-controle-transactionnel.md),
-sans changement de format JSON V1. La migration SQLite 1→2 ajoute uniquement le catalogue matériel.
+sans changement de format JSON V1. La migration SQLite 1→2 ajoute uniquement le catalogue matériel ;
+la migration 2→3 ajoute les configurations dérivées et leur lecture V3 (ADR 039).
 
 ---
 
@@ -78,7 +79,7 @@ archive ne doit pas fabriquer les fiches manquantes. `SessionPreset` reste futur
 
 | Champ | Règle |
 |-------|-------|
-| `id` (projection prévue) | Absent du schéma Room 2 actuel ; jamais une clé de fusion entre appareils. |
+| `id` (projection prévue) | Absent du schéma Room 3 actuel ; jamais une clé de fusion entre appareils. |
 | `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
 | `createdAt` | Instant UTC de création des agrégats modifiables ; absent des profils immuables. |
 | `updatedAt` | Instant UTC de dernière modification fonctionnelle, servant à comparer les révisions. |
@@ -335,14 +336,16 @@ entité historique. Les transitions sont contrôlées, les décisions et traces
 conservées, et le calcul délègue au moteur mixte de l’ADR 034.
 La conversion explicite exige une `DomainArchive` validée fournissant le profil
 historique complet et son édition ; une `Session` seule ne suffit pas.
-Cet agrégat n’est ni persisté, ni exportable en JSON V1/V2, ni utilisé par Compose.
+Cet agrégat n’est ni exportable en JSON V1/V2, ni utilisé par Compose. Room V3
+reconstruit les séances historiques sous cette forme ; aucune écriture mixte n’est exposée.
 Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
 les limites de provenance et l’intégration future avec la branche Android #32.
 Le contrat métier autonome `DomainArchiveV3` conserve ces agrégats, leurs captures
 et le catalogue complet via un snapshot et une reconstruction stricte ; voir
 [ADR 037](adr/037-contrat-archive-seances-configurables-v3.md). Le codec autonome
 `ArchiveV3JsonCodec` est décrit dans l’[ADR 038](adr/038-codec-json-v3-strict.md),
-sans collecte/restauration Room ni parcours Android V3. La conversion V1 reste
+avec lecture cohérente Room V3 selon l’[ADR 039](adr/039-room-v3-migration-lecture.md),
+sans écriture/restauration de séance mixte ni parcours Android V3. La conversion V1 reste
 un contenu partiel avec matériel non fourni, distinct d’une V3 complète.
 
 ---
@@ -566,7 +569,7 @@ enum class EndStatus {
 
 ---
 
-## 4. Schéma Room / SQLite 2 effectivement implémenté
+## 4. Schéma Room / SQLite 3 effectivement implémenté
 
 Les huit tables historiques, conservées sans modification depuis V1, sont
 `entity_identities`, `target_profiles`, `target_zones`,
@@ -608,6 +611,21 @@ Voir [ADR 017](adr/017-mise-a-jour-seances-room.md).
 La politique conservatrice de `reconstructArchive(snapshot, known)` reste distincte
 de cette autorisation de révision locale.
 
+La migration additive 2→3 ajoute `session_configurations` (clé `sessionUuid`) et
+`end_configurations` (clé `endUuid`), sans nouvelle identité ni date de configuration.
+Les dix tables précédentes et les schémas exportés 1/2 restent intacts.
+Chaque capture conserve profil/édition, distance, nombre/mode de flèches, indoor,
+mode de score et origine. La volée nomme son propriétaire et son éventuelle précédente.
+Les lignes migrées sont marquées `LEGACY_HOMOGENEOUS` / `LEGACY_DERIVED`.
+Leur projection suit le contrat homogène historique ; les colonnes de séance ne
+sont jamais utilisées comme configuration effective d’une future volée mixte.
+Les futures lignes `CONFIGURED` sont lues seulement avec leurs captures complètes.
+Les API V1/V2 les refusent, y compris à l’import, sans omission ni homogénéisation.
+`readArchiveV3()` lit tous profils, séances, captures, descendants et matériel dans
+une transaction lecteur unique, puis appelle `reconstructArchiveV3()` ; aucune
+écriture ni archive partielle. Voir [ADR 039](adr/039-room-v3-migration-lecture.md).
+Aucun chemin de création/mise à jour de `ConfiguredSession` n’est livré dans Room.
+
 `discover()` fournit les UUID triés des racines et des identités séance, y compris
 orphelines. Chaque entrée est ensuite relue par `read` : la découverte ne prouve
 pas sa validité. Les erreurs restent visibles dans la sélection Android. La
@@ -637,7 +655,9 @@ Le JSON opérationnel conserve séances/profils, décisions et traces. Les fiche
 matériel persistées ne sont pas incluses dans le V1 opérationnel.
 Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
 avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomiques.md)).
-Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android ; les séances mixtes ne sont pas persistées.
+Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android.
+Room V3 prépare la représentation et la lecture configurable ; l’écriture de
+séances mixtes, la restauration V3 et SAF V3 ne sont pas activés.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import V1 conserve son périmètre historique : séances absentes et profils
 nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux

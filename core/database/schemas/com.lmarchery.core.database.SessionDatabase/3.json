@@ -1,0 +1,1379 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "3495b842fafc2db8b76ef8fbf50377e5",
+    "entities": [
+      {
+        "tableName": "entity_identities",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `kind` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        }
+      },
+      {
+        "tableName": "target_profiles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `name` TEXT NOT NULL, `discipline` TEXT NOT NULL, `diameterCm` INTEGER NOT NULL, `maxScore` INTEGER NOT NULL, `minScore` INTEGER NOT NULL, `defaultArrowCount` INTEGER NOT NULL, `defaultDistanceM` INTEGER NOT NULL, `isBuiltIn` INTEGER NOT NULL, `xRingEnabled` INTEGER NOT NULL, `xRingLabel` TEXT NOT NULL, `innerTenRadiusBits` INTEGER NOT NULL, `regulatoryEdition` TEXT, `zoneCount` INTEGER NOT NULL, PRIMARY KEY(`uuid`), FOREIGN KEY(`uuid`) REFERENCES `entity_identities`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discipline",
+            "columnName": "discipline",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diameterCm",
+            "columnName": "diameterCm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxScore",
+            "columnName": "maxScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minScore",
+            "columnName": "minScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defaultArrowCount",
+            "columnName": "defaultArrowCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defaultDistanceM",
+            "columnName": "defaultDistanceM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isBuiltIn",
+            "columnName": "isBuiltIn",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xRingEnabled",
+            "columnName": "xRingEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xRingLabel",
+            "columnName": "xRingLabel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "innerTenRadiusBits",
+            "columnName": "innerTenRadiusBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "regulatoryEdition",
+            "columnName": "regulatoryEdition",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "zoneCount",
+            "columnName": "zoneCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "entity_identities",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "target_zones",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`profileUuid` TEXT NOT NULL, `position` INTEGER NOT NULL, `score` INTEGER NOT NULL, `innerRadiusBits` INTEGER NOT NULL, `outerRadiusBits` INTEGER NOT NULL, `colorName` TEXT NOT NULL, `colorHex` TEXT, PRIMARY KEY(`profileUuid`, `position`), FOREIGN KEY(`profileUuid`) REFERENCES `target_profiles`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "profileUuid",
+            "columnName": "profileUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "innerRadiusBits",
+            "columnName": "innerRadiusBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "outerRadiusBits",
+            "columnName": "outerRadiusBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorName",
+            "columnName": "colorName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorHex",
+            "columnName": "colorHex",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "profileUuid",
+            "position"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_target_zones_profileUuid_score",
+            "unique": true,
+            "columnNames": [
+              "profileUuid",
+              "score"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_target_zones_profileUuid_score` ON `${TABLE_NAME}` (`profileUuid`, `score`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "target_profiles",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profileUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `profileUuid` TEXT NOT NULL, `archiveSchemaVersion` INTEGER NOT NULL, `scoringContractVersion` INTEGER NOT NULL, `localDateTime` TEXT NOT NULL, `zoneId` TEXT NOT NULL, `offset` TEXT NOT NULL, `status` TEXT NOT NULL, `plannedEndCount` INTEGER, `title` TEXT NOT NULL, `distanceM` INTEGER NOT NULL, `arrowCountMode` TEXT NOT NULL, `arrowCountPerEnd` INTEGER, `isIndoor` INTEGER NOT NULL, `scoringMode` TEXT NOT NULL, `bowUuid` TEXT, `arrowSetUuid` TEXT, `locationName` TEXT, `notes` TEXT, `endCount` INTEGER NOT NULL, `started_epochSecond` INTEGER, `started_nano` INTEGER, `ended_epochSecond` INTEGER, `ended_nano` INTEGER, `created_epochSecond` INTEGER, `created_nano` INTEGER, `updated_epochSecond` INTEGER, `updated_nano` INTEGER, PRIMARY KEY(`uuid`), FOREIGN KEY(`uuid`) REFERENCES `entity_identities`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`profileUuid`) REFERENCES `target_profiles`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileUuid",
+            "columnName": "profileUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "archiveSchemaVersion",
+            "columnName": "archiveSchemaVersion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scoringContractVersion",
+            "columnName": "scoringContractVersion",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localDateTime",
+            "columnName": "localDateTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zoneId",
+            "columnName": "zoneId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "offset",
+            "columnName": "offset",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plannedEndCount",
+            "columnName": "plannedEndCount",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceM",
+            "columnName": "distanceM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "arrowCountMode",
+            "columnName": "arrowCountMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "arrowCountPerEnd",
+            "columnName": "arrowCountPerEnd",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isIndoor",
+            "columnName": "isIndoor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scoringMode",
+            "columnName": "scoringMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bowUuid",
+            "columnName": "bowUuid",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "arrowSetUuid",
+            "columnName": "arrowSetUuid",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "locationName",
+            "columnName": "locationName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "endCount",
+            "columnName": "endCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startedAt.epochSecond",
+            "columnName": "started_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "startedAt.nano",
+            "columnName": "started_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "endedAt.epochSecond",
+            "columnName": "ended_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "endedAt.nano",
+            "columnName": "ended_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "createdAt.epochSecond",
+            "columnName": "created_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "createdAt.nano",
+            "columnName": "created_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.epochSecond",
+            "columnName": "updated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.nano",
+            "columnName": "updated_nano",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_sessions_profileUuid",
+            "unique": false,
+            "columnNames": [
+              "profileUuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_sessions_profileUuid` ON `${TABLE_NAME}` (`profileUuid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "entity_identities",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "target_profiles",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profileUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "ends",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `sessionUuid` TEXT NOT NULL, `position` INTEGER NOT NULL, `index` INTEGER NOT NULL, `status` TEXT NOT NULL, `notes` TEXT, `impactCount` INTEGER NOT NULL, `created_epochSecond` INTEGER, `created_nano` INTEGER, `updated_epochSecond` INTEGER, `updated_nano` INTEGER, `validated_epochSecond` INTEGER, `validated_nano` INTEGER, PRIMARY KEY(`uuid`), FOREIGN KEY(`uuid`) REFERENCES `entity_identities`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`sessionUuid`) REFERENCES `sessions`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionUuid",
+            "columnName": "sessionUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "index",
+            "columnName": "index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "impactCount",
+            "columnName": "impactCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt.epochSecond",
+            "columnName": "created_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "createdAt.nano",
+            "columnName": "created_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.epochSecond",
+            "columnName": "updated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.nano",
+            "columnName": "updated_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "validatedAt.epochSecond",
+            "columnName": "validated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "validatedAt.nano",
+            "columnName": "validated_nano",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_ends_sessionUuid_position",
+            "unique": true,
+            "columnNames": [
+              "sessionUuid",
+              "position"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ends_sessionUuid_position` ON `${TABLE_NAME}` (`sessionUuid`, `position`)"
+          },
+          {
+            "name": "index_ends_sessionUuid_index",
+            "unique": true,
+            "columnNames": [
+              "sessionUuid",
+              "index"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_ends_sessionUuid_index` ON `${TABLE_NAME}` (`sessionUuid`, `index`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "entity_identities",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "sessions",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sessionUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "impacts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `endUuid` TEXT NOT NULL, `profileUuid` TEXT NOT NULL, `position` INTEGER NOT NULL, `index` INTEGER NOT NULL, `xBits` INTEGER NOT NULL, `yBits` INTEGER NOT NULL, `inputMode` TEXT NOT NULL, `note` TEXT, `repositionCount` INTEGER NOT NULL, `created_epochSecond` INTEGER, `created_nano` INTEGER, `updated_epochSecond` INTEGER, `updated_nano` INTEGER, PRIMARY KEY(`uuid`), FOREIGN KEY(`uuid`) REFERENCES `entity_identities`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`endUuid`) REFERENCES `ends`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`profileUuid`) REFERENCES `target_profiles`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endUuid",
+            "columnName": "endUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileUuid",
+            "columnName": "profileUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "index",
+            "columnName": "index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "xBits",
+            "columnName": "xBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "yBits",
+            "columnName": "yBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "inputMode",
+            "columnName": "inputMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "repositionCount",
+            "columnName": "repositionCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt.epochSecond",
+            "columnName": "created_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "createdAt.nano",
+            "columnName": "created_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.epochSecond",
+            "columnName": "updated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.nano",
+            "columnName": "updated_nano",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_impacts_endUuid_position",
+            "unique": true,
+            "columnNames": [
+              "endUuid",
+              "position"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_impacts_endUuid_position` ON `${TABLE_NAME}` (`endUuid`, `position`)"
+          },
+          {
+            "name": "index_impacts_endUuid_index",
+            "unique": true,
+            "columnNames": [
+              "endUuid",
+              "index"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_impacts_endUuid_index` ON `${TABLE_NAME}` (`endUuid`, `index`)"
+          },
+          {
+            "name": "index_impacts_profileUuid",
+            "unique": false,
+            "columnNames": [
+              "profileUuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_impacts_profileUuid` ON `${TABLE_NAME}` (`profileUuid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "entity_identities",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "ends",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "endUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "target_profiles",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profileUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "score_decisions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`impactUuid` TEXT NOT NULL, `revision` INTEGER NOT NULL, `kind` TEXT NOT NULL, `selectedScore` INTEGER NOT NULL, `selectedIsX` INTEGER NOT NULL, `boundaryType` TEXT, `boundaryRadiusBits` INTEGER, `reason` TEXT, `decided_epochSecond` INTEGER, `decided_nano` INTEGER, `assertions_distanceBits` INTEGER NOT NULL, `assertions_calculated` INTEGER NOT NULL, `assertions_final` INTEGER NOT NULL, `assertions_geometricIsX` INTEGER NOT NULL, `assertions_isX` INTEGER NOT NULL, `assertions_isMiss` INTEGER NOT NULL, `assertions_isCordDecisionManual` INTEGER NOT NULL, PRIMARY KEY(`impactUuid`, `revision`), FOREIGN KEY(`impactUuid`) REFERENCES `impacts`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "impactUuid",
+            "columnName": "impactUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revision",
+            "columnName": "revision",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedScore",
+            "columnName": "selectedScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedIsX",
+            "columnName": "selectedIsX",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "boundaryType",
+            "columnName": "boundaryType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "boundaryRadiusBits",
+            "columnName": "boundaryRadiusBits",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "reason",
+            "columnName": "reason",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "decidedAt.epochSecond",
+            "columnName": "decided_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "decidedAt.nano",
+            "columnName": "decided_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "assertions.distanceBits",
+            "columnName": "assertions_distanceBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assertions.calculated",
+            "columnName": "assertions_calculated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assertions.final",
+            "columnName": "assertions_final",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assertions.geometricIsX",
+            "columnName": "assertions_geometricIsX",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assertions.isX",
+            "columnName": "assertions_isX",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assertions.isMiss",
+            "columnName": "assertions_isMiss",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assertions.isCordDecisionManual",
+            "columnName": "assertions_isCordDecisionManual",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "impactUuid",
+            "revision"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "impacts",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "impactUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "impact_repositions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`impactUuid` TEXT NOT NULL, `sequence` INTEGER NOT NULL, `inputMode` TEXT NOT NULL, `previousXBits` INTEGER NOT NULL, `previousYBits` INTEGER NOT NULL, `newXBits` INTEGER NOT NULL, `newYBits` INTEGER NOT NULL, `reason` TEXT, `impactCreated_epochSecond` INTEGER, `impactCreated_nano` INTEGER, `previousUpdated_epochSecond` INTEGER, `previousUpdated_nano` INTEGER, `changed_epochSecond` INTEGER, `changed_nano` INTEGER, PRIMARY KEY(`impactUuid`, `sequence`), FOREIGN KEY(`impactUuid`) REFERENCES `impacts`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`impactUuid`, `sequence`) REFERENCES `score_decisions`(`impactUuid`, `revision`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "impactUuid",
+            "columnName": "impactUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sequence",
+            "columnName": "sequence",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "inputMode",
+            "columnName": "inputMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "previousXBits",
+            "columnName": "previousXBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "previousYBits",
+            "columnName": "previousYBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "newXBits",
+            "columnName": "newXBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "newYBits",
+            "columnName": "newYBits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reason",
+            "columnName": "reason",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "impactCreatedAt.epochSecond",
+            "columnName": "impactCreated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "impactCreatedAt.nano",
+            "columnName": "impactCreated_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "previousUpdatedAt.epochSecond",
+            "columnName": "previousUpdated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "previousUpdatedAt.nano",
+            "columnName": "previousUpdated_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "changedAt.epochSecond",
+            "columnName": "changed_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "changedAt.nano",
+            "columnName": "changed_nano",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "impactUuid",
+            "sequence"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "impacts",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "impactUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "score_decisions",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "impactUuid",
+              "sequence"
+            ],
+            "referencedColumns": [
+              "impactUuid",
+              "revision"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "bows",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `name` TEXT NOT NULL, `type` TEXT, `drawWeightLbsBits` INTEGER, `brand` TEXT, `model` TEXT, `notes` TEXT, `created_epochSecond` INTEGER, `created_nano` INTEGER, `updated_epochSecond` INTEGER, `updated_nano` INTEGER, PRIMARY KEY(`uuid`), FOREIGN KEY(`uuid`) REFERENCES `entity_identities`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "drawWeightLbsBits",
+            "columnName": "drawWeightLbsBits",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "brand",
+            "columnName": "brand",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "model",
+            "columnName": "model",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAt.epochSecond",
+            "columnName": "created_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "createdAt.nano",
+            "columnName": "created_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.epochSecond",
+            "columnName": "updated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.nano",
+            "columnName": "updated_nano",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "entity_identities",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "arrow_sets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `name` TEXT NOT NULL, `spine` TEXT, `length` TEXT, `pointWeight` TEXT, `nock` TEXT, `vanes` TEXT, `material` TEXT, `notes` TEXT, `created_epochSecond` INTEGER, `created_nano` INTEGER, `updated_epochSecond` INTEGER, `updated_nano` INTEGER, PRIMARY KEY(`uuid`), FOREIGN KEY(`uuid`) REFERENCES `entity_identities`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "spine",
+            "columnName": "spine",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "length",
+            "columnName": "length",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "pointWeight",
+            "columnName": "pointWeight",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "nock",
+            "columnName": "nock",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "vanes",
+            "columnName": "vanes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "material",
+            "columnName": "material",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAt.epochSecond",
+            "columnName": "created_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "createdAt.nano",
+            "columnName": "created_nano",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.epochSecond",
+            "columnName": "updated_epochSecond",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "updatedAt.nano",
+            "columnName": "updated_nano",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "uuid"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "entity_identities",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "uuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "session_configurations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sessionUuid` TEXT NOT NULL, `representation` TEXT NOT NULL, `origin` TEXT NOT NULL, `profileUuid` TEXT NOT NULL, `regulatoryEdition` TEXT, `distanceM` INTEGER NOT NULL, `arrowCountMode` TEXT NOT NULL, `arrowCountPerEnd` INTEGER, `isIndoor` INTEGER NOT NULL, `scoringMode` TEXT NOT NULL, PRIMARY KEY(`sessionUuid`), FOREIGN KEY(`sessionUuid`) REFERENCES `sessions`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`profileUuid`) REFERENCES `target_profiles`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "sessionUuid",
+            "columnName": "sessionUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "representation",
+            "columnName": "representation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "origin",
+            "columnName": "origin",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.profileUuid",
+            "columnName": "profileUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.regulatoryEdition",
+            "columnName": "regulatoryEdition",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "configuration.distanceM",
+            "columnName": "distanceM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.arrowCountMode",
+            "columnName": "arrowCountMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.arrowCountPerEnd",
+            "columnName": "arrowCountPerEnd",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "configuration.isIndoor",
+            "columnName": "isIndoor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.scoringMode",
+            "columnName": "scoringMode",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "sessionUuid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_session_configurations_profileUuid",
+            "unique": false,
+            "columnNames": [
+              "profileUuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_session_configurations_profileUuid` ON `${TABLE_NAME}` (`profileUuid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "sessions",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sessionUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "target_profiles",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profileUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "end_configurations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`endUuid` TEXT NOT NULL, `sessionUuid` TEXT NOT NULL, `origin` TEXT NOT NULL, `previousEndUuid` TEXT, `profileUuid` TEXT NOT NULL, `regulatoryEdition` TEXT, `distanceM` INTEGER NOT NULL, `arrowCountMode` TEXT NOT NULL, `arrowCountPerEnd` INTEGER, `isIndoor` INTEGER NOT NULL, `scoringMode` TEXT NOT NULL, PRIMARY KEY(`endUuid`), FOREIGN KEY(`endUuid`) REFERENCES `ends`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`sessionUuid`) REFERENCES `session_configurations`(`sessionUuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`profileUuid`) REFERENCES `target_profiles`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`previousEndUuid`) REFERENCES `ends`(`uuid`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "endUuid",
+            "columnName": "endUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionUuid",
+            "columnName": "sessionUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "origin",
+            "columnName": "origin",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "previousEndUuid",
+            "columnName": "previousEndUuid",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "configuration.profileUuid",
+            "columnName": "profileUuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.regulatoryEdition",
+            "columnName": "regulatoryEdition",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "configuration.distanceM",
+            "columnName": "distanceM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.arrowCountMode",
+            "columnName": "arrowCountMode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.arrowCountPerEnd",
+            "columnName": "arrowCountPerEnd",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "configuration.isIndoor",
+            "columnName": "isIndoor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "configuration.scoringMode",
+            "columnName": "scoringMode",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "endUuid"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_end_configurations_sessionUuid",
+            "unique": false,
+            "columnNames": [
+              "sessionUuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_end_configurations_sessionUuid` ON `${TABLE_NAME}` (`sessionUuid`)"
+          },
+          {
+            "name": "index_end_configurations_profileUuid",
+            "unique": false,
+            "columnNames": [
+              "profileUuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_end_configurations_profileUuid` ON `${TABLE_NAME}` (`profileUuid`)"
+          },
+          {
+            "name": "index_end_configurations_previousEndUuid",
+            "unique": false,
+            "columnNames": [
+              "previousEndUuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_end_configurations_previousEndUuid` ON `${TABLE_NAME}` (`previousEndUuid`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "ends",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "endUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "session_configurations",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "sessionUuid"
+            ],
+            "referencedColumns": [
+              "sessionUuid"
+            ]
+          },
+          {
+            "table": "target_profiles",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profileUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          },
+          {
+            "table": "ends",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "previousEndUuid"
+            ],
+            "referencedColumns": [
+              "uuid"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3495b842fafc2db8b76ef8fbf50377e5')"
+    ]
+  }
+}

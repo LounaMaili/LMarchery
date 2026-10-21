@@ -24,6 +24,7 @@ internal suspend fun SessionDao.updateSessionRows(previous: SessionRows, propose
         if (old == null) insertImpact(row)
         else if (row.endUuid in stagedImpactParents || old != row) changed(updateImpact(row), "impacts[${row.uuid}]")
     }
+    syncLegacyConfigurations(previous, proposed)
     val oldDecisions = previous.decisions.associateBy { it.impactUuid to it.revision }
     proposed.decisions.forEach { row ->
         val old = oldDecisions[row.impactUuid to row.revision]
