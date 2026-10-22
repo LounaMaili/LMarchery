@@ -1,5 +1,6 @@
 package com.lmarchery.core.database
 
+import kotlinx.coroutines.ensureActive
 import com.lmarchery.core.model.time.UtcTimestamps
 import com.lmarchery.core.scoring.archive.v3.*
 
@@ -32,3 +33,15 @@ private fun EndConfigurationSnapshot.stored() = StoredEndConfiguration(requireNo
     requireNotNull(distanceM), requireNotNull(arrowCountMode).name, arrowCountPerEnd, requireNotNull(isIndoor).flag(), requireNotNull(scoringMode).name)
 
 private fun Boolean.flag(): Int = if (this) 1 else 0
+
+/** One caller-owned transaction, with physical predecessor rows before inherited captures. */
+internal suspend fun SessionDao.insertConfiguredRows(rows: ConfiguredRows, caller: kotlin.coroutines.CoroutineContext) {
+    caller.ensureActive()
+    insertSession(rows.physical.session)
+    insertSessionConfiguration(rows.initial)
+    rows.physical.ends.forEach { caller.ensureActive(); insertEnd(it) }
+    rows.captures.forEach { caller.ensureActive(); insertEndConfiguration(it) }
+    rows.physical.impacts.forEach { caller.ensureActive(); insertImpact(it) }
+    caller.ensureActive(); insertDecisions(rows.physical.decisions)
+    caller.ensureActive(); insertRepositions(rows.physical.repositions)
+}
