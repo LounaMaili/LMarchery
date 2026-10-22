@@ -347,7 +347,8 @@ et le catalogue complet via un snapshot et une reconstruction stricte ; voir
 `ArchiveV3JsonCodec` est décrit dans l’[ADR 038](adr/038-codec-json-v3-strict.md),
 avec lecture cohérente Room V3 selon l’[ADR 039](adr/039-room-v3-migration-lecture.md),
 avec écritures locales selon l’[ADR 040](adr/040-ecritures-room-v3-configurables.md),
-sans restauration de séance mixte ni parcours Android V3. La conversion V1 reste
+avec prévisualisation/restauration transactionnelle complète selon
+l’[ADR 041](adr/041-restauration-archives-v3-atomique.md), sans parcours Android V3. La conversion V1 reste
 un contenu partiel avec matériel non fourni, distinct d’une V3 complète.
 
 ---
@@ -632,7 +633,11 @@ expected complet et validation de transition, transaction écrivain unique puis
 égalité V3 et contrôle des lignes hors delta. Les acquittements incertains conservent
 l’intention exacte ; aucune relance automatique. Voir
 [ADR 040](adr/040-ecritures-room-v3-configurables.md). Ces API ne sont pas connectées
-à Android et ne restaurent pas les archives historiques.
+à Android. La restauration historique et mixte passe séparément par
+`previewImportV3` / `importArchiveV3` (ADR 041) : aperçu de l’état complet, ajout
+atomique sans remplacement, contrôle des anciennes lignes et acquittement explicite.
+Les nouvelles racines V3 sont `CONFIGURED`, provenance historique conservée ;
+les racines locales identiques gardent leur représentation.
 
 `discover()` fournit les UUID triés des racines et des identités séance, y compris
 orphelines. Chaque entrée est ensuite relue par `read` : la découverte ne prouve
@@ -664,8 +669,9 @@ matériel persistées ne sont pas incluses dans le V1 opérationnel.
 Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
 avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomiques.md)).
 Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android.
-Room V3 prépare la représentation et la lecture configurable ; l’écriture de
-séances mixtes, la restauration V3 et SAF V3 ne sont pas activés.
+Room V3 permet lecture, écritures locales configurables (ADR 040) et restauration
+V3 avec aperçu (ADR 041). Ces API restent indépendantes des contrôleurs Android ;
+SAF V3 et l’interface des séances mixtes ne sont pas activés.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import V1 conserve son périmètre historique : séances absentes et profils
 nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux

@@ -79,7 +79,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val configuredWriter = RoomConfiguredWriter(database) { check(!closed.get()) { "Session store is closed." } }
 
-    /** Domain creation only. Historical archive restoration is a separate, unavailable operation. */
+    /** Domain creation only. Historical restoration requires a separate confirmed V3 import preview. */
     suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession): ConfiguredWriteResult =
         configuredWriter.write(ConfiguredWriteRequest.Create(session))
 
@@ -87,6 +87,11 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
     suspend fun updateConfiguredSession(expected: com.lmarchery.core.scoring.configured.ConfiguredSession,
         proposed: com.lmarchery.core.scoring.configured.ConfiguredSession): ConfiguredWriteResult =
         configuredWriter.write(ConfiguredWriteRequest.Update(expected, proposed))
+
+    private val archiveV3Import = RoomArchiveV3Import(database) { check(!closed.get()) { "Session store is closed." } }
+    suspend fun previewImportV3(archive: com.lmarchery.core.scoring.archive.v3.DomainArchiveV3): ArchiveV3PreviewResult =
+        archiveV3Import.preview(archive)
+    suspend fun importArchiveV3(confirmed: ArchiveV3ImportPreview): ArchiveV3ImportResult = archiveV3Import.restore(confirmed)
 
     suspend fun readArchiveV2(): ArchiveV2ReadResult = archiveV2.read()
     suspend fun previewImportV2(archive: com.lmarchery.core.scoring.archive.DomainArchiveV2): ArchiveV2PreviewResult =

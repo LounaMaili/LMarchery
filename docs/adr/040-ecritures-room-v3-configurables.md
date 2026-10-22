@@ -1,5 +1,9 @@
 # ADR 040 — Écritures transactionnelles des séances configurables dans Room V3
 
+> Suite : l’[ADR 041](041-restauration-archives-v3-atomique.md) ajoute la restauration
+> globale V3 avec aperçu confirmé, sans SAF ni UI V3. Le statut ci-dessous décrit
+> le périmètre livré par la PR #40.
+
 Statut : création et révisions métier implémentées, sans branchement Android,
 restauration/import global V3 ou SAF V3. Base exacte #39 :
 `d62b4fada7bf56baeeb3f3cc2dbab0ce34fba34a`.

@@ -75,13 +75,7 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                 additions.forEach { caller.ensureActive(); dao.writeProfile(it) }
                 val rows = receivedRows.physical
                 if (previous == null) {
-                    dao.insertSession(rows.session)
-                    dao.insertSessionConfiguration(receivedRows.initial)
-                    // All physical ends must exist before predecessor FK captures, irrespective of DTO order.
-                    rows.ends.forEach { caller.ensureActive(); dao.insertEnd(it) }
-                    receivedRows.captures.forEach { caller.ensureActive(); dao.insertEndConfiguration(it) }
-                    rows.impacts.forEach { caller.ensureActive(); dao.insertImpact(it) }
-                    dao.insertDecisions(rows.decisions); dao.insertRepositions(rows.repositions)
+                    dao.insertConfiguredRows(receivedRows, caller)
                 } else {
                     val previousRows = before.toSnapshot().sessions!!.single { it.uuid == source.uuid }.configuredRows()
                     dao.updatePhysicalSessionRows(previousRows.physical, rows)
