@@ -32,8 +32,15 @@ fun interface ArchiveV2Source {
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ConfiguredSessionRepository {
     val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
+
+    override suspend fun readConfiguredSession(uuid: String) = withContext(dispatcher) { store.readConfiguredSession(uuid) }
+    override suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession) =
+        withContext(dispatcher) { store.createConfiguredSession(session) }
+    override suspend fun updateConfiguredSession(expected: com.lmarchery.core.scoring.configured.ConfiguredSession,
+        proposed: com.lmarchery.core.scoring.configured.ConfiguredSession) =
+        withContext(dispatcher) { store.updateConfiguredSession(expected, proposed) }
 
     override suspend fun readArchiveV3() = withContext(dispatcher) { store.readArchiveV3() }
     override suspend fun previewImportV3(archive: com.lmarchery.core.scoring.archive.v3.DomainArchiveV3): PreparedV3Result = withContext(dispatcher) {

@@ -11,13 +11,13 @@ import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
 
 @Composable
-fun ConfiguredSessionSummary(session: ConfiguredSession) {
+fun ConfiguredSessionSummary(session: ConfiguredSession, readOnly: Boolean = true) {
     val view = presentConfiguredScore(session)
     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
         Text(session.metadata.title, style = MaterialTheme.typography.titleLarge)
-        Text("${session.status.label()} · séance configurable · lecture seule")
+        Text("${session.status.label()} · séance configurable${if (readOnly) " · lecture seule" else ""}")
         Text(session.civilDateLabel())
-        Text("Aucune édition, correction, validation ou association de matériel n’est disponible pour cette séance dans cet écran.")
+        if (readOnly) Text("Aucune édition, correction, validation ou association de matériel n’est disponible pour cette séance dans cet écran.")
         Text("Configuration initiale · ${session.initialConfigurationOrigin}")
         configurationLines(session.initialConfiguration).forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
         Text("Les configurations effectives sont celles de chaque volée. Une distance personnalisée ne constitue pas un règlement officiel.")

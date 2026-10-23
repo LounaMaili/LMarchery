@@ -290,8 +290,9 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md) et
    n’est jamais rouvert silencieusement à la confirmation.
 5. Attendre l’acquittement SQL. Le plan est recontrôlé sous transaction écrivain ;
    aucune insertion partielle. Après succès, la liste est redécouverte et relue.
-   Les séances configurables V3, même en cours ou homogènes, sont consultables
-   en lecture seule ; les séances historiques gardent leur éditeur existant.
+   Les séances configurables V3 terminées sont en lecture seule ; les autres
+   utilisent leur éditeur dédié (ADR 043). Les lignes historiques gardent leur
+   éditeur existant, sans conversion implicite.
 6. Un plan périmé exige une nouvelle sélection. Après erreur/interruption SQL non
    confirmée, relire et sélectionner à nouveau le fichier : les séances committées
    sont reconnues identiques, sans doublon. Aucun retry automatique. La rotation
@@ -362,3 +363,39 @@ L'utilisateur va dans les Presets (ou depuis la création de séance)
 ---
 
 *Document version 1.0 — 29 avril 2026*
+
+## Séances configurables — création et édition (ADR 043)
+
+1. Choisir « Nouvelle séance configurable », distincte de la création rapide.
+   Renseigner titre, profil et édition, distance positive indépendante du profil,
+   FIXED 3/6/personnalisé ou FREE, indoor/outdoor, mode de score et métadonnées.
+   Le choix d’un blason officiel ne transforme pas cette configuration en épreuve
+   réglementaire. Le matériel disponible est facultatif.
+2. Confirmer le brouillon et attendre l’acquittement, puis démarrer. Créer la
+   première volée par héritage de l’initiale ou par choix explicite.
+3. Pour chaque prochaine volée, choisir héritage ou définition explicite. Même
+   égale à la précédente, une définition explicite garde sa provenance. Annuler
+   le formulaire ne crée rien ; une capture confirmée ne peut plus être modifiée.
+4. Choisir une volée éditable ; sa cible et son mode effectifs gouvernent toute
+   saisie. Mode rapide : un appui enregistre. Mode précis : relâcher propose,
+   confirmer enregistre, annuler ne crée rien. FIXED affiche et borne la capacité
+   déclarée ; FREE reste libre, sans limite artificielle de trois flèches.
+5. Sélectionner une flèche pour jugement de limite, correction exceptionnelle
+   motivée ou repositionnement explicite. Les traces et décisions invalidées
+   sont conservées ; aucun ajout ou correction après validation de la volée.
+6. Une capacité non atteinte est informative : le domaine autorise actuellement
+   la validation vide/incomplète. Clôturer fige également les volées provisoires
+   sans les valider automatiquement. Scores validés/provisoires et groupes de
+   configuration restent distincts, sans pourcentage réglementaire fictif.
+7. Si une écriture échoue ou reste incertaine, conserver la proposition. Relire
+   et comparer : proposition retrouvée = aucun nouvel appel d’écriture ; état
+   attendu retrouvé = nouvelle confirmation explicite de la même intention ;
+   troisième état = conflit bloquant. Quitter une intention soumise n’annule
+   pas un commit éventuel. Ne jamais recréer automatiquement sa date ou son UUID.
+
+Les formulaires et corrections bloquent les opérations concurrentes SAF,
+matériel et navigation incompatible. Après perte du processus, aucune proposition
+locale n’est annoncée comme enregistrée : relire les séances avant de recommencer.
+La sauvegarde/restauration complète reste le parcours SAF V3 existant.
+Voir [ADR 043](adr/043-editeur-android-seances-configurables.md). Les essais humains
+sur appareil restent reportés ; les tests JVM ne valident pas la précision tactile.

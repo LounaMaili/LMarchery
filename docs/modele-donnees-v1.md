@@ -337,10 +337,11 @@ entité historique. Les transitions sont contrôlées, les décisions et traces
 conservées, et le calcul délègue au moteur mixte de l’ADR 034.
 La conversion explicite exige une `DomainArchive` validée fournissant le profil
 historique complet et son édition ; une `Session` seule ne suffit pas.
-Cet agrégat n’est pas exportable en JSON V1/V2. Sa consultation en lecture seule
-par Compose suit l’ADR 042. Room V3
-reconstruit les séances historiques sous cette forme et propose des écritures métier
-configurables distinctes, sans branchement aux contrôleurs Android (ADR 040).
+Cet agrégat n’est pas exportable en JSON V1/V2. Sa consultation et son édition contrôlée par Compose suivent les ADR 042 et
+[043](adr/043-editeur-android-seances-configurables.md). Room V3 reconstruit les
+séances historiques sous cette forme mais leur représentation physique reste
+distincte : seul `CONFIGURED` utilise le nouvel éditeur. Les captures historiques
+ne sont pas converties implicitement.
 Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
 les limites de provenance et l’intégration future avec la branche Android #32.
 Le contrat métier autonome `DomainArchiveV3` conserve ces agrégats, leurs captures
@@ -636,8 +637,8 @@ les écritures locales contrôlées : création `CREATION`, captures immuables, 
 expected complet et validation de transition, transaction écrivain unique puis
 égalité V3 et contrôle des lignes hors delta. Les acquittements incertains conservent
 l’intention exacte ; aucune relance automatique. Voir
-[ADR 040](adr/040-ecritures-room-v3-configurables.md). Ces API ne sont pas connectées
-à Android. La restauration historique et mixte passe séparément par
+[ADR 040](adr/040-ecritures-room-v3-configurables.md). Le contrôleur Android dédié
+les utilise selon l’[ADR 043](adr/043-editeur-android-seances-configurables.md). La restauration historique et mixte passe séparément par
 `previewImportV3` / `importArchiveV3` (ADR 041) : aperçu de l’état complet, ajout
 atomique sans remplacement, contrôle des anciennes lignes et acquittement explicite.
 Les nouvelles racines V3 sont `CONFIGURED`, provenance historique conservée ;
@@ -674,8 +675,10 @@ Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
 avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomiques.md)).
 Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android.
 Room V3 permet lecture, écritures locales configurables (ADR 040) et restauration
-V3 avec aperçu (ADR 041). Ces API restent indépendantes des contrôleurs Android ;
-SAF V3 et la consultation seule des séances configurables sont raccordés selon l’[ADR 042](adr/042-saf-v3-consultation-configurable.md). La création/édition mixte reste absente.
+V3 avec aperçu (ADR 041). SAF V3 et la consultation configurable suivent
+l’[ADR 042](adr/042-saf-v3-consultation-configurable.md). La création et l’édition
+configurables sont raccordées selon l’[ADR 043](adr/043-editeur-android-seances-configurables.md),
+avec état distinct, candidats exacts et réconciliation explicite sans écrasement.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import V1 conserve son périmètre historique : séances absentes et profils
 nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux
