@@ -321,8 +321,9 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 `core:model.session.EndConfiguration` conserve une configuration de prochaine
 volée (profil complet/édition, distance, FIXED/FREE et nombre, indoor, mode de
 score). Héritage, remplacement explicite, raccourcis 3/6/libre, diagnostics et
-comparaison sont des opérations pures. Cette valeur n’est **pas encore une
-propriété de Session ou End**, ni stockée/exportée. Le contrat homogène existant
+comparaison sont des opérations pures. Cette valeur n’est **pas une
+propriété de Session ou End** ; les captures de `ConfiguredSession` sont stockées
+en Room 3 et sauvegardées en JSON V3 (ADR 037–042). Le contrat homogène existant
 reste en vigueur ; aucune ancienne séance n’est convertie implicitement.
 Voir [ADR 033](adr/033-fondation-configurations-par-volee.md) pour les invariants,
 les frontières de conformité réglementaire et les étapes futures.
@@ -336,7 +337,8 @@ entité historique. Les transitions sont contrôlées, les décisions et traces
 conservées, et le calcul délègue au moteur mixte de l’ADR 034.
 La conversion explicite exige une `DomainArchive` validée fournissant le profil
 historique complet et son édition ; une `Session` seule ne suffit pas.
-Cet agrégat n’est ni exportable en JSON V1/V2, ni utilisé par Compose. Room V3
+Cet agrégat n’est pas exportable en JSON V1/V2. Sa consultation en lecture seule
+par Compose suit l’ADR 042. Room V3
 reconstruit les séances historiques sous cette forme et propose des écritures métier
 configurables distinctes, sans branchement aux contrôleurs Android (ADR 040).
 Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
@@ -348,7 +350,9 @@ et le catalogue complet via un snapshot et une reconstruction stricte ; voir
 avec lecture cohérente Room V3 selon l’[ADR 039](adr/039-room-v3-migration-lecture.md),
 avec écritures locales selon l’[ADR 040](adr/040-ecritures-room-v3-configurables.md),
 avec prévisualisation/restauration transactionnelle complète selon
-l’[ADR 041](adr/041-restauration-archives-v3-atomique.md), sans parcours Android V3. La conversion V1 reste
+l’[ADR 041](adr/041-restauration-archives-v3-atomique.md), avec parcours SAF Android V3
+et consultation seule selon l’[ADR 042](adr/042-saf-v3-consultation-configurable.md).
+La conversion V1 reste
 un contenu partiel avec matériel non fourni, distinct d’une V3 complète.
 
 ---
@@ -671,7 +675,7 @@ avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomique
 Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android.
 Room V3 permet lecture, écritures locales configurables (ADR 040) et restauration
 V3 avec aperçu (ADR 041). Ces API restent indépendantes des contrôleurs Android ;
-SAF V3 et l’interface des séances mixtes ne sont pas activés.
+SAF V3 et la consultation seule des séances configurables sont raccordés selon l’[ADR 042](adr/042-saf-v3-consultation-configurable.md). La création/édition mixte reste absente.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import V1 conserve son périmètre historique : séances absentes et profils
 nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux

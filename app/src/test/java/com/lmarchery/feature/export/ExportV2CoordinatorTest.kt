@@ -1,5 +1,8 @@
 package com.lmarchery.feature.export
 
+import com.lmarchery.backup.destinationChosenForTest
+import com.lmarchery.backup.pickerUnavailableForTest
+
 import com.lmarchery.backup.V2TestData.archive
 import com.lmarchery.backup.V2TestData.bow
 import com.lmarchery.backup.V2TestData.now
@@ -44,7 +47,7 @@ class ExportV2CoordinatorTest {
             ArchiveV2Source { reads++; readGate?.await(); result })
         val state get() = coordinator.state.value
         fun prepare() { coordinator.beginV2(); assertIs<ExportState.Choosing>(state) }
-        fun write() { assertNotNull(coordinator.claimDestinationRequest()); coordinator.destinationChosen("content://synthetic/v2") }
+        fun write() { assertNotNull(coordinator.claimDestinationRequest()); coordinator.destinationChosenForTest("content://synthetic/v2") }
         override fun close() = scope.cancel()
     }
     @Test fun `complete V2 export uses one global snapshot and preserves every category nanosecond and Float bit`() {
@@ -78,15 +81,15 @@ class ExportV2CoordinatorTest {
         Harness().use { h -> h.readGate = CompletableDeferred(); h.coordinator.beginV2(); h.coordinator.begin()
             assertEquals(1, h.reads); h.readGate!!.complete(Unit); yield(); h.gate = CompletableDeferred()
             val reattached = h.coordinator; h.write(); assertNull(reattached.claimDestinationRequest())
-            h.coordinator.destinationChosen("content://duplicate"); h.coordinator.beginV2()
+            h.coordinator.destinationChosenForTest("content://duplicate"); h.coordinator.beginV2()
             assertIs<ExportState.Writing>(h.state); assertEquals(1, h.writes); assertTrue(h.locked)
             h.gate!!.complete(Unit); yield(); assertIs<ExportState.Succeeded>(h.state)
         }
     }
     @Test fun `V2 cancelled picker and unavailable picker never write`() {
-        Harness().use { h -> h.prepare(); h.coordinator.claimDestinationRequest(); h.coordinator.destinationChosen(null)
+        Harness().use { h -> h.prepare(); h.coordinator.claimDestinationRequest(); h.coordinator.destinationChosenForTest(null)
             assertIs<ExportState.Cancelled>(h.state); assertEquals(0, h.writes); assertFalse(h.locked)
-            h.prepare(); h.coordinator.pickerUnavailable(); assertIs<ExportState.Failed>(h.state); assertEquals(0, h.writes) }
+            h.prepare(); h.coordinator.pickerUnavailableForTest(); assertIs<ExportState.Failed>(h.state); assertEquals(0, h.writes) }
     }
     @Test fun `V2 interrupted write close and readback failures never claim confirmed backup`() {
         listOf<(Harness) -> Unit>({ it.closeFailure = true }, { it.truncated = true }, { it.partial = true }, { it.readCloseFailure = true }).forEach { inject ->
@@ -99,7 +102,7 @@ class ExportV2CoordinatorTest {
         assertFalse(assertIs<ExportState.Failed>(reading.state).potentiallyIncomplete); assertEquals(0, reading.writes)
         val writing = Harness(); writing.prepare(); writing.gate = CompletableDeferred(); writing.write(); writing.close(); yield()
         assertTrue(assertIs<ExportState.Failed>(writing.state).potentiallyIncomplete); assertFalse(writing.locked)
-        Harness().use { h -> h.coordinator.destinationChosen("content://old-process")
+        Harness().use { h -> h.coordinator.destinationChosenForTest("content://old-process")
             assertTrue(assertIs<ExportState.Failed>(h.state).potentiallyIncomplete); assertEquals(0, h.writes) }
     }
 }

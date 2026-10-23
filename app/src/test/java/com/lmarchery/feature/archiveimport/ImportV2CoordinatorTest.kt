@@ -1,5 +1,7 @@
 package com.lmarchery.feature.archiveimport
 
+import com.lmarchery.backup.selectedForTest
+
 import com.lmarchery.backup.V2TestData.archive
 import com.lmarchery.backup.V2TestData.bow
 import com.lmarchery.backup.V2TestData.now
@@ -39,7 +41,7 @@ class ImportV2CoordinatorTest {
                 })
             })
         val state get() = coordinator.state.value
-        fun select() { coordinator.begin(); assertTrue(coordinator.claimSelection()); coordinator.selected("content://synthetic/v2") }
+        fun select() { coordinator.begin(); assertTrue(coordinator.claimSelection()); coordinator.selectedForTest("content://synthetic/v2") }
         override fun close() = scope.cancel()
     }
 
@@ -85,7 +87,7 @@ class ImportV2CoordinatorTest {
     }
     @Test fun `double callbacks and confirmations execute a single read preview and commit`() = runBlocking<Unit> {
         Harness().use { h ->
-            h.readGate = CompletableDeferred(); h.select(); h.coordinator.begin(); h.coordinator.selected("content://other")
+            h.readGate = CompletableDeferred(); h.select(); h.coordinator.begin(); h.coordinator.selectedForTest("content://other")
             assertEquals(1, h.reads); h.readGate!!.complete(Unit); yield()
             h.commitGate = CompletableDeferred(); h.coordinator.confirm(); h.coordinator.confirm(); h.coordinator.cancel()
             assertIs<ImportState.Importing>(h.state); assertEquals(1, h.commits); assertEquals(0, h.refreshes)
@@ -96,7 +98,7 @@ class ImportV2CoordinatorTest {
         Harness().use { h -> h.select(); val original = h.state; val attached = h.coordinator
             assertEquals(original, attached.state.value); assertFalse(attached.claimSelection()); attached.confirm()
             assertEquals(1, h.reads); assertEquals(1, h.commits) }
-        Harness().use { h -> h.coordinator.selected("content://stale"); assertEquals(ImportState.Unconfirmed(true), h.state)
+        Harness().use { h -> h.coordinator.selectedForTest("content://stale"); assertEquals(ImportState.Unconfirmed(true), h.state)
             h.coordinator.confirm(); assertEquals(0, h.reads); assertEquals(0, h.commits) }
     }
     @Test fun `late stale preview SQL failure and corrupt state never report success or retry`() {
@@ -118,7 +120,7 @@ class ImportV2CoordinatorTest {
             assertIs<ImportState.Failed>(h.state); assertEquals(0, h.previews); assertEquals(0, h.commits) }
     }
     @Test fun `selection cancellation and refusing a V2 preview have no commit`() {
-        Harness().use { h -> h.coordinator.begin(); h.coordinator.claimSelection(); h.coordinator.selected(null)
+        Harness().use { h -> h.coordinator.begin(); h.coordinator.claimSelection(); h.coordinator.selectedForTest(null)
             assertIs<ImportState.Cancelled>(h.state); assertEquals(0, h.reads); assertFalse(h.locked)
             h.select(); h.coordinator.cancel(); h.coordinator.confirm(); assertEquals(0, h.commits); assertFalse(h.locked) }
     }
@@ -142,7 +144,7 @@ class ImportV2CoordinatorTest {
                 override suspend fun previewImport(archive: DomainArchive): ArchiveImportPreviewResult = error("Forbidden fallback")
                 override suspend fun importArchive(preview: ArchiveImportPreview): ArchiveImportResult = error("Forbidden fallback")
             }, scope, { true }, {}, {}, Dispatchers.Unconfined)
-            c.begin(); c.claimSelection(); c.selected("content://synthetic/v2")
+            c.begin(); c.claimSelection(); c.selectedForTest("content://synthetic/v2")
             assertTrue(assertIs<ImportState.Failed>(c.state.value).diagnostic.contains("Aucune conversion"))
         } finally { scope.cancel() }
     }

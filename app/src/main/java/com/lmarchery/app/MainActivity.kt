@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         val repository = (application as LMarcheryApplication).sessionRepository
         val writer = VerifyingDocumentWriter(AndroidDocumentAccess(applicationContext.contentResolver))
         val reader = BoundedDocumentReader(AndroidImportDocumentAccess(applicationContext.contentResolver))
-        val viewModel = ViewModelProvider(this, SessionViewModel.Factory(repository, repository, writer, repository, reader, repository, repository, repository.equipment))[SessionViewModel::class.java]
+        val viewModel = ViewModelProvider(this, SessionViewModel.Factory(repository, repository, writer, repository, reader, repository, repository, repository.equipment, v3Source = repository, v3Importer = repository))[SessionViewModel::class.java]
 
         setContent {
             LMarcheryTheme {
