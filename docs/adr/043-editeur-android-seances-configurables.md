@@ -87,7 +87,9 @@ Deux choix sont présentés pour une prochaine volée :
 - `Replace(configuration)` : choix explicite, provenance `EXPLICIT` même si
   toutes les valeurs sont égales à la précédente.
 
-La capture réelle est visible avant confirmation et reste immuable après,
+Revenir du choix explicite à « Hériter » réaffiche la configuration héritée
+exacte, en abandonnant les valeurs explicites non soumises. La capture réelle
+est visible avant confirmation et reste immuable après,
 même vide. Aucun bouton de correction rétroactive n’est proposé. La création
 d’une volée suivante peut laisser des volées antérieures éditables : le domaine
 ne définit pas une politique imposant une seule volée éditable.
@@ -228,13 +230,13 @@ PR suivante n’est engagé.
 | core:scoring | 422 | 0 / 0 / 0 |
 | core:export | 99 | 0 / 0 / 0 |
 | core:database:jvmTest, SQLite natif | 353 | 0 / 0 / 0 |
-| app:testDebugUnitTest | 325 | 0 / 0 / 0 |
-| app:testReleaseUnitTest | 325 | 0 / 0 / 0 |
-| Total | **1 659** | **0 / 0 / 0** |
+| app:testDebugUnitTest | 326 | 0 / 0 / 0 |
+| app:testReleaseUnitTest | 326 | 0 / 0 / 0 |
+| Total | **1 661** | **0 / 0 / 0** |
 
-**58 nouveaux tests distincts** : 52 de présentation et 6 natifs SQLite. Les
-52 méthodes sont retrouvées nominativement dans chacun des deux XML Android ;
-les variantes ne représentent pas 104 tests uniques. Tous les tests historiques
+**59 nouveaux tests distincts** : 53 de présentation et 6 natifs SQLite. Les
+53 méthodes sont retrouvées nominativement dans chacun des deux XML Android ;
+les variantes ne représentent pas 106 tests uniques. Tous les tests historiques
 sont conservés sans modification. La vérification des XML a conduit à expliciter
 le retour `Unit` de tests que JUnit ne découvrait pas initialement.
 

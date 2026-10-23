@@ -106,7 +106,15 @@ class ConfiguredSessionController(
     }
     fun indoor(token: Long, value: Boolean) = configuration(token) { it.copy(indoor = value) }
     fun scoring(token: Long, value: ScoringMode) = configuration(token) { it.copy(scoringMode = value) }
-    fun explicitNext(token: Long, value: Boolean) = form(token) { if (it is ConfiguredForm.NextEnd) it.copy(explicit = value) else it }
+    fun explicitNext(token: Long, value: Boolean) = form(token) {
+        if (it !is ConfiguredForm.NextEnd) it
+        else if (value) it.copy(explicit = true)
+        else {
+            // Show the configuration that Inherit will actually capture, never a stale explicit draft.
+            val source = ui.saved!!.ends.maxByOrNull { end -> end.end.index }?.configuration ?: ui.saved!!.initialConfiguration
+            it.copy(explicit = false, configuration = ConfigurationDraft.from(source))
+        }
+    }
     fun title(token: Long, value: String) = metadata(token) { it.copy(title = value) }
     fun planned(token: Long, value: String) = metadata(token) { it.copy(plannedEnds = value) }
     fun location(token: Long, value: String) = metadata(token) { it.copy(location = value) }

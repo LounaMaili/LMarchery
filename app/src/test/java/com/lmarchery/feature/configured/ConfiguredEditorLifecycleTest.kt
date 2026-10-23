@@ -71,4 +71,16 @@ class ConfiguredEditorLifecycleTest {
     @Test fun `editing owns common gate until explicit close including local forms`(): Unit = EditorHarness().use { h -> h.c.create(); assertTrue(h.gate); h.c.close(); assertTrue(h.gate)
         h.c.abandonLocalAndClose(); assertFalse(h.gate); assertEquals(1,h.releases); assertEquals(1,h.refreshes) }
     @Test fun `busy shared gate refuses entry without acquiring a second owner`(): Unit = EditorHarness(acquired=false).use { h -> h.c.create(); h.c.open(f.id(1)); assertFalse(h.ui.open); assertEquals(0,h.reads); assertEquals(0,h.releases) }
+    @Test fun `returning from explicit draft to inheritance displays exactly the configuration that will be saved`(): Unit = EditorHarness().use { h ->
+        h.editing();val previous=h.ui.selectedEnd!!;h.c.nextEnd();h.c.explicitNext(h.token,true)
+        h.c.chooseProfile(h.token,WorldArcheryIndoorTargetProfiles.compound40.uuid);h.c.distance(h.token,"70");h.c.shortcut(h.token,EndArrowCountShortcut.FREE)
+        assertNotEquals(previous.configuration,(h.ui.form as ConfiguredForm.NextEnd).configuration.configuration())
+        val n=h.requests.size;h.c.explicitNext(h.token,false)
+        val displayed=(h.ui.form as ConfiguredForm.NextEnd).configuration.configuration()
+        assertEquals(previous.configuration,displayed);assertEquals(n,h.requests.size)
+        h.c.confirmForm(h.token);assertEquals(displayed,h.ui.selectedEnd!!.configuration)
+        assertEquals(EndConfigurationOrigin.Inherited(previous.uuid),h.ui.selectedEnd!!.origin)
+        assertEquals(previous,h.ui.saved!!.ends.first())
+    }
+
 }
