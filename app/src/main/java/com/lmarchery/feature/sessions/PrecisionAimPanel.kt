@@ -8,20 +8,26 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun PrecisionAimPanel(state: SessionUiState, controller: SessionController) {
-    if (state.activeAim != null) Text("Visée en cours · relâchez pour proposer, sans enregistrer.")
-    state.newImpactCandidate?.let { candidate ->
+    PrecisionAimFields(state.newImpactCandidate, state.activeAim?.candidate, presentNewImpactNotice(state),
+        state.canConfirmNewImpact, state.ready, controller::confirmNewImpactCandidate, controller::cancelNewImpactCandidate)
+}
+
+@Composable
+fun PrecisionAimFields(candidate: PositionCandidate?, active: PositionCandidate?, notice: NewImpactNotice,
+    canConfirm: Boolean, canCancel: Boolean, confirm: () -> Unit, cancel: () -> Unit) {
+    if (active != null) Text("Visée en cours · relâchez pour proposer, sans enregistrer.")
+    candidate?.let { candidate ->
         Card(Modifier.fillMaxWidth()) {
             Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                val notice = presentNewImpactNotice(state)
                 Text(notice.heading, style = MaterialTheme.typography.titleMedium)
                 Text("Position proposée : (${candidate.point.x}, ${candidate.point.y}) · score géométrique ${candidate.scoreLabel()}")
                 Text(notice.guidance)
-                Button(onClick = controller::confirmNewImpactCandidate, enabled = state.canConfirmNewImpact) { Text("Confirmer la nouvelle flèche") }
-                TextButton(onClick = controller::cancelNewImpactCandidate, enabled = state.ready) { Text("Annuler la nouvelle flèche") }
+                Button(onClick = confirm, enabled = canConfirm) { Text("Confirmer la nouvelle flèche") }
+                TextButton(onClick = cancel, enabled = canCancel) { Text("Annuler la nouvelle flèche") }
             }
         }
     }
-    state.activeAim?.candidate?.let { candidate ->
+    active?.let { candidate ->
         Text("Aperçu géométrique : ${candidate.scoreLabel()} · non enregistré", style = MaterialTheme.typography.bodySmall)
     }
 }

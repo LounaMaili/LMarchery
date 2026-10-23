@@ -79,6 +79,9 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val configuredWriter = RoomConfiguredWriter(database) { check(!closed.get()) { "Session store is closed." } }
 
+    private val configuredReader = RoomConfiguredRead(database) { check(!closed.get()) { "Session store is closed." } }
+    suspend fun readConfiguredSession(uuid: String): ConfiguredSessionReadResult = configuredReader.read(uuid)
+
     /** Domain creation only. Historical restoration requires a separate confirmed V3 import preview. */
     suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession): ConfiguredWriteResult =
         configuredWriter.write(ConfiguredWriteRequest.Create(session))

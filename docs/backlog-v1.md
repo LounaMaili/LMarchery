@@ -161,4 +161,9 @@ Epic 6 (paramètres/UX) — transversal
 La branche SAF V3 ajoute export complet, restauration atomique confirmée et
 consultation seule des séances configurables ([ADR 042](adr/042-saf-v3-consultation-configurable.md)).
 Les essais Android SAF réels sont reportés : [protocole PR42](validation-saf-v3-pr42.md).
-La création/édition de séances mixtes reste une étape distincte.
+La création/édition configurable est raccordée dans un contrôleur distinct
+([ADR 043](adr/043-editeur-android-seances-configurables.md)) : brouillon, démarrage,
+configurations par volée, saisie, décisions, repositionnements, métadonnées et
+clôture. Validation automatisée JVM/SQLite ; essais physiques reportés. Les
+arbitrages sportifs de validation incomplète et de correction rétroactive ne
+sont pas tranchés.
