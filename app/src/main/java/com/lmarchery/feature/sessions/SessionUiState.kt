@@ -6,6 +6,7 @@ import com.lmarchery.core.model.scoring.FinalScoreDecision
 import com.lmarchery.core.model.scoring.BoundaryReference
 import com.lmarchery.core.model.scoring.BoundaryValue
 import com.lmarchery.core.scoring.archive.DomainArchive
+import com.lmarchery.core.scoring.configured.ConfiguredSession
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles as WA
 import com.lmarchery.core.scoring.summarizeSessionScore
@@ -26,7 +27,15 @@ enum class ProblemKind { CONFLICT, INTERVENTION, TECHNICAL, NOT_FOUND, INVALID_A
 data class UiProblem(val kind: ProblemKind, val message: String) {
     val retryable get() = kind == ProblemKind.TECHNICAL
 }
-data class SessionEntry(val uuid: String, val session: Session? = null, val problem: UiProblem? = null)
+data class SessionEntry(val uuid: String, val session: Session? = null, val problem: UiProblem? = null,
+    val configured: ConfiguredSession? = null) {
+    // A contradictory discovery entry is a visible incident, not a constructor crash.
+    val readable get() = problem == null && when {
+        session != null && configured == null -> session.uuid == uuid
+        configured != null && session == null -> configured.uuid == uuid
+        else -> false
+    }
+}
 data class PendingSave(
     val description: String,
     val expected: DomainArchive?,
@@ -69,6 +78,7 @@ data class SessionUiState(
     val archiveOperationLocked: Boolean = false,
     val entries: List<SessionEntry> = emptyList(),
     val saved: DomainArchive? = null,
+    val configuredSaved: ConfiguredSession? = null,
     val pending: PendingSave? = null,
     val problem: UiProblem? = null,
     val storedPreview: DomainArchive? = null,
@@ -85,6 +95,7 @@ data class SessionUiState(
     val newImpactCandidate: PositionCandidate? = null,
     val activeAim: ActiveAim? = null,
 ) {
+    init { require(saved == null || configuredSaved == null) }
     val session get() = saved?.sessions?.single()
     val editingEnd get() = session?.ends?.singleOrNull { it.status == EndStatus.EDITING }
     val displayedEnd get() = session?.ends?.find { it.uuid == selectedEndUuid } ?: editingEnd ?: session?.ends?.lastOrNull()

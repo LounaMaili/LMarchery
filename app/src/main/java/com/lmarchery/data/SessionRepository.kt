@@ -32,8 +32,21 @@ fun interface ArchiveV2Source {
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer {
     val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
+
+    override suspend fun readArchiveV3() = withContext(dispatcher) { store.readArchiveV3() }
+    override suspend fun previewImportV3(archive: com.lmarchery.core.scoring.archive.v3.DomainArchiveV3): PreparedV3Result = withContext(dispatcher) {
+        when (val result = store.previewImportV3(archive)) {
+            is ArchiveV3PreviewResult.Ready -> PreparedV3Result.Ready(object : PreparedV3Import {
+                override val archive = result.preview.archive
+                override val plan = result.preview.plan
+                override suspend fun commit() = withContext(dispatcher) { store.importArchiveV3(result.preview).androidResult() }
+            })
+            is ArchiveV3PreviewResult.NeedsIntervention -> PreparedV3Result.NeedsIntervention(result.diagnostic)
+            is ArchiveV3PreviewResult.TechnicalFailure -> PreparedV3Result.TechnicalFailure(result.cause)
+        }
+    }
 
     override suspend fun readArchiveV2() = withContext(dispatcher) { store.readArchiveV2() }
     override suspend fun previewImportV2(archive: DomainArchiveV2): PreparedV2Result = withContext(dispatcher) {

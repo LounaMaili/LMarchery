@@ -57,6 +57,9 @@ Pour préparer le développement et les validations :
 | 39 | Migration Room 2→3 et lecture des séances configurables | [adr/039-room-v3-migration-lecture.md](adr/039-room-v3-migration-lecture.md) |
 | 40 | Écritures transactionnelles des séances configurables Room V3 | [adr/040-ecritures-room-v3-configurables.md](adr/040-ecritures-room-v3-configurables.md) |
 | 41 | Prévisualisation et restauration transactionnelle des archives V3 | [adr/041-restauration-archives-v3-atomique.md](adr/041-restauration-archives-v3-atomique.md) |
+| 42 | SAF V3 et consultation des séances configurables | [adr/042-saf-v3-consultation-configurable.md](adr/042-saf-v3-consultation-configurable.md) |
+
+Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 
 Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-visee-materiel.md).
 

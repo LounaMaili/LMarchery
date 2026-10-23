@@ -12,6 +12,7 @@ import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
 import com.lmarchery.core.scoring.scoreArrowImpact
 import com.lmarchery.core.scoring.resolveFinalScore
 import com.lmarchery.data.SessionRepository
+import com.lmarchery.data.ArchiveV3Source
 import com.lmarchery.data.EquipmentRepository
 import com.lmarchery.data.EquipmentKind
 import kotlinx.coroutines.*
@@ -30,6 +31,7 @@ class SessionController(
     private val sessionZone: () -> ZoneId = ZoneId::systemDefault,
     private val newUuid: () -> String = { UUID.randomUUID().toString() },
     private val equipmentRepository: EquipmentRepository? = null,
+    private val v3Source: ArchiveV3Source? = null,
 ) {
     private var nextAimToken = 0L
     private val mutableState = MutableStateFlow(SessionUiState())
@@ -58,9 +60,18 @@ class SessionController(
         when (val discovery = repository.discover()) {
             is SessionDiscoveryResult.TechnicalFailure -> ui = ui.copy(problem = technical(discovery.cause))
             is SessionDiscoveryResult.Found -> {
+                // Legacy reads remain the only route into the historical editor. A refused legacy
+                // read may be displayed ONLY after complete V3 reconstruction, always read-only.
+                var complete: ArchiveV3ReadResult? = null
                 val entries = discovery.uuids.map { uuid ->
                     when (val result = repository.read(uuid)) {
                         is SessionReadResult.Found -> SessionEntry(uuid, result.session)
+                        is SessionReadResult.NeedsIntervention -> {
+                            if (v3Source != null && complete == null) complete = v3Source.readArchiveV3()
+                            val configured = (complete as? ArchiveV3ReadResult.Found)?.archive?.sessions?.find { it.uuid == uuid }
+                            if (configured != null) SessionEntry(uuid, configured = configured)
+                            else SessionEntry(uuid, problem = complete?.let(::v3ReadProblem) ?: readProblem(result))
+                        }
                         else -> SessionEntry(uuid, problem = readProblem(result))
                     }
                 }
@@ -151,7 +162,7 @@ class SessionController(
         if (!ui.canNavigate) return // Pending actions and selection require explicit abandonment.
         creationEquipmentLoad?.cancel()
         launchOperation {
-            ui = ui.copy(screen = SessionScreen.LIST, saved = null, selectedEndUuid = null, precisionAimEnabled = false)
+            ui = ui.copy(screen = SessionScreen.LIST, saved = null, configuredSaved = null, selectedEndUuid = null, precisionAimEnabled = false)
             loadEntries()
         }
     }
@@ -433,7 +444,7 @@ class SessionController(
             }
         }
         if (problem != null) ui = ui.copy(problem = problem, impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.FAILED))
-        else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, pending = null, problem = null,
+        else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, configuredSaved = null, pending = null, problem = null,
             selectedEndUuid = pending.selectedEndUuid, storedPreview = null, equipmentEdit = null,
             impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
             newImpactCandidate = null, activeAim = null,
@@ -459,7 +470,7 @@ class SessionController(
         when (val result = repository.read(uuid)) {
             is SessionReadResult.Found -> {
                 val loaded = archive(result.session, result.profile)
-                ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, storedPreview = null,
+                ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, configuredSaved = null, storedPreview = null,
                     pending = if (abandonPending) null else ui.pending, problem = null, confirmation = null,
                     impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null,
                     precisionAimEnabled = if (ui.session?.uuid == result.session.uuid) ui.precisionAimEnabled else false,
@@ -467,6 +478,15 @@ class SessionController(
                         ui.session?.uuid == result.session.uuid && result.session.ends.any { it.uuid == selected }
                     } ?: result.session.ends.firstOrNull { it.status == EndStatus.EDITING }?.uuid
                         ?: result.session.ends.lastOrNull()?.uuid)
+            }
+            is SessionReadResult.NeedsIntervention -> {
+                val complete = v3Source?.readArchiveV3()
+                val configured = (complete as? ArchiveV3ReadResult.Found)?.archive?.sessions?.find { it.uuid == uuid }
+                if (configured == null) ui = ui.copy(problem = complete?.let(::v3ReadProblem) ?: readProblem(result))
+                else ui = ui.copy(screen = SessionScreen.SESSION, saved = null, configuredSaved = configured,
+                    storedPreview = null, pending = null, problem = null, confirmation = null, impactEdit = null,
+                    equipmentEdit = null, newImpactCandidate = null, activeAim = null, precisionAimEnabled = false,
+                    selectedEndUuid = null)
             }
             else -> ui = ui.copy(problem = readProblem(result))
         }
@@ -503,4 +523,11 @@ private fun readProblem(result: SessionReadResult): UiProblem = when (result) {
     is SessionReadResult.NeedsIntervention -> diagnostic(ProblemKind.INTERVENTION, result.diagnostic)
     is SessionReadResult.TechnicalFailure -> technical(result.cause)
     is SessionReadResult.Found -> error("Expected a failed read.")
+}
+
+private fun v3ReadProblem(result: ArchiveV3ReadResult): UiProblem = when (result) {
+    is ArchiveV3ReadResult.NeedsIntervention -> UiProblem(ProblemKind.INTERVENTION,
+        "${result.diagnostic.path} : ${result.diagnostic.detail}")
+    is ArchiveV3ReadResult.TechnicalFailure -> technical(result.cause)
+    is ArchiveV3ReadResult.Found -> UiProblem(ProblemKind.NOT_FOUND, "Séance absente de la lecture complète V3.")
 }

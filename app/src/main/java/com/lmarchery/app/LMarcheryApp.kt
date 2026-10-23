@@ -60,7 +60,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
     val scrollStates = rememberSaveableStateHolder()
     val scope = rememberCoroutineScope()
     // Key only navigation identity: SQL acknowledgements must not recreate scroll state.
-    scrollStates.SaveableStateProvider("${state.screen}:${state.session?.uuid.orEmpty()}") {
+    scrollStates.SaveableStateProvider("${state.screen}:${(state.session?.uuid ?: state.configuredSaved?.uuid).orEmpty()}") {
         val listState = rememberLazyListState()
         val showEnd: (String) -> Unit = { uuid ->
             if (state.canNavigate) {
@@ -118,7 +118,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         }
                         val history = presentSessionHistory(state.entries)
                         val sections = listOf(
-                            "Séances à reprendre" to history.resumable,
+                            "Séances en cours ou à consulter" to history.resumable,
                             "Historique" to history.completed,
                             "Séances nécessitant une intervention" to history.intervention,
                         )
@@ -157,6 +157,14 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         }
                     }
                     SessionScreen.SESSION -> {
+                        state.configuredSaved?.let { configured ->
+                            item(key = "configured-summary") { ConfiguredSessionSummary(configured) }
+                            item(key = "configured-back") { TextButton(onClick = back, enabled = state.canNavigate) { Text("Retour aux séances") } }
+                            if (configured.ends.isEmpty()) item(key = "configured-empty") { Text("Aucune volée enregistrée ; configuration initiale conservée.") }
+                            items(configured.ends.sortedBy { it.end.index }, key = { "configured-${it.uuid}" }) { captured ->
+                                ConfiguredEndCard(configured, captured)
+                            }
+                        }
                         val session = state.session
                         if (session != null) {
                             item(key = "session-summary") {

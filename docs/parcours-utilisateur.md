@@ -249,11 +249,12 @@ L'utilisateur ouvre l'application
 
 ## 5. Parcours — Exporter ses données (PR 19)
 
-1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter la sauvegarde complète V2 » (ou « Exporter V1 — sans catalogue matériel »). Si une sauvegarde est en cours/non confirmée
+1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter la sauvegarde complète V3 » (ou un choix de compatibilité V2/V1 explicitement identifié). Si une sauvegarde est en cours/non confirmée
    ou une correction ouverte, terminer ou résoudre cette action d’abord.
-2. Attendre préparation puis validation : V2 lit tous les profils, séances et
-   fiches matériel en une transaction et vérifie l’aller-retour JSON. Une base
-   vide est exportable en V2 ; V1 exige une séance. Toute donnée illisible bloque
+2. Attendre préparation puis validation : V3 lit toutes les séances et configurations
+   effectives, profils/éditions et fiches matériel en une transaction et vérifie
+   l’aller-retour JSON. Une base vide est exportable en V3/V2 ; V1 exige une séance.
+   V1/V2 refusent toute séance CONFIGURED, sans omission ni changement de version. Toute donnée illisible bloque
    l’ensemble ; aucun export partiel présenté comme complet.
 3. Choisir la destination dans le sélecteur Android. Le nom proposé se termine
    par `.lmarchery.json`. L’annulation n’écrit aucun contenu.
@@ -266,7 +267,8 @@ L'utilisateur ouvre l'application
 Les séances en cours sont incluses ; aucune donnée Room n’est modifiée. La
 rotation conserve la préparation du ViewModel, pas la mort du processus. L’import
 contrôlé ci-dessous ajoute uniquement les absentes ; aucune fusion par UUID ou `updatedAt`.
-Voir [ADR 021](adr/021-export-json-versionne-android.md).
+Voir [ADR 021](adr/021-export-json-versionne-android.md) et
+[ADR 042](adr/042-saf-v3-consultation-configurable.md).
 
 ---
 
@@ -277,7 +279,8 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
 2. Dans la section « Sauvegardes », choisir « Importer une sauvegarde », puis sélectionner explicitement le fichier
    dans Android. Annuler ne demande aucune écriture. Nom/MIME ne prouvent rien :
    octets lus avec plafond de 16 MiB, décodage strict puis comparaison transactionnelle.
-3. Lire la version et les comptes : V2 sépare séances, profils, arcs et flèches,
+3. Lire la version et les comptes : V3 distingue séances, profils, volées, impacts, arcs
+   et jeux de flèches ; V2 sépare séances, profils, arcs et flèches,
    chacun en nouveaux/identiques/conflits. V1 conserve son aperçu de séances. Toute
    divergence/collision bloque l’ensemble avec UUID et diagnostic. Aucun choix
    d’écrasement. V1 refuse une archive vide ou un profil non référencé ; V2 accepte
@@ -287,16 +290,23 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
    n’est jamais rouvert silencieusement à la confirmation.
 5. Attendre l’acquittement SQL. Le plan est recontrôlé sous transaction écrivain ;
    aucune insertion partielle. Après succès, la liste est redécouverte et relue.
-   Les séances terminées restent en lecture seule.
+   Les séances configurables V3, même en cours ou homogènes, sont consultables
+   en lecture seule ; les séances historiques gardent leur éditeur existant.
 6. Un plan périmé exige une nouvelle sélection. Après erreur/interruption SQL non
    confirmée, relire et sélectionner à nouveau le fichier : les séances committées
    sont reconnues identiques, sans doublon. Aucun retry automatique. La rotation
    conserve le candidat ; la mort du processus exige une nouvelle sélection.
 
-V1 ne fournit pas de matériel et ne modifie pas le catalogue. V2 restaure aussi les
+Après un résultat V3 incertain, le candidat exact et le verrou sont conservés.
+« Relire et préparer un nouvel aperçu V3 » n’écrit rien : une autre confirmation
+est indispensable, sans rouvrir le fichier. Fermer ce résultat exige un
+avertissement explicite et ne prétend pas annuler un commit antérieur.
+
+V1 ne fournit pas de matériel et ne modifie pas le catalogue. V2/V3 restaurent aussi les
 fiches et profils non référencés. Pas de fusion, suppression ni résolution par date.
 Voir [ADR 022](adr/022-import-json-controle-transactionnel.md) et
-[ADR 029](adr/029-saf-android-archives-v2.md).
+[ADR 029](adr/029-saf-android-archives-v2.md) et
+[ADR 042](adr/042-saf-v3-consultation-configurable.md).
 
 ## 6. Parcours — Gérer le matériel
 

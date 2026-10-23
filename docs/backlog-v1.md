@@ -157,3 +157,8 @@ Epic 6 (paramètres/UX) — transversal
 ---
 
 *Dernière mise à jour : 16 octobre 2026*
+
+La branche SAF V3 ajoute export complet, restauration atomique confirmée et
+consultation seule des séances configurables ([ADR 042](adr/042-saf-v3-consultation-configurable.md)).
+Les essais Android SAF réels sont reportés : [protocole PR42](validation-saf-v3-pr42.md).
+La création/édition de séances mixtes reste une étape distincte.
