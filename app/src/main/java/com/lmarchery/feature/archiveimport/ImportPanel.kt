@@ -46,7 +46,7 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Restaurer une sauvegarde JSON", style = MaterialTheme.typography.titleMedium)
-            Text("V1 : séances et profils associés ; matériel non fourni. V2 : séances historiques, profils et matériel. V3 : configurations exactes par volée, historiques et matériel. Les séances configurables restaurées sont consultables en lecture seule. Aucun écrasement, fusion ou suppression.", style = MaterialTheme.typography.bodySmall)
+            Text("V1 : séances et profils associés ; matériel non fourni. V2 : séances historiques, profils et matériel. V3 : configurations exactes par volée, historiques et matériel. Les séances configurables restaurées utilisent leur éditeur dédié lorsque leur statut l’autorise ; les séances terminées restent en lecture seule. Aucun écrasement, fusion ou suppression.", style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
                 ImportState.Available -> "Import disponible depuis un fichier .lmarchery.json."
                 is ImportState.Choosing -> "Sélectionnez explicitement votre sauvegarde."

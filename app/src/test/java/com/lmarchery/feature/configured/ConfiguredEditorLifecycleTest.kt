@@ -83,4 +83,24 @@ class ConfiguredEditorLifecycleTest {
         assertEquals(previous,h.ui.saved!!.ends.first())
     }
 
+    @Test fun `restored historical provenance permits active editing but completed roots remain read only`() {
+        val converted = assertIs<com.lmarchery.core.scoring.archive.v3.ArchiveV3Reconstruction.Accepted>(
+            com.lmarchery.core.scoring.archive.v3.convertArchiveV2ToV3(com.lmarchery.backup.V2TestData.archive())).archive.sessions.single()
+        assertEquals(InitialConfigurationOrigin.LEGACY_DERIVED, converted.initialConfigurationOrigin)
+        for (completed in listOf(false, true)) {
+            val restored = if (completed) converted.complete(f.now) else converted
+            EditorHarness(restored).use { h ->
+                h.open(); assertEquals(!completed, h.ui.canForm); h.c.editMetadata()
+                if (completed) { assertNull(h.ui.form); assertTrue(h.requests.isEmpty()); assertEquals(restored, h.ui.saved) }
+                else {
+                    h.c.title(h.token, "Restored configurable title"); h.c.confirmForm(h.token)
+                    assertEquals("Restored configurable title", h.ui.saved!!.metadata.title)
+                    assertEquals(InitialConfigurationOrigin.LEGACY_DERIVED, h.ui.saved!!.initialConfigurationOrigin)
+                    assertEquals(restored.ends, h.ui.saved!!.ends); assertEquals(restored.metadata.date, h.ui.saved!!.metadata.date)
+                    assertIs<ConfiguredWriteRequest.Update>(h.requests.single())
+                }
+            }
+        }
+    }
+
 }
