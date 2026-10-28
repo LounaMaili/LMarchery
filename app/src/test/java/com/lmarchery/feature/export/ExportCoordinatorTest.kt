@@ -1,5 +1,8 @@
 package com.lmarchery.feature.export
 
+import com.lmarchery.backup.destinationChosenForTest
+import com.lmarchery.backup.pickerUnavailableForTest
+
 import com.lmarchery.core.database.*
 import com.lmarchery.core.export.*
 import com.lmarchery.core.model.NormalizedPoint
@@ -85,7 +88,7 @@ class ExportCoordinatorTest {
             clock=Clock.fixed(now,ZoneOffset.UTC),dispatcher=dispatcher,codec=codec)
         val state get() = coordinator.state.value
         fun prepare() { coordinator.begin(); assertIs<ExportState.Choosing>(state) }
-        fun choose() { assertNotNull(coordinator.claimDestinationRequest()); coordinator.destinationChosen("content://synthetic/document") }
+        fun choose() { assertNotNull(coordinator.claimDestinationRequest()); coordinator.destinationChosenForTest("content://synthetic/document") }
         override fun close() { scope.cancel() }
     }
 
@@ -115,13 +118,13 @@ class ExportCoordinatorTest {
     @Test fun `picker cancellation does not open or write a document and releases the action lock`() {
         Harness().use { h ->
             h.prepare(); assertNotNull(h.coordinator.claimDestinationRequest())
-            h.coordinator.destinationChosen(null)
+            h.coordinator.destinationChosenForTest(null)
             assertIs<ExportState.Cancelled>(h.state); assertEquals(0,h.writes); assertFalse(h.locked)
         }
     }
 
     @Test fun `unavailable picker does not claim success or attempt a write`() {
-        Harness().use { h -> h.prepare(); h.coordinator.pickerUnavailable()
+        Harness().use { h -> h.prepare(); h.coordinator.pickerUnavailableForTest()
             assertIs<ExportState.Failed>(h.state); assertEquals(0,h.writes); assertFalse(h.locked) }
     }
 
@@ -153,7 +156,7 @@ class ExportCoordinatorTest {
         Harness().use { h ->
             h.writeGate=CompletableDeferred();h.prepare();h.choose()
             assertIs<ExportState.Writing>(h.state);assertTrue(h.locked)
-            h.coordinator.destinationChosen("content://synthetic/document");h.coordinator.begin()
+            h.coordinator.destinationChosenForTest("content://synthetic/document");h.coordinator.begin()
             assertEquals(1,h.writes);assertEquals(0,h.access.opens)
             h.writeGate!!.complete(Unit);yield()
             assertIs<ExportState.Succeeded>(h.state);assertEquals(1,h.access.opens)
@@ -187,10 +190,10 @@ class ExportCoordinatorTest {
             h.prepare();val request=h.state;h.coordinator.claimDestinationRequest()
             assertEquals((request as ExportState.Choosing).requestId,(h.coordinator.state.value as ExportState.Choosing).requestId)
             assertNull(h.coordinator.claimDestinationRequest())
-            h.coordinator.destinationChosen(null)
+            h.coordinator.destinationChosenForTest(null)
         }
         Harness().use { fresh ->
-            fresh.coordinator.destinationChosen("content://synthetic/document")
+            fresh.coordinator.destinationChosenForTest("content://synthetic/document")
             assertTrue(assertIs<ExportState.Failed>(fresh.state).potentiallyIncomplete)
             assertEquals(0,fresh.writes)
         }
@@ -233,7 +236,7 @@ class ExportCoordinatorTest {
             assertTrue(controller.state.value.exportLocked)
             controller.configure();controller.openSession(id(1));controller.discardAndReturnToList()
             assertEquals(SessionScreen.LIST,controller.state.value.screen)
-            export.claimDestinationRequest();export.destinationChosen(null)
+            export.claimDestinationRequest();export.destinationChosenForTest(null)
             assertFalse(controller.state.value.exportLocked)
         } finally { scope.cancel() }
     }

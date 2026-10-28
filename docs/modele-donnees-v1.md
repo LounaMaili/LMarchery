@@ -7,14 +7,15 @@ et les valeurs de scoring/temps sont des modèles Kotlin purs. `core:database`
 persiste et met à jour des séances complètes en Room/SQLite. Le premier parcours
 Compose les utilise via ViewModel, contrôleur et repository (ADR 018).
 Les anciens IDs/FK numériques des tableaux sont des projections historiques,
-absentes du schéma SQLite 2 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
+absentes du schéma SQLite 3 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
 sont des valeurs Kotlin immuables persistées (ADR 025), consultables et modifiables
 dans le catalogue Compose (ADR 030) ;
 `SessionPreset` reste prévu. Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
 JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
 l’import contrôlé sans écrasement suit l’[ADR 022](adr/022-import-json-controle-transactionnel.md),
-sans changement de format JSON V1. La migration SQLite 1→2 ajoute uniquement le catalogue matériel.
+sans changement de format JSON V1. La migration SQLite 1→2 ajoute uniquement le catalogue matériel ;
+la migration 2→3 ajoute les configurations dérivées et leur lecture V3 (ADR 039).
 
 ---
 
@@ -78,7 +79,7 @@ archive ne doit pas fabriquer les fiches manquantes. `SessionPreset` reste futur
 
 | Champ | Règle |
 |-------|-------|
-| `id` (projection prévue) | Absent du schéma Room 2 actuel ; jamais une clé de fusion entre appareils. |
+| `id` (projection prévue) | Absent du schéma Room 3 actuel ; jamais une clé de fusion entre appareils. |
 | `uuid` | UUID v4 stable, utilisé pour l'export/import, le dédoublonnage et le remapping des relations. |
 | `createdAt` | Instant UTC de création des agrégats modifiables ; absent des profils immuables. |
 | `updatedAt` | Instant UTC de dernière modification fonctionnelle, servant à comparer les révisions. |
@@ -320,8 +321,9 @@ Une volée = un ensemble de flèches tirées avant d'aller marquer.
 `core:model.session.EndConfiguration` conserve une configuration de prochaine
 volée (profil complet/édition, distance, FIXED/FREE et nombre, indoor, mode de
 score). Héritage, remplacement explicite, raccourcis 3/6/libre, diagnostics et
-comparaison sont des opérations pures. Cette valeur n’est **pas encore une
-propriété de Session ou End**, ni stockée/exportée. Le contrat homogène existant
+comparaison sont des opérations pures. Cette valeur n’est **pas une
+propriété de Session ou End** ; les captures de `ConfiguredSession` sont stockées
+en Room 3 et sauvegardées en JSON V3 (ADR 037–042). Le contrat homogène existant
 reste en vigueur ; aucune ancienne séance n’est convertie implicitement.
 Voir [ADR 033](adr/033-fondation-configurations-par-volee.md) pour les invariants,
 les frontières de conformité réglementaire et les étapes futures.
@@ -335,9 +337,24 @@ entité historique. Les transitions sont contrôlées, les décisions et traces
 conservées, et le calcul délègue au moteur mixte de l’ADR 034.
 La conversion explicite exige une `DomainArchive` validée fournissant le profil
 historique complet et son édition ; une `Session` seule ne suffit pas.
-Cet agrégat n’est ni persisté, ni exportable en JSON V1/V2, ni utilisé par Compose.
+Cet agrégat n’est pas exportable en JSON V1/V2. Sa consultation et son édition contrôlée par Compose suivent les ADR 042 et
+[043](adr/043-editeur-android-seances-configurables.md). Room V3 reconstruit les
+séances historiques sous cette forme mais leur représentation physique reste
+distincte : seul `CONFIGURED` utilise le nouvel éditeur. Les captures historiques
+ne sont pas converties implicitement.
 Voir [ADR 035](adr/035-agregat-seances-configurations-mixtes.md) pour le contrat,
 les limites de provenance et l’intégration future avec la branche Android #32.
+Le contrat métier autonome `DomainArchiveV3` conserve ces agrégats, leurs captures
+et le catalogue complet via un snapshot et une reconstruction stricte ; voir
+[ADR 037](adr/037-contrat-archive-seances-configurables-v3.md). Le codec autonome
+`ArchiveV3JsonCodec` est décrit dans l’[ADR 038](adr/038-codec-json-v3-strict.md),
+avec lecture cohérente Room V3 selon l’[ADR 039](adr/039-room-v3-migration-lecture.md),
+avec écritures locales selon l’[ADR 040](adr/040-ecritures-room-v3-configurables.md),
+avec prévisualisation/restauration transactionnelle complète selon
+l’[ADR 041](adr/041-restauration-archives-v3-atomique.md), avec parcours SAF Android V3
+et consultation seule selon l’[ADR 042](adr/042-saf-v3-consultation-configurable.md).
+La conversion V1 reste
+un contenu partiel avec matériel non fourni, distinct d’une V3 complète.
 
 ---
 
@@ -560,7 +577,7 @@ enum class EndStatus {
 
 ---
 
-## 4. Schéma Room / SQLite 2 effectivement implémenté
+## 4. Schéma Room / SQLite 3 effectivement implémenté
 
 Les huit tables historiques, conservées sans modification depuis V1, sont
 `entity_identities`, `target_profiles`, `target_zones`,
@@ -602,6 +619,31 @@ Voir [ADR 017](adr/017-mise-a-jour-seances-room.md).
 La politique conservatrice de `reconstructArchive(snapshot, known)` reste distincte
 de cette autorisation de révision locale.
 
+La migration additive 2→3 ajoute `session_configurations` (clé `sessionUuid`) et
+`end_configurations` (clé `endUuid`), sans nouvelle identité ni date de configuration.
+Les dix tables précédentes et les schémas exportés 1/2 restent intacts.
+Chaque capture conserve profil/édition, distance, nombre/mode de flèches, indoor,
+mode de score et origine. La volée nomme son propriétaire et son éventuelle précédente.
+Les lignes migrées sont marquées `LEGACY_HOMOGENEOUS` / `LEGACY_DERIVED`.
+Leur projection suit le contrat homogène historique ; les colonnes de séance ne
+sont jamais utilisées comme configuration effective d’une future volée mixte.
+Les lignes `CONFIGURED` sont lues et révisées seulement avec leurs captures complètes.
+Les API V1/V2 les refusent, y compris à l’import, sans omission ni homogénéisation.
+`readArchiveV3()` lit tous profils, séances, captures, descendants et matériel dans
+une transaction lecteur unique, puis appelle `reconstructArchiveV3()` ; aucune
+écriture ni archive partielle. Voir [ADR 039](adr/039-room-v3-migration-lecture.md).
+`createConfiguredSession` et `updateConfiguredSession(expected, proposed)` ajoutent
+les écritures locales contrôlées : création `CREATION`, captures immuables, état
+expected complet et validation de transition, transaction écrivain unique puis
+égalité V3 et contrôle des lignes hors delta. Les acquittements incertains conservent
+l’intention exacte ; aucune relance automatique. Voir
+[ADR 040](adr/040-ecritures-room-v3-configurables.md). Le contrôleur Android dédié
+les utilise selon l’[ADR 043](adr/043-editeur-android-seances-configurables.md). La restauration historique et mixte passe séparément par
+`previewImportV3` / `importArchiveV3` (ADR 041) : aperçu de l’état complet, ajout
+atomique sans remplacement, contrôle des anciennes lignes et acquittement explicite.
+Les nouvelles racines V3 sont `CONFIGURED`, provenance historique conservée ;
+les racines locales identiques gardent leur représentation.
+
 `discover()` fournit les UUID triés des racines et des identités séance, y compris
 orphelines. Chaque entrée est ensuite relue par `read` : la découverte ne prouve
 pas sa validité. Les erreurs restent visibles dans la sélection Android. La
@@ -631,7 +673,12 @@ Le JSON opérationnel conserve séances/profils, décisions et traces. Les fiche
 matériel persistées ne sont pas incluses dans le V1 opérationnel.
 Le [contrat V2](export-format-v2.md) les inclut dans une API typée distincte,
 avec collecte/import Room atomiques ([ADR 027](adr/027-archives-room-v2-atomiques.md)).
-Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android ; les séances mixtes ne sont pas persistées.
+Les écrans de catalogue et le parcours SAF V2 existent dans la branche Android.
+Room V3 permet lecture, écritures locales configurables (ADR 040) et restauration
+V3 avec aperçu (ADR 041). SAF V3 et la consultation configurable suivent
+l’[ADR 042](adr/042-saf-v3-consultation-configurable.md). La création et l’édition
+configurables sont raccordées selon l’[ADR 043](adr/043-editeur-android-seances-configurables.md),
+avec état distinct, candidats exacts et réconciliation explicite sans écrasement.
 Les presets et la résolution interactive des conflits restent à développer.
 L’import V1 conserve son périmètre historique : séances absentes et profils
 nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux

@@ -11,13 +11,30 @@ import com.lmarchery.core.model.scoring.BoundaryValue
 
 @Composable
 fun ScoreDecisionPanel(state: SessionUiState, controller: SessionController) {
-    val edit = state.impactEdit ?: return
-    val impact = state.selectedImpact ?: return
-    val options = state.scoreOptions ?: return
-    val enabled = state.canProposeScoreDecision
+    val view = ScoreDecisionView(state.selectedImpact ?: return, state.impactEdit ?: return,
+        state.scoreOptions ?: return, state.selectedBoundary, state.proposedScore, state.canProposeScoreDecision, state.canConfirmScoreDecision)
+    ScoreDecisionPanel(view, ScoreDecisionActions(controller::selectBoundary, controller::selectScoreValue,
+        controller::showOtherBoundaries, controller::chooseExceptionalCorrection, controller::chooseBoundaryJudgment,
+        controller::setExceptionalReason, controller::confirmScoreDecision))
+}
+
+data class ScoreDecisionView(val impact: com.lmarchery.core.model.session.ArrowImpact, val edit: ImpactEdit,
+    val options: ScoreDecisionOptions, val selectedBoundary: BoundaryHint?, val proposedScore: BoundaryValue?,
+    val enabled: Boolean, val canConfirm: Boolean)
+data class ScoreDecisionActions(val boundary: (com.lmarchery.core.model.scoring.BoundaryReference) -> Unit,
+    val value: (BoundaryValue) -> Unit, val other: () -> Unit, val exceptional: () -> Unit,
+    val judgment: () -> Unit, val reason: (String) -> Unit, val confirm: () -> Unit)
+
+/** Shared fields; callers supply the exact selected impact/profile and their own guarded callbacks. */
+@Composable
+fun ScoreDecisionPanel(view: ScoreDecisionView, actions: ScoreDecisionActions) {
+    val edit = view.edit
+    val impact = view.impact
+    val options = view.options
+    val enabled = view.enabled
     Text("Score géométrique : ${impact.finalScoreDecision.geometricValue.label()}")
     Text("Score final enregistré : ${impact.finalScoreDecision.value.label()}")
-    Text("Valeur proposée : ${state.proposedScore?.label() ?: "aucun choix"} · non enregistrée")
+    Text("Valeur proposée : ${view.proposedScore?.label() ?: "aucun choix"} · non enregistrée")
     Text("La position reste inchangée. La proximité tactile ne prouve aucun contact du tube et n’attribue aucun score.",
         style = MaterialTheme.typography.bodySmall)
     when (val proposal = edit.proposal) {
@@ -27,23 +44,23 @@ fun ScoreDecisionPanel(state: SessionUiState, controller: SessionController) {
             if (options.nearby.isEmpty()) Text("Aucune limite proche suggérée.")
             else {
                 Text("Limites proches suggérées (aide tactile uniquement)")
-                options.nearby.forEach { hint -> BoundaryChoice(hint, proposal, enabled, controller) }
+                options.nearby.forEach { hint -> BoundaryChoice(hint, proposal, enabled, actions) }
             }
             if (!proposal.showOtherBoundaries) {
-                TextButton(onClick = controller::showOtherBoundaries, enabled = enabled) { Text("Choisir une autre limite réelle du profil") }
+                TextButton(onClick = actions.other, enabled = enabled) { Text("Choisir une autre limite réelle du profil") }
             } else {
                 Text("Autres limites du profil — jugement possible hors tolérance tactile")
-                options.other.forEach { hint -> BoundaryChoice(hint, proposal, enabled, controller) }
+                options.other.forEach { hint -> BoundaryChoice(hint, proposal, enabled, actions) }
             }
-            state.selectedBoundary?.let { boundary ->
-                OutlinedButton(onClick = { controller.selectScoreValue(boundary.inner) }, enabled = enabled) {
+            view.selectedBoundary?.let { boundary ->
+                OutlinedButton(onClick = { actions.value(boundary.inner) }, enabled = enabled) {
                     Text("${if (proposal.selected == boundary.inner) "✓ " else ""}Côté intérieur : ${boundary.inner.label()}")
                 }
-                OutlinedButton(onClick = { controller.selectScoreValue(boundary.outer) }, enabled = enabled) {
+                OutlinedButton(onClick = { actions.value(boundary.outer) }, enabled = enabled) {
                     Text("${if (proposal.selected == boundary.outer) "✓ " else ""}Côté extérieur : ${boundary.outer.label()}")
                 }
             }
-            TextButton(onClick = controller::chooseExceptionalCorrection, enabled = enabled) { Text("Correction exceptionnelle") }
+            TextButton(onClick = actions.exceptional, enabled = enabled) { Text("Correction exceptionnelle") }
         }
         is ImpactProposal.ExceptionalCorrection -> {
             Text("Correction exceptionnelle", style = MaterialTheme.typography.titleMedium)
@@ -52,26 +69,26 @@ fun ScoreDecisionPanel(state: SessionUiState, controller: SessionController) {
             options.legalValues.chunked(4).forEach { values ->
                 Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                     values.forEach { value ->
-                        OutlinedButton(onClick = { controller.selectScoreValue(value) }, enabled = enabled,
+                        OutlinedButton(onClick = { actions.value(value) }, enabled = enabled,
                             contentPadding = PaddingValues(horizontal = 10.dp)) {
                             Text("${if (proposal.selected == value) "✓ " else ""}${value.label()}")
                         }
                     }
                 }
             }
-            OutlinedTextField(proposal.reason, controller::setExceptionalReason, enabled = enabled,
+            OutlinedTextField(proposal.reason, actions.reason, enabled = enabled,
                 label = { Text("Motif obligatoire de la correction exceptionnelle") }, modifier = Modifier.fillMaxWidth())
-            TextButton(onClick = controller::chooseBoundaryJudgment, enabled = enabled) { Text("Revenir au jugement de cordon") }
+            TextButton(onClick = actions.judgment, enabled = enabled) { Text("Revenir au jugement de cordon") }
         }
         else -> return
     }
-    Button(onClick = controller::confirmScoreDecision, enabled = state.canConfirmScoreDecision) { Text("Confirmer la décision de score") }
+    Button(onClick = actions.confirm, enabled = view.canConfirm) { Text("Confirmer la décision de score") }
 }
 
 @Composable
 private fun BoundaryChoice(hint: BoundaryHint, proposal: ImpactProposal.BoundaryJudgment,
-    enabled: Boolean, controller: SessionController) {
-    OutlinedButton(onClick = { controller.selectBoundary(hint.reference) }, enabled = enabled,
+    enabled: Boolean, actions: ScoreDecisionActions) {
+    OutlinedButton(onClick = { actions.boundary(hint.reference) }, enabled = enabled,
         modifier = Modifier.fillMaxWidth()) {
         Column {
             Text("${if (proposal.boundary == hint.reference) "✓ " else ""}Limite ${hint.inner.label()} / ${hint.outer.label()}")

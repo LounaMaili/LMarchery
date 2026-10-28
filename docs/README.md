@@ -8,11 +8,14 @@
 4. **[Modèle de données V1](modele-donnees-v1.md)** — Entités, relations, attributs, énumérations, export/import
 5. **[Backlog V1](backlog-v1.md)** — Tickets de travail par épic,可直接 actionnable
 6. **[Tests terrain V1](tests-terrain-v1.md)** — Grilles de test pour les premiers retours réels
-7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON opérationnel, UUID, reconstruction, import contrôlé et limites ; [contrat V2 matériel](export-format-v2.md) avec stockage Room, catalogue et sauvegardes SAF Android sur la branche d'intégration
+7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON historique, UUID et reconstruction ; [V2 matériel](export-format-v2.md) et [V3 configurable](adr/038-codec-json-v3-strict.md) avec stockage Room et SAF sur la branche d'intégration
 8. **[Roadmap reconnaissance](reconnaissance-roadmap.md)** — Trajectoire V2→V4 pour la reconnaissance d'image
 
 Pour préparer le développement et les validations :
 [Environnement Fedora et CI](environnement-et-ci.md).
+
+État de la pile non fusionnée : [recette intégrée PR44](recette-integration-v3-pr44.md)
+et [plan de consolidation vers main](plan-consolidation-main.md).
 
 ## Décisions d'architecture (ADR)
 
@@ -52,9 +55,19 @@ Pour préparer le développement et les validations :
 | 34 | Scoring par volée et statistiques mixtes | [adr/034-scoring-par-volee-statistiques-mixtes.md](adr/034-scoring-par-volee-statistiques-mixtes.md) |
 | 35 | Agrégat des séances à configurations mixtes | [adr/035-agregat-seances-configurations-mixtes.md](adr/035-agregat-seances-configurations-mixtes.md) |
 | 36 | Réconciliation Android et domaine configurable | [adr/036-reconciliation-android-configurations.md](adr/036-reconciliation-android-configurations.md) |
+| 37 | Contrat métier d’archive V3 des séances configurables | [adr/037-contrat-archive-seances-configurables-v3.md](adr/037-contrat-archive-seances-configurables-v3.md) |
+| 38 | Codec JSON V3 strict et autonome | [adr/038-codec-json-v3-strict.md](adr/038-codec-json-v3-strict.md) |
+| 39 | Migration Room 2→3 et lecture des séances configurables | [adr/039-room-v3-migration-lecture.md](adr/039-room-v3-migration-lecture.md) |
+| 40 | Écritures transactionnelles des séances configurables Room V3 | [adr/040-ecritures-room-v3-configurables.md](adr/040-ecritures-room-v3-configurables.md) |
+| 41 | Prévisualisation et restauration transactionnelle des archives V3 | [adr/041-restauration-archives-v3-atomique.md](adr/041-restauration-archives-v3-atomique.md) |
+| 42 | SAF V3 et consultation des séances configurables | [adr/042-saf-v3-consultation-configurable.md](adr/042-saf-v3-consultation-configurable.md) |
+| 43 | Éditeur Android des séances configurables | [adr/043-editeur-android-seances-configurables.md](adr/043-editeur-android-seances-configurables.md) |
+| 44 | Recette intégrée V3 et préparation de la consolidation | [adr/044-recette-integration-v3-et-consolidation.md](adr/044-recette-integration-v3-et-consolidation.md) |
+
+Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 
 Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-visee-materiel.md).
 
 ---
 
-*Dernière mise à jour : 20 octobre 2026*
+*Dernière mise à jour : 28 octobre 2026*

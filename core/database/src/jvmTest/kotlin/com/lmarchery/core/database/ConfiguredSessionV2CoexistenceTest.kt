@@ -39,7 +39,7 @@ class ConfiguredSessionV2CoexistenceTest {
         }
         val originalRows = EquipmentTestData.contents(path)
         EquipmentTestData.denyWrites(path)
-        assertEquals(listOf("2"), EquipmentTestData.rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("3"), EquipmentTestData.rows(path, "PRAGMA user_version"))
         openSessionStore(path).use { store ->
             // Explicit historical V1 read is separate from the full V2 backup read.
             val fullV2 = store.fullV2()
@@ -129,12 +129,12 @@ class ConfiguredSessionV2CoexistenceTest {
             assertIs<EquipmentCreateResult.Created>(store.equipment.create(EquipmentTestData.bow()))
             assertIs<EquipmentCreateResult.Created>(store.equipment.create(EquipmentTestData.arrows()))
         }
-        assertEquals(listOf("2"), EquipmentTestData.rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("3"), EquipmentTestData.rows(path, "PRAGMA user_version"))
         val expectedRows = oldRows + ("entity_identities" to (oldRows.getValue("entity_identities") + listOf(
             "${EquipmentTestData.id(800)}|BOW", "${EquipmentTestData.id(801)}|ARROW_SET")).sorted())
         assertEquals(expectedRows, EquipmentTestData.contents(path, EquipmentTestData.oldTables))
         assertEquals(oldSchema, EquipmentTestData.rows(path,
-            "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
+            "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
         val before = EquipmentTestData.contents(path)
         EquipmentTestData.denyWrites(path)
         val denied = assertFailsWith<Exception> { EquipmentTestData.rows(path, "UPDATE sessions SET title = title") }

@@ -12,20 +12,29 @@ fun SessionHistoryCard(entry: SessionEntry, enabled: Boolean, onOpen: () -> Unit
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             val session = entry.session
-            if (session != null && entry.problem == null) {
+            if (session != null && entry.readable) {
                 val summary = presentSessionScore(session).summary
                 Text(session.title, style = MaterialTheme.typography.titleMedium)
                 Text(session.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
                 Text("${session.targetType.name} · ${session.distanceM} m")
                 Text("${session.status.label()} · ${summary.validatedEndCount} volée(s) validée(s)")
                 Text("Score validé : ${summary.totalScore}", style = MaterialTheme.typography.titleMedium)
+            } else if (entry.configured != null && entry.readable) {
+                val configured = entry.configured
+                val view = presentConfiguredScore(configured)
+                Text(configured.metadata.title, style = MaterialTheme.typography.titleMedium)
+                Text(configured.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
+                Text("${configured.status.label()} · configurations par volée · lecture seule")
+                view.summary?.let { Text("Somme validée : ${it.totals.validated.score} · provisoire : ${it.totals.provisional.score}") }
+                view.diagnostic?.let { Text("Calcul indisponible : $it") }
             } else {
                 Text("Séance nécessitant une intervention", style = MaterialTheme.typography.titleMedium)
                 Text("UUID : ${entry.uuid}")
                 Text(entry.problem?.message ?: "Lecture non résolue.", color = MaterialTheme.colorScheme.error)
             }
             OutlinedButton(onClick = onOpen, enabled = enabled) {
-                Text(if (session == null || entry.problem != null) "Réessayer la lecture" else session.openActionLabel())
+                Text(if (!entry.readable) "Réessayer la lecture"
+                    else if (entry.configured != null) "Consulter — lecture seule" else session!!.openActionLabel())
             }
         }
     }

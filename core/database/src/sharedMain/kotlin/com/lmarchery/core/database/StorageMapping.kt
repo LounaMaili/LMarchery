@@ -29,25 +29,25 @@ catch (error: DateTimeException) { throw CorruptStorage(StorageDiagnostic(path, 
 
 private fun sqlTime(text: String): SqlInstant = UtcTimestamps.parse(text).let { SqlInstant(it.epochSecond, it.nano) }
 
-private fun SqlInstant.text(): String {
+internal fun SqlInstant.text(): String {
     val seconds = requireNotNull(epochSecond) { "Missing epochSecond." }
     val nanos = requireNotNull(nano) { "Missing nano." }
     require(nanos in 0..999999999) { "Stored nano is out of range; normalization is forbidden." }
     return UtcTimestamps.format(Instant.ofEpochSecond(seconds, nanos.toLong()))
 }
 
-private fun Int.flag(): Boolean {
+internal fun Int.flag(): Boolean {
     require(this == 0 || this == 1) { "Stored boolean must be exactly 0 or 1." }
     return this == 1
 }
 private fun Boolean.flag(): Int = if (this) 1 else 0
 
-private fun positions(actual: List<Int>, count: Int, path: String) {
+internal fun positions(actual: List<Int>, count: Int, path: String) {
     dataCheck(actual.size == count && actual.withIndex().all { it.index == it.value }, path,
         "Stored child count or ordered positions are inconsistent; children must not disappear silently.")
 }
 
-internal suspend fun SessionDao.profileSnapshot(uuid: String): TargetProfileSnapshot {
+internal suspend fun StorageReadQueries.profileSnapshot(uuid: String): TargetProfileSnapshot {
     val row = profile(uuid) ?: throw CorruptStorage(StorageDiagnostic("profiles[$uuid]", "Referenced profile is missing."))
     val zones = zones(uuid)
     positions(zones.map { it.position }, row.zoneCount, "profiles[$uuid].zones")
@@ -60,11 +60,10 @@ internal suspend fun SessionDao.profileSnapshot(uuid: String): TargetProfileSnap
 }
 
 /** Queries run inside the caller's consistent Room transaction. Never constructs opaque domain traces. */
-internal suspend fun SessionDao.sessionSnapshot(row: SessionRow): ArchiveSnapshot {
-    val profile = profileSnapshot(row.profileUuid)
+internal suspend fun StorageReadQueries.endSnapshots(row: SessionRow): List<EndSnapshot> {
     val ends = ends(row.uuid)
     positions(ends.map { it.position }, row.endCount, "sessions[${row.uuid}].ends")
-    val endSnapshots = ends.map { end ->
+    return ends.map { end ->
         val impacts = impacts(end.uuid)
         positions(impacts.map { it.position }, end.impactCount, "ends[${end.uuid}].impacts")
         val impactSnapshots = impacts.map { impact ->
@@ -91,6 +90,13 @@ internal suspend fun SessionDao.sessionSnapshot(row: SessionRow): ArchiveSnapsho
                 end.createdAt.text(), end.updatedAt.text(), end.validatedAt?.text(), impactSnapshots)
         }
     }
+
+}
+
+/** Historical representation only. Configuration-aware callers must never substitute this session profile. */
+internal suspend fun StorageReadQueries.legacySessionSnapshot(row: SessionRow): ArchiveSnapshot {
+    val profile = profileSnapshot(row.profileUuid)
+    val endSnapshots = endSnapshots(row)
     val session = decode("sessions[${row.uuid}]") {
         SessionSnapshot(row.uuid, CivilDateSnapshot(row.localDateTime, row.zoneId, row.offset),
             enumValueOf<SessionStatus>(row.status), row.startedAt?.text(), row.endedAt?.text(), row.plannedEndCount,
@@ -151,12 +157,17 @@ internal fun ArchiveSnapshot.sessionRows(): SessionRows {
         session.plannedEndCount, session.title, session.distanceM, session.arrowCountMode.name, session.arrowCountPerEnd,
         session.isIndoor.flag(), session.scoringMode.name, session.bowUuid, session.arrowSetUuid, session.locationName,
         session.notes, sqlTime(requireNotNull(session.createdAt)), sqlTime(requireNotNull(session.updatedAt)), session.ends.size)
+    return physicalSessionRows(sessionRow, session.ends)
+}
+
+/** Shared relational child mapping, without projecting a configurable session into SessionSnapshot. */
+internal fun physicalSessionRows(sessionRow: SessionRow, snapshots: List<EndSnapshot>): SessionRows {
     val ends = mutableListOf<EndRow>()
     val impacts = mutableListOf<ImpactRow>()
     val decisions = mutableListOf<DecisionRow>()
     val repositions = mutableListOf<RepositionRow>()
-    session.ends.forEachIndexed { position, end ->
-        ends += EndRow(end.uuid, session.uuid, position, end.index, end.status.name, end.notes,
+    snapshots.forEachIndexed { position, end ->
+        ends += EndRow(end.uuid, sessionRow.uuid, position, end.index, end.status.name, end.notes,
             sqlTime(requireNotNull(end.createdAt)), sqlTime(requireNotNull(end.updatedAt)), end.validatedAt?.let(::sqlTime), end.impacts.size)
         end.impacts.forEachIndexed { impactPosition, impact ->
             impacts += ImpactRow(impact.uuid, end.uuid, impact.targetTypeUuid, impactPosition, impact.index,
@@ -177,7 +188,13 @@ internal fun ArchiveSnapshot.sessionRows(): SessionRows {
 internal suspend fun SessionDao.writeSession(snapshot: ArchiveSnapshot) {
     val rows = snapshot.sessionRows()
     insertSession(rows.session)
-    rows.ends.forEach { insertEnd(it) }
+    val configurations = this
+    val initial = legacyConfiguration(rows.session)
+    configurations.insertSessionConfiguration(initial)
+    rows.ends.forEach { end ->
+        insertEnd(end)
+        configurations.insertEndConfiguration(EndConfigurationRow(end.uuid, rows.session.uuid, "LEGACY_DERIVED", null, initial.configuration))
+    }
     rows.impacts.forEach { insertImpact(it) }
     insertDecisions(rows.decisions)
     insertRepositions(rows.repositions)

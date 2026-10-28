@@ -38,5 +38,5 @@ internal fun hookedStore(path: Path, hook: (String, Boolean) -> Unit): RoomSessi
             }
         }
     }
-    return RoomSessionStore(Room.databaseBuilder<SessionDatabase>(path.toString()).addMigrations(MIGRATION_1_2).setDriver(driver).build())
+    return RoomSessionStore(Room.databaseBuilder<SessionDatabase>(path.toString()).addMigrations(MIGRATION_1_2, MIGRATION_2_3).setDriver(driver).build())
 }

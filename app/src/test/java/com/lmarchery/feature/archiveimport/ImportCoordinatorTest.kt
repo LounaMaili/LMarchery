@@ -1,5 +1,8 @@
 package com.lmarchery.feature.archiveimport
 
+import com.lmarchery.backup.selectedForTest
+import com.lmarchery.backup.pickerUnavailableForTest
+
 import com.lmarchery.core.database.*
 import com.lmarchery.core.export.*
 import com.lmarchery.core.model.NormalizedPoint
@@ -54,7 +57,7 @@ class ImportCoordinatorTest {
             assertEquals("content://synthetic/backup",uri);reads++;readGate?.await();readError?.let { throw it };bytes
         },importer,scope,acquire={if(blocked||locked)false else {locked=true;true}},release={locked=false},refresh={refreshes++;if(refreshError)throw IOException("Synthetic discovery failure")},dispatcher=dispatcher)
         val state get()=coordinator.state.value
-        fun select() { coordinator.begin();assertTrue(coordinator.claimSelection());coordinator.selected("content://synthetic/backup") }
+        fun select() { coordinator.begin();assertTrue(coordinator.claimSelection());coordinator.selectedForTest("content://synthetic/backup") }
         override fun close()=scope.cancel()
     }
 
@@ -77,8 +80,8 @@ class ImportCoordinatorTest {
     @Test fun `selection cancellation and unavailable picker never read or write`() {
         Harness().use { h ->
             h.coordinator.begin();assertTrue(h.locked);assertTrue(h.coordinator.claimSelection());assertFalse(h.coordinator.claimSelection())
-            h.coordinator.selected(null);assertIs<ImportState.Cancelled>(h.state);assertFalse(h.locked)
-            h.coordinator.begin();h.coordinator.pickerUnavailable();assertIs<ImportState.Failed>(h.state)
+            h.coordinator.selectedForTest(null);assertIs<ImportState.Cancelled>(h.state);assertFalse(h.locked)
+            h.coordinator.begin();h.coordinator.pickerUnavailableForTest();assertIs<ImportState.Failed>(h.state)
             assertEquals(0,h.reads);assertEquals(0,h.writes)
         }
     }
@@ -119,7 +122,7 @@ class ImportCoordinatorTest {
     }
     @Test fun `double selection taps and confirmation issue a single read and write`() = runBlocking<Unit> {
         Harness().use { h ->
-            h.readGate=CompletableDeferred();h.select();h.coordinator.begin();h.coordinator.selected("content://synthetic/backup")
+            h.readGate=CompletableDeferred();h.select();h.coordinator.begin();h.coordinator.selectedForTest("content://synthetic/backup")
             assertEquals(1,h.reads);h.readGate!!.complete(Unit);yield();assertIs<ImportState.Preview>(h.state)
             h.writeGate=CompletableDeferred();h.coordinator.confirm();h.coordinator.confirm();assertEquals(1,h.writes)
             assertIs<ImportState.Importing>(h.state);assertEquals(0,h.refreshes)
@@ -157,7 +160,7 @@ class ImportCoordinatorTest {
         Harness().use { h ->h.select();val original=h.state;val reattached=h.coordinator
             assertEquals(original,reattached.state.value);assertFalse(reattached.claimSelection());reattached.confirm()
             assertIs<ImportState.Succeeded>(h.state);assertEquals(1,h.reads) }
-        Harness().use { h ->h.coordinator.selected("content://synthetic/backup");assertEquals(ImportState.Unconfirmed(true),h.state)
+        Harness().use { h ->h.coordinator.selectedForTest("content://synthetic/backup");assertEquals(ImportState.Unconfirmed(true),h.state)
             assertEquals(0,h.reads);assertEquals(0,h.writes) }
     }
     @Test fun `shared controller lock excludes import export navigation busy pending and selected impact`() = runBlocking<Unit> {

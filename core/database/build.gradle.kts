@@ -25,10 +25,34 @@ kotlin {
                 }
             }
         }
-        jvmTest.dependencies {
-            implementation(project(":core:export"))
-            implementation(kotlin("test-junit5"))
-            runtimeOnly("org.junit.platform:junit-platform-launcher")
+        jvmTest.configure {
+            // Compile the actual Android-free application ports/controllers in this test target only.
+            // No copy, :app dependency, Android stub, new runtime module or production dependency cycle.
+            kotlin.srcDir(rootProject.file("app/src/main/java"))
+            kotlin.include("com/lmarchery/core/database/**")
+            val applicationSources = listOf(
+                "data/SessionRepository.kt", "data/ConfiguredSessionRepository.kt",
+                "data/EquipmentRepository.kt", "data/ArchiveV2Importer.kt", "data/ArchiveV3Access.kt",
+                "data/export/VerifyingDocumentWriter.kt", "data/archiveimport/BoundedDocumentReader.kt",
+                "feature/configured/ConfiguredForms.kt", "feature/configured/ConfiguredEditorState.kt",
+                "feature/configured/ConfiguredSessionController.kt",
+                "feature/sessions/SessionController.kt", "feature/sessions/SessionUiState.kt",
+                "feature/sessions/SessionEquipment.kt", "feature/sessions/PositionCandidate.kt",
+                "feature/sessions/ScoreDecisionOptions.kt", "feature/sessions/SessionPresentation.kt",
+                "feature/sessions/ConfiguredSessionPresentation.kt",
+                "feature/equipment/EquipmentController.kt", "feature/equipment/EquipmentDraft.kt",
+                "feature/export/ExportCoordinator.kt", "feature/archiveimport/ImportCoordinator.kt",
+            )
+            applicationSources.forEach { relative ->
+                val path = "com/lmarchery/$relative"
+                require(rootProject.file("app/src/main/java/$path").isFile) { "Missing integration source: $path" }
+                kotlin.include(path)
+            }
+            dependencies {
+                implementation(project(":core:export"))
+                implementation(kotlin("test-junit5"))
+                runtimeOnly("org.junit.platform:junit-platform-launcher")
+            }
         }
     }
 }

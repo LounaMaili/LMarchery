@@ -105,8 +105,10 @@ contenu et leur résolution restent absents du contrat JSON V1 ; `SessionPreset`
 reste prévu. Leurs références opaques sont conservées sans FK ni résolution
 automatique. Le [contrat/codec V2](export-format-v2.md) et sa collecte/restauration
 Room atomique ([ADR 027](adr/027-archives-room-v2-atomiques.md)) existent dans des
-API distinctes. L’import/export SAF Android distingue désormais les deux versions
-([ADR 029](adr/029-saf-android-archives-v2.md)). Seule la sauvegarde V2 contient le catalogue.
+API distinctes. L’import/export SAF Android distingue V1/V2
+([ADR 029](adr/029-saf-android-archives-v2.md)) et V3
+([ADR 042](adr/042-saf-v3-consultation-configurable.md)) sur la branche d'intégration.
+Les sauvegardes V2 et V3 contiennent le catalogue ; V1 conserve son contrat sans matériel.
 
 ### Décisions et assertions
 

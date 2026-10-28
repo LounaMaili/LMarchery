@@ -1,5 +1,7 @@
 package com.lmarchery.feature.sessions
 
+import com.lmarchery.backup.destinationChosenForTest
+
 import com.lmarchery.core.database.*
 import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.*
@@ -376,7 +378,7 @@ class PrecisionAimControllerTest {
             assertEquals(1, reads); assertTrue(h.ui.archiveOperationLocked)
             assertNull(h.controller.beginPreciseAim(h.ui.aimContext!!, nine))
             h.controller.beginEquipmentEdit(); assertNull(h.ui.equipmentEdit)
-            assertNotNull(coordinator.claimDestinationRequest()); coordinator.destinationChosen("synthetic://document")
+            assertNotNull(coordinator.claimDestinationRequest()); coordinator.destinationChosenForTest("synthetic://document")
             assertIs<ExportState.Succeeded>(coordinator.state.value); assertFalse(h.ui.archiveOperationLocked)
             when (val decoded = ArchiveJsonCodec().decodeVersioned(assertNotNull(captured))) {
                 is VersionedArchiveJsonRead.V1 -> { assertEquals(1, version); assertEquals(confirmed.toSnapshot(), decoded.archive.toSnapshot()) }

@@ -1,5 +1,7 @@
 package com.lmarchery.app
 
+import com.lmarchery.feature.configured.ConfiguredSessionController
+import com.lmarchery.feature.configured.ConfiguredSessionScreen
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -32,10 +34,21 @@ import com.lmarchery.feature.export.ExportPanel
 import com.lmarchery.feature.export.ExportDestinationEffect
 
 @Composable
-fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator, importCoordinator: ImportCoordinator, equipmentController: EquipmentController? = null) {
+fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator, importCoordinator: ImportCoordinator, equipmentController: EquipmentController? = null, configuredController: ConfiguredSessionController? = null) {
     ExportDestinationEffect(exportCoordinator)
     ImportSelectionEffect(importCoordinator)
     val state by controller.state.collectAsStateWithLifecycle()
+    val configuredOpen = configuredController?.state?.collectAsStateWithLifecycle()?.value?.open == true
+    // Only an interruption marker survives process death, never a fabricated saved candidate.
+    var editorWasOpen by rememberSaveable { mutableStateOf(false) }
+    var editorInterrupted by rememberSaveable { mutableStateOf(false) }
+    val interruptedAtEntry = remember { editorWasOpen && !configuredOpen }
+    LaunchedEffect(Unit) { if (interruptedAtEntry) editorInterrupted = true }
+    SideEffect { editorWasOpen = configuredOpen }
+    if (configuredOpen) {
+        ConfiguredSessionScreen(configuredController)
+        return
+    }
     val equipmentState = equipmentController?.state?.collectAsStateWithLifecycle()?.value
     if (equipmentState?.open == true) {
         EquipmentScreen(equipmentController)
@@ -60,7 +73,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
     val scrollStates = rememberSaveableStateHolder()
     val scope = rememberCoroutineScope()
     // Key only navigation identity: SQL acknowledgements must not recreate scroll state.
-    scrollStates.SaveableStateProvider("${state.screen}:${state.session?.uuid.orEmpty()}") {
+    scrollStates.SaveableStateProvider("${state.screen}:${(state.session?.uuid ?: state.configuredSaved?.uuid).orEmpty()}") {
         val listState = rememberLazyListState()
         val showEnd: (String) -> Unit = { uuid ->
             if (state.canNavigate) {
@@ -112,13 +125,18 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                     SessionScreen.LIST -> {
                         item(key = "list-actions") {
                             if (equipmentController != null) OutlinedButton(onClick = equipmentController::open, enabled = state.canNavigate) { Text("Matériel") }
+                            if (editorInterrupted) {
+                                Text("Éditeur interrompu : aucun candidat local n’a été repris comme enregistré. Une écriture a pu être confirmée en base ; relisez les séances avant de recommencer.")
+                                TextButton(onClick = { editorInterrupted = false }) { Text("Compris") }
+                            }
+                            if (configuredController != null) Button(onClick = configuredController::create, enabled = state.ready) { Text("Nouvelle séance configurable") }
                             Button(onClick = controller::configure, enabled = state.ready) { Text("Nouvelle séance") }
                             OutlinedButton(onClick = controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
                             if (!state.busy && state.entries.isEmpty() && state.problem == null) Text("Aucune séance enregistrée.")
                         }
                         val history = presentSessionHistory(state.entries)
                         val sections = listOf(
-                            "Séances à reprendre" to history.resumable,
+                            "Séances en cours ou à consulter" to history.resumable,
                             "Historique" to history.completed,
                             "Séances nécessitant une intervention" to history.intervention,
                         )
@@ -128,7 +146,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 if (entries.isEmpty()) Text("Aucune séance dans cette section.", style = MaterialTheme.typography.bodySmall)
                             }
                             items(entries, key = { it.uuid }) { entry ->
-                                SessionHistoryCard(entry, state.canNavigate) { controller.openSession(entry.uuid) }
+                                SessionHistoryCard(entry, state.canNavigate) {
+                                    if (entry.configured != null && configuredController != null) configuredController.open(entry.uuid)
+                                    else controller.openSession(entry.uuid)
+                                }
                             }
                         }
                         // Always expanded: incidents and confirmations stay visible without a disclosure toggle.
@@ -157,6 +178,14 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         }
                     }
                     SessionScreen.SESSION -> {
+                        state.configuredSaved?.let { configured ->
+                            item(key = "configured-summary") { ConfiguredSessionSummary(configured) }
+                            item(key = "configured-back") { TextButton(onClick = back, enabled = state.canNavigate) { Text("Retour aux séances") } }
+                            if (configured.ends.isEmpty()) item(key = "configured-empty") { Text("Aucune volée enregistrée ; configuration initiale conservée.") }
+                            items(configured.ends.sortedBy { it.end.index }, key = { "configured-${it.uuid}" }) { captured ->
+                                ConfiguredEndCard(configured, captured)
+                            }
+                        }
                         val session = state.session
                         if (session != null) {
                             item(key = "session-summary") {

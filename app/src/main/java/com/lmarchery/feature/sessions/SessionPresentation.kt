@@ -15,12 +15,12 @@ data class SessionHistory(
 )
 
 fun presentSessionHistory(entries: List<SessionEntry>): SessionHistory {
-    val readable = entries.filter { it.session != null && it.problem == null }
-        .sortedWith(compareByDescending<SessionEntry> { it.session!!.date.toInstant() }.thenBy { it.uuid })
+    val readable = entries.filter { it.readable }
+        .sortedWith(compareByDescending<SessionEntry> { (it.session?.date ?: it.configured!!.metadata.date).toInstant() }.thenBy { it.uuid })
     return SessionHistory(
-        readable.filter { it.session!!.status != SessionStatus.COMPLETED },
-        readable.filter { it.session!!.status == SessionStatus.COMPLETED },
-        entries.filter { it.session == null || it.problem != null }.sortedBy { it.uuid },
+        readable.filter { (it.session?.status ?: it.configured!!.status) != SessionStatus.COMPLETED },
+        readable.filter { (it.session?.status ?: it.configured!!.status) == SessionStatus.COMPLETED },
+        entries.filterNot { it.readable }.sortedBy { it.uuid },
     )
 }
 
