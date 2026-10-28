@@ -14,6 +14,7 @@ import com.lmarchery.feature.equipment.*
 import com.lmarchery.feature.export.*
 import com.lmarchery.feature.sessions.*
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
 import java.io.*
 import java.net.URI
@@ -55,8 +56,14 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
     val token get() = requireNotNull(state.form).token
     private val closed = AtomicBoolean(false)
     suspend fun <T> onUi(action: () -> T): T = withContext(ui) { action() }
-    suspend fun idle() { withTimeout(15000) { configured.state.first { !it.busy } } }
-    suspend fun ready() { withTimeout(15000) { legacy.state.first { !it.busy } } }
+    /** Observe on the UI actor: a terminal StateFlow value can be emitted before the
+     * same producer turn releases its lock or starts the post-commit refresh.
+     * An observer on another dispatcher must not mistake emission for turn completion. */
+    suspend fun <T> awaitUiState(flow: StateFlow<T>, predicate: (T) -> Boolean): T = withTimeout(15000) {
+        withContext(ui) { flow.first { predicate(it) } }
+    }
+    suspend fun idle() { awaitUiState(configured.state) { !it.busy } }
+    suspend fun ready() { awaitUiState(legacy.state) { !it.busy } }
     suspend fun change(action: () -> Unit) {
         onUi(action); idle(); assertNull(state.pending, state.problem.toString()); assertNull(state.problem)
     }
@@ -72,14 +79,14 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
     suspend fun closeEditor() { onUi { configured.close() }; ready(); assertFalse(state.open) }
     suspend fun createEquipment(kind: EquipmentKind): Equipment {
         onUi { equipment.open() }
-        withTimeout(15000) { equipment.state.first { !it.busy } }
+        awaitUiState(equipment.state) { !it.busy }
         onUi {
             equipment.add(kind); equipment.setField(EquipmentField.NAME, if (kind == EquipmentKind.BOW) " Arc 🏹 " else " Flèches é ")
             if (kind == EquipmentKind.BOW) equipment.setField(EquipmentField.POWER, "32.000004")
             else { equipment.setField(EquipmentField.SPINE, "500 ?"); equipment.setField(EquipmentField.LENGTH, "28 1/2 pouces") }
             equipment.setField(EquipmentField.NOTES, " \n"); equipment.save()
         }
-        withTimeout(15000) { equipment.state.first { !it.busy } }
+        awaitUiState(equipment.state) { !it.busy }
         assertNull(equipment.state.value.pending); assertNull(equipment.state.value.problem)
         val value = requireNotNull(equipment.state.value.original)
         onUi { equipment.close() }; assertFalse(legacy.state.value.archiveOperationLocked)
@@ -87,26 +94,26 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
     }
     suspend fun prepareExport(version: Int): ExportState.Choosing {
         onUi { when(version) {1 -> exporter.begin();2 -> exporter.beginV2();3 -> exporter.beginV3();else -> error("Version") } }
-        return assertIs(withTimeout(15000) { exporter.state.first { it is ExportState.Choosing || it is ExportState.Failed } })
+        return assertIs(awaitUiState(exporter.state) { it is ExportState.Choosing || it is ExportState.Failed })
     }
     suspend fun export(version: Int, name: String): ByteArray {
         val request = prepareExport(version); val uri = documents.uri(name)
         onUi { assertNotNull(exporter.claimDestinationRequest()); exporter.destinationChosen(request.requestId, uri) }
-        assertIs<ExportState.Succeeded>(withTimeout(15000) { exporter.state.first { it is ExportState.Succeeded || it is ExportState.Failed } })
+        assertIs<ExportState.Succeeded>(awaitUiState(exporter.state) { it is ExportState.Succeeded || it is ExportState.Failed })
         assertFalse(legacy.state.value.archiveOperationLocked)
         return documents.bytes(name)
     }
     suspend fun preview(name: String, bytes: ByteArray): ImportState {
         documents.put(name, bytes)
         onUi { importer.begin(); val request = assertIs<ImportState.Choosing>(importer.state.value); assertTrue(importer.claimSelection()); importer.selected(request.requestId, documents.uri(name)) }
-        return withTimeout(15000) { importer.state.first { it is ImportState.Preview || it is ImportState.PreviewV2 || it is ImportState.PreviewV3 ||
-            it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.Failed } }
+        return awaitUiState(importer.state) { it is ImportState.Preview || it is ImportState.PreviewV2 || it is ImportState.PreviewV3 ||
+            it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.Failed }
     }
     suspend fun confirm(): ImportState {
         val preview = importer.state.value
         onUi { if (preview is ImportState.PreviewV3) importer.confirmV3(preview.confirmationId) else importer.confirm() }
-        val result = withTimeout(15000) { importer.state.first { it is ImportState.Succeeded || it is ImportState.SucceededV2 || it is ImportState.SucceededV3 ||
-            it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.UnconfirmedV3 || it is ImportState.Failed || it is ImportState.Unconfirmed } }
+        val result = awaitUiState(importer.state) { it is ImportState.Succeeded || it is ImportState.SucceededV2 || it is ImportState.SucceededV3 ||
+            it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.UnconfirmedV3 || it is ImportState.Failed || it is ImportState.Unconfirmed }
         ready(); return result
     }
     suspend fun assertOtherOperationsLocked() {

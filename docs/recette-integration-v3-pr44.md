@@ -173,6 +173,14 @@ Il doit être vérifié indépendamment des résultats locaux ; une ancienne CI 
 de #43 ne prouve pas la CI de #44. Aucun résultat post-fusion n'est attendu ici,
 puisqu'aucune fusion n'est réalisée.
 
+Après retarget vers main, le run 40713111171 a révélé deux observations trop
+précoces du verrou dans le harnais. Leur reproduction contrôlée et le protocole
+d'observation sur l'acteur UI sont décrits dans l'ADR 044. Les deux tests existants
+sont renforcés avec un observateur immédiat ; leurs vérifications SQL et d'archives
+restent inchangées. La correction ne crée aucun nouveau cas unique et ne change
+pas les nombres ci-dessus. Les nouvelles répétitions et la CI sur la tête corrigée
+sont rapportées séparément dans la PR ; aucune réussite n'est déduite d'un ancien run.
+
 ## NON TESTÉ : appareil et ergonomie
 
 Aucune commande ADB, connexion, installation ou lecture de données de téléphone.

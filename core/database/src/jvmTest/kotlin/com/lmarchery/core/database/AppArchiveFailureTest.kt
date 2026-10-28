@@ -9,7 +9,6 @@ import com.lmarchery.core.scoring.archive.v3.snapshotArchiveV3
 import com.lmarchery.feature.archiveimport.*
 import com.lmarchery.feature.export.*
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.first
 import org.junit.jupiter.api.io.TempDir
 import java.nio.file.Path
 import java.util.concurrent.atomic.AtomicBoolean
@@ -30,8 +29,13 @@ class AppArchiveFailureTest {
             h.assertOtherOperationsLocked();assertFalse(h.state.open)
             d.raw(path,"DROP TRIGGER late_restore_failure")
             h.onUi {h.importer.repreviewV3()}
-            withTimeout(15000) {h.importer.state.first {it is ImportState.PreviewV3}}
-            assertIs<ImportState.SucceededV3>(h.confirm());assertFalse(h.legacy.state.value.archiveOperationLocked)
+            h.awaitUiState(h.importer.state) {it is ImportState.PreviewV3}
+            // Resume the observer immediately on publication, before producer cleanup.
+            // This reproduces the former cross-dispatcher assertion failure deterministically.
+            withContext(Dispatchers.Unconfined) {
+                assertIs<ImportState.SucceededV3>(h.confirm())
+                assertFalse(h.legacy.state.value.archiveOperationLocked)
+            }
             assertTrue(h.archive().bows.contains(f.bow(850)));assertEquals(r.source().sessions,h.archive().sessions)
             assertEquals(1,h.documents.inputs.get());assertRecipeIntegrity(path)
         }
@@ -48,7 +52,7 @@ class AppArchiveFailureTest {
             h.assertOtherOperationsLocked();val before=d.contents(path);f.denyWrites(path,d.tables)
             h.documents.put("source.json","not the selected archive any more".toByteArray())
             h.onUi {h.importer.repreviewV3()}
-            val fresh=assertIs<ImportState.PreviewV3>(withTimeout(15000){h.importer.state.first{it is ImportState.PreviewV3}})
+            val fresh=assertIs<ImportState.PreviewV3>(h.awaitUiState(h.importer.state) {it is ImportState.PreviewV3})
             assertNotEquals(original.confirmationId,fresh.confirmationId)
             h.onUi {h.importer.confirmV3(original.confirmationId)};assertEquals(fresh,h.importer.state.value)
             assertTrue(assertIs<ImportState.SucceededV3>(h.confirm()).alreadyPresent)
@@ -93,7 +97,7 @@ class AppArchiveFailureTest {
             h.store.createConfiguredSession(c.rich());val before=d.contents(path);f.denyWrites(path,d.tables)
             h.documents.failOutputClose=true;val choosing=h.prepareExport(3)
             h.onUi {h.exporter.claimDestinationRequest();h.exporter.destinationChosen(choosing.requestId,h.documents.uri("failed.json"))}
-            val failed=assertIs<ExportState.Failed>(withTimeout(15000){h.exporter.state.first{it is ExportState.Failed}})
+            val failed=assertIs<ExportState.Failed>(h.awaitUiState(h.exporter.state) {it is ExportState.Failed})
             assertTrue(failed.potentiallyIncomplete);assertFalse(h.legacy.state.value.archiveOperationLocked);assertEquals(before,d.contents(path))
             assertTrue(h.documents.bytes("failed.json").isNotEmpty()) // Preserved, never erased or declared successful.
             h.documents.failOutputClose=false;val encoded=h.export(3,"fresh.json")
@@ -104,7 +108,7 @@ class AppArchiveFailureTest {
         AppIntegrationHarness(path).use {h->
             h.store.createConfiguredSession(c.rich());val choosing=h.prepareExport(3)
             h.onUi {h.exporter.claimDestinationRequest();h.exporter.destinationChosen(choosing.requestId,h.documents.uri("once.json"));h.exporter.destinationChosen(choosing.requestId,h.documents.uri("twice.json"))}
-            withTimeout(15000){h.exporter.state.first{it is ExportState.Succeeded}}
+            h.awaitUiState(h.exporter.state) {it is ExportState.Succeeded}
             assertEquals(1,h.documents.outputs.get())
             h.onUi {h.configured.open(c.rich().uuid)};h.idle();assertTrue(h.legacy.state.value.archiveOperationLocked)
             h.onUi {h.exporter.destinationChosen(choosing.requestId,h.documents.uri("stale.json"))}
@@ -120,10 +124,11 @@ class AppArchiveFailureTest {
             val updatedArchive=h.archive();assertEquals(listOf(f.bow(850)),updatedArchive.bows)
             val before=d.contents(path);f.denyWrites(path,d.tables)
             h.onUi {h.exporter.claimDestinationRequest();h.exporter.destinationChosen(choosing.requestId,h.documents.uri("prepared.json"))}
-            withTimeout(15000){h.exporter.state.first {it is ExportState.Succeeded}}
+            h.awaitUiState(h.exporter.state) {it is ExportState.Succeeded}
             val old=assertIs<com.lmarchery.core.export.ArchiveV3JsonRead.Accepted>(ArchiveV3JsonCodec().decode(h.documents.bytes("prepared.json"))).archive
             assertEquals(preparedArchive,old);assertTrue(old.bows.isEmpty())
-            val fresh=h.export(3,"latest.json")
+            // A faster observer must still see the UI lock released before export returns.
+            val fresh=withContext(Dispatchers.Unconfined) { h.export(3,"latest.json") }
             assertEquals(updatedArchive,assertIs<com.lmarchery.core.export.ArchiveV3JsonRead.Accepted>(ArchiveV3JsonCodec().decode(fresh)).archive)
             assertEquals(before,d.contents(path));assertRecipeIntegrity(path)
         }

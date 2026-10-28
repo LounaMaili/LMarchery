@@ -6,7 +6,6 @@ import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.feature.configured.*
 import com.lmarchery.feature.export.ExportState
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.first
 import org.junit.jupiter.api.io.TempDir
 import java.nio.file.Path
 import java.util.concurrent.atomic.*
@@ -100,7 +99,7 @@ class AppConfiguredFailureTest {
             assertNull(h.state.saved);assertEquals(ConfiguredProblemKind.INTERVENTION,h.state.problem!!.kind)
             h.onUi { h.configured.close() };h.ready()
             h.onUi { h.exporter.beginV3() }
-            assertIs<ExportState.Failed>(withTimeout(15000) {h.exporter.state.first {it is ExportState.Failed}})
+            assertIs<ExportState.Failed>(h.awaitUiState(h.exporter.state) {it is ExportState.Failed})
             assertFalse(h.legacy.state.value.archiveOperationLocked);assertEquals(0,h.documents.outputs.get());assertEquals(before,d.contents(path))
         }
     }
