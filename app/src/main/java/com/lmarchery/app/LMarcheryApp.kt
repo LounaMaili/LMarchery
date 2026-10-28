@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lmarchery.core.model.session.*
@@ -19,7 +20,10 @@ import com.lmarchery.core.model.scoring.ScoreDecisionKind
 import kotlinx.coroutines.launch
 import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
+import com.lmarchery.feature.scoring.precisionTargetMaxWidth
 import com.lmarchery.feature.sessions.*
+import com.lmarchery.feature.equipment.EquipmentController
+import com.lmarchery.feature.equipment.EquipmentScreen
 import com.lmarchery.feature.archiveimport.ImportCoordinator
 import com.lmarchery.feature.archiveimport.ImportPanel
 import com.lmarchery.feature.archiveimport.ImportSelectionEffect
@@ -28,22 +32,31 @@ import com.lmarchery.feature.export.ExportPanel
 import com.lmarchery.feature.export.ExportDestinationEffect
 
 @Composable
-fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator, importCoordinator: ImportCoordinator) {
+fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordinator, importCoordinator: ImportCoordinator, equipmentController: EquipmentController? = null) {
     ExportDestinationEffect(exportCoordinator)
     ImportSelectionEffect(importCoordinator)
     val state by controller.state.collectAsStateWithLifecycle()
+    val equipmentState = equipmentController?.state?.collectAsStateWithLifecycle()?.value
+    if (equipmentState?.open == true) {
+        EquipmentScreen(equipmentController)
+        return
+    }
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
+    var confirmCancelAim by rememberSaveable { mutableStateOf(false) }
     var confirmCancelCorrection by rememberSaveable { mutableStateOf(false) }
     val back: () -> Unit = {
         if (!state.busy && !state.archiveOperationLocked) {
             when {
                 state.pending != null -> confirmLeave = true
                 state.impactEdit != null -> confirmCancelCorrection = true
+                state.hasAimProposal -> confirmCancelAim = true
+                state.equipmentEdit != null -> controller.cancelEquipmentEdit()
                 else -> controller.returnToList()
             }
         }
     }
-    BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null || state.archiveOperationLocked, onBack = back)
+    BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null || state.archiveOperationLocked || state.hasAimProposal, onBack = back)
+    val screenHeightDp = LocalConfiguration.current.screenHeightDp.toFloat()
     val scrollStates = rememberSaveableStateHolder()
     val scope = rememberCoroutineScope()
     // Key only navigation identity: SQL acknowledgements must not recreate scroll state.
@@ -56,7 +69,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             }
         }
         Scaffold { padding ->
-            LazyColumn(state = listState, modifier = Modifier.fillMaxSize().padding(padding).padding(horizontal = 16.dp),
+            LazyColumn(state = listState, modifier = Modifier.fillMaxSize().precisionTouchGuard(controller).padding(padding).padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
                 if (state.screen == SessionScreen.LIST) item(key = "header") {
                     Text("LMarchery", style = MaterialTheme.typography.headlineMedium)
@@ -98,6 +111,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                 when (state.screen) {
                     SessionScreen.LIST -> {
                         item(key = "list-actions") {
+                            if (equipmentController != null) OutlinedButton(onClick = equipmentController::open, enabled = state.canNavigate) { Text("Matériel") }
                             Button(onClick = controller::configure, enabled = state.ready) { Text("Nouvelle séance") }
                             OutlinedButton(onClick = controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
                             if (!state.busy && state.entries.isEmpty() && state.problem == null) Text("Aucune séance enregistrée.")
@@ -136,6 +150,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 }
                             }
                             Text("Sans titre : « Séance salle — ${state.selectedProfile.label} ».", style = MaterialTheme.typography.bodySmall)
+                            if (state.equipmentChoicesLoading) Text("Chargement facultatif du catalogue… Vous pouvez créer sans matériel.")
+                            EquipmentChoiceFields(state.equipmentChoices, state.creationEquipment, state.ready, choose = controller::chooseCreationEquipment)
                             Button(onClick = controller::createSession, enabled = state.ready) { Text("Créer et démarrer") }
                             TextButton(onClick = back, enabled = !state.busy && !state.archiveOperationLocked) { Text("Retour aux séances") }
                         }
@@ -149,19 +165,32 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 Text("Score validé : ${state.validatedTotal}", style = MaterialTheme.typography.titleMedium)
                                 if (session.status != SessionStatus.COMPLETED && state.editingEnd != null)
                                     Text("Volée en cours : ${state.provisionalTotal} point(s) provisoires")
-                                if (session.status == SessionStatus.COMPLETED) Text("Consultation en lecture seule. La séance est terminée.")
+                                if (session.status == SessionStatus.COMPLETED) Text("Scores en lecture seule. La séance est terminée ; seules les associations de matériel restent modifiables.")
                                 else if (!state.supportedConfiguration) Text("Configuration consultable en lecture seule dans cet éditeur.")
                             }
+                            item(key = "session-equipment") { SessionEquipmentPanel(state, controller) }
                             state.displayedEnd?.let { end -> item(key = "target") {
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
                                 val interaction = when {
                                     state.canProposeReposition -> TargetInteraction.REPOSITION
-                                    state.canAddImpact -> TargetInteraction.ADD_IMPACT
+                                    state.canAddImpact || state.canAimNewImpact -> TargetInteraction.ADD_IMPACT
                                     else -> TargetInteraction.READ_ONLY
                                 }
+                                if (state.canEdit && state.isEditingDisplayed) {
+                                    OutlinedButton(onClick = { controller.setPrecisionAim(!state.precisionAimEnabled) }, enabled = state.canChangeAimMode) {
+                                        Text(if (state.precisionAimEnabled) "Visée précise activée · revenir au mode rapide" else "Activer la visée précise")
+                                    }
+                                    if (state.precisionAimEnabled) Text("Maintenez et déplacez le doigt. Loupe ×4 déportée ; relâcher ne sauvegarde pas. Faites défiler hors du blason.", style = MaterialTheme.typography.bodySmall)
+                                }
+                                val aimContext = AimContext(session.uuid, end.uuid, state.impactEdit?.impactUuid)
                                 TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
-                                    Modifier.widthIn(max = 480.dp).fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid, state.impactEdit?.candidate)
+                                    Modifier.widthIn(max = if (state.precisionAimEnabled) precisionTargetMaxWidth(screenHeightDp).dp else 480.dp)
+                                        .fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid,
+                                    state.aimedPoint,
+                                    state.precisionAimEnabled, { point -> controller.beginPreciseAim(aimContext, point) }, controller::movePreciseAim,
+                                    controller::finishPreciseAim, controller::cancelPreciseAim)
                                 Text(when {
+                                    state.precisionAimEnabled && state.canAim -> "Visée précise · proposition non enregistrée. Les coins extérieurs restent M."
                                     state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
                                     state.canAddImpact -> "Touchez pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs comptent M."
                                     else -> "${end.impacts.size} impact(s) enregistré(s)."
@@ -170,6 +199,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 Text(row.arrowsLabel)
                                 Text(row.totalLabel)
                             } }
+                            if (state.hasAimProposal) item(key = "precision-candidate") { PrecisionAimPanel(state, controller) }
                             item(key = "navigation") {
                                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                                     if (session.status == SessionStatus.IN_PROGRESS && state.editingEnd != null && !state.isEditingDisplayed)
@@ -220,6 +250,15 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         text = { Text("Son enregistrement n’est pas confirmé. Revenir à la liste abandonne la proposition locale et conserve le contenu présent dans la base.") },
         confirmButton = { TextButton(onClick = { confirmLeave = false; controller.discardAndReturnToList() }) { Text("Abandonner et revenir") } },
         dismissButton = { TextButton(onClick = { confirmLeave = false }) { Text("Conserver l’action") } })
+    if (confirmCancelAim && state.hasAimProposal) AlertDialog(onDismissRequest = { confirmCancelAim = false },
+        title = { Text("Annuler la nouvelle flèche et revenir ?") },
+        text = { Text("La position proposée n’est pas enregistrée. Revenir abandonnera ce candidat sans écrire.") },
+        confirmButton = { TextButton(onClick = {
+            confirmCancelAim = false
+            controller.cancelNewImpactCandidate()
+            controller.returnToList()
+        }) { Text("Annuler et revenir") } },
+        dismissButton = { TextButton(onClick = { confirmCancelAim = false }) { Text("Conserver la proposition") } })
     if (confirmCancelCorrection) AlertDialog(onDismissRequest = { confirmCancelCorrection = false },
         title = { Text("Annuler la correction et revenir ?") },
         text = { Text("La sélection et la proposition non soumise seront abandonnées. Aucune écriture n’a été demandée.") },
@@ -235,6 +274,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             text = { Column(Modifier.heightIn(max = 320.dp).verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text("${stored.title} · ${stored.status.label()}\nRecharger abandonnera la proposition locale non confirmée.")
+                equipmentAssociationLines(state.equipmentChoices, EquipmentSelection(stored.bowUuid, stored.arrowSetUuid)).forEach { Text(it) }
+                Text("Révision enregistrée UTC : ${stored.updatedAt}")
                 if (state.busy) Text("Relecture en cours…")
                 state.problem?.let { problem -> Text(problem.message, color = MaterialTheme.colorScheme.error) }
                 stored.ends.forEach { end -> Text("Volée ${end.index} (${end.status}) : ${end.impacts.joinToString { "#${it.index} ${it.scoreLabel()}" }}") }

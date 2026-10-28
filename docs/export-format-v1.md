@@ -2,6 +2,11 @@
 
 > Export JSON UTF-8 opérationnel ; reconstruction indépendante et import contrôlé sans écrasement.
 
+Le [contrat JSON V2](export-format-v2.md) ajoute le matériel dans une API distincte
+(ADR 026). Le présent contrat reste V1 ; Android propose aussi le parcours V2 (ADR 029), sans conversion
+ni rétrogradation automatique. V1 ne fournit pas de catalogue matériel ; son
+absence ne demande jamais de vider une base existante.
+
 ## 1. État implémenté
 
 Le paquet `core.scoring.archive` fournit `ArchiveSnapshot`,
@@ -95,8 +100,13 @@ définition fournie est exactement celle de la séance source.
 Les UUID définissant profils, séances, volées et impacts sont uniques dans
 toute l'archive, y compris entre types. Ils sont canoniques, minuscules, version 4,
 variante RFC 4122. Les références optionnelles de matériel sont des UUID opaques :
-`Bow`, `ArrowSet`, `SessionPreset` restent prévus et absents du Kotlin actuel.
-Leur contenu et leur résolution complète ne sont pas implémentés par ce contrat.
+`Bow` et `ArrowSet` existent désormais dans le domaine et SQLite, mais leur
+contenu et leur résolution restent absents du contrat JSON V1 ; `SessionPreset`
+reste prévu. Leurs références opaques sont conservées sans FK ni résolution
+automatique. Le [contrat/codec V2](export-format-v2.md) et sa collecte/restauration
+Room atomique ([ADR 027](adr/027-archives-room-v2-atomiques.md)) existent dans des
+API distinctes. L’import/export SAF Android distingue désormais les deux versions
+([ADR 029](adr/029-saf-android-archives-v2.md)). Seule la sauvegarde V2 contient le catalogue.
 
 ### Décisions et assertions
 
@@ -248,7 +258,7 @@ identifiable dans les données reçues, sans conversion silencieuse en séance v
 
 ## 5. Collecte, écriture Android et étapes restantes
 
-Room/SQLite 1 conserve déjà profils complets, enfants ordonnés, décisions et
+Room/SQLite 2 conserve profils complets, enfants ordonnés, décisions et
 traces dans des tables reliées par UUID. Les instants sont des couples entiers
 `epochSecond` / `nano`, la date civile garde son triplet et les `Float` leurs bits.
 Le schéma Room exporté est distinct de `schemaVersion` et de `scoringContractVersion`.
@@ -256,7 +266,11 @@ Aucun JSON de données utilisateur n'est employé comme substitut aux relations.
 Les révisions locales passent par `RoomSessionStore.update(expected, proposed)`
 et le validateur indépendant de transition de l’[ADR 017](adr/017-mise-a-jour-seances-room.md),
 sans assouplir les conflits de `reconstructArchive(snapshot, known)`.
-Le format et les versions de sauvegarde restent inchangés.
+Le format et les versions de sauvegarde restent inchangés. La migration SQLite
+1→2 ajoute `bows` et `arrow_sets` sans modifier les huit tables historiques.
+Ces fiches ne sont ni exportées ni créées/mises à jour par l’import V1.
+Leurs identités bloquent toutefois toute collision avec les entités importées ;
+les références matériel opaques d’une séance ne revendiquent pas ces identités.
 
 `RoomSessionStore.readArchive()` lit les racines, profils et descendants dans une
 seule transaction lecteur. Une séance illisible, une identité de séance orpheline
@@ -314,7 +328,8 @@ les contrôles concurrentiels, les erreurs et les limites de la preuve de proven
 Restent à réaliser :
 
 - Prévoir les migrations explicites pour chaque évolution future du schéma Room.
-- Définir matériel/presets et portée d'une sauvegarde utilisateur complète.
+- Les presets restent futurs ; le [parcours SAF V2](adr/029-saf-android-archives-v2.md)
+  sauvegarde le catalogue distinctement du présent contrat V1.
 - Définir l'intervention sur conflits et l'éventuelle preuve de filiation des
   révisions, sans écrasement fondé sur la seule horloge.
 - Décider le traitement d'anciens horaires/provenances et des changements IANA
@@ -322,4 +337,4 @@ Restent à réaliser :
 
 Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 
-*Dernière mise à jour : 16 octobre 2026*
+*Dernière mise à jour : 17 octobre 2026*

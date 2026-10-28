@@ -20,13 +20,14 @@ Le développement est progressif : **la V1 propose une saisie manuelle solide** 
 - [x] Tests terrain V1
 - [x] Format d'export V1
 - [x] Roadmap reconnaissance
-- [x] ADR (23 décisions techniques)
+- [x] ADR (registre des décisions dans `docs/adr/`)
 - [x] Moteur de score Kotlin/JVM
 - [x] Domaine séance Kotlin/JVM
 - [x] Squelette Android Compose
 - [x] Premier parcours Compose / Room : création, saisie, validation, reprise et consultation
 - [x] Historique chronologique, tableau des volées et résumé des scores validés
 - [x] Sauvegardes JSON : export vérifié et import atomique sans écrasement
+- [x] Fondation du catalogue arcs/flèches : modèles, SQLite 2, fiches Compose et sauvegardes SAF V2
 - [ ] Blason interactif complet
 - [ ] Premier test terrain
 
@@ -178,45 +179,82 @@ Import/export sont regroupés dans « Sauvegardes » sur l’accueil, après les
 Voir [ADR 023](docs/adr/023-historique-et-presentation-scores-android.md) et le
 [protocole de consultation](docs/tests-terrain-v1.md#protocole-historique-et-scores-pr-21).
 
-## Exporter les séances
+## Visée précise — PR 22 en évaluation
 
-Depuis l’accueil, section « Sauvegardes », « Exporter mes séances » prépare toutes les séances Room, y compris celles en
-cours, et leurs profils, décisions et traces dans un instantané cohérent.
-L’application vérifie l’aller-retour JSON complet avant de proposer le sélecteur
-Android. Choisir la destination du fichier `.lmarchery.json` ; attendre le message
-confirmant l’écriture et la relecture identique, le nombre de séances et la taille.
-Une base vide ou une séance illisible bloque l’export global. Résoudre d’abord
-une sauvegarde en attente et fermer toute proposition de correction.
+Le mode rapide reste le défaut. « Activer la visée précise » permet d’appuyer,
+déplacer puis relâcher sur le blason : réticule et loupe ×4 déportée utilisent la
+même coordonnée normalisée. Le relâchement laisse une proposition **non enregistrée**.
+Confirmer ajoute une seule flèche après acquittement SQL ; annuler n’écrit rien.
+Un autre geste affine le candidat. Pendant la proposition, navigation, clôture,
+validation et sauvegardes attendent une résolution explicite.
 
-Le fichier UTF-8 est lisible en clair et peut contenir des informations personnelles.
-Ne pas utiliser un document dont la sauvegarde n’est pas confirmée : après erreur
-ou interruption, il peut être incomplet. Aucun fichier n’est supprimé automatiquement.
-Les fournisseurs qui ne permettent pas la relecture ne donnent pas de succès
-confirmé. Aucune permission globale de stockage ni synchronisation propre à
-LMarchery ; Android laisse choisir le fournisseur.
+Après sélection d’une flèche et « Repositionner », la visée précise utilise le
+candidat, le motif et la confirmation existants, sans créer d’impact supplémentaire.
+Les coordonnées et indicateurs sont recalculés par le moteur métier inchangé.
+La loupe ne décide pas d’un cordon et ne prouve aucun contact physique du tube.
 
-Seuls séances et profils réellement
-implémentés sont sauvegardés. La base Room n’est pas modifiée par l’export. Le
-contrat strict, les limites de taille et les garanties numériques sont détaillés
-dans [ADR 021](docs/adr/021-export-json-versionne-android.md) et le
-[format V1](docs/export-format-v1.md). Désinstaller ou effacer les données peut
-les perdre ; conserver une sauvegarde validée hors de l’application.
+Un deuxième doigt, une sortie du carré ou une interruption annule le geste ; les
+coins du carré restent disponibles pour M. Une proposition déjà relâchée reste
+dans le ViewModel pendant la rotation, tandis qu’un geste actif n’est jamais
+confirmé par la rotation. Après arrêt du processus, seul le confirmé SQL revient.
+Un échec SQL conserve candidat et PendingSave pour un retry strictement identique.
 
-## Import contrôlé des sauvegardes (PR 20)
+Voir [ADR 024](docs/adr/024-visee-tactile-precise-candidat.md) et le
+[protocole Pixel / essai au doigt](docs/validation-visee-precise-pr22.md).
+**PR en brouillon, sans fusion : tests automatisés et previews compilées ne valident
+pas la précision tactile réelle.** Aucun ADB exécuté pour cette intégration.
+Le [protocole de la combinaison matériel / SAF V2](docs/validation-integration-visee-materiel.md)
+prévoit une installation isolée et interdit de rouvrir Room 2 avec l’ancien APK Room 1.
 
-Depuis l’accueil, section « Sauvegardes », « Importer une sauvegarde » ouvre le sélecteur Android. Le contenu
-réel est lu avec un plafond de 16 MiB, décodé strictement et comparé à SQLite.
-L’aperçu donne nouvelles séances, identiques, conflits et profils. Confirmer
-« Importer les N nouvelles séances » ajoute toute l’archive atomiquement, avec
-UUID, dates et provenances d’origine. Les identiques ne sont pas réécrites.
+## Sauvegardes Android V2 et compatibilité V1
 
-Toute divergence ou collision refuse l’ensemble ; aucune fusion, suppression ou
-sélection selon `updatedAt`. Un fichier vide ou un profil sans séance est refusé.
-Une modification concurrente invalidant le plan exige un nouvel aperçu. Après
-interruption non confirmée, relire la liste et sélectionner à nouveau le fichier
-pour constater les identiques sans doublon. Rotation : candidat conservé en mémoire ;
-mort du processus : nouvelle sélection. Import et export s’excluent mutuellement.
-Voir [ADR 022](docs/adr/022-import-json-controle-transactionnel.md).
+Depuis l’accueil, section « Sauvegardes », « Exporter la sauvegarde complète V2 »
+prépare un seul instantané Room contenant tous les profils, séances, descendants,
+arcs et jeux de flèches. Le matériel seul, les profils seuls ou une base vide sont
+exportables. « Exporter V1 — sans catalogue matériel » conserve le format historique
+(séances et profils associés ; une base sans séance reste refusée).
+
+L’aller-retour JSON strict est vérifié avant le sélecteur Android ; le succès
+exige écriture, fermeture et relecture exacte du document. Le message précise
+version, comptes et octets. Le fichier en clair peut être personnel. Ne pas
+utiliser un fichier non confirmé : il peut être incomplet. Aucune suppression ou
+relance automatique. Le fournisseur doit autoriser la relecture.
+
+« Importer une sauvegarde » lit au plus 16 MiB et distingue les versions.
+V1 conserve son contrat historique ; l’absence de matériel ne vide jamais le
+catalogue. V2 présente nouveaux/identiques/conflits séparément pour séances,
+profils, arcs et flèches. Confirmer ajoute seulement l’absent dans une transaction
+unique ; toute divergence bloque l’ensemble, sans remplacement ni réparation.
+Une V2 vide ou identique donne une vérification sans écriture après confirmation.
+Le fichier n’est pas rouvert à la confirmation. Un aperçu périmé exige une nouvelle
+sélection. Un résultat SQL incertain exige une relecture, jamais un retry implicite.
+
+Import, export et écritures de séance s’excluent. Résoudre les sauvegardes en
+attente et fermer les corrections. Le candidat est conservé pendant la rotation,
+pas après la mort du processus. Le catalogue est accessible depuis « Matériel » à l’accueil.
+Voir les [formats V1](docs/export-format-v1.md), [V2](docs/export-format-v2.md) et
+l’[ADR 029](docs/adr/029-saf-android-archives-v2.md). Les essais SAF physiques
+restent distincts des tests JVM/SQLite et de la compilation Android.
+
+## Catalogue matériel Android
+
+« Matériel » ouvre les listes d’arcs et de jeux de flèches. Ajouter une fiche ou
+ouvrir une fiche puis « Modifier la fiche ». Les UUID distinguent les homonymes ;
+aucune suppression ni fusion. Les champs facultatifs ont un choix « Renseigner » :
+décoché signifie non renseigné, un texte coché vide reste vide. Le spine, la
+longueur et les pointes conservent leurs unités saisies. La puissance en livres
+est facultative, finie et positive. Confirmer explicitement l’enregistrement.
+
+Un conflit conserve la proposition et son état attendu. Consulter la version
+stockée ne remplace pas la saisie ; l’abandon exige confirmation. La rotation
+conserve le formulaire dans le ViewModel, pas l’arrêt complet du processus.
+Revenir aux séances avant d’exporter une sauvegarde complète V2. Voir l’[ADR 030](docs/adr/030-catalogue-materiel-android.md).
+La création de séance propose un arc et des flèches facultatifs. Une lecture lente
+ou impossible du catalogue n’empêche pas de créer sans matériel. Sur une séance
+existante, « Consulter / modifier les associations » confirme uniquement ces
+métadonnées, y compris après clôture : scores et traces restent protégés.
+Les références sans fiche restent visibles et conservées jusqu’à un retrait ou
+remplacement explicite. Voir l’[ADR 031](docs/adr/031-associations-materiel-seances.md).
 
 ## Versions
 

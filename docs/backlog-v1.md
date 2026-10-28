@@ -4,7 +4,8 @@
 
 Légende : ✓ livré ; ◐ partiel, limite explicitée ; ☐ prévu.
 La saisie Android reste à trois flèches en entraînement, avec les quatre profils
-WA indoor ; les autres configurations valides sont consultables. Les tests ADB
+WA indoor ; les autres configurations valides sont consultables. La visée précise est en évaluation dans la [PR 22](validation-visee-precise-pr22.md) ;
+son implémentation ne vaut pas validation de précision tactile. Les tests ADB
 ne remplacent pas les essais terrain au doigt. Voir
 [ADR 023](adr/023-historique-et-presentation-scores-android.md).
 
@@ -47,6 +48,7 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 2.8 | Zoom et panoramique sur le blason | ☐ | Basse |
 | 2.9 | Afficher les impacts de la volée en cours | ✓ | Haute |
 | 2.10 | Test terrain : saisie rapide entre deux volées réelles | ☐ | Haute |
+| 2.11 | Mode précis facultatif : loupe ×4, réticule et candidat confirmé | ◐ code/tests implémentés ; PR 22 brouillon, essai humain et ADB restant | Haute |
 
 **Critère de sortie** : un archer peut saisir 3 impacts en quelques secondes, les corriger, et voir le score.
 
@@ -82,16 +84,20 @@ ne remplacent pas les essais terrain au doigt. Voir
 
 | # | Ticket | Statut | Priorité |
 |---|--------|--------|-----------|
-| 4.1 | Créer l'entité `Bow` (Room) | ☐ | Moyenne |
-| 4.2 | Écran « Fiche arc » (nom, type, puissance, notes) | ☐ | Moyenne |
-| 4.3 | Créer l'entité `ArrowSet` (Room) | ☐ | Moyenne |
-| 4.4 | Écran « Fiche flèches » (nom, spine, longueur, notes) | ☐ | Moyenne |
-| 4.5 | Association arc + flèches lors de la création de séance | ☐ | Moyenne |
+| 4.1 | Créer l'entité `Bow` (Room) | ✓ fondation sans UI (ADR 025) | Moyenne |
+| 4.2 | Écran « Fiche arc » (nom, type, puissance, notes) | ✓ (ADR 030, essais physiques à faire) | Moyenne |
+| 4.3 | Créer l'entité `ArrowSet` (Room) | ✓ fondation sans UI (ADR 025) | Moyenne |
+| 4.4 | Écran « Fiche flèches » (nom, spine, longueur, notes) | ✓ (ADR 030, essais physiques à faire) | Moyenne |
+| 4.5 | Association arc + flèches lors de la création de séance | ✓ facultative, aussi après clôture (ADR 031) | Moyenne |
 | 4.6 | Créer l'entité `SessionPreset` (Room) | ☐ | Moyenne |
 | 4.7 | Écran « Créer un preset » | ☐ | Moyenne |
 | 4.8 | Écran « Choisir un preset » (sélection rapide) | ☐ | Moyenne |
 | 4.9 | Préremplir les champs de séance depuis un preset | ☐ | Moyenne |
 | 4.10 | Presets par défaut (salle 18m, extérieur 30m, 50m, 70m) | ☐ | Basse |
+| 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ◐ contrat/codec V2 + Room atomique (ADR 026/027) ; SAF V2 à faire | Haute |
+
+La collecte/restauration Room V2 est décrite dans l’[ADR 027](adr/027-archives-room-v2-atomiques.md).
+Le parcours SAF/Android reste V1 ; sa connexion V2 est obligatoire avant une UI de catalogue.
 
 **Critère de sortie** : un utilisateur peut créer un preset et lancer une séance en 2 taps.
 

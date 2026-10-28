@@ -12,6 +12,8 @@ import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
 import com.lmarchery.core.scoring.scoreArrowImpact
 import com.lmarchery.core.scoring.resolveFinalScore
 import com.lmarchery.data.SessionRepository
+import com.lmarchery.data.EquipmentRepository
+import com.lmarchery.data.EquipmentKind
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -27,15 +29,20 @@ class SessionController(
     private val clock: Clock = Clock.systemUTC(),
     private val sessionZone: () -> ZoneId = ZoneId::systemDefault,
     private val newUuid: () -> String = { UUID.randomUUID().toString() },
+    private val equipmentRepository: EquipmentRepository? = null,
 ) {
+    private var nextAimToken = 0L
     private val mutableState = MutableStateFlow(SessionUiState())
     val state = mutableState.asStateFlow()
     private var ui: SessionUiState
         get() = mutableState.value
         set(value) { mutableState.value = value }
 
+    private var creationEquipmentLoad: Job? = null
+    private var equipmentLoadGeneration = 0
+
     fun acquireExport(): Boolean {
-        if (!ui.ready || ui.impactEdit != null) return false
+        if (!ui.ready || ui.impactEdit != null || ui.equipmentEdit != null || ui.hasAimProposal) return false
         ui = ui.copy(archiveOperationLocked = true)
         return true
     }
@@ -62,7 +69,56 @@ class SessionController(
         }
     }
     fun configure() {
-        if (ui.canNavigate) ui = ui.copy(screen = SessionScreen.CREATE, problem = null, confirmation = null)
+        if (!ui.canNavigate) return
+        ui = ui.copy(screen = SessionScreen.CREATE, problem = null, confirmation = null,
+            creationEquipment = EquipmentSelection(), equipmentChoices = EquipmentChoices())
+        val generation = ++equipmentLoadGeneration
+        creationEquipmentLoad?.cancel()
+        if (equipmentRepository != null) {
+            ui = ui.copy(equipmentChoicesLoading = true)
+            creationEquipmentLoad = scope.launch {
+                try {
+                    val choices = loadEquipmentChoices(equipmentRepository)
+                    currentCoroutineContext().ensureActive()
+                    if (generation == equipmentLoadGeneration && ui.screen == SessionScreen.CREATE)
+                        ui = ui.copy(equipmentChoices = choices)
+                } finally {
+                    if (generation == equipmentLoadGeneration) ui = ui.copy(equipmentChoicesLoading = false)
+                }
+            }
+        }
+    }
+    fun chooseCreationEquipment(kind: EquipmentKind, uuid: String?) {
+        if (!ui.ready || ui.screen != SessionScreen.CREATE) return
+        if (!ui.equipmentChoices.allows(kind, uuid, null)) { invalidAction("Choisissez une fiche disponible du bon type, ou aucun matériel."); return }
+        ui = ui.copy(creationEquipment = ui.creationEquipment.with(kind, uuid), problem = null)
+    }
+    fun beginEquipmentEdit() {
+        if (!ui.canEditEquipment) return
+        ui = ui.copy(equipmentEdit = EquipmentSelection(ui.session!!.bowUuid, ui.session!!.arrowSetUuid),
+            equipmentChoices = EquipmentChoices(), problem = null, confirmation = null)
+        launchOperation { ui = ui.copy(equipmentChoices = equipmentRepository?.let { loadEquipmentChoices(it) }
+            ?: EquipmentChoices(loaded = true, diagnostics = listOf("Catalogue indisponible. Les références existantes restent conservées."))) }
+    }
+    fun chooseEquipment(kind: EquipmentKind, uuid: String?) {
+        val selection = ui.equipmentEdit ?: return
+        if (!ui.ready) return
+        val existing = if (kind == EquipmentKind.BOW) ui.session!!.bowUuid else ui.session!!.arrowSetUuid
+        if (!ui.equipmentChoices.allows(kind, uuid, existing)) { invalidAction("Choisissez une fiche disponible du bon type, la référence d’origine ou aucun matériel."); return }
+        ui = ui.copy(equipmentEdit = selection.with(kind, uuid), problem = null)
+    }
+    fun cancelEquipmentEdit() {
+        if (!ui.busy && ui.pending == null) ui = ui.copy(equipmentEdit = null, problem = null)
+    }
+    fun confirmEquipment() {
+        val selection = ui.equipmentEdit ?: return
+        if (!ui.ready || ui.screen != SessionScreen.SESSION || ui.impactEdit != null) return
+        if (selection == EquipmentSelection(ui.session!!.bowUuid, ui.session!!.arrowSetUuid)) {
+            ui = ui.copy(equipmentEdit = null, problem = null, confirmation = "Associations inchangées ; aucune écriture."); return
+        }
+        mutate("Modifier uniquement le matériel associé") { session, now ->
+            session.withEquipmentReferences(selection.bowUuid, selection.arrowSetUuid, now) to ui.displayedEnd?.uuid
+        }
     }
     fun selectProfile(profile: IndoorProfile) { if (ui.ready) ui = ui.copy(selectedProfile = profile) }
     fun setTitle(title: String) { if (ui.ready) ui = ui.copy(title = title) }
@@ -71,6 +127,7 @@ class SessionController(
     }
     fun createSession() {
         if (!ui.ready || ui.screen != SessionScreen.CREATE) return
+        creationEquipmentLoad?.cancel()
         launchOperation {
             val now = clock.instant()
             val target = ui.selectedProfile.target
@@ -78,7 +135,8 @@ class SessionController(
             val draft = Session(newUuid(), SessionDateTime.fromInstant(now, sessionZone()), SessionStatus.DRAFT,
                 title = ui.title.trim().ifBlank { "Séance salle — ${ui.selectedProfile.label}" }, targetType = target,
                 distanceM = target.defaultDistanceM, arrowCountMode = ArrowCountMode.FIXED, arrowCountPerEnd = 3,
-                isIndoor = true, scoringMode = ScoringMode.TRAINING, createdAt = now, updatedAt = now)
+                isIndoor = true, scoringMode = ScoringMode.TRAINING, bowUuid = ui.creationEquipment.bowUuid,
+                arrowSetUuid = ui.creationEquipment.arrowSetUuid, createdAt = now, updatedAt = now)
             val started = draft.start(now).withEnd(first)
             val profile = requireNotNull(BuiltInTargetRegistry.find(target.uuid))
             save(PendingSave("Créer et démarrer la séance", null,
@@ -91,15 +149,60 @@ class SessionController(
     }
     fun returnToList() {
         if (!ui.canNavigate) return // Pending actions and selection require explicit abandonment.
+        creationEquipmentLoad?.cancel()
         launchOperation {
-            ui = ui.copy(screen = SessionScreen.LIST, saved = null, selectedEndUuid = null)
+            ui = ui.copy(screen = SessionScreen.LIST, saved = null, selectedEndUuid = null, precisionAimEnabled = false)
             loadEntries()
         }
     }
     fun discardAndReturnToList() {
         if (ui.busy || ui.archiveOperationLocked) return
-        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null)
+        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null)
         returnToList()
+    }
+    fun setPrecisionAim(enabled: Boolean) {
+        if (!ui.canChangeAimMode) return
+        ui = ui.copy(precisionAimEnabled = enabled, activeAim = null)
+    }
+    fun beginPreciseAim(context: AimContext, point: NormalizedPoint): Long? {
+        if (!ui.canAim || ui.activeAim != null || context != ui.aimContext) return null
+        val candidate = positionCandidate(context, point) ?: return null
+        val token = ++nextAimToken // Presentation token only: no domain UUID or timestamp.
+        ui = ui.copy(activeAim = ActiveAim(token, candidate), problem = null)
+        return token
+    }
+    fun movePreciseAim(token: Long, point: NormalizedPoint) {
+        val active = currentAim(token) ?: return
+        val candidate = positionCandidate(active.candidate.context, point) ?: return
+        ui = ui.copy(activeAim = active.copy(candidate = candidate))
+    }
+    fun finishPreciseAim(token: Long, point: NormalizedPoint) {
+        val active = currentAim(token) ?: return
+        val candidate = positionCandidate(active.candidate.context, point) ?: return
+        ui = ui.copy(activeAim = null)
+        if (candidate.context.impactUuid == null) ui = ui.copy(newImpactCandidate = candidate)
+        else proposeReposition(point) // Existing candidate, reason and confirmation path.
+    }
+    fun cancelPreciseAim(token: Long) {
+        if (ui.activeAim?.token == token) ui = ui.copy(activeAim = null)
+        // Preserve the previously released candidate when a new gesture is interrupted.
+    }
+    fun cancelNewImpactCandidate() {
+        if (ui.ready) ui = ui.copy(newImpactCandidate = null, activeAim = null, problem = null)
+    }
+    fun confirmNewImpactCandidate() {
+        if (!ui.canConfirmNewImpact) return
+        saveNewImpact(ui.newImpactCandidate!!.point)
+    }
+    private fun currentAim(token: Long): ActiveAim? = ui.activeAim?.takeIf {
+        it.token == token && ui.canAim && it.candidate.context == ui.aimContext
+    }
+    private fun positionCandidate(context: AimContext, point: NormalizedPoint): PositionCandidate? = try {
+        PositionCandidate(context, point, resolveFinalScore(ui.session!!.targetType, point, ui.session!!.scoringMode))
+    } catch (error: IllegalArgumentException) {
+        ui = ui.copy(activeAim = null)
+        invalidAction(error.message ?: "Position invalide.")
+        null
     }
     fun selectImpact(endUuid: String, impactUuid: String) {
         if (!ui.canSelectImpact) return
@@ -116,10 +219,11 @@ class SessionController(
             proposal = ImpactProposal.Reposition()), problem = null, confirmation = null)
     }
     fun targetTapped(point: NormalizedPoint) {
+        if (ui.precisionAimEnabled) return
         if (ui.impactEdit == null) addImpact(point) else proposeReposition(point)
     }
     fun proposeReposition(point: NormalizedPoint) {
-        if (!ui.canProposeReposition) return
+        if (!ui.canProposeReposition || ui.activeAim != null) return
         val selection = ui.impactEdit!!
         val proposal = selection.proposal as ImpactProposal.Reposition
         ui = ui.copy(impactEdit = selection.copy(phase = ImpactEditPhase.AWAITING_POINT,
@@ -229,10 +333,10 @@ class SessionController(
     /** Only an unsubmitted selection/candidate can be cancelled without the PendingSave policy. */
     fun cancelImpactEdit() {
         if (!ui.ready) return
-        ui = ui.copy(impactEdit = null, problem = null)
+        ui = ui.copy(impactEdit = null, activeAim = null, problem = null)
     }
     fun confirmReposition() {
-        if (!ui.canProposeReposition || ui.impactEdit?.phase != ImpactEditPhase.CANDIDATE) return
+        if (!ui.canProposeReposition || ui.activeAim != null || ui.impactEdit?.phase != ImpactEditPhase.CANDIDATE) return
         val selection = ui.impactEdit!!
         val original = ui.selectedImpact!!
         if (original.finalScoreDecision.provenance.isManual && selection.reason.isBlank()) {
@@ -262,6 +366,9 @@ class SessionController(
     }
     fun addImpact(point: NormalizedPoint) {
         if (!ui.canAddImpact) return
+        saveNewImpact(point)
+    }
+    private fun saveNewImpact(point: NormalizedPoint) {
         mutate("Placer la flèche ${ui.editingEnd!!.impacts.size + 1} (${point.x}, ${point.y})") { s, now ->
             val end = requireNotNull(ui.editingEnd)
             val impact = scoreArrowImpact(newUuid(), end.impacts.size + 1, s.targetType, point, s.scoringMode, createdAt = now)
@@ -284,7 +391,7 @@ class SessionController(
         }
     }
     fun startSession() {
-        if (!ui.ready || !ui.supportedConfiguration || ui.session?.status != SessionStatus.DRAFT) return
+        if (!ui.ready || ui.equipmentEdit != null || !ui.supportedConfiguration || ui.session?.status != SessionStatus.DRAFT) return
         mutate("Démarrer la séance") { s, now -> s.start(now) to ui.displayedEnd?.uuid }
     }
     fun completeSession() {
@@ -327,8 +434,9 @@ class SessionController(
         }
         if (problem != null) ui = ui.copy(problem = problem, impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.FAILED))
         else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, pending = null, problem = null,
-            selectedEndUuid = pending.selectedEndUuid, storedPreview = null,
+            selectedEndUuid = pending.selectedEndUuid, storedPreview = null, equipmentEdit = null,
             impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
+            newImpactCandidate = null, activeAim = null,
             confirmation = "${pending.description} : ${if (idempotent) "déjà enregistré, contenu identique" else "enregistré sur cet appareil"}.")
     }
     fun previewStored() {
@@ -353,7 +461,8 @@ class SessionController(
                 val loaded = archive(result.session, result.profile)
                 ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, storedPreview = null,
                     pending = if (abandonPending) null else ui.pending, problem = null, confirmation = null,
-                    impactEdit = null,
+                    impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null,
+                    precisionAimEnabled = if (ui.session?.uuid == result.session.uuid) ui.precisionAimEnabled else false,
                     selectedEndUuid = ui.selectedEndUuid?.takeIf { selected ->
                         ui.session?.uuid == result.session.uuid && result.session.ends.any { it.uuid == selected }
                     } ?: result.session.ends.firstOrNull { it.status == EndStatus.EDITING }?.uuid

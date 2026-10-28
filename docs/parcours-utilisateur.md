@@ -4,7 +4,7 @@
 
 ---
 
-## Parcours effectivement implémenté (PR 16 à 21)
+## Parcours effectivement implémenté (PR 16 à 22, visée précise en évaluation)
 
 Les parcours V1 détaillés plus bas restent la cible produit. Le premier parcours
 Android livré est limité à :
@@ -41,6 +41,35 @@ Les suppressions, matériel/presets et autres modes restent hors de ce parcours.
 Les données sont locales ; l’export global est décrit ci-dessous.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
+
+### Viser précisément — PR 22 en brouillon
+
+Le mode rapide reste le comportement par défaut, sans étape supplémentaire.
+Dans une volée éditable, activer la visée précise puis appuyer sur le blason :
+le réticule montre le point et la loupe déportée ×4 agrandit les mêmes anneaux et
+impacts. Le mouvement ajuste l’aperçu géométrique ; relâcher laisse un candidat
+non enregistré. « Confirmer la nouvelle flèche » attend l’acquittement SQL avant
+les totaux durables. « Annuler la nouvelle flèche » n’écrit rien. Un autre geste
+permet d’affiner la position ; son annulation conserve le dernier candidat relâché.
+
+La proposition bloque navigation, changement de mode, sélection contradictoire,
+validation/clôture et import/export. Retour avertit avant abandon. En cas d’erreur,
+candidat et PendingSave restent accessibles pour retry identique ou abandon explicite.
+La rotation conserve une proposition relâchée, mais annule le geste actif ; après
+mort du processus, seul le dernier état SQL est redécouvert, en mode rapide.
+
+Pour une flèche existante : sélectionner, Repositionner, puis viser de la même
+manière. Le candidat et la confirmation restent ceux du repositionnement habituel,
+avec motif requis pour invalider une décision manuelle, UUID et traces conservés.
+Les flèches validées ou séances terminées restent en lecture seule.
+
+Le deuxième doigt et toute sortie du Canvas annulent le geste sans sauvegarder.
+Les coins dans le carré restent des M ; aucun rabattement sur le cercle. Faire
+défiler hors du blason en mode précis ; le blason est réduit en paysage pour
+faciliter la consultation de la loupe. Ni loupe ni proximité tactile ne modifie
+le jugement de cordon. **L’évaluation ergonomique au doigt reste à faire** selon
+le [protocole PR 22](validation-visee-precise-pr22.md). Voir
+[ADR 024](adr/024-visee-tactile-precise-candidat.md).
 
 ### Consulter les scores et l’historique (PR 21)
 
@@ -220,11 +249,12 @@ L'utilisateur ouvre l'application
 
 ## 5. Parcours — Exporter ses données (PR 19)
 
-1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter mes séances ». Si une sauvegarde est en cours/non confirmée
+1. Depuis l’accueil, section « Sauvegardes », choisir « Exporter la sauvegarde complète V2 » (ou « Exporter V1 — sans catalogue matériel »). Si une sauvegarde est en cours/non confirmée
    ou une correction ouverte, terminer ou résoudre cette action d’abord.
-2. Attendre préparation puis validation : toutes les séances et profils sont lus
-   en transaction et vérifiés par aller-retour JSON. Une base vide ou une seule
-   séance illisible donne un diagnostic ; aucun export partiel présenté comme complet.
+2. Attendre préparation puis validation : V2 lit tous les profils, séances et
+   fiches matériel en une transaction et vérifie l’aller-retour JSON. Une base
+   vide est exportable en V2 ; V1 exige une séance. Toute donnée illisible bloque
+   l’ensemble ; aucun export partiel présenté comme complet.
 3. Choisir la destination dans le sélecteur Android. Le nom proposé se termine
    par `.lmarchery.json`. L’annulation n’écrit aucun contenu.
 4. Attendre écriture, fermeture et relecture. Le succès donne nombre de séances,
@@ -247,10 +277,12 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
 2. Dans la section « Sauvegardes », choisir « Importer une sauvegarde », puis sélectionner explicitement le fichier
    dans Android. Annuler ne demande aucune écriture. Nom/MIME ne prouvent rien :
    octets lus avec plafond de 16 MiB, décodage strict puis comparaison transactionnelle.
-3. Lire les comptes : nouvelles séances, identiques, conflits et profils. Toute
+3. Lire la version et les comptes : V2 sépare séances, profils, arcs et flèches,
+   chacun en nouveaux/identiques/conflits. V1 conserve son aperçu de séances. Toute
    divergence/collision bloque l’ensemble avec UUID et diagnostic. Aucun choix
-   d’écrasement. Une archive vide ou un profil non référencé est refusé.
-4. Fermer l’aperçu sans importer, ou confirmer « Importer les N nouvelles séances ».
+   d’écrasement. V1 refuse une archive vide ou un profil non référencé ; V2 accepte
+   matériel seul, profils seuls ou une archive vide explicite sans effacement.
+4. Fermer l’aperçu sans importer, ou confirmer l’import de la version affichée.
    Si tout existe à l’identique, aucune importation n’est nécessaire. Le fichier
    n’est jamais rouvert silencieusement à la confirmation.
 5. Attendre l’acquittement SQL. Le plan est recontrôlé sous transaction écrivain ;
@@ -261,21 +293,41 @@ Voir [ADR 021](adr/021-export-json-versionne-android.md).
    sont reconnues identiques, sans doublon. Aucun retry automatique. La rotation
    conserve le candidat ; la mort du processus exige une nouvelle sélection.
 
-Seuls les modèles V1 implémentés sont restaurés. Pas de fusion, suppression,
-migration ou résolution par date. Voir [ADR 022](adr/022-import-json-controle-transactionnel.md).
+V1 ne fournit pas de matériel et ne modifie pas le catalogue. V2 restaure aussi les
+fiches et profils non référencés. Pas de fusion, suppression ni résolution par date.
+Voir [ADR 022](adr/022-import-json-controle-transactionnel.md) et
+[ADR 029](adr/029-saf-android-archives-v2.md).
 
 ## 6. Parcours — Gérer le matériel
 
-```
-L'utilisateur va dans la section "Matériel"
-├── Liste des arcs
-│   ├── Ajouter un arc (nom, type, puissance, notes)
-│   └── Modifier / Supprimer un arc
-├── Liste des jeux de flèches
-│   ├── Ajouter un jeu (nom, spine, longueur, notes)
-│   └── Modifier / Supprimer un jeu
-└── Associés aux séances lors de la création
-```
+1. Depuis l’accueil, « Matériel » ouvre les deux listes. Les fiches illisibles
+   restent visibles avec diagnostic ; aucun contenu n’est réparé silencieusement.
+2. « Ajouter un arc » / « Ajouter un jeu de flèches », ou ouvrir une fiche puis
+   « Modifier la fiche ». Le nom est obligatoire. Chaque champ facultatif distingue
+   non renseigné et texte vide ; aucune unité n’est déduite.
+3. Confirmer l’enregistrement, attendre l’acquittement. Un double appui ne crée pas
+   une deuxième commande. En cas d’erreur la proposition exacte reste disponible ;
+   aucun remplacement ou retry automatique après conflit.
+4. Le retour depuis le formulaire demande confirmation de l’abandon. Une fiche
+   déjà enregistrée est relue avant d’effacer la proposition. La rotation conserve
+   la saisie ; l’arrêt du processus ne la rend pas durable.
+5. Revenir à l’accueil pour exporter V2. L’export V1 ne contient pas le catalogue.
+
+Pas de suppression ni fusion d’homonymes. Voir [ADR 030](adr/030-catalogue-materiel-android.md).
+
+### Associer du matériel à une séance
+
+- À la création, choisir facultativement un arc, un jeu de flèches, les deux ou
+  aucun. Le chargement du catalogue n’empêche pas la création sans matériel.
+- Dans une séance, « Consulter / modifier les associations » ouvre une proposition.
+  Les UUID non résolus restent affichés et conservés ; choisir « Aucun » ou une
+  autre fiche est volontaire, puis confirmer. Annuler n’écrit rien.
+- Une séance terminée accepte cette modification de métadonnées uniquement.
+  Statut, clôture, scores, impacts, décisions et traces restent identiques.
+- En cas de conflit, conserver la proposition et consulter le stocké sans rebase
+  automatique. Rotation : candidat au ViewModel ; arrêt du processus : relecture.
+
+Voir [ADR 031](adr/031-associations-materiel-seances.md).
 
 ---
 

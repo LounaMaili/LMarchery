@@ -191,6 +191,12 @@ class Session(
         )
     }
 
+    /** Metadata-only revision, also legal after completion; opaque references are never resolved here. */
+    fun withEquipmentReferences(bowUuid: String?, arrowSetUuid: String?, changedAt: Instant): Session {
+        if (bowUuid == this.bowUuid && arrowSetUuid == this.arrowSetUuid) return this
+        return copy(bowUuid = bowUuid, arrowSetUuid = arrowSetUuid, updatedAt = changedAt)
+    }
+
     /** Returns a new value while preserving creation time and temporal history. */
     fun copy(
         uuid: String = this.uuid,

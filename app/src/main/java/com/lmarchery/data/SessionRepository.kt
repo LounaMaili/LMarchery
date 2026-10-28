@@ -2,6 +2,7 @@ package com.lmarchery.data
 
 import com.lmarchery.core.database.*
 import com.lmarchery.core.scoring.archive.DomainArchive
+import com.lmarchery.core.scoring.archive.DomainArchiveV2
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -23,11 +24,28 @@ interface ArchiveImporter {
     suspend fun importArchive(preview: ArchiveImportPreview): ArchiveImportResult
 }
 
+fun interface ArchiveV2Source {
+    suspend fun readArchiveV2(): ArchiveV2ReadResult
+}
+
 /** Process-owned store; disk access and reconstruction never block the UI thread. */
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer {
+    val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
+
+    override suspend fun readArchiveV2() = withContext(dispatcher) { store.readArchiveV2() }
+    override suspend fun previewImportV2(archive: DomainArchiveV2): PreparedV2Result = withContext(dispatcher) {
+        when (val result = store.previewImportV2(archive)) {
+            is ArchiveV2PreviewResult.Ready -> PreparedV2Result.Ready(object : PreparedV2Import {
+                override val plan = result.preview.plan
+                override suspend fun commit() = withContext(dispatcher) { store.importArchiveV2(result.preview) }
+            })
+            is ArchiveV2PreviewResult.NeedsIntervention -> PreparedV2Result.NeedsIntervention(result.diagnostic)
+            is ArchiveV2PreviewResult.TechnicalFailure -> PreparedV2Result.TechnicalFailure(result.cause)
+        }
+    }
     override suspend fun previewImport(archive: DomainArchive) = withContext(dispatcher) { store.previewImport(archive) }
     override suspend fun importArchive(preview: ArchiveImportPreview) = withContext(dispatcher) { store.importArchive(preview) }
     override suspend fun readArchive() = withContext(dispatcher) { store.readArchive() }
