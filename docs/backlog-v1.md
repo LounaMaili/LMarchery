@@ -3,8 +3,12 @@
 > État livré et travaux restants ; les critères produit complets dépassent le premier parcours Android.
 
 Légende : ✓ livré ; ◐ partiel, limite explicitée ; ☐ prévu.
-La saisie Android reste à trois flèches en entraînement, avec les quatre profils
-WA indoor ; les autres configurations valides sont consultables. La visée précise est en évaluation dans la [PR 22](validation-visee-precise-pr22.md) ;
+Sur la branche d'intégration #43/#44 (pas encore dans `main`), la création rapide
+historique reste à trois flèches en entraînement, avec quatre profils WA indoor.
+L'éditeur configurable distinct propose les huit profils publiés, FIXED
+3/6/personnalisé ou FREE, distance et scoring explicites par volée
+([ADR 043](adr/043-editeur-android-seances-configurables.md)).
+La visée précise est en évaluation dans la [PR 22](validation-visee-precise-pr22.md) ;
 son implémentation ne vaut pas validation de précision tactile. Les tests ADB
 ne remplacent pas les essais terrain au doigt. Voir
 [ADR 023](adr/023-historique-et-presentation-scores-android.md).
@@ -63,7 +67,7 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 3.1 | Créer l'entité `Session` (Room) avec status DRAFT/IN_PROGRESS/COMPLETED | ✓ | Haute |
 | 3.2 | Créer l'entité `End` (Room) avec status EDITING/VALIDATED | ✓ | Haute |
 | 3.3 | Créer l'entité `ArrowImpact` (Room) | ✓ | Haute |
-| 3.4 | Écran « Créer une séance » (formulaire) | ◐ 4 profils WA, 3 flèches, entraînement | Haute |
+| 3.4 | Écran « Créer une séance » (formulaire) | ✓ création rapide historique + parcours configurable distinct sur la branche d'intégration ; essais physiques reportés | Haute |
 | 3.5 | Ajouter une volée à la séance en cours | ✓ | Haute |
 | 3.6 | Valider une volée (EDITING → VALIDATED) | ✓ | Haute |
 | 3.7 | Calcul et affichage du score total et du score max possible | ✓ maximum de référence explicité | Haute |
@@ -156,10 +160,10 @@ Epic 6 (paramètres/UX) — transversal
 
 ---
 
-*Dernière mise à jour : 16 octobre 2026*
+*Dernière mise à jour : 28 octobre 2026*
 
-La branche SAF V3 ajoute export complet, restauration atomique confirmée et
-consultation seule des séances configurables ([ADR 042](adr/042-saf-v3-consultation-configurable.md)).
+L'étape SAF V3 ajoute export complet, restauration atomique confirmée et
+consultation des séances configurables ([ADR 042](adr/042-saf-v3-consultation-configurable.md)).
 Les essais Android SAF réels sont reportés : [protocole PR42](validation-saf-v3-pr42.md).
 La création/édition configurable est raccordée dans un contrôleur distinct
 ([ADR 043](adr/043-editeur-android-seances-configurables.md)) : brouillon, démarrage,
@@ -167,3 +171,7 @@ configurations par volée, saisie, décisions, repositionnements, métadonnées 
 clôture. Validation automatisée JVM/SQLite ; essais physiques reportés. Les
 arbitrages sportifs de validation incomplète et de correction rétroactive ne
 sont pas tranchés.
+
+La [recette intégrée #44](recette-integration-v3-pr44.md) relie les contrôleurs
+réels à SQLite sur disque, sans appareil. Le [plan de consolidation](plan-consolidation-main.md)
+distingue la pile livrée des branches encore indépendantes ; aucune fusion n'est réalisée.

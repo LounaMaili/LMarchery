@@ -109,6 +109,14 @@ les ferment et les rouvrent ; le rapport confirme les tests réellement découve
 Le journal contient la preuve du moteur SQLite natif et de l'en-tête sur disque.
 Le workflow existant appelle le même script, donc ces validations lui sont obligatoires.
 
+La [recette intégrée PR44](recette-integration-v3-pr44.md) fait partie de
+`:core:database:jvmTest` : une liste explicite de sources Android indépendantes
+du framework est compilée uniquement pour les tests. Les vrais contrôleurs,
+coordinateurs et repository utilisent Room et des documents synthétiques sur
+disque. Ce pont ne modifie pas les dépendances de production ; voir
+[ADR 044](adr/044-recette-integration-v3-et-consolidation.md). Il ne remplace pas
+des essais Compose, tactiles ou SAF sur appareil.
+
 Le plugin Multiplatform de Kotlin 2.0.21 annonce une plage AGP testée jusqu'à 8.5
 et avertit pour 8.7.3. Cet avertissement n'est pas masqué. La génération KSP et les
 deux compilations sont validées dans ce projet sans changer le toolchain ; voir
@@ -195,10 +203,11 @@ restent distinctes ; aucune base utilisateur antérieure à Room 1 n'est invent�
 Références : [événements GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows),
 [cache et validation du wrapper](https://github.com/gradle/actions/blob/main/docs/setup-gradle.md).
 
-## Introduire la CI dans la pile de PR
+## Historique : introduction de la CI dans les PR #2 et #3
 
-La pile existante est `main` ← PR #2 (`v1/02-session-domain`) ← PR #3
-(`v1/03-android-skeleton`). `main` et #2 ne contiennent pas encore Android.
+Cette section décrit l'état antérieur à leur consolidation, et non l'état
+actuel de `main`. La pile était `main` ← PR #2 (`v1/02-session-domain`) ← PR #3
+(`v1/03-android-skeleton`), avant l'arrivée d'Android dans `main`.
 
 La consolidation utilise une PR supplémentaire de `chore/ci-quality-gate` vers
 `v1/03-android-skeleton` : son diff ne contient que la consolidation CI/script/docs.
@@ -222,6 +231,12 @@ autorisation explicite. La variante JVM seule est prête pour ce cas.
 Le check `Quality gate` pourra être rendu obligatoire dans les protections de
 branche seulement après une exécution GitHub réussie et une décision explicite
 du mainteneur. Le nom du workflow ne configure pas lui-même une protection.
+
+Au relevé du 28 octobre 2026, `main` est protégée avec PR et contrôle strict
+`Quality gate` obligatoires, admins compris ; force-push et suppression sont
+interdits. La pile actuelle #22–44, ses checks et les étapes à revérifier sont
+décrits dans le [plan de consolidation](plan-consolidation-main.md). Cette
+mission ne modifie aucune protection ni branche parente.
 
 Toujours distinguer les résultats : **tests locaux**, **compilation debug**,
 **lint**, et **run CI GitHub**. Un workflow configuré ou une validation YAML
