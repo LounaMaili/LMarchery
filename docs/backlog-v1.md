@@ -94,10 +94,13 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 4.8 | Écran « Choisir un preset » (sélection rapide) | ☐ | Moyenne |
 | 4.9 | Préremplir les champs de séance depuis un preset | ☐ | Moyenne |
 | 4.10 | Presets par défaut (salle 18m, extérieur 30m, 50m, 70m) | ☐ | Basse |
-| 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ◐ contrat/codec V2 + Room atomique (ADR 026/027) ; SAF V2 à faire | Haute |
+| 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ✓ contrat/codec, Room atomique et SAF V2 (ADR 026/027/029) ; essais physiques de la combinaison à faire | Haute |
 
 La collecte/restauration Room V2 est décrite dans l’[ADR 027](adr/027-archives-room-v2-atomiques.md).
-Le parcours SAF/Android reste V1 ; sa connexion V2 est obligatoire avant une UI de catalogue.
+Le parcours SAF Android propose V2 complet et V1 explicitement sans matériel
+([ADR 029](adr/029-saf-android-archives-v2.md)). Le catalogue est connecté
+(ADR 030) ; la validation physique de la combinaison reste distincte des tests
+automatisés de l’[ADR 036](adr/036-reconciliation-android-configurations.md).
 
 **Critère de sortie** : un utilisateur peut créer un preset et lancer une séance en 2 taps.
 

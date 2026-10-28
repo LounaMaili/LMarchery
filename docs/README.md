@@ -8,7 +8,7 @@
 4. **[Modèle de données V1](modele-donnees-v1.md)** — Entités, relations, attributs, énumérations, export/import
 5. **[Backlog V1](backlog-v1.md)** — Tickets de travail par épic,可直接 actionnable
 6. **[Tests terrain V1](tests-terrain-v1.md)** — Grilles de test pour les premiers retours réels
-7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON opérationnel, UUID, reconstruction, import contrôlé et limites ; [contrat V2 matériel](export-format-v2.md) sans intégration Room/Android
+7. **[Contrat de sauvegarde V1](export-format-v1.md)** — JSON opérationnel, UUID, reconstruction, import contrôlé et limites ; [contrat V2 matériel](export-format-v2.md) avec stockage Room, catalogue et sauvegardes SAF Android sur la branche d'intégration
 8. **[Roadmap reconnaissance](reconnaissance-roadmap.md)** — Trajectoire V2→V4 pour la reconnaissance d'image
 
 Pour préparer le développement et les validations :
@@ -48,6 +48,10 @@ Pour préparer le développement et les validations :
 | 30 | Catalogue matériel Android | [adr/030-catalogue-materiel-android.md](adr/030-catalogue-materiel-android.md) |
 | 31 | Associations matériel/séances | [adr/031-associations-materiel-seances.md](adr/031-associations-materiel-seances.md) |
 | 32 | Intégration visée précise et matériel | [adr/032-integration-visee-materiel.md](adr/032-integration-visee-materiel.md) |
+| 33 | Fondation des configurations par volée | [adr/033-fondation-configurations-par-volee.md](adr/033-fondation-configurations-par-volee.md) |
+| 34 | Scoring par volée et statistiques mixtes | [adr/034-scoring-par-volee-statistiques-mixtes.md](adr/034-scoring-par-volee-statistiques-mixtes.md) |
+| 35 | Agrégat des séances à configurations mixtes | [adr/035-agregat-seances-configurations-mixtes.md](adr/035-agregat-seances-configurations-mixtes.md) |
+| 36 | Réconciliation Android et domaine configurable | [adr/036-reconciliation-android-configurations.md](adr/036-reconciliation-android-configurations.md) |
 
 Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-visee-materiel.md).
 
