@@ -149,7 +149,7 @@ private class Reconstructor {
         }
     }
 
-    private fun end(value: EndSnapshot, target: TargetType, path: String): End {
+    fun end(value: EndSnapshot, target: TargetType, path: String): End {
         identity(value.uuid, "$path.uuid")
         val impacts = value.impacts.mapIndexed { index, impact -> impact(impact, target, "$path.impacts[$index]") }
         return checked(path) {
@@ -265,3 +265,10 @@ private fun entities(archive: DomainArchive): Map<String, Entity> = buildMap {
         }
     }
 }
+
+/** Shared internal component validation; no synthetic homogeneous session or public V1 projection. */
+@JvmSynthetic
+internal fun reconstructArchiveEnd(
+    value: EndSnapshot, target: TargetType, path: String, onIssue: (ArchiveIssue) -> Nothing,
+): End = try { Reconstructor().end(value, target, path) }
+catch (error: UnresolvedArchive) { onIssue(error.issue) }

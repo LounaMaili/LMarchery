@@ -4,6 +4,7 @@ import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.ScoreDecisionRequest
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.scoring.archive.DomainArchive
+import com.lmarchery.core.scoring.archive.TargetProfileSnapshot
 import java.time.Instant
 import java.util.Collections
 
@@ -137,6 +138,13 @@ class ConfiguredSession private constructor(private val state: State) {
                 ConfiguredSessionIssue.MISSING_HISTORICAL_SOURCE, "sessions[$sessionUuid]", "A validated source session is required.")
             val profile = archive.profiles.singleOrNull { it.definition == session.targetType } ?: throw ConfiguredSessionException(
                 ConfiguredSessionIssue.MISSING_HISTORICAL_SOURCE, "profiles", "The exact historical profile is required.")
+            return fromValidatedLegacySession(session, profile)
+        }
+
+        /** Internal composition for a validated V2 source, retaining its catalog outside this session. */
+        @JvmSynthetic
+        internal fun fromValidatedLegacySession(session: Session, profile: TargetProfileSnapshot): ConfiguredSession {
+            require(profile.definition == session.targetType) { "The complete historical profile must match." }
             val configuration = EndConfiguration(session.targetType, profile.regulatoryEdition, session.distanceM,
                 session.arrowCountMode, session.arrowCountPerEnd, session.isIndoor, session.scoringMode)
             val metadata = ConfiguredSessionMetadata(session.date, session.title, session.plannedEndCount,
@@ -145,8 +153,24 @@ class ConfiguredSession private constructor(private val state: State) {
                 session.endedAt, session.ends.map { ConfiguredEnd(session.uuid, it, configuration, EndConfigurationOrigin.LegacyDerived) },
                 session.createdAt, session.updatedAt))
         }
+
+        /** Rehydration is not a revision or a public constructor; the existing validator always runs. */
+        @JvmSynthetic
+        internal fun rehydrate(
+            uuid: String, metadata: ConfiguredSessionMetadata, initialConfiguration: EndConfiguration,
+            initialOrigin: InitialConfigurationOrigin, status: SessionStatus, startedAt: Instant?, endedAt: Instant?,
+            ends: List<ConfiguredEnd>, createdAt: Instant, updatedAt: Instant,
+        ): ConfiguredSession {
+            require(ends.all { it.origin == EndConfigurationOrigin.LegacyDerived ||
+                (status != SessionStatus.DRAFT && startedAt != null && !it.end.createdAt.isBefore(startedAt)) }) {
+                "A newly captured end requires a started session and cannot predate its start."
+            }
+            return ConfiguredSession(State(uuid, metadata, initialConfiguration, initialOrigin,
+                status, startedAt, endedAt, ends.toList(), createdAt, updatedAt))
+        }
     }
 
+    // All callers remain in this module and must use the complete snapshot validator.
     private data class State(val uuid: String, val metadata: ConfiguredSessionMetadata,
         val initialConfiguration: EndConfiguration, val initialConfigurationOrigin: InitialConfigurationOrigin, val status: SessionStatus, val startedAt: Instant?,
         val endedAt: Instant?, val ends: List<ConfiguredEnd>, val createdAt: Instant, val updatedAt: Instant)

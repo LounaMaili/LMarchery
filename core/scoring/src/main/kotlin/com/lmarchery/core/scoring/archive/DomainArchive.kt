@@ -38,7 +38,7 @@ fun snapshotArchive(profiles: List<TargetProfileSnapshot>, sessions: List<Sessio
     )
 }
 
-private fun End.toSnapshot(): EndSnapshot = EndSnapshot(uuid, index, status, notes,
+internal fun End.toSnapshot(): EndSnapshot = EndSnapshot(uuid, index, status, notes,
     UtcTimestamps.format(createdAt), UtcTimestamps.format(updatedAt), validatedAt?.let(UtcTimestamps::format),
     impacts.map(ArrowImpact::toSnapshot))
 
