@@ -266,3 +266,9 @@ remplacement explicite. Voir l’[ADR 031](docs/adr/031-associations-materiel-se
 ## Licence
 
 © 2026 — Tous droits réservés. Code propriétaire, diffusion non autorisée sans accord écrit.
+
+
+Pour une recette sans remplacer l'application normale, utiliser la variante
+**LMarchery TEST** (`com.lmarchery.sandbox`) et le
+[protocole d'installation isolée](docs/validation-android-sandbox.md).
+Le contrôle APK ne réalise aucune installation et ne valide pas les gestes humains.
