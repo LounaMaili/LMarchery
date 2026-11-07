@@ -64,6 +64,15 @@ et exécute ce vérificateur, sans `continue-on-error`. Les tests JVM Android so
 également exécutés pour sandbox par `gradlew test`. Ces répétitions ne sont pas
 de nouveaux cas métier. Le parcours normal et toutes ses validations demeurent.
 
+La première CI de cette variante a exposé une course dans le harnais SQLite de
+perte d'acquittement : son flag global pouvait déclencher l'exception sur le
+commit d'un lecteur du catalogue, avant celui de l'écrivain visé. Une lecture
+réelle forcée après l'UPDATE reproduit ce défaut. Le hook de test identifie
+désormais la connexion ayant effectué l'UPDATE et ne perd que son acquittement.
+Le test conserve ses assertions et exige aussi le succès du lecteur intercalé,
+le commit durable, l'état incertain du contrôleur puis la réconciliation sans
+DML. Aucun chemin de production ni règle transactionnelle n'est modifié.
+
 Le certificat debug dépend du poste et du keystore utilisé ; il ne constitue
 pas un certificat de distribution. `ANDROID_USER_HOME` doit être cohérent pendant
 les deux compilations. Une première vérification a correctement refusé des APK

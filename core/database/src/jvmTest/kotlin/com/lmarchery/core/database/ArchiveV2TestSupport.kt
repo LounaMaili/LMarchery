@@ -7,6 +7,7 @@ import com.lmarchery.core.model.equipment.*
 import com.lmarchery.core.model.session.Session
 import com.lmarchery.core.scoring.archive.*
 import java.nio.file.Path
+import java.util.concurrent.atomic.AtomicInteger
 import kotlin.test.assertIs
 
 internal fun v2(
@@ -24,15 +25,22 @@ internal suspend fun RoomSessionStore.restoreV2(archive: DomainArchiveV2): Archi
 
 /** Real native disk driver. Hooks run AFTER successful native step, including real INSERT/COMMIT. */
 internal fun hookedStore(path: Path, hook: (String, Boolean) -> Unit): RoomSessionStore {
+    return hookedConnectionStore(path) { _, sql, row -> hook(sql, row) }
+}
+
+/** Connection tokens keep a writer fault from being consumed by an unrelated reader COMMIT. */
+internal fun hookedConnectionStore(path: Path, hook: (Int, String, Boolean) -> Unit): RoomSessionStore {
     val native = BundledSQLiteDriver()
+    val identities = AtomicInteger()
     val driver = object : SQLiteDriver by native {
         override fun open(fileName: String): SQLiteConnection {
             val c = native.open(fileName)
+            val connection = identities.incrementAndGet()
             return object : SQLiteConnection by c {
                 override fun prepare(sql: String): SQLiteStatement {
                     val s = c.prepare(sql)
                     return object : SQLiteStatement by s {
-                        override fun step(): Boolean = s.step().also { hook(sql, it) }
+                        override fun step(): Boolean = s.step().also { hook(connection, sql, it) }
                     }
                 }
             }
