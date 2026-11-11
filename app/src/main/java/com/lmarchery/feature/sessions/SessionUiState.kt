@@ -94,6 +94,7 @@ data class SessionUiState(
     val precisionAimEnabled: Boolean = false,
     val newImpactCandidate: PositionCandidate? = null,
     val activeAim: ActiveAim? = null,
+    val impactPicking: ImpactPicking? = null,
 ) {
     init { require(saved == null || configuredSaved == null) }
     val session get() = saved?.sessions?.single()
@@ -106,14 +107,18 @@ data class SessionUiState(
     val aimContext get() = session?.let { s -> displayedEnd?.let { end -> AimContext(s.uuid, end.uuid, impactEdit?.impactUuid) } }
     val aimedPoint get() = activeAim?.candidate?.point ?: newImpactCandidate?.point ?: impactEdit?.candidate
     val hasAimProposal get() = newImpactCandidate != null || activeAim != null
-    val canNavigate get() = ready && impactEdit == null && equipmentEdit == null && !hasAimProposal
-    val canEdit get() = ready && equipmentEdit == null && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
+    val guardTargetTouches get() = precisionAimEnabled || impactPicking != null
+    val canNavigate get() = ready && impactEdit == null && equipmentEdit == null && !hasAimProposal && impactPicking == null
+    private val editableSession get() = ready && equipmentEdit == null && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
+    val canEdit get() = editableSession && impactPicking == null
     val canEditEquipment get() = canNavigate && screen == SessionScreen.SESSION && session != null
     val isEditingDisplayed get() = editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid
     val selectedImpact get() = impactEdit?.takeIf { it.sessionUuid == session?.uuid && it.endUuid == displayedEnd?.uuid }
         ?.let { selection -> displayedEnd?.impacts?.find { it.uuid == selection.impactUuid } }
     val canSelectImpact get() = canEdit && isEditingDisplayed && !hasAimProposal &&
         (impactEdit == null || impactEdit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED))
+    val canBeginImpactPicking get() = canSelectImpact && impactEdit == null && displayedEnd?.impacts?.isNotEmpty() == true
+    val canPickImpact get() = editableSession && isEditingDisplayed && impactPicking != null && impactEdit == null && !hasAimProposal
     val canBeginReposition get() = canSelectImpact && selectedImpact != null
     val canProposeReposition get() = canEdit && isEditingDisplayed && selectedImpact != null &&
         impactEdit?.proposal is ImpactProposal.Reposition &&

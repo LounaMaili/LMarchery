@@ -38,6 +38,7 @@ kotlin {
                 "feature/configured/ConfiguredSessionController.kt",
                 "feature/sessions/SessionController.kt", "feature/sessions/SessionUiState.kt",
                 "feature/sessions/SessionEquipment.kt", "feature/sessions/PositionCandidate.kt",
+                "feature/sessions/ImpactPicking.kt",
                 "feature/sessions/ScoreDecisionOptions.kt", "feature/sessions/SessionPresentation.kt",
                 "feature/sessions/ConfiguredSessionPresentation.kt",
                 "feature/equipment/EquipmentController.kt", "feature/equipment/EquipmentDraft.kt",

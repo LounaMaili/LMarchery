@@ -21,11 +21,14 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
     val state by controller.state.collectAsStateWithLifecycle()
     var leave by rememberSaveable { mutableStateOf(false) }
     var finish by rememberSaveable { mutableStateOf(false) }
-    val back = { if (!state.busy) { if (state.pending != null || state.form != null || state.hasProposal) leave = true else controller.close() } }
+    val back = { if (!state.busy) {
+        if (state.impactPicking != null) controller.cancelImpactPicking(state.impactPicking!!.context)
+        else if (state.pending != null || state.form != null || state.hasProposal) leave = true else controller.close()
+    } }
     BackHandler(onBack = back)
     val height = LocalConfiguration.current.screenHeightDp.toFloat()
     Scaffold { padding ->
-        LazyColumn(Modifier.fillMaxSize().preciseTouchGuard(controller, { controller.state.value.precision },
+        LazyColumn(Modifier.fillMaxSize().preciseTouchGuard(controller, { controller.state.value.guardTargetTouches },
             { controller.state.value.activeAim?.token }, controller::cancelAim).padding(padding).padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
             item { Text("Séance configurable", style = MaterialTheme.typography.headlineMedium)
@@ -75,6 +78,8 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                         Text("Volée ${end.index} · ${end.impacts.size} / ${captured.configuration.arrowCountPerEnd?.toString() ?: "libre"} flèches")
                         configurationLines(captured.configuration).forEach { Text(it) }
                         Text("Configuration enregistrée immuable · ${captured.origin.label()}")
+                        ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
+                            { controller.beginImpactPicking(context) }, controller::cancelImpactPicking, controller::choosePickedImpact)
                         if (state.editableEnd) {
                             OutlinedButton({ controller.precision(context, !state.precision) },
                                 enabled = state.ready && state.position == null && (state.edit == null || state.canReposition)) {
@@ -83,15 +88,18 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                         }
                         key(context) {
                             TargetCanvas(captured.configuration.targetType, end.impacts, when {
+                                state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                 state.canReposition -> TargetInteraction.REPOSITION
                                 state.canAdd || state.canAim -> TargetInteraction.ADD_IMPACT
                                 else -> TargetInteraction.READ_ONLY
                             }, end.uuid, { controller.tapped(context, it) },
                                 Modifier.widthIn(max = if (state.precision) precisionTargetMaxWidth(height).dp else 480.dp).fillMaxWidth().aspectRatio(1f),
                                 state.selectedImpact?.uuid, state.activeAim?.candidate?.point ?: state.position?.point ?: state.edit?.candidate,
-                                state.precision, { controller.beginAim(context, it) }, controller::moveAim, controller::finishAim, controller::cancelAim)
+                                state.precision, { controller.beginAim(context, it) }, controller::moveAim, controller::finishAim, controller::cancelAim,
+                                state.impactPicking?.context, controller::pickImpact)
                         }
-                        Text(if (state.precision) "Maintenir puis relâcher propose une position sans l’enregistrer. Loupe ×4 ; faites défiler hors du blason."
+                        Text(if (state.impactPicking != null) "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
+                            else if (state.precision) "Maintenir puis relâcher propose une position sans l’enregistrer. Loupe ×4 ; faites défiler hors du blason."
                             else "Un appui en mode rapide enregistre une nouvelle flèche, lorsque la saisie est disponible.")
                         if (captured.configuration.arrowCountMode == ArrowCountMode.FIXED && end.impacts.size < captured.configuration.arrowCountPerEnd!!)
                             Text("Capacité non atteinte : information uniquement. La validation n’impose pas de compléter cette capacité.")

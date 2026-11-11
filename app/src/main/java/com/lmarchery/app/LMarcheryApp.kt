@@ -61,6 +61,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         if (!state.busy && !state.archiveOperationLocked) {
             when {
                 state.pending != null -> confirmLeave = true
+                state.impactPicking != null -> controller.cancelImpactPicking(state.impactPicking!!.context)
                 state.impactEdit != null -> confirmCancelCorrection = true
                 state.hasAimProposal -> confirmCancelAim = true
                 state.equipmentEdit != null -> controller.cancelEquipmentEdit()
@@ -201,6 +202,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             state.displayedEnd?.let { end -> item(key = "target") {
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
                                 val interaction = when {
+                                    state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                     state.canProposeReposition -> TargetInteraction.REPOSITION
                                     state.canAddImpact || state.canAimNewImpact -> TargetInteraction.ADD_IMPACT
                                     else -> TargetInteraction.READ_ONLY
@@ -212,13 +214,17 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     if (state.precisionAimEnabled) Text("Maintenez et déplacez le doigt. Loupe ×4 déportée ; relâcher ne sauvegarde pas. Faites défiler hors du blason.", style = MaterialTheme.typography.bodySmall)
                                 }
                                 val aimContext = AimContext(session.uuid, end.uuid, state.impactEdit?.impactUuid)
+                                ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
+                                    controller::beginImpactPicking, controller::cancelImpactPicking, controller::choosePickedImpact)
                                 TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
                                     Modifier.widthIn(max = if (state.precisionAimEnabled) precisionTargetMaxWidth(screenHeightDp).dp else 480.dp)
                                         .fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid,
                                     state.aimedPoint,
                                     state.precisionAimEnabled, { point -> controller.beginPreciseAim(aimContext, point) }, controller::movePreciseAim,
-                                    controller::finishPreciseAim, controller::cancelPreciseAim)
+                                    controller::finishPreciseAim, controller::cancelPreciseAim,
+                                    state.impactPicking?.context, controller::pickImpact)
                                 Text(when {
+                                    state.impactPicking != null -> "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
                                     state.precisionAimEnabled && state.canAim -> "Visée précise · proposition non enregistrée. Les coins extérieurs restent M."
                                     state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
                                     state.canAddImpact -> "Touchez pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs comptent M."

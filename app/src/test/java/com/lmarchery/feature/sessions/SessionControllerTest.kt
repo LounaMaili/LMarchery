@@ -503,6 +503,75 @@ class SessionControllerTest {
         }
     }
 
+    @Test fun `canvas picker selects a full end arrow without identity allocation or write`() {
+        Harness().use { h ->
+            var allocations = 0
+            val c = controller(h) { allocations++; UUID.randomUUID().toString() }; c.create(); c.three()
+            val before = c.state.value.saved; val writes = h.repository.updateCalls.size; val count = allocations
+            val arrow = c.state.value.displayedEnd!!.impacts.first()
+            c.beginImpactPicking(); assertTrue(c.state.value.canPickImpact); assertTrue(c.state.value.guardTargetTouches)
+            c.pickImpact(c.state.value.impactPicking!!.context, arrow.point, .001f)
+            assertEquals(arrow, c.state.value.selectedImpact); assertNull(c.state.value.impactPicking); assertFalse(c.state.value.guardTargetTouches)
+            assertSame(before, c.state.value.saved); assertEquals(writes, h.repository.updateCalls.size); assertEquals(count, allocations)
+        }
+    }
+    @Test fun `canvas picker keeps overlapping arrows ambiguous until a numbered choice`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); repeat(2) { c.addImpact(NormalizedPoint(.15f, 0f)) }
+            val arrows = c.state.value.editingEnd!!.impacts; val writes = h.repository.updateCalls.size
+            c.beginImpactPicking(); val context = c.state.value.impactPicking!!.context
+            c.pickImpact(context, NormalizedPoint(.15f, 0f), .001f)
+            assertEquals(arrows.map { it.uuid }, c.state.value.impactPicking!!.candidates); assertNull(c.state.value.impactEdit)
+            c.choosePickedImpact(context, "missing"); assertNull(c.state.value.impactEdit)
+            c.choosePickedImpact(context, arrows.last().uuid)
+            assertEquals(arrows.last(), c.state.value.selectedImpact); assertEquals(writes, h.repository.updateCalls.size)
+        }
+    }
+    @Test fun `empty canvas selection and old ticket never add an arrow or reset precise mode`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.addImpact(NormalizedPoint(.15f, 0f)); c.setPrecisionAim(true)
+            val before = c.state.value.saved; val writes = h.repository.updateCalls.size
+            c.beginImpactPicking(); val old = c.state.value.impactPicking!!.context
+            c.pickImpact(old, NormalizedPoint(.8f, .8f), .01f)
+            assertTrue(c.state.value.impactPicking!!.candidates.isEmpty()); c.cancelImpactPicking(old)
+            assertTrue(c.state.value.precisionAimEnabled)
+            c.beginImpactPicking(); val current = c.state.value.impactPicking!!.context; assertNotEquals(old, current)
+            c.pickImpact(old, NormalizedPoint(.15f, 0f), .01f); c.cancelImpactPicking(old)
+            c.pickImpact(current.copy(endUuid = "another"), NormalizedPoint(.15f, 0f), .01f)
+            assertEquals(current, c.state.value.impactPicking!!.context); assertFalse(c.state.value.impactPicking!!.hasTapped)
+            assertNull(c.state.value.impactEdit); assertSame(before, c.state.value.saved); assertEquals(writes, h.repository.updateCalls.size)
+        }
+    }
+    @Test fun `canvas picking excludes all incompatible session and archive commands`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.three(); val before = c.state.value.saved; val writes = h.repository.updateCalls.size
+            val end = c.state.value.displayedEnd!!; c.beginImpactPicking()
+            c.targetTapped(NormalizedPoint(.25f, 0f)); c.selectImpact(end.uuid, end.impacts.first().uuid)
+            c.configure(); c.returnToList(); c.selectEnd(end.uuid); c.validateEnd(); c.newEnd(); c.completeSession(); c.beginEquipmentEdit()
+            assertFalse(c.acquireExport()); assertFalse(c.acquireImport()); assertNotNull(c.state.value.impactPicking)
+            assertNull(c.state.value.impactEdit); assertSame(before, c.state.value.saved); assertEquals(writes, h.repository.updateCalls.size)
+        }
+    }
+    @Test fun `empty validated and completed ends cannot enter the canvas picker`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.beginImpactPicking(); assertNull(c.state.value.impactPicking)
+            c.three(); c.validateEnd(); c.beginImpactPicking(); assertNull(c.state.value.impactPicking)
+            c.newEnd(); c.completeSession(); c.beginImpactPicking(); assertNull(c.state.value.impactPicking)
+        }
+    }
+    @Test fun `canvas picker cannot replace a precise candidate or an unconfirmed write`() = runBlocking<Unit> {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.addImpact(NormalizedPoint(.15f, 0f)); c.setPrecisionAim(true)
+            val token = c.beginPreciseAim(c.state.value.aimContext!!, NormalizedPoint(.25f, 0f))!!
+            c.finishPreciseAim(token, NormalizedPoint(.25f, 0f)); val candidate = c.state.value.newImpactCandidate
+            c.beginImpactPicking(); assertNull(c.state.value.impactPicking); assertSame(candidate, c.state.value.newImpactCandidate)
+            c.cancelNewImpactCandidate(); c.setPrecisionAim(false)
+            h.repository.nextUpdate = SessionUpdateResult.TechnicalFailure(IOException("Synthetic unconfirmed write"))
+            c.addImpact(NormalizedPoint(.25f, 0f)); val pending = c.state.value.pending
+            assertNotNull(pending); c.beginImpactPicking(); assertNull(c.state.value.impactPicking); assertSame(pending, c.state.value.pending)
+        }
+    }
+
     private class FakeRepository : SessionRepository {
         val stored = linkedMapOf<String, DomainArchive>()
         val unreadable = linkedMapOf<String, SessionReadResult>()

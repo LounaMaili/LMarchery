@@ -7,7 +7,7 @@ import com.lmarchery.feature.scoring.AimMultiTouchGuard
 
 /** Observe before children, including a second finger over controls outside the target. */
 fun Modifier.precisionTouchGuard(controller: SessionController): Modifier = preciseTouchGuard(controller,
-    { controller.state.value.precisionAimEnabled }, { controller.state.value.activeAim?.token }, controller::cancelPreciseAim)
+    { controller.state.value.guardTargetTouches }, { controller.state.value.activeAim?.token }, controller::cancelPreciseAim)
 
 fun Modifier.preciseTouchGuard(owner: Any, enabled: () -> Boolean, token: () -> Long?, cancel: (Long) -> Unit): Modifier = pointerInput(owner) {
     val guard = AimMultiTouchGuard()
