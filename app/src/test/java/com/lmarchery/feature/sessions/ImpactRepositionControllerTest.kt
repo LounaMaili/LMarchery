@@ -426,4 +426,36 @@ class ImpactRepositionControllerTest {
             assertTrue(h.repository.calls.isEmpty())
         }
     }
+    @Test fun `selection action slots survive double activation in quick and precise modes without a write`() {
+        for (precise in listOf(false, true)) Harness().use { h ->
+            h.controller.setPrecisionAim(precise)
+            val saved = h.ui.saved
+            val slots = impactPickingActions(h.ui.impactPicking, h.ui.canBeginImpactPicking)
+            h.controller.beginImpactPicking(); val active = h.ui.impactPicking!!
+            h.controller.beginImpactPicking()
+            assertSame(active, h.ui.impactPicking)
+            val current = impactPickingActions(h.ui.impactPicking, h.ui.canBeginImpactPicking)
+            assertEquals(slots.map { it.action }, current.map { it.action })
+            assertFalse(current[0].enabled); assertTrue(current[1].enabled)
+            assertFalse(h.ui.canAddImpact); assertFalse(h.ui.canChangeAimMode)
+            h.controller.cancelImpactPicking(active.context); h.controller.cancelImpactPicking(active.context)
+            assertEquals(slots, impactPickingActions(h.ui.impactPicking, h.ui.canBeginImpactPicking))
+            assertEquals(precise, h.ui.precisionAimEnabled); assertSame(saved, h.ui.saved)
+            assertEquals(0, h.clock.calls); assertTrue(h.repository.calls.isEmpty())
+        }
+    }
+    @Test fun `opening correction twice cannot cancel confirm or change the selected operation`() {
+        for (score in listOf(false, true)) Harness().use { h ->
+            h.select()
+            if (score) h.controller.beginScoreCorrection() else h.controller.beginReposition()
+            val correction = h.ui.impactEdit
+            h.controller.beginReposition(); h.controller.beginScoreCorrection()
+            assertSame(correction, h.ui.impactEdit)
+            assertFalse(h.ui.canBeginReposition); assertFalse(h.ui.canBeginScoreCorrection)
+            assertFalse(h.ui.canConfirmReposition); assertFalse(h.ui.canConfirmScoreDecision)
+            h.controller.cancelImpactEdit(); h.controller.cancelImpactEdit()
+            assertNull(h.ui.impactEdit); assertTrue(h.repository.calls.isEmpty()); assertEquals(0, h.clock.calls)
+        }
+    }
+
 }
