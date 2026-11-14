@@ -80,9 +80,9 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                         Text("Configuration enregistrée immuable · ${captured.origin.label()}")
                         ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
                             { controller.beginImpactPicking(context) }, controller::cancelImpactPicking, controller::choosePickedImpact)
-                        if (state.editableEnd) {
+                        if (state.editableEnd || state.impactPicking != null) {
                             OutlinedButton({ controller.precision(context, !state.precision) },
-                                enabled = state.ready && state.position == null && (state.edit == null || state.canReposition)) {
+                                enabled = state.editableEnd && state.position == null && (state.edit == null || state.canReposition)) {
                                 Text(if (state.precision) "Visée précise · passer en rapide" else "Activer la visée précise")
                             }
                         }
@@ -112,27 +112,33 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                             Text("Flèche #${impact.index} : ${impact.scoreLabel()} · ${impact.repositions.size} repositionnement(s)")
                         }
                     }
-                    state.edit?.let { edit -> item {
-                        Text("Flèche sélectionnée #${state.selectedImpact?.index} · ${edit.phase}")
-                        if (state.canSelectImpact) {
-                            OutlinedButton({ controller.beginReposition(context) }) { Text("Repositionner explicitement") }
-                            OutlinedButton({ controller.beginDecision(context) }) { Text("Jugement ou correction de score") }
+                    if (session.status == SessionStatus.IN_PROGRESS && end.status == EndStatus.EDITING) item(key = "impact-edit-${end.uuid}") {
+                        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                            val edit = state.edit
+                            Text("Correction d’impact", style = MaterialTheme.typography.titleMedium)
+                            ImpactEditActions(state.canSelectImpact && state.selectedImpact != null,
+                                state.canSelectImpact && state.selectedImpact != null, state.ready && edit != null,
+                                { controller.beginReposition(context) }, { controller.beginDecision(context) }, { controller.closeSelection(context) })
+                            if (edit == null) {
+                                Text("Sélectionnez une flèche pour corriger sa position ou son score.")
+                                return@Column
+                            }
+                            Text("Flèche sélectionnée #${state.selectedImpact?.index} · ${edit.phase}")
+                            if (state.canReposition) {
+                                Text("Touchez une nouvelle position ; elle reste un candidat local.")
+                                edit.candidate?.let { Text("Nouvelle géométrie : ${edit.preview?.scoreFinal}") }
+                                OutlinedTextField(edit.reason, { controller.repositionReason(context, it) }, label = { Text("Motif (obligatoire si décision manuelle invalidée)") })
+                                Button({ controller.confirmReposition(context) }, enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
+                            }
+                            if (state.scoreOptions != null && state.selectedImpact != null && (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)) {
+                                ScoreDecisionPanel(ScoreDecisionView(state.selectedImpact!!, edit, state.scoreOptions!!, state.selectedBoundary,
+                                    state.proposedScore, state.canScoreDecision, state.canConfirmScore),
+                                    ScoreDecisionActions({ controller.boundary(context, it) }, { controller.scoreValue(context, it) },
+                                        { controller.showBoundaries(context) }, { controller.exceptional(context, true) }, { controller.exceptional(context, false) },
+                                        { controller.decisionReason(context, it) }, { controller.confirmDecision(context) }))
+                            }
                         }
-                        if (state.canReposition) {
-                            Text("Touchez une nouvelle position ; elle reste un candidat local.")
-                            edit.candidate?.let { Text("Nouvelle géométrie : ${edit.preview?.scoreFinal}") }
-                            OutlinedTextField(edit.reason, { controller.repositionReason(context, it) }, label = { Text("Motif (obligatoire si décision manuelle invalidée)") })
-                            Button({ controller.confirmReposition(context) }, enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
-                        }
-                        if (state.scoreOptions != null && state.selectedImpact != null && (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)) {
-                            ScoreDecisionPanel(ScoreDecisionView(state.selectedImpact!!, edit, state.scoreOptions!!, state.selectedBoundary,
-                                state.proposedScore, state.canScoreDecision, state.canConfirmScore),
-                                ScoreDecisionActions({ controller.boundary(context, it) }, { controller.scoreValue(context, it) },
-                                    { controller.showBoundaries(context) }, { controller.exceptional(context, true) }, { controller.exceptional(context, false) },
-                                    { controller.decisionReason(context, it) }, { controller.confirmDecision(context) }))
-                        }
-                        TextButton({ controller.closeSelection(context) }, enabled = state.ready) { Text("Fermer / abandonner la correction locale") }
-                    } }
+                    }
                 }
                 items(session.ends.sortedBy { it.end.index }, key = { "details-${it.uuid}" }) { ConfiguredEndCard(session, it) }
             }

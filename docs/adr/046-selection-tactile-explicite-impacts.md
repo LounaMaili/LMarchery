@@ -2,7 +2,7 @@
 
 - Date : 11 novembre 2026.
 - Base : main `3f85eb442d082993b27d64f9f20aa3087d48a37d`.
-- Statut : implémenté dans une branche produit distincte ; essais tactiles réels reportés.
+- Statut : candidate produit locale avec correctif P2 ; non publiée. Des essais TEST antérieurs sont partiels ; cet arbre reste à qualifier sur appareil.
 
 ## Besoin et périmètre
 
@@ -110,6 +110,36 @@ Android indépendantes déjà compilées par ce harnais ; aucune dépendance ajo
 
 La [PR 45](https://github.com/LounaMaili/LMarchery/pull/45) prépare séparément
 l'identité TEST. Elle n'est ni modifiée ni fusionnée par ce chantier. Aucune APK
-contenant cette sélection n'est installée ; compilation et tests JVM ne qualifient
-pas le dispatch tactile, le scroll réel, la rotation ou l'ergonomie au doigt.
+contenant cette sélection n'était installée lors de l'implémentation initiale.
+La combinaison TEST et son correctif ont depuis fait l'objet d'essais partiels.
+Les doubles activations rapide/précise et certaines sélections ambiguës ont été
+observées sur cette ancienne variante ; le scénario complet reste non qualifié.
+Aucun PASS physique n'est transféré à cette candidate produit. Compilation et
+tests JVM ne qualifient pas le dispatch tactile, le scroll réel, la rotation ou
+l'ergonomie au doigt.
 Voir le [protocole d'essai](../validation-selection-tactile-impacts.md).
+
+
+## Correctif issu de la première recette TEST — 11 novembre 2026
+
+Sur la combinaison locale `14d4328`, deux appuis ADB successifs activaient puis
+annulaient la sélection historique : le masquage de la visée et le remplacement
+du contrôle d’entrée déplaçaient Annuler sous le même point. Les doubles appels
+au contrôleur, correctement ignorés, ne prouvaient pas la stabilité des commandes
+réellement touchées.
+
+Le correctif conserve deux colonnes permanentes, de largeur égale et à libellés
+constants, pour activer et annuler. Seule leur disponibilité change. Messages et
+choix ambigus viennent ensuite. La commande de visée reste présente et désactivée
+pendant la sélection dans les deux éditeurs. Les commandes d’ouverture de
+repositionnement/score restent également présentes et désactivées pendant leur
+proposition ; la fermeture possède sa colonne distincte avant les détails
+variables. Le cadre désactivé reste présent après fermeture. Aucun temporisateur ni délai de jugement ne remplace les tickets et
+validations existants.
+
+Les nouveaux tests portent sur le contrat de présentation partagé, les transitions
+des contrôleurs et l’absence de DML sous triggers SQLite. Ils ne mesurent pas les
+rectangles Compose sur téléphone. Une future APK TEST de cette candidate doit
+être autorisée séparément avant sa qualification ; aucune installation n'est
+effectuée lors de la préparation produit. Voir
+[analyse et protocole de reprise](../correction-selection-recette-20261111.md).

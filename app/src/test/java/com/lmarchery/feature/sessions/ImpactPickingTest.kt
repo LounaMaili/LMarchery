@@ -79,4 +79,13 @@ class ImpactPickingTest {
             assertFailsWith<IllegalArgumentException> { ImpactPickViewport(1f, it) }
         }
     }
+    @Test fun `more than twenty coincident impacts remain complete beyond the display limit`() {
+        val ordered = (1..43).map { arrow(it, .25f, -.25f) }
+        val scrambled = ordered.filter { it.index % 2 == 0 }.reversed() + ordered.filter { it.index % 2 != 0 }
+        val selected = findImpactCandidates(scrambled, NormalizedPoint(.25f, -.25f), 0f)
+        assertEquals(43, selected.size)
+        assertEquals(ordered.map { it.uuid }, selected)
+        assertEquals(ordered.first().uuid, selected.first())
+        assertEquals(ordered.last().uuid, selected.last())
+    }
 }

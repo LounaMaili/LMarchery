@@ -30,3 +30,14 @@ fun findImpactCandidates(impacts: List<ArrowImpact>, point: NormalizedPoint, tol
         viewport.contains(it.point) && hypot(it.point.x.toDouble() - point.x.toDouble(), it.point.y.toDouble() - point.y.toDouble()) <= toleranceNormalized.toDouble()
     }.sortedWith(compareBy<ArrowImpact> { it.index }.thenBy { it.uuid }).map { it.uuid })
 }
+
+/** Permanent, ordered touch slots: cancellation never replaces the activation control. */
+enum class ImpactPickingAction(val label: String) {
+    BEGIN("Sélectionner sur le blason"),
+    CANCEL("Annuler la sélection sur le blason"),
+}
+data class ImpactPickingActionState(val action: ImpactPickingAction, val enabled: Boolean)
+fun impactPickingActions(picking: ImpactPicking?, canBegin: Boolean): List<ImpactPickingActionState> = listOf(
+    ImpactPickingActionState(ImpactPickingAction.BEGIN, picking == null && canBegin),
+    ImpactPickingActionState(ImpactPickingAction.CANCEL, picking != null),
+)

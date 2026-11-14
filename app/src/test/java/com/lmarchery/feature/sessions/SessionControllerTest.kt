@@ -572,6 +572,47 @@ class SessionControllerTest {
         }
     }
 
+    @Test fun `double canvas picker activation and repeated choice never allocate or write`() {
+        Harness().use { h ->
+            var allocations = 0
+            val c = controller(h) { allocations++; UUID.randomUUID().toString() }
+            c.create(); repeat(2) { c.addImpact(NormalizedPoint(.15f, 0f)) }
+            val saved = c.state.value.saved; val writes = h.repository.updateCalls.size; val count = allocations
+            c.beginImpactPicking(); val picking = c.state.value.impactPicking!!
+            c.beginImpactPicking(); assertSame(picking, c.state.value.impactPicking)
+            c.pickImpact(picking.context, NormalizedPoint(.15f, 0f), .001f)
+            val uuid = c.state.value.displayedEnd!!.impacts.last().uuid
+            c.choosePickedImpact(picking.context, uuid); val edit = c.state.value.impactEdit!!
+            c.choosePickedImpact(picking.context, uuid); c.pickImpact(picking.context, NormalizedPoint(.15f, 0f), .001f)
+            assertSame(edit, c.state.value.impactEdit); assertEquals(uuid, c.state.value.selectedImpact!!.uuid)
+            assertSame(saved, c.state.value.saved); assertEquals(writes, h.repository.updateCalls.size)
+            assertEquals(count, allocations); assertNull(c.state.value.pending); assertNull(c.state.value.problem)
+        }
+    }
+    @Test fun `old canvas callbacks after close reopen never alter new picker or precise candidate`() {
+        Harness().use { h ->
+            val c = controller(h); c.create(); c.addImpact(NormalizedPoint(.15f, 0f))
+            val saved = c.state.value.saved!!; val session = c.state.value.session!!
+            val arrow = c.state.value.displayedEnd!!.impacts.single(); val writes = h.repository.updateCalls.size
+            c.beginImpactPicking(); val old = c.state.value.impactPicking!!.context
+            c.cancelImpactPicking(old); c.returnToList(); c.openSession(session.uuid); c.setPrecisionAim(true)
+            c.beginImpactPicking(); val current = c.state.value.impactPicking!!
+            assertNotEquals(old, current.context)
+            c.pickImpact(old, arrow.point, .001f); c.choosePickedImpact(old, arrow.uuid); c.cancelImpactPicking(old)
+            assertSame(current, c.state.value.impactPicking); assertNull(c.state.value.impactEdit)
+            c.cancelImpactPicking(current.context)
+            val token = c.beginPreciseAim(c.state.value.aimContext!!, arrow.point)!!
+            val active = c.state.value.activeAim!!
+            c.pickImpact(old, arrow.point, .001f); c.choosePickedImpact(old, arrow.uuid); c.cancelImpactPicking(old)
+            assertSame(active, c.state.value.activeAim)
+            c.finishPreciseAim(token, arrow.point)
+            assertEquals(arrow.point, c.state.value.newImpactCandidate!!.point)
+            assertTrue(c.state.value.precisionAimEnabled)
+            assertEquals(saved.toSnapshot(), c.state.value.saved!!.toSnapshot()); assertEquals(writes, h.repository.updateCalls.size)
+            assertNull(c.state.value.pending); assertNull(c.state.value.problem)
+        }
+    }
+
     private class FakeRepository : SessionRepository {
         val stored = linkedMapOf<String, DomainArchive>()
         val unreadable = linkedMapOf<String, SessionReadResult>()

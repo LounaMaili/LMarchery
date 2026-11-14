@@ -2,12 +2,49 @@ package com.lmarchery.feature.configured
 
 import com.lmarchery.backup.V3TestData as f
 import com.lmarchery.core.model.NormalizedPoint
+import com.lmarchery.core.model.session.ArrowCountMode
+import com.lmarchery.core.model.session.EndArrowCountShortcut
 import com.lmarchery.feature.sessions.*
 import kotlinx.coroutines.*
 import kotlin.test.*
 
 class ConfiguredImpactPickingTest {
     private val nine = NormalizedPoint(.105f, 0f)
+    @Test fun `double activation and repeated numbered choice preserve one selection and no write`() = EditorHarness().use { h ->
+        h.editing(); h.tap(.105f); h.tap(.105f)
+        val saved = h.ui.saved; val writes = h.requests.size; val allocations = h.uuids; val now = h.now
+        val stale = h.ctx
+        h.c.beginImpactPicking(stale); val picking = h.ui.impactPicking!!
+        h.c.beginImpactPicking(stale); h.c.beginImpactPicking(h.ctx)
+        assertSame(picking, h.ui.impactPicking)
+        h.c.pickImpact(picking.context, nine, .001f)
+        val uuid = h.ui.selectedEnd!!.end.impacts.last().uuid
+        h.c.choosePickedImpact(picking.context, uuid); val edit = h.ui.edit!!
+        h.c.choosePickedImpact(picking.context, uuid); h.c.pickImpact(picking.context, nine, .001f)
+        assertSame(edit, h.ui.edit); assertEquals(uuid, h.ui.selectedImpact!!.uuid)
+        assertSame(saved, h.ui.saved); assertEquals(writes, h.requests.size)
+        assertEquals(allocations, h.uuids); assertEquals(now, h.now)
+        assertNull(h.ui.pending); assertNull(h.ui.problem)
+    }
+    @Test fun `callbacks before editor close cannot select or cancel after reopen or precise aim`() = EditorHarness().use { h ->
+        h.editing(); h.tap(.105f); val saved = h.ui.saved!!; val writes = h.requests.size
+        val uuid = h.ui.selectedEnd!!.end.impacts.single().uuid
+        h.c.beginImpactPicking(h.ctx); val old = h.ui.impactPicking!!.context
+        h.c.abandonLocalAndClose(); assertFalse(h.ui.open)
+        h.c.open(saved.uuid); h.c.precision(h.ctx, true)
+        h.c.beginImpactPicking(h.ctx); val current = h.ui.impactPicking!!
+        assertNotEquals(old, current.context)
+        h.c.pickImpact(old, nine, .001f); h.c.choosePickedImpact(old, uuid); h.c.cancelImpactPicking(old)
+        assertSame(current, h.ui.impactPicking); assertNull(h.ui.edit)
+        h.c.cancelImpactPicking(current.context)
+        val token = h.c.beginAim(h.ctx, nine)!!; val active = h.ui.activeAim!!
+        h.c.pickImpact(old, nine, .001f); h.c.choosePickedImpact(old, uuid); h.c.cancelImpactPicking(old)
+        assertSame(active, h.ui.activeAim)
+        h.c.finishAim(token, nine)
+        assertEquals(nine, h.ui.position!!.point); assertTrue(h.ui.precision)
+        assertEquals(saved, h.ui.saved); assertEquals(writes, h.requests.size)
+        assertNull(h.ui.pending); assertNull(h.ui.problem)
+    }
     @Test fun `single hit opens existing selection with no UUID date or write`() = EditorHarness().use { h ->
         h.editing(); h.tap(.105f); val before = h.ui.saved; val now = h.now; val allocations = h.uuids; val writes = h.requests.size
         val arrow = h.ui.selectedEnd!!.end.impacts.single()
@@ -95,4 +132,62 @@ class ConfiguredImpactPickingTest {
         h.c.cancelImpactPicking(context); h.c.selectImpact(h.ctx, arrow.uuid)
         assertEquals(arrow, h.ui.selectedImpact); assertTrue(h.ui.selectedImpact!!.isMiss); assertSame(before, h.ui.saved)
     }
+    @Test fun `partial and full configured ends retain distinct action slots after double activation`() {
+        for (count in listOf(1, 3)) for (precise in listOf(false, true)) EditorHarness().use { h ->
+            h.editing(); repeat(count) { h.tap(.105f) }; h.c.precision(h.ctx, precise)
+            val before = h.ui.saved; val writes = h.requests.size; val now = h.now; val uuids = h.uuids
+            val slots = impactPickingActions(h.ui.impactPicking, h.ui.canBeginImpactPicking)
+            h.c.beginImpactPicking(h.ctx); val active = h.ui.impactPicking!!
+            h.c.beginImpactPicking(h.ctx)
+            assertSame(active, h.ui.impactPicking)
+            val current = impactPickingActions(h.ui.impactPicking, h.ui.canBeginImpactPicking)
+            assertEquals(slots.map { it.action }, current.map { it.action })
+            assertFalse(current[0].enabled); assertTrue(current[1].enabled)
+            assertFalse(h.ui.canAdd); assertFalse(h.ui.canAim)
+            h.c.cancelImpactPicking(active.context); h.c.cancelImpactPicking(active.context)
+            assertEquals(slots, impactPickingActions(h.ui.impactPicking, h.ui.canBeginImpactPicking))
+            assertEquals(precise, h.ui.precision); assertSame(before, h.ui.saved)
+            assertEquals(writes, h.requests.size); assertEquals(now, h.now); assertEquals(uuids, h.uuids)
+        }
+    }
+    @Test fun `repeated correction opening cannot submit discard or switch a configured proposal`() = EditorHarness().use { h ->
+        h.editing(); h.tap(.105f); val writes = h.requests.size
+        for (score in listOf(false, true)) {
+            h.selectFirst()
+            if (score) h.c.beginDecision(h.ctx) else h.c.beginReposition(h.ctx)
+            val correction = h.ui.edit
+            h.c.beginDecision(h.ctx); h.c.beginReposition(h.ctx)
+            assertSame(correction, h.ui.edit); assertFalse(h.ui.canSelectImpact)
+            assertFalse(h.ui.canConfirmReposition); assertFalse(h.ui.canConfirmScore)
+            h.closeSelection(); h.c.closeSelection(h.ctx); assertNull(h.ui.edit)
+        }
+        assertEquals(writes, h.requests.size)
+    }
+
+    @Test fun `a superseded ambiguous choice is rejected within the same FREE picker context`() = EditorHarness().use { h ->
+        h.c.create(); h.c.title(h.token, "Synthetic FREE ambiguity counterreview")
+        h.c.shortcut(h.token, EndArrowCountShortcut.FREE); h.c.confirmForm(h.token)
+        h.c.start(); h.nextEnd()
+        repeat(2) { h.tap(.15f) }; repeat(2) { h.tap(.75f) }
+        assertEquals(ArrowCountMode.FREE, h.ui.selectedEnd!!.configuration.arrowCountMode)
+        val arrows = h.ui.selectedEnd!!.end.impacts
+        assertEquals(4, arrows.size)
+        h.c.precision(h.ctx, true)
+        val before = h.ui.saved; val writes = h.requests.size; val now = h.now; val uuids = h.uuids
+        h.c.beginImpactPicking(h.ctx); val context = h.ui.impactPicking!!.context
+        h.c.pickImpact(context, NormalizedPoint(.15f, 0f), .001f)
+        assertEquals(arrows.take(2).map { it.uuid }, h.ui.impactPicking!!.candidates)
+        h.c.pickImpact(context, NormalizedPoint(.75f, 0f), .001f)
+        assertEquals(context, h.ui.impactPicking!!.context)
+        assertEquals(arrows.drop(2).map { it.uuid }, h.ui.impactPicking!!.candidates)
+        h.c.choosePickedImpact(context, arrows.first().uuid)
+        assertNull(h.ui.edit)
+        assertEquals(arrows.drop(2).map { it.uuid }, h.ui.impactPicking!!.candidates)
+        h.c.choosePickedImpact(context, arrows.last().uuid)
+        assertEquals(arrows.last(), h.ui.selectedImpact); assertNull(h.ui.impactPicking)
+        assertSame(before, h.ui.saved); assertTrue(h.ui.precision)
+        assertEquals(writes, h.requests.size); assertEquals(now, h.now); assertEquals(uuids, h.uuids)
+        assertNull(h.ui.pending); assertNull(h.ui.problem)
+    }
+
 }

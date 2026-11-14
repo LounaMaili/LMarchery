@@ -207,7 +207,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     state.canAddImpact || state.canAimNewImpact -> TargetInteraction.ADD_IMPACT
                                     else -> TargetInteraction.READ_ONLY
                                 }
-                                if (state.canEdit && state.isEditingDisplayed) {
+                                if ((state.canEdit || state.impactPicking != null) && state.isEditingDisplayed) {
                                     OutlinedButton(onClick = { controller.setPrecisionAim(!state.precisionAimEnabled) }, enabled = state.canChangeAimMode) {
                                         Text(if (state.precisionAimEnabled) "Visée précise activée · revenir au mode rapide" else "Activer la visée précise")
                                     }
@@ -244,7 +244,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                         Button(onClick = controller::startSession, enabled = state.ready) { Text("Démarrer") }
                                 }
                             }
-                            if (state.impactEdit != null) item(key = "impact-edit") { ImpactEditPanel(state, controller) }
+                            if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed)
+                                item(key = "impact-edit") { ImpactEditPanel(state, controller) }
                             if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
                                 items(state.displayedEnd!!.impacts, key = { "select-${it.uuid}" }) { impact ->
                                     OutlinedButton(onClick = { controller.selectImpact(state.displayedEnd!!.uuid, impact.uuid) },
@@ -322,10 +323,17 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
 
 @Composable
 private fun ImpactEditPanel(state: SessionUiState, controller: SessionController) {
-    val edit = state.impactEdit ?: return
-    val impact = state.selectedImpact ?: return
+    val edit = state.impactEdit
+    val impact = state.selectedImpact
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("Correction d’impact", style = MaterialTheme.typography.titleMedium)
+            ImpactEditActions(state.canBeginReposition, state.canBeginScoreCorrection, state.ready && edit != null,
+                controller::beginReposition, controller::beginScoreCorrection, controller::cancelImpactEdit)
+            if (edit == null || impact == null) {
+                Text("Sélectionnez une flèche pour corriger sa position ou son score.")
+                return@Column
+            }
             Text("Flèche #${impact.index} sélectionnée", style = MaterialTheme.typography.titleMedium)
             Text("Position enregistrée : (${impact.point.x}, ${impact.point.y}) · ${impact.scoreLabel()}")
             val provenance = impact.finalScoreDecision.provenance
@@ -356,21 +364,10 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
                     label = { Text(if (impact.finalScoreDecision.provenance.isManual) "Motif obligatoire (décision manuelle)" else "Motif facultatif") },
                     singleLine = true, modifier = Modifier.fillMaxWidth())
             }
-            if (edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED)) {
-                Button(onClick = controller::beginReposition, enabled = state.canBeginReposition) { Text("Repositionner") }
-                OutlinedButton(onClick = controller::beginScoreCorrection, enabled = state.canBeginScoreCorrection) { Text("Corriger le score") }
-            }
             if (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)
                 ScoreDecisionPanel(state, controller)
             if (edit.candidate != null) Button(onClick = controller::confirmReposition,
                 enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
-            TextButton(onClick = controller::cancelImpactEdit, enabled = state.ready) {
-                Text(when {
-                    edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED) -> "Fermer la sélection"
-                    edit.proposal is ImpactProposal.Reposition -> "Annuler le repositionnement"
-                    else -> "Annuler la décision de score"
-                })
-            }
             Text("Cercle orange : flèche sélectionnée. Croix violette : proposition non enregistrée.", style = MaterialTheme.typography.bodySmall)
         }
     }
