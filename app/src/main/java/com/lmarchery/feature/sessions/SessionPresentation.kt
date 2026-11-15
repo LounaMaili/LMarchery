@@ -30,6 +30,19 @@ fun SessionStatus.label(): String = when (this) {
     SessionStatus.COMPLETED -> "Terminée"
 }
 
+/** Display text only; edit permissions remain in the configured controller and domain. */
+internal data class ConfiguredHistoryLabels(val statusLine: String, val openActionLabel: String)
+
+internal fun configuredHistoryLabels(status: SessionStatus): ConfiguredHistoryLabels = ConfiguredHistoryLabels(
+    statusLine = "${status.label()} · configurations par volée" +
+        if (status == SessionStatus.COMPLETED) " · lecture seule" else "",
+    openActionLabel = when (status) {
+        SessionStatus.DRAFT -> "Ouvrir le brouillon"
+        SessionStatus.IN_PROGRESS -> "Reprendre la séance"
+        SessionStatus.COMPLETED -> "Consulter — lecture seule"
+    },
+)
+
 fun Session.civilDateLabel(): String =
     "${date.localDateTime.format(DateTimeFormatter.ofPattern("d MMM uuuu 'à' HH:mm", Locale.FRANCE))} · ${date.zoneId.id} (${date.offset})"
 
