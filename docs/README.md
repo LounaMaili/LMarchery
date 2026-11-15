@@ -63,6 +63,7 @@ et [plan de consolidation vers main](plan-consolidation-main.md).
 | 42 | SAF V3 et consultation des séances configurables | [adr/042-saf-v3-consultation-configurable.md](adr/042-saf-v3-consultation-configurable.md) |
 | 43 | Éditeur Android des séances configurables | [adr/043-editeur-android-seances-configurables.md](adr/043-editeur-android-seances-configurables.md) |
 | 44 | Recette intégrée V3 et préparation de la consolidation | [adr/044-recette-integration-v3-et-consolidation.md](adr/044-recette-integration-v3-et-consolidation.md) |
+| 45 | Variante Android isolée de recette | [adr/045-variante-android-sandbox.md](adr/045-variante-android-sandbox.md) |
 | 46 | Sélection tactile explicite des impacts | [adr/046-selection-tactile-explicite-impacts.md](adr/046-selection-tactile-explicite-impacts.md) |
 
 Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
@@ -72,3 +73,5 @@ Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-vise
 ---
 
 *Dernière mise à jour : 11 novembre 2026*
+
+Campagne isolée : [LMarchery TEST et protocole Android](validation-android-sandbox.md).

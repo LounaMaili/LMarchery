@@ -66,3 +66,9 @@ jobs:
 
       - name: Tests, debug build and lint
         run: ./scripts/dev-check.sh --no-daemon --console=plain
+
+      - name: Sandbox build, lint and APK isolation
+        if: steps.project.outputs.has_android == 'true'
+        run: |
+          ./gradlew :app:assembleSandbox :app:lintSandbox --no-daemon --console=plain
+          python3 scripts/verify-sandbox-apk.py

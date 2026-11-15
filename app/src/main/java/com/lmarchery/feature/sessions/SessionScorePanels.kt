@@ -24,7 +24,7 @@ fun SessionHistoryCard(entry: SessionEntry, enabled: Boolean, onOpen: () -> Unit
                 val view = presentConfiguredScore(configured)
                 Text(configured.metadata.title, style = MaterialTheme.typography.titleMedium)
                 Text(configured.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
-                Text("${configured.status.label()} · configurations par volée · lecture seule")
+                Text(configuredHistoryLabels(configured.status).statusLine)
                 view.summary?.let { Text("Somme validée : ${it.totals.validated.score} · provisoire : ${it.totals.provisional.score}") }
                 view.diagnostic?.let { Text("Calcul indisponible : $it") }
             } else {
@@ -34,7 +34,8 @@ fun SessionHistoryCard(entry: SessionEntry, enabled: Boolean, onOpen: () -> Unit
             }
             OutlinedButton(onClick = onOpen, enabled = enabled) {
                 Text(if (!entry.readable) "Réessayer la lecture"
-                    else if (entry.configured != null) "Consulter — lecture seule" else session!!.openActionLabel())
+                    else if (entry.configured != null) configuredHistoryLabels(entry.configured.status).openActionLabel
+                    else session!!.openActionLabel())
             }
         }
     }

@@ -241,3 +241,29 @@ mission ne modifie aucune protection ni branche parente.
 Toujours distinguer les résultats : **tests locaux**, **compilation debug**,
 **lint**, et **run CI GitHub**. Un workflow configuré ou une validation YAML
 réussie ne prouve pas que la CI a fonctionné sur GitHub.
+
+
+## Variante de recette isolée
+
+Le build type `sandbox`, dérivé de debug, produit
+`app/build/outputs/apk/sandbox/app-sandbox.apk` : `com.lmarchery.sandbox`,
+nom **LMarchery TEST**. Le debug normal garde `com.lmarchery`. Voir
+[ADR 045](adr/045-variante-android-sandbox.md) et
+[protocole sans données réelles](validation-android-sandbox.md).
+
+Après les validations complètes, dans le **même** environnement JDK/SDK et
+`ANDROID_USER_HOME` (exporter ces variables avant les commandes directes) :
+
+```bash
+./gradlew :app:assembleSandbox :app:lintSandbox --console=plain
+python3 scripts/verify-sandbox-apk.py
+```
+
+Le Quality gate exécute aussi ces commandes ; `gradlew test` comprend les tests
+JVM sandbox en plus de debug/release. Ils réexécutent les mêmes cas Android,
+sans créer autant de nouveaux tests uniques. Le vérificateur utilise les
+Command-Line Tools `apkanalyzer` et Build Tools 34.0.0 `aapt`/`apksigner`, sans
+connexion ou installation. Les certificats debug des builds doivent correspondre ;
+une différence de home/keystore se corrige en reconstruisant dans le même contexte,
+pas en supprimant le contrôle. Les UID et répertoires réels restent à confirmer
+sur appareil autorisé avant toute installation ; un APK validé seul ne les prouve pas.

@@ -32,18 +32,35 @@ class AppConfiguredFailureTest {
         }
     }
     @Test fun `lost native COMMIT acknowledgement reaches real controller and read reconciliation performs zero DML`() = runBlocking<Unit> {
-        val arm=AtomicBoolean();val pendingCommit=AtomicBoolean();val committed=AtomicBoolean()
+        val arm=AtomicBoolean();val pendingCommit=AtomicReference<Int?>(null);val committed=AtomicBoolean()
+        val readerCommitted=AtomicBoolean()
         val writes=AtomicInteger()
-        val store=hookedStore(path) { sql,_->
-            if(sql.startsWith("UPDATE") && sql.contains("`sessions`")){writes.incrementAndGet();if(arm.get())pendingCommit.set(true)}
-            if(sql=="END TRANSACTION" && pendingCommit.compareAndSet(true,false)) {arm.set(false);committed.set(true);throw IllegalStateException("Synthetic acknowledgement lost after actual COMMIT")}
+        lateinit var store:RoomSessionStore
+        store=hookedConnectionStore(path) { connection,sql,_->
+            if(sql.startsWith("UPDATE") && sql.contains("`sessions`")) {
+                writes.incrementAndGet()
+                if(arm.get()) {
+                    pendingCommit.set(connection)
+                    // Force a real reader transaction to finish before this writer commits.
+                    val read = runBlocking(Dispatchers.IO) { withTimeout(15000) { store.equipment.discoverBows() } }
+                    assertIs<EquipmentDiscoveryResult.Found>(read, read.toString())
+                }
+            }
+            if(sql=="END TRANSACTION") {
+                val writer=pendingCommit.get()
+                if(writer!=null && connection!=writer) readerCommitted.set(true)
+                if(writer!=null && connection==writer && pendingCommit.compareAndSet(writer,null)) {
+                    arm.set(false);committed.set(true)
+                    throw IllegalStateException("Synthetic acknowledgement lost after actual writer COMMIT")
+                }
+            }
         }
         lateinit var proposed:com.lmarchery.core.scoring.configured.ConfiguredSession
         AppIntegrationHarness(path,store).use { h ->
             h.editing();val saved=h.state.saved;arm.set(true)
             h.onUi { h.configured.editMetadata();h.configured.title(h.token," Acquired commit 🏹 ");h.configured.confirmForm(h.token) };h.idle()
             val pending=requireNotNull(h.state.pending);proposed=pending.request.proposed
-            assertTrue(committed.get());assertEquals(saved,h.state.saved);assertEquals(proposed,h.archive().sessions.single())
+            assertTrue(readerCommitted.get());assertTrue(committed.get());assertEquals(saved,h.state.saved);assertEquals(proposed,h.archive().sessions.single())
             assertEquals(ConfiguredProblemKind.UNCONFIRMED,h.state.problem!!.kind)
             val count=writes.get();h.assertOtherOperationsLocked();h.onUi { h.configured.retryExact() };assertEquals(count,writes.get())
             f.denyWrites(path,d.tables);h.onUi { h.configured.reconcile() };h.idle()

@@ -16,6 +16,16 @@ android {
         versionName = "0.1.0"
     }
 
+    buildTypes {
+        create("sandbox") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".sandbox"
+            versionNameSuffix = "-sandbox"
+            signingConfig = signingConfigs.getByName("debug")
+            matchingFallbacks += listOf("debug")
+        }
+    }
+
     buildFeatures {
         compose = true
     }
@@ -57,4 +67,12 @@ dependencies {
 
     testImplementation(kotlin("test-junit5"))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+// initWith copies build-type settings; configurations inherit debug tooling explicitly.
+configurations.named("sandboxImplementation") {
+    extendsFrom(configurations.getByName("debugImplementation"))
+}
+configurations.named("sandboxRuntimeOnly") {
+    extendsFrom(configurations.getByName("debugRuntimeOnly"))
 }
