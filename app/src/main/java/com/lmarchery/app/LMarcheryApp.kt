@@ -61,6 +61,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         if (!state.busy && !state.archiveOperationLocked) {
             when {
                 state.pending != null -> confirmLeave = true
+                state.impactPicking != null -> controller.cancelImpactPicking(state.impactPicking!!.context)
                 state.impactEdit != null -> confirmCancelCorrection = true
                 state.hasAimProposal -> confirmCancelAim = true
                 state.equipmentEdit != null -> controller.cancelEquipmentEdit()
@@ -201,24 +202,29 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             state.displayedEnd?.let { end -> item(key = "target") {
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
                                 val interaction = when {
+                                    state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                     state.canProposeReposition -> TargetInteraction.REPOSITION
                                     state.canAddImpact || state.canAimNewImpact -> TargetInteraction.ADD_IMPACT
                                     else -> TargetInteraction.READ_ONLY
                                 }
-                                if (state.canEdit && state.isEditingDisplayed) {
+                                if ((state.canEdit || state.impactPicking != null) && state.isEditingDisplayed) {
                                     OutlinedButton(onClick = { controller.setPrecisionAim(!state.precisionAimEnabled) }, enabled = state.canChangeAimMode) {
                                         Text(if (state.precisionAimEnabled) "Visée précise activée · revenir au mode rapide" else "Activer la visée précise")
                                     }
                                     if (state.precisionAimEnabled) Text("Maintenez et déplacez le doigt. Loupe ×4 déportée ; relâcher ne sauvegarde pas. Faites défiler hors du blason.", style = MaterialTheme.typography.bodySmall)
                                 }
                                 val aimContext = AimContext(session.uuid, end.uuid, state.impactEdit?.impactUuid)
+                                ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
+                                    controller::beginImpactPicking, controller::cancelImpactPicking, controller::choosePickedImpact)
                                 TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
                                     Modifier.widthIn(max = if (state.precisionAimEnabled) precisionTargetMaxWidth(screenHeightDp).dp else 480.dp)
                                         .fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid,
                                     state.aimedPoint,
                                     state.precisionAimEnabled, { point -> controller.beginPreciseAim(aimContext, point) }, controller::movePreciseAim,
-                                    controller::finishPreciseAim, controller::cancelPreciseAim)
+                                    controller::finishPreciseAim, controller::cancelPreciseAim,
+                                    state.impactPicking?.context, controller::pickImpact)
                                 Text(when {
+                                    state.impactPicking != null -> "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
                                     state.precisionAimEnabled && state.canAim -> "Visée précise · proposition non enregistrée. Les coins extérieurs restent M."
                                     state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
                                     state.canAddImpact -> "Touchez pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs comptent M."
@@ -238,7 +244,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                         Button(onClick = controller::startSession, enabled = state.ready) { Text("Démarrer") }
                                 }
                             }
-                            if (state.impactEdit != null) item(key = "impact-edit") { ImpactEditPanel(state, controller) }
+                            if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed)
+                                item(key = "impact-edit") { ImpactEditPanel(state, controller) }
                             if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
                                 items(state.displayedEnd!!.impacts, key = { "select-${it.uuid}" }) { impact ->
                                     OutlinedButton(onClick = { controller.selectImpact(state.displayedEnd!!.uuid, impact.uuid) },
@@ -316,10 +323,17 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
 
 @Composable
 private fun ImpactEditPanel(state: SessionUiState, controller: SessionController) {
-    val edit = state.impactEdit ?: return
-    val impact = state.selectedImpact ?: return
+    val edit = state.impactEdit
+    val impact = state.selectedImpact
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("Correction d’impact", style = MaterialTheme.typography.titleMedium)
+            ImpactEditActions(state.canBeginReposition, state.canBeginScoreCorrection, state.ready && edit != null,
+                controller::beginReposition, controller::beginScoreCorrection, controller::cancelImpactEdit)
+            if (edit == null || impact == null) {
+                Text("Sélectionnez une flèche pour corriger sa position ou son score.")
+                return@Column
+            }
             Text("Flèche #${impact.index} sélectionnée", style = MaterialTheme.typography.titleMedium)
             Text("Position enregistrée : (${impact.point.x}, ${impact.point.y}) · ${impact.scoreLabel()}")
             val provenance = impact.finalScoreDecision.provenance
@@ -350,21 +364,10 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
                     label = { Text(if (impact.finalScoreDecision.provenance.isManual) "Motif obligatoire (décision manuelle)" else "Motif facultatif") },
                     singleLine = true, modifier = Modifier.fillMaxWidth())
             }
-            if (edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED)) {
-                Button(onClick = controller::beginReposition, enabled = state.canBeginReposition) { Text("Repositionner") }
-                OutlinedButton(onClick = controller::beginScoreCorrection, enabled = state.canBeginScoreCorrection) { Text("Corriger le score") }
-            }
             if (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)
                 ScoreDecisionPanel(state, controller)
             if (edit.candidate != null) Button(onClick = controller::confirmReposition,
                 enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
-            TextButton(onClick = controller::cancelImpactEdit, enabled = state.ready) {
-                Text(when {
-                    edit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED) -> "Fermer la sélection"
-                    edit.proposal is ImpactProposal.Reposition -> "Annuler le repositionnement"
-                    else -> "Annuler la décision de score"
-                })
-            }
             Text("Cercle orange : flèche sélectionnée. Croix violette : proposition non enregistrée.", style = MaterialTheme.typography.bodySmall)
         }
     }

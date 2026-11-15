@@ -42,9 +42,10 @@ class SessionController(
 
     private var creationEquipmentLoad: Job? = null
     private var equipmentLoadGeneration = 0
+    private var impactPickSerial = 0L
 
     fun acquireExport(): Boolean {
-        if (!ui.ready || ui.impactEdit != null || ui.equipmentEdit != null || ui.hasAimProposal) return false
+        if (!ui.ready || ui.impactEdit != null || ui.equipmentEdit != null || ui.hasAimProposal || ui.impactPicking != null) return false
         ui = ui.copy(archiveOperationLocked = true)
         return true
     }
@@ -168,7 +169,7 @@ class SessionController(
     }
     fun discardAndReturnToList() {
         if (ui.busy || ui.archiveOperationLocked) return
-        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null)
+        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null, impactPicking = null)
         returnToList()
     }
     fun setPrecisionAim(enabled: Boolean) {
@@ -214,6 +215,32 @@ class SessionController(
         ui = ui.copy(activeAim = null)
         invalidAction(error.message ?: "Position invalide.")
         null
+    }
+    fun beginImpactPicking() {
+        if (!ui.canBeginImpactPicking) return
+        val context = ImpactPickContext(ui.session!!.uuid, ui.displayedEnd!!.uuid, ++impactPickSerial)
+        ui = ui.copy(impactPicking = ImpactPicking(context), problem = null, confirmation = null)
+    }
+    private fun currentPicking(context: ImpactPickContext) = ui.canPickImpact && ui.impactPicking?.context == context &&
+        context.sessionUuid == ui.session?.uuid && context.endUuid == ui.displayedEnd?.uuid
+    fun pickImpact(context: ImpactPickContext, point: NormalizedPoint, toleranceNormalized: Float,
+        viewport: ImpactPickViewport = ImpactPickViewport()) {
+        if (!currentPicking(context)) return
+        val candidates = try { findImpactCandidates(ui.displayedEnd!!.impacts, point, toleranceNormalized, viewport) }
+        catch (error: IllegalArgumentException) {
+            ui = ui.copy(impactPicking = ui.impactPicking!!.copy(candidates = emptyList(), hasTapped = true))
+            invalidAction(error.message ?: "Sélection invalide."); return
+        }
+        ui = ui.copy(impactPicking = ui.impactPicking!!.copy(candidates = candidates, hasTapped = true))
+        candidates.singleOrNull()?.let { choosePickedImpact(context, it) }
+    }
+    fun choosePickedImpact(context: ImpactPickContext, uuid: String) {
+        if (!currentPicking(context) || uuid !in ui.impactPicking!!.candidates) return
+        ui = ui.copy(impactPicking = null)
+        selectImpact(context.endUuid, uuid)
+    }
+    fun cancelImpactPicking(context: ImpactPickContext) {
+        if (ui.ready && ui.impactPicking?.context == context) ui = ui.copy(impactPicking = null, problem = null)
     }
     fun selectImpact(endUuid: String, impactUuid: String) {
         if (!ui.canSelectImpact) return

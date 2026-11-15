@@ -21,11 +21,14 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
     val state by controller.state.collectAsStateWithLifecycle()
     var leave by rememberSaveable { mutableStateOf(false) }
     var finish by rememberSaveable { mutableStateOf(false) }
-    val back = { if (!state.busy) { if (state.pending != null || state.form != null || state.hasProposal) leave = true else controller.close() } }
+    val back = { if (!state.busy) {
+        if (state.impactPicking != null) controller.cancelImpactPicking(state.impactPicking!!.context)
+        else if (state.pending != null || state.form != null || state.hasProposal) leave = true else controller.close()
+    } }
     BackHandler(onBack = back)
     val height = LocalConfiguration.current.screenHeightDp.toFloat()
     Scaffold { padding ->
-        LazyColumn(Modifier.fillMaxSize().preciseTouchGuard(controller, { controller.state.value.precision },
+        LazyColumn(Modifier.fillMaxSize().preciseTouchGuard(controller, { controller.state.value.guardTargetTouches },
             { controller.state.value.activeAim?.token }, controller::cancelAim).padding(padding).padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
             item { Text("Séance configurable", style = MaterialTheme.typography.headlineMedium)
@@ -75,23 +78,28 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                         Text("Volée ${end.index} · ${end.impacts.size} / ${captured.configuration.arrowCountPerEnd?.toString() ?: "libre"} flèches")
                         configurationLines(captured.configuration).forEach { Text(it) }
                         Text("Configuration enregistrée immuable · ${captured.origin.label()}")
-                        if (state.editableEnd) {
+                        ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
+                            { controller.beginImpactPicking(context) }, controller::cancelImpactPicking, controller::choosePickedImpact)
+                        if (state.editableEnd || state.impactPicking != null) {
                             OutlinedButton({ controller.precision(context, !state.precision) },
-                                enabled = state.ready && state.position == null && (state.edit == null || state.canReposition)) {
+                                enabled = state.editableEnd && state.position == null && (state.edit == null || state.canReposition)) {
                                 Text(if (state.precision) "Visée précise · passer en rapide" else "Activer la visée précise")
                             }
                         }
                         key(context) {
                             TargetCanvas(captured.configuration.targetType, end.impacts, when {
+                                state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                 state.canReposition -> TargetInteraction.REPOSITION
                                 state.canAdd || state.canAim -> TargetInteraction.ADD_IMPACT
                                 else -> TargetInteraction.READ_ONLY
                             }, end.uuid, { controller.tapped(context, it) },
                                 Modifier.widthIn(max = if (state.precision) precisionTargetMaxWidth(height).dp else 480.dp).fillMaxWidth().aspectRatio(1f),
                                 state.selectedImpact?.uuid, state.activeAim?.candidate?.point ?: state.position?.point ?: state.edit?.candidate,
-                                state.precision, { controller.beginAim(context, it) }, controller::moveAim, controller::finishAim, controller::cancelAim)
+                                state.precision, { controller.beginAim(context, it) }, controller::moveAim, controller::finishAim, controller::cancelAim,
+                                state.impactPicking?.context, controller::pickImpact)
                         }
-                        Text(if (state.precision) "Maintenir puis relâcher propose une position sans l’enregistrer. Loupe ×4 ; faites défiler hors du blason."
+                        Text(if (state.impactPicking != null) "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
+                            else if (state.precision) "Maintenir puis relâcher propose une position sans l’enregistrer. Loupe ×4 ; faites défiler hors du blason."
                             else "Un appui en mode rapide enregistre une nouvelle flèche, lorsque la saisie est disponible.")
                         if (captured.configuration.arrowCountMode == ArrowCountMode.FIXED && end.impacts.size < captured.configuration.arrowCountPerEnd!!)
                             Text("Capacité non atteinte : information uniquement. La validation n’impose pas de compléter cette capacité.")
@@ -104,27 +112,33 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                             Text("Flèche #${impact.index} : ${impact.scoreLabel()} · ${impact.repositions.size} repositionnement(s)")
                         }
                     }
-                    state.edit?.let { edit -> item {
-                        Text("Flèche sélectionnée #${state.selectedImpact?.index} · ${edit.phase}")
-                        if (state.canSelectImpact) {
-                            OutlinedButton({ controller.beginReposition(context) }) { Text("Repositionner explicitement") }
-                            OutlinedButton({ controller.beginDecision(context) }) { Text("Jugement ou correction de score") }
+                    if (session.status == SessionStatus.IN_PROGRESS && end.status == EndStatus.EDITING) item(key = "impact-edit-${end.uuid}") {
+                        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                            val edit = state.edit
+                            Text("Correction d’impact", style = MaterialTheme.typography.titleMedium)
+                            ImpactEditActions(state.canSelectImpact && state.selectedImpact != null,
+                                state.canSelectImpact && state.selectedImpact != null, state.ready && edit != null,
+                                { controller.beginReposition(context) }, { controller.beginDecision(context) }, { controller.closeSelection(context) })
+                            if (edit == null) {
+                                Text("Sélectionnez une flèche pour corriger sa position ou son score.")
+                                return@Column
+                            }
+                            Text("Flèche sélectionnée #${state.selectedImpact?.index} · ${edit.phase}")
+                            if (state.canReposition) {
+                                Text("Touchez une nouvelle position ; elle reste un candidat local.")
+                                edit.candidate?.let { Text("Nouvelle géométrie : ${edit.preview?.scoreFinal}") }
+                                OutlinedTextField(edit.reason, { controller.repositionReason(context, it) }, label = { Text("Motif (obligatoire si décision manuelle invalidée)") })
+                                Button({ controller.confirmReposition(context) }, enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
+                            }
+                            if (state.scoreOptions != null && state.selectedImpact != null && (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)) {
+                                ScoreDecisionPanel(ScoreDecisionView(state.selectedImpact!!, edit, state.scoreOptions!!, state.selectedBoundary,
+                                    state.proposedScore, state.canScoreDecision, state.canConfirmScore),
+                                    ScoreDecisionActions({ controller.boundary(context, it) }, { controller.scoreValue(context, it) },
+                                        { controller.showBoundaries(context) }, { controller.exceptional(context, true) }, { controller.exceptional(context, false) },
+                                        { controller.decisionReason(context, it) }, { controller.confirmDecision(context) }))
+                            }
                         }
-                        if (state.canReposition) {
-                            Text("Touchez une nouvelle position ; elle reste un candidat local.")
-                            edit.candidate?.let { Text("Nouvelle géométrie : ${edit.preview?.scoreFinal}") }
-                            OutlinedTextField(edit.reason, { controller.repositionReason(context, it) }, label = { Text("Motif (obligatoire si décision manuelle invalidée)") })
-                            Button({ controller.confirmReposition(context) }, enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
-                        }
-                        if (state.scoreOptions != null && state.selectedImpact != null && (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)) {
-                            ScoreDecisionPanel(ScoreDecisionView(state.selectedImpact!!, edit, state.scoreOptions!!, state.selectedBoundary,
-                                state.proposedScore, state.canScoreDecision, state.canConfirmScore),
-                                ScoreDecisionActions({ controller.boundary(context, it) }, { controller.scoreValue(context, it) },
-                                    { controller.showBoundaries(context) }, { controller.exceptional(context, true) }, { controller.exceptional(context, false) },
-                                    { controller.decisionReason(context, it) }, { controller.confirmDecision(context) }))
-                        }
-                        TextButton({ controller.closeSelection(context) }, enabled = state.ready) { Text("Fermer / abandonner la correction locale") }
-                    } }
+                    }
                 }
                 items(session.ends.sortedBy { it.end.index }, key = { "details-${it.uuid}" }) { ConfiguredEndCard(session, it) }
             }

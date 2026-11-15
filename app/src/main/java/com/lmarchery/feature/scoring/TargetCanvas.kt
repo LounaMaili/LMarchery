@@ -32,9 +32,11 @@ import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.session.ArrowImpact
 import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
+import com.lmarchery.feature.sessions.ImpactPickContext
+import com.lmarchery.feature.sessions.ImpactPickViewport
 import java.util.Locale
 
-enum class TargetInteraction { READ_ONLY, ADD_IMPACT, REPOSITION }
+enum class TargetInteraction { READ_ONLY, ADD_IMPACT, REPOSITION, SELECT_IMPACT }
 
 @Composable
 fun TargetCanvas(
@@ -51,6 +53,8 @@ fun TargetCanvas(
     onAimMove: (Long, NormalizedPoint) -> Unit = { _, _ -> },
     onAimFinish: (Long, NormalizedPoint) -> Unit = { _, _ -> },
     onAimCancel: (Long) -> Unit = {},
+    impactPickContext: ImpactPickContext? = null,
+    onImpactPick: (ImpactPickContext, NormalizedPoint, Float, ImpactPickViewport) -> Unit = { _, _, _, _ -> },
 ) {
     val currentOnPointSelected by rememberUpdatedState(onPointSelected)
     val move by rememberUpdatedState(onAimMove)
@@ -76,11 +80,39 @@ fun TargetCanvas(
                     TargetInteraction.ADD_IMPACT -> if (preciseAim) "Blason de visée précise — nouvelle flèche non enregistrée" else "Blason interactif LMarchery"
                     TargetInteraction.REPOSITION -> "Blason de repositionnement — proposition non enregistrée"
                     TargetInteraction.READ_ONLY -> "Blason enregistré en consultation"
+                    TargetInteraction.SELECT_IMPACT -> "Blason de sélection — choisir une flèche enregistrée"
                 } }
                 .onSizeChanged { canvasPixels = it }
-                .pointerInput(endUuid, targetType.uuid, impacts.size, interaction, selectedImpactUuid, preciseAim, canvasPixels) {
+                .pointerInput(endUuid, targetType.uuid, impacts.size, interaction, selectedImpactUuid, preciseAim, canvasPixels, impactPickContext) {
                     if (interaction == TargetInteraction.READ_ONLY) return@pointerInput
-                    if (!preciseAim) {
+                    if (interaction == TargetInteraction.SELECT_IMPACT) {
+                        val context = impactPickContext ?: return@pointerInput
+                        val geometry = CanvasSize(size.width.toFloat(), size.height.toFloat())
+                        val tolerance = 24.dp.toPx() / geometry.radiusPx
+                        val viewport = ImpactPickViewport(geometry.widthPx / geometry.diameterPx, geometry.heightPx / geometry.diameterPx)
+                        awaitEachGesture {
+                            val down = awaitFirstDown()
+                            val gesture = ImpactPickGesture(down.id.value, geometry,
+                                CanvasPoint(down.position.x, down.position.y), viewConfiguration.touchSlop)
+                            if (!gesture.move(down.id.value, CanvasPoint(down.position.x, down.position.y), currentEvent.changes.size)) return@awaitEachGesture
+                            try {
+                                while (!gesture.finished) {
+                                    val event = awaitPointerEvent()
+                                    val change = event.changes.singleOrNull() ?: break
+                                    val point = CanvasPoint(change.position.x, change.position.y)
+                                    if (change.pressed) {
+                                        if (!gesture.move(change.id.value, point, event.changes.size, change.isConsumed)) break
+                                    } else {
+                                        gesture.release(change.id.value, point, event.changes.size, change.isConsumed)?.let {
+                                            change.consume()
+                                            // Retain this gesture's original owner/ticket, never a recomposed callback.
+                                            onImpactPick(context, it, tolerance, viewport)
+                                        }
+                                    }
+                                }
+                            } finally { gesture.cancel() }
+                        }
+                    } else if (!preciseAim) {
                         detectTapGestures { offset ->
                             currentOnPointSelected(canvasPointToNormalized(CanvasPoint(offset.x, offset.y),
                                 CanvasSize(size.width.toFloat(), size.height.toFloat())))

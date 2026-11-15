@@ -3,15 +3,19 @@
 > État livré et travaux restants ; les critères produit complets dépassent le premier parcours Android.
 
 Légende : ✓ livré ; ◐ partiel, limite explicitée ; ☐ prévu.
-Sur la branche d'intégration #43/#44 (pas encore dans `main`), la création rapide
+Depuis la consolidation #43/#44 dans `main`, la création rapide
 historique reste à trois flèches en entraînement, avec quatre profils WA indoor.
 L'éditeur configurable distinct propose les huit profils publiés, FIXED
 3/6/personnalisé ou FREE, distance et scoring explicites par volée
 ([ADR 043](adr/043-editeur-android-seances-configurables.md)).
-La visée précise est en évaluation dans la [PR 22](validation-visee-precise-pr22.md) ;
-son implémentation ne vaut pas validation de précision tactile. Les tests ADB
+La visée précise est intégrée ; son [protocole PR 22](validation-visee-precise-pr22.md)
+distingue son implémentation de la validation de précision tactile. Les tests ADB
 ne remplacent pas les essais terrain au doigt. Voir
 [ADR 023](adr/023-historique-et-presentation-scores-android.md).
+
+La sélection tactile de l'ADR 046 est ajoutée dans la branche produit
+`codex/android-direct-impact-selection`, non fusionnée. `main` conserve la
+sélection numérotée jusqu'à revue de ce complément.
 
 ---
 
@@ -47,12 +51,12 @@ ne remplacent pas les essais terrain au doigt. Voir
 | 2.3 | Afficher le score calculé en temps réel après placement | ✓ (après acquittement) | Haute |
 | 2.4 | Glisser pour déplacer un impact existant | ☐ | Haute |
 | 2.5 | Appui long ou bouton pour supprimer un impact | ☐ | Haute |
-| 2.6 | Tap sur impact pour voir/corriger le score (modal cordon) | ◐ sélection numérotée + décisions explicites, pas de tap impact | Haute |
+| 2.6 | Tap sur impact pour voir/corriger le score (modal cordon) | ◐ en branche : sélection explicite sur le blason + choix numéroté des superpositions (ADR 046), essai au doigt restant | Haute |
 | 2.7 | Afficher le nombre d'impacts placés vs attendus | ✓ | Moyenne |
 | 2.8 | Zoom et panoramique sur le blason | ☐ | Basse |
 | 2.9 | Afficher les impacts de la volée en cours | ✓ | Haute |
 | 2.10 | Test terrain : saisie rapide entre deux volées réelles | ☐ | Haute |
-| 2.11 | Mode précis facultatif : loupe ×4, réticule et candidat confirmé | ◐ code/tests implémentés ; PR 22 brouillon, essai humain et ADB restant | Haute |
+| 2.11 | Mode précis facultatif : loupe ×4, réticule et candidat confirmé | ◐ code intégré ; qualification ergonomique du parcours complet à compléter | Haute |
 
 **Critère de sortie** : un archer peut saisir 3 impacts en quelques secondes, les corriger, et voir le score.
 
@@ -160,7 +164,7 @@ Epic 6 (paramètres/UX) — transversal
 
 ---
 
-*Dernière mise à jour : 28 octobre 2026*
+*Dernière mise à jour ciblée : 11 novembre 2026*
 
 L'étape SAF V3 ajoute export complet, restauration atomique confirmée et
 consultation des séances configurables ([ADR 042](adr/042-saf-v3-consultation-configurable.md)).

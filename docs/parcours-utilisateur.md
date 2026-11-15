@@ -42,7 +42,7 @@ Les données sont locales ; l’export global est décrit ci-dessous.
 Voir [ADR 018](adr/018-integration-android-room.md) et le
 [protocole téléphone](tests-terrain-v1.md#protocole-android-persistant-pr-16).
 
-### Viser précisément — PR 22 en brouillon
+### Viser précisément — code intégré, ergonomie à qualifier
 
 Le mode rapide reste le comportement par défaut, sans étape supplémentaire.
 Dans une volée éditable, activer la visée précise puis appuyer sur le blason :
@@ -97,7 +97,10 @@ Voir [ADR 023](adr/023-historique-et-presentation-scores-android.md).
 ### Repositionner avant validation (PR 17)
 
 1. Ouvrir une séance en cours et sa volée en saisie. Choisir « Sélectionner
-   flèche #… » dans la liste, même si des impacts se superposent sur le blason.
+   flèche #… » dans la liste, ou activer « Sélectionner sur le blason » puis toucher
+   un marqueur. En cas de proximité de plusieurs flèches, choisir leur numéro.
+   Ce mode n'ajoute rien et reste disponible lorsque la volée est pleine.
+   Annuler/Retour le quitte sans écrire et conserve le mode rapide/précis précédent.
 2. Choisir « Repositionner », puis toucher la nouvelle position. Ce mode n'ajoute
    aucune flèche. L'anneau orange conserve la position enregistrée ; la croix
    violette montre le candidat non enregistré. Les deux positions et scores sont
@@ -119,6 +122,8 @@ processus, seule la dernière position réellement persistée revient. Une volé
 validée ou une séance terminée reste non modifiable. Pas de glisser-déposer,
 suppression dans ce parcours. La décision de score possède un parcours distinct ci-dessous.
 Voir [ADR 019](adr/019-selection-repositionnement-android.md).
+L'entrée tactile est décrite par l'[ADR 046](adr/046-selection-tactile-explicite-impacts.md) ;
+son [essai physique](validation-selection-tactile-impacts.md) reste distinct des tests JVM/SQLite.
 
 ### Décider du score sans déplacer (PR 18)
 

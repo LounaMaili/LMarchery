@@ -211,6 +211,34 @@ class ConfiguredSessionController(
     fun confirmPosition(context: ConfiguredTargetContext) {
         if (current(context) && ui.canConfirmPosition && ui.position!!.context == context.owner) add(ui.position!!.point)
     }
+    fun beginImpactPicking(context: ConfiguredTargetContext) {
+        if (!current(context) || !ui.canBeginImpactPicking) return
+        val ticket = epoch()
+        ui = ui.copy(impactPicking = ImpactPicking(ImpactPickContext(ui.saved!!.uuid, ui.selectedEnd!!.uuid, ticket)),
+            epoch = ticket, problem = null)
+    }
+    private fun currentPicking(context: ImpactPickContext) = ui.canPickImpact && ui.impactPicking?.context == context &&
+        context.sessionUuid == ui.saved?.uuid && context.endUuid == ui.selectedEnd?.uuid
+    fun pickImpact(context: ImpactPickContext, point: NormalizedPoint, toleranceNormalized: Float,
+        viewport: ImpactPickViewport = ImpactPickViewport()) {
+        if (!currentPicking(context)) return
+        val candidates = try { findImpactCandidates(ui.selectedEnd!!.end.impacts, point, toleranceNormalized, viewport) }
+        catch (error: IllegalArgumentException) {
+            ui = ui.copy(impactPicking = ui.impactPicking!!.copy(candidates = emptyList(), hasTapped = true))
+            invalid(error.message ?: "Sélection invalide."); return
+        }
+        ui = ui.copy(impactPicking = ui.impactPicking!!.copy(candidates = candidates, hasTapped = true))
+        candidates.singleOrNull()?.let { choosePickedImpact(context, it) }
+    }
+    fun choosePickedImpact(context: ImpactPickContext, uuid: String) {
+        if (!currentPicking(context) || uuid !in ui.impactPicking!!.candidates) return
+        ui = ui.copy(impactPicking = null, epoch = epoch())
+        selectImpact(ui.targetContext!!, uuid)
+    }
+    fun cancelImpactPicking(context: ImpactPickContext) {
+        if (ui.ready && ui.impactPicking?.context == context)
+            ui = ui.copy(impactPicking = null, epoch = epoch(), problem = null)
+    }
     fun selectImpact(context: ConfiguredTargetContext, uuid: String) {
         if (!current(context) || !ui.canSelectImpact || ui.selectedEnd!!.end.impacts.none { it.uuid == uuid }) return
         ui = ui.copy(edit = ImpactEdit(ui.saved!!.uuid, ui.selectedEnd!!.uuid, uuid), epoch = epoch(), problem = null)
@@ -368,7 +396,7 @@ class ConfiguredSessionController(
     /** UI must warn that this only discards local unsubmitted values. */
     fun abandonLocalAndClose() {
         if (!ui.ready) return
-        ui = ui.copy(form = null, edit = null, position = null, activeAim = null, epoch = epoch()); close()
+        ui = ui.copy(form = null, edit = null, position = null, activeAim = null, impactPicking = null, epoch = epoch()); close()
     }
     /** UI must separately warn that this does NOT roll back a possibly committed write. */
     fun abandonSubmittedAndClose() {
