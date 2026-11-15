@@ -203,6 +203,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
                                 val interaction = when {
                                     state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
+                                    state.impactDrag != null && state.canProposeReposition -> TargetInteraction.DRAG_IMPACT
                                     state.canProposeReposition -> TargetInteraction.REPOSITION
                                     state.canAddImpact || state.canAimNewImpact -> TargetInteraction.ADD_IMPACT
                                     else -> TargetInteraction.READ_ONLY
@@ -211,7 +212,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     OutlinedButton(onClick = { controller.setPrecisionAim(!state.precisionAimEnabled) }, enabled = state.canChangeAimMode) {
                                         Text(if (state.precisionAimEnabled) "Visée précise activée · revenir au mode rapide" else "Activer la visée précise")
                                     }
-                                    if (state.precisionAimEnabled) Text("Maintenez et déplacez le doigt. Loupe ×4 déportée ; relâcher ne sauvegarde pas. Faites défiler hors du blason.", style = MaterialTheme.typography.bodySmall)
+                                    if (state.precisionAimEnabled && state.impactDrag == null) Text("Maintenez et déplacez le doigt. Loupe ×4 déportée ; relâcher ne sauvegarde pas. Faites défiler hors du blason.", style = MaterialTheme.typography.bodySmall)
                                 }
                                 val aimContext = AimContext(session.uuid, end.uuid, state.impactEdit?.impactUuid)
                                 ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
@@ -220,10 +221,12 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     Modifier.widthIn(max = if (state.precisionAimEnabled) precisionTargetMaxWidth(screenHeightDp).dp else 480.dp)
                                         .fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid,
                                     state.aimedPoint,
-                                    state.precisionAimEnabled, { point -> controller.beginPreciseAim(aimContext, point) }, controller::movePreciseAim,
+                                    state.precisionAimEnabled && state.impactDrag == null, { point -> controller.beginPreciseAim(aimContext, point) }, controller::movePreciseAim,
                                     controller::finishPreciseAim, controller::cancelPreciseAim,
-                                    state.impactPicking?.context, controller::pickImpact)
+                                    state.impactPicking?.context, controller::pickImpact,
+                                    state.impactDrag, controller::beginImpactDrag, controller::moveImpactDrag, controller::finishImpactDrag, controller::cancelPreciseAim)
                                 Text(when {
+                                    state.impactDrag != null -> "Déplacement direct : glissez le marqueur sélectionné. Aperçu violet non enregistré ; confirmation séparée. Faites défiler hors du marqueur."
                                     state.impactPicking != null -> "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
                                     state.precisionAimEnabled && state.canAim -> "Visée précise · proposition non enregistrée. Les coins extérieurs restent M."
                                     state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
@@ -300,7 +303,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         text = { Text("La sélection et la proposition non soumise seront abandonnées. Aucune écriture n’a été demandée.") },
         confirmButton = { TextButton(onClick = {
             confirmCancelCorrection = false
-            controller.cancelImpactEdit()
+            state.impactDrag?.let(controller::cancelImpactDrag) ?: controller.cancelImpactEdit()
             controller.returnToList()
         }) { Text("Annuler et revenir") } },
         dismissButton = { TextButton(onClick = { confirmCancelCorrection = false }) { Text("Conserver la correction") } })
@@ -329,7 +332,13 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Correction d’impact", style = MaterialTheme.typography.titleMedium)
             ImpactEditActions(state.canBeginReposition, state.canBeginScoreCorrection, state.ready && edit != null,
-                controller::beginReposition, controller::beginScoreCorrection, controller::cancelImpactEdit)
+                controller::beginReposition, controller::beginScoreCorrection,
+                { state.impactDrag?.let(controller::cancelImpactDrag) ?: controller.cancelImpactEdit() },
+                state.canBeginReposition, controller::beginDragReposition,
+                state.impactDrag != null && state.canConfirmReposition, {
+                    val drag = state.impactDrag; val point = edit?.candidate
+                    if (drag != null && point != null) controller.confirmImpactDrag(drag, point)
+                })
             if (edit == null || impact == null) {
                 Text("Sélectionnez une flèche pour corriger sa position ou son score.")
                 return@Column
@@ -366,7 +375,7 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
             }
             if (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)
                 ScoreDecisionPanel(state, controller)
-            if (edit.candidate != null) Button(onClick = controller::confirmReposition,
+            if (state.impactDrag == null && edit.candidate != null) Button(onClick = controller::confirmReposition,
                 enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
             Text("Cercle orange : flèche sélectionnée. Croix violette : proposition non enregistrée.", style = MaterialTheme.typography.bodySmall)
         }

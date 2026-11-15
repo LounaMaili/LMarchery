@@ -95,6 +95,7 @@ data class SessionUiState(
     val newImpactCandidate: PositionCandidate? = null,
     val activeAim: ActiveAim? = null,
     val impactPicking: ImpactPicking? = null,
+    val impactDrag: ImpactDragContext? = null,
 ) {
     init { require(saved == null || configuredSaved == null) }
     val session get() = saved?.sessions?.single()
@@ -107,7 +108,7 @@ data class SessionUiState(
     val aimContext get() = session?.let { s -> displayedEnd?.let { end -> AimContext(s.uuid, end.uuid, impactEdit?.impactUuid) } }
     val aimedPoint get() = activeAim?.candidate?.point ?: newImpactCandidate?.point ?: impactEdit?.candidate
     val hasAimProposal get() = newImpactCandidate != null || activeAim != null
-    val guardTargetTouches get() = precisionAimEnabled || impactPicking != null
+    val guardTargetTouches get() = precisionAimEnabled || impactPicking != null || impactDrag != null
     val canNavigate get() = ready && impactEdit == null && equipmentEdit == null && !hasAimProposal && impactPicking == null
     private val editableSession get() = ready && equipmentEdit == null && screen == SessionScreen.SESSION && supportedConfiguration && session?.status == SessionStatus.IN_PROGRESS
     val canEdit get() = editableSession && impactPicking == null
@@ -153,8 +154,8 @@ data class SessionUiState(
     private val canPlaceNewImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.impacts.size < 3
     val canAddImpact get() = canPlaceNewImpact && !precisionAimEnabled && !hasAimProposal
     val canAimNewImpact get() = canPlaceNewImpact && precisionAimEnabled
-    val canAim get() = precisionAimEnabled && (canAimNewImpact || canProposeReposition)
-    val canChangeAimMode get() = canEdit && isEditingDisplayed && newImpactCandidate == null &&
+    val canAim get() = impactDrag == null && precisionAimEnabled && (canAimNewImpact || canProposeReposition)
+    val canChangeAimMode get() = impactDrag == null && canEdit && isEditingDisplayed && newImpactCandidate == null &&
         (impactEdit == null || canProposeReposition)
     val canConfirmNewImpact get() = canAimNewImpact && activeAim == null && newImpactCandidate?.context ==
         AimContext(session!!.uuid, editingEnd!!.uuid)

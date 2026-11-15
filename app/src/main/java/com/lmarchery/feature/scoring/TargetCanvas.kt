@@ -23,6 +23,8 @@ import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInWindow
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.contentDescription
@@ -34,9 +36,10 @@ import com.lmarchery.core.model.target.TargetType
 import com.lmarchery.core.model.target.TargetZone
 import com.lmarchery.feature.sessions.ImpactPickContext
 import com.lmarchery.feature.sessions.ImpactPickViewport
+import com.lmarchery.feature.sessions.ImpactDragContext
 import java.util.Locale
 
-enum class TargetInteraction { READ_ONLY, ADD_IMPACT, REPOSITION, SELECT_IMPACT }
+enum class TargetInteraction { READ_ONLY, ADD_IMPACT, REPOSITION, SELECT_IMPACT, DRAG_IMPACT }
 
 @Composable
 fun TargetCanvas(
@@ -55,12 +58,19 @@ fun TargetCanvas(
     onAimCancel: (Long) -> Unit = {},
     impactPickContext: ImpactPickContext? = null,
     onImpactPick: (ImpactPickContext, NormalizedPoint, Float, ImpactPickViewport) -> Unit = { _, _, _, _ -> },
+    impactDragContext: ImpactDragContext? = null,
+    onDragStart: (ImpactDragContext, NormalizedPoint) -> Long? = { _, _ -> null },
+    onDragMove: (Long, NormalizedPoint) -> Unit = { _, _ -> },
+    onDragFinish: (Long, NormalizedPoint) -> Unit = { _, _ -> },
+    onDragCancel: (Long) -> Unit = {},
 ) {
     val currentOnPointSelected by rememberUpdatedState(onPointSelected)
     val move by rememberUpdatedState(onAimMove)
     val finish by rememberUpdatedState(onAimFinish)
     val cancel by rememberUpdatedState(onAimCancel)
+    val dragPoint by rememberUpdatedState(candidate ?: impacts.find { it.uuid == selectedImpactUuid }?.point)
     var canvasPixels by remember { mutableStateOf(IntSize.Zero) }
+    var canvasOrigin by remember { mutableStateOf(Offset.Unspecified) }
     val isDark = isSystemInDarkTheme()
     val borderColor = MaterialTheme.colorScheme.outlineVariant
 
@@ -81,11 +91,40 @@ fun TargetCanvas(
                     TargetInteraction.REPOSITION -> "Blason de repositionnement — proposition non enregistrée"
                     TargetInteraction.READ_ONLY -> "Blason enregistré en consultation"
                     TargetInteraction.SELECT_IMPACT -> "Blason de sélection — choisir une flèche enregistrée"
+                    TargetInteraction.DRAG_IMPACT -> "Blason de déplacement — glisser la flèche sélectionnée, candidat non enregistré"
                 } }
                 .onSizeChanged { canvasPixels = it }
-                .pointerInput(endUuid, targetType.uuid, impacts.size, interaction, selectedImpactUuid, preciseAim, canvasPixels, impactPickContext) {
+                .onGloballyPositioned { canvasOrigin = it.positionInWindow() }
+                .pointerInput(endUuid, targetType.uuid, impacts.size, interaction, selectedImpactUuid, preciseAim, canvasPixels, impactPickContext, impactDragContext,
+                    if (interaction == TargetInteraction.DRAG_IMPACT) canvasOrigin else null) {
                     if (interaction == TargetInteraction.READ_ONLY) return@pointerInput
-                    if (interaction == TargetInteraction.SELECT_IMPACT) {
+                    if (interaction == TargetInteraction.DRAG_IMPACT) {
+                        val context = impactDragContext ?: return@pointerInput
+                        if (context.owner.impactUuid != selectedImpactUuid) return@pointerInput
+                        val geometry = CanvasSize(size.width.toFloat(), size.height.toFloat())
+                        awaitEachGesture {
+                            val down = awaitFirstDown()
+                            val start = dragPoint ?: return@awaitEachGesture
+                            val gesture = ImpactDragGesture(down.id.value, geometry,
+                                CanvasPoint(down.position.x, down.position.y), start, 24.dp.toPx(), viewConfiguration.touchSlop)
+                            if (!gesture.accepted || currentEvent.changes.size != 1) return@awaitEachGesture
+                            val token = onDragStart(context, start) ?: return@awaitEachGesture
+                            down.consume() // Explicit mode owns a gesture starting on this selected marker only.
+                            try {
+                                while (!gesture.finished) {
+                                    val event = awaitPointerEvent()
+                                    val change = event.changes.singleOrNull() ?: break
+                                    val point = CanvasPoint(change.position.x, change.position.y)
+                                    val next = if (change.pressed) gesture.move(change.id.value, point, event.changes.size, change.isConsumed)
+                                        else gesture.release(change.id.value, point, event.changes.size, change.isConsumed)
+                                    change.consume()
+                                    if (next == null) break
+                                    // Original callbacks retain this gesture's owner, including during disposal.
+                                    if (change.pressed) onDragMove(token, next) else onDragFinish(token, next)
+                                }
+                            } finally { gesture.cancel(); onDragCancel(token) }
+                        }
+                    } else if (interaction == TargetInteraction.SELECT_IMPACT) {
                         val context = impactPickContext ?: return@pointerInput
                         val geometry = CanvasSize(size.width.toFloat(), size.height.toFloat())
                         val tolerance = 24.dp.toPx() / geometry.radiusPx
@@ -146,7 +185,7 @@ fun TargetCanvas(
                 },
         ) {
             val geometry = CanvasSize(size.width, size.height)
-            drawTargetScene(targetType, impacts, geometry, selectedImpactUuid, candidate)
+            drawTargetScene(targetType, impacts, geometry, selectedImpactUuid, candidate, interaction == TargetInteraction.DRAG_IMPACT)
             if (preciseAim && candidate != null) {
                 val lens = aimLens(candidate, geometry)
                 val center = Offset(lens.center.x, lens.center.y)
@@ -171,7 +210,7 @@ fun TargetCanvas(
 
 /** One renderer for the target and the magnifier: same rings, colors, stored points and candidate. */
 private fun DrawScope.drawTargetScene(target: TargetType, impacts: List<ArrowImpact>, geometry: CanvasSize,
-    selectedImpactUuid: String?, candidate: NormalizedPoint?) {
+    selectedImpactUuid: String?, candidate: NormalizedPoint?, dragging: Boolean = false) {
     val center = Offset(geometry.centerX, geometry.centerY)
     val radius = geometry.radiusPx
     target.zones.sortedByDescending(TargetZone::outerRadiusNormalized).forEach { zone ->
@@ -183,9 +222,14 @@ private fun DrawScope.drawTargetScene(target: TargetType, impacts: List<ArrowImp
     drawLine(Color(0x55000000), Offset(center.x, center.y - radius), Offset(center.x, center.y + radius),
         1.dp.toPx(), cap = StrokeCap.Round)
     impacts.forEach { impact ->
-        val point = normalizedPointToCanvas(impact.point, geometry).let { Offset(it.x, it.y) }
+        val proposed = dragging && impact.uuid == selectedImpactUuid && candidate != null
+        if (proposed) {
+            val stored = normalizedPointToCanvas(impact.point, geometry)
+            drawCircle(Color(0x99FF9800), 13.dp.toPx(), Offset(stored.x, stored.y), style = Stroke(2.dp.toPx()))
+        }
+        val point = normalizedPointToCanvas(if (proposed) candidate!! else impact.point, geometry).let { Offset(it.x, it.y) }
         drawCircle(Color.White, 9.dp.toPx(), point)
-        drawCircle(if (impact.isMiss) Color(0xFFE53935) else Color(0xFF00C853), 7.dp.toPx(), point)
+        drawCircle(if (proposed) Color(0xFFAA00FF) else if (impact.isMiss) Color(0xFFE53935) else Color(0xFF00C853), 7.dp.toPx(), point)
         drawCircle(Color.Black.copy(alpha = .75f), 9.dp.toPx(), point, style = Stroke(1.5.dp.toPx()))
         if (impact.uuid == selectedImpactUuid) drawCircle(Color(0xFFFF9800), 13.dp.toPx(), point, style = Stroke(3.dp.toPx()))
     }

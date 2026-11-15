@@ -52,14 +52,21 @@ fun ImpactPickingControls(
 fun ImpactEditActions(
     canReposition: Boolean, canDecide: Boolean, canClose: Boolean,
     reposition: () -> Unit, decide: () -> Unit, close: () -> Unit,
+    canDrag: Boolean = false, drag: () -> Unit = {},
+    canConfirmDrag: Boolean = false, confirmDrag: () -> Unit = {},
 ) {
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             OutlinedButton(reposition, enabled = canReposition, modifier = Modifier.fillMaxWidth()) { Text("Repositionner") }
+            OutlinedButton(drag, enabled = canDrag, modifier = Modifier.fillMaxWidth()) { Text("Déplacer sur le blason") }
             OutlinedButton(decide, enabled = canDecide, modifier = Modifier.fillMaxWidth()) { Text("Corriger le score") }
         }
         OutlinedButton(close, enabled = canClose, modifier = Modifier.weight(1f)) {
             Text("Fermer la sélection / annuler la correction")
         }
+    }
+    // This slot stays present and disabled after acknowledgement: a second tap cannot hit a replacement action.
+    OutlinedButton(confirmDrag, enabled = canConfirmDrag, modifier = Modifier.fillMaxWidth()) { Text("Confirmer le déplacement") }
     }
 }

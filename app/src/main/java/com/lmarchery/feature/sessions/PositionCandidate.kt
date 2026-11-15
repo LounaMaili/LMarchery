@@ -6,7 +6,10 @@ import com.lmarchery.core.model.scoring.FinalScoreDecision
 /** Presentation only. A null impact UUID means a new arrow, never a replacement. */
 data class AimContext(val sessionUuid: String, val endUuid: String, val impactUuid: String? = null)
 data class PositionCandidate(val context: AimContext, val point: NormalizedPoint, val preview: FinalScoreDecision)
-data class ActiveAim(val token: Long, val candidate: PositionCandidate)
+enum class PositionGesture { PRECISE_AIM, IMPACT_DRAG }
+data class ActiveAim(val token: Long, val candidate: PositionCandidate, val kind: PositionGesture = PositionGesture.PRECISE_AIM)
+/** A mode ticket, never an impact identity or a persisted event. */
+data class ImpactDragContext(val owner: AimContext, val ticket: Long)
 
 fun PositionCandidate.scoreLabel(): String = when {
     preview.isMiss -> "M"

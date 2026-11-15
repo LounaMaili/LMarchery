@@ -82,23 +82,26 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                             { controller.beginImpactPicking(context) }, controller::cancelImpactPicking, controller::choosePickedImpact)
                         if (state.editableEnd || state.impactPicking != null) {
                             OutlinedButton({ controller.precision(context, !state.precision) },
-                                enabled = state.editableEnd && state.position == null && (state.edit == null || state.canReposition)) {
+                                enabled = state.impactDrag == null && state.editableEnd && state.position == null && (state.edit == null || state.canReposition)) {
                                 Text(if (state.precision) "Visée précise · passer en rapide" else "Activer la visée précise")
                             }
                         }
                         key(context) {
                             TargetCanvas(captured.configuration.targetType, end.impacts, when {
                                 state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
+                                state.impactDrag != null && state.canReposition -> TargetInteraction.DRAG_IMPACT
                                 state.canReposition -> TargetInteraction.REPOSITION
                                 state.canAdd || state.canAim -> TargetInteraction.ADD_IMPACT
                                 else -> TargetInteraction.READ_ONLY
                             }, end.uuid, { controller.tapped(context, it) },
                                 Modifier.widthIn(max = if (state.precision) precisionTargetMaxWidth(height).dp else 480.dp).fillMaxWidth().aspectRatio(1f),
                                 state.selectedImpact?.uuid, state.activeAim?.candidate?.point ?: state.position?.point ?: state.edit?.candidate,
-                                state.precision, { controller.beginAim(context, it) }, controller::moveAim, controller::finishAim, controller::cancelAim,
-                                state.impactPicking?.context, controller::pickImpact)
+                                state.precision && state.impactDrag == null, { controller.beginAim(context, it) }, controller::moveAim, controller::finishAim, controller::cancelAim,
+                                state.impactPicking?.context, controller::pickImpact,
+                                state.impactDrag, controller::beginImpactDrag, controller::moveImpactDrag, controller::finishImpactDrag, controller::cancelAim)
                         }
-                        Text(if (state.impactPicking != null) "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
+                        Text(if (state.impactDrag != null) "Déplacement direct : glissez le marqueur sélectionné. Aperçu violet non enregistré ; confirmation séparée. Faites défiler hors du marqueur."
+                            else if (state.impactPicking != null) "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
                             else if (state.precision) "Maintenir puis relâcher propose une position sans l’enregistrer. Loupe ×4 ; faites défiler hors du blason."
                             else "Un appui en mode rapide enregistre une nouvelle flèche, lorsque la saisie est disponible.")
                         if (captured.configuration.arrowCountMode == ArrowCountMode.FIXED && end.impacts.size < captured.configuration.arrowCountPerEnd!!)
@@ -115,20 +118,27 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                     if (session.status == SessionStatus.IN_PROGRESS && end.status == EndStatus.EDITING) item(key = "impact-edit-${end.uuid}") {
                         Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                             val edit = state.edit
+                            // Capture this rendering's ticket; a delayed click must never read a newer mode.
+                            val drag = state.impactDrag
                             Text("Correction d’impact", style = MaterialTheme.typography.titleMedium)
                             ImpactEditActions(state.canSelectImpact && state.selectedImpact != null,
                                 state.canSelectImpact && state.selectedImpact != null, state.ready && edit != null,
-                                { controller.beginReposition(context) }, { controller.beginDecision(context) }, { controller.closeSelection(context) })
+                                { controller.beginReposition(context) }, { controller.beginDecision(context) }, { controller.closeSelection(context) },
+                                state.canSelectImpact && state.selectedImpact != null, { controller.beginDragReposition(context) },
+                                drag != null && state.canConfirmReposition, {
+                                    val point = edit?.candidate
+                                    if (drag != null && point != null) controller.confirmImpactDrag(drag, point)
+                                })
                             if (edit == null) {
                                 Text("Sélectionnez une flèche pour corriger sa position ou son score.")
                                 return@Column
                             }
                             Text("Flèche sélectionnée #${state.selectedImpact?.index} · ${edit.phase}")
                             if (state.canReposition) {
-                                Text("Touchez une nouvelle position ; elle reste un candidat local.")
+                                Text(if (state.impactDrag != null) "Glissez la flèche sélectionnée ; relâcher ne sauvegarde rien." else "Touchez une nouvelle position ; elle reste un candidat local.")
                                 edit.candidate?.let { Text("Nouvelle géométrie : ${edit.preview?.scoreFinal}") }
                                 OutlinedTextField(edit.reason, { controller.repositionReason(context, it) }, label = { Text("Motif (obligatoire si décision manuelle invalidée)") })
-                                Button({ controller.confirmReposition(context) }, enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
+                                if (state.impactDrag == null) Button({ controller.confirmReposition(context) }, enabled = state.canConfirmReposition) { Text("Confirmer le repositionnement") }
                             }
                             if (state.scoreOptions != null && state.selectedImpact != null && (edit.proposal is ImpactProposal.BoundaryJudgment || edit.proposal is ImpactProposal.ExceptionalCorrection)) {
                                 ScoreDecisionPanel(ScoreDecisionView(state.selectedImpact!!, edit, state.scoreOptions!!, state.selectedBoundary,

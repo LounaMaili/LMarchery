@@ -458,4 +458,56 @@ class ImpactRepositionControllerTest {
         }
     }
 
+
+    @Test fun `direct drag previews without writes and explicit confirmation has one effect`() = Harness().use { h ->
+        h.select(); val saved = h.ui.saved; val arrow = h.ui.selectedImpact!!
+        h.controller.beginDragReposition(); val ctx = h.ui.impactDrag!!
+        h.controller.beginDragReposition(); assertEquals(ctx,h.ui.impactDrag)
+        val token = h.controller.beginImpactDrag(ctx,arrow.point)!!
+        h.controller.moveImpactDrag(token,seven);h.controller.confirmImpactDrag(ctx,seven)
+        assertTrue(h.repository.calls.isEmpty());assertSame(saved,h.ui.saved);assertFalse(h.ui.canConfirmReposition)
+        h.controller.finishPreciseAim(token,seven);assertNotNull(h.ui.activeAim)
+        h.controller.finishImpactDrag(token,seven);h.controller.finishImpactDrag(token,seven)
+        assertSame(saved,h.ui.saved);assertEquals(seven,h.ui.impactEdit!!.candidate)
+        h.controller.confirmReposition();assertTrue(h.repository.calls.isEmpty())
+        h.controller.confirmImpactDrag(ctx,seven);h.controller.confirmImpactDrag(ctx,seven)
+        assertEquals(1,h.repository.calls.size);assertEquals(3,h.ui.displayedEnd!!.impacts.size)
+        assertEquals(seven,h.ui.selectedImpact!!.point);assertEquals(arrow.uuid,h.ui.selectedImpact!!.uuid)
+        assertNull(h.ui.impactDrag);assertEquals(1,h.ui.selectedImpact!!.repositions.size)
+    }
+    @Test fun `direct drag cancellation preserves precision saved aggregate and consumes ticket`() = Harness().use { h ->
+        h.controller.setPrecisionAim(true);h.select();val saved=h.ui.saved
+        h.controller.beginDragReposition();val old=h.ui.impactDrag!!;val point=h.ui.selectedImpact!!.point
+        val token=h.controller.beginImpactDrag(old,point)!!;h.controller.finishImpactDrag(token,seven)
+        h.controller.cancelImpactDrag(old);assertSame(saved,h.ui.saved);assertTrue(h.ui.precisionAimEnabled)
+        h.select();h.controller.beginDragReposition();val fresh=h.ui.impactDrag!!
+        assertNotEquals(old,fresh);assertNull(h.controller.beginImpactDrag(old,point))
+        h.controller.cancelImpactDrag(old);h.controller.confirmImpactDrag(old,seven)
+        assertEquals(fresh,h.ui.impactDrag);assertNull(h.ui.impactEdit!!.candidate);assertTrue(h.repository.calls.isEmpty())
+    }
+    @Test fun `interrupted direct refinement keeps prior candidate and blocks stale precision and tap callbacks`() = Harness().use { h ->
+        h.select();h.controller.beginDragReposition();val ctx=h.ui.impactDrag!!
+        var token=h.controller.beginImpactDrag(ctx,h.ui.selectedImpact!!.point)!!;h.controller.finishImpactDrag(token,seven)
+        token=h.controller.beginImpactDrag(ctx,seven)!!;h.controller.moveImpactDrag(token,miss);h.controller.cancelPreciseAim(token)
+        h.controller.finishImpactDrag(token,miss);h.controller.targetTapped(miss)
+        assertEquals(seven,h.ui.impactEdit!!.candidate);assertTrue(h.repository.calls.isEmpty())
+        h.controller.confirmImpactDrag(ctx,NormalizedPoint(.35001f,0f));assertTrue(h.repository.calls.isEmpty())
+    }
+    @Test fun `drag requires manual decision reason and preserves invalidated decision and input mode`() = Harness(seed(ScoreDecisionKind.BOUNDARY_JUDGMENT,InputMode.AUTOMATIC)).use { h ->
+        h.select();val original=h.ui.selectedImpact!!;h.controller.beginDragReposition();val ctx=h.ui.impactDrag!!
+        val token=h.controller.beginImpactDrag(ctx,original.point)!!;h.controller.finishImpactDrag(token,seven)
+        h.controller.confirmImpactDrag(ctx,seven);assertTrue(h.repository.calls.isEmpty())
+        h.controller.setRepositionReason(" Synthetic drag correction ");h.controller.confirmImpactDrag(ctx,seven)
+        assertEquals(1,h.repository.calls.size)
+        val moved=h.ui.selectedImpact!!;assertEquals(original.finalScoreDecision,moved.repositions.single().previousDecision)
+        assertEquals(original.inputMode,moved.inputMode);assertEquals(original.createdAt,moved.createdAt)
+        assertEquals("Synthetic drag correction",moved.repositions.single().reason)
+    }
+    @Test fun `wrong direct owner point and completed or validated context are refused`() = Harness().use { h ->
+        h.select();h.controller.beginDragReposition();val ctx=h.ui.impactDrag!!
+        assertNull(h.controller.beginImpactDrag(ctx.copy(ticket=ctx.ticket+1),h.ui.selectedImpact!!.point))
+        assertNull(h.controller.beginImpactDrag(ctx,seven))
+        h.controller.cancelImpactDrag(ctx);h.controller.validateEnd();h.select();h.controller.beginDragReposition()
+        assertNull(h.ui.impactDrag);assertTrue(h.repository.calls.size==1)
+    }
 }

@@ -27,13 +27,14 @@ data class ConfiguredEditorState(
     val edit: ImpactEdit? = null, val precision: Boolean = false,
     val position: PositionCandidate? = null, val activeAim: ActiveAim? = null, val epoch: Long = 0,
     val impactPicking: ImpactPicking? = null,
+    val impactDrag: ImpactDragContext? = null,
 ) {
     val selectedEnd get() = saved?.ends?.singleOrNull { it.uuid == selectedEndUuid }
     val ready get() = open && !busy && pending == null
     val mutable get() = ready && saved != null && saved.status != SessionStatus.COMPLETED
     val sessionActive get() = mutable && saved!!.status == SessionStatus.IN_PROGRESS
     val hasProposal get() = edit != null || position != null || activeAim != null || impactPicking != null
-    val guardTargetTouches get() = precision || impactPicking != null
+    val guardTargetTouches get() = precision || impactPicking != null || impactDrag != null
     val canNavigate get() = ready && form == null && !hasProposal
     val canForm get() = mutable && form == null && !hasProposal
     private val editableCapturedEnd get() = sessionActive && form == null && selectedEnd?.end?.status == EndStatus.EDITING
@@ -45,7 +46,7 @@ data class ConfiguredEditorState(
         e.end.impacts.size < e.configuration.arrowCountPerEnd!! } == true
     val canPlace get() = editableEnd && edit == null && hasCapacity
     val canAdd get() = canPlace && !precision && position == null && activeAim == null
-    val canAim get() = precision && (canPlace || canReposition)
+    val canAim get() = impactDrag == null && precision && (canPlace || canReposition)
     val canConfirmPosition get() = canPlace && precision && position != null && activeAim == null
     val canSelectImpact get() = editableEnd && position == null && activeAim == null &&
         (edit == null || edit.phase == ImpactEditPhase.SELECTED || edit.phase == ImpactEditPhase.CONFIRMED)

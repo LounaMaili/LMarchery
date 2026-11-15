@@ -65,6 +65,7 @@ et [plan de consolidation vers main](plan-consolidation-main.md).
 | 44 | Recette intégrée V3 et préparation de la consolidation | [adr/044-recette-integration-v3-et-consolidation.md](adr/044-recette-integration-v3-et-consolidation.md) |
 | 45 | Variante Android isolée de recette | [adr/045-variante-android-sandbox.md](adr/045-variante-android-sandbox.md) |
 | 46 | Sélection tactile explicite des impacts | [adr/046-selection-tactile-explicite-impacts.md](adr/046-selection-tactile-explicite-impacts.md) |
+| 47 | Déplacement tactile d’un impact sélectionné | [adr/047-deplacement-tactile-candidat-impacts.md](adr/047-deplacement-tactile-candidat-impacts.md) |
 
 Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 
