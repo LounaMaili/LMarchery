@@ -165,7 +165,7 @@ class ConfiguredSessionController(
     }
     private fun current(context: ConfiguredTargetContext?) = context != null && context == ui.targetContext
     fun tapped(context: ConfiguredTargetContext, point: NormalizedPoint) {
-        if (!current(context) || ui.precision) return
+        if (!current(context) || ui.precision || ui.impactDrag != null) return
         if (ui.edit?.proposal is ImpactProposal.Reposition) repositionPoint(context, point)
         else if (ui.canAdd) add(point)
     }
@@ -177,7 +177,7 @@ class ConfiguredSessionController(
         session.withImpact(captured.uuid, arrow)
     }
     fun precision(context: ConfiguredTargetContext, enabled: Boolean) {
-        if (!current(context) || !ui.editableEnd || ui.position != null ||
+        if (!current(context) || ui.impactDrag != null || !ui.editableEnd || ui.position != null ||
             (ui.edit != null && ui.edit?.proposal !is ImpactProposal.Reposition)) return
         ui = ui.copy(precision = enabled, activeAim = null, epoch = epoch())
     }
@@ -191,7 +191,7 @@ class ConfiguredSessionController(
         val c = ui.selectedEnd!!.configuration
         PositionCandidate(context.owner, point, resolveFinalScore(c.targetType, point, c.scoringMode))
     } catch (e: IllegalArgumentException) { invalid(e.message ?: "Position invalide."); null }
-    private fun active(token: Long) = ui.activeAim?.takeIf { it.token == token && ui.canAim && it.candidate.context == ui.targetContext?.owner }
+    private fun active(token: Long) = ui.activeAim?.takeIf { it.token == token && it.kind == PositionGesture.PRECISE_AIM && ui.canAim && it.candidate.context == ui.targetContext?.owner }
     fun moveAim(token: Long, point: NormalizedPoint) {
         val old = active(token) ?: return
         position(ui.targetContext!!, point)?.let { ui = ui.copy(activeAim = old.copy(candidate = it)) }
@@ -244,11 +244,40 @@ class ConfiguredSessionController(
         ui = ui.copy(edit = ImpactEdit(ui.saved!!.uuid, ui.selectedEnd!!.uuid, uuid), epoch = epoch(), problem = null)
     }
     fun closeSelection(context: ConfiguredTargetContext) {
-        if (current(context) && ui.ready) ui = ui.copy(edit = null, activeAim = null, epoch = epoch(), problem = null)
+        if (current(context) && ui.ready) ui = ui.copy(edit = null, impactDrag = null, activeAim = null, epoch = epoch(), problem = null)
     }
     fun beginReposition(context: ConfiguredTargetContext) {
         if (!current(context) || !ui.canSelectImpact || ui.selectedImpact == null) return
         ui = ui.copy(edit = ui.edit!!.copy(phase = ImpactEditPhase.AWAITING_POINT, proposal = ImpactProposal.Reposition()), epoch = epoch(), problem = null)
+    }
+    fun beginDragReposition(context: ConfiguredTargetContext) {
+        if (!current(context) || !ui.canSelectImpact || ui.selectedImpact == null) return
+        beginReposition(context)
+        ui = ui.copy(impactDrag = ImpactDragContext(ui.targetContext!!.owner, epoch()))
+    }
+    private fun currentDrag(context: ImpactDragContext) = ui.impactDrag == context &&
+        context.owner == ui.targetContext?.owner && ui.canReposition
+    fun beginImpactDrag(context: ImpactDragContext, point: NormalizedPoint): Long? {
+        if (!currentDrag(context) || ui.activeAim != null || point != (ui.edit?.candidate ?: ui.selectedImpact?.point)) return null
+        val candidate = position(ui.targetContext!!, point) ?: return null
+        val token = ++aimSerial
+        ui = ui.copy(activeAim = ActiveAim(token, candidate, PositionGesture.IMPACT_DRAG), problem = null)
+        return token
+    }
+    private fun activeDrag(token: Long) = ui.activeAim?.takeIf {
+        it.token == token && it.kind == PositionGesture.IMPACT_DRAG && ui.impactDrag?.let(::currentDrag) == true
+    }
+    fun moveImpactDrag(token: Long, point: NormalizedPoint) {
+        val active = activeDrag(token) ?: return
+        position(ui.targetContext!!, point)?.let { ui = ui.copy(activeAim = active.copy(candidate = it)) }
+    }
+    fun finishImpactDrag(token: Long, point: NormalizedPoint) {
+        if (activeDrag(token) == null) return
+        ui = ui.copy(activeAim = null)
+        repositionPoint(ui.targetContext!!, point)
+    }
+    fun confirmImpactDrag(context: ImpactDragContext, point: NormalizedPoint) {
+        if (currentDrag(context) && ui.activeAim == null && ui.edit?.candidate == point) saveReposition(ui.targetContext!!)
     }
     fun repositionPoint(context: ConfiguredTargetContext, point: NormalizedPoint) {
         if (!current(context) || !ui.canReposition || ui.activeAim != null) return
@@ -263,6 +292,10 @@ class ConfiguredSessionController(
             (ui.edit!!.proposal as ImpactProposal.Reposition).copy(reason = text)), problem = null)
     }
     fun confirmReposition(context: ConfiguredTargetContext) {
+        if (ui.impactDrag != null) return
+        saveReposition(context)
+    }
+    private fun saveReposition(context: ConfiguredTargetContext) {
         if (!current(context) || !ui.canConfirmReposition) return
         val edit = ui.edit!!
         revise("Repositionner la flèche") { it.repositionImpact(edit.endUuid, edit.impactUuid, edit.candidate!!, clock.instant(), edit.reason.ifBlank { null }) }
@@ -356,7 +389,7 @@ class ConfiguredSessionController(
     }
     private fun accepted(saved: ConfiguredSession, pending: PendingConfiguredWrite, message: String) {
         ui = ui.copy(saved = saved, pending = null, form = null, compared = null, reconciliation = null, problem = null,
-            selectedEndUuid = pending.context.selectedEndUuid ?: firstEnd(saved), position = null, activeAim = null,
+            impactDrag = null, selectedEndUuid = pending.context.selectedEndUuid ?: firstEnd(saved), position = null, activeAim = null,
             edit = pending.context.edit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
             epoch = epoch(), confirmation = message)
         try { onSaved() } catch (_: Exception) { ui = ui.copy(confirmation = "$message Actualisation secondaire impossible ; commit confirmé.") }
@@ -396,12 +429,12 @@ class ConfiguredSessionController(
     /** UI must warn that this only discards local unsubmitted values. */
     fun abandonLocalAndClose() {
         if (!ui.ready) return
-        ui = ui.copy(form = null, edit = null, position = null, activeAim = null, impactPicking = null, epoch = epoch()); close()
+        ui = ui.copy(form = null, edit = null, impactDrag = null, position = null, activeAim = null, impactPicking = null, epoch = epoch()); close()
     }
     /** UI must separately warn that this does NOT roll back a possibly committed write. */
     fun abandonSubmittedAndClose() {
         if (ui.pending == null || ui.busy) return
-        ui = ui.copy(pending = null, form = null, edit = null, position = null, activeAim = null, epoch = epoch()); close()
+        ui = ui.copy(pending = null, form = null, edit = null, impactDrag = null, position = null, activeAim = null, epoch = epoch()); close()
     }
     private fun propose(block: () -> Unit) {
         try { block() } catch (e: IllegalArgumentException) { invalid(e.message ?: "Transition invalide.") }

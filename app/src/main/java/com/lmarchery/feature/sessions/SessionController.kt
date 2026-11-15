@@ -169,7 +169,7 @@ class SessionController(
     }
     fun discardAndReturnToList() {
         if (ui.busy || ui.archiveOperationLocked) return
-        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null, impactPicking = null)
+        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, impactDrag = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null, impactPicking = null)
         returnToList()
     }
     fun setPrecisionAim(enabled: Boolean) {
@@ -207,7 +207,7 @@ class SessionController(
         saveNewImpact(ui.newImpactCandidate!!.point)
     }
     private fun currentAim(token: Long): ActiveAim? = ui.activeAim?.takeIf {
-        it.token == token && ui.canAim && it.candidate.context == ui.aimContext
+        it.token == token && it.kind == PositionGesture.PRECISE_AIM && ui.canAim && it.candidate.context == ui.aimContext
     }
     private fun positionCandidate(context: AimContext, point: NormalizedPoint): PositionCandidate? = try {
         PositionCandidate(context, point, resolveFinalScore(ui.session!!.targetType, point, ui.session!!.scoringMode))
@@ -256,8 +256,42 @@ class SessionController(
         ui = ui.copy(impactEdit = ui.impactEdit!!.copy(phase = ImpactEditPhase.AWAITING_POINT,
             proposal = ImpactProposal.Reposition()), problem = null, confirmation = null)
     }
+    fun beginDragReposition() {
+        if (!ui.canBeginReposition) return
+        beginReposition()
+        ui = ui.copy(impactDrag = ImpactDragContext(ui.aimContext!!, ++impactPickSerial))
+    }
+    private fun currentDrag(context: ImpactDragContext) = ui.impactDrag == context &&
+        context.owner == ui.aimContext && ui.canProposeReposition
+    fun beginImpactDrag(context: ImpactDragContext, point: NormalizedPoint): Long? {
+        if (!currentDrag(context) || ui.activeAim != null || point != (ui.impactEdit?.candidate ?: ui.selectedImpact?.point)) return null
+        val candidate = positionCandidate(context.owner, point) ?: return null
+        val token = ++nextAimToken
+        ui = ui.copy(activeAim = ActiveAim(token, candidate, PositionGesture.IMPACT_DRAG), problem = null)
+        return token
+    }
+    private fun activeDrag(token: Long) = ui.activeAim?.takeIf {
+        it.token == token && it.kind == PositionGesture.IMPACT_DRAG && ui.impactDrag?.let(::currentDrag) == true
+    }
+    fun moveImpactDrag(token: Long, point: NormalizedPoint) {
+        val active = activeDrag(token) ?: return
+        val candidate = positionCandidate(active.candidate.context, point) ?: return
+        ui = ui.copy(activeAim = active.copy(candidate = candidate))
+    }
+    fun finishImpactDrag(token: Long, point: NormalizedPoint) {
+        val active = activeDrag(token) ?: return
+        if (positionCandidate(active.candidate.context, point) == null) return
+        ui = ui.copy(activeAim = null)
+        proposeReposition(point)
+    }
+    fun cancelImpactDrag(context: ImpactDragContext) {
+        if (currentDrag(context) && ui.ready) clearImpactEdit()
+    }
+    fun confirmImpactDrag(context: ImpactDragContext, point: NormalizedPoint) {
+        if (currentDrag(context) && ui.activeAim == null && ui.impactEdit?.candidate == point) saveReposition()
+    }
     fun targetTapped(point: NormalizedPoint) {
-        if (ui.precisionAimEnabled) return
+        if (ui.precisionAimEnabled || ui.impactDrag != null) return
         if (ui.impactEdit == null) addImpact(point) else proposeReposition(point)
     }
     fun proposeReposition(point: NormalizedPoint) {
@@ -370,10 +404,17 @@ class SessionController(
     }
     /** Only an unsubmitted selection/candidate can be cancelled without the PendingSave policy. */
     fun cancelImpactEdit() {
-        if (!ui.ready) return
-        ui = ui.copy(impactEdit = null, activeAim = null, problem = null)
+        if (!ui.ready || ui.impactDrag != null) return
+        clearImpactEdit()
+    }
+    private fun clearImpactEdit() {
+        ui = ui.copy(impactEdit = null, impactDrag = null, activeAim = null, problem = null)
     }
     fun confirmReposition() {
+        if (ui.impactDrag != null) return
+        saveReposition()
+    }
+    private fun saveReposition() {
         if (!ui.canProposeReposition || ui.activeAim != null || ui.impactEdit?.phase != ImpactEditPhase.CANDIDATE) return
         val selection = ui.impactEdit!!
         val original = ui.selectedImpact!!
@@ -474,7 +515,7 @@ class SessionController(
         else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, configuredSaved = null, pending = null, problem = null,
             selectedEndUuid = pending.selectedEndUuid, storedPreview = null, equipmentEdit = null,
             impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
-            newImpactCandidate = null, activeAim = null,
+            newImpactCandidate = null, activeAim = null, impactDrag = null,
             confirmation = "${pending.description} : ${if (idempotent) "déjà enregistré, contenu identique" else "enregistré sur cet appareil"}.")
     }
     fun previewStored() {
@@ -499,7 +540,7 @@ class SessionController(
                 val loaded = archive(result.session, result.profile)
                 ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, configuredSaved = null, storedPreview = null,
                     pending = if (abandonPending) null else ui.pending, problem = null, confirmation = null,
-                    impactEdit = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null,
+                    impactEdit = null, impactDrag = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null,
                     precisionAimEnabled = if (ui.session?.uuid == result.session.uuid) ui.precisionAimEnabled else false,
                     selectedEndUuid = ui.selectedEndUuid?.takeIf { selected ->
                         ui.session?.uuid == result.session.uuid && result.session.ends.any { it.uuid == selected }
@@ -511,7 +552,7 @@ class SessionController(
                 val configured = (complete as? ArchiveV3ReadResult.Found)?.archive?.sessions?.find { it.uuid == uuid }
                 if (configured == null) ui = ui.copy(problem = complete?.let(::v3ReadProblem) ?: readProblem(result))
                 else ui = ui.copy(screen = SessionScreen.SESSION, saved = null, configuredSaved = configured,
-                    storedPreview = null, pending = null, problem = null, confirmation = null, impactEdit = null,
+                    storedPreview = null, pending = null, problem = null, confirmation = null, impactEdit = null, impactDrag = null,
                     equipmentEdit = null, newImpactCandidate = null, activeAim = null, precisionAimEnabled = false,
                     selectedEndUuid = null)
             }
