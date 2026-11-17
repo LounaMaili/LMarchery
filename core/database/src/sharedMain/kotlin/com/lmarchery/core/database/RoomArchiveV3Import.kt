@@ -2,6 +2,7 @@ package com.lmarchery.core.database
 
 import androidx.room.*
 import com.lmarchery.core.scoring.archive.v3.*
+import com.lmarchery.core.scoring.archive.v4.*
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
 import java.util.concurrent.CancellationException
@@ -13,9 +14,9 @@ internal class RoomArchiveV3Import(private val database: SessionDatabase, privat
         caller.ensureActive(); ensureOpen()
         val archive = validateStoredV3(source.toSnapshot())
         database.useReaderConnection { connection -> connection.deferredTransaction {
-            val before = collectArchiveV3(StrictStorageQueries(connection), caller, ArchiveV3Limits())
+            val before = collectArchiveV4(StrictStorageQueries(connection), caller, ArchiveV3Limits())
             val fingerprint = fingerprintStorage(connection)
-            val plan = planArchiveImportV3(archive, before)
+            val plan = planArchiveImportV4(convertArchiveV3ToV4(archive), before)
             caller.ensureActive()
             ArchiveV3PreviewResult.Ready(ArchiveV3ImportPreview(archive, plan, before, fingerprint))
         } }
@@ -34,9 +35,9 @@ internal class RoomArchiveV3Import(private val database: SessionDatabase, privat
             return database.useWriterConnection { connection -> connection.immediateTransaction {
                 caller.ensureActive(); ensureOpen()
                 val queries = StrictStorageQueries(connection)
-                val before = collectArchiveV3(queries, caller, ArchiveV3Limits())
+                val before = collectArchiveV4(queries, caller, ArchiveV3Limits())
                 val fingerprint = fingerprintStorage(connection)
-                val plan = planArchiveImportV3(source, before)
+                val plan = planArchiveImportV4(convertArchiveV3ToV4(source), before)
                 if (before != confirmed.baseline || fingerprint != confirmed.baselineFingerprint || plan != confirmed.plan || !plan.canImport)
                     return@immediateTransaction ArchiveV3ImportResult.Conflict(confirmed, StorageDiagnostic("importV3.preview",
                         "Exact local content, SQL representation or plan changed, or conflicts exist; explicitly preview again."))
@@ -53,7 +54,7 @@ internal class RoomArchiveV3Import(private val database: SessionDatabase, privat
                 val bows = source.bows.filter { it.uuid in newBows }
                 val arrows = source.arrowSets.filter { it.uuid in newArrows }
                 // Validate the union and its cumulative budgets BEFORE the first INSERT.
-                val expected = validateStoredV3(snapshotArchiveV3(
+                val expected = validateStoredV4(snapshotArchiveV4(
                     (before.profiles + profiles).sortedBy { it.definition!!.uuid }, (before.sessions + sessions).sortedBy { it.uuid },
                     (before.bows + bows).sortedBy { it.uuid }, (before.arrowSets + arrows).sortedBy { it.uuid }))
                 val knownIds = before.identitiesV3()
@@ -83,7 +84,7 @@ internal class RoomArchiveV3Import(private val database: SessionDatabase, privat
                 bows.forEach { caller.ensureActive(); database.equipment().insertBow(it.row()) }
                 arrows.forEach { caller.ensureActive(); database.equipment().insertArrowSet(it.row()) }
                 // Never return a normal failure from this body after DML: THROW to roll back ALL additions.
-                val after = collectArchiveV3(queries, caller, ArchiveV3Limits())
+                val after = collectArchiveV4(queries, caller, ArchiveV3Limits())
                 dataCheck(after == expected, "importV3.verification", "Complete stored archive differs from source additions plus unchanged local data.")
                 val preserved = fingerprintStorage(connection, exclusions)
                 val changedTable = fingerprint.keys.firstOrNull { fingerprint[it] != preserved[it] }

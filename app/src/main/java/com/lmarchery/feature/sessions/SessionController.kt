@@ -13,6 +13,7 @@ import com.lmarchery.core.scoring.scoreArrowImpact
 import com.lmarchery.core.scoring.resolveFinalScore
 import com.lmarchery.data.SessionRepository
 import com.lmarchery.data.ArchiveV3Source
+import com.lmarchery.data.ArchiveV4Source
 import com.lmarchery.data.EquipmentRepository
 import com.lmarchery.data.EquipmentKind
 import kotlinx.coroutines.*
@@ -32,6 +33,7 @@ class SessionController(
     private val newUuid: () -> String = { UUID.randomUUID().toString() },
     private val equipmentRepository: EquipmentRepository? = null,
     private val v3Source: ArchiveV3Source? = null,
+    private val v4Source: ArchiveV4Source? = repository as? ArchiveV4Source,
 ) {
     private var nextAimToken = 0L
     private val mutableState = MutableStateFlow(SessionUiState())
@@ -43,6 +45,43 @@ class SessionController(
     private var creationEquipmentLoad: Job? = null
     private var equipmentLoadGeneration = 0
     private var impactPickSerial = 0L
+    private var cancellationSerial = 0L
+    private var cancellationExpected: SessionContent? = null
+
+    fun beginCancellation() {
+        if (!ui.canSelectImpact || ui.selectedImpact == null || ui.impactDrag != null) return
+        cancellationExpected = ui.saved
+        ui = ui.copy(cancellation = ImpactCancellationDialog(ui.session!!.uuid, ui.displayedEnd!!.uuid,
+            ui.selectedImpact!!.uuid, ++cancellationSerial), problem = null)
+    }
+    fun cancellationComment(token: Long, value: String) {
+        val dialog = ui.cancellation ?: return
+        if (!ui.busy && dialog.token == token && dialog.phase == CancellationPhase.LOCAL)
+            ui = ui.copy(cancellation = dialog.copy(comment = value))
+    }
+    fun closeCancellation(token: Long) {
+        if (!ui.busy && ui.pending == null && ui.cancellation?.token == token) {
+            ui = ui.copy(cancellation = null, impactEdit = null); cancellationExpected = null
+        }
+    }
+    fun canAbandonCancellationDisplay(token: Long): Boolean = !ui.busy && ui.pending != null &&
+        ui.cancellation?.let { it.token == token && it.phase == CancellationPhase.FAILED } == true
+
+    fun confirmCancellation(token: Long) {
+        val dialog = ui.cancellation ?: return
+        val expected = cancellationExpected ?: return
+        if (ui.busy || ui.pending != null || ui.archiveOperationLocked || dialog.token != token || dialog.phase != CancellationPhase.LOCAL ||
+            ui.saved?.sameContent(expected) != true || ui.session?.uuid != dialog.sessionUuid || ui.displayedEnd?.uuid != dialog.endUuid || ui.impactEdit?.impactUuid != dialog.impactUuid) return
+        cancellationCommentProblem(dialog.comment)?.let {
+            ui = ui.copy(problem = UiProblem(ProblemKind.INVALID_ACTION, it)); return
+        }
+        launchOperation {
+            val session = expected.sessions.single().cancelImpact(dialog.endUuid, dialog.impactUuid, clock.instant(), dialog.comment)
+            val proposed = archive(session, expected.profiles.single())
+            ui = ui.copy(cancellation = dialog.copy(phase = CancellationPhase.SAVING))
+            save(PendingSave("Annuler la saisie de cette flèche", expected, proposed, dialog.endUuid))
+        }
+    }
 
     fun acquireExport(): Boolean {
         if (!ui.ready || ui.impactEdit != null || ui.equipmentEdit != null || ui.hasAimProposal || ui.impactPicking != null) return false
@@ -63,15 +102,15 @@ class SessionController(
             is SessionDiscoveryResult.Found -> {
                 // Legacy reads remain the only route into the historical editor. A refused legacy
                 // read may be displayed ONLY after complete V3 reconstruction, always read-only.
-                var complete: ArchiveV3ReadResult? = null
+                var complete: Pair<ArchiveGraph?, UiProblem?>? = null
                 val entries = discovery.uuids.map { uuid ->
                     when (val result = repository.read(uuid)) {
                         is SessionReadResult.Found -> SessionEntry(uuid, result.session)
                         is SessionReadResult.NeedsIntervention -> {
-                            if (v3Source != null && complete == null) complete = v3Source.readArchiveV3()
-                            val configured = (complete as? ArchiveV3ReadResult.Found)?.archive?.sessions?.find { it.uuid == uuid }
+                            if (complete == null) complete = configuredArchive()
+                            val configured = complete.first?.sessions?.find { it.uuid == uuid }
                             if (configured != null) SessionEntry(uuid, configured = configured)
-                            else SessionEntry(uuid, problem = complete?.let(::v3ReadProblem) ?: readProblem(result))
+                            else SessionEntry(uuid, problem = complete.second ?: readProblem(result))
                         }
                         else -> SessionEntry(uuid, problem = readProblem(result))
                     }
@@ -79,6 +118,15 @@ class SessionController(
                 ui = ui.copy(entries = entries)
             }
         }
+    }
+    private suspend fun configuredArchive(): Pair<ArchiveGraph?, UiProblem?> {
+        if (v4Source != null) return when (val r = v4Source.readArchiveV4()) {
+            is ArchiveV4ReadResult.Found -> r.archive to null
+            is ArchiveV4ReadResult.NeedsIntervention -> null to UiProblem(ProblemKind.INTERVENTION, "${r.diagnostic.path} : ${r.diagnostic.detail}")
+            is ArchiveV4ReadResult.TechnicalFailure -> null to technical(r.cause)
+        }
+        val result = v3Source?.readArchiveV3()
+        return (result as? ArchiveV3ReadResult.Found)?.archive to result?.let(::v3ReadProblem)
     }
     fun configure() {
         if (!ui.canNavigate) return
@@ -169,7 +217,8 @@ class SessionController(
     }
     fun discardAndReturnToList() {
         if (ui.busy || ui.archiveOperationLocked) return
-        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, impactDrag = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null, impactPicking = null)
+        ui = ui.copy(pending = null, storedPreview = null, problem = null, impactEdit = null, impactDrag = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null, impactPicking = null, cancellation = null)
+        cancellationExpected = null
         returnToList()
     }
     fun setPrecisionAim(enabled: Boolean) {
@@ -226,7 +275,7 @@ class SessionController(
     fun pickImpact(context: ImpactPickContext, point: NormalizedPoint, toleranceNormalized: Float,
         viewport: ImpactPickViewport = ImpactPickViewport()) {
         if (!currentPicking(context)) return
-        val candidates = try { findImpactCandidates(ui.displayedEnd!!.impacts, point, toleranceNormalized, viewport) }
+        val candidates = try { findImpactCandidates(ui.displayedEnd!!.activeImpacts, point, toleranceNormalized, viewport) }
         catch (error: IllegalArgumentException) {
             ui = ui.copy(impactPicking = ui.impactPicking!!.copy(candidates = emptyList(), hasTapped = true))
             invalidAction(error.message ?: "Sélection invalide."); return
@@ -245,7 +294,7 @@ class SessionController(
     fun selectImpact(endUuid: String, impactUuid: String) {
         if (!ui.canSelectImpact) return
         val end = ui.editingEnd!!
-        if (end.uuid != endUuid || end.impacts.none { it.uuid == impactUuid }) {
+        if (end.uuid != endUuid || !end.isImpactActive(impactUuid)) {
             invalidAction("La flèche n’existe pas dans la volée en saisie affichée.")
             return
         }
@@ -448,9 +497,9 @@ class SessionController(
         saveNewImpact(point)
     }
     private fun saveNewImpact(point: NormalizedPoint) {
-        mutate("Placer la flèche ${ui.editingEnd!!.impacts.size + 1} (${point.x}, ${point.y})") { s, now ->
+        mutate("Placer la flèche ${ui.editingEnd!!.nextImpactIndex()} (${point.x}, ${point.y})") { s, now ->
             val end = requireNotNull(ui.editingEnd)
-            val impact = scoreArrowImpact(newUuid(), end.impacts.size + 1, s.targetType, point, s.scoringMode, createdAt = now)
+            val impact = scoreArrowImpact(newUuid(), end.nextImpactIndex(), s.targetType, point, s.scoringMode, createdAt = now)
             s.withEnd(end.withImpact(impact)) to end.uuid
         }
     }
@@ -487,6 +536,7 @@ class SessionController(
     fun retrySave() {
         val pending = ui.pending ?: return
         if (ui.busy || ui.problem?.retryable != true) return
+        if (ui.cancellation != null && ui.storedPreview?.sameContent(pending.expected) != true) return
         launchOperation { save(pending) } // Exact same expected, proposed, UUIDs and timestamps.
     }
     private suspend fun save(pending: PendingSave) {
@@ -494,7 +544,7 @@ class SessionController(
             impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.SAVING))
         var idempotent = false
         val problem: UiProblem? = if (pending.expected == null) {
-            when (val result = repository.create(pending.proposed)) {
+            when (val result = repository.create(pending.proposed as DomainArchive)) {
                 is SessionCreateResult.Created -> null
                 is SessionCreateResult.AlreadyExists -> { idempotent = true; null }
                 is SessionCreateResult.Conflict -> diagnostic(ProblemKind.CONFLICT, result.diagnostic)
@@ -502,28 +552,47 @@ class SessionController(
                 is SessionCreateResult.TechnicalFailure -> technical(result.cause)
             }
         } else {
-            when (val result = repository.update(pending.expected, pending.proposed)) {
-                is SessionUpdateResult.Updated -> null
-                is SessionUpdateResult.Unchanged -> { idempotent = true; null }
-                SessionUpdateResult.NotFound -> UiProblem(ProblemKind.NOT_FOUND, "Séance introuvable. Aucune recréation automatique.")
-                is SessionUpdateResult.Conflict -> diagnostic(ProblemKind.CONFLICT, result.diagnostic)
-                is SessionUpdateResult.NeedsIntervention -> diagnostic(ProblemKind.INTERVENTION, result.diagnostic)
-                is SessionUpdateResult.TechnicalFailure -> technical(result.cause)
+            val result = repository.updateContent(pending.expected, pending.proposed)
+            check(result.request == ConfiguredWriteRequest.Update(pending.expected.configuredLegacyValue(), pending.proposed.configuredLegacyValue())) {
+                "Repository acknowledged a different complete revision."
+            }
+            when (result) {
+                is ConfiguredWriteResult.Updated, is ConfiguredWriteResult.Created -> null
+                is ConfiguredWriteResult.AlreadyApplied -> { idempotent = true; null }
+                is ConfiguredWriteResult.Conflict -> diagnostic(if (result.kind == ConfiguredWriteConflict.NOT_FOUND) ProblemKind.NOT_FOUND else ProblemKind.CONFLICT, result.diagnostic)
+                is ConfiguredWriteResult.NeedsIntervention -> UiProblem(if (result.commitOutcome == ConfiguredCommitOutcome.UNCONFIRMED) ProblemKind.UNCONFIRMED else ProblemKind.INTERVENTION,
+                    "${result.diagnostic.path} : ${result.diagnostic.detail}")
+                is ConfiguredWriteResult.TechnicalFailure -> technical(result.cause)
+                is ConfiguredWriteResult.CommitUnconfirmed -> UiProblem(ProblemKind.UNCONFIRMED, "Commit potentiellement acquis ; relisez et comparez. Aucune répétition automatique.")
             }
         }
-        if (problem != null) ui = ui.copy(problem = problem, impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.FAILED))
-        else ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, configuredSaved = null, pending = null, problem = null,
+        currentCoroutineContext().ensureActive()
+        if (problem != null) ui = ui.copy(problem = problem, impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.FAILED),
+            cancellation = ui.cancellation?.copy(phase = CancellationPhase.FAILED))
+        else acknowledge(pending, idempotent)
+    }
+    private fun acknowledge(pending: PendingSave, idempotent: Boolean) {
+        ui = ui.copy(screen = SessionScreen.SESSION, saved = pending.proposed, configuredSaved = null, pending = null, problem = null,
             selectedEndUuid = pending.selectedEndUuid, storedPreview = null, equipmentEdit = null,
             impactEdit = ui.impactEdit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
             newImpactCandidate = null, activeAim = null, impactDrag = null,
-            confirmation = "${pending.description} : ${if (idempotent) "déjà enregistré, contenu identique" else "enregistré sur cet appareil"}.")
+            confirmation = "${pending.description} : ${if (idempotent) "déjà enregistré, contenu identique" else "enregistré sur cet appareil"}.",
+            cancellation = ui.cancellation?.copy(phase = CancellationPhase.CONFIRMED))
     }
     fun previewStored() {
         val pending = ui.pending ?: return
         if (ui.busy) return
         launchOperation(clearProblem = false) {
             val result = repository.read(pending.proposed.sessions.single().uuid)
-            if (result is SessionReadResult.Found) ui = ui.copy(storedPreview = archive(result.session, result.profile))
+            if (result is SessionReadResult.Found) {
+                val stored = archive(result.session, result.profile)
+                ui = ui.copy(storedPreview = stored)
+                if (ui.cancellation != null) when {
+                    stored.sameContent(pending.proposed) -> acknowledge(pending, true)
+                    stored.sameContent(pending.expected) -> ui = ui.copy(problem = UiProblem(ProblemKind.TECHNICAL, "Expected intégral retrouvé. La même intention peut être confirmée explicitement."))
+                    else -> ui = ui.copy(problem = UiProblem(ProblemKind.CONFLICT, "Troisième état enregistré. Aucun écrasement ni répétition."))
+                }
+            }
             else ui = ui.copy(problem = readProblem(result))
         }
     }
@@ -538,7 +607,9 @@ class SessionController(
         when (val result = repository.read(uuid)) {
             is SessionReadResult.Found -> {
                 val loaded = archive(result.session, result.profile)
+                if (abandonPending) cancellationExpected = null
                 ui = ui.copy(screen = SessionScreen.SESSION, saved = loaded, configuredSaved = null, storedPreview = null,
+                    cancellation = if (abandonPending) null else ui.cancellation,
                     pending = if (abandonPending) null else ui.pending, problem = null, confirmation = null,
                     impactEdit = null, impactDrag = null, equipmentEdit = null, newImpactCandidate = null, activeAim = null,
                     precisionAimEnabled = if (ui.session?.uuid == result.session.uuid) ui.precisionAimEnabled else false,
@@ -548,9 +619,9 @@ class SessionController(
                         ?: result.session.ends.lastOrNull()?.uuid)
             }
             is SessionReadResult.NeedsIntervention -> {
-                val complete = v3Source?.readArchiveV3()
-                val configured = (complete as? ArchiveV3ReadResult.Found)?.archive?.sessions?.find { it.uuid == uuid }
-                if (configured == null) ui = ui.copy(problem = complete?.let(::v3ReadProblem) ?: readProblem(result))
+                val complete = configuredArchive()
+                val configured = complete.first?.sessions?.find { it.uuid == uuid }
+                if (configured == null) ui = ui.copy(problem = complete.second ?: readProblem(result))
                 else ui = ui.copy(screen = SessionScreen.SESSION, saved = null, configuredSaved = configured,
                     storedPreview = null, pending = null, problem = null, confirmation = null, impactEdit = null, impactDrag = null,
                     equipmentEdit = null, newImpactCandidate = null, activeAim = null, precisionAimEnabled = false,
@@ -565,13 +636,16 @@ class SessionController(
         scope.launch {
             try { block() }
             catch (error: CancellationException) {
-                ui = ui.copy(problem = UiProblem(ProblemKind.TECHNICAL, "Opération interrompue ; enregistrement non confirmé."),
-                    impactEdit = failedImpactEdit())
+                ui = ui.copy(problem = UiProblem(if (ui.cancellation != null && ui.pending != null) ProblemKind.UNCONFIRMED else ProblemKind.TECHNICAL, "Opération interrompue ; enregistrement non confirmé."),
+                    impactEdit = failedImpactEdit(), cancellation = ui.cancellation?.copy(phase = CancellationPhase.FAILED))
                 throw error
             }
             catch (error: IllegalArgumentException) { ui = ui.copy(problem = UiProblem(ProblemKind.INVALID_ACTION, error.message ?: "Action invalide."), impactEdit = failedImpactEdit()) }
-            catch (error: Exception) { ui = ui.copy(problem = technical(error), impactEdit = failedImpactEdit()) }
-            finally { ui = ui.copy(busy = false) }
+            catch (error: Exception) { ui = ui.copy(problem = if (ui.cancellation != null && ui.pending != null)
+                UiProblem(ProblemKind.UNCONFIRMED, "Résultat non démontré ; intention exacte conservée. Relisez avant toute décision.") else technical(error), impactEdit = failedImpactEdit()) }
+            finally { ui = ui.copy(busy = false, cancellation = ui.cancellation?.let {
+                if (ui.problem != null && ui.pending != null) it.copy(phase = CancellationPhase.FAILED) else it
+            }) }
         }
     }
     private fun failedImpactEdit() = ui.impactEdit?.let {
@@ -579,8 +653,8 @@ class SessionController(
     }
 }
 
-private fun archive(session: Session, profile: TargetProfileSnapshot): DomainArchive =
-    when (val result = reconstructArchive(snapshotArchive(listOf(profile), listOf(session)))) {
+private fun archive(session: Session, profile: TargetProfileSnapshot): SessionContent =
+    if (session.ends.any { it.cancellations.isNotEmpty() }) validatedSessionContent(profile, session) else when (val result = reconstructArchive(snapshotArchive(listOf(profile), listOf(session)))) {
         is ArchiveReconstruction.Accepted -> result.archive
         is ArchiveReconstruction.NeedsIntervention -> throw IllegalArgumentException("${result.issue.path}: ${result.issue.detail}")
     }

@@ -1,5 +1,9 @@
 # Contrat de sauvegarde V1 — LMarchery
 
+> Annulations du ticket 2.5 : ce contrat publié reste inchangé. Une sauvegarde
+> contenant des preuves d’annulation exige [V4](export-format-v4.md) ; aucune
+> omission silencieuse n’est autorisée.
+
 > Export JSON UTF-8 opérationnel ; reconstruction indépendante et import contrôlé sans écrasement.
 
 Le [contrat JSON V2](export-format-v2.md) ajoute le matériel dans une API distincte

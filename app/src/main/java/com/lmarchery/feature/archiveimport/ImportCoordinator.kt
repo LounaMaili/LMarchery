@@ -6,6 +6,7 @@ import com.lmarchery.core.scoring.archive.ArchiveImportPlan
 import com.lmarchery.core.scoring.archive.ArchiveV2ImportPlan
 import com.lmarchery.core.scoring.archive.v3.ArchiveV3ImportPlan
 import com.lmarchery.core.scoring.archive.v3.DomainArchiveV3
+import com.lmarchery.core.scoring.archive.v4.*
 import com.lmarchery.data.*
 import com.lmarchery.data.archiveimport.*
 import kotlinx.coroutines.*
@@ -25,6 +26,11 @@ sealed interface ImportState {
     data class SucceededV3(val added: ArchiveV3Counts, val identical: ArchiveV3Counts,
         val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false) : ImportState
     data class UnconfirmedV3(val diagnostic: String) : ImportState
+    data class PreviewV4(val plan: ArchiveV4ImportPlan, val confirmationId: String) : ImportState
+    data class ConflictV4(val plan: ArchiveV4ImportPlan?, val diagnostic: String) : ImportState
+    data class SucceededV4(val added: ArchiveV4Counts, val identical: ArchiveV4Counts,
+        val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false) : ImportState
+    data class UnconfirmedV4(val diagnostic: String) : ImportState
     data object Confirming : ImportState
     data object Importing : ImportState
     data class Conflict(val plan: ArchiveImportPlan?, val diagnostic: String) : ImportState
@@ -38,7 +44,7 @@ sealed interface ImportState {
 }
 
 val ImportState.active get() = this is ImportState.Choosing || this is ImportState.Reading ||
-    this is ImportState.Validating || this is ImportState.Preview || this is ImportState.PreviewV2 || this is ImportState.PreviewV3 || this is ImportState.UnconfirmedV3 || this is ImportState.Confirming || this is ImportState.Importing
+    this is ImportState.Validating || this is ImportState.Preview || this is ImportState.PreviewV2 || this is ImportState.PreviewV3 || this is ImportState.UnconfirmedV3 || this is ImportState.PreviewV4 || this is ImportState.UnconfirmedV4 || this is ImportState.Confirming || this is ImportState.Importing
 
 /** UI-thread entry points; exact decoded candidate retained in memory, never reopened on confirmation. */
 class ImportCoordinator(
@@ -53,12 +59,14 @@ class ImportCoordinator(
     private val v2Repository: ArchiveV2Importer? = null,
     private val v3Repository: ArchiveV3Importer? = null,
     private val v3Codec: ArchiveV3JsonCodec = ArchiveV3JsonCodec(),
+    private val v4Repository: ArchiveV4Importer? = null,
 ) {
     private val mutableState = MutableStateFlow<ImportState>(ImportState.Available)
     val state = mutableState.asStateFlow()
     private var candidate: ArchiveImportPreview? = null
     private var candidateV2: PreparedV2Import? = null
     private var candidateV3: PreparedV3Import? = null
+    private var candidateV4: PreparedV4Import? = null
     private var ownsLock = false
     private var selectedUri: String? = null
     private var selectedBytes: ByteArray? = null
@@ -70,7 +78,7 @@ class ImportCoordinator(
             return
         }
         ownsLock = true
-        candidate = null; candidateV2 = null; candidateV3 = null; selectedUri = null; selectedBytes = null
+        candidate = null; candidateV2 = null; candidateV3 = null; candidateV4 = null; selectedUri = null; selectedBytes = null
         mutableState.value = ImportState.Choosing(UUID.randomUUID().toString())
     }
     fun claimSelection(): Boolean {
@@ -98,6 +106,7 @@ class ImportCoordinator(
                 if (decoded is ArchiveDocumentRead.Rejected) {
                     finish(ImportState.Failed("${decoded.code} · ${decoded.path} : ${decoded.detail}")); return@launch
                 }
+                if (decoded is ArchiveDocumentRead.V4) { prepareV4(decoded.archive); return@launch }
                 if (decoded is ArchiveDocumentRead.V3) {
                     prepareV3(decoded.archive)
                     return@launch
@@ -275,15 +284,100 @@ class ImportCoordinator(
     }
     private fun uncertainV3(message: String) { mutableState.value = ImportState.UnconfirmedV3(message) }
 
+    /** A stale button from an earlier preview can never confirm a newer candidate. */
+    fun confirmV4(confirmationId: String) {
+        val current = state.value as? ImportState.PreviewV4 ?: return
+        val preview = candidateV4 ?: return
+        if (current.confirmationId != confirmationId || !preview.plan.canImport) return
+        mutableState.value = ImportState.Confirming
+        scope.launch {
+            try {
+                mutableState.value = ImportState.Importing
+                val success = when (val result = withContext(dispatcher) { preview.commit() }) {
+                    is RestoreV4Result.Imported -> ImportState.SucceededV4(result.added, result.identical)
+                    is RestoreV4Result.AlreadyPresent -> ImportState.SucceededV4(ArchiveV4Counts(0, 0, 0, 0, 0, 0),
+                        result.identical, alreadyPresent = true, emptyArchive = result.emptyArchive)
+                    is RestoreV4Result.Conflict -> {
+                        finish(ImportState.ConflictV4(null, "${result.diagnostic.path} : ${result.diagnostic.detail} Nouvel aperçu explicite nécessaire.")); return@launch
+                    }
+                    is RestoreV4Result.NeedsIntervention -> {
+                        val message = "${result.diagnostic.path} : ${result.diagnostic.detail}"
+                        if (result.outcome == ArchiveV4CommitOutcome.UNCONFIRMED) uncertainV4(message)
+                        else finish(ImportState.Failed(message))
+                        return@launch
+                    }
+                    is RestoreV4Result.TechnicalFailure -> {
+                        finish(ImportState.Failed("Restauration V4 impossible ; aucune écriture métier tentée par cet appel.")); return@launch
+                    }
+                    is RestoreV4Result.CommitUnconfirmed -> { uncertainV4("Acquittement du commit V4 indisponible."); return@launch }
+                }
+                currentCoroutineContext().ensureActive()
+                finish(success)
+                try { refresh() } catch (_: Exception) { mutableState.value = success.copy(refreshFailed = true) }
+            } catch (error: ArchiveV4ImportCancelled) {
+                if (error.commitOutcome == ArchiveV4CommitOutcome.NOT_ATTEMPTED) finish(ImportState.Unconfirmed(false))
+                else uncertainV4("Restauration V4 interrompue ; commit non confirmé.")
+                throw error
+            } catch (error: CancellationException) {
+                uncertainV4("Confirmation V4 interrompue ; l’absence d’acquittement ne prouve pas un rollback."); throw error
+            } catch (_: Exception) { uncertainV4("Confirmation V4 impossible ; résultat SQL non démontré.") }
+        }
+    }
+
+    /** Explicit reconciliation only: same source, fresh read-only preview, NEVER a commit/retry. */
+    fun repreviewV4() {
+        if (state.value !is ImportState.UnconfirmedV4) return
+        val previous = candidateV4 ?: return
+        mutableState.value = ImportState.Validating
+        scope.launch {
+            try { prepareV4(previous.archive, recovering = true) }
+            catch (error: CancellationException) { uncertainV4("Relecture interrompue ; le résultat précédent reste non confirmé."); throw error }
+            catch (_: Exception) { uncertainV4("Relecture impossible ; le résultat précédent reste non confirmé.") }
+        }
+    }
+
+    /** Requires an explicit UI warning: does not undo or replay any possibly committed transaction. */
+    fun dismissUnconfirmedV4() {
+        if (state.value !is ImportState.UnconfirmedV4) return
+        finish(ImportState.Unconfirmed(true))
+        try { refresh() } catch (_: Exception) { /* Unknown commit remains unknown; no write or retry. */ }
+    }
+
+    private suspend fun prepareV4(archive: DomainArchiveV4, recovering: Boolean = false) {
+        val importer = v4Repository ?: run {
+            finish(ImportState.Failed("Import V4 indisponible ; aucune conversion vers V2/V1 ni écriture.")); return
+        }
+        when (val result = withContext(dispatcher) { importer.previewImportV4(archive) }) {
+            is PreparedV4Result.Ready -> {
+                currentCoroutineContext().ensureActive()
+                if (!result.candidate.plan.canImport) finish(ImportState.ConflictV4(result.candidate.plan,
+                    "Conflits V4 : aucune catégorie ne sera restaurée ni remplacée."))
+                else {
+                    candidateV4 = result.candidate
+                    mutableState.value = ImportState.PreviewV4(result.candidate.plan, UUID.randomUUID().toString())
+                }
+            }
+            is PreparedV4Result.NeedsIntervention -> {
+                val message = "${result.diagnostic.path} : ${result.diagnostic.detail}"
+                if (recovering) uncertainV4(message) else finish(ImportState.Failed(message))
+            }
+            is PreparedV4Result.TechnicalFailure -> {
+                if (recovering) uncertainV4("Nouvel aperçu impossible ; résultat précédent toujours non confirmé.")
+                else finish(ImportState.Failed("Prévisualisation V4 impossible. Aucune écriture demandée."))
+            }
+        }
+    }
+    private fun uncertainV4(message: String) { mutableState.value = ImportState.UnconfirmedV4(message) }
+
     fun cancel() {
-        if (state.value is ImportState.Choosing || state.value is ImportState.Preview || state.value is ImportState.PreviewV2 || state.value is ImportState.PreviewV3) finish(ImportState.Cancelled)
+        if (state.value is ImportState.Choosing || state.value is ImportState.Preview || state.value is ImportState.PreviewV2 || state.value is ImportState.PreviewV3 || state.value is ImportState.PreviewV4) finish(ImportState.Cancelled)
     }
     fun pickerUnavailable(requestId: String?) { if ((state.value as? ImportState.Choosing)?.requestId == requestId && requestId != null) finish(ImportState.Failed("Sélecteur de documents indisponible.")) }
     fun reportInterrupted() {
         if (state.value == ImportState.Available) finish(ImportState.Unconfirmed(true))
     }
     private fun finish(next: ImportState) {
-        candidate = null; candidateV2 = null; candidateV3 = null; selectedUri = null; selectedBytes = null
+        candidate = null; candidateV2 = null; candidateV3 = null; candidateV4 = null; selectedUri = null; selectedBytes = null
         mutableState.value = next
         if (ownsLock) { ownsLock = false; release() }
     }

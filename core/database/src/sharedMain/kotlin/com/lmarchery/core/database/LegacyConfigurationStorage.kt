@@ -11,6 +11,7 @@ internal suspend fun StorageReadQueries.legacyConfiguration(row: SessionRow): Se
 }
 
 internal suspend fun SessionDao.requireLegacyArchive() {
+    dataCheck(cancellationCount() == 0, "archive.cancellations", "V1/V2 cannot represent cancellation evidence; use V4. No lossy export or import is permitted.")
     val incompatible = nonLegacyConfigurationUuids().firstOrNull()
     dataCheck(incompatible == null, "session_configurations[$incompatible].representation",
         "V1/V2 cannot represent configurable sessions; no incomplete archive or import is permitted.")

@@ -16,6 +16,18 @@ internal class StrictStorageQueries private constructor(private val connection: 
     })
     private interface ReadConnection { suspend fun <T> prepared(sql: String, read: (SQLiteStatement) -> T): T }
     private var textLimit = ArchiveV3Limits().maxTextLength
+    internal suspend fun cancellations(limits: ArchiveV3Limits = ArchiveV3Limits()): List<CancellationRow> {
+        // Migrations 1->2->3 deliberately run against the original schemas without this additive table.
+        val exists = connection.prepared("SELECT 1 FROM sqlite_master WHERE type='table' AND name='impact_cancellations'") { it.step() }
+        if (!exists) return emptyList()
+        val count = connection.prepared("SELECT count(*) FROM impact_cancellations") { it.step(); it.getLong(0) }
+        if (count > limits.maxCollectionElements) storageBudget("cancellations", "Evidence collection exceeds its budget.")
+        val oversized = connection.prepared("SELECT 1 FROM impact_cancellations WHERE length(CAST(comment AS BLOB)) > ${limits.maxTextLength.toLong() * 4} LIMIT 1") { it.step() }
+        if (oversized) storageBudget("cancellations.comment", "Evidence text exceeds its budget.")
+        return rows("SELECT * FROM impact_cancellations ORDER BY endUuid, position") { r ->
+            CancellationRow(r.s("impactUuid"), r.s("endUuid"), r.i("position"), r.time("cancelled"), r.s("reason"), r.ns("comment"))
+        }
+    }
     /** SQL preflight bounds materialization before reading large fields/graphs, without changing any row. */
     internal suspend fun checkBudgets(limits: ArchiveV3Limits, configured: Boolean) {
         textLimit = limits.maxTextLength
@@ -118,7 +130,7 @@ private class Row(private val statement: SQLiteStatement, private val textLimit:
     }
     fun ni(name: String): Int? = if (statement.isNull(index(name))) null else i(name)
     private fun nl(name: String): Long? = if (statement.isNull(index(name))) null else long(name)
-    private fun time(prefix: String) = SqlInstant(nl("${prefix}_epochSecond"), ni("${prefix}_nano"))
+    fun time(prefix: String) = SqlInstant(nl("${prefix}_epochSecond"), ni("${prefix}_nano"))
     private fun optionalTime(prefix: String): SqlInstant? = time(prefix).takeUnless { it.epochSecond == null && it.nano == null }
     fun profile() = ProfileRow(s("uuid"),s("name"),s("discipline"),i("diameterCm"),i("maxScore"),i("minScore"),
         i("defaultArrowCount"),i("defaultDistanceM"),i("isBuiltIn"),i("xRingEnabled"),s("xRingLabel"),i("innerTenRadiusBits"),ns("regulatoryEdition"),i("zoneCount"))

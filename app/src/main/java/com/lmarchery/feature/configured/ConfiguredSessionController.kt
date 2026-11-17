@@ -34,7 +34,40 @@ class ConfiguredSessionController(
     private var serial = 0L
     private var aimSerial = 0L
     private var ownsGate = false
+    private var cancellationExpected: ConfiguredSession? = null
     private fun epoch() = ++serial
+
+    fun beginCancellation(context: ConfiguredTargetContext) {
+        if (!current(context) || !ui.canSelectImpact || ui.selectedImpact == null || ui.impactDrag != null) return
+        cancellationExpected = ui.saved
+        val impact = ui.selectedImpact!!
+        ui = ui.copy(cancellation = ImpactCancellationDialog(ui.saved!!.uuid, ui.selectedEnd!!.uuid, impact.uuid, epoch()), problem = null)
+    }
+    fun cancellationComment(token: Long, value: String) {
+        val dialog = ui.cancellation ?: return
+        if (!ui.busy && dialog.token == token && dialog.phase == CancellationPhase.LOCAL)
+            ui = ui.copy(cancellation = dialog.copy(comment = value))
+    }
+    fun closeCancellation(token: Long) {
+        if (!ui.busy && ui.pending == null && ui.cancellation?.token == token) {
+            ui = ui.copy(cancellation = null, edit = null, epoch = epoch()); cancellationExpected = null
+        }
+    }
+    fun canAbandonCancellationDisplay(token: Long): Boolean = !ui.busy && ui.pending != null &&
+        ui.cancellation?.let { it.token == token && it.phase == CancellationPhase.FAILED } == true
+
+    fun confirmCancellation(token: Long) {
+        val dialog = ui.cancellation ?: return
+        val previous = cancellationExpected ?: return
+        if (!ui.open || ui.busy || ui.pending != null || dialog.token != token || dialog.phase != CancellationPhase.LOCAL ||
+            ui.saved != previous || previous.uuid != dialog.sessionUuid || ui.selectedEndUuid != dialog.endUuid || ui.edit?.impactUuid != dialog.impactUuid) return
+        cancellationCommentProblem(dialog.comment)?.let { invalid(it); return }
+        propose {
+            val proposed = previous.cancelImpact(dialog.endUuid, dialog.impactUuid, clock.instant(), dialog.comment)
+            ui = ui.copy(cancellation = dialog.copy(phase = CancellationPhase.SAVING))
+            submit("Annuler la saisie de cette flèche", ConfiguredWriteRequest.Update(previous, proposed), dialog.endUuid, token)
+        }
+    }
 
     fun create() {
         if (ui.open || !acquire()) return
@@ -171,7 +204,7 @@ class ConfiguredSessionController(
     }
     private fun add(point: NormalizedPoint) = revise("Enregistrer la nouvelle flèche") { session ->
         val captured = ui.selectedEnd!!
-        val index = Math.addExact(captured.end.impacts.maxOfOrNull { it.index } ?: 0, 1)
+        val index = captured.end.nextImpactIndex()
         val now = clock.instant()
         val arrow = scoreArrowImpact(newUuid(), index, captured.configuration.targetType, point, captured.configuration.scoringMode, createdAt = now)
         session.withImpact(captured.uuid, arrow)
@@ -222,7 +255,7 @@ class ConfiguredSessionController(
     fun pickImpact(context: ImpactPickContext, point: NormalizedPoint, toleranceNormalized: Float,
         viewport: ImpactPickViewport = ImpactPickViewport()) {
         if (!currentPicking(context)) return
-        val candidates = try { findImpactCandidates(ui.selectedEnd!!.end.impacts, point, toleranceNormalized, viewport) }
+        val candidates = try { findImpactCandidates(ui.selectedEnd!!.end.activeImpacts, point, toleranceNormalized, viewport) }
         catch (error: IllegalArgumentException) {
             ui = ui.copy(impactPicking = ui.impactPicking!!.copy(candidates = emptyList(), hasTapped = true))
             invalid(error.message ?: "Sélection invalide."); return
@@ -240,7 +273,7 @@ class ConfiguredSessionController(
             ui = ui.copy(impactPicking = null, epoch = epoch(), problem = null)
     }
     fun selectImpact(context: ConfiguredTargetContext, uuid: String) {
-        if (!current(context) || !ui.canSelectImpact || ui.selectedEnd!!.end.impacts.none { it.uuid == uuid }) return
+        if (!current(context) || !ui.canSelectImpact || ui.selectedEnd!!.end.activeImpacts.none { it.uuid == uuid }) return
         ui = ui.copy(edit = ImpactEdit(ui.saved!!.uuid, ui.selectedEnd!!.uuid, uuid), epoch = epoch(), problem = null)
     }
     fun closeSelection(context: ConfiguredTargetContext) {
@@ -358,8 +391,10 @@ class ConfiguredSessionController(
             s.decideImpact(edit.endUuid, edit.impactUuid, request, now)
         }
     }
-    private fun submit(label: String, request: ConfiguredWriteRequest, end: String?) {
-        if (!ui.ready) return
+    private fun submit(label: String, request: ConfiguredWriteRequest, end: String?, cancellationToken: Long? = null) {
+        val cancelling = cancellationToken != null && ui.cancellation?.token == cancellationToken &&
+            ui.cancellation?.phase == CancellationPhase.SAVING && ui.open && !ui.busy && ui.pending == null
+        if (!ui.ready && !cancelling) return
         if (request is ConfiguredWriteRequest.Update) validateConfiguredSessionUpdate(request.expected, request.proposed)
         val pending = PendingConfiguredWrite(label, request, ConfiguredWriteContext(end, ui.form, ui.edit, ui.position, ui.targetContext))
         ui = ui.copy(pending = pending, problem = null, confirmation = null, reconciliation = null, compared = null, lastResult = null)
@@ -386,12 +421,13 @@ class ConfiguredSessionController(
                 "Échec technique avant DML par cet appel. Intention exacte conservée ; relisez avant toute nouvelle confirmation."))
             is ConfiguredWriteResult.CommitUnconfirmed -> uncertain("Commit potentiellement effectué ; acquittement indisponible. Aucune répétition automatique.")
         }
+        if (ui.pending != null) ui = ui.copy(cancellation = ui.cancellation?.copy(phase = CancellationPhase.FAILED))
     }
     private fun accepted(saved: ConfiguredSession, pending: PendingConfiguredWrite, message: String) {
         ui = ui.copy(saved = saved, pending = null, form = null, compared = null, reconciliation = null, problem = null,
             impactDrag = null, selectedEndUuid = pending.context.selectedEndUuid ?: firstEnd(saved), position = null, activeAim = null,
             edit = pending.context.edit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
-            epoch = epoch(), confirmation = message)
+            epoch = epoch(), confirmation = message, cancellation = ui.cancellation?.copy(phase = CancellationPhase.CONFIRMED))
         try { onSaved() } catch (_: Exception) { ui = ui.copy(confirmation = "$message Actualisation secondaire impossible ; commit confirmé.") }
     }
     fun reconcile() {
@@ -434,7 +470,9 @@ class ConfiguredSessionController(
     /** UI must separately warn that this does NOT roll back a possibly committed write. */
     fun abandonSubmittedAndClose() {
         if (ui.pending == null || ui.busy) return
-        ui = ui.copy(pending = null, form = null, edit = null, impactDrag = null, position = null, activeAim = null, epoch = epoch()); close()
+        ui = ui.copy(pending = null, form = null, edit = null, impactDrag = null, position = null, activeAim = null, cancellation = null, epoch = epoch())
+        cancellationExpected = null
+        close()
     }
     private fun propose(block: () -> Unit) {
         try { block() } catch (e: IllegalArgumentException) { invalid(e.message ?: "Transition invalide.") }
@@ -458,7 +496,9 @@ class ConfiguredSessionController(
             } catch (e: Exception) {
                 if (ui.pending != null) uncertain("Écriture non confirmée : ${e.javaClass.simpleName}. Intention conservée.")
                 else ui = ui.copy(problem = ConfiguredProblem(ConfiguredProblemKind.TECHNICAL, "Lecture impossible."))
-            } finally { ui = ui.copy(busy = false) }
+            } finally { ui = ui.copy(busy = false, cancellation = ui.cancellation?.let {
+                if (ui.problem != null && ui.pending != null) it.copy(phase = CancellationPhase.FAILED) else it
+            }) }
         }
     }
     private fun readProblem(read: ConfiguredSessionReadResult) {

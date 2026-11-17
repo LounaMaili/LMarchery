@@ -7,14 +7,14 @@ import com.lmarchery.core.model.session.EndStatus
 fun calculateRecordedMaximum(context: EndScoringContext): Long {
     val configuration = context.configuration
     val count = if (configuration.arrowCountMode == ArrowCountMode.FIXED) configuration.arrowCountPerEnd!!.toLong()
-        else context.end.impacts.size.toLong()
+        else context.end.activeImpacts.size.toLong()
     return multiply(count, configuration.targetType.maxScore.toLong(), "ends[${context.end.uuid}].recordedCapacityMaximum")
 }
 
 /** Sums existing final values only; never calls geometric scoring, resolution or a domain transition. */
 fun calculateConfiguredEndScore(context: EndScoringContext): ConfiguredEndScore {
     validateEndScoringContext(context.end, context.binding)
-    val impacts = context.end.impacts
+    val impacts = context.end.activeImpacts
     val configuration = context.configuration
     val path = "ends[${context.end.uuid}]"
     val score = impacts.fold(0L) { total, impact -> add(total, impact.scoreFinal.toLong(), "$path.score") }

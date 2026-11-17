@@ -32,7 +32,7 @@ kotlin {
             kotlin.include("com/lmarchery/core/database/**")
             val applicationSources = listOf(
                 "data/SessionRepository.kt", "data/ConfiguredSessionRepository.kt",
-                "data/EquipmentRepository.kt", "data/ArchiveV2Importer.kt", "data/ArchiveV3Access.kt",
+                "data/EquipmentRepository.kt", "data/ArchiveV2Importer.kt", "data/ArchiveV3Access.kt", "data/ArchiveV4Access.kt",
                 "data/export/VerifyingDocumentWriter.kt", "data/archiveimport/BoundedDocumentReader.kt",
                 "feature/configured/ConfiguredForms.kt", "feature/configured/ConfiguredEditorState.kt",
                 "feature/configured/ConfiguredSessionController.kt",

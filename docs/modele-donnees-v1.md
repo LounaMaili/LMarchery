@@ -690,3 +690,13 @@ Voir [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md).
 ---
 
 *Document version 1.10 — 15 octobre 2026*
+
+## Participation des impacts — ticket 2.5
+
+L’[ADR 048](adr/048-annulation-logique-durable-impacts.md) complète les modèles
+historiques : `End.impacts` conserve le registre intégral et `End.cancellations`
+les preuves définitives liées aux UUID. `End.activeImpacts` fournit l’unique vue
+de participation aux comptes. Les scores et historiques individuels ne sont pas
+réécrits. Room 4 ajoute `impact_cancellations` aux douze tables précédentes ;
+l’archive JSON V4 porte toutes les preuves. Les schémas et formats publiés
+antérieurs restent historiques et inchangés.

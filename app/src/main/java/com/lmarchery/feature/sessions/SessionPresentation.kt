@@ -53,7 +53,7 @@ fun Session.supportsSessionEditing(): Boolean =
     IndoorProfile.entries.any { it.target == targetType } && arrowCountMode == ArrowCountMode.FIXED &&
         arrowCountPerEnd == 3 && scoringMode == ScoringMode.TRAINING &&
         ends.count { it.status == EndStatus.EDITING } <= 1 &&
-        ends.all { end -> end.impacts.size <= 3 && end.impacts.map { it.index }.sorted() == (1..end.impacts.size).toList() }
+        ends.all { end -> end.activeImpacts.size <= 3 }
 
 fun ArrowImpact.scoreLabel(): String = when {
     isMiss -> "M"
@@ -76,8 +76,8 @@ data class EndScoreRow(
 }
 
 fun presentEndScore(end: End): EndScoreRow = EndScoreRow(end.uuid, end.index, end.status,
-    end.impacts.map { "#${it.index} : ${it.scoreLabel()}" },
-    end.impacts.takeIf { it.isNotEmpty() }?.let { calculateEndScore(end) })
+    end.activeImpacts.map { "#${it.index} : ${it.scoreLabel()}" },
+    end.activeImpacts.takeIf { it.isNotEmpty() }?.let { calculateEndScore(end) })
 
 data class SessionScorePresentation(
     val summary: SessionScoreSummary,

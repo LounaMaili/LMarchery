@@ -1,5 +1,7 @@
 package com.lmarchery.app
 
+import com.lmarchery.core.scoring.archive.sameContent
+
 import com.lmarchery.feature.configured.ConfiguredSessionController
 import com.lmarchery.feature.configured.ConfiguredSessionScreen
 import androidx.activity.compose.BackHandler
@@ -55,6 +57,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         return
     }
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
+    var cancellationLeaveToken by rememberSaveable { mutableStateOf<Long?>(null) }
     var confirmCancelAim by rememberSaveable { mutableStateOf(false) }
     var confirmCancelCorrection by rememberSaveable { mutableStateOf(false) }
     val back: () -> Unit = {
@@ -200,7 +203,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             }
                             item(key = "session-equipment") { SessionEquipmentPanel(state, controller) }
                             state.displayedEnd?.let { end -> item(key = "target") {
-                                Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.impacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
+                                Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.activeImpacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
                                 val interaction = when {
                                     state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                     state.impactDrag != null && state.canProposeReposition -> TargetInteraction.DRAG_IMPACT
@@ -215,9 +218,9 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     if (state.precisionAimEnabled && state.impactDrag == null) Text("Maintenez et déplacez le doigt. Loupe ×4 déportée ; relâcher ne sauvegarde pas. Faites défiler hors du blason.", style = MaterialTheme.typography.bodySmall)
                                 }
                                 val aimContext = AimContext(session.uuid, end.uuid, state.impactEdit?.impactUuid)
-                                ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
+                                ImpactPickingControls(state.impactPicking, end.activeImpacts, state.canBeginImpactPicking,
                                     controller::beginImpactPicking, controller::cancelImpactPicking, controller::choosePickedImpact)
-                                TargetCanvas(session.targetType, end.impacts, interaction, end.uuid, controller::targetTapped,
+                                TargetCanvas(session.targetType, end.activeImpacts, interaction, end.uuid, controller::targetTapped,
                                     Modifier.widthIn(max = if (state.precisionAimEnabled) precisionTargetMaxWidth(screenHeightDp).dp else 480.dp)
                                         .fillMaxWidth().aspectRatio(1f), state.selectedImpact?.uuid,
                                     state.aimedPoint,
@@ -230,8 +233,8 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     state.impactPicking != null -> "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
                                     state.precisionAimEnabled && state.canAim -> "Visée précise · proposition non enregistrée. Les coins extérieurs restent M."
                                     state.canProposeReposition -> "Touchez pour proposer une position. Aucun impact ne sera ajouté."
-                                    state.canAddImpact -> "Touchez pour enregistrer la flèche ${end.impacts.size + 1}/3. Les coins extérieurs comptent M."
-                                    else -> "${end.impacts.size} impact(s) enregistré(s)."
+                                    state.canAddImpact -> "Touchez pour enregistrer la flèche #${end.nextImpactIndex()} · ${end.activeImpacts.size}/3 actives. Les coins extérieurs comptent M."
+                                    else -> "${end.activeImpacts.size} impact(s) enregistré(s)."
                                 }, style = MaterialTheme.typography.bodySmall)
                                 val row = presentEndScore(end)
                                 Text(row.arrowsLabel)
@@ -249,8 +252,11 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             }
                             if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed)
                                 item(key = "impact-edit") { ImpactEditPanel(state, controller) }
+                            state.displayedEnd?.let { shown ->
+                                item(key = "cancel-history-${shown.uuid}") { ImpactCancellationHistory(shown, state.saved?.profiles?.single()?.regulatoryEdition) }
+                            }
                             if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
-                                items(state.displayedEnd!!.impacts, key = { "select-${it.uuid}" }) { impact ->
+                                items(state.displayedEnd!!.activeImpacts, key = { "select-${it.uuid}" }) { impact ->
                                     OutlinedButton(onClick = { controller.selectImpact(state.displayedEnd!!.uuid, impact.uuid) },
                                         enabled = state.canSelectImpact, modifier = Modifier.fillMaxWidth()) {
                                         Text("Sélectionner flèche #${impact.index} : ${impact.scoreLabel()}")
@@ -263,7 +269,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                     Button(onClick = controller::newEnd, enabled = state.canNewEnd) { Text("Nouvelle volée") }
                                     OutlinedButton(onClick = controller::completeSession, enabled = state.canComplete) { Text("Terminer la séance") }
                                     if (state.impactEdit != null) Text("Fermez la sélection ou annulez la correction avant de valider ou changer de volée.")
-                                    if (state.editingEnd?.impacts?.isNotEmpty() == true) Text("Validez les trois flèches avant de terminer la séance.", style = MaterialTheme.typography.bodySmall)
+                                    if (state.editingEnd?.activeImpacts?.isNotEmpty() == true) Text("Validez les trois flèches avant de terminer la séance.", style = MaterialTheme.typography.bodySmall)
                                 }
                             }
                             state.confirmation?.let { message -> item(key = "confirmation") { Text(message, color = MaterialTheme.colorScheme.primary) } }
@@ -284,11 +290,23 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             }
         }
     }
-    if (confirmLeave) AlertDialog(onDismissRequest = { confirmLeave = false },
-        title = { Text("Abandonner l’action locale ?") },
-        text = { Text("Son enregistrement n’est pas confirmé. Revenir à la liste abandonne la proposition locale et conserve le contenu présent dans la base.") },
-        confirmButton = { TextButton(onClick = { confirmLeave = false; controller.discardAndReturnToList() }) { Text("Abandonner et revenir") } },
-        dismissButton = { TextButton(onClick = { confirmLeave = false }) { Text("Conserver l’action") } })
+    state.cancellation?.let { dialog ->
+        ImpactCancellationConfirmation(dialog, state.busy, state.pending != null, state.problem?.message,
+            !state.busy && state.problem?.retryable == true && state.storedPreview?.sameContent(state.pending?.expected) == true,
+            controller::cancellationComment, controller::closeCancellation, controller::confirmCancellation, controller::previewStored, controller::retrySave,
+            { token -> if (controller.canAbandonCancellationDisplay(token)) { cancellationLeaveToken = token; confirmLeave = true } })
+    }
+    if (confirmLeave) AlertDialog(onDismissRequest = { confirmLeave = false; cancellationLeaveToken = null },
+        title = { Text(if (cancellationLeaveToken != null) "Quitter une écriture non confirmée ?" else "Abandonner l’action locale ?") },
+        text = { Text(if (cancellationLeaveToken != null)
+            "Un commit peut avoir eu lieu. Quitter n’annule aucune écriture. L’intention locale sera perdue ; relisez la séance avant toute nouvelle opération."
+            else "Son enregistrement n’est pas confirmé. Revenir à la liste abandonne la proposition locale et conserve le contenu présent dans la base.") },
+        confirmButton = { TextButton(onClick = {
+            val ticket = cancellationLeaveToken
+            confirmLeave = false; cancellationLeaveToken = null
+            if (ticket == null || controller.canAbandonCancellationDisplay(ticket)) controller.discardAndReturnToList()
+        }) { Text("Abandonner et revenir") } },
+        dismissButton = { TextButton(onClick = { confirmLeave = false; cancellationLeaveToken = null }) { Text("Conserver l’action") } })
     if (confirmCancelAim && state.hasAimProposal) AlertDialog(onDismissRequest = { confirmCancelAim = false },
         title = { Text("Annuler la nouvelle flèche et revenir ?") },
         text = { Text("La position proposée n’est pas enregistrée. Revenir abandonnera ce candidat sans écrire.") },
@@ -317,7 +335,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                 Text("Révision enregistrée UTC : ${stored.updatedAt}")
                 if (state.busy) Text("Relecture en cours…")
                 state.problem?.let { problem -> Text(problem.message, color = MaterialTheme.colorScheme.error) }
-                stored.ends.forEach { end -> Text("Volée ${end.index} (${end.status}) : ${end.impacts.joinToString { "#${it.index} ${it.scoreLabel()}" }}") }
+                stored.ends.forEach { end ->
+                    Text("Volée ${end.index} (${end.status}) : ${end.activeImpacts.joinToString { "#${it.index} ${it.scoreLabel()}" }}")
+                    ImpactCancellationHistory(end, archive.profiles.single().regulatoryEdition)
+                }
             } },
             confirmButton = { TextButton(onClick = controller::reloadAndDiscard, enabled = !state.busy) { Text("Abandonner l’action et recharger") } },
             dismissButton = { TextButton(onClick = controller::closePreview, enabled = !state.busy) { Text("Conserver l’action locale") } })
@@ -338,7 +359,7 @@ private fun ImpactEditPanel(state: SessionUiState, controller: SessionController
                 state.impactDrag != null && state.canConfirmReposition, {
                     val drag = state.impactDrag; val point = edit?.candidate
                     if (drag != null && point != null) controller.confirmImpactDrag(drag, point)
-                })
+                }, state.canSelectImpact && state.selectedImpact != null, controller::beginCancellation)
             if (edit == null || impact == null) {
                 Text("Sélectionnez une flèche pour corriger sa position ou son score.")
                 return@Column

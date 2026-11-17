@@ -58,6 +58,12 @@ internal suspend fun auditStoredIdentities(queries: StorageReadQueries): List<Id
 
 /** Call only inside the caller's single read/migration transaction. Children reuse historical mapping/replay. */
 internal suspend fun collectArchiveV3(queries: StrictStorageQueries, caller: CoroutineContext, limits: ArchiveV3Limits): DomainArchiveV3 {
+    dataCheck(queries.cancellations(limits).isEmpty(), "archiveV3.cancellations", "Archive V3 cannot represent cancellation evidence; use V4.")
+    return collectArchiveV3Payload(queries, caller, limits)
+}
+
+/** Internal payload only, never returned as a complete old archive when proofs exist. */
+internal suspend fun collectArchiveV3Payload(queries: StrictStorageQueries, caller: CoroutineContext, limits: ArchiveV3Limits): DomainArchiveV3 {
     caller.ensureActive()
     val equipment: EquipmentReadQueries = queries
     val configurations: ConfigurationReadQueries = queries
@@ -126,7 +132,7 @@ internal fun validateStoredV3(snapshot: ArchiveV3Snapshot, limits: ArchiveV3Limi
             ArchiveV3StorageIssueKind.DOMAIN, result.issue.path, result.issue.detail, result.issue))
     }
 
-internal fun DomainArchiveV3.identitiesV3(): Map<String, IdentityRow> = buildMap {
+internal fun com.lmarchery.core.scoring.archive.ArchiveGraph.identitiesV3(): Map<String, IdentityRow> = buildMap {
     profiles.forEach { put(it.definition!!.uuid, IdentityRow(it.definition!!.uuid, "PROFILE")) }
     sessions.forEach { s -> put(s.uuid, IdentityRow(s.uuid,"SESSION")); s.ends.forEach { e ->
         put(e.uuid, IdentityRow(e.uuid,"END")); e.end.impacts.forEach { put(it.uuid,IdentityRow(it.uuid,"IMPACT")) }

@@ -41,6 +41,11 @@ fun validateConfiguredSession(session: ConfiguredSession) {
         claim(end.uuid, "ends[${end.uuid}]")
         profile(captured.configuration)
         end.impacts.forEach { claim(it.uuid, "ends[${end.uuid}].impacts[${it.uuid}]") }
+        end.cancellations.forEach { proof ->
+            requireConfigured(session.status != SessionStatus.DRAFT && session.startedAt != null && !proof.cancelledAt.isBefore(session.startedAt),
+                ConfiguredSessionIssue.TEMPORAL_CONFLICT, "ends[${end.uuid}].cancellations[${proof.impactUuid}]",
+                "Cancellation requires a started session and cannot predate its start.")
+        }
         requireConfigured(!end.createdAt.isBefore(session.createdAt) && !end.updatedAt.isAfter(session.updatedAt),
             ConfiguredSessionIssue.TEMPORAL_CONFLICT, "ends[${end.uuid}]", "Parent timestamps must cover the child.")
         when (val origin = captured.origin) {
@@ -95,6 +100,11 @@ fun validateConfiguredSessionUpdate(expected: ConfiguredSession, proposed: Confi
     proposed.endedAt?.let { requireConfigured(!it.isBefore(expected.updatedAt), ConfiguredSessionIssue.TEMPORAL_CONFLICT,
         "endedAt", "Closure cannot be backdated.") }
     val next = proposed.ends.associateBy { it.uuid }
+    val previousProofs = expected.ends.flatMap { it.end.cancellations }.toSet()
+    proposed.ends.forEach { captured -> captured.end.cancellations.filterNot { it in previousProofs }.forEach { proof ->
+        requireConfigured(!proof.cancelledAt.isBefore(expected.updatedAt), ConfiguredSessionIssue.TEMPORAL_CONFLICT,
+            "ends[${captured.uuid}].cancellations[${proof.impactUuid}]", "A new cancellation cannot predate the complete expected revision.")
+    } }
     expected.ends.forEach { old ->
         val revised = next[old.uuid] ?: throw ConfiguredSessionException(ConfiguredSessionIssue.HISTORY_CONFLICT,
             "ends[${old.uuid}]", "No existing end can be removed.")
@@ -129,7 +139,8 @@ internal fun validateConfiguredEndRevision(previous: End, proposed: End) {
     }
     // Delegate temporal, score-decision and reposition-prefix checks to the historical domain API.
     previous.copy(status = proposed.status, impacts = proposed.impacts, notes = proposed.notes,
-        createdAt = proposed.createdAt, updatedAt = proposed.updatedAt, validatedAt = proposed.validatedAt)
+        createdAt = proposed.createdAt, updatedAt = proposed.updatedAt, validatedAt = proposed.validatedAt,
+        cancellations = proposed.cancellations)
 }
 
 internal fun requireConfiguredUuid(uuid: String, path: String) {

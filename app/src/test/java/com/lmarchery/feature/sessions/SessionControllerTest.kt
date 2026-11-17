@@ -142,7 +142,7 @@ class SessionControllerTest {
         lateinit var expected: DomainArchive
         Harness(repository).use { h -> val c = controller(h); c.create();
             c.addImpact(NormalizedPoint(0.075f, -0.0f)); c.addImpact(NormalizedPoint(0.25f, 0f))
-            expected = c.state.value.saved!! }
+            expected = assertIs<DomainArchive>(c.state.value.saved) }
         val writes = repository.updateCalls.size
         Harness(repository).use { h ->
             val resumed = controller(h)

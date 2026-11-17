@@ -24,7 +24,7 @@ internal class RoomConfiguredRead(private val database: SessionDatabase, private
         caller.ensureActive(); ensureOpen()
         database.useReaderConnection { connection -> connection.deferredTransaction {
             val queries = StrictStorageQueries(connection)
-            val archive = collectArchiveV3(queries, caller, ArchiveV3Limits())
+            val archive = collectArchiveV4(queries, caller, ArchiveV3Limits())
             val session = archive.sessions.singleOrNull { it.uuid == uuid }
             caller.ensureActive()
             when {

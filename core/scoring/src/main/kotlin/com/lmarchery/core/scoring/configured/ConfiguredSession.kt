@@ -87,6 +87,11 @@ class ConfiguredSession private constructor(private val state: State) {
         return withImpact(endUuid, ownedImpact(owner, impactUuid).reposition(newPoint, changedAt, reason))
     }
 
+    fun cancelImpact(endUuid: String, impactUuid: String, cancelledAt: Instant, comment: String? = null): ConfiguredSession {
+        requireEventTime(cancelledAt)
+        return withEnd(editableEnd(endUuid).end.cancelImpact(impactUuid, cancelledAt, comment), cancelledAt)
+    }
+
     /** Delegates to today's End.validate: no new minimum/maximum arrow policy. */
     fun validateEnd(endUuid: String, validatedAt: Instant): ConfiguredSession =
         withEnd(editableEnd(endUuid).end.validate(validatedAt))

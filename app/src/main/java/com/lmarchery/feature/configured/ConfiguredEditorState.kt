@@ -5,6 +5,15 @@ import com.lmarchery.core.model.session.*
 import com.lmarchery.core.scoring.configured.ConfiguredSession
 import com.lmarchery.feature.sessions.*
 
+/** Receipt presentation reads the preserved impact; a missing active selection is not a missing identity. */
+fun configuredImpactSelectionLabel(captured: com.lmarchery.core.scoring.configured.ConfiguredEnd, edit: ImpactEdit): String {
+    val impact = captured.end.impacts.singleOrNull { it.uuid == edit.impactUuid }
+    if (captured.sessionUuid != edit.sessionUuid || captured.uuid != edit.endUuid || impact == null)
+        return "Sélection incohérente : relisez la séance avant toute correction."
+    return if (!captured.end.isImpactActive(impact.uuid)) "Saisie #${impact.index} annulée · historique conservé."
+        else "Flèche sélectionnée #${impact.index} · ${edit.phase}"
+}
+
 /** Presentation epoch rejects callbacks from an older revision/form/selection, including the same end UUID. */
 data class ConfiguredTargetContext(val owner: AimContext, val epoch: Long)
 enum class ConfiguredProblemKind { VALIDATION, IDENTITY_OCCUPIED, REVISION, NOT_FOUND, NOT_CONFIGURED,
@@ -28,9 +37,10 @@ data class ConfiguredEditorState(
     val position: PositionCandidate? = null, val activeAim: ActiveAim? = null, val epoch: Long = 0,
     val impactPicking: ImpactPicking? = null,
     val impactDrag: ImpactDragContext? = null,
+    val cancellation: com.lmarchery.feature.sessions.ImpactCancellationDialog? = null,
 ) {
     val selectedEnd get() = saved?.ends?.singleOrNull { it.uuid == selectedEndUuid }
-    val ready get() = open && !busy && pending == null
+    val ready get() = open && !busy && pending == null && cancellation == null
     val mutable get() = ready && saved != null && saved.status != SessionStatus.COMPLETED
     val sessionActive get() = mutable && saved!!.status == SessionStatus.IN_PROGRESS
     val hasProposal get() = edit != null || position != null || activeAim != null || impactPicking != null
@@ -41,16 +51,16 @@ data class ConfiguredEditorState(
     val editableEnd get() = editableCapturedEnd && impactPicking == null
     val targetContext get() = saved?.let { s -> selectedEnd?.let { e -> ConfiguredTargetContext(AimContext(s.uuid, e.uuid, edit?.impactUuid), epoch) } }
     val selectedImpact get() = edit?.takeIf { it.sessionUuid == saved?.uuid && it.endUuid == selectedEnd?.uuid }
-        ?.let { e -> selectedEnd?.end?.impacts?.singleOrNull { it.uuid == e.impactUuid } }
+        ?.let { e -> selectedEnd?.end?.activeImpacts?.singleOrNull { it.uuid == e.impactUuid } }
     val hasCapacity get() = selectedEnd?.let { e -> e.configuration.arrowCountMode == ArrowCountMode.FREE ||
-        e.end.impacts.size < e.configuration.arrowCountPerEnd!! } == true
-    val canPlace get() = editableEnd && edit == null && hasCapacity
+        e.end.activeImpacts.size < e.configuration.arrowCountPerEnd!! } == true
+    val canPlace get() = editableEnd && edit == null && hasCapacity && selectedEnd!!.end.canAppendImpactIndex
     val canAdd get() = canPlace && !precision && position == null && activeAim == null
     val canAim get() = impactDrag == null && precision && (canPlace || canReposition)
     val canConfirmPosition get() = canPlace && precision && position != null && activeAim == null
     val canSelectImpact get() = editableEnd && position == null && activeAim == null &&
         (edit == null || edit.phase == ImpactEditPhase.SELECTED || edit.phase == ImpactEditPhase.CONFIRMED)
-    val canBeginImpactPicking get() = canSelectImpact && edit == null && selectedEnd?.end?.impacts?.isNotEmpty() == true
+    val canBeginImpactPicking get() = canSelectImpact && edit == null && selectedEnd?.end?.activeImpacts?.isNotEmpty() == true
     val canPickImpact get() = editableCapturedEnd && impactPicking != null && edit == null && position == null && activeAim == null
     val canReposition get() = editableEnd && selectedImpact != null && edit?.proposal is ImpactProposal.Reposition &&
         edit.phase in listOf(ImpactEditPhase.AWAITING_POINT, ImpactEditPhase.CANDIDATE)

@@ -68,9 +68,10 @@ class RoomEquipmentMigrationTest {
             assertEquals(emptyList(), assertIs<EquipmentDiscoveryResult.Found>(store.equipment.discoverArrowSets()).uuids)
         }
         assertEquals(before, contents(path, oldTables))
-        assertEquals(listOf("3"), rows(path, "PRAGMA user_version"))
-        assertEquals(oldSchema, rows(path, "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
-        assertEquals(12, rows(path, "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
+        assertEquals(listOf("4"), rows(path, "PRAGMA user_version"))
+        assertEquals(oldSchema, rows(path, "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations','impact_cancellations') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
+        assertEquals(13, rows(path, "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
+        assertEquals(listOf("0"), rows(path, "SELECT count(*) FROM impact_cancellations"))
         assertEquals(emptyList(), rows(path, "PRAGMA foreign_key_check"))
         openSessionStore(path).use { store ->
             assertContentEquals(originalBytes, ArchiveJsonCodec().encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive))
@@ -83,7 +84,7 @@ class RoomEquipmentMigrationTest {
             assertEquals(bow(), assertIs<EquipmentReadResult.Found<*>>(store.equipment.readBow(id(800))).value)
             assertEquals(arrows(), assertIs<EquipmentReadResult.Found<*>>(store.equipment.readArrowSet(id(801))).value)
         }
-        println("V1→V2: real populated disk file; 8 old tables and schema unchanged; 2 catalog tables added; complete JSON bytes identical; second reopen verified")
+        println("V1→V2→V3→V4: real populated disk file; 8 original tables and schema unchanged; catalog and captures preserved; empty cancellation table; complete JSON bytes identical; second reopen verified")
     }
     @Test fun `migration failure is atomic preserves V1 and never recreates or deletes data`() = runBlocking<Unit> {
         richV1()
@@ -189,7 +190,7 @@ class RoomEquipmentMigrationTest {
             v1Bytes = codec.encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive)
             v2Bytes = codec.encode(store.fullV2())
         }
-        assertEquals(listOf("3"), rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("4"), rows(path, "PRAGMA user_version"))
         openSessionStore(path).use { store ->
             assertEquals(finalSession, assertIs<SessionReadResult.Found>(store.read(finalSession.uuid)).session)
             assertContentEquals(v1Bytes, codec.encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive))

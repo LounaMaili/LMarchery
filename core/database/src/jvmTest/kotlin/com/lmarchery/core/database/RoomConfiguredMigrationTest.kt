@@ -33,8 +33,8 @@ class RoomConfiguredMigrationTest {
             assertTrue(legacy.profiles.size < source.profiles.size) // Unreferenced profile remains in V2/V3, not historical V1 scope.
             assertEquals(before,f.contents(path,oldTables)); assertEquals(ddl,d.schema(path,oldTables))
         }
-        assertEquals(listOf("3"),f.rows(path,"PRAGMA user_version"))
-        assertEquals(12,f.rows(path,"SELECT name FROM sqlite_master WHERE type='table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
+        assertEquals(listOf("4"),f.rows(path,"PRAGMA user_version"))
+        assertEquals(13,f.rows(path,"SELECT name FROM sqlite_master WHERE type='table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
         assertEquals(source.sessions.size,f.rows(path,"SELECT * FROM session_configurations").size)
         assertEquals(source.sessions.sumOf { it.ends.size },f.rows(path,"SELECT * FROM end_configurations").size)
         assertEquals(listOf("LEGACY_DERIVED"),f.rows(path,"SELECT DISTINCT origin FROM session_configurations"))
@@ -156,21 +156,22 @@ class RoomConfiguredMigrationTest {
             assertEquals(d.configured(store.fullV2()),store.fullV3())
         }
     }
-    @Test fun `real Room V2 opener refuses a migrated V3 file without destructive fallback`() = runBlocking<Unit> {
-        d.historical(path,2)
-        fun v2Probe() = Room.databaseBuilder(path.toString()) { RoomV2Probe() }.setDriver(BundledSQLiteDriver()).build()
-        val old=v2Probe()
-        try { old.useReaderConnection { c -> c.usePrepared("PRAGMA user_version") { assertTrue(it.step());assertEquals(2L,it.getLong(0)) } } }
-        finally { old.close() }
-        openSessionStore(path).use { it.fullV3() }
-        val before=d.contents(path); val master=f.rows(path,"SELECT * FROM room_master_table")
-        val downgrade=v2Probe()
-        val failure=try { assertFailsWith<IllegalStateException> { downgrade.useReaderConnection { c -> c.usePrepared("SELECT 1") { it.step() } } } }
-        finally { downgrade.close() }
-        assertTrue(failure.message.orEmpty().contains("3 to 2"),failure.toString())
-        assertEquals(before,d.contents(path));assertEquals(master,f.rows(path,"SELECT * FROM room_master_table"))
-        assertEquals(listOf("3"),f.rows(path,"PRAGMA user_version"))
-        openSessionStore(path).use { assertEquals(d.configured(d.source()),it.fullV3()) }
+    @Test fun `real Room V2 opener refuses genuine V3 and migrated V4 files without destructive fallback`() = runBlocking<Unit> {
+        for (version in listOf(3, 4)) {
+            val file = directory.resolve("downgrade-$version.db")
+            d.historical(file, if (version == 3) 3 else 2)
+            if (version == 4) openSessionStore(file).use { it.fullV3() }
+            fun v2Probe() = Room.databaseBuilder(file.toString()) { RoomV2Probe() }.setDriver(BundledSQLiteDriver()).build()
+            val before = d.contents(file); val master = f.rows(file, "SELECT * FROM room_master_table")
+            val downgrade = v2Probe()
+            val failure = try { assertFailsWith<IllegalStateException> {
+                downgrade.useReaderConnection { c -> c.usePrepared("SELECT 1") { it.step() } }
+            } } finally { downgrade.close() }
+            assertTrue(failure.message.orEmpty().contains("$version to 2"), failure.toString())
+            assertEquals(before, d.contents(file)); assertEquals(master, f.rows(file, "SELECT * FROM room_master_table"))
+            assertEquals(listOf(version.toString()), f.rows(file, "PRAGMA user_version"))
+            openSessionStore(file).use { assertEquals(d.configured(d.source()), it.fullV3()) }
+        }
     }
 }
 

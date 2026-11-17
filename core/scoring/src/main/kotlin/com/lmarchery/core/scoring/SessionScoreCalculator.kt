@@ -13,7 +13,7 @@ fun calculateEndScore(scoreFinals: Iterable<Int>): Int =
     }
 
 fun calculateEndScore(end: End): Int =
-    calculateEndScore(end.impacts.map { it.scoreFinal })
+    calculateEndScore(end.activeImpacts.map { it.scoreFinal })
 
 fun calculateSessionScore(endScores: Iterable<Int>): Int =
     endScores.sumOf { endScore ->
@@ -62,12 +62,12 @@ fun calculateMaxPossibleScore(session: Session): Int =
         arrowCountPerEnd = session.arrowCountPerEnd,
         plannedEndCount = session.plannedEndCount,
         recordedEndCount = session.ends.size,
-        totalImpactCount = session.ends.sumOf { it.impacts.size },
+        totalImpactCount = session.ends.sumOf { it.activeImpacts.size },
     )
 
 fun summarizeSessionScore(session: Session): SessionScoreSummary {
     val validatedEnds = session.validatedEnds()
-    val validatedImpacts = validatedEnds.flatMap { it.impacts }
+    val validatedImpacts = validatedEnds.flatMap { it.activeImpacts }
     val totalScore = calculateSessionScore(session)
     val maxPossibleScore = calculateMaxPossibleScore(session)
     val validatedEndCount = validatedEnds.size
@@ -82,7 +82,7 @@ fun summarizeSessionScore(session: Session): SessionScoreSummary {
         validatedEndCount = validatedEndCount,
         recordedEndCount = session.ends.size,
         validatedImpactCount = validatedImpactCount,
-        recordedImpactCount = session.ends.sumOf { it.impacts.size },
+        recordedImpactCount = session.ends.sumOf { it.activeImpacts.size },
         maxScoreCount = validatedImpacts.count { it.scoreFinal == session.targetType.maxScore },
         xCount = validatedImpacts.count { it.isX },
         missCount = validatedImpacts.count { it.isMiss },

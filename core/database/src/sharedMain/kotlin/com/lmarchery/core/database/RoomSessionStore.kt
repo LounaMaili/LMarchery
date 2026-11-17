@@ -15,6 +15,8 @@ import com.lmarchery.core.scoring.archive.ArchiveImportPlan
 import com.lmarchery.core.scoring.archive.ImportConflict
 import com.lmarchery.core.scoring.archive.planArchiveImport
 import com.lmarchery.core.scoring.archive.reconstructArchive
+import com.lmarchery.core.scoring.archive.configuredLegacyValue
+import com.lmarchery.core.scoring.archive.requireLegacyHomogeneousValue
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
 import java.util.concurrent.CancellationException
@@ -79,6 +81,22 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val configuredWriter = RoomConfiguredWriter(database) { check(!closed.get()) { "Session store is closed." } }
 
+    /** Complete historical editor revision, distinct from the published V1 archive transport. */
+    suspend fun updateSessionContent(expected: com.lmarchery.core.scoring.archive.SessionContent,
+        proposed: com.lmarchery.core.scoring.archive.SessionContent): ConfiguredWriteResult =
+        configuredWriter.write(ConfiguredWriteRequest.Update(expected.configuredLegacyValue(), proposed.configuredLegacyValue()), legacy = true)
+
+    suspend fun readArchiveV4(limits: com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits = com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits()): ArchiveV4ReadResult = try {
+        val maximum = com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits()
+        require(limits.maxCollectionElements <= maximum.maxCollectionElements && limits.maxTotalElements <= maximum.maxTotalElements && limits.maxTextLength <= maximum.maxTextLength)
+        val caller = currentCoroutineContext(); caller.ensureActive(); check(!closed.get())
+        database.useReaderConnection { c -> c.deferredTransaction { ArchiveV4ReadResult.Found(collectArchiveV4(StrictStorageQueries(c), caller, limits)) } }
+    } catch (e: CorruptV3Storage) { ArchiveV4ReadResult.NeedsIntervention(e.diagnostic) }
+      catch (e: CorruptStorage) { ArchiveV4ReadResult.NeedsIntervention(com.lmarchery.core.database.ArchiveV3StorageDiagnostic(
+          ArchiveV3StorageIssueKind.STORAGE, e.diagnostic.path, e.diagnostic.detail, storageIssue = e.diagnostic)) }
+      catch (e: CancellationException) { throw e }
+      catch (e: Exception) { ArchiveV4ReadResult.TechnicalFailure(e) }
+
     private val configuredReader = RoomConfiguredRead(database) { check(!closed.get()) { "Session store is closed." } }
     suspend fun readConfiguredSession(uuid: String): ConfiguredSessionReadResult = configuredReader.read(uuid)
 
@@ -92,6 +110,9 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         configuredWriter.write(ConfiguredWriteRequest.Update(expected, proposed))
 
     private val archiveV3Import = RoomArchiveV3Import(database) { check(!closed.get()) { "Session store is closed." } }
+    private val archiveV4Import = RoomArchiveV4Import(database) { check(!closed.get()) { "Session store is closed." } }
+    suspend fun previewImportV4(archive: com.lmarchery.core.scoring.archive.v4.DomainArchiveV4): ArchiveV4PreviewResult = archiveV4Import.preview(archive)
+    suspend fun importArchiveV4(confirmed: ArchiveV4ImportPreview): ArchiveV4ImportResult = archiveV4Import.restore(confirmed)
     suspend fun previewImportV3(archive: com.lmarchery.core.scoring.archive.v3.DomainArchiveV3): ArchiveV3PreviewResult =
         archiveV3Import.preview(archive)
     suspend fun importArchiveV3(confirmed: ArchiveV3ImportPreview): ArchiveV3ImportResult = archiveV3Import.restore(confirmed)
@@ -165,6 +186,9 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
                 caller.ensureActive()
                 check(!closed.get()) { "Session store is closed." }
                 val archive = validateStored(confirmed.archive.toSnapshot())
+                database.records().cancellationConflict(archive.sessions.flatMap { it.ends.flatMap { end -> end.impacts.map { it.uuid } } })?.let {
+                    return@immediateTransaction ArchiveImportResult.Conflict(it)
+                }
                 val (before, plan) = importContext(archive, caller)
                 if (plan != confirmed.plan || plan.conflicts.isNotEmpty()) {
                     ArchiveImportResult.Conflict(StorageDiagnostic("import", "Preview no longer valid or contains conflicts; select and preview again."))
@@ -209,6 +233,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
     /** Existing helpers keep full SQL validation. All queries share the caller's reader/writer transaction. */
     private suspend fun importContext(archive: DomainArchive, caller: CoroutineContext): Pair<DomainArchive, ArchiveImportPlan> {
         val dao = database.records()
+        dao.cancellationConflict(archive.sessions.flatMap { it.ends.flatMap { e -> e.impacts.map { it.uuid } } })?.let { throw CorruptStorage(it) }
         dao.requireLegacyArchive()
         val profiles = dao.profileUuids().map { uuid ->
             caller.ensureActive()
@@ -271,12 +296,21 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
                         "sessions[$uuid]", "Registered session row is missing.")
                     SessionReadResult.NotFound
                 } else {
-                    val archive = validateStored(database.records().sessionSnapshot(row))
-                    SessionReadResult.Found(archive.sessions.single(), archive.profiles.single())
+                    if (database.records().cancellationCount() > 0) {
+                        val queries = StrictStorageQueries(connection)
+                        requireLegacyCapture(queries, queries, row)
+                        val archive = collectArchiveV4(queries, currentCoroutineContext(), com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits())
+                        val session = archive.sessions.single { it.uuid == uuid }.requireLegacyHomogeneousValue()
+                        SessionReadResult.Found(session, archive.profiles.single { it.definition == session.targetType })
+                    } else {
+                        val archive = validateStored(database.records().sessionSnapshot(row))
+                        SessionReadResult.Found(archive.sessions.single(), archive.profiles.single())
+                    }
                 }
             }
         }
-    } catch (error: CorruptStorage) { SessionReadResult.NeedsIntervention(error.diagnostic) }
+    } catch (error: CorruptV3Storage) { SessionReadResult.NeedsIntervention(StorageDiagnostic(error.diagnostic.path, error.diagnostic.detail)) }
+    catch (error: CorruptStorage) { SessionReadResult.NeedsIntervention(error.diagnostic) }
     catch (error: CancellationException) { throw error }
     catch (error: Exception) { SessionReadResult.TechnicalFailure(error) }
 

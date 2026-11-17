@@ -36,9 +36,9 @@ internal object ArchiveV3DiskData {
 
     /** Construct genuine historical files from frozen Room DDL/hash and copy ONLY the old table data.
      * The seed runs current Room; it supplies values, never a relabelled schema or migrated file. */
-    suspend fun historical(path: Path, version: Int, source: DomainArchiveV2 = source(catalog = version == 2)) {
-        require(version == 1 || version == 2)
-        require(version == 2 || source.bows.isEmpty() && source.arrowSets.isEmpty())
+    suspend fun historical(path: Path, version: Int, source: DomainArchiveV2 = source(catalog = version >= 2)) {
+        require(version in 1..3)
+        require(version >= 2 || source.bows.isEmpty() && source.arrowSets.isEmpty())
         val seed = path.resolveSibling(path.fileName.toString() + ".seed")
         openSessionStore(seed).use { assertIs<ArchiveV2ImportResult.Imported>(it.restoreV2(source)) }
         val ddl = requireNotNull(javaClass.getResourceAsStream("/room-schema-v$version.sql")).bufferedReader().use { it.readLines() }
@@ -48,11 +48,11 @@ internal object ArchiveV3DiskData {
             sql("ATTACH DATABASE '${seed.toString().replace("'", "''")}' AS seed")
             sql("BEGIN IMMEDIATE")
             ddl.filter { it.isNotBlank() && !it.startsWith("--") }.forEach(::sql)
-            (if (version == 1) f.oldTables else f.tables).forEach { sql("INSERT INTO `$it` SELECT * FROM seed.`$it`") }
+            (when (version) { 1 -> f.oldTables; 2 -> f.tables; else -> tables }).forEach { sql("INSERT INTO `$it` SELECT * FROM seed.`$it`") }
             sql("COMMIT"); sql("DETACH DATABASE seed")
         }
         assertEquals(listOf(version.toString()), f.rows(path,"PRAGMA user_version"))
-        assertTrue(f.rows(path,"SELECT name FROM sqlite_master WHERE name='session_configurations'").isEmpty())
+        assertEquals(version < 3, f.rows(path,"SELECT name FROM sqlite_master WHERE name='session_configurations'").isEmpty())
         assertTrue(f.rows(path,"PRAGMA foreign_key_check").isEmpty())
     }
     fun schema(path: Path, tableNames: List<String>) = f.rows(path,

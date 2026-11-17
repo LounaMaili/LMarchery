@@ -66,6 +66,7 @@ et [plan de consolidation vers main](plan-consolidation-main.md).
 | 45 | Variante Android isolée de recette | [adr/045-variante-android-sandbox.md](adr/045-variante-android-sandbox.md) |
 | 46 | Sélection tactile explicite des impacts | [adr/046-selection-tactile-explicite-impacts.md](adr/046-selection-tactile-explicite-impacts.md) |
 | 47 | Déplacement tactile d’un impact sélectionné | [adr/047-deplacement-tactile-candidat-impacts.md](adr/047-deplacement-tactile-candidat-impacts.md) |
+| 48 | Annulation logique durable des impacts, Room 4 et archive V4 | [adr/048-annulation-logique-durable-impacts.md](adr/048-annulation-logique-durable-impacts.md) |
 
 Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 
@@ -76,3 +77,5 @@ Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-vise
 *Dernière mise à jour : 11 novembre 2026*
 
 Campagne isolée : [LMarchery TEST et protocole Android](validation-android-sandbox.md).
+
+- [Sauvegarde JSON V4 et preuves d’annulation](export-format-v4.md).

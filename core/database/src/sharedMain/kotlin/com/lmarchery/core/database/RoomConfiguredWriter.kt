@@ -3,6 +3,8 @@ package com.lmarchery.core.database
 import androidx.room.immediateTransaction
 import androidx.room.useWriterConnection
 import com.lmarchery.core.scoring.archive.TargetProfileSnapshot
+import com.lmarchery.core.scoring.archive.requireLegacyHomogeneousValue
+import com.lmarchery.core.scoring.archive.v4.*
 import com.lmarchery.core.scoring.archive.v3.*
 import com.lmarchery.core.scoring.configured.*
 import kotlinx.coroutines.currentCoroutineContext
@@ -11,7 +13,7 @@ import java.util.concurrent.CancellationException
 
 /** No archive restore and no legacy projection. The whole database shares one writer lock. */
 internal class RoomConfiguredWriter(private val database: SessionDatabase, private val ensureOpen: () -> Unit) {
-    suspend fun write(request: ConfiguredWriteRequest): ConfiguredWriteResult {
+    suspend fun write(request: ConfiguredWriteRequest, legacy: Boolean = false): ConfiguredWriteResult {
         var writesAttempted = false
         fun outcome() = if (writesAttempted) ConfiguredCommitOutcome.UNCONFIRMED else ConfiguredCommitOutcome.NOT_ATTEMPTED
         try {
@@ -23,24 +25,25 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                 source.ends.any { it.origin == EndConfigurationOrigin.LegacyDerived }))
                 return conflict(request, ConfiguredWriteConflict.INVALID_PROVENANCE, "initialConfigurationOrigin", "Normal creation requires domain creation provenance, not a historical restore.")
             if (request is ConfiguredWriteRequest.Update) try {
-                validateConfiguredSessionUpdate(request.expected, source)
+                if (legacy) com.lmarchery.core.model.session.validateSessionUpdate(request.expected.requireLegacyHomogeneousValue(), source.requireLegacyHomogeneousValue())
+                else validateConfiguredSessionUpdate(request.expected, source)
             } catch (error: IllegalArgumentException) {
                 return conflict(request, ConfiguredWriteConflict.INVALID_TRANSITION,
                     (error as? ConfiguredSessionException)?.path ?: "transition", error.message ?: "Invalid configured transition.")
             }
             val profiles = (listOf(source.initialConfiguration) + source.ends.map { it.configuration })
                 .map { TargetProfileSnapshot(it.targetType, it.regulatoryEdition) }.distinctBy { it.definition!!.uuid }
-            val received = validateStoredV3(snapshotArchiveV3(profiles, listOf(source), emptyList(), emptyList()))
+            val received = validateStoredV4(snapshotArchiveV4(profiles, listOf(source), emptyList(), emptyList()))
             val receivedRows = received.toSnapshot().sessions!!.single().configuredRows()
             return database.useWriterConnection { connection -> connection.immediateTransaction {
                 caller.ensureActive(); ensureOpen()
                 val queries = StrictStorageQueries(connection)
-                val before = collectArchiveV3(queries, caller, ArchiveV3Limits())
+                val before = collectArchiveV4(queries, caller, ArchiveV3Limits())
                 val previous = before.sessions.singleOrNull { it.uuid == source.uuid }
                 if (previous == null && before.identitiesV3().containsKey(source.uuid))
                     return@immediateTransaction conflict(request, ConfiguredWriteConflict.IDENTITY_OCCUPIED,
                         "identities[${source.uuid}]", "Session UUID is already owned by another entity type.")
-                if (previous != null && queries.sessionConfiguration(source.uuid)?.representation != CONFIGURED)
+                if (previous != null && queries.sessionConfiguration(source.uuid)?.representation != if (legacy) LEGACY_HOMOGENEOUS else CONFIGURED)
                     return@immediateTransaction conflict(request, ConfiguredWriteConflict.NOT_CONFIGURED, "sessions[${source.uuid}]", "A legacy session cannot be implicitly converted or overwritten.")
                 if (previous == source) return@immediateTransaction ConfiguredWriteResult.AlreadyApplied(request)
                 when (request) {
@@ -64,26 +67,35 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                         return@immediateTransaction conflict(request, ConfiguredWriteConflict.IDENTITY_OCCUPIED, "identities[$uuid]", "UUID already belongs to ${known.kind}; no adoption, overwrite or material repair.")
                 }
                 val additions = profiles.filter { it.definition!!.uuid !in knownProfiles }
-                val expected = validateStoredV3(snapshotArchiveV3((before.profiles + additions).sortedBy { it.definition!!.uuid },
+                val expected = validateStoredV4(snapshotArchiveV4((before.profiles + additions).sortedBy { it.definition!!.uuid },
                     (before.sessions.filterNot { it.uuid == source.uuid } + source).sortedBy { it.uuid }, before.bows, before.arrowSets))
-                val audit = ConfiguredWriteAudit(before, source)
+                // Existing homogeneous global revisions update only redundant LEGACY_DERIVED
+                // projections. CONFIGURED captures remain immutable, including legacy imports.
+                val legacyProjectionRevision = legacy && previous?.initialConfiguration != source.initialConfiguration
+                val audit = ConfiguredWriteAudit(before, source, legacyProjectionRevision)
                 val untouched = audit.fingerprint(connection)
                 val dao = database.records()
                 // Set before the first DML attempt; any later technical error is conservatively unconfirmed.
                 caller.ensureActive(); writesAttempted = true
                 received.identitiesV3().values.filter { it.uuid !in knownIds }.forEach { caller.ensureActive(); dao.insertIdentity(it) }
                 additions.forEach { caller.ensureActive(); dao.writeProfile(it) }
-                val rows = receivedRows.physical
+                val physicalVersion = if (legacy) requireNotNull(queries.session(source.uuid)).archiveSchemaVersion else 3
+                val rows = receivedRows.physical.let { it.copy(session = it.session.copy(archiveSchemaVersion = physicalVersion)) }
                 if (previous == null) {
                     dao.insertConfiguredRows(receivedRows, caller)
                 } else {
                     val previousRows = before.toSnapshot().sessions!!.single { it.uuid == source.uuid }.configuredRows()
-                    dao.updatePhysicalSessionRows(previousRows.physical, rows)
-                    val oldEnds = previous.ends.map { it.uuid }.toSet()
-                    receivedRows.captures.filter { it.endUuid !in oldEnds }.forEach { caller.ensureActive(); dao.insertEndConfiguration(it) }
+                    val oldRows = previousRows.physical.let { it.copy(session = it.session.copy(archiveSchemaVersion = physicalVersion)) }
+                    dao.updatePhysicalSessionRows(oldRows, rows)
+                    if (legacy) dao.syncLegacyConfigurations(oldRows, rows)
+                    else {
+                        val oldEnds = previous.ends.map { it.uuid }.toSet()
+                        receivedRows.captures.filter { it.endUuid !in oldEnds }.forEach { caller.ensureActive(); dao.insertEndConfiguration(it) }
+                    }
                 }
+                dao.writeCancellationDelta(previous, source)
                 caller.ensureActive()
-                val after = collectArchiveV3(queries, caller, ArchiveV3Limits())
+                val after = collectArchiveV4(queries, caller, ArchiveV3Limits())
                 dataCheck(after == expected, "configured.verification", "Complete persisted content differs from the exact proposal; abort the transaction.")
                 dataCheck(audit.fingerprint(connection) == untouched, "configured.untouched", "Unrelated SQL rows or immutable captures changed; abort the transaction.")
                 connection.usePrepared("PRAGMA foreign_key_check") { statement ->
