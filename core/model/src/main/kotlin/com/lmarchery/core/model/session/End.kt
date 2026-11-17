@@ -12,9 +12,17 @@ class End(
     val createdAt: Instant,
     val updatedAt: Instant,
     val validatedAt: Instant? = null,
+    cancellations: List<ImpactCancellation> = emptyList(),
 ) {
     val impacts: List<ArrowImpact> =
         Collections.unmodifiableList(impacts.toList())
+    val cancellations: List<ImpactCancellation> = Collections.unmodifiableList(cancellations.toList())
+    private val cancelledIds = this.cancellations.map { it.impactUuid }.toSet()
+    private val impactIds = this.impacts.map { it.uuid }.toSet()
+    val activeImpacts: List<ArrowImpact> = Collections.unmodifiableList(this.impacts.filterNot { it.uuid in cancelledIds })
+    fun isImpactActive(uuid: String): Boolean = uuid in impactIds && uuid !in cancelledIds
+    val canAppendImpactIndex: Boolean get() = (impacts.maxOfOrNull { it.index } ?: 0) < Int.MAX_VALUE
+    fun nextImpactIndex(): Int = Math.addExact(impacts.maxOfOrNull { it.index } ?: 0, 1)
 
     private val snapshot = Snapshot(
         uuid = this.uuid,
@@ -25,6 +33,7 @@ class End(
         createdAt = this.createdAt,
         updatedAt = this.updatedAt,
         validatedAt = this.validatedAt,
+        cancellations = this.cancellations,
     )
 
     init {
@@ -46,6 +55,22 @@ class End(
         }
         require(impacts.map { it.index }.distinct().size == impacts.size) {
             "End impacts must have unique index values."
+        }
+        require(this.cancellations.map { it.impactUuid }.distinct().size == this.cancellations.size) {
+            "An impact can be cancelled only once."
+        }
+        require(this.cancellations.zipWithNext().all { (a, b) -> !b.cancelledAt.isBefore(a.cancelledAt) }) {
+            "Cancellation evidence must retain chronological append order."
+        }
+        this.cancellations.forEach { proof ->
+            require(proof.endUuid == uuid) { "Cancellation belongs to a different end." }
+            val impact = requireNotNull(impacts.singleOrNull { it.uuid == proof.impactUuid }) { "Cancelled impact is missing." }
+            require(!proof.cancelledAt.isBefore(impact.updatedAt) && !proof.cancelledAt.isAfter(updatedAt)) {
+                "Cancellation chronology must be covered by its end and follow its impact revision."
+            }
+            require(validatedAt == null || !proof.cancelledAt.isAfter(validatedAt)) {
+                "Cancellation cannot follow end validation."
+            }
         }
 
         when (status) {
@@ -84,6 +109,9 @@ class End(
         updatedAt: Instant = impact.updatedAt,
     ): End {
         require(status == EndStatus.EDITING) { "Only an EDITING end can be modified." }
+        require(cancellations.none { it.impactUuid == impact.uuid } || impacts.single { it.uuid == impact.uuid } == impact) {
+            "A cancelled impact is immutable."
+        }
         require(!updatedAt.isBefore(createdAt)) {
             "updatedAt must not be before createdAt."
         }
@@ -106,7 +134,7 @@ class End(
 
     internal fun requireNotOlderThan(previous: End) {
         if (previous.status == EndStatus.VALIDATED) {
-            require(status == EndStatus.VALIDATED && validatedAt == previous.validatedAt && impacts == previous.impacts) {
+            require(status == EndStatus.VALIDATED && validatedAt == previous.validatedAt && impacts == previous.impacts && cancellations == previous.cancellations) {
                 "A VALIDATED end cannot be reopened or have its impacts replaced."
             }
         }
@@ -122,12 +150,42 @@ class End(
             }
         }
         val previousImpacts = previous.impacts.associateBy { it.uuid }
+        if (cancellations.isNotEmpty()) {
+            impacts.forEach { impact ->
+                val old = previousImpacts[impact.uuid]
+                require(old == null || impact.index == old.index) { "An end with cancellation evidence cannot renumber an impact." }
+                require(old != null || impact.index > (previous.impacts.maxOfOrNull { it.index } ?: 0)) {
+                    "New impacts must append beyond all historical indexes, including cancelled impacts."
+                }
+            }
+        }
+        require(cancellations.take(previous.cancellations.size) == previous.cancellations) {
+            "Cancellation evidence cannot disappear, change or be reordered."
+        }
+        cancellations.forEach { proof ->
+            previousImpacts[proof.impactUuid]?.let { old ->
+                require(impacts.singleOrNull { it.uuid == old.uuid } == old) { "Cancelling or revising a cancelled impact must preserve its complete original value." }
+            }
+            if (proof !in previous.cancellations) {
+                require(previous.status == EndStatus.EDITING && !proof.cancelledAt.isBefore(previous.updatedAt)) {
+                    "New cancellation requires an editable, non-backdated revision."
+                }
+            }
+        }
         require(previous.impacts.filter { it.repositions.isNotEmpty() }.all { old -> impacts.any { it.uuid == old.uuid } }) {
             "An end revision cannot discard reposition evidence by removing its impact."
         }
         impacts.forEach { impact ->
             previousImpacts[impact.uuid]?.let(impact::requireNotOlderThan)
         }
+    }
+
+    fun cancelImpact(impactUuid: String, cancelledAt: Instant, comment: String? = null): End {
+        require(status == EndStatus.EDITING) { "Only an EDITING end can cancel an impact." }
+        require(isImpactActive(impactUuid)) { "Impact is missing or already cancelled." }
+        require(!cancelledAt.isBefore(updatedAt)) { "Cancellation cannot predate the end revision." }
+        val proof = ImpactCancellation.forImpact(uuid, impacts.single { it.uuid == impactUuid }, cancelledAt, comment = comment)
+        return copy(cancellations = cancellations + proof, updatedAt = cancelledAt)
     }
 
     /** Returns a new value while preserving creation time and temporal history. */
@@ -140,6 +198,7 @@ class End(
         createdAt: Instant = this.createdAt,
         updatedAt: Instant = this.updatedAt,
         validatedAt: Instant? = this.validatedAt,
+        cancellations: List<ImpactCancellation> = this.cancellations,
     ): End {
         val revised = End(
             uuid = uuid,
@@ -150,6 +209,7 @@ class End(
             createdAt = createdAt,
             updatedAt = updatedAt,
             validatedAt = validatedAt,
+            cancellations = cancellations,
         )
         revised.requireNotOlderThan(this)
         return revised
@@ -180,5 +240,6 @@ class End(
         val createdAt: Instant,
         val updatedAt: Instant,
         val validatedAt: Instant?,
+        val cancellations: List<ImpactCancellation>,
     )
 }

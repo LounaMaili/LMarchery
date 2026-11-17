@@ -11,11 +11,11 @@ import java.util.Collections
 /** Complete independently validated content. No V1/V2 inheritance, projection, codec or store API. */
 class DomainArchiveV3 internal constructor(
     profiles: List<TargetProfileSnapshot>, sessions: List<ConfiguredSession>, bows: List<Bow>, arrowSets: List<ArrowSet>,
-) {
-    val profiles: List<TargetProfileSnapshot> = Collections.unmodifiableList(profiles.toList())
-    val sessions: List<ConfiguredSession> = Collections.unmodifiableList(sessions.toList())
-    val bows: List<Bow> = Collections.unmodifiableList(bows.toList())
-    val arrowSets: List<ArrowSet> = Collections.unmodifiableList(arrowSets.toList())
+) : ArchiveGraph {
+    override val profiles: List<TargetProfileSnapshot> = Collections.unmodifiableList(profiles.toList())
+    override val sessions: List<ConfiguredSession> = Collections.unmodifiableList(sessions.toList())
+    override val bows: List<Bow> = Collections.unmodifiableList(bows.toList())
+    override val arrowSets: List<ArrowSet> = Collections.unmodifiableList(arrowSets.toList())
     fun toSnapshot(): ArchiveV3Snapshot = snapshotArchiveV3(profiles, sessions, bows, arrowSets)
     override fun equals(other: Any?): Boolean = other is DomainArchiveV3 && profiles == other.profiles &&
         sessions == other.sessions && bows == other.bows && arrowSets == other.arrowSets
@@ -24,6 +24,13 @@ class DomainArchiveV3 internal constructor(
 
 /** Capture, not proof of validity. No current preset, choice date or UUID is invented. */
 fun snapshotArchiveV3(profiles: List<TargetProfileSnapshot>, sessions: List<ConfiguredSession>,
+    bows: List<Bow>, arrowSets: List<ArrowSet>): ArchiveV3Snapshot {
+    require(sessions.all { s -> s.ends.all { it.end.cancellations.isEmpty() } }) { "Archive V3 cannot represent cancellations. Use archive V4." }
+    return snapshotArchiveV3Payload(profiles, sessions, bows, arrowSets)
+}
+
+/** Internal shared records only; callers must preserve cancellation evidence through the V4 contract. */
+internal fun snapshotArchiveV3Payload(profiles: List<TargetProfileSnapshot>, sessions: List<ConfiguredSession>,
     bows: List<Bow>, arrowSets: List<ArrowSet>): ArchiveV3Snapshot {
     sessions.forEachIndexed { index, session ->
         (listOf(session.initialConfiguration) + session.ends.map { it.configuration }).forEach { configuration ->
@@ -43,7 +50,7 @@ fun snapshotArchiveV3(profiles: List<TargetProfileSnapshot>, sessions: List<Conf
                 m.plannedEndCount, m.bowUuid, m.arrowSetUuid, m.locationName, m.notes),
                 s.initialConfiguration.snapshot(), s.initialConfigurationOrigin, s.status,
                 s.startedAt?.let(UtcTimestamps::format), s.endedAt?.let(UtcTimestamps::format),
-                s.ends.map { captured -> ConfiguredEndSnapshot(captured.sessionUuid, captured.end.toSnapshot(),
+                s.ends.map { captured -> ConfiguredEndSnapshot(captured.sessionUuid, captured.end.toPayloadSnapshot(),
                     captured.configuration.snapshot(), captured.origin.snapshot()) },
                 UtcTimestamps.format(s.createdAt), UtcTimestamps.format(s.updatedAt))
         }, shared.bows, shared.arrowSets)

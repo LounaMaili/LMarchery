@@ -404,3 +404,23 @@ locale n’est annoncée comme enregistrée : relire les séances avant de recom
 La sauvegarde/restauration complète reste le parcours SAF V3 existant.
 Voir [ADR 043](adr/043-editeur-android-seances-configurables.md). Les essais humains
 sur appareil restent reportés ; les tests JVM ne valident pas la précision tactile.
+
+## Annuler une saisie d’impact — candidate du ticket 2.5
+
+Dans une séance en cours et une volée éditable, sélectionner explicitement une
+flèche active puis « Supprimer cette flèche ». Le dialogue explique qu’elle ne
+comptera plus, que son historique sera conservé et que l’annulation est définitive
+en V1. Commentaire facultatif, confirmation séparée. Fermer ou Annuler n’écrit rien.
+
+L’acquittement confirme la suppression de participation ; fermer ensuite le
+dialogue dédié. Un second appui ne confirme pas une autre action. En cas
+d’incertitude, conserver l’intention et relire/comparer explicitement, sans retry
+automatique. Les saisies annulées restent consultables, y compris après clôture ;
+leurs numéros ne sont ni réattribués ni renumérotés. Une nouvelle flèche prend le
+numéro historique suivant, tandis que la capacité ne compte que les actives.
+Une vraie flèche M reste active et occupe une place.
+
+La sauvegarde complète est [V4](export-format-v4.md). Les anciens exports refusent
+de perdre une annulation ; les anciens imports ne peuvent pas réactiver une
+flèche connue annulée. Voir [ADR 048](adr/048-annulation-logique-durable-impacts.md).
+Cette candidate locale ne constitue pas une qualification humaine au doigt.

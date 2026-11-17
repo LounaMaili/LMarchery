@@ -93,7 +93,7 @@ class RoomConfiguredEditorTest {
             assertIs<ArchiveV2ReadResult.NeedsIntervention>(store.readArchiveV2())
         }
         assertTrue(f.rows(path,"PRAGMA foreign_key_check").isEmpty());assertEquals(listOf("ok"),f.rows(path,"PRAGMA integrity_check"))
-        assertEquals(12,f.rows(path,"SELECT name FROM sqlite_master WHERE type='table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
+        assertEquals(13,f.rows(path,"SELECT name FROM sqlite_master WHERE type='table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
         openSessionStore(path).use { assertEquals(archive,it.fullV3());assertEquals(s,assertIs<ConfiguredSessionReadResult.Found>(it.readConfiguredSession(s.uuid)).session) }
         val codec=ArchiveV3JsonCodec();val bytes=codec.encode(archive);val decoded=assertIs<ArchiveV3JsonRead.Accepted>(codec.decode(bytes)).archive
         assertEquals(archive,decoded)

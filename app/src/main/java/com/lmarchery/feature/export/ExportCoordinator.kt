@@ -3,6 +3,9 @@ package com.lmarchery.feature.export
 import com.lmarchery.core.database.ArchiveReadResult
 import com.lmarchery.core.database.ArchiveV2ReadResult
 import com.lmarchery.core.database.ArchiveV3ReadResult
+import com.lmarchery.core.database.ArchiveV4ReadResult
+import com.lmarchery.core.export.ArchiveV4JsonCodec
+import com.lmarchery.data.ArchiveV4Source
 import com.lmarchery.core.export.ArchiveV3JsonCodec
 import com.lmarchery.core.export.ArchiveV3JsonException
 import com.lmarchery.data.ArchiveV3Source
@@ -53,6 +56,8 @@ class ExportCoordinator(
     private val v2Source: ArchiveV2Source? = null,
     private val v3Source: ArchiveV3Source? = null,
     private val v3Codec: ArchiveV3JsonCodec = ArchiveV3JsonCodec(),
+    private val v4Source: ArchiveV4Source? = null,
+    private val v4Codec: ArchiveV4JsonCodec = ArchiveV4JsonCodec(),
 ) {
     private val mutableState = MutableStateFlow<ExportState>(ExportState.Available)
     val state = mutableState.asStateFlow()
@@ -69,6 +74,7 @@ class ExportCoordinator(
     fun begin() = beginVersion(1)
     fun beginV2() = beginVersion(2)
     fun beginV3() = beginVersion(3)
+    fun beginV4() = beginVersion(4)
 
     private fun beginVersion(version: Int) {
         if (state.value.active) return
@@ -81,7 +87,21 @@ class ExportCoordinator(
         mutableState.value = ExportState.Preparing
         scope.launch {
             try {
-                val bytes = if (version == 3) {
+                val bytes = if (version == 4) {
+                    val archive = when (val result = withContext(dispatcher) {
+                        (v4Source ?: throw ExportProblem("Collecte V4 indisponible ; aucune rétrogradation vers V2/V1.")).readArchiveV4()
+                    }) {
+                        is ArchiveV4ReadResult.Found -> result.archive
+                        is ArchiveV4ReadResult.NeedsIntervention -> throw ExportProblem("${result.diagnostic.path} : ${result.diagnostic.detail}")
+                        is ArchiveV4ReadResult.TechnicalFailure -> throw ExportProblem("Lecture globale V4 impossible. Aucune sauvegarde préparée.")
+                    }
+                    sessionCount = archive.sessions.size; profileCount = archive.profiles.size
+                    bowCount = archive.bows.size; arrowSetCount = archive.arrowSets.size
+                    endCount = archive.sessions.sumOf { it.ends.size }
+                    impactCount = archive.sessions.sumOf { s -> s.ends.sumOf { it.end.impacts.size } }
+                    mutableState.value = ExportState.Validating
+                    withContext(dispatcher) { v4Codec.encode(archive) }
+                } else if (version == 3) {
                     val archive = when (val result = withContext(dispatcher) {
                         (v3Source ?: throw ExportProblem("Collecte V3 indisponible ; aucune rétrogradation vers V2/V1.")).readArchiveV3()
                     }) {

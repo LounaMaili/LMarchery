@@ -11,7 +11,7 @@ private val storageFingerprintKeys = linkedMapOf(
     "entity_identities" to "uuid", "target_profiles" to "uuid", "target_zones" to "profileUuid",
     "sessions" to "uuid", "ends" to "sessionUuid", "impacts" to "endUuid", "score_decisions" to "impactUuid",
     "impact_repositions" to "impactUuid", "session_configurations" to "sessionUuid", "end_configurations" to "endUuid",
-    "bows" to "uuid", "arrow_sets" to "uuid",
+    "bows" to "uuid", "arrow_sets" to "uuid", "impact_cancellations" to "impactUuid",
 )
 
 internal suspend fun fingerprintStorage(connection: PooledConnection, exclusions: Map<String, Pair<String, Set<String>>> = emptyMap()): Map<String, List<Byte>> =

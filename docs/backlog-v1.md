@@ -50,7 +50,7 @@ sélection numérotée jusqu'à revue de ce complément.
 | 2.2 | Toucher pour placer un impact (coordonnées normalisées) | ✓ | Haute |
 | 2.3 | Afficher le score calculé en temps réel après placement | ✓ (après acquittement) | Haute |
 | 2.4 | Glisser pour déplacer un impact existant | ◐ candidate locale : sélection explicite, aperçu et confirmation séparée (ADR 047) ; ergonomie au doigt restante | Haute |
-| 2.5 | Appui long ou bouton pour supprimer un impact | ☐ | Haute |
+| 2.5 | Annuler une saisie d’impact par bouton et confirmation explicite | ◐ candidate locale : preuve définitive, Room 4 / JSON V4, deux éditeurs ; recette au doigt restante (ADR 048) | Haute |
 | 2.6 | Tap sur impact pour voir/corriger le score (modal cordon) | ◐ en branche : sélection explicite sur le blason + choix numéroté des superpositions (ADR 046), essai au doigt restant | Haute |
 | 2.7 | Afficher le nombre d'impacts placés vs attendus | ✓ | Moyenne |
 | 2.8 | Zoom et panoramique sur le blason | ☐ | Basse |

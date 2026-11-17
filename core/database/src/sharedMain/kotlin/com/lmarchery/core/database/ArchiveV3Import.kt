@@ -1,13 +1,14 @@
 package com.lmarchery.core.database
 
 import com.lmarchery.core.scoring.archive.v3.*
+import com.lmarchery.core.scoring.archive.v4.DomainArchiveV4
 import java.util.concurrent.CancellationException
 
 /** Only a read-only preview constructs this exact, immutable confirmation candidate. */
 class ArchiveV3ImportPreview internal constructor(
     val archive: DomainArchiveV3,
     val plan: ArchiveV3ImportPlan,
-    internal val baseline: DomainArchiveV3,
+    internal val baseline: DomainArchiveV4,
     fingerprint: Map<String, List<Byte>>,
 ) {
     internal val baselineFingerprint = ownFingerprint(fingerprint)

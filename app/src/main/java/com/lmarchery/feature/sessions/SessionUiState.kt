@@ -5,7 +5,7 @@ import com.lmarchery.core.model.NormalizedPoint
 import com.lmarchery.core.model.scoring.FinalScoreDecision
 import com.lmarchery.core.model.scoring.BoundaryReference
 import com.lmarchery.core.model.scoring.BoundaryValue
-import com.lmarchery.core.scoring.archive.DomainArchive
+import com.lmarchery.core.scoring.archive.SessionContent
 import com.lmarchery.core.scoring.configured.ConfiguredSession
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles as WA
@@ -23,7 +23,7 @@ enum class IndoorProfile(val label: String) {
 }
 
 enum class SessionScreen { LIST, CREATE, SESSION }
-enum class ProblemKind { CONFLICT, INTERVENTION, TECHNICAL, NOT_FOUND, INVALID_ACTION }
+enum class ProblemKind { CONFLICT, INTERVENTION, TECHNICAL, NOT_FOUND, INVALID_ACTION, UNCONFIRMED }
 data class UiProblem(val kind: ProblemKind, val message: String) {
     val retryable get() = kind == ProblemKind.TECHNICAL
 }
@@ -38,10 +38,31 @@ data class SessionEntry(val uuid: String, val session: Session? = null, val prob
 }
 data class PendingSave(
     val description: String,
-    val expected: DomainArchive?,
-    val proposed: DomainArchive,
+    val expected: SessionContent?,
+    val proposed: SessionContent,
     val selectedEndUuid: String?,
 )
+
+/** Input must fit the lossless archive before a write intention or timestamp is allocated. */
+internal fun cancellationCommentProblem(value: String): String? {
+    if (value.length > com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits().maxTextLength)
+        return "Commentaire trop long. Raccourcissez-le avant de confirmer ; aucun texte ne sera tronqué."
+    var index = 0
+    while (index < value.length) {
+        val character = value[index++]
+        if (Character.isHighSurrogate(character)) {
+            if (index == value.length || !Character.isLowSurrogate(value[index++]))
+                return "Le commentaire contient un caractère incomplet. Corrigez-le avant de confirmer."
+        } else if (Character.isLowSurrogate(character))
+            return "Le commentaire contient un caractère incomplet. Corrigez-le avant de confirmer."
+    }
+    return null
+}
+
+enum class CancellationPhase { LOCAL, SAVING, CONFIRMED, FAILED }
+/** A dialog ticket is not a persisted cancellation event. No date is allocated before submission. */
+data class ImpactCancellationDialog(val sessionUuid: String, val endUuid: String, val impactUuid: String,
+    val token: Long, val comment: String = "", val phase: CancellationPhase = CancellationPhase.LOCAL)
 
 enum class ImpactEditPhase { SELECTED, AWAITING_POINT, CANDIDATE, SAVING, CONFIRMED, FAILED }
 
@@ -77,11 +98,11 @@ data class SessionUiState(
     val busy: Boolean = false,
     val archiveOperationLocked: Boolean = false,
     val entries: List<SessionEntry> = emptyList(),
-    val saved: DomainArchive? = null,
+    val saved: SessionContent? = null,
     val configuredSaved: ConfiguredSession? = null,
     val pending: PendingSave? = null,
     val problem: UiProblem? = null,
-    val storedPreview: DomainArchive? = null,
+    val storedPreview: SessionContent? = null,
     val selectedProfile: IndoorProfile = IndoorProfile.RECURVE_40,
     val title: String = "",
     val selectedEndUuid: String? = null,
@@ -96,6 +117,7 @@ data class SessionUiState(
     val activeAim: ActiveAim? = null,
     val impactPicking: ImpactPicking? = null,
     val impactDrag: ImpactDragContext? = null,
+    val cancellation: ImpactCancellationDialog? = null,
 ) {
     init { require(saved == null || configuredSaved == null) }
     val session get() = saved?.sessions?.single()
@@ -104,7 +126,7 @@ data class SessionUiState(
     val supportedConfiguration get() = session?.supportsSessionEditing() == true
     /** Compatibility read alias; import and export share one operation lock. */
     val exportLocked get() = archiveOperationLocked
-    val ready get() = !busy && pending == null && !archiveOperationLocked
+    val ready get() = !busy && pending == null && !archiveOperationLocked && cancellation == null
     val aimContext get() = session?.let { s -> displayedEnd?.let { end -> AimContext(s.uuid, end.uuid, impactEdit?.impactUuid) } }
     val aimedPoint get() = activeAim?.candidate?.point ?: newImpactCandidate?.point ?: impactEdit?.candidate
     val hasAimProposal get() = newImpactCandidate != null || activeAim != null
@@ -115,10 +137,10 @@ data class SessionUiState(
     val canEditEquipment get() = canNavigate && screen == SessionScreen.SESSION && session != null
     val isEditingDisplayed get() = editingEnd != null && displayedEnd?.uuid == editingEnd?.uuid
     val selectedImpact get() = impactEdit?.takeIf { it.sessionUuid == session?.uuid && it.endUuid == displayedEnd?.uuid }
-        ?.let { selection -> displayedEnd?.impacts?.find { it.uuid == selection.impactUuid } }
+        ?.let { selection -> displayedEnd?.activeImpacts?.find { it.uuid == selection.impactUuid } }
     val canSelectImpact get() = canEdit && isEditingDisplayed && !hasAimProposal &&
         (impactEdit == null || impactEdit.phase in listOf(ImpactEditPhase.SELECTED, ImpactEditPhase.CONFIRMED))
-    val canBeginImpactPicking get() = canSelectImpact && impactEdit == null && displayedEnd?.impacts?.isNotEmpty() == true
+    val canBeginImpactPicking get() = canSelectImpact && impactEdit == null && displayedEnd?.activeImpacts?.isNotEmpty() == true
     val canPickImpact get() = editableSession && isEditingDisplayed && impactPicking != null && impactEdit == null && !hasAimProposal
     val canBeginReposition get() = canSelectImpact && selectedImpact != null
     val canProposeReposition get() = canEdit && isEditingDisplayed && selectedImpact != null &&
@@ -151,7 +173,7 @@ data class SessionUiState(
         is ImpactProposal.ExceptionalCorrection -> proposal.selected in scoreOptions!!.legalValues && proposal.reason.isNotBlank()
         else -> false
     }
-    private val canPlaceNewImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.impacts.size < 3
+    private val canPlaceNewImpact get() = canEdit && impactEdit == null && isEditingDisplayed && editingEnd!!.activeImpacts.size < 3 && editingEnd!!.canAppendImpactIndex
     val canAddImpact get() = canPlaceNewImpact && !precisionAimEnabled && !hasAimProposal
     val canAimNewImpact get() = canPlaceNewImpact && precisionAimEnabled
     val canAim get() = impactDrag == null && precisionAimEnabled && (canAimNewImpact || canProposeReposition)
@@ -159,9 +181,9 @@ data class SessionUiState(
         (impactEdit == null || canProposeReposition)
     val canConfirmNewImpact get() = canAimNewImpact && activeAim == null && newImpactCandidate?.context ==
         AimContext(session!!.uuid, editingEnd!!.uuid)
-    val canValidate get() = canEdit && impactEdit == null && !hasAimProposal && editingEnd?.impacts?.size == 3 && isEditingDisplayed
+    val canValidate get() = canEdit && impactEdit == null && !hasAimProposal && editingEnd?.activeImpacts?.size == 3 && isEditingDisplayed
     val canNewEnd get() = canEdit && impactEdit == null && !hasAimProposal && editingEnd == null
-    val canComplete get() = canEdit && impactEdit == null && !hasAimProposal && session!!.ends.none { it.status == EndStatus.EDITING && it.impacts.isNotEmpty() }
+    val canComplete get() = canEdit && impactEdit == null && !hasAimProposal && session!!.ends.none { it.status == EndStatus.EDITING && it.activeImpacts.isNotEmpty() }
     val provisionalTotal get() = editingEnd?.let(::calculateEndScore) ?: 0
     val validatedTotal get() = session?.let(::summarizeSessionScore)?.totalScore ?: 0
 }

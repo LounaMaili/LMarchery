@@ -54,6 +54,11 @@ class Session(
     )
 
     init {
+        this.ends.flatMap { it.cancellations }.forEach { proof ->
+            require(status != SessionStatus.DRAFT && startedAt != null && !proof.cancelledAt.isBefore(startedAt)) {
+                "An impact cancellation requires a started session and cannot predate its start."
+            }
+        }
         val ends = this.ends
         require(uuid.isNotBlank()) { "Session uuid must not be blank." }
         require(title.isNotBlank()) { "Session title must not be blank." }
@@ -246,6 +251,13 @@ class Session(
         return revised
     }
 
+    fun cancelImpact(endUuid: String, impactUuid: String, cancelledAt: Instant, comment: String? = null): Session {
+        require(status == SessionStatus.IN_PROGRESS) { "Only an IN_PROGRESS session can cancel an impact." }
+        require(!cancelledAt.isBefore(updatedAt)) { "Cancellation cannot predate the session revision." }
+        val end = requireNotNull(ends.singleOrNull { it.uuid == endUuid }) { "End does not belong to this session." }
+        return withEnd(end.cancelImpact(impactUuid, cancelledAt, comment), cancelledAt)
+    }
+
     internal fun requireNotOlderThan(previous: Session) {
         if (previous.status == SessionStatus.COMPLETED) {
             require(status == SessionStatus.COMPLETED && endedAt == previous.endedAt && ends == previous.ends) {
@@ -269,6 +281,17 @@ class Session(
             }
         }
         val previousEnds = previous.ends.associateBy { it.uuid }
+        ends.forEach { end ->
+            val oldProofs = previousEnds[end.uuid]?.cancellations.orEmpty()
+            require(end.cancellations.filterNot { it in oldProofs }.all { !it.cancelledAt.isBefore(previous.updatedAt) }) {
+                "A new cancellation cannot predate the previous complete session revision."
+            }
+        }
+        previous.ends.filter { it.cancellations.isNotEmpty() }.forEach { old ->
+            require(ends.singleOrNull { it.uuid == old.uuid }?.cancellations?.take(old.cancellations.size) == old.cancellations) {
+                "A session revision cannot discard cancellation evidence."
+            }
+        }
         ends.forEach { end ->
             previousEnds[end.uuid]?.let(end::requireNotOlderThan)
         }

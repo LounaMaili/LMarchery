@@ -8,15 +8,16 @@ import com.lmarchery.core.model.time.UtcTimestamps
 import java.util.Collections
 
 /** An independently validated archive, not permission to overwrite an existing aggregate. */
-class DomainArchive internal constructor(profiles: List<TargetProfileSnapshot>, sessions: List<Session>) {
-    val profiles: List<TargetProfileSnapshot> = Collections.unmodifiableList(profiles.toList())
-    val sessions: List<Session> = Collections.unmodifiableList(sessions.toList())
+class DomainArchive internal constructor(profiles: List<TargetProfileSnapshot>, sessions: List<Session>) : SessionContent {
+    override val profiles: List<TargetProfileSnapshot> = Collections.unmodifiableList(profiles.toList())
+    override val sessions: List<Session> = Collections.unmodifiableList(sessions.toList())
 
-    fun toSnapshot(): ArchiveSnapshot = snapshotArchive(profiles, sessions)
+    override fun toSnapshot(): ArchiveSnapshot = snapshotArchive(profiles, sessions)
 }
 
 /** Explicit profile metadata is required; no edition is invented for a custom/historical definition. */
 fun snapshotArchive(profiles: List<TargetProfileSnapshot>, sessions: List<Session>): ArchiveSnapshot {
+    require(sessions.all { s -> s.ends.all { it.cancellations.isEmpty() } }) { "Archive V1/V2 cannot represent cancellation evidence. Use archive V4." }
     sessions.forEach { session ->
         require(profiles.singleOrNull { it.definition?.uuid == session.targetType.uuid }?.definition == session.targetType) {
             "Snapshot profiles must contain the session's exact complete target definition."
@@ -38,7 +39,13 @@ fun snapshotArchive(profiles: List<TargetProfileSnapshot>, sessions: List<Sessio
     )
 }
 
-internal fun End.toSnapshot(): EndSnapshot = EndSnapshot(uuid, index, status, notes,
+internal fun End.toSnapshot(): EndSnapshot {
+    require(cancellations.isEmpty()) { "Published end snapshots cannot omit cancellation evidence. Use archive V4." }
+    return toPayloadSnapshot()
+}
+
+/** V4 carries terminal participation evidence separately; this internal payload is never an old archive export. */
+internal fun End.toPayloadSnapshot(): EndSnapshot = EndSnapshot(uuid, index, status, notes,
     UtcTimestamps.format(createdAt), UtcTimestamps.format(updatedAt), validatedAt?.let(UtcTimestamps::format),
     impacts.map(ArrowImpact::toSnapshot))
 

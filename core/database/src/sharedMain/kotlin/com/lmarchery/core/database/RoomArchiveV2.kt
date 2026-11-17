@@ -31,6 +31,7 @@ internal class RoomArchiveV2(private val database: SessionDatabase, private val 
         caller.ensureActive(); ensureOpen()
         val archive = validated(source.toSnapshot())
         database.useReaderConnection { it.deferredTransaction {
+            database.records().cancellationConflict(archive.sessions.flatMap { it.ends.flatMap { e -> e.impacts.map { it.uuid } } })?.let { throw CorruptStorage(it) }
             val known = collect(caller)
             val plan = planArchiveImportV2(archive, known)
             caller.ensureActive()
@@ -46,6 +47,9 @@ internal class RoomArchiveV2(private val database: SessionDatabase, private val 
         val source = validated(confirmed.archive.toSnapshot())
         database.useWriterConnection { it.immediateTransaction {
             caller.ensureActive(); ensureOpen()
+            database.records().cancellationConflict(source.sessions.flatMap { it.ends.flatMap { e -> e.impacts.map { it.uuid } } })?.let {
+                return@immediateTransaction ArchiveV2ImportResult.Conflict(it)
+            }
             val before = collect(caller)
             val plan = planArchiveImportV2(source, before)
             if (before != confirmed.baseline || plan != confirmed.plan || !plan.canImport) {

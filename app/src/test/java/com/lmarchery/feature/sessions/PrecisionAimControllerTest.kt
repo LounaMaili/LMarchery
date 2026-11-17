@@ -294,7 +294,7 @@ class PrecisionAimControllerTest {
             h.repository.next = SessionUpdateResult.TechnicalFailure(IOException("Synthetic lost acknowledgement"))
             h.controller.confirmNewImpactCandidate()
             // Model a commit that happened before its acknowledgement was lost.
-            h.repository.stored = h.ui.pending!!.proposed
+            h.repository.stored = assertIs<DomainArchive>(h.ui.pending!!.proposed)
             assertTrue(presentNewImpactNotice(h.ui).heading.contains("non confirmé"))
             assertTrue(h.ui.editingEnd!!.impacts.isEmpty())
             h.controller.previewStored()

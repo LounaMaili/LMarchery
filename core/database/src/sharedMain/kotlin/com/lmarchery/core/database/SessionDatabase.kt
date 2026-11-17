@@ -17,6 +17,10 @@ internal interface SessionDao : StorageReadQueries, ConfigurationDao {
     @Insert suspend fun insertImpact(row: ImpactRow)
     @Insert suspend fun insertDecisions(rows: List<DecisionRow>)
     @Insert suspend fun insertRepositions(rows: List<RepositionRow>)
+    @Insert suspend fun insertCancellation(row: CancellationRow)
+    @Query("SELECT count(*) FROM impact_cancellations") suspend fun cancellationCount(): Int
+    @Query("SELECT impactUuid FROM impact_cancellations WHERE impactUuid IN (:uuids) ORDER BY impactUuid")
+    suspend fun cancelledAmong(uuids: List<String>): List<String>
     @Update suspend fun updateSession(row: SessionRow): Int
     @Update suspend fun updateEnd(row: EndRow): Int
     @Update suspend fun updateImpact(row: ImpactRow): Int
@@ -58,7 +62,7 @@ internal interface SessionDao : StorageReadQueries, ConfigurationDao {
 
 @Database(entities = [IdentityRow::class, ProfileRow::class, ZoneRow::class, SessionRow::class,
     EndRow::class, ImpactRow::class, DecisionRow::class, RepositionRow::class, BowRow::class, ArrowSetRow::class,
-    SessionConfigurationRow::class, EndConfigurationRow::class], version = 3, exportSchema = true)
+    SessionConfigurationRow::class, EndConfigurationRow::class, CancellationRow::class], version = 4, exportSchema = true)
 internal abstract class SessionDatabase : RoomDatabase() {
     abstract fun records(): SessionDao
     abstract fun equipment(): EquipmentDao

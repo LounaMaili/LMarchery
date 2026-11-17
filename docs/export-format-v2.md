@@ -1,5 +1,9 @@
 # Contrat de sauvegarde JSON V2 — LMarchery
 
+> Annulations du ticket 2.5 : ce contrat publié reste inchangé. Une sauvegarde
+> contenant des preuves d’annulation exige [V4](export-format-v4.md) ; aucune
+> omission silencieuse n’est autorisée.
+
 > Contrat, codec et collecte/restauration atomique Room V2 disponibles.
 > Le parcours SAF Android propose V2 complet et conserve un export V1 explicitement sans matériel.
 

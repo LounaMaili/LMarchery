@@ -3,6 +3,8 @@ package com.lmarchery.data
 import com.lmarchery.core.database.*
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.archive.DomainArchiveV2
+import com.lmarchery.core.scoring.archive.SessionContent
+import com.lmarchery.core.scoring.archive.configuredLegacyValue
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -12,6 +14,21 @@ interface SessionRepository {
     suspend fun read(uuid: String): SessionReadResult
     suspend fun create(archive: DomainArchive): SessionCreateResult
     suspend fun update(expected: DomainArchive, proposed: DomainArchive): SessionUpdateResult
+    /** Legacy doubles keep their old contract; complete V4 revisions require an explicit capability. */
+    suspend fun updateContent(expected: SessionContent, proposed: SessionContent): ConfiguredWriteResult {
+        val request = ConfiguredWriteRequest.Update(expected.configuredLegacyValue(), proposed.configuredLegacyValue())
+        if (expected !is DomainArchive || proposed !is DomainArchive)
+            return ConfiguredWriteResult.TechnicalFailure(request, UnsupportedOperationException("Complete cancellation revisions are unsupported by this repository."))
+        return when (val r = update(expected, proposed)) {
+            is SessionUpdateResult.Updated -> ConfiguredWriteResult.Updated(request)
+            is SessionUpdateResult.Unchanged -> ConfiguredWriteResult.AlreadyApplied(request)
+            is SessionUpdateResult.Conflict -> ConfiguredWriteResult.Conflict(request, ConfiguredWriteConflict.REVISION, r.diagnostic)
+            SessionUpdateResult.NotFound -> ConfiguredWriteResult.Conflict(request, ConfiguredWriteConflict.NOT_FOUND, StorageDiagnostic("session", "Session not found."))
+            is SessionUpdateResult.TechnicalFailure -> ConfiguredWriteResult.TechnicalFailure(request, r.cause)
+            is SessionUpdateResult.NeedsIntervention -> ConfiguredWriteResult.NeedsIntervention(request,
+                ArchiveV3StorageDiagnostic(ArchiveV3StorageIssueKind.STORAGE, r.diagnostic.path, r.diagnostic.detail, storageIssue = r.diagnostic), ConfiguredCommitOutcome.NOT_ATTEMPTED)
+        }
+    }
 }
 
 /** Separate read-only capability: no discover/read loop pretending to be atomic. */
@@ -32,8 +49,21 @@ fun interface ArchiveV2Source {
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ConfiguredSessionRepository {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ConfiguredSessionRepository {
     val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
+    override suspend fun updateContent(expected: SessionContent, proposed: SessionContent) = withContext(dispatcher) { store.updateSessionContent(expected, proposed) }
+    override suspend fun readArchiveV4() = withContext(dispatcher) { store.readArchiveV4() }
+    override suspend fun previewImportV4(archive: com.lmarchery.core.scoring.archive.v4.DomainArchiveV4): PreparedV4Result = withContext(dispatcher) {
+        when (val result = store.previewImportV4(archive)) {
+            is ArchiveV4PreviewResult.Ready -> PreparedV4Result.Ready(object : PreparedV4Import {
+                override val archive = result.preview.archive
+                override val plan = result.preview.plan
+                override suspend fun commit() = withContext(dispatcher) { store.importArchiveV4(result.preview).androidResult() }
+            })
+            is ArchiveV4PreviewResult.NeedsIntervention -> PreparedV4Result.NeedsIntervention(result.diagnostic)
+            is ArchiveV4PreviewResult.TechnicalFailure -> PreparedV4Result.TechnicalFailure(result.cause)
+        }
+    }
 
     override suspend fun readConfiguredSession(uuid: String) = withContext(dispatcher) { store.readConfiguredSession(uuid) }
     override suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession) =

@@ -42,15 +42,15 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
     private fun uuid() = "44000000-0000-4000-8000-${identities.getAndIncrement().toString().padStart(12, '0')}"
     val repository = RoomSessionRepository(store)
     val legacy = SessionController(repository, scope, clock, { ZoneId.of("Europe/Paris") }, ::uuid,
-        equipmentRepository = repository.equipment, v3Source = repository)
+        equipmentRepository = repository.equipment, v3Source = repository, v4Source = repository)
     val configured = ConfiguredSessionController(repository, scope, legacy::acquireImport, legacy::releaseArchiveOperation,
         legacy::refresh, repository.equipment, clock, { ZoneId.of("Europe/Paris") }, ::uuid)
     val equipment = EquipmentController(repository.equipment, scope, legacy::acquireImport, legacy::releaseArchiveOperation, clock, ::uuid)
     val documents = DiskIntegrationDocuments(path.resolveSibling(path.fileName.toString()+"-documents"))
     val exporter = ExportCoordinator(repository, VerifyingDocumentWriter(documents), scope,
-        legacy::acquireExport, legacy::releaseExport, clock, v2Source = repository, v3Source = repository)
+        legacy::acquireExport, legacy::releaseExport, clock, v2Source = repository, v3Source = repository, v4Source = repository)
     val importer = ImportCoordinator(BoundedDocumentReader(documents), repository, scope,
-        legacy::acquireImport, legacy::releaseArchiveOperation, legacy::refresh, v2Repository = repository, v3Repository = repository)
+        legacy::acquireImport, legacy::releaseArchiveOperation, legacy::refresh, v2Repository = repository, v3Repository = repository, v4Repository = repository)
     val state get() = configured.state.value
     val context get() = requireNotNull(state.targetContext)
     val token get() = requireNotNull(state.form).token
@@ -68,6 +68,7 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
         onUi(action); idle(); assertNull(state.pending, state.problem.toString()); assertNull(state.problem)
     }
     suspend fun refresh() { onUi { legacy.refresh() }; ready() }
+    suspend fun archiveV4() = assertIs<ArchiveV4ReadResult.Found>(store.readArchiveV4()).archive
     suspend fun archive(): DomainArchiveV3 = assertIs<ArchiveV3ReadResult.Found>(repository.readArchiveV3()).archive
     suspend fun createDraft(title: String = " Synthetic configurable 🏹 ") {
         onUi { configured.create(); configured.title(token, title) }
@@ -93,7 +94,7 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
         return value
     }
     suspend fun prepareExport(version: Int): ExportState.Choosing {
-        onUi { when(version) {1 -> exporter.begin();2 -> exporter.beginV2();3 -> exporter.beginV3();else -> error("Version") } }
+        onUi { when(version) {1 -> exporter.begin();2 -> exporter.beginV2();3 -> exporter.beginV3();4 -> exporter.beginV4();else -> error("Version") } }
         return assertIs(awaitUiState(exporter.state) { it is ExportState.Choosing || it is ExportState.Failed })
     }
     suspend fun export(version: Int, name: String): ByteArray {
@@ -107,13 +108,13 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
         documents.put(name, bytes)
         onUi { importer.begin(); val request = assertIs<ImportState.Choosing>(importer.state.value); assertTrue(importer.claimSelection()); importer.selected(request.requestId, documents.uri(name)) }
         return awaitUiState(importer.state) { it is ImportState.Preview || it is ImportState.PreviewV2 || it is ImportState.PreviewV3 ||
-            it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.Failed }
+            it is ImportState.PreviewV4 || it is ImportState.ConflictV4 || it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.Failed }
     }
     suspend fun confirm(): ImportState {
         val preview = importer.state.value
-        onUi { if (preview is ImportState.PreviewV3) importer.confirmV3(preview.confirmationId) else importer.confirm() }
-        val result = awaitUiState(importer.state) { it is ImportState.Succeeded || it is ImportState.SucceededV2 || it is ImportState.SucceededV3 ||
-            it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.UnconfirmedV3 || it is ImportState.Failed || it is ImportState.Unconfirmed }
+        onUi { if (preview is ImportState.PreviewV4) importer.confirmV4(preview.confirmationId) else if (preview is ImportState.PreviewV3) importer.confirmV3(preview.confirmationId) else importer.confirm() }
+        val result = awaitUiState(importer.state) { it is ImportState.SucceededV4 || it is ImportState.UnconfirmedV4 || it is ImportState.Succeeded || it is ImportState.SucceededV2 || it is ImportState.SucceededV3 ||
+            it is ImportState.PreviewV4 || it is ImportState.ConflictV4 || it is ImportState.Conflict || it is ImportState.ConflictV2 || it is ImportState.ConflictV3 || it is ImportState.UnconfirmedV3 || it is ImportState.Failed || it is ImportState.Unconfirmed }
         ready(); return result
     }
     suspend fun assertOtherOperationsLocked() {

@@ -29,7 +29,7 @@ fun ConfiguredSessionSummary(session: ConfiguredSession, readOnly: Boolean = tru
             summary.groups.forEach { group ->
                 configurationLines(group.configuration).forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
                 Text("Validé : ${group.totals.validated.score} · provisoire : ${group.totals.provisional.score}")
-                Text("Flèches enregistrées : ${group.totals.recorded.impactCount} · maxima : ${group.totals.recorded.maxScoreCount} · 9 : ${group.totals.recorded.nineCount} · X : ${group.totals.recorded.xCount} · M : ${group.totals.recorded.missCount}")
+                Text("Flèches actives : ${group.totals.recorded.impactCount} · maxima : ${group.totals.recorded.maxScoreCount} · 9 : ${group.totals.recorded.nineCount} · X : ${group.totals.recorded.xCount} · M : ${group.totals.recorded.missCount}")
                 Text("Maximum des capacités enregistrées : ${group.totals.recorded.recordedCapacityMaximum} ; maximum des flèches présentes : ${group.totals.recorded.recordedArrowMaximum}")
             }
             Text("FIXED : capacité déclarée par volée enregistrée. FREE : seules les flèches présentes comptent. Aucun maximum planifié ni pourcentage réglementaire déduit.", style = MaterialTheme.typography.bodySmall)
@@ -52,11 +52,11 @@ fun ConfiguredEndCard(owner: ConfiguredSession, captured: ConfiguredEnd) {
             Text("Volée ${end.index} · ${end.status} · lecture seule", style = MaterialTheme.typography.titleMedium)
             configurationLines(captured.configuration).forEach { Text(it, style = MaterialTheme.typography.bodySmall) }
             Text(captured.origin.label(), style = MaterialTheme.typography.bodySmall)
-            TargetCanvas(captured.configuration.targetType, end.impacts, TargetInteraction.READ_ONLY,
+            TargetCanvas(captured.configuration.targetType, end.activeImpacts, TargetInteraction.READ_ONLY,
                 end.uuid, {}, Modifier.widthIn(max = 480.dp).fillMaxWidth().aspectRatio(1f))
-            if (end.impacts.isEmpty()) Text("Vide · aucune flèche · total : —")
+            if (end.activeImpacts.isEmpty()) Text("Vide · aucune flèche active · total : —")
             else Text("Total ${if (end.status == com.lmarchery.core.model.session.EndStatus.VALIDATED) "validé" else "provisoire"} : ${totals.score}")
-            end.impacts.forEach { impact ->
+            end.activeImpacts.forEach { impact ->
                 Text("#${impact.index} : ${impact.scoreLabel()} · géométrie ${impact.scoreCalculated}${if (impact.finalScoreDecision.geometricValue.isX) "X" else ""} · position ${impact.inputMode}")
                 Text("Décision conservée : ${impact.finalScoreDecision.provenance}", style = MaterialTheme.typography.bodySmall)
                 Text("${impact.uuid} · position (${impact.point.x}, ${impact.point.y}) · révision ${impact.updatedAt}", style = MaterialTheme.typography.bodySmall)
@@ -67,6 +67,7 @@ fun ConfiguredEndCard(owner: ConfiguredSession, captured: ConfiguredEnd) {
                     }
                 }
             }
+            ImpactCancellationHistory(end, captured.configuration.regulatoryEdition)
             end.notes?.let { Text("Notes : $it") }
             Text("UUID : ${end.uuid} · propriétaire : ${captured.sessionUuid}", style = MaterialTheme.typography.bodySmall)
         }

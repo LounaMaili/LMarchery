@@ -20,6 +20,12 @@ import com.lmarchery.feature.sessions.*
 fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
     val state by controller.state.collectAsStateWithLifecycle()
     var leave by rememberSaveable { mutableStateOf(false) }
+    var cancellationLeaveToken by rememberSaveable { mutableStateOf<Long?>(null) }
+    state.cancellation?.let { dialog ->
+        ImpactCancellationConfirmation(dialog, state.busy, state.pending != null, state.problem?.message, state.canRetryExact,
+            controller::cancellationComment, controller::closeCancellation, controller::confirmCancellation, controller::reconcile, controller::retryExact,
+            { token -> if (controller.canAbandonCancellationDisplay(token)) { cancellationLeaveToken = token; leave = true } })
+    }
     var finish by rememberSaveable { mutableStateOf(false) }
     val back = { if (!state.busy) {
         if (state.impactPicking != null) controller.cancelImpactPicking(state.impactPicking!!.context)
@@ -75,10 +81,10 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                     val end = captured.end
                     val context = state.targetContext!!
                     item(key = "target-${end.uuid}") {
-                        Text("Volée ${end.index} · ${end.impacts.size} / ${captured.configuration.arrowCountPerEnd?.toString() ?: "libre"} flèches")
+                        Text("Volée ${end.index} · ${end.activeImpacts.size} / ${captured.configuration.arrowCountPerEnd?.toString() ?: "libre"} flèches")
                         configurationLines(captured.configuration).forEach { Text(it) }
                         Text("Configuration enregistrée immuable · ${captured.origin.label()}")
-                        ImpactPickingControls(state.impactPicking, end.impacts, state.canBeginImpactPicking,
+                        ImpactPickingControls(state.impactPicking, end.activeImpacts, state.canBeginImpactPicking,
                             { controller.beginImpactPicking(context) }, controller::cancelImpactPicking, controller::choosePickedImpact)
                         if (state.editableEnd || state.impactPicking != null) {
                             OutlinedButton({ controller.precision(context, !state.precision) },
@@ -87,7 +93,7 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                             }
                         }
                         key(context) {
-                            TargetCanvas(captured.configuration.targetType, end.impacts, when {
+                            TargetCanvas(captured.configuration.targetType, end.activeImpacts, when {
                                 state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                 state.impactDrag != null && state.canReposition -> TargetInteraction.DRAG_IMPACT
                                 state.canReposition -> TargetInteraction.REPOSITION
@@ -104,13 +110,14 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                             else if (state.impactPicking != null) "Mode sélection : aucun ajout ni déplacement. Annuler revient au mode de saisie précédent."
                             else if (state.precision) "Maintenir puis relâcher propose une position sans l’enregistrer. Loupe ×4 ; faites défiler hors du blason."
                             else "Un appui en mode rapide enregistre une nouvelle flèche, lorsque la saisie est disponible.")
-                        if (captured.configuration.arrowCountMode == ArrowCountMode.FIXED && end.impacts.size < captured.configuration.arrowCountPerEnd!!)
+                        if (captured.configuration.arrowCountMode == ArrowCountMode.FIXED && end.activeImpacts.size < captured.configuration.arrowCountPerEnd!!)
                             Text("Capacité non atteinte : information uniquement. La validation n’impose pas de compléter cette capacité.")
                         PrecisionAimFields(state.position, state.activeAim?.candidate, NewImpactNotice("Nouvelle flèche non enregistrée", "Confirmez une seule fois ou annulez cette proposition."),
                             state.canConfirmPosition, state.ready, { controller.confirmPosition(context) }, { controller.cancelPosition(context) })
                         if (state.editableEnd) Button(controller::validateEnd, enabled = state.canNavigate) { Text("Valider la volée") }
                     }
-                    items(end.impacts, key = { "impact-${it.uuid}" }) { impact ->
+                    item(key = "cancelled-${end.uuid}") { ImpactCancellationHistory(end, captured.configuration.regulatoryEdition) }
+                    items(end.activeImpacts, key = { "impact-${it.uuid}" }) { impact ->
                         OutlinedButton({ controller.selectImpact(context, impact.uuid) }, enabled = state.canSelectImpact) {
                             Text("Flèche #${impact.index} : ${impact.scoreLabel()} · ${impact.repositions.size} repositionnement(s)")
                         }
@@ -128,12 +135,12 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
                                 drag != null && state.canConfirmReposition, {
                                     val point = edit?.candidate
                                     if (drag != null && point != null) controller.confirmImpactDrag(drag, point)
-                                })
+                                }, state.canSelectImpact && state.selectedImpact != null, { controller.beginCancellation(context) })
                             if (edit == null) {
                                 Text("Sélectionnez une flèche pour corriger sa position ou son score.")
                                 return@Column
                             }
-                            Text("Flèche sélectionnée #${state.selectedImpact?.index} · ${edit.phase}")
+                            Text(configuredImpactSelectionLabel(captured, edit))
                             if (state.canReposition) {
                                 Text(if (state.impactDrag != null) "Glissez la flèche sélectionnée ; relâcher ne sauvegarde rien." else "Touchez une nouvelle position ; elle reste un candidat local.")
                                 edit.candidate?.let { Text("Nouvelle géométrie : ${edit.preview?.scoreFinal}") }
@@ -154,11 +161,17 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
             }
         }
     }
-    if (leave) AlertDialog(onDismissRequest = { leave = false }, title = { Text(if (state.pending != null) "Quitter une écriture non confirmée ?" else "Abandonner le candidat local ?") },
+    if (leave) AlertDialog(onDismissRequest = { leave = false; cancellationLeaveToken = null }, title = { Text(if (state.pending != null) "Quitter une écriture non confirmée ?" else "Abandonner le candidat local ?") },
         text = { Text(if (state.pending != null) "Le commit peut avoir eu lieu. Quitter n’annule aucune écriture. Relisez la séance avant toute nouvelle opération ; l’intention locale sera perdue."
             else "Ce formulaire ou cette correction locale n’a pas été soumis. Aucun enregistrement n’est créé en l’abandonnant.") },
-        confirmButton = { TextButton({ leave = false; if (state.pending != null) controller.abandonSubmittedAndClose() else controller.abandonLocalAndClose() }) { Text("Abandonner l’affichage et revenir") } },
-        dismissButton = { TextButton({ leave = false }) { Text("Conserver") } })
+        confirmButton = { TextButton({
+            val ticket = cancellationLeaveToken
+            leave = false; cancellationLeaveToken = null
+            if (ticket == null || controller.canAbandonCancellationDisplay(ticket)) {
+                if (controller.state.value.pending != null) controller.abandonSubmittedAndClose() else controller.abandonLocalAndClose()
+            }
+        }) { Text("Abandonner l’affichage et revenir") } },
+        dismissButton = { TextButton({ leave = false; cancellationLeaveToken = null }) { Text("Conserver") } })
     if (finish) AlertDialog(onDismissRequest = { finish = false }, title = { Text("Clôturer définitivement ?") },
         text = { Text("Les volées provisoires restent provisoires et deviennent immuables. Aucun score ni configuration ne sera modifié ou validé automatiquement.") },
         confirmButton = { TextButton({ finish = false; controller.complete() }) { Text("Clôturer") } },
