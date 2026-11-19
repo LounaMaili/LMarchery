@@ -210,11 +210,11 @@ L'utilisateur ouvre l'application
 
 ```
 L'utilisateur ouvre l'application
-├── Appui sur "Nouvelle séance"
-├── Sélection d'un preset existant (ex. "Salle 18m — 3 flèches")
-│   └── Tous les champs sont préremplis
-├── L'utilisateur peut modifier un champ si besoin
-└── Bouton "Démarrer"
+├── Appui sur « Nouvelle séance configurable »
+├── Sélection dans « Suggestions intégrées » ou « Mes presets »
+│   └── Les réglages de tir sont préremplis
+├── L’utilisateur peut modifier les réglages et renseigner les métadonnées
+└── Bouton « Confirmer et enregistrer », puis « Démarrer la séance »
 ```
 
 ---
@@ -352,13 +352,18 @@ Voir [ADR 031](adr/031-associations-materiel-seances.md).
 Dans « Nouvelle séance configurable », régler le blason, la distance, les
 flèches, le mode de comptage, les volées prévues et le matériel facultatif.
 Choisir « Enregistrer comme preset » en bas du formulaire, saisir un nom et
-confirmer. Le preset apparaît dans « Choisir un preset », même après redémarrage.
+confirmer. Le preset apparaît dans « Mes presets », même après redémarrage.
 
 Sélectionner un preset remplit le formulaire. On peut ajuster les réglages, puis
 enregistrer la séance. Le nom fournit un titre si le champ était vide. Les notes
 et le lieu saisi librement restent propres à la séance. Le preset et la séance
 peuvent ensuite être utilisés indépendamment. Les presets restent sur l’appareil,
 hors des sauvegardes V1 à V4 ([ADR 049](adr/049-presets-de-seance-locaux.md)).
+
+« Suggestions intégrées » propose cinq réglages d’entraînement, en salle à
+18 m en classique ou en poulies et en extérieur à 30, 50 ou 70 m. Le choix
+remplit les réglages de tir et laisse les métadonnées et le matériel en place.
+L’archer peut modifier ces valeurs puis les enregistrer comme preset personnel.
 
 ---
 

@@ -4,6 +4,7 @@ import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.configured.ConfiguredSessionMetadata
 import com.lmarchery.core.scoring.configured.SessionPreset
+import com.lmarchery.core.scoring.fixtures.ClassicTargetFixtures
 import java.time.Instant
 import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles
@@ -25,6 +26,29 @@ data class ConfigurationDraft(
         fun from(value: EndConfiguration) = ConfigurationDraft(BuiltInTargetRegistry.Entry(value.targetType, value.regulatoryEdition),
             value.distanceM.toString(), value.arrowCountMode, value.arrowCountPerEnd?.toString().orEmpty(), value.isIndoor, value.scoringMode)
     }
+}
+
+internal enum class SessionSuggestion(
+    val label: String,
+    profileUuid: String,
+    distanceM: Int,
+    arrowsPerEnd: Int,
+    indoor: Boolean,
+) {
+    INDOOR_RECURVE("Salle 18 m — classique", WorldArcheryIndoorTargetProfiles.recurve40.uuid, 18, 3, true),
+    INDOOR_COMPOUND("Salle 18 m — poulies", WorldArcheryIndoorTargetProfiles.compound40.uuid, 18, 3, true),
+    OUTDOOR_30("Extérieur 30 m", ClassicTargetFixtures.classic80.uuid, 30, 6, false),
+    OUTDOOR_50("Extérieur 50 m", ClassicTargetFixtures.classic80.uuid, 50, 6, false),
+    OUTDOOR_70("Extérieur 70 m", ClassicTargetFixtures.classic122.uuid, 70, 6, false);
+
+    val configuration = ConfigurationDraft(
+        profile = requireNotNull(BuiltInTargetRegistry.find(profileUuid)),
+        distance = distanceM.toString(),
+        arrowCountMode = ArrowCountMode.FIXED,
+        fixedCount = arrowsPerEnd.toString(),
+        indoor = indoor,
+        scoringMode = ScoringMode.TRAINING,
+    )
 }
 
 data class ConfiguredMetadataDraft(val title: String = "", val plannedEnds: String = "", val location: String? = null,

@@ -2,7 +2,7 @@
 
 Dans « Nouvelle séance configurable », le bouton « Enregistrer comme preset »
 enregistre les réglages du formulaire sous un nom, indépendamment de la création
-de la séance. « Choisir un preset » recopie le blason, la distance, le mode de
+de la séance. « Mes presets » permet de recopier le blason, la distance, le mode de
 flèches, le lieu de tir intérieur/extérieur, le mode de comptage, le nombre
 facultatif de volées prévues et les références de matériel. Toute valeur proposée
 reste modifiable. Le nom propose un titre si le champ est vide. Les notes et le
@@ -21,5 +21,19 @@ et matériel. Les presets restent sur l’appareil et une restauration de séanc
 laisse le catalogue local de presets en place. La sauvegarde des presets peut être livrée en deux étapes : définir leur
 document versionné et ses conflits d’identité et de nom, puis raccorder un
 export/import SAF dédié avec aperçu et restauration atomique dans leur base.
-Les presets par défaut, la modification et la suppression restent des
-travaux distincts.
+La modification et la suppression des presets personnels restent à réaliser.
+
+## Suggestions intégrées
+
+Le formulaire propose cinq réglages d’entraînement sous « Suggestions intégrées »,
+indépendamment du chargement de « Mes presets ». Les deux suggestions salle à
+18 m utilisent les profils WA 40 cm classique et poulies de l’édition
+2026-01-27, avec trois flèches. Les suggestions d’extérieur utilisent le profil
+historique 80 cm à 30 et 50 m, et le profil historique 122 cm à 70 m, avec
+six flèches. Ces profils historiques n’ont pas d’édition réglementaire déclarée.
+
+Une sélection remplace uniquement les réglages de tir dans le brouillon.
+Le titre, le nombre de volées prévues, le lieu, les notes et les références de
+matériel déjà choisis sont conservés. La suggestion est modifiable et ne déclenche
+aucune écriture. L’archer peut l’enregistrer sous un nom via le parcours de
+preset personnel. La base Room et les sauvegardes gardent leur périmètre.

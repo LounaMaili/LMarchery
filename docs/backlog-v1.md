@@ -101,7 +101,7 @@ sélection numérotée jusqu'à revue de ce complément.
 | 4.7 | Écran « Créer un preset » | ✓ (ADR 049) | Moyenne |
 | 4.8 | Écran « Choisir un preset » (sélection rapide) | ✓ (ADR 049) | Moyenne |
 | 4.9 | Préremplir les champs de séance depuis un preset | ✓ (ADR 049) | Moyenne |
-| 4.10 | Presets par défaut (salle 18m, extérieur 30m, 50m, 70m) | ☐ | Basse |
+| 4.10 | Suggestions intégrées (salle 18 m classique/poulies, extérieur 30/50/70 m) | ✓ (ADR 049) | Basse |
 | 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ✓ contrat/codec, Room atomique et SAF V2 (ADR 026/027/029) ; essais physiques de la combinaison à faire | Haute |
 
 La collecte/restauration Room V2 est décrite dans l’[ADR 027](adr/027-archives-room-v2-atomiques.md).

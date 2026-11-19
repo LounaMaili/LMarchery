@@ -9,7 +9,12 @@ import kotlinx.coroutines.*
 import java.time.*
 
 /** Controller double, NOT SQLite or a physical gesture test. */
-internal class EditorHarness(val initial: ConfiguredSession? = null, acquired: Boolean = true, onSaved: () -> Unit = {}) : AutoCloseable {
+internal class EditorHarness(
+    val initial: ConfiguredSession? = null,
+    acquired: Boolean = true,
+    presets: SessionPresetRepository? = null,
+    onSaved: () -> Unit = {},
+) : AutoCloseable {
     val scope = CoroutineScope(SupervisorJob() + Dispatchers.Unconfined)
     var now = f.now.plusSeconds(30)
     val clock = object : Clock() { override fun getZone() = ZoneOffset.UTC; override fun withZone(zone: ZoneId) = this
@@ -39,7 +44,7 @@ internal class EditorHarness(val initial: ConfiguredSession? = null, acquired: B
     }
     val c = ConfiguredSessionController(repository, scope, { if (gate) false else { gate = true; true } },
         { gate = false; releases++ }, { refreshes++ }, clock = clock, zone = { ZoneId.of("Europe/Paris") },
-        newUuid = { uuids++; f.id(next++) }, onSaved = onSaved)
+        newUuid = { uuids++; f.id(next++) }, onSaved = onSaved, presets = presets)
     val ui get() = c.state.value
     val token get() = ui.form!!.token
     val ctx get() = ui.targetContext!!
