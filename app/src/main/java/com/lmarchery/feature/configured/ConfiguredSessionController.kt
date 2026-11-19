@@ -103,6 +103,12 @@ class ConfiguredSessionController(
     private fun creationForm(token: Long): ConfiguredForm.Creation? =
         (ui.form as? ConfiguredForm.Creation)?.takeIf { it.token == token && ui.ready }
 
+    internal fun applySuggestion(token: Long, suggestion: SessionSuggestion) {
+        val form = creationForm(token) ?: return
+        if (ui.presets?.nameDraft != null) return
+        ui = ui.copy(form = form.copy(configuration = suggestion.configuration), problem = null)
+    }
+
     fun applyPreset(token: Long, uuid: String) {
         val form = creationForm(token) ?: return
         val catalog = ui.presets ?: return

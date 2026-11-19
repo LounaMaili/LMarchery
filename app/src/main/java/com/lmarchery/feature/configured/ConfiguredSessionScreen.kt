@@ -207,8 +207,9 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
     val token = form.token
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(when (form) { is ConfiguredForm.Creation -> "Nouveau brouillon configurable"; is ConfiguredForm.NextEnd -> "Configuration de la prochaine volée"; else -> "Métadonnées" }, style = MaterialTheme.typography.titleLarge)
-        if (form is ConfiguredForm.Creation && state.presets != null) {
-            PresetPicker(form.token, state.presets, state.ready, c)
+        if (form is ConfiguredForm.Creation) {
+            SuggestionPicker(token, state.ready, c)
+            state.presets?.let { PresetPicker(token, it, state.ready, c) }
         }
         if (form is ConfiguredForm.NextEnd) {
             OutlinedButton({ c.explicitNext(token, false) }, enabled = state.ready) { Text("${if (!form.explicit) "✓ " else ""}Hériter de la précédente (ou de l’initiale)") }
@@ -253,6 +254,36 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
 }
 
 @Composable
+private fun SuggestionPicker(token: Long, enabled: Boolean, c: ConfiguredSessionController) {
+    var open by rememberSaveable(token) { mutableStateOf(false) }
+    OutlinedButton({ open = true }, enabled = enabled) { Text("Suggestions intégrées") }
+    if (open) AlertDialog(
+        onDismissRequest = { open = false },
+        title = { Text("Suggestions intégrées") },
+        text = {
+            LazyColumn(Modifier.heightIn(max = 360.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                item { Text("Réglages d’entraînement modifiables après sélection.") }
+                items(SessionSuggestion.entries, key = { it.name }) { suggestion ->
+                    OutlinedButton(onClick = {
+                        c.applySuggestion(token, suggestion)
+                        open = false
+                    }, enabled = enabled, modifier = Modifier.fillMaxWidth()) {
+                        Column {
+                            Text(suggestion.label)
+                            Text(
+                                "${suggestion.configuration.profile.definition.name} · ${suggestion.configuration.fixedCount} flèches",
+                                style = MaterialTheme.typography.bodySmall,
+                            )
+                        }
+                    }
+                }
+            }
+        },
+        confirmButton = { TextButton({ open = false }) { Text("Fermer") } },
+    )
+}
+
+@Composable
 private fun PresetPicker(token: Long, state: SessionPresetsState, enabled: Boolean, c: ConfiguredSessionController) {
     var open by rememberSaveable(token) { mutableStateOf(false) }
     when {
@@ -261,12 +292,12 @@ private fun PresetPicker(token: Long, state: SessionPresetsState, enabled: Boole
             TextButton({ c.reloadPresets(token) }, enabled = enabled) { Text("Recharger les presets") }
         }
         state.items == null -> Text("Chargement des presets…")
-        state.items.isEmpty() -> Text("Aucun preset. Vous pouvez enregistrer vos réglages en bas du formulaire.")
+        state.items.isEmpty() -> Text("Mes presets : aucun preset enregistré.")
         else -> {
-            OutlinedButton({ open = true }, enabled = enabled) { Text("Choisir un preset") }
+            OutlinedButton({ open = true }, enabled = enabled) { Text("Mes presets") }
             if (open) AlertDialog(
                 onDismissRequest = { open = false },
-                title = { Text("Choisir un preset") },
+                title = { Text("Mes presets") },
                 text = {
                     LazyColumn(Modifier.heightIn(max = 320.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         items(state.items, key = { it.uuid }) { preset ->

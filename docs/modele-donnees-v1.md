@@ -514,18 +514,18 @@ Voir [ADR 049](adr/049-presets-de-seance-locaux.md).
 | `createdAt` | Instant | Date de création |
 | `updatedAt` | Instant | Date de dernière modification |
 
-**Presets suggérés (créés par défaut)** :
+**Suggestions intégrées au formulaire** (entraînement, aucune création en base)
 
 | Preset | Cible | Distance | Flèches | Lieu |
 |--------|-------|----------|---------|------|
-| Salle 18m — 3 flèches | Classique 40cm | 18 | 3 | Indoor |
-| Salle 18m — 6 flèches | Classique 40cm | 18 | 6 | Indoor |
-| Extérieur 30m | Classique 80cm | 30 | 6 | Outdoor |
-| Extérieur 50m | Classique 80cm | 50 | 6 | Outdoor |
-| Extérieur 70m | Classique 122cm | 70 | 6 | Outdoor |
+| Salle 18 m — classique | WA 40 cm classique, 2026-01-27 | 18 | 3 | Indoor |
+| Salle 18 m — poulies | WA 40 cm poulies, 2026-01-27 | 18 | 3 | Indoor |
+| Extérieur 30 m | Classique 80 cm historique | 30 | 6 | Outdoor |
+| Extérieur 50 m | Classique 80 cm historique | 50 | 6 | Outdoor |
+| Extérieur 70 m | Classique 122 cm historique | 70 | 6 | Outdoor |
 
-La première version permet de créer et d’appliquer des presets dans le formulaire configurable.
-Les presets par défaut, la modification et la suppression restent à réaliser.
+Les réglages d’une suggestion peuvent être enregistrés dans un preset personnel.
+La modification et la suppression des presets personnels restent à réaliser.
 
 ---
 
