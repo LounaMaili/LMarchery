@@ -11,3 +11,8 @@ fun openSessionStore(path: Path): RoomSessionStore = RoomSessionStore(
         .setDriver(BundledSQLiteDriver())
         .build(),
 )
+
+fun openSessionPresetStore(path: Path): RoomSessionPresetStore = RoomSessionPresetStore(
+    Room.databaseBuilder<SessionPresetDatabase>(path.toAbsolutePath().toString())
+        .setDriver(BundledSQLiteDriver()).build(),
+)

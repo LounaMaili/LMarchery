@@ -26,6 +26,30 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController) {
             controller::cancellationComment, controller::closeCancellation, controller::confirmCancellation, controller::reconcile, controller::retryExact,
             { token -> if (controller.canAbandonCancellationDisplay(token)) { cancellationLeaveToken = token; leave = true } })
     }
+    val creation = state.form as? ConfiguredForm.Creation
+    val presets = state.presets
+    if (creation != null && presets?.nameDraft != null) {
+        val token = creation.token
+        val dismiss = { controller.cancelPresetName(token) }
+        AlertDialog(
+            onDismissRequest = dismiss,
+            title = { Text("Enregistrer un preset") },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(presets.nameDraft, { controller.presetName(token, it) }, enabled = state.ready,
+                        label = { Text("Nom du preset") }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                    Text("Les réglages actuels seront disponibles sur cet appareil.")
+                    presets.saveError?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+                }
+            },
+            confirmButton = {
+                Button({ controller.savePreset(token) }, enabled = state.ready && presets.nameDraft.isNotBlank()) {
+                    Text("Enregistrer le preset")
+                }
+            },
+            dismissButton = { TextButton(dismiss, enabled = state.ready) { Text("Annuler") } },
+        )
+    }
     var finish by rememberSaveable { mutableStateOf(false) }
     val back = { if (!state.busy) {
         if (state.impactPicking != null) controller.cancelImpactPicking(state.impactPicking!!.context)
@@ -183,6 +207,9 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
     val token = form.token
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(when (form) { is ConfiguredForm.Creation -> "Nouveau brouillon configurable"; is ConfiguredForm.NextEnd -> "Configuration de la prochaine volée"; else -> "Métadonnées" }, style = MaterialTheme.typography.titleLarge)
+        if (form is ConfiguredForm.Creation && state.presets != null) {
+            PresetPicker(form.token, state.presets, state.ready, c)
+        }
         if (form is ConfiguredForm.NextEnd) {
             OutlinedButton({ c.explicitNext(token, false) }, enabled = state.ready) { Text("${if (!form.explicit) "✓ " else ""}Hériter de la précédente (ou de l’initiale)") }
             OutlinedButton({ c.explicitNext(token, true) }, enabled = state.ready) { Text("${if (form.explicit) "✓ " else ""}Définir explicitement, même à valeurs égales") }
@@ -210,10 +237,54 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
             OutlinedTextField(draft.plannedEnds, { c.planned(token, it) }, enabled = state.ready, label = { Text("Volées prévues (facultatif)") })
             OutlinedTextField(draft.location.orEmpty(), { c.location(token, it) }, enabled = state.ready, label = { Text("Lieu (facultatif)") })
             OutlinedTextField(draft.notes.orEmpty(), { c.notes(token, it) }, enabled = state.ready, label = { Text("Notes (facultatif)") })
-            EquipmentChoiceFields(state.equipmentChoices, draft.equipment, state.ready, original = state.saved?.metadata?.let { EquipmentSelection(it.bowUuid, it.arrowSetUuid) } ?: EquipmentSelection(),
+            val originalEquipment = (form as? ConfiguredForm.Creation)?.presetEquipment
+                ?: state.saved?.metadata?.let { EquipmentSelection(it.bowUuid, it.arrowSetUuid) }
+                ?: EquipmentSelection()
+            EquipmentChoiceFields(state.equipmentChoices, draft.equipment, state.ready, original = originalEquipment,
                 choose = { kind, uuid -> c.chooseEquipment(token, kind, uuid) })
+        }
+        if (form is ConfiguredForm.Creation && state.presets?.items != null) {
+            OutlinedButton({ c.namePreset(token) }, enabled = state.ready) { Text("Enregistrer comme preset") }
+            state.presets.savedName?.let { Text("Preset enregistré : $it", color = MaterialTheme.colorScheme.primary) }
         }
         Button({ c.confirmForm(token) }, enabled = state.ready) { Text("Confirmer et enregistrer") }
         TextButton({ c.cancelForm(token) }, enabled = state.ready) { Text("Annuler sans enregistrer") }
+    }
+}
+
+@Composable
+private fun PresetPicker(token: Long, state: SessionPresetsState, enabled: Boolean, c: ConfiguredSessionController) {
+    var open by rememberSaveable(token) { mutableStateOf(false) }
+    when {
+        state.loadFailed -> {
+            Text("Impossible de lire les presets enregistrés.", color = MaterialTheme.colorScheme.error)
+            TextButton({ c.reloadPresets(token) }, enabled = enabled) { Text("Recharger les presets") }
+        }
+        state.items == null -> Text("Chargement des presets…")
+        state.items.isEmpty() -> Text("Aucun preset. Vous pouvez enregistrer vos réglages en bas du formulaire.")
+        else -> {
+            OutlinedButton({ open = true }, enabled = enabled) { Text("Choisir un preset") }
+            if (open) AlertDialog(
+                onDismissRequest = { open = false },
+                title = { Text("Choisir un preset") },
+                text = {
+                    LazyColumn(Modifier.heightIn(max = 320.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        items(state.items, key = { it.uuid }) { preset ->
+                            OutlinedButton(onClick = {
+                                c.applyPreset(token, preset.uuid)
+                                open = false
+                            }, enabled = enabled, modifier = Modifier.fillMaxWidth()) {
+                                Column {
+                                    Text(preset.name)
+                                    Text("${preset.configuration.targetType.name} · ${preset.configuration.distanceM} m",
+                                        style = MaterialTheme.typography.bodySmall)
+                                }
+                            }
+                        }
+                    }
+                },
+                confirmButton = { TextButton({ open = false }) { Text("Fermer") } },
+            )
+        }
     }
 }

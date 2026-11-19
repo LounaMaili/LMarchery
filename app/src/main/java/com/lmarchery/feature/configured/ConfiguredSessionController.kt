@@ -25,6 +25,7 @@ class ConfiguredSessionController(
     private val equipment: EquipmentRepository? = null, private val clock: Clock = Clock.systemUTC(),
     private val zone: () -> ZoneId = ZoneId::systemDefault, private val newUuid: () -> String = { UUID.randomUUID().toString() },
     private val onSaved: () -> Unit = {},
+    private val presets: SessionPresetRepository? = null,
 ) {
     private val mutableState = MutableStateFlow(ConfiguredEditorState())
     val state = mutableState.asStateFlow()
@@ -73,9 +74,88 @@ class ConfiguredSessionController(
         if (ui.open || !acquire()) return
         ownsGate = true
         val ticket = epoch()
-        ui = ConfiguredEditorState(open = true, form = ConfiguredForm.Creation(ticket), epoch = ticket)
+        ui = ConfiguredEditorState(open = true, form = ConfiguredForm.Creation(ticket), epoch = ticket,
+            presets = presets?.let { SessionPresetsState() })
         loadEquipment(ticket)
+        loadPresets(ticket)
     }
+    fun reloadPresets(token: Long) {
+        val catalog = ui.presets ?: return
+        if (creationForm(token) == null || !catalog.loadFailed) return
+        ui = ui.copy(presets = SessionPresetsState())
+        loadPresets(token)
+    }
+
+    private fun loadPresets(token: Long) {
+        val store = presets ?: return
+        scope.launch {
+            val result = try {
+                SessionPresetsState(items = store.list())
+            } catch (error: CancellationException) {
+                throw error
+            } catch (_: Exception) {
+                SessionPresetsState(loadFailed = true)
+            }
+            if (ui.form?.token == token) ui = ui.copy(presets = result)
+        }
+    }
+
+    private fun creationForm(token: Long): ConfiguredForm.Creation? =
+        (ui.form as? ConfiguredForm.Creation)?.takeIf { it.token == token && ui.ready }
+
+    fun applyPreset(token: Long, uuid: String) {
+        val form = creationForm(token) ?: return
+        val catalog = ui.presets ?: return
+        if (catalog.nameDraft != null) return
+        val preset = catalog.items?.singleOrNull { it.uuid == uuid } ?: return
+        ui = ui.copy(form = form.withPreset(preset), problem = null, presets = catalog.copy(savedName = null))
+    }
+
+    fun namePreset(token: Long) {
+        val catalog = ui.presets ?: return
+        if (creationForm(token) == null || catalog.items == null || catalog.nameDraft != null) return
+        ui = ui.copy(presets = catalog.copy(nameDraft = "", saveError = null, savedName = null))
+    }
+
+    fun presetName(token: Long, name: String) {
+        val catalog = ui.presets ?: return
+        if (creationForm(token) != null && catalog.nameDraft != null)
+            ui = ui.copy(presets = catalog.copy(nameDraft = name, saveError = null))
+    }
+
+    fun cancelPresetName(token: Long) {
+        val catalog = ui.presets ?: return
+        if (creationForm(token) != null && catalog.nameDraft != null)
+            ui = ui.copy(presets = catalog.copy(nameDraft = null, saveError = null))
+    }
+
+    fun savePreset(token: Long) {
+        val store = presets ?: return
+        val form = creationForm(token) ?: return
+        val catalog = ui.presets ?: return
+        val name = catalog.nameDraft ?: return
+        val existing = catalog.items ?: return
+        val preset = try {
+            form.asPreset(newUuid(), name, clock.instant())
+        } catch (error: IllegalArgumentException) {
+            ui = ui.copy(presets = catalog.copy(saveError = error.message ?: "Configuration du preset invalide."))
+            return
+        }
+        operation {
+            val result = try {
+                if (store.add(preset))
+                    catalog.copy(items = (existing + preset).sortedBy { it.name }, nameDraft = null,
+                        saveError = null, savedName = preset.name)
+                else catalog.copy(saveError = "Un preset existe déjà sous ce nom ou cet identifiant.")
+            } catch (error: CancellationException) {
+                throw error
+            } catch (_: Exception) {
+                catalog.copy(saveError = "Enregistrement du preset non confirmé.")
+            }
+            ui = ui.copy(presets = result)
+        }
+    }
+
     fun open(uuid: String) {
         if (ui.open || !acquire()) return
         ownsGate = true; ui = ConfiguredEditorState(open = true, epoch = epoch())
@@ -154,7 +234,10 @@ class ConfiguredSessionController(
     fun notes(token: Long, value: String) = metadata(token) { it.copy(notes = value) }
     fun chooseEquipment(token: Long, kind: EquipmentKind, uuid: String?) {
         if (!ui.ready || ui.form?.token != token) return
-        val original = ui.saved?.metadata?.let { if (kind == EquipmentKind.BOW) it.bowUuid else it.arrowSetUuid }
+        val presetEquipment = (ui.form as? ConfiguredForm.Creation)?.presetEquipment
+        val original = if (kind == EquipmentKind.BOW)
+            presetEquipment?.bowUuid ?: ui.saved?.metadata?.bowUuid
+        else presetEquipment?.arrowSetUuid ?: ui.saved?.metadata?.arrowSetUuid
         if (!ui.equipmentChoices.allows(kind, uuid, original)) { invalid("Référence de matériel indisponible ou du mauvais type."); return }
         metadata(token) { it.copy(equipment = it.equipment.with(kind, uuid)) }
     }

@@ -1,5 +1,6 @@
 package com.lmarchery.feature.sessions
 
+import com.lmarchery.core.database.SessionPresetRepository
 import com.lmarchery.data.ConfiguredSessionRepository
 import com.lmarchery.feature.configured.ConfiguredSessionController
 import androidx.lifecycle.ViewModel
@@ -19,9 +20,9 @@ import com.lmarchery.feature.archiveimport.ImportCoordinator
 import com.lmarchery.feature.export.ExportCoordinator
 import com.lmarchery.feature.export.ExportDocumentWriter
 
-class SessionViewModel(repository: SessionRepository, source: ArchiveSource, writer: ExportDocumentWriter, importer: ArchiveImporter, reader: ImportDocumentReader, v2Source: ArchiveV2Source? = null, v2Importer: ArchiveV2Importer? = null, equipmentRepository: EquipmentRepository? = null, v3Source: ArchiveV3Source? = null, v3Importer: ArchiveV3Importer? = null, configuredRepository: ConfiguredSessionRepository? = null) : ViewModel() {
+class SessionViewModel(repository: SessionRepository, source: ArchiveSource, writer: ExportDocumentWriter, importer: ArchiveImporter, reader: ImportDocumentReader, v2Source: ArchiveV2Source? = null, v2Importer: ArchiveV2Importer? = null, equipmentRepository: EquipmentRepository? = null, v3Source: ArchiveV3Source? = null, v3Importer: ArchiveV3Importer? = null, configuredRepository: ConfiguredSessionRepository? = null, presets: SessionPresetRepository? = null) : ViewModel() {
     val controller = SessionController(repository, viewModelScope, equipmentRepository = equipmentRepository, v3Source = v3Source, v4Source = repository as? com.lmarchery.data.ArchiveV4Source).also { it.refresh() }
-    val configuredController = configuredRepository?.let { ConfiguredSessionController(it, viewModelScope, controller::acquireImport, controller::releaseArchiveOperation, controller::refresh, equipmentRepository) }
+    val configuredController = configuredRepository?.let { ConfiguredSessionController(it, viewModelScope, controller::acquireImport, controller::releaseArchiveOperation, controller::refresh, equipmentRepository, presets = presets) }
     val equipmentController = equipmentRepository?.let { EquipmentController(it, viewModelScope, controller::acquireImport, controller::releaseArchiveOperation) }
     val exportCoordinator = ExportCoordinator(source, writer, viewModelScope,
         controller::acquireExport, controller::releaseExport, v2Source = v2Source, v3Source = v3Source, v4Source = repository as? com.lmarchery.data.ArchiveV4Source)
@@ -33,11 +34,11 @@ class SessionViewModel(repository: SessionRepository, source: ArchiveSource, wri
         private val writer: ExportDocumentWriter, private val importer: ArchiveImporter,
         private val reader: ImportDocumentReader, private val v2Source: ArchiveV2Source? = null,
         private val v2Importer: ArchiveV2Importer? = null, private val equipmentRepository: EquipmentRepository? = null, private val v3Source: ArchiveV3Source? = null,
-        private val v3Importer: ArchiveV3Importer? = null, private val configuredRepository: ConfiguredSessionRepository? = null) : ViewModelProvider.Factory {
+        private val v3Importer: ArchiveV3Importer? = null, private val configuredRepository: ConfiguredSessionRepository? = null, private val presets: SessionPresetRepository? = null) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             require(modelClass == SessionViewModel::class.java)
             @Suppress("UNCHECKED_CAST")
-            return SessionViewModel(repository, source, writer, importer, reader, v2Source, v2Importer, equipmentRepository, v3Source, v3Importer, configuredRepository) as T
+            return SessionViewModel(repository, source, writer, importer, reader, v2Source, v2Importer, equipmentRepository, v3Source, v3Importer, configuredRepository, presets) as T
         }
     }
 }
