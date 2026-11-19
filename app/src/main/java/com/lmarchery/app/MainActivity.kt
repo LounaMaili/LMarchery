@@ -15,10 +15,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val repository = (application as LMarcheryApplication).sessionRepository
+        val app = application as LMarcheryApplication
+        val repository = app.sessionRepository
         val writer = VerifyingDocumentWriter(AndroidDocumentAccess(applicationContext.contentResolver))
         val reader = BoundedDocumentReader(AndroidImportDocumentAccess(applicationContext.contentResolver))
-        val viewModel = ViewModelProvider(this, SessionViewModel.Factory(repository, repository, writer, repository, reader, repository, repository, repository.equipment, v3Source = repository, v3Importer = repository, configuredRepository = repository))[SessionViewModel::class.java]
+        val viewModel = ViewModelProvider(this, SessionViewModel.Factory(repository, repository, writer, repository, reader, repository, repository, repository.equipment, v3Source = repository, v3Importer = repository, configuredRepository = repository, presets = app.sessionPresets))[SessionViewModel::class.java]
 
         setContent {
             LMarcheryTheme {

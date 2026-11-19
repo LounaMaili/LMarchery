@@ -12,3 +12,9 @@ fun openSessionStore(context: Context, name: String = "sessions.db"): RoomSessio
         .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
         .setDriver(BundledSQLiteDriver()).build())
 }
+
+/** Device-local templates have a lifecycle separate from sessions and their SAF archives. */
+fun openSessionPresetStore(context: Context): RoomSessionPresetStore = RoomSessionPresetStore(
+    Room.databaseBuilder<SessionPresetDatabase>(context.applicationContext, "session-presets.db")
+        .setDriver(BundledSQLiteDriver()).build(),
+)

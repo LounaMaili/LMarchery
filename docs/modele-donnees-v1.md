@@ -10,7 +10,7 @@ Les anciens IDs/FK numériques des tableaux sont des projections historiques,
 absentes du schéma SQLite 3 qui utilise les UUID (section 4). `Bow` et `ArrowSet`
 sont des valeurs Kotlin immuables persistées (ADR 025), consultables et modifiables
 dans le catalogue Compose (ADR 030) ;
-`SessionPreset` reste prévu. Le contrat typé de sauvegarde est
+Les premiers presets sont conservés localement (ADR 049). Le contrat typé de sauvegarde est
 décrit dans [ADR 015](adr/015-sauvegarde-versionnee-reconstruction.md). L’export
 JSON Android est opérationnel selon l’[ADR 021](adr/021-export-json-versionne-android.md) ;
 l’import contrôlé sans écrasement suit l’[ADR 022](adr/022-import-json-controle-transactionnel.md),
@@ -75,7 +75,7 @@ et `SessionPreset`. Le fichier V1 exporte seulement les profils et séances,
 avec volées/impacts imbriqués. Le [contrat V2](export-format-v2.md) ajoute les
 fiches `Bow` et `ArrowSet` (ADR 026), via collecte/import Room atomiques (ADR 027)
 et parcours SAF Android (ADR 029). Les références UUID restent opaques : une
-archive ne doit pas fabriquer les fiches manquantes. `SessionPreset` reste futur.
+archive ne doit pas fabriquer les fiches manquantes. Les presets locaux sont hors des archives V1 à V4.
 
 | Champ | Règle |
 |-------|-------|
@@ -493,7 +493,10 @@ Voir [ADR 025](adr/025-fondation-catalogue-materiel.md).
 
 ### 2.8 SessionPreset
 
-Configuration prédéfinie pour créer rapidement une séance.
+Configuration réutilisable pour créer rapidement une séance. Le modèle ci-dessous décrit
+la cible initiale. La première version utilise un UUID en clé primaire, le couple
+UUID/édition du profil et des références de matériel opaques dans une base Room dédiée.
+Voir [ADR 049](adr/049-presets-de-seance-locaux.md).
 
 | Attribut | Type | Description |
 |----------|------|-------------|
@@ -521,7 +524,8 @@ Configuration prédéfinie pour créer rapidement une séance.
 | Extérieur 50m | Classique 80cm | 50 | 6 | Outdoor |
 | Extérieur 70m | Classique 122cm | 70 | 6 | Outdoor |
 
-L'utilisateur peut créer, modifier et supprimer ses propres presets.
+La première version permet de créer et d’appliquer des presets dans le formulaire configurable.
+Les presets par défaut, la modification et la suppression restent à réaliser.
 
 ---
 
@@ -679,7 +683,7 @@ V3 avec aperçu (ADR 041). SAF V3 et la consultation configurable suivent
 l’[ADR 042](adr/042-saf-v3-consultation-configurable.md). La création et l’édition
 configurables sont raccordées selon l’[ADR 043](adr/043-editeur-android-seances-configurables.md),
 avec état distinct, candidats exacts et réconciliation explicite sans écrasement.
-Les presets et la résolution interactive des conflits restent à développer.
+La sauvegarde des presets et la résolution interactive des conflits restent à développer.
 L’import V1 conserve son périmètre historique : séances absentes et profils
 nécessaires (ADR 022). L’import V2 traite séparément séances, profils, arcs et jeux
 de flèches (ADR 027). Dans les deux cas, les identiques ne sont pas réécrits et

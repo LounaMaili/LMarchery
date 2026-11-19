@@ -3,6 +3,7 @@ package com.lmarchery.feature.configured
 import com.lmarchery.core.database.*
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.scoring.configured.ConfiguredSession
+import com.lmarchery.core.scoring.configured.SessionPreset
 import com.lmarchery.feature.sessions.*
 
 /** Receipt presentation reads the preserved impact; a missing active selection is not a missing identity. */
@@ -25,6 +26,14 @@ data class ConfiguredWriteContext(val selectedEndUuid: String?, val form: Config
     val position: PositionCandidate?, val target: ConfiguredTargetContext?)
 data class PendingConfiguredWrite(val description: String, val request: ConfiguredWriteRequest, val context: ConfiguredWriteContext)
 
+data class SessionPresetsState(
+    val items: List<SessionPreset>? = null,
+    val loadFailed: Boolean = false,
+    val nameDraft: String? = null,
+    val saveError: String? = null,
+    val savedName: String? = null,
+)
+
 /** Separate from SessionUiState/PendingSave. Only saved is acknowledged durable content. */
 data class ConfiguredEditorState(
     val open: Boolean = false, val busy: Boolean = false, val saved: ConfiguredSession? = null,
@@ -38,6 +47,7 @@ data class ConfiguredEditorState(
     val impactPicking: ImpactPicking? = null,
     val impactDrag: ImpactDragContext? = null,
     val cancellation: com.lmarchery.feature.sessions.ImpactCancellationDialog? = null,
+    val presets: SessionPresetsState? = null,
 ) {
     val selectedEnd get() = saved?.ends?.singleOrNull { it.uuid == selectedEndUuid }
     val ready get() = open && !busy && pending == null && cancellation == null

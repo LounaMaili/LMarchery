@@ -3,6 +3,8 @@ package com.lmarchery.feature.configured
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.configured.ConfiguredSessionMetadata
+import com.lmarchery.core.scoring.configured.SessionPreset
+import java.time.Instant
 import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
 import com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles
 import com.lmarchery.feature.sessions.EquipmentSelection
@@ -28,8 +30,10 @@ data class ConfigurationDraft(
 data class ConfiguredMetadataDraft(val title: String = "", val plannedEnds: String = "", val location: String? = null,
     val notes: String? = null, val equipment: EquipmentSelection = EquipmentSelection()) {
     fun metadata(date: SessionDateTime) = ConfiguredSessionMetadata(date, title,
-        if (plannedEnds.isEmpty()) null else positive(plannedEnds, "Nombre de volées prévues"),
+        plannedEndCount(),
         equipment.bowUuid, equipment.arrowSetUuid, location, notes)
+    fun plannedEndCount() = if (plannedEnds.isEmpty()) null else positive(plannedEnds, "Nombre de volées prévues")
+
     companion object {
         fun from(value: ConfiguredSessionMetadata) = ConfiguredMetadataDraft(value.title, value.plannedEndCount?.toString().orEmpty(),
             value.locationName, value.notes, EquipmentSelection(value.bowUuid, value.arrowSetUuid))
@@ -39,7 +43,21 @@ data class ConfiguredMetadataDraft(val title: String = "", val plannedEnds: Stri
 sealed interface ConfiguredForm {
     val token: Long
     data class Creation(override val token: Long, val configuration: ConfigurationDraft = ConfigurationDraft(),
-        val metadata: ConfiguredMetadataDraft = ConfiguredMetadataDraft()) : ConfiguredForm
+        val metadata: ConfiguredMetadataDraft = ConfiguredMetadataDraft(),
+        val presetEquipment: EquipmentSelection = EquipmentSelection(),
+    ) : ConfiguredForm {
+        fun asPreset(uuid: String, name: String, createdAt: Instant) = SessionPreset(uuid, name.trim(),
+            configuration.configuration(), metadata.plannedEndCount(),
+            metadata.equipment.bowUuid, metadata.equipment.arrowSetUuid, createdAt)
+
+        fun withPreset(preset: SessionPreset): Creation {
+            val equipment = EquipmentSelection(preset.bowUuid, preset.arrowSetUuid)
+            return copy(configuration = ConfigurationDraft.from(preset.configuration),
+                metadata = metadata.copy(title = metadata.title.ifBlank { preset.name },
+                    plannedEnds = preset.plannedEndCount?.toString().orEmpty(), equipment = equipment),
+                presetEquipment = equipment)
+        }
+    }
     data class NextEnd(override val token: Long, val configuration: ConfigurationDraft, val explicit: Boolean = false) : ConfiguredForm
     data class Metadata(override val token: Long, val metadata: ConfiguredMetadataDraft) : ConfiguredForm
 }

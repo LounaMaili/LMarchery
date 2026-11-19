@@ -347,23 +347,18 @@ Voir [ADR 031](adr/031-associations-materiel-seances.md).
 
 ---
 
-## 7. Parcours — Créer un preset
+## 7. Parcours — Créer et réutiliser un preset
 
-```
-L'utilisateur va dans les Presets (ou depuis la création de séance)
-├── Bouton "Nouveau preset"
-├── Configuration :
-│   ├── Nom du preset
-│   ├── Type de cible
-│   ├── Distance
-│   ├── Nombre de flèches par volée
-│   ├── Intérieur / Extérieur
-│   ├── Mode de comptage
-│   ├── Arc par défaut
-│   └── Flèches par défaut
-├── Bouton "Enregistrer"
-└── Le preset apparaît dans la liste de sélection rapide
-```
+Dans « Nouvelle séance configurable », régler le blason, la distance, les
+flèches, le mode de comptage, les volées prévues et le matériel facultatif.
+Choisir « Enregistrer comme preset » en bas du formulaire, saisir un nom et
+confirmer. Le preset apparaît dans « Choisir un preset », même après redémarrage.
+
+Sélectionner un preset remplit le formulaire. On peut ajuster les réglages, puis
+enregistrer la séance. Le nom fournit un titre si le champ était vide. Les notes
+et le lieu saisi librement restent propres à la séance. Le preset et la séance
+peuvent ensuite être utilisés indépendamment. Les presets restent sur l’appareil,
+hors des sauvegardes V1 à V4 ([ADR 049](adr/049-presets-de-seance-locaux.md)).
 
 ---
 

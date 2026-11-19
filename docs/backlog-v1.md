@@ -97,10 +97,10 @@ sélection numérotée jusqu'à revue de ce complément.
 | 4.3 | Créer l'entité `ArrowSet` (Room) | ✓ fondation sans UI (ADR 025) | Moyenne |
 | 4.4 | Écran « Fiche flèches » (nom, spine, longueur, notes) | ✓ (ADR 030, essais physiques à faire) | Moyenne |
 | 4.5 | Association arc + flèches lors de la création de séance | ✓ facultative, aussi après clôture (ADR 031) | Moyenne |
-| 4.6 | Créer l'entité `SessionPreset` (Room) | ☐ | Moyenne |
-| 4.7 | Écran « Créer un preset » | ☐ | Moyenne |
-| 4.8 | Écran « Choisir un preset » (sélection rapide) | ☐ | Moyenne |
-| 4.9 | Préremplir les champs de séance depuis un preset | ☐ | Moyenne |
+| 4.6 | Créer l'entité `SessionPreset` (Room) | ✓ (ADR 049) | Moyenne |
+| 4.7 | Écran « Créer un preset » | ✓ (ADR 049) | Moyenne |
+| 4.8 | Écran « Choisir un preset » (sélection rapide) | ✓ (ADR 049) | Moyenne |
+| 4.9 | Préremplir les champs de séance depuis un preset | ✓ (ADR 049) | Moyenne |
 | 4.10 | Presets par défaut (salle 18m, extérieur 30m, 50m, 70m) | ☐ | Basse |
 | 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ✓ contrat/codec, Room atomique et SAF V2 (ADR 026/027/029) ; essais physiques de la combinaison à faire | Haute |
 
