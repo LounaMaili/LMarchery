@@ -613,6 +613,27 @@ class SessionControllerTest {
         }
     }
 
+    @Test fun `historic photo batch appends without replacing an existing miss`() {
+        Harness().use { h ->
+            val c = controller(h)
+            c.create(IndoorProfile.COMPOUND_40)
+            c.addImpact(NormalizedPoint(1.1f, 0f))
+            val before = c.state.value.session!!
+            val end = before.ends.single()
+            val first = UUID.randomUUID().toString()
+            val second = UUID.randomUUID().toString()
+            val batch = linkedMapOf(first to NormalizedPoint(.075f, 0f), second to NormalizedPoint(0f, 0f))
+            assertFalse(c.confirmPhotoImpacts(before, UUID.randomUUID().toString(), batch))
+            assertTrue(c.confirmPhotoImpacts(before, end.uuid, batch))
+            val after = c.state.value.session!!
+            assertEquals(end.impacts.single(), after.ends.single().impacts.first())
+            assertEquals(listOf(first, second), after.ends.single().impacts.drop(1).map { it.uuid })
+            assertEquals(listOf(0, 9, 10), after.ends.single().impacts.map { it.scoreFinal })
+            assertFalse(c.confirmPhotoImpacts(before, end.uuid, batch))
+            assertEquals(2, h.repository.updateCalls.size)
+        }
+    }
+
     private class FakeRepository : SessionRepository {
         val stored = linkedMapOf<String, DomainArchive>()
         val unreadable = linkedMapOf<String, SessionReadResult>()

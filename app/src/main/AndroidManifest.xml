@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LMarchery"
         tools:targetApi="s">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.end-photo-capture"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/end_photo_capture_paths" />
+        </provider>
         <activity
             android:name=".app.MainActivity"
             android:exported="true">

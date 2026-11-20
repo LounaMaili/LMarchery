@@ -1,0 +1,13 @@
+# ADR 050 — Saisie manuelle assistée par photo
+
+**Statut :** candidate Android V2.
+
+Une volée peut avoir une photo locale. Le sélecteur Android ouvre une image existante et l’application photo du système peut écrire dans un fichier temporaire dédié. Le fournisseur d’URI est privé et limité à ce répertoire de cache. LMarchery ne demande aucune permission caméra ou stockage globale. La photo importée est réduite à 2 048 pixels sur son plus grand côté et réencodée sans réutiliser ses métadonnées. La correction d’orientation EXIF est prise en charge pour les JPEG.
+
+Le fichier privé de la volée contient la photo, les coordonnées relatives à l’image et les UUID des repères. Son nom et son contenu comportent les UUID de la séance et de la volée. Un enregistrement explicite remplace le fichier atomiquement, après écriture complète. Une ancienne photo reste disponible si ce remplacement échoue. Le fichier contient sa propre version. Les schémas et migrations Room et les formats JSON V1 à V4 restent identiques. Les médias et les repères sont exclus des sauvegardes JSON et du transfert Android. Les impacts confirmés restent exportés comme les autres impacts.
+
+L’archer marque les quatre extrémités du cercle extérieur et vérifie le cercle superposé. La conversion exige quatre repères concordants, un cercle entier dans la photo et un rayon suffisant. La projection utilise les pixels de l’image redressée et les coordonnées normalisées existantes, avec l’axe vertical orienté vers le bas. Un cadrage partiel ou un repère extérieur reste enregistrable sur la photo. Le score exige une photo de face et une vérification visuelle de la superposition. La calibration ne corrige ni la perspective marquée ni la distorsion de l’objectif.
+
+La photo se sauvegarde avant la demande explicite d’ajout au score. La confirmation ajoute l’ensemble des nouveaux repères dans une seule révision `expected/proposed`. Chaque flèche reprend l’UUID de son repère et le profil effectif de la volée. Les impacts déjà enregistrés, leurs décisions et leurs traces sont conservés. Les repères associés sont reconnus à la relecture, y compris si la saisie de score a ensuite été annulée. Le retour à la volée confie une écriture en attente aux mécanismes existants d’acquittement et de réconciliation. Les corrections d’un impact déjà enregistré passent par les commandes existantes du blason.
+
+La photo et les points non confirmés restent locaux à la volée. Après un ajout au score, la photo et son alignement sont conservés avec les repères déjà associés. Dans une volée validée ou une séance terminée, la photo est consultable en lecture seule. Cette première version couvre les blasons circulaires cadrés en entier.

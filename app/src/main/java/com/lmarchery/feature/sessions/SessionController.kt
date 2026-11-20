@@ -496,6 +496,25 @@ class SessionController(
         if (!ui.canAddImpact) return
         saveNewImpact(point)
     }
+    fun confirmPhotoImpacts(expected: Session, endUuid: String, points: Map<String, NormalizedPoint>): Boolean {
+        val end = ui.editingEnd ?: return false
+        if (!ui.canNavigate || !ui.canEdit || !ui.isEditingDisplayed || end.uuid != endUuid || ui.session != expected ||
+            points.isEmpty() || points.size > 3 - end.activeImpacts.size ||
+            points.values.any { kotlin.math.hypot(it.x, it.y) > 1f } ||
+            expected.ends.any { candidate -> candidate.impacts.any { it.uuid in points } }
+        ) return false
+        mutate("Ajouter les flèches repérées sur la photo") { session, now ->
+            val updated = points.entries.fold(end) { current, (uuid, point) ->
+                current.withImpact(scoreArrowImpact(uuid, current.nextImpactIndex(), session.targetType, point,
+                    session.scoringMode, createdAt = now))
+            }
+            val proposed = session.withEnd(updated)
+            validateSessionUpdate(session, proposed)
+            proposed to updated.uuid
+        }
+        return true
+    }
+
     private fun saveNewImpact(point: NormalizedPoint) {
         mutate("Placer la flèche ${ui.editingEnd!!.nextImpactIndex()} (${point.x}, ${point.y})") { s, now ->
             val end = requireNotNull(ui.editingEnd)

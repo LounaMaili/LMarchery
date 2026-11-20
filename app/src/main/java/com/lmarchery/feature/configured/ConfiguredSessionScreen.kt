@@ -15,10 +15,32 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.scoring.profiles.BuiltInTargetRegistry
 import com.lmarchery.feature.sessions.*
+import com.lmarchery.feature.photo.EndPhotoKey
+import com.lmarchery.feature.photo.EndPhotoScreen
 
 @Composable
 fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToHistory: () -> Unit = {}) {
     val state by controller.state.collectAsStateWithLifecycle()
+    var photoEndUuid by rememberSaveable(state.saved?.uuid) { mutableStateOf<String?>(null) }
+    state.saved?.let { session ->
+        val captured = session.ends.singleOrNull { it.uuid == photoEndUuid }
+        if (captured != null) {
+            val targetContext = state.targetContext?.takeIf { state.selectedEndUuid == captured.uuid }
+            val configuration = captured.configuration
+            key(captured.uuid) {
+                EndPhotoScreen(
+                    EndPhotoKey(session.uuid, captured.uuid), "Volée ${captured.end.index}",
+                    editable = state.canNavigate && state.editableEnd && targetContext != null,
+                    remaining = configuration.arrowCountPerEnd?.minus(captured.end.activeImpacts.size) ?: Int.MAX_VALUE,
+                    existingImpactIds = captured.end.impacts.mapTo(mutableSetOf()) { it.uuid },
+                    targetType = configuration.targetType,
+                    onConfirm = { points -> targetContext != null && controller.confirmPhotoImpacts(targetContext, points) },
+                    onClose = { photoEndUuid = null },
+                )
+            }
+            return
+        }
+    }
     var leave by rememberSaveable { mutableStateOf(false) }
     var cancellationLeaveToken by rememberSaveable { mutableStateOf<Long?>(null) }
     state.cancellation?.let { dialog ->
@@ -72,7 +94,7 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
     } }
     BackHandler(onBack = back)
     if (state.saved?.status == SessionStatus.IN_PROGRESS && state.form == null) {
-        ConfiguredRange(state, controller, back, { finishEpoch = state.epoch })
+        ConfiguredRange(state, controller, back, { finishEpoch = state.epoch }, { photoEndUuid = it })
     } else {
         Scaffold(
             bottomBar = {
@@ -119,7 +141,12 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                         Button(controller::start, enabled = state.canForm) { Text("Démarrer la séance") }
                         TextButton(controller::editMetadata, enabled = state.canForm) { Text("Modifier les métadonnées et le matériel") }
                     }
-                    items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { ConfiguredEndCard(session, it) }
+                    items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { captured ->
+                        ConfiguredEndCard(session, captured)
+                        TextButton({ photoEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                            Text("Photo · volée ${captured.end.index}")
+                        }
+                    }
                 }
             }
         }

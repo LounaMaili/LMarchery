@@ -16,10 +16,10 @@ La reconnaissance n'est pas la V1. Elle viendra enrichir une application déjà 
 
 ### Fonctionnalités
 
-- Prise de photo du blason depuis l'application (CameraX)
+- Prise de photo du blason via l’application photo Android
 - Import d'une photo depuis la galerie
-- Recadrage manuel de la zone du blason
-- Affichage du blason redressé
+- Alignement manuel sur le cercle extérieur du blason
+- Affichage de la photo et du cercle de calibration
 - Placement manuel des impacts sur la photo
 - Association photo ↔ volée
 
@@ -29,10 +29,10 @@ L'utilisateur prend une photo, l'application l'affiche, l'utilisateur place les 
 
 ### Technique
 
-- CameraX en mode ImageCapture
+- Délégation de la capture à l’application photo Android, sans permission caméra dans LMarchery
 - Canvas Compose pour le placement sur photo
 - Stockage de la photo dans le répertoire applicatif
-- Entité `PhotoReference` ajoutée au modèle
+- Photo et repères exclus des archives JSON. Voir l’[ADR 050](adr/050-saisie-photo-manuelle.md).
 
 ---
 

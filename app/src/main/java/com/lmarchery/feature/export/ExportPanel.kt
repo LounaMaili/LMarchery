@@ -47,6 +47,8 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
             Text("Sauvegardes JSON V4 / V3 / V2 / V1", style = MaterialTheme.typography.titleMedium)
             Text("Le fichier est lisible en clair et peut contenir des informations personnelles. L’import contrôlé est accessible depuis la liste des séances.",
                 style = MaterialTheme.typography.bodySmall)
+            Text("Les photos et leurs repères restent sur cet appareil. Ils ne figurent dans aucune sauvegarde JSON.",
+                style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
                 ExportState.Available -> "V4 : séances, matériel et annulations définitives. Les presets restent sur cet appareil et ne figurent dans aucune sauvegarde. V1/V2/V3 refusent toute perte de preuve. V3 : sauvegarde complète incluant les configurations exactes de chaque volée. V1/V2 refusent toute séance configurable, même homogène. V2 : toutes les séances, tous les profils et le catalogue matériel, y compris sans séance. V1 : séances et profils associés uniquement, sans matériel."
                 ExportState.Preparing -> "Préparation : lecture d’un instantané cohérent…"
