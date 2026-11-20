@@ -54,6 +54,7 @@ dependencies {
 
     // Pinned with AGP 8.7.x / compileSdk 35; newer Activity releases require AGP 8.9+ and SDK 36.
     implementation("androidx.activity:activity-compose:1.9.3")
+    implementation("androidx.exifinterface:exifinterface:1.4.2")
     // Same Lifecycle / coroutine versions already resolved by Activity, Compose and Room.
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.3")

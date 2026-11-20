@@ -26,6 +26,7 @@ internal fun ConfiguredRange(
     controller: ConfiguredSessionController,
     back: () -> Unit,
     finish: () -> Unit,
+    openPhoto: (String) -> Unit,
 ) {
     val session = requireNotNull(state.saved)
     val captured = state.selectedEnd
@@ -50,6 +51,8 @@ internal fun ConfiguredRange(
                     TextButton(back, enabled = !state.busy,
                         colors = colors) { Text("‹ Historique") }
                     Spacer(Modifier.weight(1f))
+                    if (captured != null) TextButton({ openPhoto(captured.uuid) }, enabled = state.canNavigate,
+                        colors = colors) { Text("Photo") }
                     TextButton({ showDetails = true }, enabled = state.canNavigate,
                         colors = colors) { Text("Séance") }
                 }

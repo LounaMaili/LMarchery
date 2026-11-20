@@ -68,6 +68,7 @@ et [plan de consolidation vers main](plan-consolidation-main.md).
 | 47 | Déplacement tactile d’un impact sélectionné | [adr/047-deplacement-tactile-candidat-impacts.md](adr/047-deplacement-tactile-candidat-impacts.md) |
 | 48 | Annulation logique durable des impacts, Room 4 et archive V4 | [adr/048-annulation-logique-durable-impacts.md](adr/048-annulation-logique-durable-impacts.md) |
 | 49 | Presets de séance locaux | [adr/049-presets-de-seance-locaux.md](adr/049-presets-de-seance-locaux.md) |
+| 50 | Saisie manuelle assistée par photo | [adr/050-saisie-photo-manuelle.md](adr/050-saisie-photo-manuelle.md) |
 
 Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 

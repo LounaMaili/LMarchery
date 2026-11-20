@@ -393,6 +393,26 @@ class ConfiguredSessionController(
         val arrow = scoreArrowImpact(newUuid(), index, captured.configuration.targetType, point, captured.configuration.scoringMode, createdAt = now)
         session.withImpact(captured.uuid, arrow)
     }
+    fun confirmPhotoImpacts(context: ConfiguredTargetContext, points: Map<String, NormalizedPoint>): Boolean {
+        if (!current(context) || !ui.canNavigate || !ui.canPlace || points.isEmpty()) return false
+        val session = ui.saved ?: return false
+        val captured = ui.selectedEnd ?: return false
+        val remaining = captured.configuration.arrowCountPerEnd?.minus(captured.end.activeImpacts.size) ?: Int.MAX_VALUE
+        if (points.size > remaining || points.values.any { kotlin.math.hypot(it.x, it.y) > 1f } ||
+            session.ends.any { end -> end.end.impacts.any { it.uuid in points } }
+        ) return false
+        revise("Ajouter les flèches repérées sur la photo") { expected ->
+            val now = clock.instant()
+            points.entries.fold(expected) { proposed, (uuid, point) ->
+                val end = proposed.ends.single { it.uuid == captured.uuid }
+                val arrow = scoreArrowImpact(uuid, end.end.nextImpactIndex(), end.configuration.targetType, point,
+                    end.configuration.scoringMode, createdAt = now)
+                proposed.withImpact(end.uuid, arrow)
+            }
+        }
+        return ui.pending != null || ui.saved != session
+    }
+
     fun precision(context: ConfiguredTargetContext, enabled: Boolean) {
         if (!current(context) || ui.impactDrag != null || !ui.editableEnd || ui.position != null ||
             (ui.edit != null && ui.edit?.proposal !is ImpactProposal.Reposition)) return

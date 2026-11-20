@@ -25,6 +25,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.scoring.ScoreDecisionKind
 import kotlinx.coroutines.launch
+import com.lmarchery.feature.photo.EndPhotoKey
+import com.lmarchery.feature.photo.EndPhotoScreen
 import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
 import com.lmarchery.feature.scoring.precisionTargetMaxWidth
@@ -59,6 +61,23 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
     val equipmentState = equipmentController?.state?.collectAsStateWithLifecycle()?.value
     if (equipmentState?.open == true) {
         EquipmentScreen(equipmentController)
+        return
+    }
+    var photoEndUuid by rememberSaveable(state.session?.uuid) { mutableStateOf<String?>(null) }
+    val photoSession = state.session
+    val photoEnd = photoSession?.ends?.singleOrNull { it.uuid == photoEndUuid }
+    if (state.screen == SessionScreen.SESSION && photoSession != null && photoEnd != null) {
+        key(photoEnd.uuid) {
+            EndPhotoScreen(
+                EndPhotoKey(photoSession.uuid, photoEnd.uuid), "Volée ${photoEnd.index}",
+                editable = state.canNavigate && state.canEdit && state.isEditingDisplayed && state.editingEnd?.uuid == photoEnd.uuid,
+                remaining = 3 - photoEnd.activeImpacts.size,
+                existingImpactIds = photoEnd.impacts.mapTo(mutableSetOf()) { it.uuid },
+                targetType = photoSession.targetType,
+                onConfirm = { points -> controller.confirmPhotoImpacts(photoSession, photoEnd.uuid, points) },
+                onClose = { photoEndUuid = null },
+            )
+        }
         return
     }
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
@@ -223,6 +242,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             item(key = "session-equipment") { SessionEquipmentPanel(state, controller) }
                             state.displayedEnd?.let { end -> item(key = "target") {
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.activeImpacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
+                                TextButton({ photoEndUuid = end.uuid }, enabled = state.canNavigate) { Text("Photo du blason") }
                                 val interaction = when {
                                     state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                     state.impactDrag != null && state.canProposeReposition -> TargetInteraction.DRAG_IMPACT

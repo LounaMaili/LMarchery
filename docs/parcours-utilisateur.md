@@ -452,3 +452,13 @@ La sauvegarde complète est [V4](export-format-v4.md). Les anciens exports refus
 de perdre une annulation ; les anciens imports ne peuvent pas réactiver une
 flèche connue annulée. Voir [ADR 048](adr/048-annulation-logique-durable-impacts.md).
 Cette candidate locale ne constitue pas une qualification humaine au doigt.
+
+## Saisie V2 — Photographier une volée
+
+Ouvrir **Photo** depuis l’écran de tir ou **Photo du blason** dans l’éditeur historique. Choisir **Photographier le blason** ou **Importer une photo**. Une seule photo est associée à chaque volée.
+
+Toucher **Aligner le blason**, puis indiquer le bord extérieur à gauche, en haut, à droite et en bas. Vérifier le cercle superposé, puis toucher la photo à l’emplacement de chaque flèche. **Déplacer** permet de reprendre un repère avant son ajout au score. **Enregistrer la photo** conserve l’image, l’alignement et les repères, y compris avec une calibration incomplète.
+
+Pour transférer les repères au score, vérifier leur position et leur score proposé et choisir **Ajouter les flèches au score**, puis **Confirmer l’ajout**. Ce choix crée de nouvelles flèches dans la volée modifiable. Une correction d’une flèche déjà enregistrée se fait dans l’écran de tir. La [saisie photo manuelle](adr/050-saisie-photo-manuelle.md) utilise le profil effectif de la volée.
+
+Avec un cadrage partiel, des repères extérieurs ou une forte perspective, conserver la photo pour la consultation ou reprendre le cadrage. Les sauvegardes JSON contiennent les impacts confirmés. Les photos et leurs repères restent sur l’appareil.
