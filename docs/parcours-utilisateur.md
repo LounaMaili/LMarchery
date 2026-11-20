@@ -214,8 +214,27 @@ L'utilisateur ouvre l'application
 ├── Sélection dans « Suggestions intégrées » ou « Mes presets »
 │   └── Les réglages de tir sont préremplis
 ├── L’utilisateur peut modifier les réglages et renseigner les métadonnées
-└── Bouton « Confirmer et enregistrer », puis « Démarrer la séance »
+├── Bouton « Créer et démarrer » pour obtenir une séance en cours
+└── Ou « Enregistrer comme brouillon » pour conserver un brouillon
 ```
+
+Le démarrage direct utilise le titre déjà saisi ou, si le champ est vide,
+propose un titre à partir du profil et de la distance. Choisir une suggestion
+ou un preset remplit seulement le formulaire.
+
+Les réglages de tir sont visibles dès la création. « Options de tir et
+matériel » ouvre les métadonnées et les réglages facultatifs. Les commandes
+de démarrage et d’enregistrement du brouillon restent en bas du formulaire.
+
+Dans une séance en cours, la barre supérieure affiche la configuration, le
+nombre de flèches actives et le score de la volée. Les messages restent dans
+le panneau de commandes pour conserver la position du blason. Le panneau
+change avec la sélection, la visée ou la correction. « Séance » donne accès
+aux détails, aux volées précédentes et à « Terminer la séance » pendant la
+saisie. Après validation, le panneau propose « Volée suivante » et « Terminer
+la séance » même si le nombre prévu de volées n’est pas atteint. La fermeture du
+dialogue ne change rien. « Historique » permet de quitter puis de reprendre
+une séance en cours.
 
 ---
 
@@ -365,6 +384,11 @@ hors des sauvegardes V1 à V4 ([ADR 049](adr/049-presets-de-seance-locaux.md)).
 remplit les réglages de tir et laisse les métadonnées et le matériel en place.
 L’archer peut modifier ces valeurs puis les enregistrer comme preset personnel.
 
+Dans « Mes presets », « Modifier » permet de changer le nom et les réglages
+d’un preset enregistré. « Supprimer » demande une confirmation et indique que
+les sauvegardes JSON/SAF ne permettent pas de récupérer le preset supprimé.
+Les séances déjà enregistrées sont conservées.
+
 ---
 
 *Document version 1.0 — 29 avril 2026*
@@ -376,11 +400,15 @@ L’archer peut modifier ces valeurs puis les enregistrer comme preset personnel
    FIXED 3/6/personnalisé ou FREE, indoor/outdoor, mode de score et métadonnées.
    Le choix d’un blason officiel ne transforme pas cette configuration en épreuve
    réglementaire. Le matériel disponible est facultatif.
-2. Confirmer le brouillon et attendre l’acquittement, puis démarrer. Créer la
-   première volée par héritage de l’initiale ou par choix explicite.
-3. Pour chaque prochaine volée, choisir héritage ou définition explicite. Même
-   égale à la précédente, une définition explicite garde sa provenance. Annuler
-   le formulaire ne crée rien ; une capture confirmée ne peut plus être modifiée.
+2. Choisir « Créer et démarrer » ou ouvrir le brouillon pour le démarrer plus
+   tard. Le démarrage prépare la première volée avec la configuration initiale
+   et affiche son blason après enregistrement. Une ancienne séance en cours
+   sans volée propose « Créer la première volée ».
+3. Après validation, « Volée suivante » crée une volée vide avec les réglages
+   exacts de la dernière volée. « Modifier les réglages de la prochaine volée »
+   ouvre le formulaire si un changement est nécessaire. Annuler ce formulaire
+   ne crée aucune volée. Le menu « Séance » permet aussi de créer une volée
+   en conservant une volée précédente en saisie.
 4. Choisir une volée éditable ; sa cible et son mode effectifs gouvernent toute
    saisie. Mode rapide : un appui enregistre. Mode précis : relâcher propose,
    confirmer enregistre, annuler ne crée rien. FIXED affiche et borne la capacité

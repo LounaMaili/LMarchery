@@ -58,7 +58,7 @@ class ConfiguredHistoryAccessTest {
             h.open()
             val expected = h.ui.saved
             val context = h.ctx
-            h.c.editMetadata(); h.c.nextEnd(); h.c.start(); h.c.complete(); h.c.validateEnd()
+            h.c.editMetadata(); h.c.nextEnd(h.ui.epoch); h.c.start(); h.c.complete(); h.c.validateEnd()
             h.c.title(-1, "Unexpected title"); h.c.chooseEquipment(-1, EquipmentKind.BOW, null)
             h.c.chooseEquipment(-1, EquipmentKind.ARROW_SET, null); h.c.confirmForm(-1)
             h.c.tapped(context, NormalizedPoint(.3f, 0f)); h.c.precision(context, true)

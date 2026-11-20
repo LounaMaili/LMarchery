@@ -6,6 +6,9 @@ import com.lmarchery.feature.configured.ConfiguredSessionController
 import com.lmarchery.feature.configured.ConfiguredSessionScreen
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.Canvas
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -47,8 +50,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
     val interruptedAtEntry = remember { editorWasOpen && !configuredOpen }
     LaunchedEffect(Unit) { if (interruptedAtEntry) editorInterrupted = true }
     SideEffect { editorWasOpen = configuredOpen }
+    var historyOpen by rememberSaveable { mutableStateOf(false) }
+    var backupsOpen by rememberSaveable { mutableStateOf(false) }
     if (configuredOpen) {
-        ConfiguredSessionScreen(configuredController)
+        ConfiguredSessionScreen(configuredController, onReturnToHistory = { historyOpen = true })
         return
     }
     val equipmentState = equipmentController?.state?.collectAsStateWithLifecycle()?.value
@@ -68,11 +73,13 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                 state.impactEdit != null -> confirmCancelCorrection = true
                 state.hasAimProposal -> confirmCancelAim = true
                 state.equipmentEdit != null -> controller.cancelEquipmentEdit()
+                state.screen == SessionScreen.LIST && historyOpen -> historyOpen = false
                 else -> controller.returnToList()
             }
         }
     }
-    BackHandler(enabled = state.screen != SessionScreen.LIST || state.busy || state.pending != null || state.archiveOperationLocked || state.hasAimProposal, onBack = back)
+    BackHandler(enabled = state.screen != SessionScreen.LIST || historyOpen || state.busy || state.pending != null ||
+        state.archiveOperationLocked || state.hasAimProposal, onBack = back)
     val screenHeightDp = LocalConfiguration.current.screenHeightDp.toFloat()
     val scrollStates = rememberSaveableStateHolder()
     val scope = rememberCoroutineScope()
@@ -89,8 +96,14 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             LazyColumn(state = listState, modifier = Modifier.fillMaxSize().precisionTouchGuard(controller).padding(padding).padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
                 if (state.screen == SessionScreen.LIST) item(key = "header") {
-                    Text("LMarchery", style = MaterialTheme.typography.headlineMedium)
-                    Text("Séances locales sur cet appareil", style = MaterialTheme.typography.bodySmall)
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        Text("LMarchery", Modifier.weight(1f), style = MaterialTheme.typography.headlineSmall)
+                        if (equipmentController != null) TextButton(equipmentController::open, enabled = state.canNavigate) { Text("Matériel") }
+                    }
+                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        FilterChip(!historyOpen, { historyOpen = false }, { Text("Accueil") }, enabled = !state.archiveOperationLocked)
+                        FilterChip(historyOpen, { historyOpen = true }, { Text("Historique") }, enabled = !state.archiveOperationLocked)
+                    }
                 }
                 if (state.busy) item(key = "loading") {
                     LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
@@ -127,27 +140,23 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                 } }
                 when (state.screen) {
                     SessionScreen.LIST -> {
-                        item(key = "list-actions") {
-                            if (equipmentController != null) OutlinedButton(onClick = equipmentController::open, enabled = state.canNavigate) { Text("Matériel") }
-                            if (editorInterrupted) {
-                                Text("Éditeur interrompu : aucun candidat local n’a été repris comme enregistré. Une écriture a pu être confirmée en base ; relisez les séances avant de recommencer.")
-                                TextButton(onClick = { editorInterrupted = false }) { Text("Compris") }
-                            }
-                            if (configuredController != null) Button(onClick = configuredController::create, enabled = state.ready) { Text("Nouvelle séance configurable") }
-                            Button(onClick = controller::configure, enabled = state.ready) { Text("Nouvelle séance") }
-                            OutlinedButton(onClick = controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
-                            if (!state.busy && state.entries.isEmpty() && state.problem == null) Text("Aucune séance enregistrée.")
+                        if (editorInterrupted) item(key = "interrupted-editor") {
+                            Text("Éditeur interrompu. Relisez les séances avant toute nouvelle opération.")
+                            TextButton(onClick = { editorInterrupted = false }) { Text("Compris") }
+                        }
+                        if (!historyOpen) item(key = "list-actions") {
+                            SessionHomeLaunch(state.ready, configuredController?.let { it::create }, controller::configure)
                         }
                         val history = presentSessionHistory(state.entries)
-                        val sections = listOf(
-                            "Séances en cours ou à consulter" to history.resumable,
-                            "Historique" to history.completed,
-                            "Séances nécessitant une intervention" to history.intervention,
-                        )
+                        val sections = buildList {
+                            add("À reprendre" to history.resumable)
+                            if (historyOpen) add("Séances terminées" to history.completed)
+                            if (history.intervention.isNotEmpty()) add("Séances nécessitant une intervention" to history.intervention)
+                        }
                         sections.forEach { (heading, entries) ->
                             item(key = heading) {
                                 Text(heading, style = MaterialTheme.typography.titleLarge)
-                                if (entries.isEmpty()) Text("Aucune séance dans cette section.", style = MaterialTheme.typography.bodySmall)
+                                if (entries.isEmpty()) Text(if (heading == "À reprendre") "Aucune séance à reprendre." else "Aucune séance terminée.", style = MaterialTheme.typography.bodyMedium)
                             }
                             items(entries, key = { it.uuid }) { entry ->
                                 SessionHistoryCard(entry, state.canNavigate) {
@@ -156,10 +165,20 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 }
                             }
                         }
-                        // Always expanded: incidents and confirmations stay visible without a disclosure toggle.
-                        item(key = "backups-heading") { Text("Sauvegardes", style = MaterialTheme.typography.titleLarge) }
-                        item(key = "export") { ExportPanel(exportCoordinator, state) }
-                        item(key = "import") { ImportPanel(importCoordinator, state) }
+                        if (historyOpen) item(key = "refresh") {
+                            TextButton(controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
+                        }
+                        if (!historyOpen) {
+                            item(key = "backups-heading") {
+                                OutlinedButton({ backupsOpen = !backupsOpen }, enabled = !state.archiveOperationLocked) {
+                                    Text(if (backupsOpen) "Masquer les sauvegardes" else "Sauvegardes")
+                                }
+                            }
+                            if (backupsOpen || state.archiveOperationLocked) {
+                                item(key = "export") { ExportPanel(exportCoordinator, state) }
+                                item(key = "import") { ImportPanel(importCoordinator, state) }
+                            }
+                        }
                     }
 
                     SessionScreen.CREATE -> item(key = "configuration") {
@@ -343,6 +362,40 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             confirmButton = { TextButton(onClick = controller::reloadAndDiscard, enabled = !state.busy) { Text("Abandonner l’action et recharger") } },
             dismissButton = { TextButton(onClick = controller::closePreview, enabled = !state.busy) { Text("Conserver l’action locale") } })
     }
+}
+
+@Composable
+private fun SessionHomeLaunch(enabled: Boolean, configure: (() -> Unit)?, legacy: () -> Unit) {
+    Surface(
+        color = MaterialTheme.colorScheme.primary, contentColor = MaterialTheme.colorScheme.onPrimary,
+        shape = MaterialTheme.shapes.extraLarge,
+    ) {
+        Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            val ringColor = LocalContentColor.current
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Column(Modifier.weight(1f)) {
+                    Text("Carnet de tir", style = MaterialTheme.typography.headlineMedium)
+                    Text("Salle ou extérieur", style = MaterialTheme.typography.bodyMedium)
+                }
+                Canvas(Modifier.size(60.dp)) {
+                    val outer = size.minDimension / 2f - 2.dp.toPx()
+                    listOf(1f, .72f, .44f).forEach { ring ->
+                        drawCircle(ringColor.copy(alpha = .55f), radius = outer * ring, style = Stroke(1.5.dp.toPx()))
+                    }
+                    drawCircle(ringColor, radius = outer * .15f)
+                }
+            }
+            if (configure != null) {
+                Spacer(Modifier.height(4.dp))
+                Button(configure, Modifier.fillMaxWidth(), enabled = enabled,
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.onPrimary,
+                        contentColor = MaterialTheme.colorScheme.primary)) {
+                    Text("Nouvelle séance configurable")
+                }
+            }
+        }
+    }
+    TextButton(legacy, enabled = enabled) { Text("Séance salle rapide") }
 }
 
 @Composable

@@ -21,7 +21,20 @@ et matériel. Les presets restent sur l’appareil et une restauration de séanc
 laisse le catalogue local de presets en place. La sauvegarde des presets peut être livrée en deux étapes : définir leur
 document versionné et ses conflits d’identité et de nom, puis raccorder un
 export/import SAF dédié avec aperçu et restauration atomique dans leur base.
-La modification et la suppression des presets personnels restent à réaliser.
+## Gestion des presets personnels
+
+« Mes presets » propose « Modifier » et « Supprimer » sur chaque preset.
+L’édition reprend les réglages existants, y compris les références de matériel
+opaques, et conserve l’UUID et l’instant de création. Le formulaire de séance
+en cours reste indépendant. Une suppression confirmée est définitive et les
+sauvegardes JSON/SAF ne permettent pas de restaurer le preset.
+
+La base dédiée compare la ligne complète attendue dans une transaction écrivain
+avant la mise à jour ou la suppression. Un changement concurrent déclenche un
+conflit et une relecture du catalogue. Si l’écriture est interrompue ou que
+son acquittement manque, le résultat est signalé comme non confirmé. L’ancienne
+commande devient invalide et la liste est relue sans nouvelle écriture.
+Le nom reste unique et sensible à la casse. Le schéma reste à la version 1.
 
 ## Suggestions intégrées
 

@@ -76,7 +76,7 @@ class ConfiguredHistoryReadOnlyIntegrationTest {
             val count = writes.get()
             f.denyWrites(path, d.tables)
             h.onUi {
-                h.configured.editMetadata(); h.configured.nextEnd(); h.configured.start(); h.configured.complete()
+                h.configured.editMetadata(); h.configured.nextEnd(h.state.epoch); h.configured.start(); h.configured.complete()
                 h.configured.title(oldToken, "Forbidden title")
                 h.configured.chooseEquipment(oldToken, EquipmentKind.BOW, null)
                 h.configured.chooseEquipment(oldToken, EquipmentKind.ARROW_SET, null)

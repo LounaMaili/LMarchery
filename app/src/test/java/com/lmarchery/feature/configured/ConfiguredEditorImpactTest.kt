@@ -33,7 +33,7 @@ class ConfiguredEditorImpactTest {
         assertEquals(2,h.ui.selectedImpact!!.repositions.size); assertEquals(after.repositions.first(),h.ui.selectedImpact!!.repositions.first()); assertEquals(7,h.ui.selectedImpact!!.scoreFinal)
     }
     @Test fun `X M and geometric indicators remain coherent after corrections`(): Unit = EditorHarness().use { h ->
-        h.c.create(); h.c.title(h.token,"Generic X"); h.c.chooseProfile(h.token,ClassicTargetFixtures.classic40.uuid); h.c.confirmForm(h.token); h.c.start(); h.nextEnd()
+        h.c.create(); h.c.title(h.token,"Generic X"); h.c.chooseProfile(h.token,ClassicTargetFixtures.classic40.uuid); h.c.confirmForm(h.token); h.c.start()
         h.tap(0f); h.tap(1.1f); assertTrue(h.ui.selectedEnd!!.end.impacts.first().isX); assertTrue(h.ui.selectedEnd!!.end.impacts.last().isMiss)
         h.selectFirst(); h.c.beginReposition(h.ctx); h.c.repositionPoint(h.ctx,NormalizedPoint(.15f,0f)); h.c.confirmReposition(h.ctx)
         assertFalse(h.ui.selectedImpact!!.isX); assertEquals(9,h.ui.selectedImpact!!.scoreFinal)
@@ -42,7 +42,7 @@ class ConfiguredEditorImpactTest {
     }
     @Test fun `precise proposal cancel release and stale token never write`(): Unit = EditorHarness().use { h ->
         h.editing(); h.c.precision(h.ctx,true); val ctx=h.ctx; val token=h.c.beginAim(ctx,NormalizedPoint(.105f,0f))!!
-        h.c.moveAim(token,NormalizedPoint(.25f,0f)); assertEquals(3,h.requests.size); h.c.cancelAim(token)
+        h.c.moveAim(token,NormalizedPoint(.25f,0f)); assertEquals(2,h.requests.size); h.c.cancelAim(token)
         h.c.finishAim(token,NormalizedPoint(.35f,0f)); assertNull(h.ui.position)
         val next=h.c.beginAim(ctx,NormalizedPoint(.15f,0f))!!; h.c.finishAim(next,NormalizedPoint(.15f,0f)); assertNotNull(h.ui.position)
         h.c.cancelPosition(h.ctx); h.c.confirmPosition(ctx); assertNull(h.ui.position); assertTrue(h.ui.selectedEnd!!.end.impacts.isEmpty())
@@ -55,7 +55,7 @@ class ConfiguredEditorImpactTest {
     }
     @Test fun `unsubmitted correction blocks form navigation and cannot leak across ends`(): Unit = EditorHarness().use { h ->
         h.editing(); h.tap(.15f); h.selectFirst(); h.c.beginDecision(h.ctx); val exact=h.ui.edit; val n=h.requests.size
-        h.c.nextEnd(); h.c.editMetadata(); h.c.complete(); h.c.validateEnd(); h.c.selectEnd(h.ui.selectedEndUuid!!)
+        h.c.nextEnd(h.ui.epoch); h.c.editMetadata(); h.c.complete(); h.c.validateEnd(); h.c.selectEnd(h.ui.selectedEndUuid!!)
         assertEquals(exact,h.ui.edit); assertEquals(n,h.requests.size); h.closeSelection(); assertTrue(h.ui.canForm)
     }
     @Test fun `new judgment is possible after traced reposition without losing old trace`(): Unit = EditorHarness(f.mixed()).use { h ->

@@ -18,17 +18,17 @@ class ConfiguredEditorWritesTest {
     @Test fun `repeated confirmation cannot add another impact after acknowledgement`(): Unit = EditorHarness().use { h ->
         h.editing(); h.c.precision(h.ctx,true); val old=h.ctx; val token=h.c.beginAim(old,NormalizedPoint(.15f,0f))!!
         h.c.finishAim(token,NormalizedPoint(.15f,0f)); val confirm=h.ctx; h.c.confirmPosition(confirm); h.c.confirmPosition(confirm)
-        assertEquals(1,h.ui.selectedEnd!!.end.impacts.size); assertEquals(4,h.requests.size)
+        assertEquals(1,h.ui.selectedEnd!!.end.impacts.size); assertEquals(3,h.requests.size)
     }
     @Test fun `lost acknowledgement with proposed stored is reconciled by read only without UUID regeneration`(): Unit = EditorHarness().use { h ->
         h.editing(); h.write={ h.stored=it.proposed; ConfiguredWriteResult.CommitUnconfirmed(it,IOException()) }; h.tap(.15f)
         val pending=h.ui.pending!!; val count=h.requests.size; val ids=h.uuids
         assertEquals(ConfiguredProblemKind.UNCONFIRMED,h.ui.problem!!.kind); assertTrue(h.ui.saved!!.ends.single().end.impacts.isEmpty()); assertTrue(h.gate)
-        h.c.retryExact(); h.c.nextEnd(); h.c.editMetadata(); h.tap(.25f); assertEquals(count,h.requests.size)
+        h.c.retryExact(); h.c.nextEnd(h.ui.epoch); h.c.editMetadata(); h.tap(.25f); assertEquals(count,h.requests.size)
         h.c.reconcile(); assertEquals(pending.request.proposed,h.ui.saved); assertNull(h.ui.pending); assertEquals(count,h.requests.size); assertEquals(ids,h.uuids)
     }
     @Test fun `read expected permits only explicit retry with same identities dates and exact form`(): Unit = EditorHarness().use { h ->
-        h.editing(); h.write={ ConfiguredWriteResult.CommitUnconfirmed(it,IOException()) }; h.c.nextEnd(); val token=h.token; h.c.explicitNext(token,true); h.c.confirmForm(token)
+        h.editing(); h.write={ ConfiguredWriteResult.CommitUnconfirmed(it,IOException()) }; h.c.editNextEnd(h.ui.epoch); val token=h.token; h.c.confirmForm(token)
         val exact=h.ui.pending!!; val count=h.requests.size; val ids=h.uuids; h.c.reconcile(); assertEquals(ConfiguredReconciliation.EXPECTED,h.ui.reconciliation)
         assertSame(exact,h.ui.pending); assertEquals(count,h.requests.size); h.write=null; h.c.retryExact()
         assertSame(exact.request.proposed,h.requests.last().proposed); assertEquals(exact.request,h.requests.last()); assertEquals(ids,h.uuids)

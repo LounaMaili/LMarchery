@@ -69,7 +69,7 @@ class ConfiguredImpactDragTest {
     }
     @Test fun `mixed session drag uses effective compound profile and preserves previous classic end`() = EditorHarness().use { h ->
         h.editing();h.tap(.075f);h.c.validateEnd();val previous=h.ui.saved!!.ends.first()
-        h.c.nextEnd();h.c.explicitNext(h.token,true)
+        h.c.editNextEnd(h.ui.epoch)
         h.c.chooseProfile(h.token,com.lmarchery.core.scoring.profiles.WorldArcheryIndoorTargetProfiles.compound40.uuid)
         h.c.confirmForm(h.token);h.tap(.025f)
         val ctx=h.drag();val t=h.c.beginImpactDrag(ctx,h.ui.selectedImpact!!.point)!!
