@@ -49,7 +49,7 @@ class AppRoomRecipeTest {
             h.onUi { h.configured.create(); h.configured.title(h.token," Mixed recipe é 🏹 ");h.configured.scoring(h.token,ScoringMode.COMPETITION) }
             withTimeout(15000) { h.configured.state.first { it.equipmentChoices.values(EquipmentKind.BOW).any { choice -> choice.uuid==bow.uuid } } }
             h.onUi { h.configured.chooseEquipment(h.token,EquipmentKind.BOW,bow.uuid);h.configured.chooseEquipment(h.token,EquipmentKind.ARROW_SET,set.uuid) }
-            h.change { h.configured.confirmForm(h.token) };h.change { h.configured.start() };h.nextEnd()
+            h.change { h.configured.confirmForm(h.token) };h.change { h.configured.start() }
             h.tap(.105f);h.onUi { h.configured.selectImpact(h.context,h.state.selectedEnd!!.end.impacts.single().uuid);h.configured.beginDecision(h.context) }
             val boundary=h.state.scoreOptions!!.nearby.first { it.inner.score==10 && it.outer.score==9 }
             h.change { h.configured.boundary(h.context,boundary.reference);h.configured.scoreValue(h.context,boundary.inner);h.configured.confirmDecision(h.context) }
@@ -59,13 +59,13 @@ class AppRoomRecipeTest {
             val traces=h.state.selectedImpact!!.repositions;assertEquals(2,traces.size);assertNotNull(traces.last().invalidatedManualDecision)
             h.onUi { h.configured.closeSelection(h.context) };h.tap(0f);h.tap(1.1f);h.change { h.configured.validateEnd() }
             val fixed=h.state.selectedEnd!!;assertEquals(17,fixed.end.impacts.sumOf { it.scoreFinal })
-            h.onUi { h.configured.nextEnd();h.configured.explicitNext(h.token,true);h.configured.chooseProfile(h.token,WA.compound40.uuid);h.configured.distance(h.token,"70");h.configured.indoor(h.token,false);h.configured.shortcut(h.token,EndArrowCountShortcut.SIX) }
+            h.onUi { h.configured.editNextEnd(h.state.epoch);h.configured.chooseProfile(h.token,WA.compound40.uuid);h.configured.distance(h.token,"70");h.configured.indoor(h.token,false);h.configured.shortcut(h.token,EndArrowCountShortcut.SIX) }
             h.change { h.configured.confirmForm(h.token) };h.tap(.075f);assertEquals(9,h.state.selectedEnd!!.end.impacts.single().scoreFinal)
-            h.onUi { h.configured.nextEnd();h.configured.explicitNext(h.token,true) };h.change { h.configured.confirmForm(h.token) }
+            h.onUi { h.configured.editNextEnd(h.state.epoch) };h.change { h.configured.confirmForm(h.token) }
             val explicit=h.state.selectedEnd!!;h.nextEnd();assertEquals(com.lmarchery.core.scoring.configured.EndConfigurationOrigin.Inherited(explicit.uuid),h.state.selectedEnd!!.origin)
-            h.onUi { h.configured.nextEnd();h.configured.explicitNext(h.token,true);h.configured.chooseProfile(h.token,ClassicTargetFixtures.classic40.uuid);h.configured.distance(h.token,"30");h.configured.count(h.token,"7");h.configured.scoring(h.token,ScoringMode.MANUAL_CORDON) }
+            h.onUi { h.configured.editNextEnd(h.state.epoch);h.configured.chooseProfile(h.token,ClassicTargetFixtures.classic40.uuid);h.configured.distance(h.token,"30");h.configured.count(h.token,"7");h.configured.scoring(h.token,ScoringMode.MANUAL_CORDON) }
             h.change { h.configured.confirmForm(h.token) };h.tap(0f)
-            h.onUi { h.configured.nextEnd();h.configured.explicitNext(h.token,true);h.configured.shortcut(h.token,EndArrowCountShortcut.FREE) }
+            h.onUi { h.configured.editNextEnd(h.state.epoch);h.configured.shortcut(h.token,EndArrowCountShortcut.FREE) }
             h.change { h.configured.confirmForm(h.token) };for(radius in listOf(.15f,.25f,1.1f,0f))h.tap(radius)
             h.change { h.configured.validateEnd() };h.change { h.configured.complete() }
             configured=h.state.saved!!;assertEquals(fixed,configured.ends.first());assertEquals(traces,configured.ends.first().end.impacts.first().repositions)

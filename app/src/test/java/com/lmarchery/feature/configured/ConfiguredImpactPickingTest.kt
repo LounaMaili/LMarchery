@@ -87,7 +87,7 @@ class ConfiguredImpactPickingTest {
         h.editing(); h.tap(.105f); val before = h.ui.saved; val writes = h.requests.size; val stale = h.ctx
         h.c.beginImpactPicking(h.ctx)
         h.c.tapped(stale, NormalizedPoint(.25f, 0f)); h.c.tapped(h.ctx, NormalizedPoint(.25f, 0f))
-        h.c.nextEnd(); h.c.editMetadata(); h.c.validateEnd(); h.c.complete(); h.c.close()
+        h.c.nextEnd(h.ui.epoch); h.c.editMetadata(); h.c.validateEnd(); h.c.complete(); h.c.close()
         h.c.selectImpact(h.ctx, h.ui.selectedEnd!!.end.impacts.single().uuid)
         assertNotNull(h.ui.impactPicking); assertNull(h.ui.form); assertNull(h.ui.edit); assertTrue(h.ui.open)
         assertSame(before, h.ui.saved); assertEquals(writes, h.requests.size)
@@ -167,7 +167,7 @@ class ConfiguredImpactPickingTest {
     @Test fun `a superseded ambiguous choice is rejected within the same FREE picker context`() = EditorHarness().use { h ->
         h.c.create(); h.c.title(h.token, "Synthetic FREE ambiguity counterreview")
         h.c.shortcut(h.token, EndArrowCountShortcut.FREE); h.c.confirmForm(h.token)
-        h.c.start(); h.nextEnd()
+        h.c.start()
         repeat(2) { h.tap(.15f) }; repeat(2) { h.tap(.75f) }
         assertEquals(ArrowCountMode.FREE, h.ui.selectedEnd!!.configuration.arrowCountMode)
         val arrows = h.ui.selectedEnd!!.end.impacts

@@ -525,7 +525,10 @@ Voir [ADR 049](adr/049-presets-de-seance-locaux.md).
 | Extérieur 70 m | Classique 122 cm historique | 70 | 6 | Outdoor |
 
 Les réglages d’une suggestion peuvent être enregistrés dans un preset personnel.
-La modification et la suppression des presets personnels restent à réaliser.
+Les presets personnels peuvent être modifiés et supprimés. La modification
+conserve l’UUID et la date de création. La base Room dédiée compare la ligne
+complète attendue avant toute modification ou suppression. Une séance ne
+référence aucun preset.
 
 ---
 

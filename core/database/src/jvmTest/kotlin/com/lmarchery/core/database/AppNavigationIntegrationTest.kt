@@ -22,6 +22,32 @@ import kotlin.test.*
 class AppNavigationIntegrationTest {
     @TempDir lateinit var directory:Path
     private val path get()=directory.resolve("navigation.db")
+
+    @Test fun `quick creation and later draft start persist their initial ends in the acknowledged Room revision`() = runBlocking {
+        AppIntegrationHarness(path).use { h ->
+            h.onUi { h.configured.create() }
+            h.change { h.configured.createAndStart(h.token) }
+            val quick = requireNotNull(h.state.saved)
+            assertIs<ConfiguredWriteResult.Created>(h.state.lastResult)
+            assertEquals(quick, h.archiveV4().sessions.single())
+            assertEquals(EndConfigurationOrigin.Initial, quick.ends.single().origin)
+            assertEquals(quick.ends.single(), h.state.selectedEnd)
+            h.closeEditor()
+
+            h.createDraft("Démarrage différé")
+            val draft = requireNotNull(h.state.saved)
+            assertTrue(draft.ends.isEmpty())
+            h.change { h.configured.start(); h.configured.start() }
+            val started = requireNotNull(h.state.saved)
+            val result = assertIs<ConfiguredWriteResult.Updated>(h.state.lastResult)
+            assertEquals(ConfiguredWriteRequest.Update(draft, started), result.request)
+            assertEquals(EndConfigurationOrigin.Initial, started.ends.single().origin)
+            assertEquals(draft.initialConfiguration, started.ends.single().configuration)
+            assertEquals(quick, h.archiveV4().sessions.single { it.uuid == quick.uuid })
+            assertEquals(started, h.archiveV4().sessions.single { it.uuid == draft.uuid })
+        }
+    }
+
     @Test fun `precise candidates and cancelled configuration exclude other actors and stale same end callback never writes`() = runBlocking<Unit> {
         val writes=AtomicInteger()
         val store=hookedStore(path) {sql,_->if(listOf("INSERT","UPDATE","DELETE").any{sql.startsWith(it)} && d.tables.any {sql.contains("`$it`")})writes.incrementAndGet()}
@@ -29,12 +55,12 @@ class AppNavigationIntegrationTest {
             h.editing();val original=h.state.saved!!;val old=h.context;val before=d.contents(path);val count=writes.get()
             h.onUi {h.configured.precision(h.context,true)}
             val token=h.onUi {requireNotNull(h.configured.beginAim(h.context,NormalizedPoint(.105f,-0.0f)))}
-            h.onUi {h.configured.finishAim(token,NormalizedPoint(.105f,-0.0f));h.configured.nextEnd();h.configured.editMetadata();h.importer.begin()}
+            h.onUi {h.configured.finishAim(token,NormalizedPoint(.105f,-0.0f));h.configured.nextEnd(h.state.epoch);h.configured.editMetadata();h.importer.begin()}
             assertIs<ImportState.Failed>(h.importer.state.value);assertNull(h.state.form)
             h.assertOtherOperationsLocked();assertEquals(before,d.contents(path));assertEquals(count,writes.get())
             h.onUi {h.configured.cancelPosition(h.context);h.configured.confirmPosition(old)}
             assertEquals(count,writes.get());assertEquals(original,h.state.saved)
-            h.onUi {h.configured.nextEnd();h.configured.explicitNext(h.token,true);h.configured.distance(h.token,"70");h.configured.cancelForm(h.token)}
+            h.onUi {h.configured.editNextEnd(h.state.epoch);h.configured.distance(h.token,"70");h.configured.cancelForm(h.token)}
             assertEquals(count,writes.get());assertEquals(before,d.contents(path))
             val next=h.onUi {requireNotNull(h.configured.beginAim(h.context,NormalizedPoint(.25f,-0.0f)))}
             h.onUi {h.configured.finishAim(next,NormalizedPoint(.25f,-0.0f))};val confirm=h.context
@@ -71,7 +97,7 @@ class AppNavigationIntegrationTest {
             assertEquals(configured,complete.sessions.single{it.uuid==configured.uuid})
             val before=d.contents(path);f.denyWrites(path,d.tables)
             h.onUi {h.configured.open(configured.uuid)};h.idle()
-            h.onUi {h.configured.editMetadata();h.configured.nextEnd();h.configured.complete()}
+            h.onUi {h.configured.editMetadata();h.configured.nextEnd(h.state.epoch);h.configured.complete()}
             assertNull(h.state.form);assertEquals(before,d.contents(path));assertEquals(configured,h.state.saved)
         }
     }

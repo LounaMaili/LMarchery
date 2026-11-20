@@ -50,8 +50,8 @@ internal class EditorHarness(
     val ctx get() = ui.targetContext!!
     fun open() = c.open(initial!!.uuid)
     fun draft() { c.create(); c.title(token," Synthétique 🏹 "); c.confirmForm(token) }
-    fun editing() { draft(); c.start(); nextEnd() }
-    fun nextEnd() { c.nextEnd(); c.confirmForm(token) }
+    fun editing() { draft(); c.start() }
+    fun nextEnd() = c.nextEnd(ui.epoch)
     fun tap(r: Float) = c.tapped(ctx, NormalizedPoint(r, 0f))
     fun selectFirst() = c.selectImpact(ctx, ui.selectedEnd!!.end.impacts.first().uuid)
     fun closeSelection() = c.closeSelection(ctx)

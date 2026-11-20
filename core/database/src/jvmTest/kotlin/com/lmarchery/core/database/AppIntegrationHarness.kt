@@ -74,8 +74,8 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
         onUi { configured.create(); configured.title(token, title) }
         change { configured.confirmForm(token) }
     }
-    suspend fun editing() { createDraft(); change { configured.start() }; nextEnd() }
-    suspend fun nextEnd() { onUi { configured.nextEnd() }; change { configured.confirmForm(token) } }
+    suspend fun editing() { createDraft(); change { configured.start() } }
+    suspend fun nextEnd() = change { configured.nextEnd(state.epoch) }
     suspend fun tap(radius: Float) = change { configured.tapped(context, NormalizedPoint(radius, -0.0f)) }
     suspend fun closeEditor() { onUi { configured.close() }; ready(); assertFalse(state.open) }
     suspend fun createEquipment(kind: EquipmentKind): Equipment {

@@ -71,26 +71,34 @@ personnalisée ne constitue pas une nouvelle épreuve réglementaire. La sélect
 de nouveaux profils personnalisés hors registre reste une limite ; une capture
 personnalisée existante reste utilisable par héritage, sans remplacement.
 
-La confirmation appelle `ConfiguredSession.create`, provenance `CREATION`,
-puis le writer. Le démarrage et la première volée sont des actions séparées,
-utilisant `start` et `createNextEnd` après acquittement du brouillon.
+La confirmation classique appelle `ConfiguredSession.create`, provenance
+`CREATION`, puis le writer. Le brouillon peut être démarré ensuite.
+« Créer et démarrer » compose `create`, `start` et la première volée `INITIAL`
+en mémoire au même instant et envoie une unique intention `Create`.
+Le démarrage d’un brouillon ajoute aussi sa première volée si nécessaire
+dans la même intention de révision.
+Le titre proposé à partir du profil et de la distance sert lorsque le champ
+est vide. Une séance en cours n’apparaît qu’après acquittement ou réconciliation
+explicite de l’intention exacte. Une ancienne séance en cours sans volée
+reste consultable sans écriture et propose de créer sa première volée.
 
 Chaque formulaire possède un jeton de présentation. Les callbacks d’un autre
 formulaire ne peuvent ni le modifier ni le confirmer. Avant confirmation, le
 formulaire ne crée aucune volée, origine, date ou identité métier. Annuler le
 formulaire de prochaine volée ne change rien dans la séance.
 
-Deux choix sont présentés pour une prochaine volée :
+Deux actions sont présentées pour une prochaine volée :
 
-- `Inherit` : précédente par index, ou initiale pour la première ; le domaine
-  produit `INHERITED(previousEndUuid)` ou `INITIAL`.
-- `Replace(configuration)` : choix explicite, provenance `EXPLICIT` même si
-  toutes les valeurs sont égales à la précédente.
+- « Volée suivante » demande directement `Inherit`. Le domaine reprend la
+  dernière configuration par index et produit `INHERITED(previousEndUuid)`.
+- « Modifier les réglages de la prochaine volée » ouvre le formulaire sur
+  cette même configuration. Sa confirmation demande `Replace(configuration)`
+  et produit `EXPLICIT`, même si les valeurs restent égales.
 
-Revenir du choix explicite à « Hériter » réaffiche la configuration héritée
-exacte, en abandonnant les valeurs explicites non soumises. La capture réelle
-est visible avant confirmation et reste immuable après,
-même vide. Aucun bouton de correction rétroactive n’est proposé. La création
+Valider une volée n’en crée aucune autre. Les commandes de création depuis
+le panneau de tir sont liées à l’état affiché. Un second appui sur une
+commande périmée est ignoré. La configuration reste immuable après création,
+même si la volée est vide. Aucun bouton de correction rétroactive n’est proposé. La création
 d’une volée suivante peut laisser des volées antérieures éditables : le domaine
 ne définit pas une politique imposant une seule volée éditable.
 

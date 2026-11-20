@@ -2,6 +2,7 @@ package com.lmarchery.core.database
 
 import androidx.room.Dao
 import androidx.room.Database
+import androidx.room.Delete
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.Insert
@@ -9,6 +10,9 @@ import androidx.room.OnConflictStrategy
 import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.RoomDatabase
+import androidx.room.Update
+import androidx.room.immediateTransaction
+import androidx.room.useWriterConnection
 import com.lmarchery.core.model.session.ArrowCountMode
 import com.lmarchery.core.model.session.EndConfiguration
 import com.lmarchery.core.model.session.ScoringMode
@@ -21,13 +25,44 @@ interface SessionPresetRepository {
 
     /** False means the name or UUID already exists. Existing presets remain intact. */
     suspend fun add(preset: SessionPreset): Boolean
+
+    suspend fun update(expected: SessionPreset, proposed: SessionPreset): SessionPresetChange
+    suspend fun delete(expected: SessionPreset): SessionPresetChange
 }
+
+enum class SessionPresetChange { APPLIED, REVISION_CONFLICT, NAME_TAKEN }
 
 class RoomSessionPresetStore internal constructor(private val database: SessionPresetDatabase) :
     SessionPresetRepository, AutoCloseable {
     override suspend fun list(): List<SessionPreset> = database.presets().list().map(SessionPresetRow::domain)
 
     override suspend fun add(preset: SessionPreset): Boolean = database.presets().insert(preset.row()) != -1L
+
+    override suspend fun update(expected: SessionPreset, proposed: SessionPreset): SessionPresetChange {
+        require(proposed.uuid == expected.uuid && proposed.createdAt == expected.createdAt)
+        return change(expected) { dao, current ->
+            val owner = dao.ownerOfName(proposed.name)
+            if (owner != null && owner != current.uuid) return@change SessionPresetChange.NAME_TAKEN
+            val replacement = proposed.row()
+            if (replacement != current) check(dao.update(replacement) == 1)
+            SessionPresetChange.APPLIED
+        }
+    }
+
+    override suspend fun delete(expected: SessionPreset): SessionPresetChange = change(expected) { dao, current ->
+        check(dao.delete(current) == 1)
+        SessionPresetChange.APPLIED
+    }
+
+    private suspend fun change(expected: SessionPreset, write: suspend (SessionPresetDao, SessionPresetRow) -> SessionPresetChange) =
+        database.useWriterConnection { connection ->
+            connection.immediateTransaction {
+                val dao = database.presets()
+                val current = dao.find(expected.uuid)
+                if (current == null || current != expected.row()) SessionPresetChange.REVISION_CONFLICT
+                else write(dao, current)
+            }
+        }
 
     override fun close() = database.close()
 }
@@ -69,8 +104,20 @@ internal interface SessionPresetDao {
     @Query("SELECT * FROM session_presets ORDER BY name")
     suspend fun list(): List<SessionPresetRow>
 
+    @Query("SELECT * FROM session_presets WHERE uuid = :uuid")
+    suspend fun find(uuid: String): SessionPresetRow?
+
+    @Query("SELECT uuid FROM session_presets WHERE name = :name")
+    suspend fun ownerOfName(name: String): String?
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(row: SessionPresetRow): Long
+
+    @Update
+    suspend fun update(row: SessionPresetRow): Int
+
+    @Delete
+    suspend fun delete(row: SessionPresetRow): Int
 }
 
 @Database(entities = [SessionPresetRow::class], version = 1, exportSchema = true)

@@ -15,6 +15,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import java.time.Clock
+import java.time.Instant
 import java.time.ZoneId
 import java.util.UUID
 
@@ -162,6 +163,65 @@ class ConfiguredSessionController(
         }
     }
 
+    fun editPreset(token: Long, uuid: String) = managePreset(token, uuid) { ticket, creation, preset ->
+        ConfiguredForm.PresetEdit(ticket, creation, preset)
+    }
+
+    fun requestPresetDeletion(token: Long, uuid: String) = managePreset(token, uuid) { ticket, creation, preset ->
+        ConfiguredForm.PresetDeletion(ticket, creation, preset)
+    }
+
+    private fun managePreset(token: Long, uuid: String, open: (Long, ConfiguredForm.Creation, SessionPreset) -> ConfiguredForm) {
+        val creation = creationForm(token) ?: return
+        val catalog = ui.presets ?: return
+        if (catalog.nameDraft != null) return
+        val preset = catalog.items?.singleOrNull { it.uuid == uuid } ?: return
+        ui = ui.copy(form = open(epoch(), creation, preset), problem = null, confirmation = null)
+    }
+
+    private fun returnFromPreset(creation: ConfiguredForm.Creation) {
+        val token = epoch()
+        ui = ui.copy(form = creation.copy(token = token), problem = null)
+        loadEquipment(token)
+    }
+
+    private fun submitPresetChange(creation: ConfiguredForm.Creation, expected: SessionPreset, proposed: SessionPreset?) {
+        val store = presets ?: return
+        val catalog = ui.presets ?: return
+        val items = catalog.items ?: return
+        operation {
+            val result = try {
+                if (proposed == null) store.delete(expected) else store.update(expected, proposed)
+            } catch (error: CancellationException) {
+                throw error
+            } catch (_: Exception) {
+                refreshAfterPresetFailure(creation, ConfiguredProblemKind.UNCONFIRMED)
+                return@operation
+            }
+            when (result) {
+                SessionPresetChange.NAME_TAKEN -> invalid("Un preset existe déjà sous ce nom.")
+                SessionPresetChange.REVISION_CONFLICT -> refreshAfterPresetFailure(creation, ConfiguredProblemKind.REVISION)
+                SessionPresetChange.APPLIED -> {
+                    val remaining = items.filterNot { it.uuid == expected.uuid }
+                    returnFromPreset(creation)
+                    ui = ui.copy(
+                        presets = catalog.copy(items = (remaining + listOfNotNull(proposed)).sortedBy { it.name }, savedName = proposed?.name),
+                        confirmation = if (proposed == null) "Preset supprimé : ${expected.name}" else null,
+                    )
+                }
+            }
+        }
+    }
+
+    private fun refreshAfterPresetFailure(creation: ConfiguredForm.Creation, kind: ConfiguredProblemKind) {
+        val message = if (kind == ConfiguredProblemKind.REVISION)
+            "Ce preset a été modifié ou supprimé. Consultez la liste actualisée."
+        else "Résultat non confirmé. Vérifiez le preset dans la liste actualisée."
+        returnFromPreset(creation)
+        ui = ui.copy(presets = SessionPresetsState(), problem = ConfiguredProblem(kind, message))
+        loadPresets(ui.form!!.token)
+    }
+
     fun open(uuid: String) {
         if (ui.open || !acquire()) return
         ownsGate = true; ui = ConfiguredEditorState(open = true, epoch = epoch())
@@ -176,17 +236,31 @@ class ConfiguredSessionController(
         val repo = equipment ?: return
         scope.launch {
             val choices = loadEquipmentChoices(repo)
-            if (ui.open && ui.form?.token == generation) ui = ui.copy(equipmentChoices = choices)
+            val current = ui.form
+            if (ui.open && (current?.token == generation || (current as? ConfiguredForm.PresetEdit)?.creation?.token == generation))
+                ui = ui.copy(equipmentChoices = choices)
         }
     }
     fun selectEnd(uuid: String) {
         if (ui.canNavigate && ui.saved?.ends?.any { it.uuid == uuid } == true)
             ui = ui.copy(selectedEndUuid = uuid, epoch = epoch(), problem = null)
     }
-    fun nextEnd() {
-        if (!ui.canForm || !ui.sessionActive) return
+    fun nextEnd(expectedEpoch: Long) {
+        if (ui.epoch != expectedEpoch || !ui.canForm || !ui.sessionActive) return
+        propose { submitNextEnd(NextEndConfigurationChoice.Inherit) }
+    }
+    fun editNextEnd(expectedEpoch: Long) {
+        if (ui.epoch != expectedEpoch || !ui.canForm || !ui.sessionActive) return
         val source = ui.saved!!.ends.maxByOrNull { it.end.index }?.configuration ?: ui.saved!!.initialConfiguration
-        ui = ui.copy(form = ConfiguredForm.NextEnd(epoch(), ConfigurationDraft.from(source)), epoch = serial, problem = null)
+        val token = epoch()
+        ui = ui.copy(form = ConfiguredForm.NextEnd(token, ConfigurationDraft.from(source)), epoch = token, problem = null)
+    }
+    private fun submitNextEnd(choice: NextEndConfigurationChoice) {
+        val previous = requireNotNull(ui.saved)
+        val endUuid = newUuid()
+        val proposed = previous.createNextEnd(endUuid, clock.instant(), choice)
+        val label = if (previous.ends.isEmpty()) "Créer la première volée" else "Créer la volée suivante"
+        submit(label, ConfiguredWriteRequest.Update(previous, proposed), endUuid)
     }
     fun editMetadata() {
         if (!ui.canForm) return
@@ -195,7 +269,12 @@ class ConfiguredSessionController(
         loadEquipment(ticket)
     }
     fun cancelForm(token: Long) {
-        if (ui.ready && ui.form?.token == token) ui = ui.copy(form = null, epoch = epoch(), problem = null)
+        val current = ui.form?.takeIf { ui.ready && it.token == token } ?: return
+        when (current) {
+            is ConfiguredForm.PresetEdit -> returnFromPreset(current.creation)
+            is ConfiguredForm.PresetDeletion -> returnFromPreset(current.creation)
+            else -> ui = ui.copy(form = null, epoch = epoch(), problem = null)
+        }
     }
     private fun form(token: Long, change: (ConfiguredForm) -> ConfiguredForm) {
         if (ui.ready && ui.form?.token == token) ui = ui.copy(form = change(ui.form!!), problem = null)
@@ -203,7 +282,8 @@ class ConfiguredSessionController(
     private fun configuration(token: Long, change: (ConfigurationDraft) -> ConfigurationDraft) = form(token) {
         when (it) {
             is ConfiguredForm.Creation -> it.copy(configuration = change(it.configuration))
-            is ConfiguredForm.NextEnd -> if (it.explicit) it.copy(configuration = change(it.configuration)) else it
+            is ConfiguredForm.PresetEdit -> it.copy(configuration = change(it.configuration))
+            is ConfiguredForm.NextEnd -> it.copy(configuration = change(it.configuration))
             else -> it
         }
     }
@@ -211,6 +291,7 @@ class ConfiguredSessionController(
         when (it) {
             is ConfiguredForm.Creation -> it.copy(metadata = change(it.metadata))
             is ConfiguredForm.Metadata -> it.copy(metadata = change(it.metadata))
+            is ConfiguredForm.PresetEdit -> it.copy(metadata = change(it.metadata))
             else -> it
         }
     }
@@ -225,22 +306,17 @@ class ConfiguredSessionController(
     }
     fun indoor(token: Long, value: Boolean) = configuration(token) { it.copy(indoor = value) }
     fun scoring(token: Long, value: ScoringMode) = configuration(token) { it.copy(scoringMode = value) }
-    fun explicitNext(token: Long, value: Boolean) = form(token) {
-        if (it !is ConfiguredForm.NextEnd) it
-        else if (value) it.copy(explicit = true)
-        else {
-            // Show the configuration that Inherit will actually capture, never a stale explicit draft.
-            val source = ui.saved!!.ends.maxByOrNull { end -> end.end.index }?.configuration ?: ui.saved!!.initialConfiguration
-            it.copy(explicit = false, configuration = ConfigurationDraft.from(source))
-        }
-    }
     fun title(token: Long, value: String) = metadata(token) { it.copy(title = value) }
     fun planned(token: Long, value: String) = metadata(token) { it.copy(plannedEnds = value) }
     fun location(token: Long, value: String) = metadata(token) { it.copy(location = value) }
     fun notes(token: Long, value: String) = metadata(token) { it.copy(notes = value) }
     fun chooseEquipment(token: Long, kind: EquipmentKind, uuid: String?) {
         if (!ui.ready || ui.form?.token != token) return
-        val presetEquipment = (ui.form as? ConfiguredForm.Creation)?.presetEquipment
+        val presetEquipment = when (val form = ui.form) {
+            is ConfiguredForm.Creation -> form.presetEquipment
+            is ConfiguredForm.PresetEdit -> EquipmentSelection(form.expected.bowUuid, form.expected.arrowSetUuid)
+            else -> null
+        }
         val original = if (kind == EquipmentKind.BOW)
             presetEquipment?.bowUuid ?: ui.saved?.metadata?.bowUuid
         else presetEquipment?.arrowSetUuid ?: ui.saved?.metadata?.arrowSetUuid
@@ -250,30 +326,49 @@ class ConfiguredSessionController(
     fun confirmForm(token: Long) {
         val value = ui.form?.takeIf { ui.ready && it.token == token } ?: return
         propose {
-            val now = clock.instant()
             when (value) {
-                is ConfiguredForm.Creation -> {
-                    val config = value.configuration.configuration()
-                    val metadata = value.metadata.metadata(SessionDateTime.fromInstant(now, zone()))
-                    val proposed = ConfiguredSession.create(newUuid(), metadata, config, now)
-                    submit("Créer le brouillon configurable", ConfiguredWriteRequest.Create(proposed), null)
-                }
-                is ConfiguredForm.NextEnd -> {
-                    val previous = ui.saved!!
-                    val choice = if (value.explicit) NextEndConfigurationChoice.Replace(value.configuration.configuration()) else NextEndConfigurationChoice.Inherit
-                    val endUuid = newUuid()
-                    submit("Créer la volée suivante", ConfiguredWriteRequest.Update(previous, previous.createNextEnd(endUuid, now, choice)), endUuid)
-                }
+                is ConfiguredForm.Creation -> submitCreation(value, startImmediately = false)
+                is ConfiguredForm.NextEnd -> submitNextEnd(NextEndConfigurationChoice.Replace(value.configuration.configuration()))
                 is ConfiguredForm.Metadata -> {
+                    val now = clock.instant()
                     val previous = ui.saved!!
                     submit("Modifier les métadonnées", ConfiguredWriteRequest.Update(previous,
                         previous.withMetadata(value.metadata.metadata(previous.metadata.date), now)), ui.selectedEndUuid)
                 }
+                is ConfiguredForm.PresetEdit -> submitPresetChange(value.creation, value.expected, value.proposed())
+                is ConfiguredForm.PresetDeletion -> submitPresetChange(value.creation, value.expected, null)
             }
         }
     }
+
+    fun createAndStart(token: Long) {
+        val form = creationForm(token) ?: return
+        if (ui.presets?.nameDraft != null) return
+        propose { submitCreation(form, startImmediately = true) }
+    }
+
+    private fun submitCreation(form: ConfiguredForm.Creation, startImmediately: Boolean) {
+        val now = clock.instant()
+        val configuration = form.configuration.configuration()
+        val draft = if (startImmediately && form.metadata.title.isBlank())
+            form.metadata.copy(title = requireNotNull(form.configuration.suggestedTitle)) else form.metadata
+        val metadata = draft.metadata(SessionDateTime.fromInstant(now, zone()))
+        val created = ConfiguredSession.create(newUuid(), metadata, configuration, now)
+        val proposed = if (startImmediately) startWithFirstEnd(created, now) else created
+        val label = if (startImmediately) "Créer et démarrer la séance" else "Créer le brouillon configurable"
+        submit(label, ConfiguredWriteRequest.Create(proposed), proposed.ends.firstOrNull()?.uuid)
+    }
+
     fun start() {
-        if (ui.canForm && ui.saved?.status == SessionStatus.DRAFT) revise("Démarrer la séance") { it.start(clock.instant()) }
+        val previous = ui.saved?.takeIf { ui.canForm && it.status == SessionStatus.DRAFT } ?: return
+        propose {
+            val proposed = startWithFirstEnd(previous, clock.instant())
+            submit("Démarrer la séance", ConfiguredWriteRequest.Update(previous, proposed), firstEnd(proposed))
+        }
+    }
+    private fun startWithFirstEnd(session: ConfiguredSession, now: Instant): ConfiguredSession {
+        val started = session.start(now)
+        return if (started.ends.isEmpty()) started.createNextEnd(newUuid(), now, NextEndConfigurationChoice.Inherit) else started
     }
     fun validateEnd() {
         if (ui.canNavigate && ui.editableEnd) revise("Valider la volée") { it.validateEnd(ui.selectedEnd!!.uuid, clock.instant()) }
@@ -579,8 +674,16 @@ class ConfiguredSessionController(
                 else ui = ui.copy(problem = ConfiguredProblem(ConfiguredProblemKind.TECHNICAL, "Interruption avant DML ; intention conservée."))
                 throw e
             } catch (e: CancellationException) {
-                if (ui.pending != null) uncertain("Interruption sans preuve de rollback ; intention exacte conservée.")
-                else ui = ui.copy(problem = ConfiguredProblem(ConfiguredProblemKind.TECHNICAL, "Lecture interrompue."))
+                val presetCreation = when (val form = ui.form) {
+                    is ConfiguredForm.PresetEdit -> form.creation
+                    is ConfiguredForm.PresetDeletion -> form.creation
+                    else -> null
+                }
+                when {
+                    presetCreation != null -> refreshAfterPresetFailure(presetCreation, ConfiguredProblemKind.UNCONFIRMED)
+                    ui.pending != null -> uncertain("Interruption sans preuve de rollback ; intention exacte conservée.")
+                    else -> ui = ui.copy(problem = ConfiguredProblem(ConfiguredProblemKind.TECHNICAL, "Lecture interrompue."))
+                }
                 throw e
             } catch (e: Exception) {
                 if (ui.pending != null) uncertain("Écriture non confirmée : ${e.javaClass.simpleName}. Intention conservée.")

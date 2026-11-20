@@ -106,5 +106,8 @@ class SessionSuggestionTest {
             insertions++
             return items.add(preset)
         }
+
+        override suspend fun update(expected: SessionPreset, proposed: SessionPreset) = error("Unexpected preset edit")
+        override suspend fun delete(expected: SessionPreset) = error("Unexpected preset deletion")
     }
 }

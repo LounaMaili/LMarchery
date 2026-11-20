@@ -104,6 +104,9 @@ sélection numérotée jusqu'à revue de ce complément.
 | 4.10 | Suggestions intégrées (salle 18 m classique/poulies, extérieur 30/50/70 m) | ✓ (ADR 049) | Basse |
 | 4.11 | Étendre la sauvegarde versionnée au matériel, avec rétrocompatibilité et import atomique, avant toute UI de catalogue | ✓ contrat/codec, Room atomique et SAF V2 (ADR 026/027/029) ; essais physiques de la combinaison à faire | Haute |
 
+« Mes presets » permet aussi de modifier ou de supprimer un preset personnel
+([ADR 049](adr/049-presets-de-seance-locaux.md)).
+
 La collecte/restauration Room V2 est décrite dans l’[ADR 027](adr/027-archives-room-v2-atomiques.md).
 Le parcours SAF Android propose V2 complet et V1 explicitement sans matériel
 ([ADR 029](adr/029-saf-android-archives-v2.md)). Le catalogue est connecté

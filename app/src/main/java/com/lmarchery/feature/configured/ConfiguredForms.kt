@@ -19,6 +19,9 @@ data class ConfigurationDraft(
     val indoor: Boolean = true,
     val scoringMode: ScoringMode = ScoringMode.TRAINING,
 ) {
+    internal val suggestedTitle: String?
+        get() = distance.toIntOrNull()?.takeIf { it > 0 }?.let { "Séance à $it m · ${profile.definition.name}" }
+
     fun configuration(): EndConfiguration = EndConfiguration(profile.definition, profile.regulatoryEdition,
         positive(distance, "Distance"), arrowCountMode,
         if (arrowCountMode == ArrowCountMode.FIXED) positive(fixedCount, "Nombre de flèches") else null, indoor, scoringMode)
@@ -82,8 +85,28 @@ sealed interface ConfiguredForm {
                 presetEquipment = equipment)
         }
     }
-    data class NextEnd(override val token: Long, val configuration: ConfigurationDraft, val explicit: Boolean = false) : ConfiguredForm
+    data class NextEnd(override val token: Long, val configuration: ConfigurationDraft) : ConfiguredForm
     data class Metadata(override val token: Long, val metadata: ConfiguredMetadataDraft) : ConfiguredForm
+    data class PresetEdit(
+        override val token: Long,
+        val creation: Creation,
+        val expected: SessionPreset,
+        val configuration: ConfigurationDraft = ConfigurationDraft.from(expected.configuration),
+        val metadata: ConfiguredMetadataDraft = ConfiguredMetadataDraft(
+            title = expected.name,
+            plannedEnds = expected.plannedEndCount?.toString().orEmpty(),
+            equipment = EquipmentSelection(expected.bowUuid, expected.arrowSetUuid),
+        ),
+    ) : ConfiguredForm {
+        fun proposed() = expected.copy(
+            name = metadata.title.trim(),
+            configuration = configuration.configuration(),
+            plannedEndCount = metadata.plannedEndCount(),
+            bowUuid = metadata.equipment.bowUuid,
+            arrowSetUuid = metadata.equipment.arrowSetUuid,
+        )
+    }
+    data class PresetDeletion(override val token: Long, val creation: Creation, val expected: SessionPreset) : ConfiguredForm
 }
 
 private fun positive(text: String, name: String): Int = requireNotNull(text.toIntOrNull()?.takeIf { it > 0 }) {
