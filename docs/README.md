@@ -86,4 +86,5 @@ Protocole de la combinaison : [Pixel 8 / Android 17](validation-integration-vise
 Campagne isolée : [LMarchery TEST et protocole Android](validation-android-sandbox.md).
 
 - [Sauvegarde JSON V4 et preuves d’annulation](export-format-v4.md).
+- [Sauvegarde JSON V6 et observations météo manuelles](export-format-v6.md).
 - [Sauvegarde JSON V5, lieux, instantanés et partage de coordonnées](export-format-v5.md).

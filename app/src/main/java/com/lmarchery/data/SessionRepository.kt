@@ -50,9 +50,14 @@ fun interface ArchiveV2Source {
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ArchiveV5Access, ConfiguredSessionRepository {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ArchiveV5Access, ArchiveV6Access, ConfiguredSessionRepository {
     val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
     override suspend fun updateContent(expected: SessionContent, proposed: SessionContent) = withContext(dispatcher) { store.updateSessionContent(expected, proposed) }
+    val weather get() = store.weather
+    override suspend fun readArchiveV6() = withContext(dispatcher) { store.readArchiveV6() }
+    override suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6) =
+        withContext(dispatcher) { prepared(store.previewImportV6(archive)) }
+
     val shootingPlaces get() = store.places
     override suspend fun readArchiveV5() = withContext(dispatcher) { store.readArchiveV5() }
     override suspend fun readSportingGraph() = withContext(dispatcher) { store.readSportingGraph() }
@@ -66,6 +71,8 @@ class RoomSessionRepository(
         when (result) {
             is ArchiveV4PreviewResult.Ready -> PreparedV4Result.Ready(object : PreparedV4Import {
                 override val places = result.preview.incomingPlaces
+                override val weather = result.preview.weather
+                override val newObservations = result.preview.newObservations
                 override val newPlaceRecords = result.preview.newPlaceRecords
                 override val archive = result.preview.archive
                 override val plan = result.preview.plan

@@ -72,6 +72,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         check(!closed.get()) { "Session store is closed." }
     }
 
+    val weather = RoomWeather(database) { check(!closed.get()) }
     val places = RoomShootingPlaces(database) { check(!closed.get()) }
 
     private val archiveV2 = RoomArchiveV2(database) { check(!closed.get()) { "Session store is closed." } }
@@ -109,11 +110,22 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
       catch (e: CancellationException) { throw e }
       catch (e: Exception) { ArchiveV4ReadResult.TechnicalFailure(e) }
 
+    suspend fun readArchiveV6(): com.lmarchery.core.scoring.archive.v6.DomainArchiveV6 {
+        check(!closed.get())
+        val caller = currentCoroutineContext()
+        return database.useReaderConnection { c -> c.deferredTransaction {
+            val queries = StrictStorageQueries(c)
+            val v5 = DomainArchiveV5(collectArchiveV4(queries, caller, ArchiveV3Limits()), database.places().readPlaces(queries))
+            com.lmarchery.core.scoring.archive.v6.DomainArchiveV6(v5, database.allWeather(queries))
+        } }
+    }
+
     suspend fun readArchiveV5(): DomainArchiveV5 {
         check(!closed.get())
         val caller = currentCoroutineContext()
         return database.useReaderConnection { c -> c.deferredTransaction {
             val queries = StrictStorageQueries(c)
+            database.places().requireWeatherFreeExport()
             val sporting = collectArchiveV4(queries, caller, com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits())
             DomainArchiveV5(sporting, database.places().readPlaces(queries))
         } }
@@ -134,6 +146,8 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val archiveV3Import = RoomArchiveV3Import(database) { check(!closed.get()) { "Session store is closed." } }
     private val archiveV4Import = RoomArchiveV4Import(database) { check(!closed.get()) { "Session store is closed." } }
+    suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6) =
+        archiveV4Import.preview(archive.base.sporting, archive.base.places, archive.observations)
     suspend fun previewImportV5(archive: DomainArchiveV5) = archiveV4Import.preview(archive.sporting, archive.places)
     suspend fun previewImportV4(archive: com.lmarchery.core.scoring.archive.v4.DomainArchiveV4): ArchiveV4PreviewResult = archiveV4Import.preview(archive)
     suspend fun importArchiveV4(confirmed: ArchiveV4ImportPreview): ArchiveV4ImportResult = archiveV4Import.restore(confirmed)

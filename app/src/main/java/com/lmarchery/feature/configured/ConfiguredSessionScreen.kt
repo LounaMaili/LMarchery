@@ -144,6 +144,7 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                 }
                 if (form == null) state.saved?.let { session ->
                     state.savedPlace?.let { place -> item { AdoptedPlaceLabel(place) } }
+                    item { com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.end.index }, false) }
                     item { ConfiguredSessionSummary(session, readOnly = session.status == SessionStatus.COMPLETED) }
                     if (session.status == SessionStatus.DRAFT) item {
                         Button(controller::start, enabled = state.canForm) { Text("Démarrer la séance") }

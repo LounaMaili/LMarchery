@@ -97,6 +97,7 @@ internal fun ConfiguredRange(
                         }, enabled = state.canNavigate) { Text("Bilan de la volée ${captured.end.index}") }
                     }
                     state.savedPlace?.let { AdoptedPlaceLabel(it) }
+                    com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.end.index }, state.canNavigate)
                     ConfiguredSessionSummary(session, readOnly = false)
                     TextButton({ showDetails = false; controller.editMetadata() }, enabled = state.canForm) {
                         Text("Modifier les métadonnées et le matériel")

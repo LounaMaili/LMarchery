@@ -12,6 +12,7 @@ private val storageFingerprintKeys = linkedMapOf(
     "sessions" to "uuid", "ends" to "sessionUuid", "impacts" to "endUuid", "score_decisions" to "impactUuid",
     "impact_repositions" to "impactUuid", "session_configurations" to "sessionUuid", "end_configurations" to "endUuid",
     "bows" to "uuid", "arrow_sets" to "uuid", "impact_cancellations" to "impactUuid",
+    "weather_observations" to "uuid", "weather_ends" to "observationUuid",
     "shooting_sites" to "uuid", "shooting_lines" to "uuid", "session_places" to "sessionUuid",
 )
 

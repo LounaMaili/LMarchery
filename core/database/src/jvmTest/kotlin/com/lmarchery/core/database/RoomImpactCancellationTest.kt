@@ -69,7 +69,7 @@ class RoomImpactCancellationTest {
             assertEquals(expected, store.full())
         }
         openSessionStore(target).use { assertEquals(expected, it.full()) }
-        assertEquals(listOf("16"), f.rows(target, "SELECT count(*) FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT IN ('room_master_table','room_table_modification_log')"))
+        assertEquals(listOf("18"), f.rows(target, "SELECT count(*) FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT IN ('room_master_table','room_table_modification_log')"))
         assertTrue(f.rows(target, "PRAGMA foreign_key_check").isEmpty())
     }
 
@@ -94,7 +94,7 @@ class RoomImpactCancellationTest {
             val schema = d.schema(file, oldTables)
             openSessionStore(file).use { store -> assertTrue(store.full().sessions.isNotEmpty()) }
             assertEquals(before, f.contents(file, oldTables)); assertEquals(schema, d.schema(file, oldTables))
-            assertEquals(listOf("5"), f.rows(file, "PRAGMA user_version"))
+            assertEquals(listOf("6"), f.rows(file, "PRAGMA user_version"))
             assertEquals(listOf("0"), f.rows(file, "SELECT count(*) FROM impact_cancellations"))
             assertTrue(f.rows(file, "PRAGMA foreign_key_check").isEmpty()); assertEquals(listOf("ok"), f.rows(file, "PRAGMA integrity_check"))
         }
@@ -214,10 +214,10 @@ class RoomImpactCancellationTest {
         val downgrade = old()
         try {
             val error = assertFailsWith<IllegalStateException> { downgrade.useReaderConnection { connection -> connection.usePrepared("SELECT 1") { it.step() } } }
-            assertTrue(error.message.orEmpty().contains("5 to 3"))
+            assertTrue(error.message.orEmpty().contains("6 to 3"))
         } finally { downgrade.close() }
         assertEquals(before, f.contents(file, tables)); assertEquals(hash, f.rows(file, "SELECT * FROM room_master_table"))
-        assertEquals(listOf("5"), f.rows(file, "PRAGMA user_version"))
+        assertEquals(listOf("6"), f.rows(file, "PRAGMA user_version"))
     }
 
     @Test fun `coroutine cancellation after a true evidence INSERT preserves the intent and rolls back completely`() = runBlocking<Unit> {

@@ -68,9 +68,9 @@ class RoomEquipmentMigrationTest {
             assertEquals(emptyList(), assertIs<EquipmentDiscoveryResult.Found>(store.equipment.discoverArrowSets()).uuids)
         }
         assertEquals(before, contents(path, oldTables))
-        assertEquals(listOf("5"), rows(path, "PRAGMA user_version"))
-        assertEquals(oldSchema, rows(path, "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations','impact_cancellations','shooting_sites','shooting_lines','session_places') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
-        assertEquals(16, rows(path, "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
+        assertEquals(listOf("6"), rows(path, "PRAGMA user_version"))
+        assertEquals(oldSchema, rows(path, "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations','impact_cancellations','shooting_sites','shooting_lines','session_places','weather_observations','weather_ends') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
+        assertEquals(18, rows(path, "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata')").size)
         assertEquals(listOf("0"), rows(path, "SELECT count(*) FROM impact_cancellations"))
         assertEquals(emptyList(), rows(path, "PRAGMA foreign_key_check"))
         openSessionStore(path).use { store ->
@@ -190,7 +190,7 @@ class RoomEquipmentMigrationTest {
             v1Bytes = codec.encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive)
             v2Bytes = codec.encode(store.fullV2())
         }
-        assertEquals(listOf("5"), rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("6"), rows(path, "PRAGMA user_version"))
         openSessionStore(path).use { store ->
             assertEquals(finalSession, assertIs<SessionReadResult.Found>(store.read(finalSession.uuid)).session)
             assertContentEquals(v1Bytes, codec.encode(assertIs<ArchiveReadResult.Found>(store.readArchive()).archive))
