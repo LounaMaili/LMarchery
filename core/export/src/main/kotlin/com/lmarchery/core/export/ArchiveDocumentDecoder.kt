@@ -11,6 +11,7 @@ sealed interface ArchiveDocumentRead {
     data class V1(val archive: DomainArchive) : ArchiveDocumentRead
     data class V2(val archive: DomainArchiveV2) : ArchiveDocumentRead
     data class V3(val archive: DomainArchiveV3) : ArchiveDocumentRead
+    data class V7(val archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7) : ArchiveDocumentRead
     data class V6(val archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6) : ArchiveDocumentRead
     data class V5(val archive: DomainArchiveV5) : ArchiveDocumentRead
     data class V4(val archive: DomainArchiveV4) : ArchiveDocumentRead
@@ -42,6 +43,7 @@ class ArchiveDocumentDecoder(
                 is ArchiveV4JsonRead.Accepted -> ArchiveDocumentRead.V4(result.archive)
                 is ArchiveV4JsonRead.Rejected -> result.issue.rejected()
             }
+            7 -> ArchiveDocumentRead.V7(ArchiveV7JsonCodec().decode(bytes))
             6 -> ArchiveDocumentRead.V6(ArchiveV6JsonCodec().decode(bytes))
             5 -> ArchiveDocumentRead.V5(ArchiveV5JsonCodec().decode(bytes))
             else -> ArchiveDocumentRead.Rejected("UNSUPPORTED_VERSION", "$.schemaVersion", "Unsupported archive schema; no downgrade is available.")

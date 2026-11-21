@@ -51,6 +51,8 @@ internal fun WeatherSection(session: String, ends: List<Pair<String, Int>>, canR
                 ).joinToString(" · "), style = MaterialTheme.typography.bodySmall)
                 HorizontalDivider()
             }
+            if (view.loaded) EstimateSection(journal.estimates, session, view.place?.site?.position, view.estimates,
+                canRecord && !view.busy && view.pending == null && view.formId == null)
             if (canRecord && view.loaded && !view.busy && view.pending == null)
                 OutlinedButton({ journal.openForm(session) }) { Text("Ajouter une observation manuelle") }
         }

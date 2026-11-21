@@ -74,6 +74,7 @@ et [plan de consolidation vers main](plan-consolidation-main.md).
 | 53 | Azimut de la ligne de tir et boussole | [adr/053-azimut-et-boussole.md](adr/053-azimut-et-boussole.md) |
 | 54 | Observations météo et composantes du vent | [adr/054-observations-meteo-et-vent.md](adr/054-observations-meteo-et-vent.md) |
 | 55 | Identité d’une flèche physique | [adr/055-fleches-physiques.md](adr/055-fleches-physiques.md) |
+| 56 | Estimations météo ponctuelles | [adr/056-estimations-meteo.md](adr/056-estimations-meteo.md) |
 
 Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 
@@ -88,3 +89,4 @@ Campagne isolée : [LMarchery TEST et protocole Android](validation-android-sand
 - [Sauvegarde JSON V4 et preuves d’annulation](export-format-v4.md).
 - [Sauvegarde JSON V6 et observations météo manuelles](export-format-v6.md).
 - [Sauvegarde JSON V5, lieux, instantanés et partage de coordonnées](export-format-v5.md).
+- [Sauvegarde JSON V7 et estimations de fournisseur](export-format-v7.md).

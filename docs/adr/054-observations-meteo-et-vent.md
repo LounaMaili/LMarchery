@@ -1,6 +1,6 @@
 # ADR 054 — Observations météo et composantes du vent
 
-L2 adopte la saisie manuelle hors ligne, les observations immuables et l’analyse descriptive des séances clôturées. Les sources automatisées restent à l’étude.
+L2 adopte la saisie manuelle hors ligne, les observations immuables et l’analyse descriptive des séances clôturées. L3a ajoute le [contrat distinct des estimations de fournisseur](056-estimations-meteo.md).
 
 ## Observation et provenance
 

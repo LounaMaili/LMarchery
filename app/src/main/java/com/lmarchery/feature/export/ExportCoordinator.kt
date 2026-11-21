@@ -32,7 +32,7 @@ sealed interface ExportState {
     data object Writing : ExportState
     data class Succeeded(val sessionCount: Int, val receipt: ExportReceipt, val schemaVersion: Int = 1,
         val profileCount: Int = 0, val bowCount: Int = 0, val arrowSetCount: Int = 0,
-        val endCount: Int = 0, val impactCount: Int = 0, val weatherCount: Int = 0) : ExportState
+        val endCount: Int = 0, val impactCount: Int = 0, val weatherCount: Int = 0, val estimateCount: Int = 0) : ExportState
     data object Cancelled : ExportState
     data class Failed(val diagnostic: String, val potentiallyIncomplete: Boolean = false) : ExportState
 }
@@ -70,6 +70,7 @@ class ExportCoordinator(
     private var bowCount = 0
     private var arrowSetCount = 0
     private var schemaVersion = 1
+    private var estimateCount = 0
     private var weatherCount = 0
     private var endCount = 0
     private var impactCount = 0
@@ -78,6 +79,7 @@ class ExportCoordinator(
     fun begin() = beginVersion(1)
     fun beginV2() = beginVersion(2)
     fun beginV3() = beginVersion(3)
+    fun beginV7() = beginVersion(7)
     fun beginV6() = beginVersion(6)
     fun beginV5() = beginVersion(5)
     fun shareCoordinates(ticket: String, consent: Boolean) {
@@ -101,14 +103,18 @@ class ExportCoordinator(
             try {
                 var containsCoordinates = false
                 val bytes = if (version >= 5) {
-                    val weather = if (version == 6) withContext(dispatcher) {
+                    val v7 = if (version == 7) withContext(dispatcher) {
+                        (v4Source as? com.lmarchery.data.ArchiveV7Access ?: throw ExportProblem("Collecte V7 indisponible.")).readArchiveV7()
+                    } else null
+                    val weather = v7?.base ?: if (version == 6) withContext(dispatcher) {
                         (v4Source as? com.lmarchery.data.ArchiveV6Access ?: throw ExportProblem("Collecte V6 indisponible.")).readArchiveV6()
                     } else null
                     val full = weather?.base ?: withContext(dispatcher) {
                         (v4Source as? ArchiveV5Access ?: throw ExportProblem("Collecte V5 indisponible.")).readArchiveV5()
                     }
                     weatherCount = weather?.observations?.size ?: 0
-                    containsCoordinates = full.places.containsCoordinates
+                    estimateCount = v7?.estimates?.size ?: 0
+                    containsCoordinates = v7?.containsCoordinates ?: full.places.containsCoordinates
                     sessionCount = full.sporting.sessions.size
                     profileCount = full.sporting.profiles.size
                     bowCount = full.sporting.bows.size
@@ -117,7 +123,8 @@ class ExportCoordinator(
                     impactCount = full.sporting.sessions.sumOf { s -> s.ends.sumOf { it.end.impacts.size } }
                     mutableState.value = ExportState.Validating
                     withContext(dispatcher) {
-                        if (weather == null) ArchiveV5JsonCodec().encode(full)
+                        if (v7 != null) com.lmarchery.core.export.ArchiveV7JsonCodec().encode(v7)
+                        else if (weather == null) ArchiveV5JsonCodec().encode(full)
                         else com.lmarchery.core.export.ArchiveV6JsonCodec().encode(weather)
                     }
                 } else if (version == 4) {
@@ -211,7 +218,7 @@ class ExportCoordinator(
                 val receipt = withContext(dispatcher) { writer.writeAndVerify(destination, bytes) }
                 currentCoroutineContext().ensureActive()
                 require(receipt.byteCount == bytes.size)
-                mutableState.value = ExportState.Succeeded(sessionCount, receipt, schemaVersion, profileCount, bowCount, arrowSetCount, endCount, impactCount, weatherCount)
+                mutableState.value = ExportState.Succeeded(sessionCount, receipt, schemaVersion, profileCount, bowCount, arrowSetCount, endCount, impactCount, weatherCount, estimateCount)
                 clear(); unlock()
             } catch (e: CancellationException) {
                 fail("Écriture interrompue. Sauvegarde non confirmée.", true); throw e
@@ -227,7 +234,7 @@ class ExportCoordinator(
         if (state.value == ExportState.Available || state.value is ExportState.Choosing)
             fail("Export interrompu par l’arrêt du processus. Aucun succès confirmé.", true)
     }
-    private fun clear() { prepared = null; weatherCount = 0; sessionCount = 0; profileCount = 0; bowCount = 0; arrowSetCount = 0; endCount = 0; impactCount = 0 }
+    private fun clear() { prepared = null; estimateCount = 0; weatherCount = 0; sessionCount = 0; profileCount = 0; bowCount = 0; arrowSetCount = 0; endCount = 0; impactCount = 0 }
     private fun unlock() { if (ownsLock) { ownsLock = false; release() } }
     private fun fail(message: String, incomplete: Boolean = false) {
         clear(); mutableState.value = ExportState.Failed(message, incomplete); unlock()

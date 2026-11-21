@@ -36,7 +36,10 @@ def inspect(apk, package, label, tools):
     require(app.get(ANDROID + 'allowBackup') == 'false', 'Automatic backup must remain disabled')
     require(app.get(ANDROID + 'taskAffinity') in (None, package), 'Shared task affinity is forbidden')
     permissions = sorted(p.get(ANDROID + 'name') for p in manifest.findall('uses-permission'))
-    require(not {'android.permission.INTERNET', 'android.permission.CAMERA'} & set(permissions), 'V1 privacy permissions changed')
+    forbidden_permissions = {'android.permission.INTERNET', 'android.permission.CAMERA',
+                           'android.permission.ACCESS_COARSE_LOCATION', 'android.permission.ACCESS_FINE_LOCATION',
+                           'android.permission.ACCESS_BACKGROUND_LOCATION'}
+    require(forbidden_permissions.isdisjoint(permissions), 'Offline camera/network/location permission contract changed')
     for permission in manifest.findall('permission'):
         require(permission.get(ANDROID + 'name', '').startswith(package + '.'), 'Permission namespace collision')
     providers = []

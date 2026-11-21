@@ -3,6 +3,9 @@ package com.lmarchery.feature.archiveimport
 import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
 import com.lmarchery.core.scoring.archive.v6.DomainArchiveV6
 import com.lmarchery.core.model.weather.WeatherObservation
+import com.lmarchery.data.ArchiveV7Access
+import com.lmarchery.core.scoring.archive.v7.DomainArchiveV7
+import com.lmarchery.core.model.weather.SessionEstimate
 import com.lmarchery.data.ArchiveV6Access
 import com.lmarchery.core.model.place.ShootingPlaces
 import com.lmarchery.core.database.*
@@ -31,10 +34,12 @@ sealed interface ImportState {
     data class SucceededV3(val added: ArchiveV3Counts, val identical: ArchiveV3Counts,
         val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false) : ImportState
     data class UnconfirmedV3(val diagnostic: String) : ImportState
-    data class PreviewV4(val plan: ArchiveV4ImportPlan, val confirmationId: String, val places: ShootingPlaces? = null, val newPlaceRecords: Int = 0, val newObservations: Int? = null) : ImportState
+    data class PreviewV4(val plan: ArchiveV4ImportPlan, val confirmationId: String, val places: ShootingPlaces? = null,
+        val newPlaceRecords: Int = 0, val newObservations: Int? = null, val newEstimates: Int? = null,
+        val containsCoordinates: Boolean = places?.containsCoordinates == true) : ImportState
     data class ConflictV4(val plan: ArchiveV4ImportPlan?, val diagnostic: String) : ImportState
     data class SucceededV4(val added: ArchiveV4Counts, val identical: ArchiveV4Counts,
-        val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false, val version: Int = 4, val newPlaceRecords: Int = 0, val newObservations: Int? = null) : ImportState
+        val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false, val version: Int = 4, val newPlaceRecords: Int = 0, val newObservations: Int? = null, val newEstimates: Int? = null) : ImportState
     data class UnconfirmedV4(val diagnostic: String) : ImportState
     data object Confirming : ImportState
     data object Importing : ImportState
@@ -110,6 +115,11 @@ class ImportCoordinator(
                 val decoded = withContext(dispatcher) { ArchiveDocumentDecoder(codec, v3Codec).decode(bytes) }
                 if (decoded is ArchiveDocumentRead.Rejected) {
                     finish(ImportState.Failed("${decoded.code} · ${decoded.path} : ${decoded.detail}")); return@launch
+                }
+                if (decoded is ArchiveDocumentRead.V7) {
+                    val base = decoded.archive.base
+                    prepareV4(base.base.sporting, places = base.base.places, weather = base.observations, estimates = decoded.archive.estimates)
+                    return@launch
                 }
                 if (decoded is ArchiveDocumentRead.V6) {
                     prepareV4(decoded.archive.base.sporting, places = decoded.archive.base.places, weather = decoded.archive.observations)
@@ -306,9 +316,9 @@ class ImportCoordinator(
         scope.launch {
             try {
                 mutableState.value = ImportState.Importing
-                val version = if (preview.weather != null) 6 else if (preview.places != null) 5 else 4
+                val version = if (preview.estimates != null) 7 else if (preview.weather != null) 6 else if (preview.places != null) 5 else 4
                 val success = when (val result = withContext(dispatcher) { preview.commit() }) {
-                    is RestoreV4Result.Imported -> ImportState.SucceededV4(result.added, result.identical, version = version, newPlaceRecords = preview.newPlaceRecords, newObservations = preview.newObservations)
+                    is RestoreV4Result.Imported -> ImportState.SucceededV4(result.added, result.identical, version = version, newPlaceRecords = preview.newPlaceRecords, newObservations = preview.newObservations, newEstimates = preview.newEstimates)
                     is RestoreV4Result.AlreadyPresent -> ImportState.SucceededV4(ArchiveV4Counts(0, 0, 0, 0, 0, 0),
                         result.identical, alreadyPresent = true, emptyArchive = result.emptyArchive, version = version)
                     is RestoreV4Result.Conflict -> {
@@ -344,7 +354,7 @@ class ImportCoordinator(
         val previous = candidateV4 ?: return
         mutableState.value = ImportState.Validating
         scope.launch {
-            try { prepareV4(previous.archive, recovering = true, places = previous.places, weather = previous.weather) }
+            try { prepareV4(previous.archive, recovering = true, places = previous.places, weather = previous.weather, estimates = previous.estimates) }
             catch (error: CancellationException) { uncertainV4("Relecture interrompue ; le résultat précédent reste non confirmé."); throw error }
             catch (_: Exception) { uncertainV4("Relecture impossible ; le résultat précédent reste non confirmé.") }
         }
@@ -358,13 +368,15 @@ class ImportCoordinator(
     }
 
     private suspend fun prepareV4(archive: DomainArchiveV4, recovering: Boolean = false,
-        places: ShootingPlaces? = null, weather: List<WeatherObservation>? = null) {
-        val version = if (weather != null) 6 else if (places != null) 5 else 4
+        places: ShootingPlaces? = null, weather: List<WeatherObservation>? = null, estimates: List<SessionEstimate>? = null) {
+        val version = if (estimates != null) 7 else if (weather != null) 6 else if (places != null) 5 else 4
         val importer = v4Repository ?: run {
             finish(ImportState.Failed("Import V$version indisponible.")); return
         }
         when (val result = withContext(dispatcher) {
-            if (weather != null) requireNotNull(importer as? ArchiveV6Access)
+            if (estimates != null) requireNotNull(importer as? ArchiveV7Access).previewImportV7(
+                DomainArchiveV7(DomainArchiveV6(DomainArchiveV5(archive, requireNotNull(places)), requireNotNull(weather)), estimates))
+            else if (weather != null) requireNotNull(importer as? ArchiveV6Access)
                 .previewImportV6(DomainArchiveV6(DomainArchiveV5(archive, requireNotNull(places)), weather))
             else if (places == null) importer.previewImportV4(archive)
             else requireNotNull(importer as? ArchiveV5Access).previewImportV5(DomainArchiveV5(archive, places))
@@ -375,7 +387,8 @@ class ImportCoordinator(
                     "Conflits V$version : aucune catégorie ne sera restaurée ni remplacée."))
                 else {
                     candidateV4 = result.candidate
-                    mutableState.value = ImportState.PreviewV4(result.candidate.plan, UUID.randomUUID().toString(), places, result.candidate.newPlaceRecords, weather?.let { result.candidate.newObservations })
+                    mutableState.value = ImportState.PreviewV4(result.candidate.plan, UUID.randomUUID().toString(), places, result.candidate.newPlaceRecords, weather?.let { result.candidate.newObservations }, estimates?.let { result.candidate.newEstimates },
+                        containsCoordinates = places?.containsCoordinates == true || !estimates.isNullOrEmpty())
                 }
             }
             is PreparedV4Result.NeedsIntervention -> {

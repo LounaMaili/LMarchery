@@ -56,6 +56,14 @@ internal class StrictStorageQueries private constructor(private val connection: 
             args.forEachIndexed { i, value -> statement.bindText(i + 1, value) }
             buildList { while (statement.step()) add(read(Row(statement,textLimit))) }
         }
+    suspend fun estimates(session: String? = null): List<com.lmarchery.core.model.weather.SessionEstimate> {
+        val max = ArchiveV3Limits().maxCollectionElements
+        val where = if (session == null) "" else " WHERE sessionUuid=?"
+        return rows("SELECT * FROM weather_estimates$where ORDER BY uuid LIMIT ${max + 1}", listOfNotNull(session)) {
+            it.estimate().domain()
+        }.also { if (it.size > max) storageBudget("weather_estimates", "Budget des estimations dépassé.") }
+    }
+
     suspend fun weatherRecords(session: String? = null): List<com.lmarchery.core.model.weather.WeatherObservation> {
         val max = ArchiveV3Limits().maxCollectionElements
         val where = if (session == null) "" else " WHERE sessionUuid=?"
@@ -92,7 +100,7 @@ internal class StrictStorageQueries private constructor(private val connection: 
         return rows("SELECT * FROM entity_identities WHERE uuid IN (" + uuids.joinToString(",") { "?" } + ")", uuids) { r -> IdentityRow(r.s("uuid"), r.s("kind")) }
     }
     override suspend fun allIdentities(): List<IdentityRow> =
-        rows("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') AND (kind != 'WEATHER' OR NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='weather_observations')) OR (kind IN ('SITE','LINE') AND NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='shooting_sites')) ORDER BY uuid", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
+        rows("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') AND (kind != 'WEATHER' OR NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='weather_observations')) AND (kind != 'ESTIMATE' OR NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='weather_estimates')) OR (kind IN ('SITE','LINE') AND NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='shooting_sites')) ORDER BY uuid", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
     override suspend fun allRowIdentities(): List<IdentityRow> =
         rows("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts UNION ALL SELECT uuid, 'BOW' AS kind FROM bows UNION ALL SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
     override suspend fun orphanChildPaths(): List<String> =
@@ -184,6 +192,10 @@ private class Row(private val statement: SQLiteStatement, private val textLimit:
         OrientationColumns(long(prefix + "degreesBits"), s(prefix + "north"), s(prefix + "origin"),
             nl(prefix + "uncertaintyBits"), ns(prefix + "confirmedAt")).value()
 
+    fun estimate() = EstimateRow(s("uuid"), s("sessionUuid"), s("provider"), s("kind"), ns("modelSelection"), ns("model"),
+        s("retrievedAt"), ns("issuedAt"), s("validAt"), ni("intervalSeconds"), long("latitudeBits"), long("longitudeBits"),
+        nl("gridLatBits"), nl("gridLonBits"), nl("windHeightBits"), nl("temperatureHeightBits"), nl("windBits"), nl("gustBits"),
+        nl("fromBits"), nl("temperatureBits"), nl("precipitationBits"))
     fun weather() = WeatherRow(s("uuid"), s("sessionUuid"), i("endCount"), s("observedAt"), s("validFrom"), ns("validUntil"),
         nl("meanBits"), nl("gustBits"), nl("fromBits"), ns("north"), nl("uncertaintyBits"), i("variable"),
         nl("temperatureBits"), ns("rain"), nl("precipitationBits"), s("origin"))

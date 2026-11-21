@@ -15,6 +15,8 @@ class ArchiveV4ImportPreview internal constructor(
     val newPlaceRecords: Int,
     val weather: List<com.lmarchery.core.model.weather.WeatherObservation>?,
     val newObservations: Int,
+    val estimates: List<com.lmarchery.core.model.weather.SessionEstimate>?,
+    val newEstimates: Int,
     fingerprint: Map<String, List<Byte>>,
 ) {
     internal val baselineFingerprint = ownFingerprint(fingerprint)

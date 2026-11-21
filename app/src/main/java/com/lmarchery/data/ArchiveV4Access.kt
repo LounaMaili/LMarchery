@@ -10,6 +10,11 @@ fun interface ArchiveV4Source {
     suspend fun readSportingGraph(): ArchiveV4ReadResult = readArchiveV4()
 }
 
+interface ArchiveV7Access {
+    suspend fun readArchiveV7(): com.lmarchery.core.scoring.archive.v7.DomainArchiveV7
+    suspend fun previewImportV7(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7): PreparedV4Result
+}
+
 interface ArchiveV6Access {
     suspend fun readArchiveV6(): com.lmarchery.core.scoring.archive.v6.DomainArchiveV6
     suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6): PreparedV4Result
@@ -26,6 +31,8 @@ interface PreparedV4Import {
     val places: ShootingPlaces? get() = null
     val newPlaceRecords: Int get() = 0
     val weather: List<com.lmarchery.core.model.weather.WeatherObservation>? get() = null
+    val estimates: List<com.lmarchery.core.model.weather.SessionEstimate>? get() = null
+    val newEstimates: Int get() = 0
     val newObservations: Int get() = 0
     val plan: ArchiveV4ImportPlan
     suspend fun commit(): RestoreV4Result

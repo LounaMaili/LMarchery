@@ -9,13 +9,19 @@ import java.util.UUID
 
 data class WeatherView(val session: String? = null, val rows: List<WeatherObservation> = emptyList(),
     val formId: String? = null, val busy: Boolean = false, val loaded: Boolean = false, val pending: WeatherObservation? = null,
+    val estimates: List<com.lmarchery.core.model.weather.SessionEstimate> = emptyList(),
     val message: String? = null, val place: com.lmarchery.core.model.place.SessionPlace? = null)
 
 /** ViewModel-owned. Only the explicit save command can append. Reading an uncertain UUID never retries it. */
 class WeatherJournal(private val store: RoomWeather, private val scope: CoroutineScope,
-    val clock: Clock = Clock.systemUTC(), private val newUuid: () -> String = { UUID.randomUUID().toString() }) {
+    val clock: Clock = Clock.systemUTC(), provider: com.lmarchery.core.model.weather.WeatherProvider? = null,
+    private val newUuid: () -> String = { UUID.randomUUID().toString() }) {
     private val mutable = MutableStateFlow(WeatherView())
     val state = mutable.asStateFlow()
+    val estimates = EstimateJournal(provider, scope, clock, store::recordEstimate,
+        { record -> store.details(record.sessionUuid).estimates.singleOrNull { it.uuid == record.uuid } },
+        { session -> if (mutable.value.session == session) load(session) })
+
     fun load(session: String) {
         val previous = mutable.value
         if (previous.busy) return
@@ -32,7 +38,7 @@ class WeatherJournal(private val store: RoomWeather, private val scope: Coroutin
                     pending != null -> "Relevé confirmé par relecture."
                     else -> null
                 }
-                mutable.value = WeatherView(session, details.observations, loaded = true, pending = pending.takeIf { conflict }, message = message, place = details.place)
+                mutable.value = WeatherView(session, details.observations, loaded = true, pending = pending.takeIf { conflict }, message = message, place = details.place, estimates = details.estimates)
             } catch (e: CancellationException) { throw e }
             catch (_: Exception) { mutable.value = mutable.value.copy(busy = false, message = "Lecture des relevés impossible.") }
         }
