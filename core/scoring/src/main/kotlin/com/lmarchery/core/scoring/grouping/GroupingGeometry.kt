@@ -1,5 +1,6 @@
 package com.lmarchery.core.scoring.grouping
 
+import com.lmarchery.core.model.NormalizedPoint
 import java.math.BigDecimal
 import kotlin.math.abs
 import kotlin.math.hypot
@@ -8,8 +9,26 @@ import kotlin.math.sqrt
 /** Internal coordinates originate in finite archived Floats widened exactly to Double. */
 internal data class GroupingPoint(val x: Double, val y: Double)
 
+// Canonicalize signed zero for geometric equality while retaining the source Float bits.
+internal fun NormalizedPoint.toGroupingPoint() = GroupingPoint(x.toDouble() + 0.0, y.toDouble() + 0.0)
+
+/** Exact circle membership for squares of archived Floats widened to Double. */
+internal fun isWithinSquaredRadius(xSquared: Double, ySquared: Double, radiusSquared: Double): Boolean {
+    val larger = maxOf(xSquared, ySquared)
+    // The squares are exact. When the larger term is within half the radius squared,
+    // both terms fit. From half to the limit the subtraction is exact (Sterbenz's lemma).
+    return larger < radiusSquared / 2 || minOf(xSquared, ySquared) <= radiusSquared - larger
+}
+
+private val pointOrder = compareBy<GroupingPoint> { it.x }.thenBy { it.y }
+
+internal fun measureUnsortedGrouping(points: MutableList<GroupingPoint>): GroupingMeasurements {
+    points.sortWith(pointOrder)
+    return measureGrouping(points)
+}
+
 /** Input is canonically sorted. Duplicate positions retain their statistical weight. */
-internal fun measureGrouping(points: List<GroupingPoint>): GroupingMeasurements {
+private fun measureGrouping(points: List<GroupingPoint>): GroupingMeasurements {
     val unit = GroupingUnit.NORMALIZED
     if (points.isEmpty()) return GroupingMeasurements(unit, null, null)
 
@@ -47,7 +66,7 @@ internal fun measureGrouping(points: List<GroupingPoint>): GroupingMeasurements 
 }
 
 /** Neumaier summation also retains small terms when the incoming term is larger than the running sum. */
-private class CompensatedSum {
+internal class CompensatedSum {
     private var sum = 0.0
     private var correction = 0.0
     val value get() = sum + correction
