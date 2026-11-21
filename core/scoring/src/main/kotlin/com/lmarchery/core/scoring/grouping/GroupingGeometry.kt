@@ -12,6 +12,14 @@ internal data class GroupingPoint(val x: Double, val y: Double)
 // Canonicalize signed zero for geometric equality while retaining the source Float bits.
 internal fun NormalizedPoint.toGroupingPoint() = GroupingPoint(x.toDouble() + 0.0, y.toDouble() + 0.0)
 
+/** Exact circle membership for squares of archived Floats widened to Double. */
+internal fun isWithinSquaredRadius(xSquared: Double, ySquared: Double, radiusSquared: Double): Boolean {
+    val larger = maxOf(xSquared, ySquared)
+    // The squares are exact. When the larger term is within half the radius squared,
+    // both terms fit. From half to the limit the subtraction is exact (Sterbenz's lemma).
+    return larger < radiusSquared / 2 || minOf(xSquared, ySquared) <= radiusSquared - larger
+}
+
 private val pointOrder = compareBy<GroupingPoint> { it.x }.thenBy { it.y }
 
 internal fun measureUnsortedGrouping(points: MutableList<GroupingPoint>): GroupingMeasurements {

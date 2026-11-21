@@ -120,7 +120,7 @@ fun calculateSpatialDistribution(
             horizontal[axisBucket(x)]++
             vertical[axisBucket(y)]++
             if (x == 0.0 && y == 0.0) origin++ else sectors[sectorAt(x, y).ordinal]++
-            if (isInsideFace(x, y)) {
+            if (isWithinSquaredRadius(x * x, y * y, 1.0)) {
                 val column = cellIndex(x, grid.columns)
                 val row = cellIndex(y, grid.rows)
                 cells[row * grid.columns + column]++
@@ -143,14 +143,6 @@ private fun axisBucket(coordinate: Double): Int = when {
 private fun IntArray.axisDistribution(total: Int) = SpatialAxisDistribution(
     SpatialFrequency(this[0], total), SpatialFrequency(this[1], total), SpatialFrequency(this[2], total),
 )
-
-private fun isInsideFace(x: Double, y: Double): Boolean {
-    // The individual squares of widened Floats are exact. In [0.5, 1], the subtraction is exact too.
-    val xx = x * x
-    val yy = y * y
-    val larger = maxOf(xx, yy)
-    return larger < 0.5 || minOf(xx, yy) <= 1.0 - larger
-}
 
 private fun cellIndex(coordinate: Double, dimension: Int): Int {
     // Floor before translating, so a tiny negative coordinate still falls left/above the origin line.
