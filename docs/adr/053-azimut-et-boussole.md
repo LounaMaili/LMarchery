@@ -1,6 +1,6 @@
 # ADR 053 — Azimut de la ligne de tir et boussole
 
-Statut proposé. La capture par capteur, ses permissions éventuelles et le stockage ne font pas partie de ce lot.
+Saisie manuelle adoptée dans L1. La mesure par capteur et la conversion de nord restent proposées pour un lot ultérieur.
 
 L’azimut est l’angle horizontal **de l’archer vers les cibles**, croissant dans le sens horaire à partir du nord indiqué. La valeur finie est normalisée dans `[0°, 360°[`. Une orientation porte sa provenance et sa référence `TRUE_NORTH` ou `MAGNETIC_NORTH`, son incertitude angulaire facultative et l’instant de mesure ou de saisie connu. L’absence est distincte de `0°`. Une référence inconnue ne permet aucune projection géographique.
 

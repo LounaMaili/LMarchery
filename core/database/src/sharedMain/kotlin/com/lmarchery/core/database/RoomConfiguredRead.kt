@@ -1,5 +1,6 @@
 package com.lmarchery.core.database
 
+import com.lmarchery.core.model.place.SessionPlace
 import androidx.room.deferredTransaction
 import androidx.room.useReaderConnection
 import com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits
@@ -10,7 +11,7 @@ import java.util.concurrent.CancellationException
 
 /** A V3 projection alone does not prove that a physical row is CONFIGURED. */
 sealed interface ConfiguredSessionReadResult {
-    data class Found(val session: ConfiguredSession) : ConfiguredSessionReadResult
+    data class Found(val session: ConfiguredSession, val place: SessionPlace? = null) : ConfiguredSessionReadResult
     data object NotFound : ConfiguredSessionReadResult
     data object LegacyHomogeneous : ConfiguredSessionReadResult
     data class IdentityOccupied(val diagnostic: StorageDiagnostic) : ConfiguredSessionReadResult
@@ -32,7 +33,7 @@ internal class RoomConfiguredRead(private val database: SessionDatabase, private
                     StorageDiagnostic("identities[$uuid]", "UUID belongs to another entity type."))
                 session == null -> ConfiguredSessionReadResult.NotFound
                 queries.sessionConfiguration(uuid)?.representation == LEGACY_HOMOGENEOUS -> ConfiguredSessionReadResult.LegacyHomogeneous
-                else -> ConfiguredSessionReadResult.Found(session) // collectArchiveV3 checked the exact CONFIGURED marker/captures.
+                else -> ConfiguredSessionReadResult.Found(session, queries.sessionPlace(uuid))
             }
         } }
     } catch (error: CorruptV3Storage) { ConfiguredSessionReadResult.NeedsIntervention(error.diagnostic) }

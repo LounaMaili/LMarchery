@@ -23,6 +23,10 @@ internal suspend fun RoomSessionStore.previewV2(archive: DomainArchiveV2) =
     assertIs<ArchiveV2PreviewResult.Ready>(previewImportV2(archive)).preview
 internal suspend fun RoomSessionStore.restoreV2(archive: DomainArchiveV2): ArchiveV2ImportResult = importArchiveV2(previewV2(archive))
 
+/** Waiting on the ordered sporting registry scan also covers Room 5's place-kind exclusion. */
+internal fun String.isSportingRegistryScan(): Boolean =
+    startsWith("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE')") && endsWith(" ORDER BY uuid")
+
 /** Real native disk driver. Hooks run AFTER successful native step, including real INSERT/COMMIT. */
 internal fun hookedStore(path: Path, hook: (String, Boolean) -> Unit): RoomSessionStore {
     return hookedConnectionStore(path) { _, sql, row -> hook(sql, row) }

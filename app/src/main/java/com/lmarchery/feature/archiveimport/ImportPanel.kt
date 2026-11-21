@@ -46,7 +46,7 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text("Restaurer une sauvegarde JSON", style = MaterialTheme.typography.titleMedium)
-            Text("V1 : séances et profils associés ; matériel non fourni. V2 : séances historiques, profils et matériel. V3 : configurations exactes par volée, historiques et matériel. Les séances configurables restaurées utilisent leur éditeur dédié lorsque leur statut l’autorise ; les séances terminées restent en lecture seule. Aucun écrasement, fusion ou suppression.", style = MaterialTheme.typography.bodySmall)
+            Text("V1 : séances et profils associés ; matériel non fourni. V2 : séances historiques, profils et matériel. V3 : configurations exactes par volée, historiques et matériel. V4 conserve aussi les annulations. V5 inclut les lieux, les lignes et les instantanés. Les séances configurables restaurées utilisent leur éditeur dédié lorsque leur statut l’autorise ; les séances terminées restent en lecture seule. Aucun écrasement, fusion ou suppression.", style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
                 ImportState.Available -> "Import disponible depuis un fichier .lmarchery.json."
                 is ImportState.Choosing -> "Sélectionnez explicitement votre sauvegarde."
@@ -69,6 +69,11 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
                 is ImportState.SucceededV3 -> v3SuccessText(current)
                 is ImportState.UnconfirmedV3 -> current.diagnostic + " Aucune relance automatique. Le candidat exact est conservé ; relisez explicitement l’état avant toute nouvelle confirmation."
                 is ImportState.PreviewV4 -> when {
+                    current.places != null -> with(current.places) {
+                        "Aperçu V5 · ${sites.size} lieu(x), ${lines.size} ligne(s), ${snapshots.size} instantané(s). " +
+                            "${current.newPlaceRecords} enregistrement(s) de lieu à ajouter." +
+                            if (containsCoordinates) " Ce fichier contient des coordonnées géographiques." else ""
+                    }
                     current.plan.isEmptyArchive -> "Archive V4 vide explicite : vérification sans effacement."
                     !current.plan.hasAdditions -> "V4 déjà présente à l’identique : confirmation sans écriture."
                     else -> "Aperçu V4 prêt : ajout atomique de tous les éléments absents."
@@ -122,11 +127,11 @@ fun ImportPanel(coordinator: ImportCoordinator, sessionState: SessionUiState) {
                 if (planV4.conflicts.size > 20) Text("${planV4.conflicts.size - 20} autre(s) conflit(s). Aucun import possible.")
             }
             (state as? ImportState.PreviewV4)?.let { preview ->
-                Button(onClick = { coordinator.confirmV4(preview.confirmationId) }) { Text(if (preview.plan.hasAdditions) "Confirmer la restauration V4 complète" else "Confirmer la vérification sans écriture") }
+                Button(onClick = { coordinator.confirmV4(preview.confirmationId) }) { Text(if (preview.places != null) "Confirmer la restauration V5" else if (preview.plan.hasAdditions) "Confirmer la restauration V4 complète" else "Confirmer la vérification sans écriture") }
                 TextButton(onClick = coordinator::cancel) { Text("Fermer l’aperçu sans importer") }
             }
             if (state is ImportState.UnconfirmedV4) {
-                Button(onClick = coordinator::repreviewV4) { Text("Relire et préparer un nouvel aperçu V4") }
+                Button(onClick = coordinator::repreviewV4) { Text("Relire et préparer un nouvel aperçu") }
                 TextButton(onClick = { confirmDismiss = true }) { Text("Fermer sans relancer la restauration") }
             }
             if (state is ImportState.PreviewV2) {

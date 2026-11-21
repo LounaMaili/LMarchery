@@ -1,6 +1,6 @@
 # ADR 052 — Lieux favoris et lignes de tir
 
-Statut proposé. Ce document prépare un contrat commun Android et Desktop. Le catalogue et la persistance feront l’objet d’un autre lot.
+Statut adopté pour L1. Le catalogue et les instantanés sont disponibles dans le domaine Kotlin/JVM, Room 5 et la sauvegarde JSON V5.
 
 ## Identités et sélection
 
@@ -14,8 +14,10 @@ La séance conserve un instantané explicite des valeurs retenues. Il peut compr
 
 Le champ `locationName` des séances existantes demeure un texte historique. Aucune migration ne déduit un lieu, des coordonnées ou un azimut depuis ce texte.
 
-## Partage et stockage futurs
+## Adoption et révision
 
-Le domaine Kotlin/JVM définira les identités et instantanés. Android saisira et confirmera les valeurs. Desktop lira ces mêmes types et distinguera provenance, coordonnées absentes et localisation inconnue. Un futur schéma Room pourra séparer les tables des favoris, les lignes et les instantanés de séance. Les références au catalogue resteront facultatives pour que les instantanés soient autonomes. Aucune suppression en cascade vers l’historique.
+Le formulaire de création configurable propose « Lieu et ligne de tir (facultatif) ». Le catalogue reste accessible depuis ce formulaire même lorsque l’archer souhaite uniquement gérer ses favoris. La création et l’adoption de l’instantané partagent une transaction. Une ligne désactivée reste consultable dans le catalogue et les anciennes séances. Un favori modifié pendant la création exige une nouvelle sélection.
 
-Un futur contrat d’archive versionné devra préserver les instantanés et définir si le catalogue local est exportable séparément. La prévisualisation SAF devra rendre explicite la présence de coordonnées et proposer une politique de partage distincte si nécessaire. Une omission délibérée de la position devra être déclarée comme telle. Les contrats stricts V1 à V4 gardent leur sens et un transfert vers ces versions devra refuser toute perte silencieuse. Voir [archives V4](../export-format-v4.md).
+L1 réserve la rectification historique à une évolution versionnée. Elle nécessitera un ancien instantané attendu, une nouvelle valeur proposée, un motif, un horodatage et la conservation de chaque révision dans une nouvelle version de sauvegarde. L1 conserve uniquement l’adoption initiale.
+
+La structure Room 5, les API Desktop, le consentement au partage de coordonnées et la recette Android sont décrits dans le [contrat d’archive V5](../export-format-v5.md).

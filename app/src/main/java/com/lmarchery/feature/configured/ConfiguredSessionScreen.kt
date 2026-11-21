@@ -143,6 +143,7 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                     item(key = form.token) { ConfiguredFormFields(form, state, controller) }
                 }
                 if (form == null) state.saved?.let { session ->
+                    state.savedPlace?.let { place -> item { AdoptedPlaceLabel(place) } }
                     item { ConfiguredSessionSummary(session, readOnly = session.status == SessionStatus.COMPLETED) }
                     if (session.status == SessionStatus.DRAFT) item {
                         Button(controller::start, enabled = state.canForm) { Text("Démarrer la séance") }
@@ -238,6 +239,7 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
                 }
             }
         }
+        if (creation != null && c.supportsPlaces) PlacePicker(creation, state, c)
         if (metadata != null && form !is ConfiguredForm.Metadata) {
             OutlinedTextField(
                 metadata.title, { c.title(token, it) }, Modifier.fillMaxWidth(), enabled = state.ready,

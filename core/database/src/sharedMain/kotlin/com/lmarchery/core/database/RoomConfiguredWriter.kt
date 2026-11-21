@@ -45,6 +45,9 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                         "identities[${source.uuid}]", "Session UUID is already owned by another entity type.")
                 if (previous != null && queries.sessionConfiguration(source.uuid)?.representation != if (legacy) LEGACY_HOMOGENEOUS else CONFIGURED)
                     return@immediateTransaction conflict(request, ConfiguredWriteConflict.NOT_CONFIGURED, "sessions[${source.uuid}]", "A legacy session cannot be implicitly converted or overwritten.")
+                val adopted = (request as? ConfiguredWriteRequest.Create)?.place
+                if (request is ConfiguredWriteRequest.Create && previous != null && queries.sessionPlace(source.uuid) != adopted)
+                    return@immediateTransaction conflict(request, ConfiguredWriteConflict.REVISION, "sessionPlace", "Le lieu adopté diffère.")
                 if (previous == source) return@immediateTransaction ConfiguredWriteResult.AlreadyApplied(request)
                 when (request) {
                     is ConfiguredWriteRequest.Create -> if (previous != null)
@@ -54,6 +57,10 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                         if (previous != request.expected) return@immediateTransaction conflict(request, ConfiguredWriteConflict.REVISION, "sessions[${source.uuid}]", "Stored complete revision differs from expected; keep both candidates and reconcile explicitly.")
                     }
                 }
+                if (adopted != null && (adopted.sessionUuid != source.uuid || adopted.adoptedAt != source.createdAt ||
+                    queries.site(adopted.site.uuid) != adopted.site ||
+                    adopted.line?.let { queries.line(it.uuid) != it } == true))
+                    return@immediateTransaction conflict(request, ConfiguredWriteConflict.REVISION, "sessionPlace", "Lieu ou ligne modifiés depuis la sélection.")
                 val knownProfiles = before.profiles.associateBy { it.definition!!.uuid }
                 for (profile in profiles) if (knownProfiles[profile.definition!!.uuid]?.let { it != profile } == true)
                     return@immediateTransaction conflict(request, ConfiguredWriteConflict.IDENTITY_OCCUPIED, "profiles[${profile.definition!!.uuid}]", "Existing profile definition and edition are immutable.")
@@ -72,7 +79,7 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                 // Existing homogeneous global revisions update only redundant LEGACY_DERIVED
                 // projections. CONFIGURED captures remain immutable, including legacy imports.
                 val legacyProjectionRevision = legacy && previous?.initialConfiguration != source.initialConfiguration
-                val audit = ConfiguredWriteAudit(before, source, legacyProjectionRevision)
+                val audit = ConfiguredWriteAudit(before, source, legacyProjectionRevision, adopted != null)
                 val untouched = audit.fingerprint(connection)
                 val dao = database.records()
                 // Set before the first DML attempt; any later technical error is conservatively unconfirmed.
@@ -83,6 +90,10 @@ internal class RoomConfiguredWriter(private val database: SessionDatabase, priva
                 val rows = receivedRows.physical.let { it.copy(session = it.session.copy(archiveSchemaVersion = physicalVersion)) }
                 if (previous == null) {
                     dao.insertConfiguredRows(receivedRows, caller)
+                    if (adopted != null) {
+                        database.places().insert(adopted.row())
+                        dataCheck(queries.sessionPlace(source.uuid) == adopted, "sessionPlace", "Instantané différent de la proposition.")
+                    }
                 } else {
                     val previousRows = before.toSnapshot().sessions!!.single { it.uuid == source.uuid }.configuredRows()
                     val oldRows = previousRows.physical.let { it.copy(session = it.session.copy(archiveSchemaVersion = physicalVersion)) }

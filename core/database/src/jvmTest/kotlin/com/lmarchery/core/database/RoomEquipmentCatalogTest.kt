@@ -29,7 +29,7 @@ class RoomEquipmentCatalogTest {
             assertEquals(arrows(), assertIs<EquipmentReadResult.Found<*>>(store.equipment.readArrowSet(arrows().uuid)).value)
             assertEquals(Float.MIN_VALUE.toRawBits(), assertIs<EquipmentReadResult.Found<Bow>>(store.equipment.readBow(bow().uuid)).value.drawWeightLbs!!.toRawBits())
         }
-        assertEquals(listOf("4"), rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("5"), rows(path, "PRAGMA user_version"))
         assertEquals(emptyList(), rows(path, "PRAGMA foreign_key_check"))
     }
     @Test fun `discovery is deterministic includes orphan entries and read never repairs them`() = runBlocking<Unit> {

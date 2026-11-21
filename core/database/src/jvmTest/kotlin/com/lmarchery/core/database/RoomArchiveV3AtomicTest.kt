@@ -123,7 +123,7 @@ class RoomArchiveV3AtomicTest {
     @Test fun `preview uses one real reader snapshot even while a second store commits catalog revision`() = runBlocking<Unit> {
         openSessionStore(path).use { it.restoreV3(r.material()) }
         val enter=CountDownLatch(1);val resume=CountDownLatch(1);val armed=AtomicBoolean(true)
-        hookedStore(path) { sql,row->if(row&&sql=="SELECT * FROM entity_identities ORDER BY uuid"&&armed.compareAndSet(true,false)) {
+        hookedStore(path) { sql,row->if(row&&sql.isSportingRegistryScan()&&armed.compareAndSet(true,false)) {
             enter.countDown();check(resume.await(15,TimeUnit.SECONDS))
         } }.use { reader ->
             val pending=async(Dispatchers.IO) { reader.previewV3(r.onlyMixed()) }

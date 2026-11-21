@@ -143,7 +143,7 @@ class RoomArchiveV2ReadTest {
         openSessionStore(path).use { it.restoreV2(old) }
         val started = CountDownLatch(1); val resume = CountDownLatch(1); val once = AtomicBoolean(false)
         hookedStore(path) { sql, result ->
-            if (sql == "SELECT * FROM entity_identities ORDER BY uuid" && result && once.compareAndSet(false, true)) {
+            if (sql.isSportingRegistryScan() && result && once.compareAndSet(false, true)) {
                 started.countDown(); check(resume.await(20, TimeUnit.SECONDS))
             }
         }.use { reader ->

@@ -69,7 +69,7 @@ class RoomImpactCancellationTest {
             assertEquals(expected, store.full())
         }
         openSessionStore(target).use { assertEquals(expected, it.full()) }
-        assertEquals(listOf("13"), f.rows(target, "SELECT count(*) FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT IN ('room_master_table','room_table_modification_log')"))
+        assertEquals(listOf("16"), f.rows(target, "SELECT count(*) FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT IN ('room_master_table','room_table_modification_log')"))
         assertTrue(f.rows(target, "PRAGMA foreign_key_check").isEmpty())
     }
 
@@ -86,7 +86,7 @@ class RoomImpactCancellationTest {
         }
     }
 
-    @Test fun `true historical schemas 1 2 and 3 migrate to 4 without changing any previous row`() = runBlocking<Unit> {
+    @Test fun `true historical schemas 1 2 and 3 migrate through 4 to 5 without changing any previous row`() = runBlocking<Unit> {
         for (version in 1..3) {
             val file = directory.resolve("v$version.db"); d.historical(file, version)
             val oldTables = when (version) { 1 -> f.oldTables; 2 -> f.tables; else -> d.tables }
@@ -94,7 +94,7 @@ class RoomImpactCancellationTest {
             val schema = d.schema(file, oldTables)
             openSessionStore(file).use { store -> assertTrue(store.full().sessions.isNotEmpty()) }
             assertEquals(before, f.contents(file, oldTables)); assertEquals(schema, d.schema(file, oldTables))
-            assertEquals(listOf("4"), f.rows(file, "PRAGMA user_version"))
+            assertEquals(listOf("5"), f.rows(file, "PRAGMA user_version"))
             assertEquals(listOf("0"), f.rows(file, "SELECT count(*) FROM impact_cancellations"))
             assertTrue(f.rows(file, "PRAGMA foreign_key_check").isEmpty()); assertEquals(listOf("ok"), f.rows(file, "PRAGMA integrity_check"))
         }
@@ -202,7 +202,7 @@ class RoomImpactCancellationTest {
         }
     }
 
-    @Test fun `a genuine Room V3 opener cannot reopen the migrated V4 file`() = runBlocking<Unit> {
+    @Test fun `a genuine Room V3 opener cannot reopen the migrated latest file`() = runBlocking<Unit> {
         val file = directory.resolve("v3-refuses-v4.db"); d.historical(file, 3)
         fun old() = Room.databaseBuilder(file.toString()) { RoomV3CancellationProbe() }.setDriver(BundledSQLiteDriver()).build()
         val original = old()
@@ -214,10 +214,10 @@ class RoomImpactCancellationTest {
         val downgrade = old()
         try {
             val error = assertFailsWith<IllegalStateException> { downgrade.useReaderConnection { connection -> connection.usePrepared("SELECT 1") { it.step() } } }
-            assertTrue(error.message.orEmpty().contains("4 to 3"))
+            assertTrue(error.message.orEmpty().contains("5 to 3"))
         } finally { downgrade.close() }
         assertEquals(before, f.contents(file, tables)); assertEquals(hash, f.rows(file, "SELECT * FROM room_master_table"))
-        assertEquals(listOf("4"), f.rows(file, "PRAGMA user_version"))
+        assertEquals(listOf("5"), f.rows(file, "PRAGMA user_version"))
     }
 
     @Test fun `coroutine cancellation after a true evidence INSERT preserves the intent and rolls back completely`() = runBlocking<Unit> {

@@ -1,6 +1,8 @@
 package com.lmarchery.core.database
 
 import androidx.room.*
+import com.lmarchery.core.model.place.ShootingPlaces
+import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
 import com.lmarchery.core.scoring.archive.v3.*
 import com.lmarchery.core.scoring.archive.v4.*
 import kotlinx.coroutines.currentCoroutineContext
@@ -9,16 +11,20 @@ import java.util.concurrent.CancellationException
 
 /** Archive append only: one reader preview and one writer confirmation, never a loop of public create calls. */
 internal class RoomArchiveV4Import(private val database: SessionDatabase, private val ensureOpen: () -> Unit) {
-    suspend fun preview(source: DomainArchiveV4): ArchiveV4PreviewResult = try {
+    suspend fun preview(source: DomainArchiveV4, places: ShootingPlaces? = null): ArchiveV4PreviewResult = try {
         val caller = currentCoroutineContext()
         caller.ensureActive(); ensureOpen()
         val archive = validateStoredV4(source.toSnapshot())
         database.useReaderConnection { connection -> connection.deferredTransaction {
-            val before = collectArchiveV4(StrictStorageQueries(connection), caller, ArchiveV3Limits())
+            val queries = StrictStorageQueries(connection)
+            val before = collectArchiveV4(queries, caller, ArchiveV3Limits())
             val fingerprint = fingerprintStorage(connection)
             val plan = planArchiveImportV4(archive, before)
             caller.ensureActive()
-            ArchiveV4PreviewResult.Ready(ArchiveV4ImportPreview(archive, plan, before, fingerprint))
+            val baseline = database.places().readPlaces(queries)
+            if (places != null) DomainArchiveV5(archive, places)
+            val additions = placeAdditions(places ?: ShootingPlaces.EMPTY, baseline, archive, before)
+            ArchiveV4PreviewResult.Ready(ArchiveV4ImportPreview(archive, plan, before, places, baseline, additions.count, fingerprint))
         } }
     } catch (error: CorruptV3Storage) { ArchiveV4PreviewResult.NeedsIntervention(error.diagnostic) }
       catch (error: CorruptStorage) { ArchiveV4PreviewResult.NeedsIntervention(error.v3Diagnostic()) }
@@ -38,12 +44,14 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
                 val before = collectArchiveV4(queries, caller, ArchiveV3Limits())
                 val fingerprint = fingerprintStorage(connection)
                 val plan = planArchiveImportV4(source, before)
-                if (before != confirmed.baseline || fingerprint != confirmed.baselineFingerprint || plan != confirmed.plan || !plan.canImport)
+                val oldPlaces = database.places().readPlaces(queries)
+                if (oldPlaces != confirmed.baselinePlaces || before != confirmed.baseline || fingerprint != confirmed.baselineFingerprint || plan != confirmed.plan || !plan.canImport)
                     return@immediateTransaction ArchiveV4ImportResult.Conflict(confirmed, StorageDiagnostic("importV4.preview",
                         "Exact local content, SQL representation or plan changed, or conflicts exist; explicitly preview again."))
-                if (!plan.hasAdditions) {
+                val places = placeAdditions(confirmed.incomingPlaces ?: ShootingPlaces.EMPTY, oldPlaces, source, before)
+                if (!plan.hasAdditions && places.count == 0) {
                     caller.ensureActive()
-                    return@immediateTransaction ArchiveV4ImportResult.AlreadyPresent(confirmed, plan.identicalCounts(), plan.isEmptyArchive)
+                    return@immediateTransaction ArchiveV4ImportResult.AlreadyPresent(confirmed, plan.identicalCounts(), plan.isEmptyArchive && (confirmed.incomingPlaces ?: ShootingPlaces.EMPTY) == ShootingPlaces.EMPTY)
                 }
                 val newProfiles = plan.profiles.newUuids.toSet()
                 val newSessions = plan.sessions.newUuids.toSet()
@@ -62,7 +70,10 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
                 val newEnds = sessions.flatMap { it.ends }.map { it.uuid }.toSet()
                 val newImpacts = sessions.flatMap { it.ends.flatMap { e -> e.end.impacts.map { it.uuid } } }.toSet()
                 val exclusions = mapOf(
-                    "entity_identities" to ("uuid" to newIds.map { it.uuid }.toSet()),
+                    "entity_identities" to ("uuid" to (newIds.map { it.uuid } + places.sites.map { it.uuid } + places.lines.map { it.uuid }).toSet()),
+                    "shooting_sites" to ("uuid" to places.sites.map { it.uuid }.toSet()),
+                    "shooting_lines" to ("uuid" to places.lines.map { it.uuid }.toSet()),
+                    "session_places" to ("sessionUuid" to places.snapshots.map { it.sessionUuid }.toSet()),
                     "target_profiles" to ("uuid" to newProfiles), "target_zones" to ("profileUuid" to newProfiles),
                     "sessions" to ("uuid" to newSessions), "session_configurations" to ("sessionUuid" to newSessions),
                     "ends" to ("sessionUuid" to newSessions), "end_configurations" to ("endUuid" to newEnds),
@@ -85,6 +96,8 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
                 sessions.forEach { caller.ensureActive(); dao.writeCancellationDelta(null, it) }
                 bows.forEach { caller.ensureActive(); database.equipment().insertBow(it.row()) }
                 arrows.forEach { caller.ensureActive(); database.equipment().insertArrowSet(it.row()) }
+                places.insert(database)
+                dataCheck(database.places().readPlaces(queries) == places.appendTo(oldPlaces), "import.places", "Catalogue ou instantanés divergents.")
                 // Never return a normal failure from this body after DML: THROW to roll back ALL additions.
                 val after = collectArchiveV4(queries, caller, ArchiveV3Limits())
                 dataCheck(after == expected, "importV4.verification", "Complete stored archive differs from source additions plus unchanged local data.")

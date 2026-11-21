@@ -1,5 +1,6 @@
 package com.lmarchery.core.database
 
+import com.lmarchery.core.model.place.ShootingPlaces
 import com.lmarchery.core.scoring.archive.v3.*
 import com.lmarchery.core.scoring.archive.v4.*
 import java.util.concurrent.CancellationException
@@ -9,6 +10,9 @@ class ArchiveV4ImportPreview internal constructor(
     val archive: DomainArchiveV4,
     val plan: ArchiveV3ImportPlan,
     internal val baseline: DomainArchiveV4,
+    val incomingPlaces: ShootingPlaces?,
+    internal val baselinePlaces: ShootingPlaces,
+    val newPlaceRecords: Int,
     fingerprint: Map<String, List<Byte>>,
 ) {
     internal val baselineFingerprint = ownFingerprint(fingerprint)

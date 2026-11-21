@@ -1,5 +1,8 @@
 package com.lmarchery.core.database
 
+import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
+import com.lmarchery.core.model.place.SessionPlace
+import com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits
 import androidx.room.immediateTransaction
 import androidx.room.deferredTransaction
 import androidx.room.useReaderConnection
@@ -69,6 +72,8 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         check(!closed.get()) { "Session store is closed." }
     }
 
+    val places = RoomShootingPlaces(database) { check(!closed.get()) }
+
     private val archiveV2 = RoomArchiveV2(database) { check(!closed.get()) { "Session store is closed." } }
 
     private val archiveV3 = RoomArchiveV3(database) { check(!closed.get()) { "Session store is closed." } }
@@ -86,23 +91,41 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         proposed: com.lmarchery.core.scoring.archive.SessionContent): ConfiguredWriteResult =
         configuredWriter.write(ConfiguredWriteRequest.Update(expected.configuredLegacyValue(), proposed.configuredLegacyValue()), legacy = true)
 
-    suspend fun readArchiveV4(limits: com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits = com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits()): ArchiveV4ReadResult = try {
+    suspend fun readArchiveV4(limits: ArchiveV3Limits = ArchiveV3Limits()) = readSporting(limits, forExport = true)
+
+    /** Read-only sporting projection used by history. Never supply this projection to the SAF exporter. */
+    suspend fun readSportingGraph() = readSporting(ArchiveV3Limits(), forExport = false)
+
+    private suspend fun readSporting(limits: ArchiveV3Limits, forExport: Boolean): ArchiveV4ReadResult = try {
         val maximum = com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits()
         require(limits.maxCollectionElements <= maximum.maxCollectionElements && limits.maxTotalElements <= maximum.maxTotalElements && limits.maxTextLength <= maximum.maxTextLength)
         val caller = currentCoroutineContext(); caller.ensureActive(); check(!closed.get())
-        database.useReaderConnection { c -> c.deferredTransaction { ArchiveV4ReadResult.Found(collectArchiveV4(StrictStorageQueries(c), caller, limits)) } }
+        database.useReaderConnection { c -> c.deferredTransaction {
+            if (forExport) database.places().requireOlderExport()
+            ArchiveV4ReadResult.Found(collectArchiveV4(StrictStorageQueries(c), caller, limits)) } }
     } catch (e: CorruptV3Storage) { ArchiveV4ReadResult.NeedsIntervention(e.diagnostic) }
       catch (e: CorruptStorage) { ArchiveV4ReadResult.NeedsIntervention(com.lmarchery.core.database.ArchiveV3StorageDiagnostic(
           ArchiveV3StorageIssueKind.STORAGE, e.diagnostic.path, e.diagnostic.detail, storageIssue = e.diagnostic)) }
       catch (e: CancellationException) { throw e }
       catch (e: Exception) { ArchiveV4ReadResult.TechnicalFailure(e) }
 
+    suspend fun readArchiveV5(): DomainArchiveV5 {
+        check(!closed.get())
+        val caller = currentCoroutineContext()
+        return database.useReaderConnection { c -> c.deferredTransaction {
+            val queries = StrictStorageQueries(c)
+            val sporting = collectArchiveV4(queries, caller, com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits())
+            DomainArchiveV5(sporting, database.places().readPlaces(queries))
+        } }
+    }
+
     private val configuredReader = RoomConfiguredRead(database) { check(!closed.get()) { "Session store is closed." } }
     suspend fun readConfiguredSession(uuid: String): ConfiguredSessionReadResult = configuredReader.read(uuid)
 
     /** Domain creation only. Historical restoration requires a separate confirmed V3 import preview. */
-    suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession): ConfiguredWriteResult =
-        configuredWriter.write(ConfiguredWriteRequest.Create(session))
+    suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession,
+        place: SessionPlace? = null): ConfiguredWriteResult =
+        configuredWriter.write(ConfiguredWriteRequest.Create(session, place))
 
     /** Exact immutable revisions, including idempotent reconciliation after lost acknowledgement. */
     suspend fun updateConfiguredSession(expected: com.lmarchery.core.scoring.configured.ConfiguredSession,
@@ -111,6 +134,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val archiveV3Import = RoomArchiveV3Import(database) { check(!closed.get()) { "Session store is closed." } }
     private val archiveV4Import = RoomArchiveV4Import(database) { check(!closed.get()) { "Session store is closed." } }
+    suspend fun previewImportV5(archive: DomainArchiveV5) = archiveV4Import.preview(archive.sporting, archive.places)
     suspend fun previewImportV4(archive: com.lmarchery.core.scoring.archive.v4.DomainArchiveV4): ArchiveV4PreviewResult = archiveV4Import.preview(archive)
     suspend fun importArchiveV4(confirmed: ArchiveV4ImportPreview): ArchiveV4ImportResult = archiveV4Import.restore(confirmed)
     suspend fun previewImportV3(archive: com.lmarchery.core.scoring.archive.v3.DomainArchiveV3): ArchiveV3PreviewResult =
@@ -130,6 +154,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
         database.useReaderConnection { connection ->
             connection.deferredTransaction {
                 val dao = database.records()
+                database.places().requireOlderExport()
                 dao.requireLegacyArchive()
                 val profiles = linkedMapOf<String, TargetProfileSnapshot>()
                 val sessions = mutableListOf<Session>()

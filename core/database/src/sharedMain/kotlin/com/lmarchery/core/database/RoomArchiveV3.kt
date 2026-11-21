@@ -28,6 +28,7 @@ internal class RoomArchiveV3(private val database: SessionDatabase, private val 
         val caller = currentCoroutineContext()
         caller.ensureActive(); ensureOpen()
         database.useReaderConnection { connection -> connection.deferredTransaction {
+            database.places().requireOlderExport()
             // One Room connection/transaction for every table, no independent store/catalog calls.
             val queries = StrictStorageQueries(connection)
             val archive = collectArchiveV3(queries, caller, limits)
