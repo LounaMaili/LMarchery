@@ -75,3 +75,30 @@ Les JPEG `htk-N-C.jpg` du registre correspondent aux originaux `N-C.jpg` du comm
   --model artifacts/r1-verify/synthetic-results/model.json --output artifacts/r2-public
 .venv/bin/python r2_corpus.py data/r2-pilot data/r2-second-reading
 ```
+
+## Rejouer R3
+
+Le [rapport R3](r3.md) décrit les corpus, la méthode de validation et l’annotateur hors ligne. Utiliser le runtime PyTorch R3 dans un venv distinct de R1/R2. Sur CPU Linux x86-64 et CPython 3.15.2, installer les [dépendances de base](requirements-ci.txt), puis les [roues CPU R3](requirements-r3-cpu.txt) avec `pip install --only-binary=:all: --require-hashes --extra-index-url https://download.pytorch.org/whl/cpu -r requirements-r3-cpu.txt`. Utiliser `--device cpu` avec ce runtime. Pour la RTX 3090 sous Fedora, partir d’un autre venv, installer les mêmes dépendances de base et utiliser `pip install --only-binary=:all: --extra-index-url https://download.pytorch.org/whl/cu130 -r requirements-r3-cuda.txt`. Les [versions CUDA](requirements-r3-cuda.txt) sont celles de l’expérience. La CI sépare les tests sans PyTorch des trois tests de calcul CPU. Les chemins ci-dessous supposent un shell dans `vision-lab/`. Conserver tous les répertoires de sortie sous `artifacts/` ou `data/`.
+
+```sh
+export OPENBLAS_NUM_THREADS=1
+.venv/bin/python -m r3.synth data/r3-synthetic
+.venv/bin/python -m r3.train data/r3-synthetic artifacts/r3-model --device cuda --epochs 12 --batch-size 16
+.venv/bin/python verify_r1.py artifacts/r3-r1-reference --fedora-bytes
+
+r1_model=artifacts/r3-r1-reference/synthetic-results/model.json
+.venv/bin/python -m r3.evaluate data/r3-synthetic artifacts/r3-model/model.pt "$r1_model" \
+  artifacts/r3-dev --split dev --select
+.venv/bin/python -m r3.evaluate data/r3-synthetic artifacts/r3-model/model.pt "$r1_model" \
+  artifacts/r3-test --split test --policy artifacts/r3-dev/policy.json
+```
+
+Le test réel relit le manifeste des annotations locales au moyen de `--split real`, avec la politique gelée. Pour préparer le dossier d’annotation à l’aveugle et qualifier la séparation de groupes avant tout entraînement réel, utiliser les commandes ci-dessous. Le clic s’effectue dans l’original orienté et l’export d’annotation reste local.
+
+```sh
+.venv/bin/python -m r3.review audit r3/real-sources.json data/r3-public-sources
+.venv/bin/python -m r3.review blind r3/real-sources.json data/r3-public-sources data/r3-reader-packet
+.venv/bin/python -m r3.review compare data/releve-a.json data/releve-b.json
+.venv/bin/python -m r3.review prepare r3/real-sources.json data/r3-public-sources \
+  data/r3-real-test data/r3-readings/*-annotation.json
+```
