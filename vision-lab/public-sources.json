@@ -1,0 +1,80 @@
+[
+  {
+    "filename": "wa80.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_80z.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Archery_Arrows_Target_WA_80z.jpg",
+    "sha256": "4b5be4a418a7ba84d072c10b1593d8fdb5a73faa71676c846c7f5aea2c8373fd",
+    "credit": "Wacky1976",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "group": "commons-wacky",
+    "condition": "partial-inclined",
+    "scenario": "grouped",
+    "family": "multicolor"
+  },
+  {
+    "filename": "wa122.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_122cm.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Archery_Arrows_Target_WA_122cm.jpg",
+    "sha256": "f2dab8e2c4afd504edd69b8a4275dd410ae2ffa50780002d2cbcc8ff740500f9",
+    "credit": "Wacky1976 (fiche) / Gustavo Allid Bernasconi (EXIF)",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "group": "commons-wacky",
+    "condition": "partial-shadow",
+    "scenario": "grouped",
+    "family": "multicolor"
+  },
+  {
+    "filename": "cordon.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:WA_archery_target_with_arrows.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/dc/WA_archery_target_with_arrows.jpg",
+    "sha256": "2d532a87f05bb2f941223e2f41a2556a558d5cf81ccad833665bafa6c4285149",
+    "credit": "Casito",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "group": "commons-casito",
+    "condition": "close-rings",
+    "scenario": "grouped",
+    "family": "multicolor"
+  },
+  {
+    "filename": "world.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:World_Archery_target.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/4/43/World_Archery_target.jpg",
+    "sha256": "b785119fba7ab9ded065930517d4ad3f334eaeafbe9be7a27c31725dd6504b76",
+    "credit": "Rodrigo Ndeahh",
+    "license": "CC BY-SA 4.0, selon fiche Commons",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "group": "commons-n-deahh",
+    "condition": "front",
+    "scenario": "empty",
+    "family": "multicolor"
+  },
+  {
+    "filename": "papier.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_in_Paper_Target.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Archery_Arrows_in_Paper_Target.jpg",
+    "sha256": "bdef1acdac6097d8db3e7ea6c952d514c38ef9cc8a55bf8f8ba5483232d4df80",
+    "credit": "Jack Soley",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "group": "commons-jack-soley",
+    "condition": "partial-worn",
+    "scenario": "grouped",
+    "family": "multicolor"
+  },
+  {
+    "filename": "fita80.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:FITA_80cm.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/2/2f/FITA_80cm.jpg",
+    "sha256": "b2cf4cb93a513cfda31771885f156b3ffb7900e8dec1cc096e9efeaab92d58e7",
+    "credit": "Simon A. (LivingShadow)",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "group": "commons-livingshadow",
+    "condition": "front",
+    "scenario": "empty",
+    "family": "field-yellow-black"
+  }
+]
