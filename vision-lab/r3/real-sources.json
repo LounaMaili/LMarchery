@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "frames": [
+    {
+      "id": "nouisl",
+      "image": "nouisl.png",
+      "sha256": "a917762954824c72d88d07df6a575f10c9100c3691e9e6fed9c0abbcd5eea147",
+      "size": [
+        1578,
+        1212
+      ],
+      "origin_id": "commons-nouisl",
+      "credit": "Nouisl",
+      "source_group": "commons-nouisl",
+      "session_id": "commons-nouisl-session",
+      "board_id": "commons-nouisl-board",
+      "license": "CC BY-SA 4.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ARCHERY.png",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "multi",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "dfrg",
+      "image": "dfrg.jpg",
+      "sha256": "c062d8fe40fe1750e250c6a76037ef2192f2e83ff771f5775bbd9187e904afd1",
+      "size": [
+        743,
+        1108
+      ],
+      "origin_id": "commons-dfrg",
+      "credit": "Dfrg.msc",
+      "source_group": "commons-dfrg",
+      "session_id": "commons-dfrg-session",
+      "board_id": "commons-dfrg-board",
+      "license": "CC BY 2.5",
+      "license_evidence": "https://creativecommons.org/licenses/by/2.5/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:DFRArcheryTarget.jpg",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "multi",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "wild-02",
+      "image": "wild-02.jpg",
+      "sha256": "ea1dbaff80d89f791c1c8c689d50b8158f61c68dc423a286d0d5eb8912a335f9",
+      "size": [
+        4032,
+        3024
+      ],
+      "origin_id": "commons-wild-02",
+      "credit": "Martin Michlmayr",
+      "source_group": "commons-michlmayr",
+      "session_id": "commons-michlmayr-session",
+      "board_id": "commons-michlmayr-board",
+      "license": "CC BY-SA 4.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wild_Bow_Archery_April_2021_02.jpg",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "quiver",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "wild-04",
+      "image": "wild-04.jpg",
+      "sha256": "c25f09fcd90d22cd25d2d9ad58f87f21e843df27726624aa5e366d5a5ced9aa1",
+      "size": [
+        3024,
+        4032
+      ],
+      "origin_id": "commons-wild-04",
+      "credit": "Martin Michlmayr",
+      "source_group": "commons-michlmayr",
+      "session_id": "commons-michlmayr-session",
+      "board_id": "commons-michlmayr-board",
+      "license": "CC BY-SA 4.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wild_Bow_Archery_April_2021_04.jpg",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "quiver",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    }
+  ]
+}

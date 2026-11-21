@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; img-src blob:; style-src 'unsafe-inline'; connect-src 'none'">
+<title>LMarchery · Annotation des photos</title>
+<style>
+body { margin: 2rem auto; padding: 0 1rem; max-width: 80rem; font: 1rem system-ui, sans-serif; color: #152238; }
+h1 { font-size: 1.7rem; }
+fieldset { margin: .8rem 0; border: 1px solid #8da0b5; border-radius: .5rem; }
+label { display: inline-block; margin: .4rem; }
+button { margin: .3rem; min-height: 2rem; font: inherit; }
+input, select { font: inherit; }
+canvas { display: block; max-width: 100%; margin-top: .8rem; border: 1px solid #8da0b5; cursor: crosshair; }
+#status { min-height: 1.4rem; }
+</style>
+<script src="./annotate.js" defer></script>
+<h1>Annoter une photo de blason</h1>
+<fieldset>
+  <legend>Dossier de lecture</legend>
+  <label>Fiche JSON <input id="packet" type="file" accept=".json"></label>
+  <label>Photo PNG <input id="photo" type="file" accept="image/png"></label>
+  <label>Identifiant du lecteur <input id="reader" maxlength="80"></label>
+  <button id="load">Ouvrir</button>
+</fieldset>
+<fieldset id="controls" disabled>
+  <legend>Repères et tubes</legend>
+  <label>Contact
+    <select id="visibility">
+      <option value="visible">Visible</option><option value="occluded">Masqué</option>
+      <option value="ambiguous">Ambigu</option><option value="out_of_frame">Hors cadre</option>
+    </select>
+  </label>
+  <label>Extrémité <select id="tail"><option value="visible">Visible</option><option value="clipped">Coupée</option></select></label>
+  <label>Incertitude (px) <input id="uncertainty" type="number" min="0" value="5" size="4"></label>
+  <label>Groupe <input id="group" maxlength="60"></label>
+  <label><input id="boundary" type="checkbox"> Près d’un cordon</label>
+  <button id="shaft">Tracer un tube</button>
+  <label>Nom du repère <input id="landmark" maxlength="60"></label>
+  <button id="geometry">Marquer un repère</button>
+  <button id="undo">Annuler le dernier repère</button>
+  <label><input id="complete" type="checkbox"> Inventaire complet, même sans flèche</label>
+  <button id="export">Exporter le relevé JSON</button>
+</fieldset>
+<p id="status" role="status"></p>
+<canvas id="canvas" hidden aria-label="Photographie à annoter"></canvas>
+</html>
