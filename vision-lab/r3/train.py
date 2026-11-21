@@ -14,12 +14,9 @@ from torch.utils.data import DataLoader, Dataset
 from lab_data import fingerprint, read_manifest, safe_file, write_json
 from r3.model import EntryNet, loss
 
-WINDOW = (192, 160)
+from r3.windows import WINDOW, tensor_image
+
 SEED = 27043
-
-
-def tensor_image(frame):
-    return cv.cvtColor(frame, cv.COLOR_BGR2RGB).transpose(2, 0, 1).astype(np.float32) / 255.
 
 
 def target_maps(mask, entries, left, top, width, height):

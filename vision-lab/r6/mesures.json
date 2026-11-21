@@ -1,0 +1,2065 @@
+{
+  "protocol_commit": "f8599ad",
+  "parent": "fc44f968c8fe54771bc76aac8afefecb9cd3a73b",
+  "r3_checkpoint": "fd4c8490eed9ad37602479bcbee6b8d8d7077730fc48aaed95b8c3e0fb03cece",
+  "r3_policy": "6b25700c8edfc68ae005e02c83eb8558baf3bbff49156de1d6e0aa898be59065",
+  "r3_reference_regression": {
+    "global": {
+      "known": 100,
+      "matched": 30,
+      "proposals": 45,
+      "tubes_matched": 63,
+      "tubes_known": 110
+    },
+    "native": {
+      "known": 100,
+      "matched": 39,
+      "proposals": 49,
+      "tubes_matched": 69,
+      "tubes_known": 110
+    }
+  },
+  "r3_synthetic_development": {
+    "shaft_iou": 0.4262604991744239,
+    "contact_support": {
+      "renderer": {
+        "contacts_sharing_a_component": 24,
+        "visible_support": 80
+      },
+      "predicted": {
+        "contacts_sharing_a_component": 24,
+        "visible_support": 78,
+        "no_shaft_within_7px": 2
+      }
+    },
+    "arms": {
+      "predicted/historical": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 13,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 35,
+          "proposals": 45,
+          "by_tolerance": {
+            "3": 29,
+            "5": 31,
+            "10": 35
+          },
+          "recall_ci95": [
+            0.3048647932131495,
+            0.5735661764705882
+          ],
+          "precision_complete": 0.7777777777777778,
+          "false_per_photo": 0.14583333333333334,
+          "unresolved_per_photo": 0.0625,
+          "unmatched_per_photo": 0.20833333333333334,
+          "unassigned": {
+            "false": 7,
+            "occluded_axis": 3,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            1.7863691156129622,
+            6.109300608042604
+          ],
+          "silent": 20,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
+          "known": 24,
+          "matched": 5,
+          "proposals": 6,
+          "recall_ci95": [
+            0.08333333333333333,
+            0.3333333333333333
+          ]
+        }
+      },
+      "predicted/per_component": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 14,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 38,
+          "proposals": 79,
+          "by_tolerance": {
+            "3": 30,
+            "5": 32,
+            "10": 38
+          },
+          "recall_ci95": [
+            0.3392713133640553,
+            0.620712954333644
+          ],
+          "precision_complete": 0.4810126582278481,
+          "false_per_photo": 0.7291666666666666,
+          "unresolved_per_photo": 0.125,
+          "unmatched_per_photo": 0.8541666666666666,
+          "unassigned": {
+            "false": 35,
+            "occluded_axis": 6,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            1.9266474848016655,
+            7.8374246913551575
+          ],
+          "silent": 15,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
+          "known": 24,
+          "matched": 5,
+          "proposals": 22,
+          "recall_ci95": [
+            0.08333333333333333,
+            0.3333333333333333
+          ]
+        }
+      },
+      "predicted/multiple": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 55,
+          "proposals": 931,
+          "by_tolerance": {
+            "3": 44,
+            "5": 51,
+            "10": 55
+          },
+          "recall_ci95": [
+            0.5535342261904762,
+            0.8200128205128204
+          ],
+          "precision_complete": 0.05907626208378088,
+          "false_per_photo": 17.291666666666668,
+          "unresolved_per_photo": 0.9583333333333334,
+          "unmatched_per_photo": 18.25,
+          "unassigned": {
+            "false": 830,
+            "occluded_axis": 35,
+            "other_unresolved_axis": 0,
+            "unknown": 11,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            1.7047013052077031,
+            5.506211580429924
+          ],
+          "silent": 8,
+          "empty": 8,
+          "empty_with_points": 3,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 21,
+          "proposals": 308,
+          "recall_ci95": [
+            0.625,
+            1.0
+          ]
+        }
+      },
+      "oracle/historical": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 72,
+          "known": 80,
+          "matched": 63,
+          "proposals": 63,
+          "by_tolerance": {
+            "3": 63,
+            "5": 63,
+            "10": 63
+          },
+          "recall_ci95": [
+            0.6046511627906976,
+            0.9474021592442644
+          ],
+          "precision_complete": 1.0,
+          "false_per_photo": 0.0,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.0,
+          "unassigned": {
+            "false": 0,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            0.38743061754415953,
+            0.5778399326594911
+          ],
+          "silent": 17,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 7,
+          "proposals": 7,
+          "recall_ci95": [
+            0.20833333333333334,
+            0.3333333333333333
+          ]
+        }
+      },
+      "oracle/per_component": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 72,
+          "known": 80,
+          "matched": 72,
+          "proposals": 72,
+          "by_tolerance": {
+            "3": 72,
+            "5": 72,
+            "10": 72
+          },
+          "recall_ci95": [
+            0.7906976744186046,
+            1.0
+          ],
+          "precision_complete": 1.0,
+          "false_per_photo": 0.0,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.0,
+          "unassigned": {
+            "false": 0,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            0.4077983145481229,
+            0.5767346384548101
+          ],
+          "silent": 16,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 16,
+          "proposals": 16,
+          "recall_ci95": [
+            0.4166666666666667,
+            0.9166666666666666
+          ]
+        }
+      },
+      "oracle/multiple": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 72,
+          "known": 80,
+          "matched": 76,
+          "proposals": 76,
+          "by_tolerance": {
+            "3": 76,
+            "5": 76,
+            "10": 76
+          },
+          "recall_ci95": [
+            0.8787878787878788,
+            1.0
+          ],
+          "precision_complete": 1.0,
+          "false_per_photo": 0.0,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.0,
+          "unassigned": {
+            "false": 0,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            0.40316032069618,
+            0.5923641719995322
+          ],
+          "silent": 16,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 20,
+          "proposals": 20,
+          "recall_ci95": [
+            0.6666666666666666,
+            1.0
+          ]
+        }
+      },
+      "shaft/historical": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 13,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 72,
+          "known": 80,
+          "matched": 35,
+          "proposals": 43,
+          "by_tolerance": {
+            "3": 29,
+            "5": 32,
+            "10": 35
+          },
+          "recall_ci95": [
+            0.3125,
+            0.5595508658008658
+          ],
+          "precision_complete": 0.813953488372093,
+          "false_per_photo": 0.0625,
+          "unresolved_per_photo": 0.10416666666666667,
+          "unmatched_per_photo": 0.16666666666666666,
+          "unassigned": {
+            "false": 3,
+            "occluded_axis": 5,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            1.6772117481179523,
+            5.9642915035963755
+          ],
+          "silent": 19,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 6,
+          "proposals": 6,
+          "recall_ci95": [
+            0.16666666666666666,
+            0.3333333333333333
+          ]
+        }
+      },
+      "shaft/per_component": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 72,
+          "known": 80,
+          "matched": 39,
+          "proposals": 79,
+          "by_tolerance": {
+            "3": 30,
+            "5": 33,
+            "10": 39
+          },
+          "recall_ci95": [
+            0.3723176291793313,
+            0.6097560975609756
+          ],
+          "precision_complete": 0.4936708860759494,
+          "false_per_photo": 0.7291666666666666,
+          "unresolved_per_photo": 0.10416666666666667,
+          "unmatched_per_photo": 0.8333333333333334,
+          "unassigned": {
+            "false": 35,
+            "occluded_axis": 5,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            1.8211550189810153,
+            6.382009123520096
+          ],
+          "silent": 13,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 6,
+          "proposals": 24,
+          "recall_ci95": [
+            0.16666666666666666,
+            0.3333333333333333
+          ]
+        }
+      },
+      "shaft/multiple": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 72,
+          "known": 80,
+          "matched": 55,
+          "proposals": 790,
+          "by_tolerance": {
+            "3": 44,
+            "5": 51,
+            "10": 55
+          },
+          "recall_ci95": [
+            0.5535342261904762,
+            0.8200128205128204
+          ],
+          "precision_complete": 0.06962025316455696,
+          "false_per_photo": 14.854166666666666,
+          "unresolved_per_photo": 0.4583333333333333,
+          "unmatched_per_photo": 15.3125,
+          "unassigned": {
+            "false": 713,
+            "occluded_axis": 22,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            1.7047013052077031,
+            5.506211580429924
+          ],
+          "silent": 13,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 21,
+          "proposals": 287,
+          "recall_ci95": [
+            0.625,
+            1.0
+          ]
+        }
+      },
+      "contact/historical": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 15,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 55,
+          "proposals": 55,
+          "by_tolerance": {
+            "3": 55,
+            "5": 55,
+            "10": 55
+          },
+          "recall_ci95": [
+            0.5,
+            0.8571428571428571
+          ],
+          "precision_complete": 1.0,
+          "false_per_photo": 0.0,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.0,
+          "unassigned": {
+            "false": 0,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            0.4192175949221136,
+            0.5945599506047173
+          ],
+          "silent": 21,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 6,
+          "proposals": 6,
+          "recall_ci95": [
+            0.16666666666666666,
+            0.3333333333333333
+          ]
+        }
+      },
+      "contact/per_component": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 15,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 64,
+          "proposals": 64,
+          "by_tolerance": {
+            "3": 64,
+            "5": 64,
+            "10": 64
+          },
+          "recall_ci95": [
+            0.6665322580645161,
+            0.9130434782608695
+          ],
+          "precision_complete": 1.0,
+          "false_per_photo": 0.0,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.0,
+          "unassigned": {
+            "false": 0,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            0.414690055927065,
+            0.5801169224684797
+          ],
+          "silent": 20,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 15,
+          "proposals": 15,
+          "recall_ci95": [
+            0.2916666666666667,
+            0.9166666666666666
+          ]
+        }
+      },
+      "contact/multiple": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 74,
+          "proposals": 74,
+          "by_tolerance": {
+            "3": 74,
+            "5": 74,
+            "10": 74
+          },
+          "recall_ci95": [
+            0.8478260869565217,
+            1.0
+          ],
+          "precision_complete": 1.0,
+          "false_per_photo": 0.0,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.0,
+          "unassigned": {
+            "false": 0,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            0.39880726764892444,
+            0.5967557292099024
+          ],
+          "silent": 16,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
+          "known": 24,
+          "matched": 20,
+          "proposals": 20,
+          "recall_ci95": [
+            0.6666666666666666,
+            1.0
+          ]
+        }
+      },
+      "visibility/historical": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 7,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 8,
+          "proposals": 12,
+          "by_tolerance": {
+            "3": 4,
+            "5": 5,
+            "10": 8
+          },
+          "recall_ci95": [
+            0.045454545454545456,
+            0.15686974789915967
+          ],
+          "precision_complete": 0.6666666666666666,
+          "false_per_photo": 0.08333333333333333,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.08333333333333333,
+          "unassigned": {
+            "false": 4,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            3.047039852460795,
+            9.224153471148641
+          ],
+          "silent": 37,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
+          "known": 24,
+          "matched": 3,
+          "proposals": 6,
+          "recall_ci95": [
+            0.041666666666666664,
+            0.16666666666666666
+          ]
+        }
+      },
+      "visibility/per_component": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 9,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 11,
+          "proposals": 25,
+          "by_tolerance": {
+            "3": 6,
+            "5": 7,
+            "10": 11
+          },
+          "recall_ci95": [
+            0.075,
+            0.2
+          ],
+          "precision_complete": 0.44,
+          "false_per_photo": 0.2916666666666667,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 0.2916666666666667,
+          "unassigned": {
+            "false": 14,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            2.853795790784818,
+            8.905756506696124
+          ],
+          "silent": 35,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
+          "known": 24,
+          "matched": 4,
+          "proposals": 13,
+          "recall_ci95": [
+            0.041666666666666664,
+            0.2916666666666667
+          ]
+        }
+      },
+      "visibility/multiple": {
+        "all": {
+          "photos": 48,
+          "groups": 24,
+          "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 11,
+          "any_match_group_upper95_if_zero": null,
+          "axes_eligible": 88,
+          "presence_matched": 54,
+          "known": 80,
+          "matched": 28,
+          "proposals": 187,
+          "by_tolerance": {
+            "3": 19,
+            "5": 25,
+            "10": 28
+          },
+          "recall_ci95": [
+            0.17063008130081303,
+            0.5555871212121212
+          ],
+          "precision_complete": 0.1497326203208556,
+          "false_per_photo": 3.3125,
+          "unresolved_per_photo": 0.0,
+          "unmatched_per_photo": 3.3125,
+          "unassigned": {
+            "false": 159,
+            "occluded_axis": 0,
+            "other_unresolved_axis": 0,
+            "unknown": 0,
+            "existing": 0
+          },
+          "errors_original_px_p50_p95": [
+            2.301433026962842,
+            6.9197216311047836
+          ],
+          "silent": 31,
+          "empty": 8,
+          "empty_with_points": 0,
+          "processing_failures": 0
+        },
+        "grouped": {
+          "photos": 8,
+          "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
+          "known": 24,
+          "matched": 17,
+          "proposals": 97,
+          "recall_ci95": [
+            0.25,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "r4_public_regression": {
+    "historical": {
+      "photos": 5,
+      "groups": 5,
+      "present": 12,
+      "positive_groups": 1,
+      "groups_with_any_match": 0,
+      "any_match_group_upper95_if_zero": 0.95,
+      "axes_eligible": 12,
+      "presence_matched": 3,
+      "known": 4,
+      "matched": 0,
+      "proposals": 30,
+      "by_tolerance": {
+        "3": 0,
+        "5": 0,
+        "10": 0
+      },
+      "recall_ci95": null,
+      "precision_complete": 0.0,
+      "false_per_photo": 2.0,
+      "unresolved_per_photo": 4.0,
+      "unmatched_per_photo": 6.0,
+      "unassigned": {
+        "false": 10,
+        "occluded_axis": 3,
+        "other_unresolved_axis": 4,
+        "unknown": 13,
+        "existing": 0
+      },
+      "errors_original_px_p50_p95": null,
+      "silent": 0,
+      "empty": 2,
+      "empty_with_points": 2,
+      "processing_failures": 0
+    },
+    "per_component": {
+      "photos": 5,
+      "groups": 5,
+      "present": 12,
+      "positive_groups": 1,
+      "groups_with_any_match": 0,
+      "any_match_group_upper95_if_zero": 0.95,
+      "axes_eligible": 12,
+      "presence_matched": 3,
+      "known": 4,
+      "matched": 0,
+      "proposals": 63,
+      "by_tolerance": {
+        "3": 0,
+        "5": 0,
+        "10": 0
+      },
+      "recall_ci95": null,
+      "precision_complete": 0.0,
+      "false_per_photo": 5.4,
+      "unresolved_per_photo": 7.2,
+      "unmatched_per_photo": 12.6,
+      "unassigned": {
+        "false": 27,
+        "occluded_axis": 4,
+        "other_unresolved_axis": 8,
+        "unknown": 24,
+        "existing": 0
+      },
+      "errors_original_px_p50_p95": null,
+      "silent": 0,
+      "empty": 2,
+      "empty_with_points": 2,
+      "processing_failures": 0
+    },
+    "multiple": {
+      "photos": 5,
+      "groups": 5,
+      "present": 12,
+      "positive_groups": 1,
+      "groups_with_any_match": 0,
+      "any_match_group_upper95_if_zero": 0.95,
+      "axes_eligible": 12,
+      "presence_matched": 3,
+      "known": 4,
+      "matched": 0,
+      "proposals": 1941,
+      "by_tolerance": {
+        "3": 0,
+        "5": 0,
+        "10": 0
+      },
+      "recall_ci95": null,
+      "precision_complete": 0.0,
+      "false_per_photo": 258.4,
+      "unresolved_per_photo": 129.8,
+      "unmatched_per_photo": 388.2,
+      "unassigned": {
+        "false": 1292,
+        "occluded_axis": 49,
+        "other_unresolved_axis": 67,
+        "unknown": 533,
+        "existing": 0
+      },
+      "errors_original_px_p50_p95": null,
+      "silent": 0,
+      "empty": 2,
+      "empty_with_points": 2,
+      "processing_failures": 0
+    }
+  },
+  "regions": {
+    "central_roi": [
+      {
+        "id": "warrior",
+        "roi": [
+          762,
+          458,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 1133,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 158.23023986816406
+        },
+        "from704": {
+          "proposals": 720,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 87.18722534179688
+        }
+      },
+      {
+        "id": "sac",
+        "roi": [
+          3392,
+          2216,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 0,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 52.22981643676758
+        },
+        "from704": {
+          "proposals": 0,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 26.26396369934082
+        }
+      },
+      {
+        "id": "robin",
+        "roi": [
+          736,
+          528,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 111,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 94.1593017578125
+        },
+        "from704": {
+          "proposals": 106,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 54.67495346069336
+        }
+      },
+      {
+        "id": "reading",
+        "roi": [
+          1008,
+          732,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 34,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 94.96952819824219
+        },
+        "from704": {
+          "proposals": 19,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 46.38792419433594
+        }
+      },
+      {
+        "id": "scioto",
+        "roi": [
+          2720,
+          1768,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 270,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 59.271636962890625
+        },
+        "from704": {
+          "proposals": 24,
+          "known": 0,
+          "matched": 0,
+          "gradient_rms": 21.14573860168457
+        }
+      }
+    ],
+    "tiles_selected_by_reference": [
+      {
+        "id": "sac",
+        "roi": [
+          2880,
+          1920,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 23.189348220825195
+        },
+        "from704": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 15.01941967010498
+        }
+      },
+      {
+        "id": "sac",
+        "roi": [
+          2880,
+          2400,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 23.944095611572266
+        },
+        "from704": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 14.048035621643066
+        }
+      },
+      {
+        "id": "sac",
+        "roi": [
+          3456,
+          960,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 55.49641799926758
+        },
+        "from704": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 25.192363739013672
+        }
+      },
+      {
+        "id": "sac",
+        "roi": [
+          3456,
+          1920,
+          576,
+          480
+        ],
+        "native": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 45.86509323120117
+        },
+        "from704": {
+          "proposals": 0,
+          "known": 1,
+          "matched": 0,
+          "gradient_rms": 24.514366149902344
+        }
+      }
+    ]
+  },
+  "transfer": {
+    "r3-6021": {
+      "policy": {
+        "seed": 6021,
+        "manifest": "8d1df349022e2795969283ba7504e0fedb9da10cbe65f78061c5d1a98a5a4027",
+        "start_sha256": "fd4c8490eed9ad37602479bcbee6b8d8d7077730fc48aaed95b8c3e0fb03cece",
+        "checkpoint_sha256": "7fc141e7947fa7e529c5aeca10eb586e2d2b379f881b67cb7fc86ce96a623717",
+        "dev_loss": [
+          0.5673452615737915,
+          0.384235421816508,
+          0.4677342275778453,
+          0.4210926294326782
+        ],
+        "epoch": 2,
+        "dev_curve": [
+          {
+            "threshold": 0.08,
+            "matched": 12,
+            "unmatched_per_image": 279.0
+          },
+          {
+            "threshold": 0.12,
+            "matched": 12,
+            "unmatched_per_image": 244.20833333333334
+          },
+          {
+            "threshold": 0.18,
+            "matched": 12,
+            "unmatched_per_image": 192.29166666666666
+          },
+          {
+            "threshold": 0.25,
+            "matched": 12,
+            "unmatched_per_image": 136.79166666666666
+          },
+          {
+            "threshold": 0.33,
+            "matched": 8,
+            "unmatched_per_image": 75.79166666666667
+          },
+          {
+            "threshold": 0.42,
+            "matched": 4,
+            "unmatched_per_image": 17.541666666666668
+          },
+          {
+            "threshold": 0.52,
+            "matched": 3,
+            "unmatched_per_image": 2.2916666666666665
+          },
+          {
+            "threshold": 0.65,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          }
+        ],
+        "threshold": 0.8,
+        "elapsed_training_seconds": 8.551411667000139,
+        "torch": "2.14.1+cpu"
+      },
+      "dev": {
+        "photos": 24,
+        "groups": 24,
+        "present": 21,
+        "axes_eligible": 21,
+        "presence_matched": 6,
+        "known": 16,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 24,
+        "empty": 9,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
+      },
+      "test": {
+        "photos": 32,
+        "groups": 32,
+        "present": 28,
+        "axes_eligible": 28,
+        "presence_matched": 11,
+        "known": 24,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 32,
+        "empty": 12,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
+      },
+      "scenarios": {
+        "clean-single": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "clutter-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "holes-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "tear-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-bright": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "worn-grouped": [
+          4,
+          12,
+          0,
+          0
+        ],
+        "worn-masked": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-single": [
+          4,
+          4,
+          0,
+          0
+        ]
+      }
+    },
+    "r3-6022": {
+      "policy": {
+        "seed": 6022,
+        "manifest": "8d1df349022e2795969283ba7504e0fedb9da10cbe65f78061c5d1a98a5a4027",
+        "start_sha256": "fd4c8490eed9ad37602479bcbee6b8d8d7077730fc48aaed95b8c3e0fb03cece",
+        "checkpoint_sha256": "ba7aa619728afd3e990cf6d784085dfc72925e250899c46964e202598bd39bb8",
+        "dev_loss": [
+          0.950764795144399,
+          0.3963272273540497,
+          0.41130001346270245,
+          0.412945419549942
+        ],
+        "epoch": 2,
+        "dev_curve": [
+          {
+            "threshold": 0.08,
+            "matched": 11,
+            "unmatched_per_image": 137.20833333333334
+          },
+          {
+            "threshold": 0.12,
+            "matched": 11,
+            "unmatched_per_image": 120.95833333333333
+          },
+          {
+            "threshold": 0.18,
+            "matched": 10,
+            "unmatched_per_image": 98.95833333333333
+          },
+          {
+            "threshold": 0.25,
+            "matched": 10,
+            "unmatched_per_image": 69.625
+          },
+          {
+            "threshold": 0.33,
+            "matched": 7,
+            "unmatched_per_image": 31.458333333333332
+          },
+          {
+            "threshold": 0.42,
+            "matched": 6,
+            "unmatched_per_image": 8.375
+          },
+          {
+            "threshold": 0.52,
+            "matched": 1,
+            "unmatched_per_image": 1.25
+          },
+          {
+            "threshold": 0.65,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          }
+        ],
+        "threshold": 0.8,
+        "elapsed_training_seconds": 8.48962226399999,
+        "torch": "2.14.1+cpu"
+      },
+      "dev": {
+        "photos": 24,
+        "groups": 24,
+        "present": 21,
+        "axes_eligible": 21,
+        "presence_matched": 4,
+        "known": 16,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 24,
+        "empty": 9,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
+      },
+      "test": {
+        "photos": 32,
+        "groups": 32,
+        "present": 28,
+        "axes_eligible": 28,
+        "presence_matched": 1,
+        "known": 24,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 32,
+        "empty": 12,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
+      },
+      "scenarios": {
+        "clean-single": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "clutter-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "holes-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "tear-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-bright": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "worn-grouped": [
+          4,
+          12,
+          0,
+          0
+        ],
+        "worn-masked": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-single": [
+          4,
+          4,
+          0,
+          0
+        ]
+      }
+    },
+    "scratch-6021": {
+      "policy": {
+        "seed": 6021,
+        "manifest": "8d1df349022e2795969283ba7504e0fedb9da10cbe65f78061c5d1a98a5a4027",
+        "start_sha256": null,
+        "checkpoint_sha256": "3776037945431af912b9fdcb1bd0ee3a8e97c49b92271700ca1c2f0efa3ef6a2",
+        "dev_loss": [
+          1.45140806833903,
+          1.1814061005910237,
+          1.125628113746643,
+          1.0615386565526326
+        ],
+        "epoch": 4,
+        "dev_curve": [
+          {
+            "threshold": 0.08,
+            "matched": 7,
+            "unmatched_per_image": 867.6666666666666
+          },
+          {
+            "threshold": 0.12,
+            "matched": 7,
+            "unmatched_per_image": 867.6666666666666
+          },
+          {
+            "threshold": 0.18,
+            "matched": 7,
+            "unmatched_per_image": 867.6666666666666
+          },
+          {
+            "threshold": 0.25,
+            "matched": 7,
+            "unmatched_per_image": 836.5833333333334
+          },
+          {
+            "threshold": 0.33,
+            "matched": 5,
+            "unmatched_per_image": 546.125
+          },
+          {
+            "threshold": 0.42,
+            "matched": 3,
+            "unmatched_per_image": 60.75
+          },
+          {
+            "threshold": 0.52,
+            "matched": 0,
+            "unmatched_per_image": 1.2083333333333333
+          },
+          {
+            "threshold": 0.65,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          }
+        ],
+        "threshold": 0.8,
+        "elapsed_training_seconds": 8.57037544999912,
+        "torch": "2.14.1+cpu"
+      },
+      "dev": {
+        "photos": 24,
+        "groups": 24,
+        "present": 21,
+        "axes_eligible": 21,
+        "presence_matched": 1,
+        "known": 16,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 24,
+        "empty": 9,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
+      },
+      "test": {
+        "photos": 32,
+        "groups": 32,
+        "present": 28,
+        "axes_eligible": 28,
+        "presence_matched": 0,
+        "known": 24,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 32,
+        "empty": 12,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
+      },
+      "scenarios": {
+        "clean-single": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "clutter-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "holes-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "tear-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-bright": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "worn-grouped": [
+          4,
+          12,
+          0,
+          0
+        ],
+        "worn-masked": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-single": [
+          4,
+          4,
+          0,
+          0
+        ]
+      }
+    },
+    "scratch-6022": {
+      "policy": {
+        "seed": 6022,
+        "manifest": "8d1df349022e2795969283ba7504e0fedb9da10cbe65f78061c5d1a98a5a4027",
+        "start_sha256": null,
+        "checkpoint_sha256": "5cc8aba0384119e33eaf73fe29c93bd8db0864494e146b54de600f09f0368eab",
+        "dev_loss": [
+          1.4197552998860676,
+          1.2914728720982869,
+          1.1402945121129353,
+          0.976067324479421
+        ],
+        "epoch": 4,
+        "dev_curve": [
+          {
+            "threshold": 0.08,
+            "matched": 6,
+            "unmatched_per_image": 14.375
+          },
+          {
+            "threshold": 0.12,
+            "matched": 6,
+            "unmatched_per_image": 14.375
+          },
+          {
+            "threshold": 0.18,
+            "matched": 6,
+            "unmatched_per_image": 14.333333333333334
+          },
+          {
+            "threshold": 0.25,
+            "matched": 0,
+            "unmatched_per_image": 0.08333333333333333
+          },
+          {
+            "threshold": 0.33,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.42,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.52,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.65,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "matched": 0,
+            "unmatched_per_image": 0.0
+          }
+        ],
+        "threshold": 0.8,
+        "elapsed_training_seconds": 8.598448861001089,
+        "torch": "2.14.1+cpu"
+      },
+      "dev": {
+        "photos": 24,
+        "groups": 24,
+        "present": 21,
+        "axes_eligible": 21,
+        "presence_matched": 0,
+        "known": 16,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 24,
+        "empty": 9,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
+      },
+      "test": {
+        "photos": 32,
+        "groups": 32,
+        "present": 28,
+        "axes_eligible": 28,
+        "presence_matched": 0,
+        "known": 24,
+        "matched": 0,
+        "proposals": 0,
+        "by_tolerance": {
+          "3": 0,
+          "5": 0,
+          "10": 0
+        },
+        "recall_ci95": null,
+        "precision_complete": null,
+        "false_per_photo": 0.0,
+        "unresolved_per_photo": 0.0,
+        "unmatched_per_photo": 0.0,
+        "unassigned": {
+          "false": 0,
+          "occluded_axis": 0,
+          "other_unresolved_axis": 0,
+          "unknown": 0,
+          "existing": 0
+        },
+        "errors_original_px_p50_p95": null,
+        "silent": 32,
+        "empty": 12,
+        "empty_with_points": 0,
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
+      },
+      "scenarios": {
+        "clean-single": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "clutter-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "holes-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "tear-only": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-bright": [
+          4,
+          4,
+          0,
+          0
+        ],
+        "worn-grouped": [
+          4,
+          12,
+          0,
+          0
+        ],
+        "worn-masked": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "worn-single": [
+          4,
+          4,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "transfer_scenario_columns": [
+    "groups",
+    "visible_contacts",
+    "matched",
+    "proposals"
+  ],
+  "export": {
+    "fixed_windows": {
+      "float": {
+        "bytes": 323332,
+        "sha256": "e1b2b320b4c24f450edd0827656a87129b531f44d412a11027335500e80a5a01",
+        "max_probability_error": 1.6987323760986328e-06,
+        "reference_points": 3039,
+        "points": 3039,
+        "windows": 24,
+        "changed_point_sets": 0,
+        "changed_silence": 0
+      },
+      "int8": {
+        "bytes": 130956,
+        "sha256": "cfa6924b0dd107cf27386a64ac1862a3af0a2ef87021354ef87c6b28c449acac",
+        "max_probability_error": 0.6177265048027039,
+        "reference_points": 3039,
+        "points": 2420,
+        "windows": 24,
+        "changed_point_sets": 24,
+        "changed_silence": 0
+      }
+    },
+    "runtime": {
+      "float": {
+        "load_ms": 3.6150400010228623,
+        "first_ms": 7.925625001007575,
+        "warm_p95_ms": 4.09156629921199
+      },
+      "int8": {
+        "load_ms": 6.096765000620508,
+        "first_ms": 3.742639000847703,
+        "warm_p95_ms": 3.3287700001892517
+      },
+      "ort": "1.23.2",
+      "worker_peak_rss_kib": 487492
+    },
+    "whole_photo": {
+      "float": {
+        "onnx_sha256": "e1b2b320b4c24f450edd0827656a87129b531f44d412a11027335500e80a5a01",
+        "runtime": "1.23.2",
+        "load_ms": 7.707377000770066,
+        "first_photo_ms": 832.1639690002485,
+        "warm_photos": 20,
+        "warm_p50_p95_ms": [
+          719.2031809991022,
+          808.1122261003657
+        ],
+        "peak_rss_kib": 340740,
+        "photos": [
+          {
+            "id": "warrior",
+            "known": 0,
+            "matched": 0,
+            "proposals": 1209
+          },
+          {
+            "id": "sac",
+            "known": 4,
+            "matched": 0,
+            "proposals": 265
+          },
+          {
+            "id": "robin",
+            "known": 0,
+            "matched": 0,
+            "proposals": 247
+          },
+          {
+            "id": "reading",
+            "known": 0,
+            "matched": 0,
+            "proposals": 126
+          },
+          {
+            "id": "scioto",
+            "known": 0,
+            "matched": 0,
+            "proposals": 71
+          }
+        ]
+      },
+      "int8": {
+        "onnx_sha256": "cfa6924b0dd107cf27386a64ac1862a3af0a2ef87021354ef87c6b28c449acac",
+        "runtime": "1.23.2",
+        "load_ms": 12.280411001484026,
+        "first_photo_ms": 657.5138940006582,
+        "warm_photos": 20,
+        "warm_p50_p95_ms": [
+          627.059795499008,
+          670.3036008510026
+        ],
+        "peak_rss_kib": 339692,
+        "photos": [
+          {
+            "id": "warrior",
+            "known": 0,
+            "matched": 0,
+            "proposals": 1132
+          },
+          {
+            "id": "sac",
+            "known": 4,
+            "matched": 0,
+            "proposals": 193
+          },
+          {
+            "id": "robin",
+            "known": 0,
+            "matched": 0,
+            "proposals": 213
+          },
+          {
+            "id": "reading",
+            "known": 0,
+            "matched": 0,
+            "proposals": 94
+          },
+          {
+            "id": "scioto",
+            "known": 0,
+            "matched": 0,
+            "proposals": 73
+          }
+        ]
+      }
+    }
+  },
+  "android_probe": {
+    "aar_sha256": "82048d1f462218adae4ba76477089ab0ba76093d84f733540066db1a8ba6b827",
+    "ort_android": "1.23.2",
+    "ndk": "28.0.13004108",
+    "compiled_abi": "x86_64",
+    "emulator_result": "QEMU SIGSEGV before ADB on API 35 and 36",
+    "inference_on_android": null,
+    "physical_phone_p95_ms": null
+  }
+}
