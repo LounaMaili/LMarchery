@@ -453,6 +453,28 @@ de perdre une annulation ; les anciens imports ne peuvent pas réactiver une
 flèche connue annulée. Voir [ADR 048](adr/048-annulation-logique-durable-impacts.md).
 Cette candidate locale ne constitue pas une qualification humaine au doigt.
 
+## Consulter le bilan d’une volée
+
+Dans l’éditeur configurable, ouvrir **Séance** puis **Bilan de la volée**.
+Le menu permet aussi d’ouvrir le bilan d’une autre volée enregistrée. Dans
+l’éditeur historique, ouvrir **Bilan** à côté de **Photo du blason**. Les séances
+configurables terminées proposent l’action à côté de chaque volée. Fermer le
+bilan ramène à l’écran précédent et conserve la volée affichée.
+
+Le bilan séparé affiche le score enregistré, le statut, le centrage et la
+dispersion selon l’[ADR 051](adr/051-groupements-et-dispersion.md). Les flèches
+M actives sont incluses par défaut dans les mesures. Le filtre M ne modifie
+ni le score ni les impacts. Les flèches annulées restent hors du groupement.
+À zéro impact retenu, le centre est indisponible. Une seule flèche donne un
+centre, avec dispersion indisponible. Deux flèches au même endroit donnent
+un diamètre de zéro.
+
+Choisir des valeurs normalisées, en cm ou en mm. Les longueurs physiques
+utilisent le rayon nominal du blason enregistré de cette volée. Le bilan
+calcule uniquement la volée demandée, hors du fil de l’interface. Tant que
+le bilan reste ouvert, unités et retour à un filtre déjà calculé réutilisent
+le résultat. Cette consultation est en lecture seule, sans écriture dérivée.
+
 ## Saisie V2 — Photographier une volée
 
 Ouvrir **Photo** depuis l’écran de tir ou **Photo du blason** dans l’éditeur historique. Choisir **Photographier le blason** ou **Importer une photo**. Une seule photo est associée à chaque volée.
