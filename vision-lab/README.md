@@ -133,3 +133,7 @@ python -m r3.review compare data/r4-readings/review-001-annotation.json \
 Pour une épreuve personnelle autorisée, `python -m r4.trial ORIGINALS "$MODELE_R3" "$POLITIQUE_R3" OUTPUT` requiert ExifTool. Employer un dossier de sortie hors originaux, sous `artifacts/` ou un emplacement privé. La commande enregistre les empreintes, les superpositions et les cartes locales. Elle n’ajuste ni le modèle ni les seuils. L’option `--original-native` appartient au comparatif de corpus R4 et n’est pas exécutée sur les photos personnelles.
 
 Le test réel exige des références séparées. Le corpus pilote actuel est admissible à l’évaluation exploratoire. La commande d’entraînement R3 conserve son contrat synthétique. Aucun poids entraîné sur les données réelles n’est livré.
+
+## Préparer les lectures R5
+
+Le [bilan R5](r5.md) regroupe l’audit des huit originaux, la procédure pour les sept premières lectures et le plan d’évaluation sur de nouvelles séances. Les commandes `python -m r5.review` vérifient les fiches et préparent le lot prioritaire. Les médias, premières lectures et retours humains sont conservés localement.
