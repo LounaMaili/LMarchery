@@ -1,4 +1,4 @@
-# ADR 056 — Estimation météo ponctuelle d’une séance
+# ADR 058 — Estimation météo ponctuelle d’une séance
 
 L2 conserve ce que l’archer a observé. L3a ajoute une source indépendante pour des valeurs calculées sur une maille météorologique. Le pas de temps, la hauteur et le lieu peuvent différer d’une mesure sur le terrain. Les importations et le journal affichent les deux provenances séparément. [Observations manuelles et conventions](054-observations-meteo-et-vent.md)
 
