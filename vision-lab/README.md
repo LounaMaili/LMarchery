@@ -102,3 +102,34 @@ Le test réel relit le manifeste des annotations locales au moyen de `--split re
 .venv/bin/python -m r3.review prepare r3/real-sources.json data/r3-public-sources \
   data/r3-real-test data/r3-readings/*-annotation.json
 ```
+
+## Rejouer R4
+
+Le [rapport de corpus](r4-corpus.md) documente les originaux publics, les droits et la seconde lecture en attente. Le [rapport d’apprentissage](r4-apprentissage.md) présente la comparaison R3/R4, y compris les contacts perdus par le filtre. Les inventaires exploratoires personnels et leurs superpositions sont conservés uniquement dans un dossier local privé.
+
+Utiliser le runtime R3 CPU ci-dessus et un shell dans `vision-lab/`. Les deux variables ci-dessous pointent vers le modèle et la politique gelés de R3, dont R4 vérifie les empreintes. Réserver un nouveau dossier de sortie par exécution.
+
+```bash
+export MODELE_R3=artifacts/model-r3-cuda/model.pt
+export POLITIQUE_R3=artifacts/r3-calibration/policy.json
+
+python -m r4.wear data/r4-worn-stress
+python -m r4.compare data/r4-worn-stress "$MODELE_R3" "$POLITIQUE_R3" artifacts/r4-synth
+```
+
+Télécharger chaque original public depuis la fiche de la [source cataloguée](r4/public-sources.json) sous le nom prévu dans le catalogue local. Préparer le premier dossier de lecture avant de lancer la comparaison. Pour chaque PNG, ouvrir son fichier `review-…json` et l’image associée avec l’[annotateur R3](r3/annotate.html), selon ses instructions. Exporter les lectures du premier et du deuxième lecteur dans des dossiers différents.
+
+```bash
+python -m r4.corpus audit r4/public-sources.json data/r4-public-sources
+python -m r4.corpus blind r4/public-sources.json data/r4-public-sources data/r4-blind
+python -m r4.corpus prepare r4/public-sources.json data/r4-public-sources \
+  data/r4-public-test data/r4-blind data/r4-readings/*-annotation.json
+python -m r4.compare data/r4-public-test "$MODELE_R3" "$POLITIQUE_R3" \
+  artifacts/r4-public --original-native
+python -m r3.review compare data/r4-readings/review-001-annotation.json \
+  data/r4-second-readings/review-001-annotation.json
+```
+
+Pour une épreuve personnelle autorisée, `python -m r4.trial ORIGINALS "$MODELE_R3" "$POLITIQUE_R3" OUTPUT` requiert ExifTool. Employer un dossier de sortie hors originaux, sous `artifacts/` ou un emplacement privé. La commande enregistre les empreintes, les superpositions et les cartes locales. Elle n’ajuste ni le modèle ni les seuils. L’option `--original-native` appartient au comparatif de corpus R4 et n’est pas exécutée sur les photos personnelles.
+
+Le test réel exige des références séparées. Le corpus pilote actuel est admissible à l’évaluation exploratoire. La commande d’entraînement R3 conserve son contrat synthétique. Aucun poids entraîné sur les données réelles n’est livré.

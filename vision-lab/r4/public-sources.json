@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "frames": [
+    {
+      "id": "warrior",
+      "image": "warrior.jpg",
+      "sha256": "cca3c554e35299a737519dc1e7604b266477aebc9196c20c7f71b7f58e78d1fd",
+      "size": [
+        2100,
+        1397
+      ],
+      "credit": "Christopher Griffin / U.S. Air Force",
+      "photographer_id": "christopher-griffin",
+      "license": "Domaine public aux États-Unis (PD-USGov-Military-Air Force)",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:The_results_of_one_round_of_archery_competition_on_a_target_during_the_Warrior_Games_100512-F-3646G-167.jpg#Licensing",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_results_of_one_round_of_archery_competition_on_a_target_during_the_Warrior_Games_100512-F-3646G-167.jpg",
+      "source_group": "christopher-griffin",
+      "session_id": "warrior-capture",
+      "board_id": "warrior-board-set",
+      "origin_id": "warrior-original",
+      "use": "public-lab",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "worn-empty",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "sac",
+      "image": "sac.jpg",
+      "sha256": "af891c83be6a77c295f84460aaecd14db127c527e93b4d77d3695239ed5ce042",
+      "size": [
+        7360,
+        4912
+      ],
+      "credit": "William Tracy / U.S. Air Force",
+      "photographer_id": "william-tracy",
+      "license": "Domaine public aux États-Unis (PD-USGov-Military-Air Force)",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:SAC_children_hit_bullseye_at_tourney_(4614855).jpg#Licensing",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SAC_children_hit_bullseye_at_tourney_(4614855).jpg",
+      "source_group": "william-tracy",
+      "session_id": "sac-capture",
+      "board_id": "sac-board-set",
+      "origin_id": "sac-original",
+      "use": "public-lab",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "oblique-grouped",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "robin",
+      "image": "robin.jpg",
+      "sha256": "7c59ce276a5a527de8db93fcdacb6d8b0a0bc0aa34223352ddb197782475524b",
+      "size": [
+        2048,
+        1536
+      ],
+      "credit": "Gunnar Richter (Namenlos)",
+      "photographer_id": "gunnar-richter",
+      "license": "CC BY-SA 3.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:WA_targets_used_at_a_Robin-Hood_archery_shooting.jpg",
+      "source_group": "gunnar-richter",
+      "session_id": "robin-capture",
+      "board_id": "robin-board-set",
+      "origin_id": "robin-original",
+      "use": "public-lab",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "clipped-multiple-faces",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "reading",
+      "image": "reading.jpg",
+      "sha256": "e2468caf777c73801e4a6171a5249a0e6cb7c677ba2bfff312503a6f35865f28",
+      "size": [
+        2592,
+        1944
+      ],
+      "credit": "Nigel Hoult (NH53)",
+      "photographer_id": "nigel-hoult",
+      "license": "CC BY 2.0",
+      "license_evidence": "https://creativecommons.org/licenses/by/2.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:WA_Archery_targets_at_Reading_University,_England-22_May_2010.jpg",
+      "source_group": "nigel-hoult",
+      "session_id": "reading-capture",
+      "board_id": "reading-board-set",
+      "origin_id": "reading-original",
+      "use": "public-lab",
+      "split": "test",
+      "family": "multicolor",
+      "scenario": "far-multiple-faces",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    },
+    {
+      "id": "scioto",
+      "image": "scioto.jpg",
+      "sha256": "525ab81afb79bfa5dfa847433ab70e84eee2bb57778ceb2c7dfe4a33fb6b24e7",
+      "size": [
+        6016,
+        4016
+      ],
+      "credit": "Sixflashphoto",
+      "photographer_id": "sixflashphoto",
+      "license": "CC BY-SA 4.0",
+      "license_evidence": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Scioto_Grove_-_Archery_Range_Target_1.jpg",
+      "source_group": "sixflashphoto",
+      "session_id": "scioto-capture",
+      "board_id": "scioto-board-set",
+      "origin_id": "scioto-original",
+      "use": "public-lab",
+      "split": "test",
+      "family": "unidentified",
+      "scenario": "worn-foam-empty",
+      "training_allowed": false,
+      "weights_redistribution_reviewed": false
+    }
+  ]
+}
