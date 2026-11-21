@@ -126,11 +126,27 @@ du JAR et conserver le checksum de distribution dans `gradle-wrapper.properties`
 
 Dans le compte rendu, distinguer tests locaux, compilation Android, lint et CI
 GitHub. Une CI configurée localement n'est pas une CI validée : seul un run GitHub
-réussi sur le commit concerné le confirme. Ne pas publier ou modifier les protections
-de branche sans autorisation. Une PR CI ciblant `v1/03-android-skeleton` peut être
-fusionnée dans cette branche après validation locale et CI, avant les PR parentes.
+réussi sur le commit concerné le confirme. Sur autorisation explicite, une PR CI
+ciblant `v1/03-android-skeleton` peut être fusionnée dans cette branche après
+validation locale et CI, avant les PR parentes.
 Ne pas modifier ni fusionner #2 ou #3 sans autorisation distincte ; leur future
 intégration dans `main` conserve l'ordre #2 puis #3.
+
+## Publication GitHub par défaut
+
+Après chaque lot de développement exploitable et validé localement, publier par défaut, sauf consigne contraire applicable au lot. Aucune autorisation de push supplémentaire n’est requise.
+
+1. Travailler sur une branche dédiée ou dans un worktree isolé.
+2. Exécuter les tests et contrôles adaptés au changement et relever leurs résultats.
+3. Examiner les fichiers destinés à GitHub. Exclure les secrets, sauvegardes utilisateur, médias privés, APK et preuves sensibles ou non nettoyées. Écarter les prototypes dangereux de la publication.
+4. Créer des commits cohérents et pousser la branche sur GitHub.
+5. Ouvrir une PR en brouillon vers la base appropriée ou mettre à jour la PR existante.
+6. Vérifier la cible et le diff de la PR, puis consulter les contrôles CI du SHA publié. Annoncer un succès CI seulement après l’exécution effective sur GitHub.
+7. Fournir le lien de la PR, le SHA exact et les résultats des validations locales et GitHub.
+
+Un lot incomplet peut être publié en brouillon si la description précise ce qui fonctionne, ce qui reste à faire et les vérifications non effectuées.
+
+Ne fusionner que sur autorisation explicite. Ne jamais activer l’auto-merge ni modifier les protections des branches. Si la publication est bloquée, conserver le travail local et expliquer le blocage.
 
 ## Sécurité et fichiers à ne pas committer
 
