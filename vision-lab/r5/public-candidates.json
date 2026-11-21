@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "frames": [
+    {
+      "id": "casito",
+      "filename": "casito.jpg",
+      "credit": "Casito",
+      "source_url": "https://commons.wikimedia.org/wiki/File:WA_archery_target_with_arrows.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:WA_archery_target_with_arrows.jpg#Licensing",
+      "license": "CC BY-SA 3.0 / GFDL",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sha256": "2d532a87f05bb2f941223e2f41a2556a558d5cf81ccad833665bafa6c4285149",
+      "oriented_size": [
+        600,
+        600
+      ],
+      "capture_group": "casito-2003",
+      "board_group": "casito-face",
+      "observation": "Deux jonctions proches des anneaux et quelques trous. Le contact est visible en vue agrandie.",
+      "decision": "eval-r1",
+      "training_admitted": false
+    },
+    {
+      "id": "quiver",
+      "filename": "quiver.jpg",
+      "credit": "Manuela Kohl",
+      "source_url": "https://commons.wikimedia.org/wiki/File:R%C3%BCckenk%C3%B6cher_und_Pfeile_f%C3%BCr_Sportsch%C3%BCtzen.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:R%C3%BCckenk%C3%B6cher_und_Pfeile_f%C3%BCr_Sportsch%C3%BCtzen.jpg#Licensing",
+      "license": "CC0 1.0 selon la fiche d’origine",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "29f86ba3eda36b034eb4c487086a6083f626f0c739c828331003f05edb11a6e2",
+      "oriented_size": [
+        3200,
+        2400
+      ],
+      "capture_group": "kohl-2014",
+      "board_group": "no-board",
+      "observation": "Carquois et tubes libres sur fond sombre. Témoin négatif de contact. L’ancien champ EXIF réserve les droits au même auteur.",
+      "decision": "candidate-negative-awaiting-review",
+      "training_admitted": false
+    },
+    {
+      "id": "soley",
+      "filename": "soley.jpg",
+      "credit": "Jack Soley",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_in_Paper_Target.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_in_Paper_Target.jpg#Licensing",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sha256": "bdef1acdac6097d8db3e7ea6c952d514c38ef9cc8a55bf8f8ba5483232d4df80",
+      "oriented_size": [
+        3000,
+        4000
+      ],
+      "capture_group": "soley-2020",
+      "board_group": "soley-paper",
+      "observation": "Papier perforé en extérieur. Tubes sombres, jonctions discernables et jonctions incertaines.",
+      "decision": "eval-r1",
+      "training_admitted": false
+    },
+    {
+      "id": "wa122",
+      "filename": "wa122.jpg",
+      "credit": "Wacky1976 (fiche) / Gustavo Allid Bernasconi (EXIF)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_122cm.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_122cm.jpg#Licensing",
+      "license": "CC BY-SA 4.0 selon la fiche",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sha256": "f2dab8e2c4afd504edd69b8a4275dd410ae2ffa50780002d2cbcc8ff740500f9",
+      "oriented_size": [
+        7360,
+        4912
+      ],
+      "capture_group": "apc-2023-09",
+      "board_group": "apc-122-perforated",
+      "observation": "Papier très usé, tubes groupés, forts contrastes. Certains contacts visibles, d’autres masqués.",
+      "decision": "eval-r1",
+      "training_admitted": false
+    },
+    {
+      "id": "wa80",
+      "filename": "wa80.jpg",
+      "credit": "Wacky1976",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_80z.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:Archery_Arrows_Target_WA_80z.jpg#Licensing",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sha256": "4b5be4a418a7ba84d072c10b1593d8fdb5a73faa71676c846c7f5aea2c8373fd",
+      "oriented_size": [
+        2048,
+        1536
+      ],
+      "capture_group": "apc-2023-09",
+      "board_group": "apc-80z",
+      "observation": "Tubes groupés sur blason oblique. L’identité des points proches nécessite une double lecture.",
+      "decision": "eval-r1",
+      "training_admitted": false
+    },
+    {
+      "id": "waempty",
+      "filename": "waempty.jpg",
+      "credit": "Wacky1976",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Archery_Target_WA_122_cm.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:Archery_Target_WA_122_cm.jpg#Licensing",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sha256": "f0880ced5e5cf8fdeca76af443e5fe54121f6843a54249a2513904a03909a528",
+      "oriented_size": [
+        2048,
+        1536
+      ],
+      "capture_group": "apc-2023-09",
+      "board_group": "apc-122-empty-unconfirmed",
+      "observation": "Papier vide sur herbe, objets de fixation. Même source et période que les vues APC gelées. Même support physique non établi.",
+      "decision": "eval-related",
+      "training_admitted": false
+    },
+    {
+      "id": "world",
+      "filename": "world.jpg",
+      "credit": "Rodrigo Ndeahh (crédit Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:World_Archery_target.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:World_Archery_target.jpg#Licensing",
+      "license": "CC BY-SA 4.0 affichée",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sha256": "b785119fba7ab9ded065930517d4ad3f334eaeafbe9be7a27c31725dd6504b76",
+      "oriented_size": [
+        808,
+        770
+      ],
+      "capture_group": "mercado-2020",
+      "board_group": "commercial-face",
+      "observation": "Photo de catalogue sans flèche. La fiche reprend une annonce Mercado Libre avec un déposant distinct du crédit.",
+      "decision": "eval-r1",
+      "training_admitted": false
+    },
+    {
+      "id": "youth",
+      "filename": "youth.jpg",
+      "credit": "Sheila deVera / U.S. Air Force",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Archery_for_youth_150615-F-XA488-068.jpg",
+      "license_evidence": "https://commons.wikimedia.org/wiki/File:Archery_for_youth_150615-F-XA488-068.jpg#Licensing",
+      "license": "Domaine public aux États-Unis selon la fiche",
+      "license_url": null,
+      "sha256": "d6734b1acc665cecfe4ebfd117d72ab79f33f5cfca16e83d22b87634e6e95730",
+      "oriented_size": [
+        7360,
+        4912
+      ],
+      "capture_group": "af-alaska-2015",
+      "board_group": "af-alaska-2015-board-array",
+      "observation": "Plusieurs blasons de profil et des tubes clairs et sombres superposés. Contacts partiellement lisibles, souvent masqués.",
+      "decision": "candidate-awaiting-rights-and-review",
+      "training_admitted": false
+    }
+  ]
+}
