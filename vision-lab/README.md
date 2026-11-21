@@ -137,3 +137,7 @@ Le test réel exige des références séparées. Le corpus pilote actuel est adm
 ## Préparer les lectures R5
 
 Le [bilan R5](r5.md) regroupe l’audit des huit originaux, la procédure pour les sept premières lectures et le plan d’évaluation sur de nouvelles séances. Les commandes `python -m r5.review` vérifient les fiches et préparent le lot prioritaire. Les médias, premières lectures et retours humains sont conservés localement.
+
+## Rejouer R6
+
+Le [bilan et la fiche modèle](r6.md) présentent les plafonds du décodage, la comparaison avec et sans préentraînement, et la parité mobile. Le [protocole](r6/protocole.md), les [commandes de reproduction](r6/rejouer.md) et le [registre des sources](r6/sources.md) accompagnent les mesures.

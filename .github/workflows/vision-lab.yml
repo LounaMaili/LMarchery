@@ -67,5 +67,5 @@ jobs:
           python -m pip install --only-binary=:all: --require-hashes -r requirements-ci.txt
           python -m pip install --only-binary=:all: --require-hashes \
             --extra-index-url https://download.pytorch.org/whl/cpu -r requirements-r3-cpu.txt
-      - name: Three model and inference tests
-        run: python -m unittest -v test_r3.LearningTests
+      - name: Model, window fusion and decoder tests
+        run: python -m unittest -v test_r3.LearningTests test_r6

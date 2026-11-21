@@ -36,7 +36,24 @@ def maximum_matches(reference, proposed, max_distance):
     a = np.array([p / max_distance for p in reference])
     b = np.array([p / max_distance for p in proposed])
     distances = np.linalg.norm(a[None, :, :] - b[:, None, :], axis=2)
-    return match_costs(distances)
+    # Points outside every tolerance still count as proposals, but cannot enter a match.
+    eligible = np.flatnonzero((distances <= 1).any(axis=1))
+    if len(eligible) < 128:
+        return tuple((ref, int(eligible[pred])) for ref, pred in match_costs(distances[eligible]))
+    # The reference inventory is bounded (12). Iterate over dense candidate sets
+    # without putting every proposed peak on the Python call stack.
+    states = {0: (0., ())}
+    for pred in reversed(eligible.tolist()):
+        next_states = states.copy()
+        for ref in np.flatnonzero(distances[pred] <= 1).tolist():
+            bit = 1 << ref
+            for used, (cost, pairs) in states.items():
+                new_cost = cost + distances[pred, ref]
+                new_mask = used | bit
+                if not used & bit and (new_mask not in next_states or new_cost < next_states[new_mask][0]):
+                    next_states[new_mask] = (new_cost, ((ref, pred),) + pairs)
+        states = next_states
+    return min(states.values(), key=lambda state: (-len(state[1]), state[0]))[1]
 
 
 def match_costs(distances):
