@@ -9,6 +9,17 @@ from r6.decode import multiple, oracle
 
 
 class DecoderTests(unittest.TestCase):
+    @unittest.skipUnless(importlib.util.find_spec("torch"), "R3 CPU environment required")
+    def test_one_positive_board_cannot_establish_a_zero_width_recall_interval(self):
+        from r6.measure import totals
+        row = dict(group="board", present=1, known=1, matched=0, proposals=0, complete=True,
+                   errors_px=[], unassigned={}, tubes_known=1, tubes_matched=0, negative=False,
+                   close={"3": 0, "5": 0, "10": 0})
+        report = totals([row, row])
+        self.assertIsNone(report["recall_ci95"])
+        self.assertEqual(report["positive_groups"], 1)
+        self.assertAlmostEqual(report["any_match_group_upper95_if_zero"], .95)
+
     def test_two_peaks_on_one_shaft_and_quantized_plateau(self):
         mask = np.zeros((48, 96, 3), np.uint8)
         mask[20:26, 10:82, 1] = 255

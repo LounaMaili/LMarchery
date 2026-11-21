@@ -34,11 +34,18 @@ def totals(rows):
     for r in rows:
         groups[r["group"]] += [r["matched"], r["known"]]
     counts = np.array(list(groups.values()))
+    informative = counts[counts[:, 1] > 0]
+    detected_groups = int(np.count_nonzero(informative[:, 0]))
     rng = np.random.default_rng(6100)
     draws = counts[rng.integers(len(counts), size=(1000, len(counts)))].sum(axis=1)
     positive = draws[draws[:, 1] > 0]
-    intervals = np.percentile(positive[:, 0]/positive[:, 1], [2.5, 97.5]).tolist() if len(positive) else None
+    intervals = None
+    if len(informative) >= 2 and np.ptp(informative[:, 0]/informative[:, 1]) > 0:
+        intervals = np.percentile(positive[:, 0]/positive[:, 1], [2.5, 97.5]).tolist()
     return dict(photos=len(rows), groups=len(groups), present=total("present"),
+                positive_groups=len(informative), groups_with_any_match=detected_groups,
+                any_match_group_upper95_if_zero=(1 - .05**(1/len(informative))
+                                                 if len(informative) and not detected_groups else None),
                 axes_eligible=total("tubes_known"), presence_matched=total("tubes_matched"),
                 known=total("known"), matched=total("matched"), proposals=total("proposals"),
                 by_tolerance={str(d): sum(r["close"][str(d)] for r in rows) for d in (3,5,10)},

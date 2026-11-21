@@ -38,6 +38,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 13,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -75,6 +78,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
           "known": 24,
           "matched": 5,
           "proposals": 6,
@@ -89,6 +94,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 14,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -126,6 +134,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
           "known": 24,
           "matched": 5,
           "proposals": 22,
@@ -140,6 +150,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -177,6 +190,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 21,
           "proposals": 308,
@@ -191,6 +206,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 72,
           "known": 80,
@@ -228,6 +246,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 7,
           "proposals": 7,
@@ -242,6 +262,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 72,
           "known": 80,
@@ -279,6 +302,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 16,
           "proposals": 16,
@@ -293,6 +318,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 72,
           "known": 80,
@@ -330,6 +358,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 20,
           "proposals": 20,
@@ -344,6 +374,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 13,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 72,
           "known": 80,
@@ -381,6 +414,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 6,
           "proposals": 6,
@@ -395,6 +430,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 72,
           "known": 80,
@@ -432,6 +470,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 6,
           "proposals": 24,
@@ -446,6 +486,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 72,
           "known": 80,
@@ -483,6 +526,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 21,
           "proposals": 287,
@@ -497,6 +542,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 15,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -534,6 +582,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 6,
           "proposals": 6,
@@ -548,6 +598,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 15,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -585,6 +638,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 15,
           "proposals": 15,
@@ -599,6 +654,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 16,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -636,6 +694,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 4,
           "known": 24,
           "matched": 20,
           "proposals": 20,
@@ -650,6 +710,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 7,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -687,6 +750,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
           "known": 24,
           "matched": 3,
           "proposals": 6,
@@ -701,6 +766,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 9,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -738,6 +806,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
           "known": 24,
           "matched": 4,
           "proposals": 13,
@@ -752,6 +822,9 @@
           "photos": 48,
           "groups": 24,
           "present": 88,
+          "positive_groups": 16,
+          "groups_with_any_match": 11,
+          "any_match_group_upper95_if_zero": null,
           "axes_eligible": 88,
           "presence_matched": 54,
           "known": 80,
@@ -789,6 +862,8 @@
         "grouped": {
           "photos": 8,
           "groups": 4,
+          "positive_groups": 4,
+          "groups_with_any_match": 3,
           "known": 24,
           "matched": 17,
           "proposals": 97,
@@ -805,6 +880,9 @@
       "photos": 5,
       "groups": 5,
       "present": 12,
+      "positive_groups": 1,
+      "groups_with_any_match": 0,
+      "any_match_group_upper95_if_zero": 0.95,
       "axes_eligible": 12,
       "presence_matched": 3,
       "known": 4,
@@ -815,10 +893,7 @@
         "5": 0,
         "10": 0
       },
-      "recall_ci95": [
-        0.0,
-        0.0
-      ],
+      "recall_ci95": null,
       "precision_complete": 0.0,
       "false_per_photo": 2.0,
       "unresolved_per_photo": 4.0,
@@ -840,6 +915,9 @@
       "photos": 5,
       "groups": 5,
       "present": 12,
+      "positive_groups": 1,
+      "groups_with_any_match": 0,
+      "any_match_group_upper95_if_zero": 0.95,
       "axes_eligible": 12,
       "presence_matched": 3,
       "known": 4,
@@ -850,10 +928,7 @@
         "5": 0,
         "10": 0
       },
-      "recall_ci95": [
-        0.0,
-        0.0
-      ],
+      "recall_ci95": null,
       "precision_complete": 0.0,
       "false_per_photo": 5.4,
       "unresolved_per_photo": 7.2,
@@ -875,6 +950,9 @@
       "photos": 5,
       "groups": 5,
       "present": 12,
+      "positive_groups": 1,
+      "groups_with_any_match": 0,
+      "any_match_group_upper95_if_zero": 0.95,
       "axes_eligible": 12,
       "presence_matched": 3,
       "known": 4,
@@ -885,10 +963,7 @@
         "5": 0,
         "10": 0
       },
-      "recall_ci95": [
-        0.0,
-        0.0
-      ],
+      "recall_ci95": null,
       "precision_complete": 0.0,
       "false_per_photo": 258.4,
       "unresolved_per_photo": 129.8,
@@ -1181,10 +1256,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1200,7 +1272,10 @@
         "silent": 24,
         "empty": 9,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
       },
       "test": {
         "photos": 32,
@@ -1216,10 +1291,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1235,7 +1307,10 @@
         "silent": 32,
         "empty": 12,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
       },
       "scenarios": {
         "clean-single": [
@@ -1366,10 +1441,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1385,7 +1457,10 @@
         "silent": 24,
         "empty": 9,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
       },
       "test": {
         "photos": 32,
@@ -1401,10 +1476,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1420,7 +1492,10 @@
         "silent": 32,
         "empty": 12,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
       },
       "scenarios": {
         "clean-single": [
@@ -1551,10 +1626,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1570,7 +1642,10 @@
         "silent": 24,
         "empty": 9,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
       },
       "test": {
         "photos": 32,
@@ -1586,10 +1661,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1605,7 +1677,10 @@
         "silent": 32,
         "empty": 12,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
       },
       "scenarios": {
         "clean-single": [
@@ -1736,10 +1811,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1755,7 +1827,10 @@
         "silent": 24,
         "empty": 9,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 12,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.22092219194555585
       },
       "test": {
         "photos": 32,
@@ -1771,10 +1846,7 @@
           "5": 0,
           "10": 0
         },
-        "recall_ci95": [
-          0.0,
-          0.0
-        ],
+        "recall_ci95": null,
         "precision_complete": null,
         "false_per_photo": 0.0,
         "unresolved_per_photo": 0.0,
@@ -1790,7 +1862,10 @@
         "silent": 32,
         "empty": 12,
         "empty_with_points": 0,
-        "processing_failures": 0
+        "processing_failures": 0,
+        "positive_groups": 16,
+        "groups_with_any_match": 0,
+        "any_match_group_upper95_if_zero": 0.17074972298248092
       },
       "scenarios": {
         "clean-single": [
