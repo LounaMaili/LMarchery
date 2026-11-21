@@ -38,6 +38,8 @@ L'utilisateur prend une photo, l'application l'affiche, l'utilisateur place les 
 
 ## V3 — Assistance OpenCV (reconnaissance semi-automatique)
 
+Le [laboratoire vision](../vision-lab/README.md) contient les expériences Fedora, le jeu pilote reproductible et l’étude CameraX.
+
 > Objectif : l'application propose les positions, l'utilisateur valide ou corrige
 
 ### Fonctionnalités
