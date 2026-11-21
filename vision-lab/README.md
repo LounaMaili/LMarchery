@@ -54,3 +54,24 @@ L’environnement Python, les photos, les annotations, les poids et les démonst
 - [Jeu pilote, protocole et licences](donnees.md)
 - [Résultats et recommandations de cadrage](resultats.md)
 - [Étude de capture CameraX](capture-assistee.md)
+
+## Rejouer R2
+
+Le rapport [R2](r2.md) décrit les sources, les résultats et le mode de seconde lecture. La CI Python utilise les roues épinglées par SHA-256 pour CPython 3.15.2 sur Linux x86-64. Elle génère deux fois le corpus R1 et compare les empreintes des images sur le même runner. Entre environnements, elle compare les annotations, la géométrie et le modèle avec une précision de six décimales, puis contrôle les décomptes exacts. Le contrôle `--fedora-bytes` vérifie en plus les empreintes originales de Fedora. Le Quality gate Gradle reste distinct.
+
+```sh
+.venv/bin/python -m pip install --only-binary=:all: --require-hashes -r requirements-ci.txt
+.venv/bin/python -m unittest -v
+.venv/bin/python verify_r1.py artifacts/r1-verify
+.venv/bin/python r2_synthetic.py artifacts/r1-verify/white \
+  --model artifacts/r1-verify/synthetic-results/model.json --output artifacts/r2-white.json
+```
+
+Les JPEG `htk-N-C.jpg` du registre correspondent aux originaux `N-C.jpg` du commit cité. Produire `field-31.png` avec `ffmpeg -ss 31 -i field.webm -frames:v 1 field-31.png`, puis vérifier son empreinte avec le registre. Les empreintes portent sur les octets, y compris l’encodage PNG qui peut varier entre versions de FFmpeg. Le relevé local `labels.json` contient `annotated_by` et `frames`, indexé par `id` de l’inventaire. Chaque enregistrement contient le booléen `complete` et le tableau `arrows`. Les champs des flèches sont `id`, `entry`, `tail`, `axis` (deux points visibles), `visibility`, `opposite_kind` (`visible`, `clipped`, `unavailable`), `uncertainty_px`, `near_boundary`, `group` et `state`. Les points sont en pixels dans l’original orienté. Utiliser `null` pour une valeur inconnue.
+
+```sh
+.venv/bin/python r2_prepare.py data/r2-sources data/labels.json data/r2-pilot
+.venv/bin/python r2_evaluate.py data/r2-pilot \
+  --model artifacts/r1-verify/synthetic-results/model.json --output artifacts/r2-public
+.venv/bin/python r2_corpus.py data/r2-pilot data/r2-second-reading
+```
