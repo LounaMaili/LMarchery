@@ -98,19 +98,27 @@ class ConfiguredSessionController(
         ui = ui.copy(form = creation.copy(site = site, line = line, orientation = line?.orientation))
     }
 
-    fun changeOrientation(token: Long, line: ShootingLine, angle: Double?, north: NorthReference, uncertainty: Double?) {
+    fun changeOrientation(token: Long, line: ShootingLine, angle: Double?, north: NorthReference, uncertainty: Double?,
+        reading: CompassReading? = null) {
         val creation = creationForm(token)?.takeIf { it.line == line } ?: return
-        propose { ui = ui.copy(form = creation.copy(orientation = angle?.let {
-            LineOrientation.manual(it, north, uncertainty, clock.instant())
-        })) }
+        propose { ui = ui.copy(form = creation.copy(orientation =
+            catalogueOrientation(angle, north, uncertainty, creation.orientation, reading))) }
     }
 
     fun saveSite(token: Long, expected: ShootingSite?, proposed: ShootingSite) =
         changeCatalogue(token, proposed.uuid, null) { save(expected, proposed) }
 
-    internal fun catalogueOrientation(angle: Double?, north: NorthReference, uncertainty: Double?, previous: LineOrientation?): LineOrientation? {
-        val bearing = angle?.let { LineOrientation.manual(it, north, uncertainty, previous?.confirmedAt) }
-        return if (bearing == previous) previous else bearing?.copy(confirmedAt = clock.instant())
+    internal fun catalogueOrientation(angle: Double?, north: NorthReference, uncertainty: Double?, previous: LineOrientation?,
+        reading: CompassReading? = null): LineOrientation? {
+        if (angle == null) { require(reading == null); return null }
+        val bearing = if (reading == null) LineOrientation.manual(angle, north, uncertainty, previous?.confirmedAt)
+            else {
+                require(north == NorthReference.MAGNETIC_NORTH && uncertainty == null)
+                val normalized = LineOrientation.manual(angle, north, null, null).degrees
+                if (previous?.reading == reading && previous.degrees == normalized) return previous
+                return LineOrientation(normalized, north, OrientationOrigin.SENSOR_CONFIRMED, null, clock.instant(), reading)
+            }
+        return if (bearing == previous) previous else bearing.copy(confirmedAt = clock.instant())
     }
 
     fun saveLine(token: Long, expected: ShootingLine?, proposed: ShootingLine) =

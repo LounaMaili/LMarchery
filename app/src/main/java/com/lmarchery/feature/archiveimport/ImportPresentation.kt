@@ -36,7 +36,7 @@ internal fun v4SuccessText(state: ImportState.SucceededV4): String =
     else if (state.alreadyPresent) "V${state.version} déjà présente à l’identique, aucune écriture : ${state.identical.text()}."
     else "Restauration V${state.version} confirmée. Ajoutés : ${state.added.text()}. Identiques : ${state.identical.text()}.") +
         (if (state.version >= 5) " Enregistrements de lieu ajoutés : ${state.newPlaceRecords}." else "") +
-        (if (state.version == 7) " Estimations ajoutées : ${state.newEstimates ?: 0}." else "") +
+        (if (state.version >= 7) " Estimations ajoutées : ${state.newEstimates ?: 0}." else "") +
         (if (state.version >= 6) " Relevés météo ajoutés : ${state.newObservations ?: 0}." else "") +
         if (state.refreshFailed) " Actualisation impossible : utilisez Actualiser la liste." else ""
 

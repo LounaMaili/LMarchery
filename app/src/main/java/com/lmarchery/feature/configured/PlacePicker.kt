@@ -12,7 +12,7 @@ import com.lmarchery.core.model.place.*
 import java.util.UUID
 
 private val NorthReference.label get() = if (this == NorthReference.TRUE_NORTH) "nord géographique" else "nord magnétique"
-private val LineOrientation?.label get() = this?.let { "${it.degrees}° · ${it.reference.label}" } ?: "Orientation non renseignée"
+private val LineOrientation?.label get() = this?.let { "${it.degrees}° · ${it.reference.label}" + if (it.reading == null) "" else " · boussole confirmée" } ?: "Orientation non renseignée"
 
 @Composable
 internal fun AdoptedPlaceLabel(value: SessionPlace) {
@@ -72,15 +72,17 @@ internal fun PlacePicker(form: ConfiguredForm.Creation, state: ConfiguredEditorS
         }
         PlaceEditor.LINE, PlaceEditor.SESSION -> form.site?.let { owner ->
             val sessionOnly = editor == PlaceEditor.SESSION
-            BearingDialog(line, if (sessionOnly) form.orientation else line?.orientation, sessionOnly, { editor = null }) { name, desc, angle, ref, uncertainty, active ->
-                if (sessionOnly) c.changeOrientation(form.token, requireNotNull(line), angle, ref, uncertainty)
-                else {
-                    val previous = line
-                    val orientation = c.catalogueOrientation(angle, ref, uncertainty, previous?.orientation)
-                    c.saveLine(form.token, previous, ShootingLine(previous?.uuid ?: UUID.randomUUID().toString(), owner.uuid,
-                        name, desc, orientation, active))
+            key(form.token, owner.uuid, line?.uuid, sessionOnly) {
+                BearingDialog(line, if (sessionOnly) form.orientation else line?.orientation, sessionOnly, { editor = null }) { name, desc, angle, ref, uncertainty, active, reading ->
+                    if (sessionOnly) c.changeOrientation(form.token, requireNotNull(line), angle, ref, uncertainty, reading)
+                    else {
+                        val previous = line
+                        val orientation = c.catalogueOrientation(angle, ref, uncertainty, previous?.orientation, reading)
+                        c.saveLine(form.token, previous, ShootingLine(previous?.uuid ?: UUID.randomUUID().toString(), owner.uuid,
+                            name, desc, orientation, active))
+                    }
+                    editor = null
                 }
-                editor = null
             }
         }
         null -> Unit
@@ -130,12 +132,15 @@ private fun SiteDialog(previous: ShootingSite?, dismiss: () -> Unit, save: (Shoo
 
 @Composable
 private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessionOnly: Boolean, dismiss: () -> Unit,
-    save: (String, String?, Double?, NorthReference, Double?, Boolean) -> Unit) {
+    save: (String, String?, Double?, NorthReference, Double?, Boolean, CompassReading?) -> Unit) {
     var name by remember { mutableStateOf(line?.name.orEmpty()) }
     var desc by remember { mutableStateOf(line?.description.orEmpty()) }
     var angle by remember { mutableStateOf(initial?.degrees?.toString().orEmpty()) }
     var north by remember { mutableStateOf(initial?.reference ?: NorthReference.TRUE_NORTH) }
     var uncertainty by remember { mutableStateOf(initial?.uncertaintyDegrees?.toString().orEmpty()) }
+    var reading by remember { mutableStateOf(initial?.reading) }
+    var measuring by remember { mutableStateOf(false) }
+    val survey = rememberCompassSurvey()
     var active by remember { mutableStateOf(line?.active ?: true) }
     PlaceDialog(if (sessionOnly) "Orientation de la séance" else "Ligne de tir", dismiss, {
         if (!sessionOnly) {
@@ -144,7 +149,14 @@ private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessio
             if (line != null) Row { Checkbox(active, { active = it }); Text("Ligne utilisable") }
         }
         TextField(angle, { angle = it }, label = { Text("Azimut vers les cibles (°), facultatif") })
-        if (angle.isNotBlank()) {
+        if (line != null && survey.available) {
+            Text("Avant la séance, depuis un emplacement autorisé, orientez le haut de l’écran dans le sens de la ligne.")
+            TextButton({ measuring = true }) { Text("Mesurer avec le téléphone") }
+        } else if (line != null) Text("Boussole indisponible sur cet appareil.")
+        if (reading != null) {
+            Text("Mesure magnétique brute : ${reading?.magneticDegrees}°. La valeur conservée peut être corrigée.")
+            TextButton({ reading = null; angle = ""; uncertainty = "" }) { Text("Saisir une orientation indépendante") }
+        } else if (angle.isNotBlank()) {
             ChoiceMenu("Référence", north.label, true) { close -> NorthReference.entries.forEach { ref ->
                 DropdownMenuItem({ Text(ref.label) }, { north = ref; close() })
             } }
@@ -154,7 +166,15 @@ private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessio
         val degrees = optionalNumber(angle)
         val spread = if (degrees != null) optionalNumber(uncertainty) else null
         require(spread == null || spread in 0.0..180.0) { "L’incertitude doit être comprise entre 0 et 180°." }
-        save(name.trim(), desc.trim().ifBlank { null }, degrees, north, spread, active)
+        require(reading == null || degrees != null) { "Indiquez la valeur retenue ou revenez à la saisie indépendante." }
+        save(name.trim(), desc.trim().ifBlank { null }, degrees, north, spread, active, reading)
+    }
+    if (measuring) CompassMeasureDialog(survey, { measuring = false }) { candidate ->
+        reading = candidate
+        angle = candidate.magneticDegrees.toString()
+        north = NorthReference.MAGNETIC_NORTH
+        uncertainty = ""
+        measuring = false
     }
 }
 

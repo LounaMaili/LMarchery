@@ -190,7 +190,8 @@ private class Row(private val statement: SQLiteStatement, private val textLimit:
     private fun present(prefix: String) = columns.any { (name, i) -> name.startsWith(prefix) && !statement.isNull(i) }
     private fun orientation(prefix: String) = if (!present(prefix)) null else
         OrientationColumns(long(prefix + "degreesBits"), s(prefix + "north"), s(prefix + "origin"),
-            nl(prefix + "uncertaintyBits"), ns(prefix + "confirmedAt")).value()
+            nl(prefix + "uncertaintyBits"), ns(prefix + "confirmedAt"), nl(prefix + "rawMagneticBits"),
+            ns(prefix + "measuredAt"), ns(prefix + "method"), ns(prefix + "sensorQuality")).value()
 
     fun estimate() = EstimateRow(s("uuid"), s("sessionUuid"), s("provider"), s("kind"), ns("modelSelection"), ns("model"),
         s("retrievedAt"), ns("issuedAt"), s("validAt"), ni("intervalSeconds"), long("latitudeBits"), long("longitudeBits"),

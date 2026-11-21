@@ -44,19 +44,19 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
     val state by coordinator.state.collectAsStateWithLifecycle()
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Sauvegardes JSON V7 / V6 / V5 / V4 / V3 / V2 / V1", style = MaterialTheme.typography.titleMedium)
+            Text("Sauvegardes JSON V8 / V7 / V6 / V5 / V4 / V3 / V2 / V1", style = MaterialTheme.typography.titleMedium)
             Text("Le fichier est lisible en clair et peut contenir des informations personnelles. L’import contrôlé est accessible depuis la liste des séances.",
                 style = MaterialTheme.typography.bodySmall)
             Text("Les photos et leurs repères restent sur cet appareil. Ils ne figurent dans aucune sauvegarde JSON.",
                 style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
-                ExportState.Available -> "V7 inclut les estimations du fournisseur, le point transmis et la maille météorologique. V6 inclut également les relevés météo. V5 inclut les lieux, les lignes et leurs instantanés. V4 : séances, matériel et annulations définitives. Les presets restent sur cet appareil et ne figurent dans aucune sauvegarde. Utilisez V7 si des estimations sont enregistrées. V1/V2/V3 refusent toute perte de preuve. V3 : sauvegarde complète incluant les configurations exactes de chaque volée. V1/V2 refusent toute séance configurable, même homogène. V2 : toutes les séances, tous les profils et le catalogue matériel, y compris sans séance. V1 : séances et profils associés uniquement, sans matériel."
+                ExportState.Available -> "V8 conserve les mesures de boussole confirmées et leur provenance. V7 inclut les estimations du fournisseur, le point transmis et la maille météorologique. V6 inclut également les relevés météo. V5 inclut les lieux, les lignes et leurs instantanés. V4 : séances, matériel et annulations définitives. Les presets restent sur cet appareil et ne figurent dans aucune sauvegarde. Utilisez V7 si des estimations sont enregistrées. V1/V2/V3 refusent toute perte de preuve. V3 : sauvegarde complète incluant les configurations exactes de chaque volée. V1/V2 refusent toute séance configurable, même homogène. V2 : toutes les séances, tous les profils et le catalogue matériel, y compris sans séance. V1 : séances et profils associés uniquement, sans matériel."
                 ExportState.Preparing -> "Préparation : lecture d’un instantané cohérent…"
                 ExportState.Validating -> "Validation : encodage, décodage et reconstruction du contenu…"
                 is ExportState.ShareCoordinates -> "Cette sauvegarde contient des coordonnées géographiques. Toute personne qui reçoit le fichier pourra les lire."
                 is ExportState.Choosing -> "Choisissez la destination du fichier ${current.fileName}."
                 ExportState.Writing -> "Écriture et relecture du document… Sauvegarde non encore confirmée."
-                is ExportState.Succeeded -> "Export V${current.schemaVersion} confirmé après relecture : ${current.sessionCount} séance(s), ${current.profileCount} profil(s), ${if (current.schemaVersion >= 3) "${current.endCount} volée(s), ${current.impactCount} impact(s), " else ""}${current.bowCount} arc(s), ${current.arrowSetCount} jeu(x) de flèches, ${if (current.schemaVersion >= 6) "${current.weatherCount} relevé(s) météo, " else ""}${if (current.schemaVersion == 7) "${current.estimateCount} estimation(s), " else ""}${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import contrôlé est accessible depuis la liste des séances."
+                is ExportState.Succeeded -> "Export V${current.schemaVersion} confirmé après relecture : ${current.sessionCount} séance(s), ${current.profileCount} profil(s), ${if (current.schemaVersion >= 3) "${current.endCount} volée(s), ${current.impactCount} impact(s), " else ""}${current.bowCount} arc(s), ${current.arrowSetCount} jeu(x) de flèches, ${if (current.schemaVersion >= 6) "${current.weatherCount} relevé(s) météo, " else ""}${if (current.schemaVersion >= 7) "${current.estimateCount} estimation(s), " else ""}${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import contrôlé est accessible depuis la liste des séances."
                 ExportState.Cancelled -> "Export annulé : aucun contenu écrit par LMarchery."
                 is ExportState.Failed -> current.diagnostic + if (current.potentiallyIncomplete)
                     "\nLe document peut être vide ou incomplet. Ne l’utilisez pas comme sauvegarde ; choisissez un nouveau document lors d’une nouvelle tentative." else ""
@@ -68,6 +68,8 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
                 Button({ coordinator.shareCoordinates(prompt.destination.requestId, true) }) { Text("Inclure les coordonnées et choisir le fichier") }
                 TextButton({ coordinator.shareCoordinates(prompt.destination.requestId, false) }) { Text("Annuler") }
             }
+            Button(onClick = coordinator::beginV8,
+                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter la sauvegarde complète V8") }
             Button(onClick = coordinator::beginV7,
                 enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter la sauvegarde complète V7") }
             Button(onClick = coordinator::beginV6,

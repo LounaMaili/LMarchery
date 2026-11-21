@@ -39,7 +39,7 @@ class ConfiguredSessionV2CoexistenceTest {
         }
         val originalRows = EquipmentTestData.contents(path)
         EquipmentTestData.denyWrites(path)
-        assertEquals(listOf("7"), EquipmentTestData.rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("8"), EquipmentTestData.rows(path, "PRAGMA user_version"))
         openSessionStore(path).use { store ->
             // Explicit historical V1 read is separate from the full V2 backup read.
             val fullV2 = store.fullV2()
@@ -129,7 +129,7 @@ class ConfiguredSessionV2CoexistenceTest {
             assertIs<EquipmentCreateResult.Created>(store.equipment.create(EquipmentTestData.bow()))
             assertIs<EquipmentCreateResult.Created>(store.equipment.create(EquipmentTestData.arrows()))
         }
-        assertEquals(listOf("7"), EquipmentTestData.rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("8"), EquipmentTestData.rows(path, "PRAGMA user_version"))
         val expectedRows = oldRows + ("entity_identities" to (oldRows.getValue("entity_identities") + listOf(
             "${EquipmentTestData.id(800)}|BOW", "${EquipmentTestData.id(801)}|ARROW_SET")).sorted())
         assertEquals(expectedRows, EquipmentTestData.contents(path, EquipmentTestData.oldTables))

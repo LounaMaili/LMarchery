@@ -63,7 +63,7 @@ internal interface SessionDao : StorageReadQueries, ConfigurationDao {
 @Database(entities = [IdentityRow::class, ProfileRow::class, ZoneRow::class, SessionRow::class,
     EndRow::class, ImpactRow::class, DecisionRow::class, RepositionRow::class, BowRow::class, ArrowSetRow::class,
     SessionConfigurationRow::class, EndConfigurationRow::class, CancellationRow::class, SiteRow::class, LineRow::class, SessionPlaceRow::class, WeatherRow::class, WeatherEndRow::class, EstimateRow::class],
-    autoMigrations = [androidx.room.AutoMigration(from = 4, to = 5), androidx.room.AutoMigration(from = 5, to = 6), androidx.room.AutoMigration(from = 6, to = 7)], version = 7, exportSchema = true)
+    autoMigrations = [androidx.room.AutoMigration(from = 4, to = 5), androidx.room.AutoMigration(from = 5, to = 6), androidx.room.AutoMigration(from = 6, to = 7), androidx.room.AutoMigration(from = 7, to = 8)], version = 8, exportSchema = true)
 internal abstract class SessionDatabase : RoomDatabase() {
     abstract fun records(): SessionDao
     abstract fun weather(): WeatherDao

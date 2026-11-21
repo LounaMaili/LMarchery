@@ -29,7 +29,7 @@ private fun WeatherPoint.json() = JsonObject().apply {
     addProperty("longitude", longitude)
 }
 
-private fun encodeEstimate(row: SessionEstimate) = JsonObject().apply {
+internal fun encodeEstimate(row: SessionEstimate) = JsonObject().apply {
     addProperty("uuid", row.uuid)
     addProperty("sessionUuid", row.sessionUuid)
     with(row.estimate) {
@@ -57,7 +57,7 @@ private fun JsonFields.point(name: String) = child(name) { item, path ->
     checkedObject(item, path, "latitude", "longitude") { WeatherPoint(double("latitude"), double("longitude")) }
 }
 
-private fun decodeEstimate(item: JsonElement, path: String) = checkedObject(item, path, "uuid", "sessionUuid",
+internal fun decodeEstimate(item: JsonElement, path: String) = checkedObject(item, path, "uuid", "sessionUuid",
     "provider", "kind", "modelSelection", "model", "retrievedAt", "issuedAt", "validAt", "intervalSeconds",
     "requested", "grid", "windHeightM", "temperatureHeightM", "windMps", "gustMps", "fromTrueDegrees",
     "temperatureC", "precipitationMm") {
