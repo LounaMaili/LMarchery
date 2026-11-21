@@ -57,7 +57,7 @@ L’environnement Python, les photos, les annotations, les poids et les démonst
 
 ## Rejouer R2
 
-Le rapport [R2](r2.md) décrit les sources, les résultats et le mode de seconde lecture. La CI Python utilise les roues épinglées par SHA-256 pour CPython 3.15.2 sur Linux x86-64. Elle ne lit que des données générées. Le Quality gate Gradle reste distinct.
+Le rapport [R2](r2.md) décrit les sources, les résultats et le mode de seconde lecture. La CI Python utilise les roues épinglées par SHA-256 pour CPython 3.15.2 sur Linux x86-64. Elle génère deux fois le corpus R1 et compare les empreintes des images sur le même runner. Entre environnements, elle compare les annotations, la géométrie et le modèle avec une précision de six décimales, puis contrôle les décomptes exacts. Le contrôle `--fedora-bytes` vérifie en plus les empreintes originales de Fedora. Le Quality gate Gradle reste distinct.
 
 ```sh
 .venv/bin/python -m pip install --only-binary=:all: --require-hashes -r requirements-ci.txt
