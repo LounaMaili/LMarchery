@@ -17,6 +17,15 @@ export OPENBLAS_NUM_THREADS=1
 
 Le générateur sépare les blasons par groupe avant de créer les variantes d’image. Le modèle d’orientation n’est ajusté que sur `train`. La commande évalue ensuite `dev` et `test` et écrit les prédictions, les associations, les mesures par condition et quelques images de démonstration. Utiliser un nouveau répertoire de sortie pour conserver une expérience précédente.
 
+Deux essais complémentaires restent séparés du benchmark initial. L’étude des arcs utilise des repères identifiés et des points de contrôle séparés. Le lot de tubes blancs réutilise le modèle déjà entraîné, avec des entrées visibles ou masquées.
+
+```sh
+.venv/bin/python arc_geometry.py artifacts/arcs.json
+.venv/bin/python stress_data.py data/stress-white
+.venv/bin/python benchmark.py data/stress-white \
+  --model artifacts/synthetic/model.json --output artifacts/stress-white
+```
+
 Le petit lot public est facultatif. Il nécessite les originaux épinglés par le [registre des sources](public-sources.json) et une annotation locale contrôlée indépendamment des prédictions. Les originaux doivent garder les noms du registre. Leur SHA-256 est vérifié avant copie dans le jeu d’évaluation.
 
 ```sh
@@ -36,7 +45,9 @@ Le petit lot public est facultatif. Il nécessite les originaux épinglés par l
 | `lab_data.py` | Génération, préparation locale du lot public, empreintes, contrôle des références et des splits |
 | `detector.py` | Géométrie candidate, recalage de paire, propositions de tubes, orientation A/B |
 | `benchmark.py` | Ajustement synthétique, appariement indépendant, mesure et superpositions |
-| `test_lab.py` | Cas ciblés, dont entrée contre encoche, abstention, homographie et groupes étanches |
+| `arc_geometry.py` | Ajustement de cercles partiels identifiés et contrôle indépendant |
+| `stress_data.py` | Génération du lot de test séparé à tubes blancs |
+| `test_lab.py`, `test_partial.py` | Entrée, abstention, homographie, groupes étanches, arcs et occultation |
 
 L’environnement Python, les photos, les annotations, les poids et les démonstrations sont ignorés par Git. Les versions de NumPy et du paquet OpenCV headless sont fixées. Les expériences s’exécutent hors ligne après installation des dépendances. [OpenCV et notices du paquet](https://pypi.org/project/opencv-python-headless/4.13.0.92/) · [NumPy](https://pypi.org/project/numpy/2.5.4/)
 

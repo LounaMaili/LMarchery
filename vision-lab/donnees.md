@@ -4,6 +4,8 @@
 
 Le pilote synthétique compte 186 images analysables, chacune accompagnée de sa référence sans flèche. Les 30 blasons indépendants fournissent 36 images d’entraînement, 18 de développement et 132 de test. Le générateur couvre le blason multicolore et deux variantes campagne jaune/noir et jaune/bleu-vert. Les paramètres font varier couleur de tube, regroupement, usure, niveau de lumière, éblouissement, flou, cadrage, inclinaison et résolution. Une des couleurs de tube est réservée au test. Les matériaux et les ombres restent des approximations graphiques.
 
+Le complément de test ajoute six blasons synthétiques à tube blanc, répartis entre les trois familles et avec une usure sur la moitié. Chaque paire de variantes garde la même flèche et la même référence vide. Une variante laisse le contact visible. L’autre le couvre par un masque opaque et inscrit `occluded` avec une entrée nulle. Les douze variantes restent dans un jeu indépendant réservé au test. Le complément conserve le manifeste et les partitions du pilote initial.
+
 Le lot public contient six images pour l’évaluation seule. Les fiches des originaux indiquent les licences ci-dessous. Les autorisations de copie et d’adaptation des licences BY-SA restent assorties d’attribution et, lors du partage d’une adaptation, des conditions de partage à l’identique. Le lot conserve ses crédits et ses sources localement. Il ne sert à entraîner aucun poids distribué. Les termes applicables aux images, aux annotations et à la redistribution d’éventuels poids doivent être revus ensemble avant un entraînement réel. [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 | Source vérifiée | Droit indiqué | Décision de ce lot |

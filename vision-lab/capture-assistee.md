@@ -16,3 +16,14 @@ Un analyseur borné, exécuté hors du fil UI avec `STRATEGY_KEEP_ONLY_LATEST`, 
 Un contour stable peut apparaître après plusieurs observations concordantes. Un suivi spatial à courte durée et deux seuils d’apparition et de disparition évitent le clignotement. Montrer un point unique seulement si l’entrée est distinguable de l’autre extrémité. En cas de doute, afficher une aide courte de cadrage ou un axe sans point et laisser la photo accessible en saisie manuelle. Diagnostic, vue stabilisée, photo validée et écriture métier sont quatre étapes distinctes. [ImageAnalysis](https://developer.android.com/reference/androidx/camera/core/ImageAnalysis)
 
 La première recette CameraX doit vérifier la correspondance sur une mire sur plusieurs systèmes, puis mesurer latence, fraîcheur, stabilisation et mémoire sur appareil. Elle ne nécessite aucun transfert au score.
+
+
+## Premier prototype Android isolé
+
+Utiliser une variante de laboratoire avec sa propre identité et ses propres fichiers de test. Le parcours actuel de l’ADR 050 reste le choix par défaut et peut toujours déléguer la prise de vue à Google Camera.
+
+- **Aperçu rapide** — Analyser une image réduite à cadence bornée pour estimer le contour, la netteté, l’angle et les zones utiles. Dessiner des cadres fins autour des régions candidates. Conserver un cadre seulement si le suivi le rattache à la même région sur des trames fraîches. Masquer un point dès que l’entrée devient incertaine.
+- **Analyse de la photo capturée** — Travailler à partir du JPEG orienté et des régions à résolution suffisante. Refaire l’identification du profil et des points sur cette image. Consigner séparément le temps du décodage, du repérage, de l’inférence et de la projection. L’utilisateur revoit les propositions et décide de chaque point.
+- **Objectifs à mesurer** — Viser moins de 10 Mo pour le modèle quantifié et moins de 500 ms par photo, de la lecture du JPEG jusqu’aux propositions affichables, en détaillant aussi les sous-mesures par étape. Relever médiane et p95, mémoire, rappel, fausses propositions et comportement sur plusieurs orientations. Ces objectifs restent à vérifier sur un téléphone cible.
+
+Commencer par la mire et des fichiers synthétiques. La qualification suivante exige un corpus réel qui sépare les contacts visibles, masqués et proches d’un cordon, ainsi que des témoins vides.

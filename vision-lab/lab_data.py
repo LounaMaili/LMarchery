@@ -29,7 +29,8 @@ LAYOUT = {
     "field-yellow-teal": ((1.0, "teal"), (.2, "yellow")),
 }
 MATERIALS_BGR = {"carbon": (44, 49, 54), "red-coated": (116, 42, 185),
-                 "aluminium": (189, 179, 155), "heldout-green-metal": (59, 178, 120)}
+                 "aluminium": (189, 179, 155), "heldout-green-metal": (59, 178, 120),
+                 "white": (235, 238, 241)}
 
 
 def project(matrix, points):
