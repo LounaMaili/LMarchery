@@ -1,0 +1,44 @@
+name: Vision lab Python
+
+on:
+  pull_request:
+    paths:
+      - 'vision-lab/**'
+      - '.github/workflows/vision-lab.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'vision-lab/**'
+      - '.github/workflows/vision-lab.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  vision:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: vision-lab
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Set up exact Python version
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.15.2'
+      - name: Verify and install pinned wheels
+        run: |
+          python -m pip install --only-binary=:all: --require-hashes -r requirements-ci.txt
+      - name: Unit tests
+        run: python -m unittest -v
+      - name: Regenerate frozen R1 references and verify partitions and results
+        run: python verify_r1.py "$RUNNER_TEMP/vision-r1"

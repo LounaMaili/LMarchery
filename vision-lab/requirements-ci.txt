@@ -1,0 +1,3 @@
+# Ubuntu 24.04 x86_64, CPython 3.15.2. Keep versions aligned with requirements.txt.
+numpy==2.5.4 --hash=sha256:56733449d2544178beaa4545cee357370440cf056c197f9c7bfb19dbfdd0e86d
+opencv-python-headless==4.13.0.92 --hash=sha256:0bd48544f77c68b2941392fcdf9bcd2b9cdf00e98cb8c29b2455d194763cf99e

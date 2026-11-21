@@ -1,0 +1,193 @@
+[
+  {
+    "id": "sequence-0-0",
+    "image": "htk-0-0.jpg",
+    "sha256": "4796adcc926b8d203d662181a8430736c28f2bc6c42373e9232ab20abe929930",
+    "size": [
+      640,
+      480
+    ],
+    "before": null,
+    "before_sha256": null,
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": null
+  },
+  {
+    "id": "sequence-0-1",
+    "image": "htk-1-0.jpg",
+    "sha256": "b9e5d190f865c7a87c79c5a496f472b191eb25ffebd53ede87f8f4fc97258add",
+    "size": [
+      640,
+      480
+    ],
+    "before": "htk-0-0.jpg",
+    "before_sha256": "4796adcc926b8d203d662181a8430736c28f2bc6c42373e9232ab20abe929930",
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": "Adjacent stages of the same camera, verified by fixed markers and shaft accumulation"
+  },
+  {
+    "id": "sequence-0-2",
+    "image": "htk-2-0.jpg",
+    "sha256": "9204cd0e6e6b21f4ae4fb29d7ae71ed8267a1aa516193054ea47fc2c19f606eb",
+    "size": [
+      640,
+      480
+    ],
+    "before": "htk-1-0.jpg",
+    "before_sha256": "b9e5d190f865c7a87c79c5a496f472b191eb25ffebd53ede87f8f4fc97258add",
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": "Adjacent stages of the same camera, verified by fixed markers and shaft accumulation"
+  },
+  {
+    "id": "sequence-0-3",
+    "image": "htk-3-0.jpg",
+    "sha256": "4e629016b4ede3588ba3159d89bf5f7a55ffaa003b95d81f1e873abe18517ee8",
+    "size": [
+      640,
+      480
+    ],
+    "before": "htk-2-0.jpg",
+    "before_sha256": "9204cd0e6e6b21f4ae4fb29d7ae71ed8267a1aa516193054ea47fc2c19f606eb",
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": "Adjacent stages of the same camera, verified by fixed markers and shaft accumulation"
+  },
+  {
+    "id": "sequence-1-0",
+    "image": "htk-0-1.jpg",
+    "sha256": "98eaf68e7b25653cff5f5de1f7be70e9bfd4491d5a95f8fa4493b875684f1c6b",
+    "size": [
+      640,
+      480
+    ],
+    "before": null,
+    "before_sha256": null,
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": null
+  },
+  {
+    "id": "sequence-1-1",
+    "image": "htk-1-1.jpg",
+    "sha256": "e3015923ec788cff450b46abd1c24735ecce833b6eafc3155bbc851651935d4f",
+    "size": [
+      640,
+      480
+    ],
+    "before": "htk-0-1.jpg",
+    "before_sha256": "98eaf68e7b25653cff5f5de1f7be70e9bfd4491d5a95f8fa4493b875684f1c6b",
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": "Adjacent stages of the same camera, verified by fixed markers and shaft accumulation"
+  },
+  {
+    "id": "sequence-1-2",
+    "image": "htk-2-1.jpg",
+    "sha256": "64c47cecdd51c0a5f38d27cd24e292c861d8de2d822135f979122feb3781a28e",
+    "size": [
+      640,
+      480
+    ],
+    "before": "htk-1-1.jpg",
+    "before_sha256": "e3015923ec788cff450b46abd1c24735ecce833b6eafc3155bbc851651935d4f",
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": "Adjacent stages of the same camera, verified by fixed markers and shaft accumulation"
+  },
+  {
+    "id": "sequence-1-3",
+    "image": "htk-3-1.jpg",
+    "sha256": "4ef5253eb7d638d38d6c890263e8f1d91333b83b5034a380b9f6cd4b1457a45a",
+    "size": [
+      640,
+      480
+    ],
+    "before": "htk-2-1.jpg",
+    "before_sha256": "64c47cecdd51c0a5f38d27cd24e292c861d8de2d822135f979122feb3781a28e",
+    "source_group": "htkseason-single-board",
+    "family": "monochrome-marker",
+    "source_url": "https://github.com/htkseason/Archery-Scoring/tree/bd9b6fac9be7ceb2f51a438800e5ebeb4abb230a",
+    "credit": "htkseason",
+    "license": "Apache-2.0 (repository-wide notice)",
+    "pair_evidence": "Adjacent stages of the same camera, verified by fixed markers and shaft accumulation"
+  },
+  {
+    "id": "radeberg",
+    "image": "radeberg.jpg",
+    "sha256": "4567908db64fe1bd5669599e0ea83e54e1dffd45f83df0cb62681a3eed069e0a",
+    "size": [
+      2048,
+      1536
+    ],
+    "before": null,
+    "before_sha256": null,
+    "source_group": "commons-radeberg",
+    "family": "multicolor",
+    "source_url": "https://commons.wikimedia.org/wiki/File:WA_target_used_in_archery_shooting_at_Radeberg.jpg",
+    "credit": "Gunnar Richter",
+    "license": "CC BY-SA 3.0",
+    "pair_evidence": null
+  },
+  {
+    "id": "misses",
+    "image": "misses.jpg",
+    "sha256": "edd042078bfacc2c52537daa89f1cb9542234a6292665d49c5495dc51a644f40",
+    "size": [
+      1600,
+      1092
+    ],
+    "before": null,
+    "before_sha256": null,
+    "source_group": "commons-kafeole",
+    "family": "multicolor",
+    "source_url": "https://commons.wikimedia.org/wiki/File:WA_archery_target_misses.jpg",
+    "credit": "Kafeole",
+    "license": "CC BY 2.0",
+    "pair_evidence": null
+  },
+  {
+    "id": "field-31",
+    "image": "field-31.png",
+    "sha256": "f0e660ee8dc53f0035cfe2eff1cc0bccef67ebee7b0cab90e49eca8b30cacddd",
+    "size": [
+      1280,
+      720
+    ],
+    "before": null,
+    "before_sha256": null,
+    "source_group": "commons-simon-allen",
+    "family": "field-yellow-black",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Field_Archery.webm",
+    "credit": "Simon Allen",
+    "license": "CC BY 3.0",
+    "pair_evidence": null,
+    "derived_from": {
+      "timestamp_seconds": 31,
+      "original_sha256": "20ac3d756e49747f651cfe06c5ec4fc69181b834736a595fc15762b19953c126"
+    }
+  }
+]
