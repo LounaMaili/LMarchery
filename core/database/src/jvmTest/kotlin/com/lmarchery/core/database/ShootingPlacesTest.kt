@@ -22,6 +22,29 @@ class ShootingPlacesTest {
     private val south = line.copy(uuid = f.id(7102), name = "B", orientation = north.copy(degrees = 180.0))
     private val tables = ArchiveV3DiskData.tables + listOf("impact_cancellations", "shooting_sites", "shooting_lines", "session_places")
 
+    @Test fun favouriteCatalogueOwnsGateAndNeverCreatesASession() = runBlocking<Unit> {
+        AppIntegrationHarness(file).use { h ->
+            h.refresh()
+            h.change { h.configured.openPlaceCatalogue() }
+            val token = assertIs<com.lmarchery.feature.configured.ConfiguredForm.PlaceCatalogue>(h.state.form).token
+            assertTrue(h.legacy.state.value.archiveOperationLocked)
+            h.change { h.configured.saveSite(token, null, site) }
+            h.change { h.configured.saveLine(token, null, line) }
+            h.change { h.configured.confirmForm(token) }
+            assertEquals(listOf(site), h.state.catalogue!!.first)
+            assertTrue(h.store.readArchiveV8().base.base.sporting.sessions.isEmpty())
+            h.change { h.configured.closePlaceCatalogue(token) }
+            h.ready()
+            assertFalse(h.legacy.state.value.archiveOperationLocked)
+            h.change { h.configured.openPlaceCatalogue() }
+            h.change { h.configured.saveLine(token, line, line.copy(active = false)) }
+            assertEquals(line, h.state.catalogue!!.second.single())
+            val current = h.state.form!!.token
+            h.change { h.configured.saveLine(current, line, line.copy(active = false)) }
+            assertFalse(h.state.catalogue!!.second.single().active)
+        }
+    }
+
     @Test fun manualAnglesAndMissingValues() {
         assertEquals(0.0, north.degrees)
         assertEquals(359.75, LineOrientation.manual(-0.25, NorthReference.MAGNETIC_NORTH, 0.5, null).degrees)
