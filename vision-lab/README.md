@@ -149,3 +149,7 @@ Le premier apprentissage sur photographies publiques compare MobileNetV3-Small i
 ## Discrimination des contacts R8
 
 L’audit des pics sauvegardés, les essais à supervision contrôlée et les acquisitions publiques supplémentaires sont décrits dans le [bilan R8](r8.md). Les [commandes de reproduction](r8/reproduire.md) couvrent les données, les checkpoints et le retour du lecteur.
+
+## Échantillonnage des négatifs R9
+
+La [comparaison appariée R9](r9.md) mesure les effets du tirage ciblé sur trois graines et douze photos de développement. Le [protocole](r9/protocole.md) fixe les seuils et les conditions d’ouverture du futur test.

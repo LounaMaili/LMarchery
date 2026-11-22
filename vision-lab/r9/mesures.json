@@ -1,0 +1,3134 @@
+{
+  "parent": "f70a5bce9248dc675f94fd3a9dc71877e7fb1810",
+  "seal_sha256": "e0b99e6bd0ad6b4bb9b5225ed154a0b7d10d5dd746bcab2d7813c03b712c6bde",
+  "train": {
+    "photos": 15,
+    "provenances": 4,
+    "supports": 4,
+    "visibles": 23,
+    "uncertain": 2,
+    "empty": 5
+  },
+  "dev": {
+    "photos": 12,
+    "provenances": 12,
+    "supports": 13,
+    "visibles": 35,
+    "uncertain": 5,
+    "empty": 3
+  },
+  "new_dev": {
+    "photos": 9,
+    "provenances": 9,
+    "supports": 10,
+    "visibles": 26,
+    "uncertain": 4,
+    "empty": 2
+  },
+  "reserved": {
+    "photos": 4,
+    "groups": 4,
+    "supports": 5
+  },
+  "categories": {
+    "motif imprimé": 41,
+    "corps de tube": 22,
+    "perforation ou usure": 24,
+    "bord ou fixation": 20,
+    "ombre de tube": 1
+  },
+  "bank_by_group": {
+    "Amirsp": {
+      "motif imprimé": 2,
+      "perforation ou usure": 3
+    },
+    "Crigges": {
+      "motif imprimé": 32,
+      "corps de tube": 21,
+      "perforation ou usure": 20,
+      "bord ou fixation": 16
+    },
+    "Danielle Walquist Lynch": {
+      "corps de tube": 1,
+      "bord ou fixation": 4,
+      "ombre de tube": 1
+    },
+    "jrladia": {
+      "motif imprimé": 7,
+      "perforation ou usure": 1
+    }
+  },
+  "runs": {
+    "ordinary-9301": {
+      "threshold": 2.0,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+      "seconds": 46.62867958199786,
+      "first_dev_contact": {
+        "threshold": 0.6181219816207886,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 235,
+        "unmatched": 234,
+        "false": 229,
+        "unresolved": 5,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "positive_sha256": "32d5b94b588de9ce22c097292a97adaa838f4feefa854c37fa6510175598508b",
+      "plan_sha256": "f4f05138365a7d0eb656b89f1bb81ce53d92c13dfc3b74fde891abbbc2aed828",
+      "bank": {
+        "motif imprimé": {
+          "n": 41,
+          "at050": 12,
+          "at090": 2
+        },
+        "corps de tube": {
+          "n": 22,
+          "at050": 20,
+          "at090": 0
+        },
+        "perforation ou usure": {
+          "n": 24,
+          "at050": 14,
+          "at090": 0
+        },
+        "bord ou fixation": {
+          "n": 20,
+          "at050": 3,
+          "at090": 0
+        },
+        "ombre de tube": {
+          "n": 1,
+          "at050": 0,
+          "at090": 0
+        }
+      },
+      "stable_train": false,
+      "stable_dev": false,
+      "learning": [
+        {
+          "step": 0,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 18,
+            "proposals": 625,
+            "unmatched": 607,
+            "false": 604,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 509,
+            "unmatched": 503,
+            "false": 479,
+            "unresolved": 24,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 24,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 1320,
+            "unmatched": 1299,
+            "false": 1293,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 8,
+            "proposals": 1081,
+            "unmatched": 1073,
+            "false": 949,
+            "unresolved": 124,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 48,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 640,
+            "unmatched": 619,
+            "false": 612,
+            "unresolved": 7,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 2,
+            "proposals": 845,
+            "unmatched": 843,
+            "false": 809,
+            "unresolved": 34,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 72,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 348,
+            "unmatched": 327,
+            "false": 324,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 2,
+            "proposals": 466,
+            "unmatched": 464,
+            "false": 446,
+            "unresolved": 18,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 96,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 440,
+            "unmatched": 419,
+            "false": 413,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 500,
+            "unmatched": 494,
+            "false": 477,
+            "unresolved": 17,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        }
+      ],
+      "train050": {
+        "photos": 15,
+        "known": 23,
+        "matched": 21,
+        "proposals": 440,
+        "unmatched": 419,
+        "false": 413,
+        "unresolved": 6,
+        "silent": 0,
+        "empty_with_points": 5
+      },
+      "dev050": {
+        "photos": 12,
+        "known": 35,
+        "matched": 6,
+        "proposals": 500,
+        "unmatched": 494,
+        "false": 477,
+        "unresolved": 17,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "devlocked": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "trainlocked": {
+        "all": {
+          "photos": 15,
+          "known": 23,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 15,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 5,
+          "known": 16,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 9,
+          "known": 15,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Amirsp": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Crigges": {
+            "photos": 12,
+            "known": 15,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "Danielle Walquist Lynch": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "jrladia": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "targeted-9301": {
+      "threshold": 2.0,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8",
+      "seconds": 43.88683115800086,
+      "first_dev_contact": {
+        "threshold": 0.7012871503829956,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 88,
+        "unmatched": 87,
+        "false": 87,
+        "unresolved": 0,
+        "silent": 4,
+        "empty_with_points": 2
+      },
+      "positive_sha256": "32d5b94b588de9ce22c097292a97adaa838f4feefa854c37fa6510175598508b",
+      "plan_sha256": "f4f05138365a7d0eb656b89f1bb81ce53d92c13dfc3b74fde891abbbc2aed828",
+      "bank": {
+        "motif imprimé": {
+          "n": 41,
+          "at050": 10,
+          "at090": 0
+        },
+        "corps de tube": {
+          "n": 22,
+          "at050": 20,
+          "at090": 0
+        },
+        "perforation ou usure": {
+          "n": 24,
+          "at050": 11,
+          "at090": 0
+        },
+        "bord ou fixation": {
+          "n": 20,
+          "at050": 4,
+          "at090": 0
+        },
+        "ombre de tube": {
+          "n": 1,
+          "at050": 0,
+          "at090": 0
+        }
+      },
+      "stable_train": false,
+      "stable_dev": false,
+      "learning": [
+        {
+          "step": 0,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 18,
+            "proposals": 625,
+            "unmatched": 607,
+            "false": 604,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 509,
+            "unmatched": 503,
+            "false": 479,
+            "unresolved": 24,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 24,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 1099,
+            "unmatched": 1079,
+            "false": 1073,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 879,
+            "unmatched": 873,
+            "false": 850,
+            "unresolved": 23,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 48,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 493,
+            "unmatched": 473,
+            "false": 466,
+            "unresolved": 7,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 700,
+            "unmatched": 694,
+            "false": 681,
+            "unresolved": 13,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 72,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 444,
+            "unmatched": 424,
+            "false": 419,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 7,
+            "proposals": 538,
+            "unmatched": 531,
+            "false": 521,
+            "unresolved": 10,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 96,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 376,
+            "unmatched": 356,
+            "false": 351,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 5,
+            "proposals": 441,
+            "unmatched": 436,
+            "false": 421,
+            "unresolved": 15,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        }
+      ],
+      "train050": {
+        "photos": 15,
+        "known": 23,
+        "matched": 20,
+        "proposals": 376,
+        "unmatched": 356,
+        "false": 351,
+        "unresolved": 5,
+        "silent": 0,
+        "empty_with_points": 5
+      },
+      "dev050": {
+        "photos": 12,
+        "known": 35,
+        "matched": 5,
+        "proposals": 441,
+        "unmatched": 436,
+        "false": 421,
+        "unresolved": 15,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "devlocked": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "trainlocked": {
+        "all": {
+          "photos": 15,
+          "known": 23,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 15,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 5,
+          "known": 16,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 9,
+          "known": 15,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Amirsp": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Crigges": {
+            "photos": 12,
+            "known": 15,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "Danielle Walquist Lynch": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "jrladia": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "ordinary-9302": {
+      "threshold": 2.0,
+      "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90",
+      "seconds": 43.86393967299955,
+      "first_dev_contact": {
+        "threshold": 0.6944014430046082,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 167,
+        "unmatched": 166,
+        "false": 164,
+        "unresolved": 2,
+        "silent": 2,
+        "empty_with_points": 2
+      },
+      "positive_sha256": "5148892e52f76a1445f89a97b45e01979ada29a44efde3a9f722db15ce90395d",
+      "plan_sha256": "2bc6d93b395ee0513a970203f74da344b31139283d4918dd8e345372f1e9b107",
+      "bank": {
+        "motif imprimé": {
+          "n": 41,
+          "at050": 15,
+          "at090": 2
+        },
+        "corps de tube": {
+          "n": 22,
+          "at050": 19,
+          "at090": 0
+        },
+        "perforation ou usure": {
+          "n": 24,
+          "at050": 11,
+          "at090": 0
+        },
+        "bord ou fixation": {
+          "n": 20,
+          "at050": 3,
+          "at090": 0
+        },
+        "ombre de tube": {
+          "n": 1,
+          "at050": 0,
+          "at090": 0
+        }
+      },
+      "stable_train": false,
+      "stable_dev": false,
+      "learning": [
+        {
+          "step": 0,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 18,
+            "proposals": 625,
+            "unmatched": 607,
+            "false": 604,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 509,
+            "unmatched": 503,
+            "false": 479,
+            "unresolved": 24,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 24,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 1246,
+            "unmatched": 1226,
+            "false": 1219,
+            "unresolved": 7,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 9,
+            "proposals": 1096,
+            "unmatched": 1087,
+            "false": 932,
+            "unresolved": 155,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 48,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 618,
+            "unmatched": 597,
+            "false": 590,
+            "unresolved": 7,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 3,
+            "proposals": 641,
+            "unmatched": 638,
+            "false": 617,
+            "unresolved": 21,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 72,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 22,
+            "proposals": 501,
+            "unmatched": 479,
+            "false": 473,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 5,
+            "proposals": 535,
+            "unmatched": 530,
+            "false": 516,
+            "unresolved": 14,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 96,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 22,
+            "proposals": 526,
+            "unmatched": 504,
+            "false": 497,
+            "unresolved": 7,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 649,
+            "unmatched": 643,
+            "false": 612,
+            "unresolved": 31,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        }
+      ],
+      "train050": {
+        "photos": 15,
+        "known": 23,
+        "matched": 22,
+        "proposals": 526,
+        "unmatched": 504,
+        "false": 497,
+        "unresolved": 7,
+        "silent": 0,
+        "empty_with_points": 5
+      },
+      "dev050": {
+        "photos": 12,
+        "known": 35,
+        "matched": 6,
+        "proposals": 649,
+        "unmatched": 643,
+        "false": 612,
+        "unresolved": 31,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "devlocked": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "trainlocked": {
+        "all": {
+          "photos": 15,
+          "known": 23,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 15,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 5,
+          "known": 16,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 9,
+          "known": 15,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Amirsp": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Crigges": {
+            "photos": 12,
+            "known": 15,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "Danielle Walquist Lynch": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "jrladia": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "targeted-9302": {
+      "threshold": 2.0,
+      "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9",
+      "seconds": 44.488585828003124,
+      "first_dev_contact": {
+        "threshold": 0.6171109080314636,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 135,
+        "unmatched": 134,
+        "false": 132,
+        "unresolved": 2,
+        "silent": 2,
+        "empty_with_points": 2
+      },
+      "positive_sha256": "5148892e52f76a1445f89a97b45e01979ada29a44efde3a9f722db15ce90395d",
+      "plan_sha256": "2bc6d93b395ee0513a970203f74da344b31139283d4918dd8e345372f1e9b107",
+      "bank": {
+        "motif imprimé": {
+          "n": 41,
+          "at050": 6,
+          "at090": 0
+        },
+        "corps de tube": {
+          "n": 22,
+          "at050": 16,
+          "at090": 0
+        },
+        "perforation ou usure": {
+          "n": 24,
+          "at050": 14,
+          "at090": 0
+        },
+        "bord ou fixation": {
+          "n": 20,
+          "at050": 3,
+          "at090": 0
+        },
+        "ombre de tube": {
+          "n": 1,
+          "at050": 0,
+          "at090": 0
+        }
+      },
+      "stable_train": false,
+      "stable_dev": false,
+      "learning": [
+        {
+          "step": 0,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 18,
+            "proposals": 625,
+            "unmatched": 607,
+            "false": 604,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 509,
+            "unmatched": 503,
+            "false": 479,
+            "unresolved": 24,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 24,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 1177,
+            "unmatched": 1157,
+            "false": 1149,
+            "unresolved": 8,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 13,
+            "proposals": 1007,
+            "unmatched": 994,
+            "false": 884,
+            "unresolved": 110,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 48,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 618,
+            "unmatched": 598,
+            "false": 589,
+            "unresolved": 9,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 7,
+            "proposals": 686,
+            "unmatched": 679,
+            "false": 649,
+            "unresolved": 30,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 72,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 349,
+            "unmatched": 329,
+            "false": 324,
+            "unresolved": 5,
+            "silent": 1,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 3,
+            "proposals": 375,
+            "unmatched": 372,
+            "false": 361,
+            "unresolved": 11,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 96,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 323,
+            "unmatched": 302,
+            "false": 297,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 2,
+            "proposals": 377,
+            "unmatched": 375,
+            "false": 361,
+            "unresolved": 14,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        }
+      ],
+      "train050": {
+        "photos": 15,
+        "known": 23,
+        "matched": 21,
+        "proposals": 323,
+        "unmatched": 302,
+        "false": 297,
+        "unresolved": 5,
+        "silent": 0,
+        "empty_with_points": 5
+      },
+      "dev050": {
+        "photos": 12,
+        "known": 35,
+        "matched": 2,
+        "proposals": 377,
+        "unmatched": 375,
+        "false": 361,
+        "unresolved": 14,
+        "silent": 1,
+        "empty_with_points": 3
+      },
+      "devlocked": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "trainlocked": {
+        "all": {
+          "photos": 15,
+          "known": 23,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 15,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 5,
+          "known": 16,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 9,
+          "known": 15,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Amirsp": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Crigges": {
+            "photos": 12,
+            "known": 15,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "Danielle Walquist Lynch": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "jrladia": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "ordinary-9303": {
+      "threshold": 2.0,
+      "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2",
+      "seconds": 44.133945001995016,
+      "first_dev_contact": {
+        "threshold": 0.7056183218955994,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 42,
+        "unmatched": 41,
+        "false": 40,
+        "unresolved": 1,
+        "silent": 3,
+        "empty_with_points": 2
+      },
+      "positive_sha256": "021a47c770ce33cff406364376a338b85e0a457f53f3606ec7b8573b9d42a492",
+      "plan_sha256": "388f12e3bb8b3552a54f1d97d98ff91f48e1d4027d0b39c4582777e9ed002ea0",
+      "bank": {
+        "motif imprimé": {
+          "n": 41,
+          "at050": 10,
+          "at090": 0
+        },
+        "corps de tube": {
+          "n": 22,
+          "at050": 18,
+          "at090": 0
+        },
+        "perforation ou usure": {
+          "n": 24,
+          "at050": 6,
+          "at090": 0
+        },
+        "bord ou fixation": {
+          "n": 20,
+          "at050": 4,
+          "at090": 0
+        },
+        "ombre de tube": {
+          "n": 1,
+          "at050": 0,
+          "at090": 0
+        }
+      },
+      "stable_train": false,
+      "stable_dev": false,
+      "learning": [
+        {
+          "step": 0,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 18,
+            "proposals": 625,
+            "unmatched": 607,
+            "false": 604,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 509,
+            "unmatched": 503,
+            "false": 479,
+            "unresolved": 24,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 24,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 22,
+            "proposals": 1419,
+            "unmatched": 1397,
+            "false": 1392,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 10,
+            "proposals": 1152,
+            "unmatched": 1142,
+            "false": 948,
+            "unresolved": 194,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 48,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 23,
+            "proposals": 656,
+            "unmatched": 633,
+            "false": 627,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 10,
+            "proposals": 874,
+            "unmatched": 864,
+            "false": 815,
+            "unresolved": 49,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 72,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 23,
+            "proposals": 578,
+            "unmatched": 555,
+            "false": 550,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 7,
+            "proposals": 730,
+            "unmatched": 723,
+            "false": 677,
+            "unresolved": 46,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 96,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 23,
+            "proposals": 306,
+            "unmatched": 283,
+            "false": 279,
+            "unresolved": 4,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 7,
+            "proposals": 443,
+            "unmatched": 436,
+            "false": 403,
+            "unresolved": 33,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        }
+      ],
+      "train050": {
+        "photos": 15,
+        "known": 23,
+        "matched": 23,
+        "proposals": 306,
+        "unmatched": 283,
+        "false": 279,
+        "unresolved": 4,
+        "silent": 0,
+        "empty_with_points": 5
+      },
+      "dev050": {
+        "photos": 12,
+        "known": 35,
+        "matched": 7,
+        "proposals": 443,
+        "unmatched": 436,
+        "false": 403,
+        "unresolved": 33,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "devlocked": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "trainlocked": {
+        "all": {
+          "photos": 15,
+          "known": 23,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 15,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 5,
+          "known": 16,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 9,
+          "known": 15,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Amirsp": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Crigges": {
+            "photos": 12,
+            "known": 15,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "Danielle Walquist Lynch": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "jrladia": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "targeted-9303": {
+      "threshold": 2.0,
+      "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1",
+      "seconds": 43.9171133359996,
+      "first_dev_contact": {
+        "threshold": 0.6867839097976685,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 92,
+        "unmatched": 91,
+        "false": 91,
+        "unresolved": 0,
+        "silent": 3,
+        "empty_with_points": 2
+      },
+      "positive_sha256": "021a47c770ce33cff406364376a338b85e0a457f53f3606ec7b8573b9d42a492",
+      "plan_sha256": "388f12e3bb8b3552a54f1d97d98ff91f48e1d4027d0b39c4582777e9ed002ea0",
+      "bank": {
+        "motif imprimé": {
+          "n": 41,
+          "at050": 6,
+          "at090": 0
+        },
+        "corps de tube": {
+          "n": 22,
+          "at050": 17,
+          "at090": 0
+        },
+        "perforation ou usure": {
+          "n": 24,
+          "at050": 9,
+          "at090": 0
+        },
+        "bord ou fixation": {
+          "n": 20,
+          "at050": 1,
+          "at090": 0
+        },
+        "ombre de tube": {
+          "n": 1,
+          "at050": 0,
+          "at090": 0
+        }
+      },
+      "stable_train": false,
+      "stable_dev": false,
+      "learning": [
+        {
+          "step": 0,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 18,
+            "proposals": 625,
+            "unmatched": 607,
+            "false": 604,
+            "unresolved": 3,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 509,
+            "unmatched": 503,
+            "false": 479,
+            "unresolved": 24,
+            "silent": 1,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 24,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 20,
+            "proposals": 749,
+            "unmatched": 729,
+            "false": 723,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 8,
+            "proposals": 978,
+            "unmatched": 970,
+            "false": 945,
+            "unresolved": 25,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 48,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 22,
+            "proposals": 592,
+            "unmatched": 570,
+            "false": 564,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 11,
+            "proposals": 957,
+            "unmatched": 946,
+            "false": 906,
+            "unresolved": 40,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 72,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 21,
+            "proposals": 552,
+            "unmatched": 531,
+            "false": 525,
+            "unresolved": 6,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 6,
+            "proposals": 644,
+            "unmatched": 638,
+            "false": 618,
+            "unresolved": 20,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        },
+        {
+          "step": 96,
+          "train050": {
+            "photos": 15,
+            "known": 23,
+            "matched": 22,
+            "proposals": 286,
+            "unmatched": 264,
+            "false": 259,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 5
+          },
+          "dev050": {
+            "photos": 12,
+            "known": 35,
+            "matched": 8,
+            "proposals": 472,
+            "unmatched": 464,
+            "false": 451,
+            "unresolved": 13,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "devlocked": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "threshold": 2.0
+        }
+      ],
+      "train050": {
+        "photos": 15,
+        "known": 23,
+        "matched": 22,
+        "proposals": 286,
+        "unmatched": 264,
+        "false": 259,
+        "unresolved": 5,
+        "silent": 0,
+        "empty_with_points": 5
+      },
+      "dev050": {
+        "photos": 12,
+        "known": 35,
+        "matched": 8,
+        "proposals": 472,
+        "unmatched": 464,
+        "false": 451,
+        "unresolved": 13,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "devlocked": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "trainlocked": {
+        "all": {
+          "photos": 15,
+          "known": 23,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 15,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 5,
+          "known": 16,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 9,
+          "known": 15,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Amirsp": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Crigges": {
+            "photos": 12,
+            "known": 15,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "Danielle Walquist Lynch": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "jrladia": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    }
+  },
+  "decision": {
+    "deltas": [
+      0,
+      0,
+      0
+    ],
+    "empty_deltas": [
+      0,
+      0,
+      0
+    ],
+    "deltas_by_group": {
+      "April L. Sanders": 0,
+      "Framsókn": 0,
+      "Iain Cuthbertson": 0,
+      "Ivan Radic": 0,
+      "Staff Sgt. Brent Powell": 0,
+      "TheNickster": 0,
+      "TimWilson": 0,
+      "Wesley Fryer": 0,
+      "cobaltfish": 0,
+      "gothick_matt": 0,
+      "russellstreet": 0,
+      "vastateparksstaff": 0
+    },
+    "coherent": false,
+    "all_abstained": true,
+    "action": "keep_future_test_closed"
+  }
+}
