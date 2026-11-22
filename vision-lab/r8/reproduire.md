@@ -58,6 +58,16 @@ python -m r8.complement data/r8-rejeu data/r8-rejeu/retour/reception.json data/r
 
 Pour un formulaire intégral reçu d’un seul tenant, utiliser `python -m r8.adjudicate data/r8-rejeu "$FORMULAIRE" "$SORTIE" --reader "$LECTEUR" --date "$DATE_LECTURE"`. Le dossier de comparaison conserve les deux lectures. L’arbitre examine les désaccords de décompte, de visibilité et de position sur les pixels originaux, puis date la décision avant l’ouverture des prédictions. La photo déclarée invalide figure dans le bilan des exclusions. Le retour humain et les identifiants des lecteurs restent locaux.
 
+## Rejouer le test externe adjugé
+
+La capsule locale `data/r8/lecture-humaine-20261122.zip` contient les exports originaux, les observations comparées et le verdict du 22 novembre. Extraire la capsule hors du dossier aveugle. Le test utilise la référence R7 et le premier checkpoint du bras retenu, avec les seuils déjà publiés dans les mesures de développement. Le script vérifie les empreintes du corpus, de la comparaison approuvée, des photos et des deux checkpoints. Les pics bruts restent locaux.
+
+```sh
+unzip -q data/r8/lecture-humaine-20261122.zip -d data/r8-verdict
+python -m r8.test_final data/r8-rejeu "$R7" artifacts/r8-rejeu/train r8/mesures.json data/r8-verdict/comparaison/comparaison.json data/r8-verdict/comparaison/verdict.json artifacts/r8-rejeu/test-adjuge
+cmp artifacts/r8-rejeu/test-adjuge/synthese.json r8/mesures-finales.json
+```
+
 ## CI
 
 Le job CPU installe les roues avec SHA-256, charge explicitement les trois méthodes de `test_r7.LearningTests` et vérifie le nombre exécuté et le nombre ignoré. L’absence de TorchVision doit faire échouer cette étape. Le job léger conserve ses exclusions conditionnelles. La validation générale du dépôt utilise `./scripts/dev-check.sh` à la racine. La compilation et le lint Android portent sur l’application existante.

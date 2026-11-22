@@ -1,0 +1,131 @@
+{
+  "selection_sha256": "1df572ce7e1a59b3bccb638a48502a1b16c9ac22b7a564ded72953b8471f1146",
+  "reserved_photos": 4,
+  "excluded_photos": 1,
+  "evaluated_supports": 4,
+  "positive_groups": 2,
+  "models": {
+    "R7": {
+      "threshold": 2.0,
+      "checkpoint_sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27",
+      "all": {
+        "photos": 3,
+        "known": 12,
+        "matched": 0,
+        "proposals": 0,
+        "unmatched": 0,
+        "false": 0,
+        "unresolved": 0,
+        "silent": 3,
+        "empty_with_points": 0
+      },
+      "worn": {
+        "photos": 1,
+        "known": 8,
+        "matched": 0,
+        "proposals": 0,
+        "unmatched": 0,
+        "false": 0,
+        "unresolved": 0,
+        "silent": 1,
+        "empty_with_points": 0
+      },
+      "grouped": {
+        "photos": 1,
+        "known": 8,
+        "matched": 0,
+        "proposals": 0,
+        "unmatched": 0,
+        "false": 0,
+        "unresolved": 0,
+        "silent": 1,
+        "empty_with_points": 0
+      },
+      "per_group": {
+        "Ben Sutherland": {
+          "photos": 2,
+          "known": 4,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 2,
+          "empty_with_points": 0
+        },
+        "NJ Tech Teacher": {
+          "photos": 1,
+          "known": 8,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      }
+    },
+    "A-8301": {
+      "threshold": 2.0,
+      "checkpoint_sha256": "6cb0b3a8abb71673c89f2206294a1ba26e76d822920aeb48ab175b385da6d910",
+      "all": {
+        "photos": 3,
+        "known": 12,
+        "matched": 0,
+        "proposals": 0,
+        "unmatched": 0,
+        "false": 0,
+        "unresolved": 0,
+        "silent": 3,
+        "empty_with_points": 0
+      },
+      "worn": {
+        "photos": 1,
+        "known": 8,
+        "matched": 0,
+        "proposals": 0,
+        "unmatched": 0,
+        "false": 0,
+        "unresolved": 0,
+        "silent": 1,
+        "empty_with_points": 0
+      },
+      "grouped": {
+        "photos": 1,
+        "known": 8,
+        "matched": 0,
+        "proposals": 0,
+        "unmatched": 0,
+        "false": 0,
+        "unresolved": 0,
+        "silent": 1,
+        "empty_with_points": 0
+      },
+      "per_group": {
+        "Ben Sutherland": {
+          "photos": 2,
+          "known": 4,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 2,
+          "empty_with_points": 0
+        },
+        "NJ Tech Teacher": {
+          "photos": 1,
+          "known": 8,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      }
+    }
+  }
+}

@@ -69,6 +69,33 @@ class PeakAuditTests(unittest.TestCase):
 
 @unittest.skipUnless(all(importlib.util.find_spec(p) for p in ("torch","torchvision")),"R8 CPU environment required")
 class SupervisionTests(unittest.TestCase):
+    def test_final_adjudication_binds_signed_comparison_and_preserves_original_completeness(self):
+        from r8.test_final import adjudicated_rows
+        with TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            packet=root/"lecture-test"
+            packet.mkdir()
+            png=packet/"photo-01.png"
+            png.write_bytes(b"synthetic")
+            write_json(root/"cle-test.json",[dict(alias="photo-01",id="positive")])
+            write_json(root/"corpus.json",[dict(split="test",id="positive",size=[10,10])])
+            comparison=root/"comparison.json"
+            form=dict(taille=[20,20],inventaire_complet=False,zones_illisibles=[],
+                      tubes=[dict(axe=[[2,2],[8,8]],entree=[8,8],statut="visible")])
+            write_json(comparison,dict(photos=[dict(photo="photo-01",sha256=fingerprint(png),independent=form)]))
+            decision=dict(date="2026-11-22",confirmed_by="fixture",decision="confirmed",
+                          photos={"photo-01":"accept_complete"},comparison_sha256=fingerprint(comparison))
+            path=root/"decision.json"
+            write_json(path,decision|dict(comparison_sha256="wrong"))
+            with self.assertRaisesRegex(ValueError,"changed comparison"):
+                adjudicated_rows(root,comparison,path)
+            write_json(path,decision)
+            rows,excluded=adjudicated_rows(root,comparison,path)
+            self.assertFalse(excluded)
+            self.assertTrue(rows[0]["exhaustive"])
+            self.assertEqual(rows[0]["marks"][0]["entry"],[3.75,3.75])
+            self.assertFalse(read(comparison)["photos"][0]["independent"]["inventaire_complet"])
+
     def test_uncertainty_preserves_no_loss_at_hidden_point(self):
         from r8.experiment import complete_heat
         t,k=complete_heat([dict(entry=[90,90]),dict(entry=None)],[[[95,95],[106,106]]],0,0)
