@@ -68,22 +68,37 @@ class SessionNavigationTest {
 
     @Test fun configuredSummaryAndInformationReturnToTheSameEnd() {
         click("Nouvelle séance configurable")
+        val title = "TEST Résumé ${UUID.randomUUID().toString().take(8)}"
+        val titleField = hasSetTextAction() and hasText("Titre de la séance")
+        compose.waitUntil(8_000) { compose.onAllNodes(titleField and isEnabled()).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNode(titleField).performTextInput(title)
         click("Créer et démarrer")
         waitForTarget().performTouchInput { click(center) }
         awaitText("1 / 3")
         waitForTarget().performTouchInput { click(percentOffset(0.05f, 0.05f)) }
         awaitText("2 / 3")
         click("Bilan")
-        awaitText("M inclus : 1")
-        awaitText("Score de la volée : 10 point(s)")
-        click("Inclure les M dans le groupement")
-        awaitText("M exclus : 1")
-        awaitText("Score de la volée : 10 point(s)")
+        awaitText("Flèches retenues pour les mesures · 2 sur 2")
+        captureUxScreen("bilan-visuel")
+        awaitText("Score de la volée · 10 points")
+        compose.onNodeWithText("Inclure les flèches notées M dans les mesures de groupement")
+            .performScrollTo().performClick()
+        awaitText("Flèches retenues pour les mesures · 1 sur 2")
+        awaitText("○ Flèche M (0 point) exclue des mesures")
+        awaitText("Il faut au moins deux flèches retenues pour mesurer leur écart.")
+        awaitText("Score de la volée · 10 points")
         click("‹ Retour à la volée")
         click("Séance")
         awaitText("Informations de séance")
         awaitText("Aucun relevé météo.")
+        compose.onAllNodesWithText(title).assertCountEquals(1)
+        awaitText("Score provisoire · 10 points")
+        compose.onAllNodesWithText("Score provisoire · 10 points").assertCountEquals(1)
+        compose.onAllNodesWithText("Configuration initiale", substring = true).assertCountEquals(0)
         captureUxScreen("informations-seance")
+        click("Informations techniques")
+        awaitText("Configuration initiale · CREATION")
+        click("Masquer les informations techniques")
         click("Ajouter un relevé météo")
         awaitText("Température (°C)")
         captureUxScreen("meteo-formulaire-app")
@@ -101,12 +116,12 @@ class SessionNavigationTest {
         waitForTarget().performScrollTo().assertIsDisplayed().performTouchInput { click(center) }
         awaitText("Volée 1 · En saisie · 1/3 flèches")
         click("Bilan")
-        awaitText("Impacts retenus : 1 sur 1")
-        awaitText("Score de la volée : 10 point(s)")
+        awaitText("Flèches retenues pour les mesures · 1 sur 1")
+        awaitText("Score de la volée · 10 points")
         click("‹ Retour à la volée")
         click("Bilan")
-        awaitText("Impacts retenus : 1 sur 1")
-        awaitText("Score de la volée : 10 point(s)")
+        awaitText("Flèches retenues pour les mesures · 1 sur 1")
+        awaitText("Score de la volée · 10 points")
     }
 
     private fun awaitText(text: String) {

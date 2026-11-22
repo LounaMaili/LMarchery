@@ -170,20 +170,22 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                     }
                 }
                 if (form == null) state.saved?.let { session ->
-                    state.savedPlace?.let { place -> item { AdoptedPlaceLabel(place) } }
-                    item { com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.end.index }, false) }
                     item { ConfiguredSessionSummary(session, readOnly = session.status == SessionStatus.COMPLETED) }
+                    state.savedPlace?.let { place -> item { AdoptedPlaceLabel(place) } }
+                    item { com.lmarchery.feature.weather.WeatherSection(session.uuid,
+                        session.ends.map { it.uuid to it.end.index }, false, showOnEntry = true) }
                     if (session.status == SessionStatus.DRAFT) item {
                         Button(controller::start, enabled = state.canForm) { Text("Démarrer la séance") }
                         TextButton(controller::editMetadata, enabled = state.canForm) { Text("Modifier les métadonnées et le matériel") }
                     }
                     items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { captured ->
-                        TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
-                            Text("Bilan · volée ${captured.end.index}")
-                        }
-                        ConfiguredEndCard(session, captured)
-                        TextButton({ photoEndUuid = captured.uuid }, enabled = state.canNavigate) {
-                            Text("Photo · volée ${captured.end.index}")
+                        ConfiguredEndCard(session, captured) {
+                            TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                                Text("Bilan · volée ${captured.end.index}")
+                            }
+                            TextButton({ photoEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                                Text("Photo · volée ${captured.end.index}")
+                            }
                         }
                     }
                 }

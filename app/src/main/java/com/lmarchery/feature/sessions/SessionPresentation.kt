@@ -1,6 +1,7 @@
 package com.lmarchery.feature.sessions
 
 import com.lmarchery.core.model.session.*
+import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.SessionScoreSummary
 import com.lmarchery.core.scoring.calculateEndScore
 import com.lmarchery.core.scoring.summarizeSessionScore
@@ -34,7 +35,7 @@ fun SessionStatus.label(): String = when (this) {
 internal data class ConfiguredHistoryLabels(val statusLine: String, val openActionLabel: String)
 
 internal fun configuredHistoryLabels(status: SessionStatus): ConfiguredHistoryLabels = ConfiguredHistoryLabels(
-    statusLine = "${status.label()} · configurations par volée" +
+    statusLine = status.label() +
         if (status == SessionStatus.COMPLETED) " · lecture seule" else "",
     openActionLabel = when (status) {
         SessionStatus.DRAFT -> "Ouvrir le brouillon"
@@ -44,7 +45,27 @@ internal fun configuredHistoryLabels(status: SessionStatus): ConfiguredHistoryLa
 )
 
 fun Session.civilDateLabel(): String =
-    "${date.localDateTime.format(DateTimeFormatter.ofPattern("d MMM uuuu 'à' HH:mm", Locale.FRANCE))} · ${date.zoneId.id} (${date.offset})"
+    "${date.shortLabel()} · ${date.zoneId.id} (${date.offset})"
+
+private val civilDateFormatter = DateTimeFormatter.ofPattern("d MMMM uuuu 'à' HH:mm", Locale.FRANCE)
+
+internal fun SessionDateTime.shortLabel(): String = localDateTime.format(civilDateFormatter)
+
+internal fun EndStatus.label(): String = when (this) {
+    EndStatus.EDITING -> "Provisoire"
+    EndStatus.VALIDATED -> "Validée"
+}
+
+internal fun ScoringMode.categoryLabel(): String = when (this) {
+    ScoringMode.TRAINING -> "Entraînement"
+    ScoringMode.COMPETITION -> "Compétition"
+    ScoringMode.MANUAL_CORDON -> "Jugement manuel des cordons"
+}
+
+internal fun Number.pointsLabel(): String = "$this ${if (toLong() == 1L) "point" else "points"}"
+
+internal fun Session.shootingLabel(): String =
+    "${distanceM} m · ${targetType.name} · ${if (isIndoor) "Salle" else "Extérieur"} · ${scoringMode.categoryLabel()}"
 
 fun Session.openActionLabel(): String =
     if (status != SessionStatus.COMPLETED && supportsSessionEditing()) "Reprendre" else "Consulter"
@@ -61,6 +82,12 @@ fun ArrowImpact.scoreLabel(): String = when {
     else -> scoreFinal.toString()
 }
 
+internal fun ArrowImpact.scoreDescription(): String = when {
+    isMiss -> "M (0 point)"
+    isX -> "${scoreFinal.pointsLabel()} (X central)"
+    else -> scoreFinal.pointsLabel()
+}
+
 data class EndScoreRow(
     val uuid: String,
     val index: Int,
@@ -69,14 +96,14 @@ data class EndScoreRow(
     /** Empty ends have no displayed total, even though calculateEndScore(empty) is zero. */
     val total: Int?,
 ) {
-    val stateLabel get() = if (status == EndStatus.VALIDATED) "VALIDATED · Validée" else "EDITING · Provisoire"
-    val arrowsLabel get() = arrows.joinToString(" · ").ifEmpty { "Vide · aucune flèche" }
+    val stateLabel get() = status.label()
+    val arrowsLabel get() = arrows.joinToString("  •  ").ifEmpty { "Vide · aucune flèche" }
     val totalLabel get() = total?.let { "Total : $it (${if (status == EndStatus.VALIDATED) "validé" else "provisoire"})" }
         ?: "Total : — (volée vide)"
 }
 
 fun presentEndScore(end: End): EndScoreRow = EndScoreRow(end.uuid, end.index, end.status,
-    end.activeImpacts.map { "#${it.index} : ${it.scoreLabel()}" },
+    end.activeImpacts.map { "Flèche ${it.index} · ${it.scoreDescription()}" },
     end.activeImpacts.takeIf { it.isNotEmpty() }?.let { calculateEndScore(end) })
 
 data class SessionScorePresentation(

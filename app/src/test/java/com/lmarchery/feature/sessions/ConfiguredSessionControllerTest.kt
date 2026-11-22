@@ -108,8 +108,8 @@ class ConfiguredSessionControllerTest {
         assertEquals(1L, summary.totals.recorded.xCount); assertEquals(1L, summary.totals.recorded.missCount)
         assertEquals(2L, summary.totals.recorded.nineCount); assertEquals(1L, summary.totals.recorded.maxScoreCount)
         val compound = session.ends[1]; assertEquals(9, compound.end.impacts.single().scoreFinal)
-        assertTrue(configurationLines(compound.configuration).joinToString().contains("70 m"))
-        assertTrue(configurationLines(compound.configuration).joinToString().contains("2026-01-27"))
+        assertTrue(compound.configuration.shootingLabel().contains("70 m"))
+        assertTrue(compound.configuration.profileDetails().contains("2026-01-27"))
         assertTrue(session.ends.last().origin.label().contains(compound.uuid)); assertEquals(before, session)
         val impact = session.ends.first().end.impacts.first(); assertEquals(8, impact.scoreCalculated); assertEquals(9, impact.scoreFinal)
         assertEquals(1, impact.repositions.size); assertNotNull(impact.repositions.single().invalidatedManualDecision)
@@ -121,7 +121,7 @@ class ConfiguredSessionControllerTest {
         val summary = presentConfiguredScore(s).summary!!; assertEquals(0L, summary.totals.recorded.recordedCapacityMaximum)
         assertNull(summary.totals.recorded.percentageOfRecordedCapacity)
         assertTrue(s.ends.first().origin.label().contains("INITIAL")); assertTrue(s.ends.last().origin.label().contains("EXPLICIT"))
-        assertTrue(configurationLines(initial).joinToString().contains("FREE")); assertEquals(0, s.ends.first().end.impacts.size)
+        assertEquals("Nombre libre de flèches", initial.capacityLabel()); assertEquals(0, s.ends.first().end.impacts.size)
     }
     @Test fun `contradictory presentation entries remain incidents including wrong owner and both representations`() {
         val a = f.mixed(); val b = old.session()

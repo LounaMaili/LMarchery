@@ -3,6 +3,7 @@ package com.lmarchery.feature.sessions
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.lmarchery.core.model.session.Session
@@ -13,24 +14,27 @@ fun SessionHistoryCard(entry: SessionEntry, enabled: Boolean, onOpen: () -> Unit
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             val session = entry.session
             if (session != null && entry.readable) {
-                val summary = presentSessionScore(session).summary
+                val summary = remember(session) { presentSessionScore(session).summary }
                 Text(session.title, style = MaterialTheme.typography.titleMedium)
-                Text(session.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
-                Text("${session.targetType.name} · ${session.distanceM} m")
-                Text("${session.status.label()} · ${summary.validatedEndCount} volée(s) validée(s)")
-                Text("Score validé : ${summary.totalScore}", style = MaterialTheme.typography.titleMedium)
+                Text(session.date.shortLabel(), style = MaterialTheme.typography.bodySmall)
+                Text(session.shootingLabel())
+                Text(session.status.label())
+                Text("Score validé · ${summary.totalScore.pointsLabel()}")
             } else if (entry.configured != null && entry.readable) {
                 val configured = entry.configured
-                val view = presentConfiguredScore(configured)
+                val view = remember(configured) { presentConfiguredScore(configured) }
                 Text(configured.metadata.title, style = MaterialTheme.typography.titleMedium)
-                Text(configured.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
+                Text(configured.metadata.date.shortLabel(), style = MaterialTheme.typography.bodySmall)
+                Text(configured.configurationLabel())
                 Text(configuredHistoryLabels(configured.status).statusLine)
-                view.summary?.let { Text("Somme validée : ${it.totals.validated.score} · provisoire : ${it.totals.provisional.score}") }
-                view.diagnostic?.let { Text("Calcul indisponible : $it") }
+                view.summary?.let { Text("Score validé · ${it.totals.validated.score.pointsLabel()}") }
+                if (view.diagnostic != null) Text("Score indisponible")
             } else {
                 Text("Séance nécessitant une intervention", style = MaterialTheme.typography.titleMedium)
-                Text("UUID : ${entry.uuid}")
-                Text(entry.problem?.message ?: "Lecture non résolue.", color = MaterialTheme.colorScheme.error)
+                TechnicalDetails(entry.uuid) {
+                    Text("UUID · ${entry.uuid}")
+                    Text(entry.problem?.message ?: "Lecture non résolue.")
+                }
             }
             OutlinedButton(onClick = onOpen, enabled = enabled) {
                 Text(if (!entry.readable) "Réessayer la lecture"
@@ -58,20 +62,25 @@ fun EndScoreCard(row: EndScoreRow, selected: Boolean, enabled: Boolean, onSelect
 
 @Composable
 fun SessionScorePanel(session: Session) {
-    val presentation = presentSessionScore(session)
+    val presentation = remember(session) { presentSessionScore(session) }
     val score = presentation.summary
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Text(presentation.heading, style = MaterialTheme.typography.titleMedium)
-            Text("Total validé : ${score.totalScore}")
-            Text("Volées validées : ${score.validatedEndCount} · Flèches validées : ${score.validatedImpactCount}")
-            Text("${presentation.maximumCountLabel} : ${score.maxScoreCount} · Nombre de 9 : ${score.nineCount}")
-            if (presentation.showX) Text("Nombre de X : ${score.xCount}")
-            Text("Nombre de M : ${score.missCount}")
-            Text("Moyenne par flèche : ${presentation.averagePerArrowLabel}")
-            Text("Moyenne par volée : ${presentation.averagePerEndLabel}")
-            Text("${presentation.maximumLabel} : ${score.maxPossibleScore}", style = MaterialTheme.typography.bodySmall)
-            Text("Les volées en saisie sont exclues du total et des moyennes. Le maximum de référence peut les inclure ; ce n’est pas un pourcentage de réussite.", style = MaterialTheme.typography.bodySmall)
+            Text("Statistiques des volées validées", style = MaterialTheme.typography.titleMedium)
+            if (score.validatedEndCount == 0) Text("Aucune volée validée.")
+            else {
+                scoreCountLabels(session.targetType.maxScore, score.maxScoreCount.toLong(), score.nineCount.toLong(),
+                    presentation.showX, score.xCount.toLong(), score.missCount.toLong()).forEach { Text(it) }
+                Text("Moyenne par flèche · ${presentation.averagePerArrowLabel}")
+                Text("Moyenne par volée · ${presentation.averagePerEndLabel}")
+            }
+            TechnicalDetails("séance-${session.uuid}") {
+                Text("Séance · ${session.uuid}")
+                Text(session.civilDateLabel())
+                Text("Profil ${session.targetType.uuid} · création ${session.createdAt} · révision ${session.updatedAt}")
+                Text("${presentation.maximumLabel} · ${score.maxPossibleScore.pointsLabel()}")
+                Text("Le maximum de référence peut inclure les volées encore en saisie.")
+            }
         }
     }
 }
