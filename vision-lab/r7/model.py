@@ -65,7 +65,7 @@ def full_maps(model, frame):
     return (sums/weights)[:,:h,:w]
 
 
-def decode(maps):
+def decode(maps, *, max_peaks=96):
     heat,shaft = maps
     local = (heat == cv.dilate(heat,np.ones((9,9),np.uint8))) & (heat >= .05)
     n, labels, stats, centers = cv.connectedComponentsWithStats(local.astype(np.uint8),8)
@@ -92,4 +92,4 @@ def decode(maps):
         ends = center + np.quantile(along,[.01,.99])[:,None]*axes[:,-1]
         if var[1] >= 4*max(1,var[0]) and np.linalg.norm(ends[1]-ends[0]) >= 25:
             tubes.append(Tube(ends,np.empty((0,0))))
-    return peaks[:96], tubes
+    return peaks[:max_peaks], tubes

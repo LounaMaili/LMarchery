@@ -1,0 +1,565 @@
+{
+  "python": "3.15.2",
+  "torch": "2.14.1+cpu",
+  "torchvision": "0.29.1+cpu",
+  "numpy": "2.5.4",
+  "opencv": "4.13.0",
+  "torch_threads": 4,
+  "cv_threads": 1,
+  "processus_inference": 1,
+  "appels_full_maps": 72,
+  "essais": {
+    "ordinary-9301": {
+      "checkpoint_sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+      "sha256_archive": "355a32d2d71d71fbc25390bfd526eaf1387c683fcabcd5a8ab41ca99590f324e",
+      "sha256_prefixe_96": "355a32d2d71d71fbc25390bfd526eaf1387c683fcabcd5a8ab41ca99590f324e",
+      "fichier_identique": true,
+      "photos": {
+        "3996564090": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "594ea16a487ef52be28ea55921197ae68ffedc4d7693710fec964811dab6d323"
+        },
+        "929865": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "c27ffda8d0dbe004c1d07a6b1af7047e2ceeade9757f1f490176e48e0da4cc74"
+        },
+        "6791193480": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "5ef702d28aa47681ae96fa79f044e541f1e6f38eaf2ca8c93daf4e0db49ae22e"
+        },
+        "49398629148": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "4226ae25f83c019e7ddc5b55da7dc4e8170b3e560f26514ac5b10d5af9c5ba58"
+        },
+        "955488046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "53e9667c6ec585524bf8f82c35f1058f3ef12428cab3b88ca038434c50f9b8c8"
+        },
+        "3771007694": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "735688b3499ca41933fa646e1468e705199bb99132bf5c4f27546af4a0fef34e"
+        },
+        "14347254046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "8333185b2430bc4ddd44a8a834085db3f72ed00018ca3e9d8c75160d333a5a67"
+        },
+        "8549619981": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "9ba17fc9e04be0006147ee067a168340f04d108678284e16a3660fdc818b4c2b"
+        },
+        "36377144413": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "ab7da9432334901404db251465dd8a8728697a6b93e4f9177614d8a90c8a20d3"
+        },
+        "2712546351": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "a43cf0fe6bd2b0c7208d03668ea9d4be07015d76f4f9c453c963748dd84c6219"
+        },
+        "8468859144": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "d1cfe66066475d9f3cc9c50cc567e02cfe30b74fa1d4265a2befc831c1c12772"
+        },
+        "67300452": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "bade63850f3e63343ed90b5ca14b5ea2a7f621b2e58c479e71002726cdaaca6b"
+        }
+      }
+    },
+    "ordinary-9302": {
+      "checkpoint_sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90",
+      "sha256_archive": "263e76b7d37fef1f55e3d6caae5225c115a10da961d0f0170c1f7922fee3b686",
+      "sha256_prefixe_96": "263e76b7d37fef1f55e3d6caae5225c115a10da961d0f0170c1f7922fee3b686",
+      "fichier_identique": true,
+      "photos": {
+        "3996564090": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "0eb5eb9adcdd4d3ebfe466a104a6880f98da9cfa21ad1d83f9d0e261faea1978"
+        },
+        "929865": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "2c8e19c7fb12fe26f8897273f9af6fb808bf858e2e2b1ee3308df3f872d4f742"
+        },
+        "6791193480": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "a7f5ff925def35fb3da2da8d11e03489bd3bf15c2c963c7a39fdc62716a31b51"
+        },
+        "49398629148": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "67cd72db5efe6a9884d690983af6ac5cb4fbb3848890955f9a97f09d840cb676"
+        },
+        "955488046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "a9211fdbf04e9b9d76eac037d0ac029069e0e0143e59880742823ce607893b3a"
+        },
+        "3771007694": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "d0e218cb15eafb531af0a128ddc5cc2f04c81bb622e4bdb0e1da5a712c9f5ba9"
+        },
+        "14347254046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "283e620da70baec06912d347f66895aeae153f171fec68eedfef1b6e910bc6be"
+        },
+        "8549619981": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "6cd46f23a2e842d4d873f653125bfe115a2744966e7a0ad108c9273376831be1"
+        },
+        "36377144413": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "dc4240edbec0bb578ac64e77d83c9777055d95675d3c339d18c2298d158235e8"
+        },
+        "2712546351": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "58ca8a41dbc51beaf70a47c037556ab3139e0abeccd90a1ee812bb3c57a07634"
+        },
+        "8468859144": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "f3ac896db497e22b847f0a941d31bf45f038dcf80998199295a5c105b2d099b8"
+        },
+        "67300452": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "5e0cd40ad663d3fdb9c85430595de73ff2f272f31b644740bdf197f37eb2cc14"
+        }
+      }
+    },
+    "ordinary-9303": {
+      "checkpoint_sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2",
+      "sha256_archive": "37c39789e86986c4bc92d95eb79f5792d18b8a8148469d5f99ae29dc4d10fe99",
+      "sha256_prefixe_96": "37c39789e86986c4bc92d95eb79f5792d18b8a8148469d5f99ae29dc4d10fe99",
+      "fichier_identique": true,
+      "photos": {
+        "3996564090": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "d9a563395c40f996db459e14877dd8659a7b82c9b4df413f1dc9825f10bb7c50"
+        },
+        "929865": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "19ae36b5da969be8267a9594faf1cdb2183f1e4f0e53e5867317c1d6b794790f"
+        },
+        "6791193480": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "3fd4a8dc3cbae832d3c5a31984b709ab97c1744e54397029950a069cae6477ce"
+        },
+        "49398629148": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "c1e69e1e546e48e821c629d19f857c243774fd15f405138c5b1bf50e1cce62ab"
+        },
+        "955488046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "dff47bf66e7dd109732ea51870374e410adaefc73c40cd9e5149f0bb9ff0652d"
+        },
+        "3771007694": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "f9f27fbe10b61f1bdf945220439b5ad26a61ea9393001db1a6d5007c2ec8b27c"
+        },
+        "14347254046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "e7916eead4dd3c69f249e9a340c230b9a8f5f3176db8aecb6f69d01ca2c0516c"
+        },
+        "8549619981": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "cb9847c81a0fdb2ad7f281456c10be7f587778eb05fe1c0e92d94318b7d959db"
+        },
+        "36377144413": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "123eaf617baae8fe546a97c3225d60d84a5bc3e80fcab4105924c4f100d8044d"
+        },
+        "2712546351": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "c43bc3dc9e29e4bc2dbffb2751a664a5f187990d93aedcb0523c0827b173bb77"
+        },
+        "8468859144": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "6615ce8f47ffaebc91dcb619a88dce0a8b4e61dd39f8c64adf070a17cf0d72e5"
+        },
+        "67300452": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "b34ec38aaf63c3be64757e71afb99eb9dcfa6d8c4e9e26e652460b1be03798a1"
+        }
+      }
+    },
+    "targeted-9301": {
+      "checkpoint_sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8",
+      "sha256_archive": "324272b710366c67bb052443966c5f10e65a41b10f49441d82d741c3f8b40808",
+      "sha256_prefixe_96": "324272b710366c67bb052443966c5f10e65a41b10f49441d82d741c3f8b40808",
+      "fichier_identique": true,
+      "photos": {
+        "3996564090": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "4754b593d17c9335484b52d52c5ee0b89ff3abcac37bd94fea6ed5cb77b544d3"
+        },
+        "929865": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "bdfd1754f9ca0b629748ef8aede0e453d473b0cfa9238c0bc041ce72a50319d2"
+        },
+        "6791193480": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "1cf63fcfbf448cbc95b8773c62804a8c23a63e062a65dc880f03fca42a2ba77f"
+        },
+        "49398629148": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "cc130e246ced5a304e47a3ae7ca11131541d493712a4058e5c36918bcd43e167"
+        },
+        "955488046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "705b1d38bfceb1c6d62d5632d8cae7761946bae76e8c96b8e1062ae21b1e0830"
+        },
+        "3771007694": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "bc56fd63f011c8baefd0bde2b068d3191eac955dc3a90efa8793370c4d458b0e"
+        },
+        "14347254046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "e6bc4c77e6a59472b81b5e5c817320329a86e138cfb3538e488f9a98a517376d"
+        },
+        "8549619981": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "af4e06c550e96faf398daaac3dbe7d8326da2980a11ab06db199a4f0843595ee"
+        },
+        "36377144413": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "517e0ed6e54bb9d4a91a5dda0d2122154366ccff50cbcd9f219dc63e17e13d89"
+        },
+        "2712546351": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "5270ec87d3579bb9f6bea7d74b13e26f053bba0245b239494aaf4ab133914ca3"
+        },
+        "8468859144": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "ca7015702f172102dc0e3af7752075678c2330cb3b437c6475103d12b3fa4482"
+        },
+        "67300452": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "387eb116b87edc76761f1fd3fbf265dd039d2f13091c620c50a794294b764a34"
+        }
+      }
+    },
+    "targeted-9302": {
+      "checkpoint_sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9",
+      "sha256_archive": "a64b28d8f5e79e552ff7ba6bd4e6c0bfa55562815b472fdb0b88da25bab7bc4e",
+      "sha256_prefixe_96": "a64b28d8f5e79e552ff7ba6bd4e6c0bfa55562815b472fdb0b88da25bab7bc4e",
+      "fichier_identique": true,
+      "photos": {
+        "3996564090": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "2ec66e3a672500bc66eaa1aafa8d533f3a63d17769241b14d85634845d4c7823"
+        },
+        "929865": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "d595e3d8dceb29b45ac41a0084afe71327409838cc983d37dd87abd2cc794f2b"
+        },
+        "6791193480": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "9620519a9e3f8b0b8bb9fce9aa7048ce642e7ef9fc4c5d5fa2acfe3262bdb878"
+        },
+        "49398629148": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "b1ae07c1de8c8b955a05226ecd457c675184cc6bf3834892e567a993543c37e6"
+        },
+        "955488046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "aee72225f313bcc452072ac2c8186a9e143229c7ff179728806669239f1c0b37"
+        },
+        "3771007694": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "0bf315891fe7bf5ff7f50c41f24ec60f108ac189bbd8155f7d61388ca9f89381"
+        },
+        "14347254046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "777cbad126c0c1bf0905c301804b9afc7fbe5ac3c223f7288a3a579fb9172ed6"
+        },
+        "8549619981": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "db1db2076c44e2ce86b17660e4d92e9a8ac47dcd663c503195c2e49f1ac40ccc"
+        },
+        "36377144413": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "48e76ab4887c480fa6b4fdb3d905f949a0675d473b6dfdd3561920eafcf480d2"
+        },
+        "2712546351": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "98f58ee0eac0b2f5ddc5c9a73d3cfff09a431a63e0203b47c7f55d7428b0b0ae"
+        },
+        "8468859144": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "4d3c3c899950b551b61c1580f3cc0ce655fbeeb8190658fc951975aab1758080"
+        },
+        "67300452": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "480e00a1e0975f491bac47349143cc3999c04fdf5476e59422088de25972f2eb"
+        }
+      }
+    },
+    "targeted-9303": {
+      "checkpoint_sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1",
+      "sha256_archive": "b2d578cfa21f45cb9500592371ed6b698e3fe0e19f2ce43bab9c0041ff402aa0",
+      "sha256_prefixe_96": "b2d578cfa21f45cb9500592371ed6b698e3fe0e19f2ce43bab9c0041ff402aa0",
+      "fichier_identique": true,
+      "photos": {
+        "3996564090": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "66de173e79d5a9acb9028ce5676d7de4d0a25af6efe0e817b848a4efbd16edf0"
+        },
+        "929865": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "2cc258c16564e801241456c33522304d19ae0b378355c08277a5de6f4c29f4ef"
+        },
+        "6791193480": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "e3b30bfd63d1a0277e459c6cd6c72d5d9e72fc8b0ad0ef685b7c971bde9aabc8"
+        },
+        "49398629148": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "d2524d84cd545d169ac255c5f1e304751143f755d7e6392472e1bb8ebf08c064"
+        },
+        "955488046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "329699e4cee21beae0a206708e2710eec29692f0761dd76e1cd7f4b9c10d83af"
+        },
+        "3771007694": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "b6984fb91ba35a731a7bce6e7fa626cf55fcd92af99469b4e29382dc764775ca"
+        },
+        "14347254046": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "267095dd1323136ce894b847a59297acafcf885cb0cdec1500d474502ce7af74"
+        },
+        "8549619981": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "fdebeae4e6f2b95ae8a2567cb26c53b0b0f3c9db97b343179b59a94da21e36e0"
+        },
+        "36377144413": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "5c0eb2a75c9cf9f64b634784f6842418c7b435b7466cb6fe3584a482daa55d98"
+        },
+        "2712546351": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "cdc20f9208789257fa1f9c4e89a79191cc1454f642caa05e143f2cc169e63013"
+        },
+        "8468859144": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "41d3d4e1050c97f52dd777f2cd9afa0eb1dd3bd5031677cc11c1a888bd727b33"
+        },
+        "67300452": {
+          "passages": 1,
+          "mesures": 192,
+          "coordonnees_identiques": true,
+          "scores_identiques": true,
+          "sha256_cartes": "90ebd38e218a5c65392a09f38f6a8b47661a505fcbde12503586526cb600aabe"
+        }
+      }
+    }
+  }
+}

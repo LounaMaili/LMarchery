@@ -1,0 +1,450 @@
+[
+  {
+    "photo": "8468859144",
+    "provenance": "Framsókn",
+    "entree": 4,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 1,
+        "rang": 142,
+        "score": 0.2954094707965851,
+        "rang_attribue": 142
+      },
+      "ordinary-9302": {
+        "voisins": 1,
+        "rang": 154,
+        "score": 0.2699456512928009,
+        "rang_attribue": 154
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 1,
+        "rang": 190,
+        "score": 0.3307735025882721,
+        "rang_attribue": 190
+      }
+    },
+    "essais_avec_voisin": [
+      "ordinary-9301",
+      "ordinary-9302",
+      "targeted-9303"
+    ]
+  },
+  {
+    "photo": "955488046",
+    "provenance": "gothick_matt",
+    "entree": 1,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  },
+  {
+    "photo": "49398629148",
+    "provenance": "Ivan Radic",
+    "entree": 1,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  },
+  {
+    "photo": "36377144413",
+    "provenance": "vastateparksstaff",
+    "entree": 1,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  },
+  {
+    "photo": "36377144413",
+    "provenance": "vastateparksstaff",
+    "entree": 3,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  },
+  {
+    "photo": "36377144413",
+    "provenance": "vastateparksstaff",
+    "entree": 4,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  },
+  {
+    "photo": "36377144413",
+    "provenance": "vastateparksstaff",
+    "entree": 5,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 1,
+        "rang": 186,
+        "score": 0.535013735294342,
+        "rang_attribue": 186
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": [
+      "ordinary-9301"
+    ]
+  },
+  {
+    "photo": "3996564090",
+    "provenance": "Wesley Fryer",
+    "entree": 1,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  },
+  {
+    "photo": "3996564090",
+    "provenance": "Wesley Fryer",
+    "entree": 3,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 1,
+        "rang": 101,
+        "score": 0.48187166452407837,
+        "rang_attribue": 101
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": [
+      "ordinary-9303"
+    ]
+  },
+  {
+    "photo": "3996564090",
+    "provenance": "Wesley Fryer",
+    "entree": 6,
+    "resultats": {
+      "ordinary-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "ordinary-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9301": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9302": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      },
+      "targeted-9303": {
+        "voisins": 0,
+        "rang": null,
+        "score": null,
+        "rang_attribue": null
+      }
+    },
+    "essais_avec_voisin": []
+  }
+]
