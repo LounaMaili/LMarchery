@@ -1,0 +1,60 @@
+{
+  "manifest_sha256": "dd183e14d3d97cbebf595b6fb70a6b4f4c39bda0567cab01210d7862b787e862",
+  "archive_sha256": "36fc082e96ed56ba2e26bb10cec1010d54bb95ad362e7e0c48a3bb32c40b07fe",
+  "members": {
+    "train/ordinary-9301-dev-peaks.json": {
+      "octets": 92381,
+      "sha256": "355a32d2d71d71fbc25390bfd526eaf1387c683fcabcd5a8ab41ca99590f324e"
+    },
+    "train/targeted-9301-dev-peaks.json": {
+      "octets": 92415,
+      "sha256": "324272b710366c67bb052443966c5f10e65a41b10f49441d82d741c3f8b40808"
+    },
+    "train/ordinary-9302-dev-peaks.json": {
+      "octets": 92221,
+      "sha256": "263e76b7d37fef1f55e3d6caae5225c115a10da961d0f0170c1f7922fee3b686"
+    },
+    "train/targeted-9302-dev-peaks.json": {
+      "octets": 92486,
+      "sha256": "a64b28d8f5e79e552ff7ba6bd4e6c0bfa55562815b472fdb0b88da25bab7bc4e"
+    },
+    "train/ordinary-9303-dev-peaks.json": {
+      "octets": 92348,
+      "sha256": "37c39789e86986c4bc92d95eb79f5792d18b8a8148469d5f99ae29dc4d10fe99"
+    },
+    "train/targeted-9303-dev-peaks.json": {
+      "octets": 92375,
+      "sha256": "b2d578cfa21f45cb9500592371ed6b698e3fe0e19f2ce43bab9c0041ff402aa0"
+    }
+  },
+  "racines": {
+    "R9": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab",
+    "R7": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab"
+  },
+  "capsules": [
+    {
+      "nom": "corpus-banque.zip",
+      "role": "Banque vérifiée, annotations, décisions et plans scellés. Contient aussi le registre réservé.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/corpus-banque.zip",
+      "octets": 2750015,
+      "sha256": "b5a58507e263d0d1a9890ec1ac4c23ced2693da64f2be000cd2d411a3dc0bec2"
+    },
+    {
+      "nom": "experiences.zip",
+      "role": "Six essais validés, poids, pics, mesures et journal.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/experiences.zip",
+      "octets": 4899935,
+      "sha256": "36fc082e96ed56ba2e26bb10cec1010d54bb95ad362e7e0c48a3bb32c40b07fe"
+    }
+  ],
+  "manifest": {
+    "emplacement": "R9/data/r9/dev.json",
+    "octets": 25179,
+    "sha256": "dd183e14d3d97cbebf595b6fb70a6b4f4c39bda0567cab01210d7862b787e862",
+    "role": "Références de développement"
+  }
+}
