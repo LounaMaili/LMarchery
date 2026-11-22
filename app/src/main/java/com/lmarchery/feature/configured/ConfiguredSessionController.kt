@@ -84,9 +84,26 @@ class ConfiguredSessionController(
     }
     val supportsPlaces get() = places != null
 
+    fun openPlaceCatalogue() {
+        if (!supportsPlaces || ui.open || !acquire()) return
+        ownsGate = true
+        val ticket = epoch()
+        ui = ConfiguredEditorState(open = true, form = ConfiguredForm.PlaceCatalogue(ticket), epoch = ticket)
+        loadPlaces(ticket)
+    }
+
+    fun closePlaceCatalogue(token: Long) {
+        if (!ui.ready || ui.form != ConfiguredForm.PlaceCatalogue(token)) return
+        ui = ui.copy(form = null)
+        close()
+    }
+
+    private fun canAccessCatalogue(token: Long) = creationForm(token) != null ||
+        ui.ready && ui.form == ConfiguredForm.PlaceCatalogue(token)
+
     fun loadPlaces(token: Long) {
         val store = places ?: return
-        if (creationForm(token) == null) return
+        if (!canAccessCatalogue(token)) return
         operation { ui = ui.copy(catalogue = store.catalogue(), problem = null) }
     }
 
@@ -126,11 +143,11 @@ class ConfiguredSessionController(
 
     private fun changeCatalogue(token: Long, siteUuid: String, lineUuid: String?, save: suspend RoomShootingPlaces.() -> Unit) {
         val store = places ?: return
-        val creation = creationForm(token) ?: return
-        if (ui.catalogue == null) return
+        if (!canAccessCatalogue(token) || ui.catalogue == null) return
+        val creation = creationForm(token)
         operation {
             // Drop the stale selection even if a write loses its acknowledgement. An explicit read can recover it.
-            ui = ui.copy(catalogue = null, form = creation.copy(site = null, line = null, orientation = null))
+            ui = ui.copy(catalogue = null, form = creation?.copy(site = null, line = null, orientation = null) ?: ui.form)
             try { store.save() }
             catch (e: CancellationException) { throw e }
             catch (_: Exception) {
@@ -140,7 +157,8 @@ class ConfiguredSessionController(
             val catalogue = store.catalogue()
             val site = catalogue.first.single { it.uuid == siteUuid }
             val line = catalogue.second.singleOrNull { it.uuid == lineUuid && it.siteUuid == site.uuid && it.active }
-            ui = ui.copy(catalogue = catalogue, form = creation.copy(site = site, line = line, orientation = line?.orientation), problem = null)
+            ui = ui.copy(catalogue = catalogue,
+                form = creation?.copy(site = site, line = line, orientation = line?.orientation) ?: ui.form, problem = null)
         }
     }
 
@@ -401,6 +419,7 @@ class ConfiguredSessionController(
                 }
                 is ConfiguredForm.PresetEdit -> submitPresetChange(value.creation, value.expected, value.proposed())
                 is ConfiguredForm.PresetDeletion -> submitPresetChange(value.creation, value.expected, null)
+                is ConfiguredForm.PlaceCatalogue -> Unit
             }
         }
     }

@@ -91,7 +91,7 @@ La saisie présente titre/statut, scores puis blason et commandes avant les dét
 La rotation conserve la volée consultée et le défilement ; un acquittement de
 sauvegarde ne réinitialise pas le défilement. Les diagnostics et PendingSave restent
 accessibles, avec les mêmes confirmations d’abandon. Les panneaux import/export
-restent dépliés sous « Sauvegardes » sur l’accueil, avec incidents et confirmations.
+restent visibles dans l’écran « Sauvegardes », avec incidents et confirmations.
 Voir [ADR 023](adr/023-historique-et-presentation-scores-android.md).
 
 ### Repositionner avant validation (PR 17)
@@ -453,10 +453,37 @@ de perdre une annulation ; les anciens imports ne peuvent pas réactiver une
 flèche connue annulée. Voir [ADR 048](adr/048-annulation-logique-durable-impacts.md).
 Cette candidate locale ne constitue pas une qualification humaine au doigt.
 
+## Lieux favoris, infos de séance et relevés météo
+
+Depuis l’accueil, **Mes lieux de tir** ouvre le catalogue. Ajouter un lieu,
+puis ouvrir sa fiche pour voir son nom, ses coordonnées et ses lignes. Le
+bouton **Coordonnées (facultatives)** du formulaire affiche la latitude, la
+longitude et la précision. Pour désactiver une ligne, modifier sa fiche, basculer
+**Ligne active** et enregistrer.
+
+Pour commencer une séance, ouvrir la rubrique **Lieu** du formulaire
+configurable. Elle permet de choisir un favori et sa ligne, puis de voir
+l’orientation retenue. **Modifier pour cette séance** règle uniquement le
+formulaire en cours. Le champ **Lieu en texte libre** de la rubrique
+**Détails** reste une note indépendante du catalogue. Les séances déjà
+enregistrées conservent leur instantané après une modification du favori.
+
+Depuis le tir, ouvrir **Séance** pour retrouver **Conditions de tir**, puis
+**Ajouter un relevé météo**. La vue **Essentiel** présente d’abord la
+température, la pluie, le vent moyen et sa direction. **Détails** contient les
+rafales, la référence et l’incertitude de direction, la période, le cumul
+mesuré et le choix des volées. Une saisie vide reste inconnue. La pluie observée
+et le cumul en millimètres sont deux champs distincts. **Consulter les relevés**
+affiche les périmètres, les périodes, la provenance et les valeurs conservées.
+
+**Sauvegardes** depuis l’accueil ouvre directement l’export V8 ou la restauration.
+Les exports V1 à V7 restent accessibles dans **Anciens formats**. La confirmation
+du partage des coordonnées et l’aperçu de restauration continuent de s’appliquer.
+
 ## Consulter le bilan d’une volée
 
-Dans l’éditeur configurable, ouvrir **Séance** puis **Bilan de la volée**.
-Le menu permet aussi d’ouvrir le bilan d’une autre volée enregistrée. Dans
+Dans l’éditeur configurable, ouvrir **Bilan** directement depuis l’écran de tir.
+Pour une autre volée, ouvrir **Séance**, puis **Consulter les volées**. Dans
 l’éditeur historique, ouvrir **Bilan** à côté de **Photo du blason**. Les séances
 configurables terminées proposent l’action à côté de chaque volée. Fermer le
 bilan ramène à l’écran précédent et conserve la volée affichée.

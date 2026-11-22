@@ -14,6 +14,7 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "0.1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -29,6 +30,7 @@ android {
     buildFeatures {
         compose = true
     }
+    testBuildType = "sandbox"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -68,6 +70,11 @@ dependencies {
 
     testImplementation(kotlin("test-junit5"))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    androidTestImplementation(composeBom)
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:runner:1.7.0")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
 }
 
 // initWith copies build-type settings; configurations inherit debug tooling explicitly.

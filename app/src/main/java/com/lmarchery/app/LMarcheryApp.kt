@@ -63,6 +63,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         EquipmentScreen(equipmentController)
         return
     }
+    if (state.screen == SessionScreen.LIST && backupsOpen) {
+        BackupScreen(state, exportCoordinator, importCoordinator) { backupsOpen = false }
+        return
+    }
     var photoEndUuid by rememberSaveable(state.session?.uuid) { mutableStateOf<String?>(null) }
     var groupingEndUuid by rememberSaveable(state.session?.uuid, state.configuredSaved?.uuid) {
         mutableStateOf<String?>(null)
@@ -179,6 +183,14 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         }
                         if (!historyOpen) item(key = "list-actions") {
                             SessionHomeLaunch(state.ready, configuredController?.let { it::create }, controller::configure)
+                            OutlinedButton({ backupsOpen = true }, Modifier.fillMaxWidth(), enabled = state.ready) {
+                                Text("Sauvegardes")
+                            }
+                            configuredController?.takeIf { it.supportsPlaces }?.let { places ->
+                                OutlinedButton(places::openPlaceCatalogue, Modifier.fillMaxWidth(), enabled = state.ready) {
+                                    Text("Mes lieux de tir")
+                                }
+                            }
                         }
                         val history = presentSessionHistory(state.entries)
                         val sections = buildList {
@@ -201,17 +213,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         if (historyOpen) item(key = "refresh") {
                             TextButton(controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
                         }
-                        if (!historyOpen) {
-                            item(key = "backups-heading") {
-                                OutlinedButton({ backupsOpen = !backupsOpen }, enabled = !state.archiveOperationLocked) {
-                                    Text(if (backupsOpen) "Masquer les sauvegardes" else "Sauvegardes")
-                                }
-                            }
-                            if (backupsOpen || state.archiveOperationLocked) {
-                                item(key = "export") { ExportPanel(exportCoordinator, state) }
-                                item(key = "import") { ImportPanel(importCoordinator, state) }
-                            }
-                        }
+
                     }
 
                     SessionScreen.CREATE -> item(key = "configuration") {
@@ -403,6 +405,28 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             } },
             confirmButton = { TextButton(onClick = controller::reloadAndDiscard, enabled = !state.busy) { Text("Abandonner l’action et recharger") } },
             dismissButton = { TextButton(onClick = controller::closePreview, enabled = !state.busy) { Text("Conserver l’action locale") } })
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun BackupScreen(state: SessionUiState, exporter: ExportCoordinator, importer: ImportCoordinator, back: () -> Unit) {
+    var restoring by rememberSaveable { mutableStateOf(false) }
+    val canLeave = !state.archiveOperationLocked
+    BackHandler { if (canLeave) back() }
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
+            OutlinedButton(back, Modifier.padding(horizontal = 16.dp, vertical = 4.dp), enabled = canLeave) { Text("‹ Accueil") }
+            Text("Sauvegardes", Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.headlineSmall)
+            FlowRow(Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FilterChip(!restoring, { restoring = false }, { Text("Exporter") }, enabled = canLeave)
+                FilterChip(restoring, { restoring = true }, { Text("Restaurer") }, enabled = canLeave)
+            }
+            LazyColumn(Modifier.fillMaxWidth().weight(1f), contentPadding = PaddingValues(16.dp)) {
+                if (restoring) item(key = "import") { ImportPanel(importer, state) }
+                else item(key = "export") { ExportPanel(exporter, state) }
+            }
+        }
     }
 }
 
