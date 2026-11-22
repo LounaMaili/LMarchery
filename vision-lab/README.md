@@ -141,3 +141,7 @@ Le [bilan R5](r5.md) regroupe l’audit des huit originaux, la procédure pour l
 ## Rejouer R6
 
 Le [bilan et la fiche modèle](r6.md) présentent les plafonds du décodage, la comparaison avec et sans préentraînement, et la parité mobile. Le [protocole](r6/protocole.md), les [commandes de reproduction](r6/rejouer.md) et le [registre des sources](r6/sources.md) accompagnent les mesures.
+
+## Pilote réel R7
+
+Le premier apprentissage sur photographies publiques compare MobileNetV3-Small initialisé sur ImageNet, le même réseau aléatoire et R3 figé. Le bilan distingue l’ajustement sur le support Crigges du test externe après sélection des seuils. [Résultats R7](r7.md) · [Reproduction](r7/reproduire.md)
