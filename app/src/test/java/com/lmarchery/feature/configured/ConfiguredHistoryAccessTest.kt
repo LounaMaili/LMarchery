@@ -14,19 +14,19 @@ class ConfiguredHistoryAccessTest {
     @Test fun `draft card offers preparation without claiming read only`() {
         val labels = configuredHistoryLabels(SessionStatus.DRAFT)
         assertEquals("Ouvrir le brouillon", labels.openActionLabel)
-        assertEquals("Brouillon · configurations par volée", labels.statusLine)
+        assertEquals("Brouillon", labels.statusLine)
     }
 
     @Test fun `active card offers resumption without claiming read only`() {
         val labels = configuredHistoryLabels(SessionStatus.IN_PROGRESS)
         assertEquals("Reprendre la séance", labels.openActionLabel)
-        assertEquals("En cours · configurations par volée", labels.statusLine)
+        assertEquals("En cours", labels.statusLine)
     }
 
     @Test fun `completed card explicitly offers read only consultation`() {
         val labels = configuredHistoryLabels(SessionStatus.COMPLETED)
         assertEquals("Consulter — lecture seule", labels.openActionLabel)
-        assertEquals("Terminée · configurations par volée · lecture seule", labels.statusLine)
+        assertEquals("Terminée · lecture seule", labels.statusLine)
     }
 
     private fun sessions(): List<ConfiguredSession> {

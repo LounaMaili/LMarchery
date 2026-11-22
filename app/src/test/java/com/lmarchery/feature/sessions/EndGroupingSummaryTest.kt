@@ -45,8 +45,8 @@ class EndGroupingSummaryTest {
         ArrowCountMode.FREE, null, true, ScoringMode.TRAINING,
     )
 
-    private fun arrow(index: Int, x: Float, target: TargetType = recurve) =
-        scoreArrowImpact(id(), index, target, NormalizedPoint(x, 0f), ScoringMode.TRAINING, createdAt = now)
+    private fun arrow(index: Int, x: Float, target: TargetType = recurve, y: Float = 0f) =
+        scoreArrowImpact(id(), index, target, NormalizedPoint(x, y), ScoringMode.TRAINING, createdAt = now)
 
     private fun end(vararg impacts: ArrowImpact) =
         End(id(), 1, EndStatus.EDITING, impacts.toList(), createdAt = now, updatedAt = now)
@@ -127,6 +127,52 @@ class EndGroupingSummaryTest {
         assertEquals(0.0, two.grouping.normalized.dispersion?.diameter)
         assertEquals("0", groupingLengthLabel(0.0))
         assertNotEquals("0", groupingLengthLabel(.00001))
+    }
+
+    @Test
+    fun `the miniature preserves positions and frame when filtering recorded M and cancelled impacts`() = runBlocking {
+        val inside = arrow(1, 0f, y = -.5f)
+        val miss = arrow(2, 1.25f, y = -.25f)
+        val cancelled = arrow(3, -2f)
+        val acknowledged = end(inside, miss, cancelled).cancelImpact(cancelled.uuid, now)
+        val source = EndGroupingSummarySource(acknowledged, configuration())
+        val reader = EndGroupingSummaryReader(source)
+        val included = groupingPlot(source, reader.read(INCLUDE_MISSES).grouping)
+        val excluded = groupingPlot(source, reader.read(EXCLUDE_MISSES).grouping)
+        val positions = listOf(PlotPoint(0.0, -.5), PlotPoint(1.25, -.25))
+
+        assertEquals(positions, included.impacts.map { it.point })
+        assertEquals(positions, excluded.impacts.map { it.point })
+        assertEquals(listOf(true, false), excluded.impacts.map { it.retained })
+        assertEquals(PlotPoint(0.0, -.5), excluded.mean)
+        val frame = included.layout(225.0, 120.0)
+        assertEquals(frame, excluded.layout(225.0, 120.0))
+        assertEquals(60.0, frame.radius)
+        assertEquals(75.0, frame.position(positions[1]).x - frame.origin.x)
+        assertEquals(-15.0, frame.position(positions[1]).y - frame.origin.y)
+        assertTrue(frame.position(positions[1]).x > frame.origin.x + frame.radius)
+        assertEquals(listOf(inside, miss, cancelled), source.end.impacts)
+        assertEquals(cancelled.uuid, source.end.cancellations.single().impactUuid)
+    }
+
+    @Test
+    fun `a very distant point stays inside the canvas without moving its archived position`() {
+        val distant = PlotPoint(Float.MAX_VALUE.toDouble(), -Float.MAX_VALUE.toDouble())
+        val plot = GroupingPlot(listOf(GroupingPlotImpact(distant, false)), null)
+        val frame = plot.layout(380.0, 190.0)
+        val screen = frame.position(distant)
+        assertTrue(screen.x in 0.0..380.0 && screen.y in 0.0..190.0)
+        assertTrue(frame.radius > 0 && frame.radius.isFinite())
+        assertEquals(distant, plot.impacts.single().point)
+    }
+
+    @Test
+    fun `the mean marker and direction account for both screen axes with one arrow`() = runBlocking {
+        val source = EndGroupingSummarySource(end(arrow(1, -.25f, y = .5f)), configuration())
+        val grouping = EndGroupingSummaryReader(source).read(INCLUDE_MISSES).grouping
+        assertEquals(PlotPoint(-.25, .5), groupingPlot(source, grouping).mean)
+        assertEquals("le bas et la gauche", grouping.normalized.center?.directionLabel())
+        assertNull(grouping.normalized.dispersion)
     }
 
     @Test

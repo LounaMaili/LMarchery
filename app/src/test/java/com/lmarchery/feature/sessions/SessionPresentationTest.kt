@@ -86,11 +86,11 @@ class SessionPresentationTest {
     @Test fun `partial and full editing ends stay provisional and use stored arrow order`() {
         val arrows = listOf(arrow(1.1f, 3), arrow(.15f, 1), arrow(.075f, 2))
         val partial = presentEndScore(end(arrows.take(2)))
-        assertEquals(listOf("#3 : M", "#1 : 9"), partial.arrows)
+        assertEquals(listOf("Flèche 3 · M (0 point)", "Flèche 1 · 9 points"), partial.arrows)
         val full = end(arrows); val row = presentEndScore(full)
         assertEquals(EndStatus.EDITING, row.status)
         assertEquals(calculateEndScore(full), row.total)
-        assertEquals(listOf("#3 : M", "#1 : 9", "#2 : 10"), row.arrows)
+        assertEquals(listOf("Flèche 3 · M (0 point)", "Flèche 1 · 9 points", "Flèche 2 · 10 points"), row.arrows)
         assertEquals(0, presentSessionScore(session().start(now).withEnd(full)).summary.totalScore)
     }
     @Test fun `validated ends contribute exactly the domain totals and counters`() {
@@ -99,7 +99,7 @@ class SessionPresentationTest {
         val s = session(target = target).start(now).withEnd(validated)
         val view = presentSessionScore(s)
         assertEquals(summarizeSessionScore(s), view.summary)
-        assertEquals(listOf("#1 : 10X", "#2 : 9", "#3 : M"), presentEndScore(validated).arrows)
+        assertEquals(listOf("Flèche 1 · 10 points (X central)", "Flèche 2 · 9 points", "Flèche 3 · M (0 point)"), presentEndScore(validated).arrows)
         assertEquals(listOf(19, 1, 3, 1, 1, 1, 1), with(view.summary) {
             listOf(totalScore, validatedEndCount, validatedImpactCount, maxScoreCount, nineCount, xCount, missCount)
         })
@@ -126,16 +126,16 @@ class SessionPresentationTest {
         assertEquals(9, impact.scoreCalculated)
         val e = end(listOf(impact)).validate(now)
         val s = session().start(now).withEnd(e)
-        assertEquals(listOf("#1 : 10"), presentEndScore(e).arrows)
+        assertEquals(listOf("Flèche 1 · 10 points"), presentEndScore(e).arrows)
         assertEquals(summarizeSessionScore(s), presentSessionScore(s).summary)
         assertEquals(10, presentSessionScore(s).summary.totalScore)
     }
     @Test fun `reposition keeps UUID and presentation reflects new final value without mutating old`() {
         val old = arrow(.15f, 1); val moved = old.reposition(NormalizedPoint(.25f, 0f), now)
         assertEquals(old.uuid, moved.uuid)
-        assertEquals(listOf("#1 : 9"), presentEndScore(end(listOf(old))).arrows)
+        assertEquals(listOf("Flèche 1 · 9 points"), presentEndScore(end(listOf(old))).arrows)
         val e = end(listOf(moved)).validate(now); val s = session().start(now).withEnd(e)
-        assertEquals(listOf("#1 : 8"), presentEndScore(e).arrows)
+        assertEquals(listOf("Flèche 1 · 8 points"), presentEndScore(e).arrows)
         assertEquals(summarizeSessionScore(s), presentSessionScore(s).summary)
         assertEquals(8, presentSessionScore(s).summary.totalScore)
     }

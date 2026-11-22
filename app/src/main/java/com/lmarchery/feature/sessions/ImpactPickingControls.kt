@@ -113,21 +113,3 @@ fun ImpactCancellationConfirmation(dialog: ImpactCancellationDialog, busy: Boole
         } },
         dismissButton = { TextButton({ close(dialog.token) }, enabled = !busy && !pending) { Text(if (local) "Annuler" else "Fermer") } })
 }
-
-@Composable
-fun ImpactCancellationHistory(end: com.lmarchery.core.model.session.End, regulatoryEdition: String? = null) {
-    if (end.cancellations.isEmpty()) return
-    Text("Saisies annulées · conservées dans l’historique", style = MaterialTheme.typography.titleSmall)
-    end.cancellations.forEach { proof ->
-        val impact = end.impacts.single { it.uuid == proof.impactUuid }
-        Text("Flèche #${impact.index} · ANNULÉE · ne compte plus. Ancien score : ${impact.scoreLabel()} ; position : ${impact.point}.")
-        Text("Profil conservé : ${impact.targetType.name} · édition ${regulatoryEdition ?: "non renseignée"}. Score géométrique : ${impact.scoreCalculated}. Origine : ${impact.inputMode}.", style = MaterialTheme.typography.bodySmall)
-        Text("Saisie ${impact.createdAt} · dernière révision de l’impact ${impact.updatedAt}.", style = MaterialTheme.typography.bodySmall)
-        Text("${proof.cancelledAt} · Saisie par erreur${proof.comment?.let { " · $it" } ?: ""}", style = MaterialTheme.typography.bodySmall)
-        Text("Décision conservée : ${impact.finalScoreDecision.provenance.kind} · ${impact.finalScoreDecision.provenance.decidedAt ?: "géométrie"}${impact.finalScoreDecision.provenance.reason?.let { " · $it" } ?: ""}", style = MaterialTheme.typography.bodySmall)
-        impact.finalScoreDecision.provenance.boundary?.let { Text("Limite conservée : ${it.type} · rayon ${it.radiusNormalized}", style = MaterialTheme.typography.bodySmall) }
-        impact.repositions.forEachIndexed { i, trace ->
-            Text("Déplacement ${i + 1} : ${trace.previousPoint} → ${trace.newPoint} · ${trace.changedAt} · ${trace.reason ?: "sans motif"}. Ancienne décision : ${trace.previousDecision.provenance.kind}, ${trace.previousDecision.scoreFinal}.", style = MaterialTheme.typography.bodySmall)
-        }
-    }
-}

@@ -165,6 +165,7 @@ internal fun ConfiguredRange(
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 private fun SessionInformation(state: ConfiguredEditorState, controller: ConfiguredSessionController,
     backToRange: () -> Unit, finish: () -> Unit, openGrouping: (String) -> Unit) {
     val session = requireNotNull(state.saved)
@@ -180,16 +181,14 @@ private fun SessionInformation(state: ConfiguredEditorState, controller: Configu
             ) {
                 item {
                     Text("Informations de séance", style = MaterialTheme.typography.headlineSmall)
-                    Text(session.metadata.title, style = MaterialTheme.typography.titleMedium)
-                    state.savedPlace?.let { AdoptedPlaceLabel(it) }
+                    ConfiguredSessionSummary(session, readOnly = false)
                 }
                 item {
+                    state.savedPlace?.let { AdoptedPlaceLabel(it) }
                     com.lmarchery.feature.weather.WeatherSection(session.uuid,
                         session.ends.map { it.uuid to it.end.index }, state.canNavigate, showOnEntry = true)
                 }
                 item {
-                    HorizontalDivider()
-                    ConfiguredSessionSummary(session, readOnly = false)
                     OutlinedButton({ backToRange(); controller.editMetadata() }, enabled = state.canForm) {
                         Text("Modifier les détails et le matériel")
                     }
@@ -201,12 +200,14 @@ private fun SessionInformation(state: ConfiguredEditorState, controller: Configu
                     }
                 }
                 if (allEnds) items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { focus ->
-                    OutlinedButton({ controller.selectEnd(focus.uuid); backToRange() }, enabled = state.canNavigate) {
-                        Text("Voir la volée ${focus.end.index}")
+                    ConfiguredEndCard(session, focus) {
+                        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            OutlinedButton({ controller.selectEnd(focus.uuid); backToRange() }, enabled = state.canNavigate) {
+                                Text("Voir la volée ${focus.end.index}")
+                            }
+                            TextButton({ openGrouping(focus.uuid) }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
+                        }
                     }
-                    TextButton({ openGrouping(focus.uuid) }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
-                    ConfiguredEndCard(session, focus)
-                    ImpactCancellationHistory(focus.end, focus.configuration.regulatoryEdition)
                 }
                 item {
                     OutlinedButton({ backToRange(); controller.nextEnd(state.epoch) }, enabled = state.canForm) {

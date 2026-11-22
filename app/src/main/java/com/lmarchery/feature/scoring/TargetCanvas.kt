@@ -37,7 +37,6 @@ import com.lmarchery.core.model.target.TargetZone
 import com.lmarchery.feature.sessions.ImpactPickContext
 import com.lmarchery.feature.sessions.ImpactPickViewport
 import com.lmarchery.feature.sessions.ImpactDragContext
-import java.util.Locale
 
 enum class TargetInteraction { READ_ONLY, ADD_IMPACT, REPOSITION, SELECT_IMPACT, DRAG_IMPACT }
 
@@ -242,13 +241,4 @@ private fun DrawScope.drawAimReticle(center: Offset) {
     val d = 8.dp.toPx()
     drawLine(Color(0xFFAA00FF), center - Offset(d, d), center + Offset(d, d), 3.dp.toPx())
     drawLine(Color(0xFFAA00FF), center + Offset(-d, d), center + Offset(d, -d), 3.dp.toPx())
-}
-
-private fun zoneColor(zone: TargetZone): Color = when (zone.colorName.lowercase(Locale.US)) {
-    "yellow" -> Color(0xFFFFD400)
-    "red" -> Color(0xFFE53935)
-    "blue" -> Color(0xFF1E88E5)
-    "black" -> Color(0xFF212121)
-    "white" -> Color(0xFFFFFFFF)
-    else -> Color(0xFFBDBDBD)
 }
