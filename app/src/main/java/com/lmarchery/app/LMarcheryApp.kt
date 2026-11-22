@@ -414,16 +414,18 @@ private fun BackupScreen(state: SessionUiState, exporter: ExportCoordinator, imp
     var restoring by rememberSaveable { mutableStateOf(false) }
     val canLeave = !state.archiveOperationLocked
     BackHandler { if (canLeave) back() }
-    Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-        OutlinedButton(back, Modifier.padding(horizontal = 16.dp, vertical = 4.dp), enabled = canLeave) { Text("‹ Accueil") }
-        Text("Sauvegardes", Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.headlineSmall)
-        FlowRow(Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            FilterChip(!restoring, { restoring = false }, { Text("Exporter") }, enabled = canLeave)
-            FilterChip(restoring, { restoring = true }, { Text("Restaurer") }, enabled = canLeave)
-        }
-        LazyColumn(Modifier.fillMaxWidth().weight(1f), contentPadding = PaddingValues(16.dp)) {
-            if (restoring) item(key = "import") { ImportPanel(importer, state) }
-            else item(key = "export") { ExportPanel(exporter, state) }
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
+            OutlinedButton(back, Modifier.padding(horizontal = 16.dp, vertical = 4.dp), enabled = canLeave) { Text("‹ Accueil") }
+            Text("Sauvegardes", Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.headlineSmall)
+            FlowRow(Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FilterChip(!restoring, { restoring = false }, { Text("Exporter") }, enabled = canLeave)
+                FilterChip(restoring, { restoring = true }, { Text("Restaurer") }, enabled = canLeave)
+            }
+            LazyColumn(Modifier.fillMaxWidth().weight(1f), contentPadding = PaddingValues(16.dp)) {
+                if (restoring) item(key = "import") { ImportPanel(importer, state) }
+                else item(key = "export") { ExportPanel(exporter, state) }
+            }
         }
     }
 }

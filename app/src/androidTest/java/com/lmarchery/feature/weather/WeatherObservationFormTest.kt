@@ -1,10 +1,12 @@
 package com.lmarchery.feature.weather
 
 import android.content.pm.ActivityInfo
+import android.view.WindowInsets
 import androidx.activity.ComponentActivity
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.layout.positionOnScreen
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -16,9 +18,11 @@ import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.filters.SdkSuppress
 import android.os.ParcelFileDescriptor
 import java.time.Instant
 
+@SdkSuppress(minSdkVersion = 30)
 class WeatherObservationFormTest {
     @get:Rule val compose = createAndroidComposeRule<ComponentActivity>()
     private val session = "de000000-0000-4000-8000-000000000001"
@@ -40,7 +44,7 @@ class WeatherObservationFormTest {
                     lines.any { "mInputShown=true" in it || "mIsInputViewShown=true" in it }
                 }
         }
-        compose.onNodeWithText("Enregistrer le relevé").assertIsDisplayed()
+        assertSubmitAboveSystemBars()
         captureUxScreen("meteo-clavier")
         field("Température (°C)").performTextInput("12")
         compose.onNodeWithText("Oui").performScrollTo().performClick()
@@ -62,7 +66,7 @@ class WeatherObservationFormTest {
         }
         var observed: WeatherObservation? = null
         form { observed = it }
-        compose.onNodeWithText("Enregistrer le relevé").assertIsDisplayed()
+        assertSubmitAboveSystemBars()
         captureUxScreen("meteo-paysage")
         field("Température (°C)").performScrollTo().performTextInput("12,5")
         compose.onNodeWithText("Détails").performClick()
@@ -93,4 +97,20 @@ class WeatherObservationFormTest {
     }
 
     private fun field(label: String) = compose.onNode(hasSetTextAction() and hasText(label))
+
+    private fun assertSubmitAboveSystemBars() {
+        val submit = compose.onNode(hasText("Enregistrer le relevé") and hasClickAction())
+            .assertIsDisplayed().fetchSemanticsNode()
+        compose.runOnIdle {
+            val coordinates = submit.layoutInfo.coordinates
+            val buttonBottom = coordinates.positionOnScreen().y + coordinates.size.height
+            val metrics = compose.activity.windowManager.currentWindowMetrics
+            val insets = metrics.windowInsets.getInsetsIgnoringVisibility(
+                WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout()
+            )
+            val usableBottom = metrics.bounds.bottom - insets.bottom
+            assertTrue("Bouton jusqu’à $buttonBottom px, zone utile jusqu’à $usableBottom px",
+                buttonBottom <= usableBottom + 1f)
+        }
+    }
 }
