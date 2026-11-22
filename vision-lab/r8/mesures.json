@@ -1,0 +1,3022 @@
+{
+  "parent": "33c12ba263bd2cd53be720045c533e54c7a4ee15",
+  "protocol_sha256": "a64d7b04f6dabc090aa7377db3eccfff06b3b3543c29eff88bc75f4dfe6fa349",
+  "corpus_sha256": "e6bf88fa2a465078d855493a66d667d739efc5d68081e166a2a4124fa81d877f",
+  "public_downloaded": 44,
+  "corpus": {
+    "control": {
+      "photos": 12,
+      "supports": 1,
+      "groups": 1,
+      "tubes": 16,
+      "contacts": 15,
+      "empty": 4
+    },
+    "new_train": {
+      "photos": 3,
+      "supports": 3,
+      "groups": 3,
+      "tubes": 9,
+      "contacts": 8,
+      "empty": 1
+    },
+    "new_dev": {
+      "photos": 3,
+      "supports": 3,
+      "groups": 3,
+      "tubes": 10,
+      "contacts": 9,
+      "empty": 1
+    },
+    "reserved": {
+      "photos": 4,
+      "supports": 5,
+      "groups": 3,
+      "tubes": 16,
+      "contacts": 14,
+      "empty": 1
+    }
+  },
+  "visual": {
+    "selected": 80,
+    "false": 65,
+    "observed": {
+      "panneau numero 4": 28,
+      "corps du tube": 25,
+      "bord du support": 8,
+      "perforation / usure": 4
+    },
+    "near": 4,
+    "within_four_px_of_tile_boundary": 12
+  },
+  "audit": {
+    "scores": {
+      "true": {
+        "n": 20,
+        "quantiles": [
+          0.581397294998169,
+          0.6589161396026612,
+          0.8167113959789276,
+          0.8769493997097015,
+          0.9166934490203857,
+          0.9378482341766358,
+          0.9483395218849182
+        ]
+      },
+      "false": {
+        "n": 3820,
+        "quantiles": [
+          0.21217237412929535,
+          0.257963040471077,
+          0.28402769565582275,
+          0.33649592101573944,
+          0.4485979452729225,
+          0.5788181066513061,
+          0.9168086647987366
+        ]
+      }
+    },
+    "false_score_by_scene": {
+      "empty": {
+        "n": 1920,
+        "quantiles": [
+          0.21217237412929535,
+          0.24764516353607177,
+          0.26473475247621536,
+          0.2948909103870392,
+          0.36028407514095306,
+          0.45256195366382607,
+          0.666627049446106
+        ]
+      },
+      "single": {
+        "n": 1900,
+        "quantiles": [
+          0.24777330458164215,
+          0.2913522481918335,
+          0.32380592823028564,
+          0.40665630996227264,
+          0.5453627705574036,
+          0.6341177821159364,
+          0.9168086647987366
+        ]
+      }
+    },
+    "cap": {
+      "cap96@0.05": {
+        "matches": 20,
+        "false": 3820,
+        "photos": 40,
+        "saturated": 40
+      },
+      "unlimited@0.05": {
+        "matches": 20,
+        "false": 164193,
+        "photos": 40,
+        "saturated": 40
+      },
+      "cap96@0.5": {
+        "matches": 20,
+        "false": 727,
+        "photos": 40,
+        "saturated": 2
+      },
+      "unlimited@0.5": {
+        "matches": 20,
+        "false": 842,
+        "photos": 40,
+        "saturated": 2
+      },
+      "cap96@0.75": {
+        "matches": 18,
+        "false": 63,
+        "photos": 40,
+        "saturated": 0
+      },
+      "unlimited@0.75": {
+        "matches": 18,
+        "false": 63,
+        "photos": 40,
+        "saturated": 0
+      },
+      "cap96@0.9": {
+        "matches": 9,
+        "false": 3,
+        "photos": 40,
+        "saturated": 0
+      },
+      "unlimited@0.9": {
+        "matches": 9,
+        "false": 3,
+        "photos": 40,
+        "saturated": 0
+      }
+    },
+    "cap_by_scene": {
+      "empty": {
+        "cap96@0.05": {
+          "matches": 0,
+          "false": 1920,
+          "photos": 20,
+          "saturated": 20
+        },
+        "unlimited@0.05": {
+          "matches": 0,
+          "false": 82625,
+          "photos": 20,
+          "saturated": 20
+        },
+        "cap96@0.5": {
+          "matches": 0,
+          "false": 120,
+          "photos": 20,
+          "saturated": 0
+        },
+        "unlimited@0.5": {
+          "matches": 0,
+          "false": 120,
+          "photos": 20,
+          "saturated": 0
+        },
+        "cap96@0.75": {
+          "matches": 0,
+          "false": 0,
+          "photos": 20,
+          "saturated": 0
+        },
+        "unlimited@0.75": {
+          "matches": 0,
+          "false": 0,
+          "photos": 20,
+          "saturated": 0
+        },
+        "cap96@0.9": {
+          "matches": 0,
+          "false": 0,
+          "photos": 20,
+          "saturated": 0
+        },
+        "unlimited@0.9": {
+          "matches": 0,
+          "false": 0,
+          "photos": 20,
+          "saturated": 0
+        }
+      },
+      "single": {
+        "cap96@0.05": {
+          "matches": 20,
+          "false": 1900,
+          "photos": 20,
+          "saturated": 20
+        },
+        "unlimited@0.05": {
+          "matches": 20,
+          "false": 81568,
+          "photos": 20,
+          "saturated": 20
+        },
+        "cap96@0.5": {
+          "matches": 20,
+          "false": 607,
+          "photos": 20,
+          "saturated": 2
+        },
+        "unlimited@0.5": {
+          "matches": 20,
+          "false": 722,
+          "photos": 20,
+          "saturated": 2
+        },
+        "cap96@0.75": {
+          "matches": 18,
+          "false": 63,
+          "photos": 20,
+          "saturated": 0
+        },
+        "unlimited@0.75": {
+          "matches": 18,
+          "false": 63,
+          "photos": 20,
+          "saturated": 0
+        },
+        "cap96@0.9": {
+          "matches": 9,
+          "false": 3,
+          "photos": 20,
+          "saturated": 0
+        },
+        "unlimited@0.9": {
+          "matches": 9,
+          "false": 3,
+          "photos": 20,
+          "saturated": 0
+        }
+      }
+    },
+    "stored_sha256": "ced2202f90c167e44637372fad4b00d7011a887e7f60be6d0e92b6fa774312b8"
+  },
+  "choice": {
+    "arm": "A",
+    "rankings": {
+      "A": [
+        0,
+        0,
+        3,
+        -2
+      ],
+      "B": [
+        0,
+        0,
+        1,
+        -2
+      ],
+      "C": [
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    "corpus_sha256": "e6bf88fa2a465078d855493a66d667d739efc5d68081e166a2a4124fa81d877f",
+    "seeds": [
+      8301,
+      8302,
+      8303
+    ]
+  },
+  "runs": {
+    "A-8301": {
+      "arm": "A",
+      "seed": 8301,
+      "steps": 64,
+      "initial_sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27",
+      "checkpoint_sha256": "6cb0b3a8abb71673c89f2206294a1ba26e76d822920aeb48ab175b385da6d910",
+      "crop_digests": [
+        "a532c4856fa23ad90f313342a11bb16983efb2c42ae54c6d929ec21674cc75fd",
+        "3c1e7a022a9f07c5038c05e8bfdb6ed501350082de1013faa880a243859d1882"
+      ],
+      "wall_s": 27.354122911005106,
+      "pixels_positive_negative_ignored": [
+        [
+          79364,
+          32708832,
+          19640604
+        ],
+        [
+          194800,
+          26110591,
+          26123409
+        ]
+      ],
+      "positive_mass": [
+        23707.47456023656,
+        194800.0
+      ],
+      "dev_threshold": 2.0,
+      "curve": [
+        {
+          "step": 0,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 491,
+              "unmatched": 476,
+              "false": 473,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 252,
+              "unmatched": 245,
+              "false": 242,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 370,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 7,
+              "proposals": 12,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 3,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 6,
+              "proposals": 11,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 16,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 508,
+              "unmatched": 493,
+              "false": 490,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 267,
+              "unmatched": 260,
+              "false": 257,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 373,
+              "unmatched": 362,
+              "false": 359,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 3,
+              "proposals": 3,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 10,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 3,
+              "proposals": 3,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 32,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 531,
+              "unmatched": 516,
+              "false": 512,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 276,
+              "unmatched": 269,
+              "false": 265,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 274,
+              "unmatched": 263,
+              "false": 259,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 11,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 6,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 48,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 868,
+              "unmatched": 853,
+              "false": 847,
+              "unresolved": 6,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 459,
+              "unmatched": 452,
+              "false": 446,
+              "unresolved": 6,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 365,
+              "unmatched": 354,
+              "false": 348,
+              "unresolved": 6,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 7,
+              "proposals": 12,
+              "unmatched": 5,
+              "false": 4,
+              "unresolved": 1,
+              "silent": 5,
+              "empty_with_points": 1
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 6,
+              "unmatched": 5,
+              "false": 4,
+              "unresolved": 1,
+              "silent": 3,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 5,
+              "proposals": 8,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 64,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 14,
+              "proposals": 613,
+              "unmatched": 599,
+              "false": 596,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 6,
+              "proposals": 323,
+              "unmatched": 317,
+              "false": 314,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 10,
+              "proposals": 339,
+              "unmatched": 329,
+              "false": 326,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 4,
+              "proposals": 7,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 9,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 3,
+              "proposals": 6,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        }
+      ]
+    },
+    "A-8302": {
+      "arm": "A",
+      "seed": 8302,
+      "steps": 64,
+      "initial_sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27",
+      "checkpoint_sha256": "5158da706b7b04cddd89365825f93c9011eca5298e32a7584f4e488f388b9ff5",
+      "crop_digests": [
+        "3545ad1901cc9b2bdb94252bc654ae9114a6211f38d53ae7ab62ebe1be1dc59a",
+        "def7809f4fa82ba9be037ae7b869fe26e19511009e08b3e0dd69d75784925b16"
+      ],
+      "wall_s": 26.877456283000356,
+      "pixels_positive_negative_ignored": [
+        [
+          79367,
+          32708834,
+          19640599
+        ],
+        [
+          192587,
+          26112935,
+          26123278
+        ]
+      ],
+      "positive_mass": [
+        23708.48710729461,
+        192587.0
+      ],
+      "dev_threshold": 2.0,
+      "curve": [
+        {
+          "step": 0,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 491,
+              "unmatched": 476,
+              "false": 473,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 252,
+              "unmatched": 245,
+              "false": 242,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 370,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 7,
+              "proposals": 12,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 3,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 6,
+              "proposals": 11,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 16,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 411,
+              "unmatched": 396,
+              "false": 391,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 196,
+              "unmatched": 189,
+              "false": 184,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 284,
+              "unmatched": 273,
+              "false": 268,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 2,
+              "proposals": 3,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 9,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 1,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 1,
+              "proposals": 2,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 32,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 511,
+              "unmatched": 496,
+              "false": 492,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 233,
+              "unmatched": 226,
+              "false": 222,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 283,
+              "unmatched": 272,
+              "false": 268,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 2,
+              "proposals": 3,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 9,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 1,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 1,
+              "proposals": 2,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 48,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 312,
+              "unmatched": 297,
+              "false": 295,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 85,
+              "unmatched": 78,
+              "false": 76,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 231,
+              "unmatched": 220,
+              "false": 218,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 2,
+              "proposals": 2,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 10,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 6,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 64,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 453,
+              "unmatched": 438,
+              "false": 437,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 227,
+              "unmatched": 220,
+              "false": 219,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 365,
+              "unmatched": 354,
+              "false": 353,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 4,
+              "proposals": 6,
+              "unmatched": 2,
+              "false": 1,
+              "unresolved": 1,
+              "silent": 8,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 2,
+              "unmatched": 2,
+              "false": 1,
+              "unresolved": 1,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 3,
+              "proposals": 5,
+              "unmatched": 2,
+              "false": 1,
+              "unresolved": 1,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          }
+        }
+      ]
+    },
+    "A-8303": {
+      "arm": "A",
+      "seed": 8303,
+      "steps": 64,
+      "initial_sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27",
+      "checkpoint_sha256": "19b7290843a01aa4066b98a78b736f68594dc9c5a9dd72fa05324bad75784b9f",
+      "crop_digests": [
+        "862bc7a57fdf9b6bb91a4efe88afc7dc379ec64f319c97f957b64df35ee2eb7b",
+        "17e03167fb540acd4cd43141297dea0a2c1b373d3bd7d7e04152e80f58f134a9"
+      ],
+      "wall_s": 27.871428830003424,
+      "pixels_positive_negative_ignored": [
+        [
+          78955,
+          32708821,
+          19641024
+        ],
+        [
+          200027,
+          26110698,
+          26118075
+        ]
+      ],
+      "positive_mass": [
+        23481.035342593677,
+        200027.0
+      ],
+      "dev_threshold": 2.0,
+      "curve": [
+        {
+          "step": 0,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 491,
+              "unmatched": 476,
+              "false": 473,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 252,
+              "unmatched": 245,
+              "false": 242,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 370,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 7,
+              "proposals": 12,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 3,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 6,
+              "proposals": 11,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 16,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 1123,
+              "unmatched": 1108,
+              "false": 1101,
+              "unresolved": 7,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 561,
+              "unmatched": 554,
+              "false": 547,
+              "unresolved": 7,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 366,
+              "unresolved": 7,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 5,
+              "proposals": 8,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 8,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 4,
+              "proposals": 7,
+              "unmatched": 3,
+              "false": 2,
+              "unresolved": 1,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 32,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 14,
+              "proposals": 1040,
+              "unmatched": 1026,
+              "false": 1019,
+              "unresolved": 7,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 6,
+              "proposals": 520,
+              "unmatched": 514,
+              "false": 507,
+              "unresolved": 7,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 10,
+              "proposals": 384,
+              "unmatched": 374,
+              "false": 367,
+              "unresolved": 7,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 6,
+              "proposals": 10,
+              "unmatched": 4,
+              "false": 3,
+              "unresolved": 1,
+              "silent": 8,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 5,
+              "unmatched": 4,
+              "false": 3,
+              "unresolved": 1,
+              "silent": 5,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 5,
+              "proposals": 9,
+              "unmatched": 4,
+              "false": 3,
+              "unresolved": 1,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 48,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 13,
+              "proposals": 531,
+              "unmatched": 518,
+              "false": 516,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 5,
+              "proposals": 283,
+              "unmatched": 278,
+              "false": 276,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 9,
+              "proposals": 328,
+              "unmatched": 319,
+              "false": 317,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 4,
+              "proposals": 9,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 8,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 6,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 4,
+              "proposals": 9,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 64,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 13,
+              "proposals": 620,
+              "unmatched": 607,
+              "false": 605,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 5,
+              "proposals": 326,
+              "unmatched": 321,
+              "false": 319,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 9,
+              "proposals": 351,
+              "unmatched": 342,
+              "false": 340,
+              "unresolved": 2,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 6,
+              "proposals": 26,
+              "unmatched": 20,
+              "false": 19,
+              "unresolved": 1,
+              "silent": 7,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 14,
+              "unmatched": 13,
+              "false": 12,
+              "unresolved": 1,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 5,
+              "proposals": 25,
+              "unmatched": 20,
+              "false": 19,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        }
+      ]
+    },
+    "B-8301": {
+      "arm": "B",
+      "seed": 8301,
+      "steps": 64,
+      "initial_sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27",
+      "checkpoint_sha256": "457cb3a681ea80015d981bf9b33083c4c0a78caa5bb8dcfc62ee481f10531e95",
+      "crop_digests": [
+        "a532c4856fa23ad90f313342a11bb16983efb2c42ae54c6d929ec21674cc75fd",
+        "3c1e7a022a9f07c5038c05e8bfdb6ed501350082de1013faa880a243859d1882"
+      ],
+      "wall_s": 28.17332953600271,
+      "pixels_positive_negative_ignored": [
+        [
+          264404,
+          52067060,
+          97336
+        ],
+        [
+          194800,
+          26110591,
+          26123409
+        ]
+      ],
+      "positive_mass": [
+        56956.39696781244,
+        194800.0
+      ],
+      "dev_threshold": 2.0,
+      "curve": [
+        {
+          "step": 0,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 491,
+              "unmatched": 476,
+              "false": 473,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 252,
+              "unmatched": 245,
+              "false": 242,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 370,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 7,
+              "proposals": 12,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 3,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 6,
+              "proposals": 11,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 16,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 1152,
+              "unmatched": 1137,
+              "false": 1132,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 576,
+              "unmatched": 569,
+              "false": 564,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 368,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 3,
+              "proposals": 27,
+              "unmatched": 24,
+              "false": 24,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 11,
+              "unmatched": 11,
+              "false": 11,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 2,
+              "proposals": 10,
+              "unmatched": 8,
+              "false": 8,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 32,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 1152,
+              "unmatched": 1137,
+              "false": 1132,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 576,
+              "unmatched": 569,
+              "false": 564,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 368,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 2,
+              "proposals": 7,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 1
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 5,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 2,
+              "proposals": 4,
+              "unmatched": 2,
+              "false": 2,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 48,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 14,
+              "proposals": 1152,
+              "unmatched": 1138,
+              "false": 1135,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 6,
+              "proposals": 576,
+              "unmatched": 570,
+              "false": 567,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 10,
+              "proposals": 384,
+              "unmatched": 374,
+              "false": 371,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 4,
+              "proposals": 14,
+              "unmatched": 10,
+              "false": 10,
+              "unresolved": 0,
+              "silent": 6,
+              "empty_with_points": 2
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 8,
+              "unmatched": 7,
+              "false": 7,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 3,
+              "proposals": 7,
+              "unmatched": 4,
+              "false": 4,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 64,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 14,
+              "proposals": 1152,
+              "unmatched": 1138,
+              "false": 1134,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 6,
+              "proposals": 576,
+              "unmatched": 570,
+              "false": 566,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 10,
+              "proposals": 384,
+              "unmatched": 374,
+              "false": 370,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 1,
+              "proposals": 3,
+              "unmatched": 2,
+              "false": 2,
+              "unresolved": 0,
+              "silent": 9,
+              "empty_with_points": 1
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 2,
+              "unmatched": 2,
+              "false": 2,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 1,
+              "proposals": 2,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        }
+      ]
+    },
+    "C-8301": {
+      "arm": "C",
+      "seed": 8301,
+      "steps": 64,
+      "initial_sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27",
+      "checkpoint_sha256": "6a3b3cdeaf9f78c501a9ec8972cb3e9be6adc819e6e1a077464a905fa42bbe5e",
+      "crop_digests": [
+        "a532c4856fa23ad90f313342a11bb16983efb2c42ae54c6d929ec21674cc75fd",
+        "45fec4ce15be6831463752daf4e1db8914400853b2653a754468408e4b81f5cb"
+      ],
+      "wall_s": 29.993439194993698,
+      "pixels_positive_negative_ignored": [
+        [
+          269791,
+          52022997,
+          136012
+        ],
+        [
+          194800,
+          26110591,
+          26123409
+        ]
+      ],
+      "positive_mass": [
+        58058.80273109581,
+        194800.0
+      ],
+      "dev_threshold": 2.0,
+      "curve": [
+        {
+          "step": 0,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 491,
+              "unmatched": 476,
+              "false": 473,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 252,
+              "unmatched": 245,
+              "false": 242,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 370,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 7,
+              "proposals": 12,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 1,
+              "proposals": 4,
+              "unmatched": 3,
+              "false": 3,
+              "unresolved": 0,
+              "silent": 4,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 6,
+              "proposals": 11,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 16,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 1152,
+              "unmatched": 1137,
+              "false": 1131,
+              "unresolved": 6,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 576,
+              "unmatched": 569,
+              "false": 563,
+              "unresolved": 6,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 367,
+              "unresolved": 6,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 2,
+              "proposals": 7,
+              "unmatched": 5,
+              "false": 5,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 1
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 4,
+              "unmatched": 4,
+              "false": 4,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 1,
+              "proposals": 3,
+              "unmatched": 2,
+              "false": 2,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 32,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 1152,
+              "unmatched": 1137,
+              "false": 1132,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 576,
+              "unmatched": 569,
+              "false": 564,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 368,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 3,
+              "proposals": 7,
+              "unmatched": 4,
+              "false": 4,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 1
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 4,
+              "unmatched": 4,
+              "false": 4,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 2,
+              "proposals": 4,
+              "unmatched": 2,
+              "false": 2,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 48,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 969,
+              "unmatched": 954,
+              "false": 950,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 485,
+              "unmatched": 478,
+              "false": 474,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 384,
+              "unmatched": 373,
+              "false": 369,
+              "unresolved": 4,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 3,
+              "proposals": 7,
+              "unmatched": 4,
+              "false": 4,
+              "unresolved": 0,
+              "silent": 7,
+              "empty_with_points": 1
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 4,
+              "unmatched": 4,
+              "false": 4,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 1
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 2,
+              "proposals": 4,
+              "unmatched": 2,
+              "false": 2,
+              "unresolved": 0,
+              "silent": 2,
+              "empty_with_points": 0
+            }
+          }
+        },
+        {
+          "step": 64,
+          "at050": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 15,
+              "proposals": 567,
+              "unmatched": 552,
+              "false": 547,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 4
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 7,
+              "proposals": 295,
+              "unmatched": 288,
+              "false": 283,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 2
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 11,
+              "proposals": 309,
+              "unmatched": 298,
+              "false": 293,
+              "unresolved": 5,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "at090": {
+            "all": {
+              "photos": 12,
+              "known": 15,
+              "matched": 3,
+              "proposals": 3,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 10,
+              "empty_with_points": 0
+            },
+            "worn": {
+              "photos": 6,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 6,
+              "empty_with_points": 0
+            },
+            "grouped": {
+              "photos": 4,
+              "known": 11,
+              "matched": 2,
+              "proposals": 2,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 3,
+              "empty_with_points": 0
+            }
+          }
+        }
+      ]
+    }
+  },
+  "dev": {
+    "R7": {
+      "threshold": 2.0,
+      "operating": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at050": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 10,
+          "unmatched": 10,
+          "false": 10,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 1,
+          "unmatched": 1,
+          "false": 1,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 1
+        }
+      },
+      "at090": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "localization": {
+        "operating": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at050": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at090": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        }
+      }
+    },
+    "A-8301": {
+      "threshold": 2.0,
+      "operating": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at050": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 6,
+          "unmatched": 6,
+          "false": 0,
+          "unresolved": 6,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 1,
+          "proposals": 14,
+          "unmatched": 13,
+          "false": 13,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 6,
+          "unmatched": 6,
+          "false": 6,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 1
+        }
+      },
+      "at090": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "localization": {
+        "operating": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at050": {
+          "matches": 1,
+          "median_px": 2.709064068087006,
+          "p90_px": 2.709064068087006
+        },
+        "at090": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        }
+      }
+    },
+    "A-8302": {
+      "threshold": 2.0,
+      "operating": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at050": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 3,
+          "unmatched": 3,
+          "false": 0,
+          "unresolved": 3,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 2,
+          "proposals": 96,
+          "unmatched": 94,
+          "false": 94,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at090": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "localization": {
+        "operating": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at050": {
+          "matches": 2,
+          "median_px": 2.1218879855093102,
+          "p90_px": 2.5916288515714667
+        },
+        "at090": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        }
+      }
+    },
+    "A-8303": {
+      "threshold": 2.0,
+      "operating": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at050": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 4,
+          "unmatched": 4,
+          "false": 0,
+          "unresolved": 4,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 13,
+          "unmatched": 13,
+          "false": 13,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 8,
+          "unmatched": 8,
+          "false": 8,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 1
+        }
+      },
+      "at090": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "localization": {
+        "operating": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at050": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at090": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        }
+      }
+    },
+    "B-8301": {
+      "threshold": 2.0,
+      "operating": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at050": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 2,
+          "proposals": 82,
+          "unmatched": 80,
+          "false": 0,
+          "unresolved": 80,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 37,
+          "unmatched": 37,
+          "false": 37,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 43,
+          "unmatched": 43,
+          "false": 43,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 1
+        }
+      },
+      "at090": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "localization": {
+        "operating": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at050": {
+          "matches": 2,
+          "median_px": 2.6136757751520774,
+          "p90_px": 2.839268425963323
+        },
+        "at090": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        }
+      }
+    },
+    "C-8301": {
+      "threshold": 2.0,
+      "operating": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "at050": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 54,
+          "unmatched": 54,
+          "false": 0,
+          "unresolved": 54,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 3,
+          "proposals": 96,
+          "unmatched": 93,
+          "false": 93,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 62,
+          "unmatched": 62,
+          "false": 62,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 1
+        }
+      },
+      "at090": {
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "known": 3,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "known": 6,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "russellstreet": {
+          "photos": 1,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 1,
+          "empty_with_points": 0
+        }
+      },
+      "localization": {
+        "operating": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        },
+        "at050": {
+          "matches": 3,
+          "median_px": 3.0318048461271636,
+          "p90_px": 3.3911212820710603
+        },
+        "at090": {
+          "matches": 0,
+          "median_px": null,
+          "p90_px": null
+        }
+      }
+    }
+  }
+}

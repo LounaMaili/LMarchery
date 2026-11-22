@@ -145,3 +145,7 @@ Le [bilan et la fiche modèle](r6.md) présentent les plafonds du décodage, la 
 ## Pilote réel R7
 
 Le premier apprentissage sur photographies publiques compare MobileNetV3-Small initialisé sur ImageNet, le même réseau aléatoire et R3 figé. Le bilan distingue l’ajustement sur le support Crigges du test externe après sélection des seuils. [Résultats R7](r7.md) · [Reproduction](r7/reproduire.md)
+
+## Discrimination des contacts R8
+
+L’audit des pics sauvegardés, les essais à supervision contrôlée et les acquisitions publiques supplémentaires sont décrits dans le [bilan R8](r8.md). Les [commandes de reproduction](r8/reproduire.md) couvrent les données, les checkpoints et le retour du lecteur.
