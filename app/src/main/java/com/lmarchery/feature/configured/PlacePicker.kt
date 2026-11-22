@@ -1,91 +1,62 @@
 package com.lmarchery.feature.configured
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
+import com.lmarchery.feature.sessions.SessionFormDialog
 import com.lmarchery.core.model.place.*
 import java.util.UUID
 
 private val NorthReference.label get() = if (this == NorthReference.TRUE_NORTH) "nord géographique" else "nord magnétique"
-private val LineOrientation?.label get() = this?.let { "${it.degrees}° · ${it.reference.label}" + if (it.reading == null) "" else " · boussole confirmée" } ?: "Orientation non renseignée"
+internal val LineOrientation?.label get() = this?.let { "${it.degrees}° · ${it.reference.label}" + if (it.reading == null) "" else " · boussole confirmée" } ?: "Orientation non renseignée"
 
 @Composable
 internal fun AdoptedPlaceLabel(value: SessionPlace) {
     Text(listOfNotNull(value.site.name, value.line?.name, value.line?.let { value.orientation.label }).joinToString(" · "))
 }
 
-private enum class PlaceEditor { SITE, LINE, SESSION }
-
 @Composable
 internal fun PlacePicker(form: ConfiguredForm.Creation, state: ConfiguredEditorState, c: ConfiguredSessionController) {
-    var expanded by rememberSaveable(form.token) { mutableStateOf(false) }
-    var editor by remember(form.token) { mutableStateOf<PlaceEditor?>(null) }
-    var site by remember(form.token) { mutableStateOf<ShootingSite?>(null) }
-    var line by remember(form.token) { mutableStateOf<ShootingLine?>(null) }
-    TextButton({
-        expanded = !expanded
-        if (expanded) c.loadPlaces(form.token)
-    }, enabled = state.ready) { Text(form.site?.let { "Lieu · ${it.name}" } ?: "Lieu et ligne de tir (facultatif)") }
-    if (!expanded) return
+    var editingOrientation by rememberSaveable(form.token) { mutableStateOf(false) }
+    LaunchedEffect(form.token) { if (state.catalogue == null) c.loadPlaces(form.token) }
+    Text("Lieu et ligne de tir", style = MaterialTheme.typography.titleMedium)
     val catalogue = state.catalogue
     if (catalogue == null) {
-        if (state.busy) Text("Lecture du catalogue…")
-        else TextButton({ c.loadPlaces(form.token) }) { Text("Relire les lieux") }
+        if (state.busy) Text("Lecture des lieux…")
+        else OutlinedButton({ c.loadPlaces(form.token) }) { Text("Relire les lieux") }
         return
     }
-    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        ChoiceMenu("Lieu", form.site?.name ?: "Aucun", state.ready) { close ->
-            DropdownMenuItem({ Text("Aucun lieu") }, { c.choosePlace(form.token, null, null); close() })
-            catalogue.first.sortedBy { it.name }.forEach { choice ->
-                DropdownMenuItem({ Text(choice.name) }, { c.choosePlace(form.token, choice, null); close() })
-            }
+    if (catalogue.first.isEmpty()) Text("Aucun lieu favori. Vous pouvez en ajouter depuis « Mes lieux de tir » à l’accueil.")
+    ChoiceMenu("Lieu", form.site?.name ?: "Aucun lieu", state.ready) { close ->
+        DropdownMenuItem({ Text("Continuer sans lieu") }, { c.choosePlace(form.token, null, null); close() })
+        catalogue.first.sortedBy { it.name }.forEach { choice ->
+            DropdownMenuItem({ Text(choice.name) }, { c.choosePlace(form.token, choice, null); close() })
         }
-        TextButton({ site = null; editor = PlaceEditor.SITE }, enabled = state.ready) { Text("Créer un lieu favori") }
-        form.site?.let { selected ->
-            selected.description?.let { Text(it) }
-            TextButton({ site = selected; editor = PlaceEditor.SITE }, enabled = state.ready) { Text("Modifier le lieu") }
-            val lines = catalogue.second.filter { it.siteUuid == selected.uuid }
-            ChoiceMenu("Ligne", form.line?.name ?: "Aucune", state.ready) { close ->
-                DropdownMenuItem({ Text("Aucune ligne") }, { c.choosePlace(form.token, selected, null); close() })
-                lines.sortedBy { it.name }.forEach { choice ->
-                    DropdownMenuItem({ Text(choice.name + if (choice.active) "" else " (désactivée)") },
-                        { c.choosePlace(form.token, selected, choice); close() }, enabled = choice.active)
-                }
-            }
-            TextButton({ line = null; editor = PlaceEditor.LINE }, enabled = state.ready) { Text("Ajouter une ligne") }
-            form.line?.let { selectedLine ->
-                Text(form.orientation.label)
-                TextButton({ line = selectedLine; editor = PlaceEditor.SESSION }, enabled = state.ready) { Text("Orientation pour cette séance") }
-                TextButton({ line = selectedLine; editor = PlaceEditor.LINE }, enabled = state.ready) { Text("Modifier ou désactiver la ligne") }
+    }
+    form.site?.let { selected ->
+        val lines = catalogue.second.filter { it.siteUuid == selected.uuid && it.active }.sortedBy { it.name }
+        ChoiceMenu("Ligne", form.line?.name ?: "Aucune ligne", state.ready) { close ->
+            DropdownMenuItem({ Text("Sans ligne") }, { c.choosePlace(form.token, selected, null); close() })
+            lines.forEach { choice ->
+                DropdownMenuItem({ Text(choice.name) }, { c.choosePlace(form.token, selected, choice); close() })
             }
         }
     }
-    when (editor) {
-        PlaceEditor.SITE -> SiteDialog(site, { editor = null }) { proposed ->
-            c.saveSite(form.token, site, proposed)
-            editor = null
-        }
-        PlaceEditor.LINE, PlaceEditor.SESSION -> form.site?.let { owner ->
-            val sessionOnly = editor == PlaceEditor.SESSION
-            key(form.token, owner.uuid, line?.uuid, sessionOnly) {
-                BearingDialog(line, if (sessionOnly) form.orientation else line?.orientation, sessionOnly, { editor = null }) { name, desc, angle, ref, uncertainty, active, reading ->
-                    if (sessionOnly) c.changeOrientation(form.token, requireNotNull(line), angle, ref, uncertainty, reading)
-                    else {
-                        val previous = line
-                        val orientation = c.catalogueOrientation(angle, ref, uncertainty, previous?.orientation, reading)
-                        c.saveLine(form.token, previous, ShootingLine(previous?.uuid ?: UUID.randomUUID().toString(), owner.uuid,
-                            name, desc, orientation, active))
-                    }
-                    editor = null
-                }
+    form.line?.let { line ->
+        Text("Orientation retenue", style = MaterialTheme.typography.titleSmall)
+        Text(form.orientation.label)
+        OutlinedButton({ editingOrientation = true }, enabled = state.ready) { Text("Modifier pour cette séance") }
+        if (editingOrientation) key(line.uuid) {
+            BearingDialog(line, form.orientation, true, { editingOrientation = false }) { _, _, angle, ref, uncertainty, _, reading ->
+                c.changeOrientation(form.token, line, angle, ref, uncertainty, reading)
+                editingOrientation = false
             }
         }
-        null -> Unit
     }
 }
 
@@ -93,7 +64,7 @@ internal fun PlacePicker(form: ConfiguredForm.Creation, state: ConfiguredEditorS
 private fun ChoiceMenu(label: String, selected: String, enabled: Boolean, items: @Composable (() -> Unit) -> Unit) {
     var open by remember { mutableStateOf(false) }
     Box {
-        OutlinedButton({ open = true }, enabled = enabled) { Text("$label · $selected") }
+        OutlinedButton({ open = true }, Modifier.fillMaxWidth(), enabled = enabled) { Text("$label · $selected") }
         DropdownMenu(open, { open = false }) { items { open = false } }
     }
 }
@@ -103,19 +74,25 @@ private fun optionalNumber(value: String): Double? = value.trim().takeIf { it.is
 }
 
 @Composable
-private fun SiteDialog(previous: ShootingSite?, dismiss: () -> Unit, save: (ShootingSite) -> Unit) {
-    var name by remember { mutableStateOf(previous?.name.orEmpty()) }
-    var description by remember { mutableStateOf(previous?.description.orEmpty()) }
-    var lat by remember { mutableStateOf(previous?.position?.latitude?.toString().orEmpty()) }
-    var lon by remember { mutableStateOf(previous?.position?.longitude?.toString().orEmpty()) }
-    var accuracy by remember { mutableStateOf(previous?.position?.accuracyMetres?.toString().orEmpty()) }
-    PlaceDialog("Lieu favori", dismiss, {
-        TextField(name, { name = it }, label = { Text("Nom") })
-        TextField(description, { description = it }, label = { Text("Description facultative") })
-        Text("Position facultative, incluse dans une sauvegarde V5.")
-        TextField(lat, { lat = it }, label = { Text("Latitude WGS84 (°)") })
-        TextField(lon, { lon = it }, label = { Text("Longitude WGS84 (°)") })
-        TextField(accuracy, { accuracy = it }, label = { Text("Précision horizontale (m)") })
+internal fun SiteDialog(previous: ShootingSite?, dismiss: () -> Unit, save: (ShootingSite) -> Unit) {
+    var name by rememberSaveable { mutableStateOf(previous?.name.orEmpty()) }
+    var description by rememberSaveable { mutableStateOf(previous?.description.orEmpty()) }
+    var lat by rememberSaveable { mutableStateOf(previous?.position?.latitude?.toString().orEmpty()) }
+    var lon by rememberSaveable { mutableStateOf(previous?.position?.longitude?.toString().orEmpty()) }
+    var accuracy by rememberSaveable { mutableStateOf(previous?.position?.accuracyMetres?.toString().orEmpty()) }
+    var coordinates by rememberSaveable { mutableStateOf(previous?.position != null) }
+    PlaceDialog(if (previous == null) "Nouveau lieu" else "Modifier le lieu", dismiss, {
+        OutlinedTextField(name, { name = it }, Modifier.fillMaxWidth(), label = { Text("Nom") }, singleLine = true)
+        OutlinedButton({ coordinates = !coordinates }, Modifier.fillMaxWidth()) {
+            Text(if (coordinates) "Masquer les coordonnées" else "Coordonnées (facultatives)")
+        }
+        if (coordinates) {
+            Text("Position incluse dans les sauvegardes des lieux.", style = MaterialTheme.typography.bodySmall)
+            CoordinateField("Latitude WGS84 (°)", lat) { lat = it }
+            CoordinateField("Longitude WGS84 (°)", lon) { lon = it }
+            CoordinateField("Précision horizontale (m)", accuracy) { accuracy = it }
+        }
+        OutlinedTextField(description, { description = it }, Modifier.fillMaxWidth(), label = { Text("Description facultative") })
     }) {
         val latitude = optionalNumber(lat)
         val longitude = optionalNumber(lon)
@@ -131,7 +108,7 @@ private fun SiteDialog(previous: ShootingSite?, dismiss: () -> Unit, save: (Shoo
 }
 
 @Composable
-private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessionOnly: Boolean, dismiss: () -> Unit,
+internal fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessionOnly: Boolean, dismiss: () -> Unit,
     save: (String, String?, Double?, NorthReference, Double?, Boolean, CompassReading?) -> Unit) {
     var name by remember { mutableStateOf(line?.name.orEmpty()) }
     var desc by remember { mutableStateOf(line?.description.orEmpty()) }
@@ -144,11 +121,13 @@ private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessio
     var active by remember { mutableStateOf(line?.active ?: true) }
     PlaceDialog(if (sessionOnly) "Orientation de la séance" else "Ligne de tir", dismiss, {
         if (!sessionOnly) {
-            TextField(name, { name = it }, label = { Text("Nom") })
-            TextField(desc, { desc = it }, label = { Text("Description facultative") })
-            if (line != null) Row { Checkbox(active, { active = it }); Text("Ligne utilisable") }
+            OutlinedTextField(name, { name = it }, Modifier.fillMaxWidth(), label = { Text("Nom") }, singleLine = true)
+            OutlinedTextField(desc, { desc = it }, Modifier.fillMaxWidth(), label = { Text("Description facultative") })
+            if (line != null) FilterChip(active, { active = !active }, {
+                Text(if (active) "Ligne active" else "Ligne désactivée")
+            })
         }
-        TextField(angle, { angle = it }, label = { Text("Azimut vers les cibles (°), facultatif") })
+        CoordinateField("Azimut vers les cibles (°), facultatif", angle) { angle = it }
         if (line != null && survey.available) {
             Text("Avant la séance, depuis un emplacement autorisé, orientez le haut de l’écran dans le sens de la ligne.")
             TextButton({ measuring = true }) { Text("Mesurer avec le téléphone") }
@@ -160,7 +139,7 @@ private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessio
             ChoiceMenu("Référence", north.label, true) { close -> NorthReference.entries.forEach { ref ->
                 DropdownMenuItem({ Text(ref.label) }, { north = ref; close() })
             } }
-            TextField(uncertainty, { uncertainty = it }, label = { Text("Incertitude angulaire (°)") })
+            CoordinateField("Incertitude angulaire (°)", uncertainty) { uncertainty = it }
         }
     }) {
         val degrees = optionalNumber(angle)
@@ -179,14 +158,18 @@ private fun BearingDialog(line: ShootingLine?, initial: LineOrientation?, sessio
 }
 
 @Composable
+private fun CoordinateField(label: String, value: String, update: (String) -> Unit) {
+    OutlinedTextField(value, update, Modifier.fillMaxWidth(), label = { Text(label) }, singleLine = true,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
+}
+
+@Composable
 private fun PlaceDialog(title: String, dismiss: () -> Unit, fields: @Composable ColumnScope.() -> Unit, confirm: () -> Unit) {
     var error by remember { mutableStateOf<String?>(null) }
-    AlertDialog(onDismissRequest = dismiss, title = { Text(title) }, text = {
-        Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            fields()
-            error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-        }
-    }, confirmButton = { TextButton({
+    SessionFormDialog(title, dismiss, "Enregistrer", submit = {
         try { confirm() } catch (e: IllegalArgumentException) { error = e.message ?: "Valeur incorrecte." }
-    }) { Text("Enregistrer") } }, dismissButton = { TextButton(dismiss) { Text("Annuler") } })
+    }) {
+        error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+        fields()
+    }
 }
