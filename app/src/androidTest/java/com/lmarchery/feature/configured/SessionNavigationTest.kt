@@ -86,6 +86,7 @@ class SessionNavigationTest {
         captureUxScreen("informations-seance")
         click("Ajouter un relevé météo")
         awaitText("Température (°C)")
+        captureUxScreen("meteo-formulaire-app")
         click("Annuler")
         click("‹ Retour au tir")
         awaitText("2 / 3")

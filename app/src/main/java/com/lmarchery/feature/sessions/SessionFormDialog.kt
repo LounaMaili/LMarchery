@@ -9,7 +9,6 @@ import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 
 /** One scrollable form with its actions outside the scroll area. */
 @Composable
@@ -22,8 +21,8 @@ internal fun SessionFormDialog(
     navigation: @Composable () -> Unit = {},
     fields: @Composable ColumnScope.() -> Unit,
 ) {
-    Dialog(dismiss, properties = DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
-        Surface(Modifier.fillMaxSize()) {
+    Dialog(dismiss) {
+        Surface(Modifier.fillMaxSize(), shape = MaterialTheme.shapes.large) {
             Column(Modifier.fillMaxSize().safeDrawingPadding().imePadding()) {
                 Text(title, Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
                     style = MaterialTheme.typography.titleLarge)

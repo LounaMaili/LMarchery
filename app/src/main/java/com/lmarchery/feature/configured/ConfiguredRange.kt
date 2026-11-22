@@ -170,51 +170,53 @@ private fun SessionInformation(state: ConfiguredEditorState, controller: Configu
     val session = requireNotNull(state.saved)
     var allEnds by rememberSaveable(session.uuid) { mutableStateOf(false) }
     BackHandler(onBack = backToRange)
-    Column(Modifier.fillMaxSize().safeDrawingPadding()) {
-        OutlinedButton(backToRange, Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) { Text("‹ Retour au tir") }
-        LazyColumn(
-            Modifier.weight(1f).fillMaxWidth(),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
-            item {
-                Text("Informations de séance", style = MaterialTheme.typography.headlineSmall)
-                Text(session.metadata.title, style = MaterialTheme.typography.titleMedium)
-                state.savedPlace?.let { AdoptedPlaceLabel(it) }
-            }
-            item {
-                com.lmarchery.feature.weather.WeatherSection(session.uuid,
-                    session.ends.map { it.uuid to it.end.index }, state.canNavigate, showOnEntry = true)
-            }
-            item {
-                HorizontalDivider()
-                ConfiguredSessionSummary(session, readOnly = false)
-                OutlinedButton({ backToRange(); controller.editMetadata() }, enabled = state.canForm) {
-                    Text("Modifier les détails et le matériel")
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
+            OutlinedButton(backToRange, Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) { Text("‹ Retour au tir") }
+            LazyColumn(
+                Modifier.weight(1f).fillMaxWidth(),
+                contentPadding = PaddingValues(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                item {
+                    Text("Informations de séance", style = MaterialTheme.typography.headlineSmall)
+                    Text(session.metadata.title, style = MaterialTheme.typography.titleMedium)
+                    state.savedPlace?.let { AdoptedPlaceLabel(it) }
                 }
-            }
-            item {
-                Text("Volées", style = MaterialTheme.typography.titleMedium)
-                OutlinedButton({ allEnds = !allEnds }) {
-                    Text(if (allEnds) "Masquer les volées" else "Consulter les volées (${session.ends.size})")
+                item {
+                    com.lmarchery.feature.weather.WeatherSection(session.uuid,
+                        session.ends.map { it.uuid to it.end.index }, state.canNavigate, showOnEntry = true)
                 }
-            }
-            if (allEnds) items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { focus ->
-                OutlinedButton({ controller.selectEnd(focus.uuid); backToRange() }, enabled = state.canNavigate) {
-                    Text("Voir la volée ${focus.end.index}")
+                item {
+                    HorizontalDivider()
+                    ConfiguredSessionSummary(session, readOnly = false)
+                    OutlinedButton({ backToRange(); controller.editMetadata() }, enabled = state.canForm) {
+                        Text("Modifier les détails et le matériel")
+                    }
                 }
-                TextButton({ openGrouping(focus.uuid) }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
-                ConfiguredEndCard(session, focus)
-                ImpactCancellationHistory(focus.end, focus.configuration.regulatoryEdition)
-            }
-            item {
-                OutlinedButton({ backToRange(); controller.nextEnd(state.epoch) }, enabled = state.canForm) {
-                    Text(if (session.ends.isEmpty()) "Créer la première volée" else "Volée suivante")
+                item {
+                    Text("Volées", style = MaterialTheme.typography.titleMedium)
+                    OutlinedButton({ allEnds = !allEnds }) {
+                        Text(if (allEnds) "Masquer les volées" else "Consulter les volées (${session.ends.size})")
+                    }
                 }
-                OutlinedButton({ backToRange(); controller.editNextEnd(state.epoch) }, enabled = state.canForm) {
-                    Text(nextEndSettingsLabel)
+                if (allEnds) items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { focus ->
+                    OutlinedButton({ controller.selectEnd(focus.uuid); backToRange() }, enabled = state.canNavigate) {
+                        Text("Voir la volée ${focus.end.index}")
+                    }
+                    TextButton({ openGrouping(focus.uuid) }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
+                    ConfiguredEndCard(session, focus)
+                    ImpactCancellationHistory(focus.end, focus.configuration.regulatoryEdition)
                 }
-                TextButton({ backToRange(); finish() }, enabled = state.canForm) { Text("Terminer la séance") }
+                item {
+                    OutlinedButton({ backToRange(); controller.nextEnd(state.epoch) }, enabled = state.canForm) {
+                        Text(if (session.ends.isEmpty()) "Créer la première volée" else "Volée suivante")
+                    }
+                    OutlinedButton({ backToRange(); controller.editNextEnd(state.epoch) }, enabled = state.canForm) {
+                        Text(nextEndSettingsLabel)
+                    }
+                    TextButton({ backToRange(); finish() }, enabled = state.canForm) { Text("Terminer la séance") }
+                }
             }
         }
     }
