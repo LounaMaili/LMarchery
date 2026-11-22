@@ -9,7 +9,26 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=4
 python -m unittest -v
 ```
 
-## Reconstituer les données
+## Retracer les figures depuis GitHub
+
+Un checkout de cette révision suffit pour cette lecture. Les JSON publiés sont les six sorties d’essai d’origine. Depuis `vision-lab/`, exécuter les commandes suivantes dans un environnement de tracé CPython 3.12 avec Matplotlib 3.11.2 et NumPy 2.5.5. Les polices et le moteur de rendu peuvent influer sur les octets des PNG entre machines.
+
+```sh
+OUT_PLOTS=$(mktemp -d)
+cp r9/mesures.json "$OUT_PLOTS/"
+cp -r r9/train "$OUT_PLOTS/"
+MPLBACKEND=Agg python -m r9.plot "$OUT_PLOTS"
+cmp "$OUT_PLOTS/apprentissage.png" r9/figures/apprentissage.png
+for file in "$OUT_PLOTS"/courbes/*.png; do
+    cmp "$file" "r9/figures/${file##*/}" || exit 1
+done
+```
+
+Le [guide des figures](figures/README.md) relie chaque tracé à ses valeurs. Les compteurs à chaque seuil sont entiers. Pour vérifier la décision dans [selection.json](selection.json), retenir les lignes de `frontiere` avec `unmatched ≤ 3` et maximiser successivement `matched`, puis `-unmatched`, puis `threshold`. La dernière ligne est le premier dépassement. En abaissant le seuil, ajouter des propositions ne peut augmenter le nombre d’appariements de plus que le nombre de propositions ajoutées. Les non-appariées ne peuvent donc plus repasser sous le budget. Le premier contact est également donné, même lorsqu’il est hors budget. La fonction de sélection et le calcul du premier contact sont versionnés. [Sélection](experiment.py) · [Premier contact](report.py)
+
+Le [registre des sources](sources.json) donne, sur les seules partitions utilisées, les crédits, licences, supports, conditions, effectifs et empreintes des images de travail. La clé `source.sha256` (ou `source.source_sha256` pour Crigges) identifie les octets fournis par la source. Les catégories sous `banque` comptent les exemples vérifiés par photo. Les relevés assistés restent locaux. Les capsules contenant aussi des éléments réservés sont identifiées dans l’[inventaire des fichiers locaux](inventaire-local.json). Pour contrôler une capsule, calculer `sha256sum` et `wc -c` sur le fichier fermé.
+
+## Rejeu historique à partir des capsules locales
 
 La capsule locale `artifacts/r9/corpus-banque.zip` contient les 108 négatifs vérifiés, les images d’origine identifiées par empreinte, les catégories, les fenêtres valides, les annotations de segmentation disponibles, les décisions sur chaque photo admise et les trois plans. La capsule `sources-publiques.zip` contient les 206 dérivés et les 206 notices Flickr vérifiés. Utiliser un nouveau dossier pour chaque rejeu.
 
