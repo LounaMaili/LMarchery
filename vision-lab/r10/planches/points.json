@@ -1,0 +1,962 @@
+{
+  "3996564090": [
+    {
+      "exemple": 38,
+      "essai": "ordinary-9302",
+      "rang": 1,
+      "score": 0.7840416431427002,
+      "xy": [
+        451,
+        287
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 72,
+      "essai": "ordinary-9303",
+      "rang": 1,
+      "score": 0.7625246644020081,
+      "xy": [
+        369,
+        411
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 29,
+      "essai": "targeted-9303",
+      "rang": 1,
+      "score": 0.7165243029594421,
+      "xy": [
+        365,
+        107
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "A",
+      "essai": "ordinary-9302",
+      "rang": 43,
+      "score": 0.5810285210609436,
+      "xy": [
+        470,
+        264
+      ],
+      "entree": null,
+      "legende": "Contact apparié nº 2",
+      "statut": "Réf. apparié"
+    },
+    {
+      "exemple": "D",
+      "essai": "targeted-9301",
+      "rang": 26,
+      "score": 0.5361220836639404,
+      "xy": [
+        612,
+        339
+      ],
+      "entree": null,
+      "legende": "Candidat redondant · entrée 5",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "N",
+      "essai": null,
+      "rang": null,
+      "score": null,
+      "xy": [
+        311.18,
+        318.86
+      ],
+      "entree": 1,
+      "legende": "Entrée de référence nº 1",
+      "statut": "Score et rang indisponibles"
+    }
+  ],
+  "929865": [
+    {
+      "exemple": 156,
+      "essai": "ordinary-9302",
+      "rang": 1,
+      "score": 0.7785353064537048,
+      "xy": [
+        469,
+        619
+      ],
+      "entree": null,
+      "legende": "Aspect indéterminé",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 21,
+      "essai": "ordinary-9301",
+      "rang": 47,
+      "score": 0.2885649800300598,
+      "xy": [
+        388,
+        158
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 13,
+      "essai": "ordinary-9302",
+      "rang": 4,
+      "score": 0.5674305558204651,
+      "xy": [
+        523,
+        148
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 135,
+      "essai": "targeted-9303",
+      "rang": 5,
+      "score": 0.4376645088195801,
+      "xy": [
+        448,
+        543
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 24,
+      "essai": "ordinary-9302",
+      "rang": 41,
+      "score": 0.38975974917411804,
+      "xy": [
+        356,
+        159
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": "A",
+      "essai": "ordinary-9301",
+      "rang": 77,
+      "score": 0.2536587119102478,
+      "xy": [
+        331,
+        437
+      ],
+      "entree": null,
+      "legende": "Contact apparié nº 2",
+      "statut": "Réf. apparié"
+    }
+  ],
+  "6791193480": [
+    {
+      "exemple": 341,
+      "essai": "ordinary-9301",
+      "rang": 1,
+      "score": 0.8015527129173279,
+      "xy": [
+        748,
+        504
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 61,
+      "essai": "ordinary-9302",
+      "rang": 83,
+      "score": 0.3302251994609833,
+      "xy": [
+        349,
+        227
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 41,
+      "essai": "targeted-9302",
+      "rang": 62,
+      "score": 0.30546846985816956,
+      "xy": [
+        83,
+        187
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 163,
+      "essai": "ordinary-9301",
+      "rang": 4,
+      "score": 0.5895135998725891,
+      "xy": [
+        791,
+        357
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 194,
+      "essai": "targeted-9301",
+      "rang": 27,
+      "score": 0.3615821599960327,
+      "xy": [
+        729,
+        373
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 286,
+      "essai": "ordinary-9303",
+      "rang": 51,
+      "score": 0.3194127380847931,
+      "xy": [
+        649,
+        450
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    }
+  ],
+  "49398629148": [
+    {
+      "exemple": 176,
+      "essai": "ordinary-9302",
+      "rang": 1,
+      "score": 0.8877334594726562,
+      "xy": [
+        674,
+        650
+      ],
+      "entree": null,
+      "legende": "Trou ou déchirure",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 26,
+      "essai": "targeted-9301",
+      "rang": 37,
+      "score": 0.5373114943504333,
+      "xy": [
+        871,
+        343
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 40,
+      "essai": "ordinary-9302",
+      "rang": 91,
+      "score": 0.5109654068946838,
+      "xy": [
+        547,
+        448
+      ],
+      "entree": null,
+      "legende": "Ombre",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 14,
+      "essai": "ordinary-9302",
+      "rang": 8,
+      "score": 0.7659791111946106,
+      "xy": [
+        340,
+        226
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 71,
+      "essai": "ordinary-9301",
+      "rang": 3,
+      "score": 0.7845086455345154,
+      "xy": [
+        539,
+        512
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "N",
+      "essai": null,
+      "rang": null,
+      "score": null,
+      "xy": [
+        594.2076923076924,
+        393.7200460829493
+      ],
+      "entree": 1,
+      "legende": "Entrée de référence nº 1",
+      "statut": "Score et rang indisponibles"
+    }
+  ],
+  "955488046": [
+    {
+      "exemple": 32,
+      "essai": "targeted-9303",
+      "rang": 1,
+      "score": 0.8793440461158752,
+      "xy": [
+        321,
+        172
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 273,
+      "essai": "ordinary-9302",
+      "rang": 2,
+      "score": 0.8001458048820496,
+      "xy": [
+        74,
+        483
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 120,
+      "essai": "targeted-9303",
+      "rang": 5,
+      "score": 0.6630045175552368,
+      "xy": [
+        204,
+        345
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 70,
+      "essai": "ordinary-9302",
+      "rang": 32,
+      "score": 0.531991183757782,
+      "xy": [
+        347,
+        264
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 129,
+      "essai": "targeted-9303",
+      "rang": 15,
+      "score": 0.5851877927780151,
+      "xy": [
+        228,
+        347
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "N",
+      "essai": null,
+      "rang": null,
+      "score": null,
+      "xy": [
+        386.2569230769231,
+        382.71311475409834
+      ],
+      "entree": 1,
+      "legende": "Entrée de référence nº 1",
+      "statut": "Score et rang indisponibles"
+    }
+  ],
+  "3771007694": [
+    {
+      "exemple": 104,
+      "essai": "ordinary-9302",
+      "rang": 1,
+      "score": 0.9092044830322266,
+      "xy": [
+        430,
+        148
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 144,
+      "essai": "targeted-9302",
+      "rang": 82,
+      "score": 0.4572823941707611,
+      "xy": [
+        599,
+        232
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 178,
+      "essai": "ordinary-9302",
+      "rang": 6,
+      "score": 0.7616043090820312,
+      "xy": [
+        458,
+        287
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 166,
+      "essai": "targeted-9301",
+      "rang": 79,
+      "score": 0.4694289267063141,
+      "xy": [
+        821,
+        276
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 182,
+      "essai": "ordinary-9302",
+      "rang": 22,
+      "score": 0.6748356223106384,
+      "xy": [
+        400,
+        301
+      ],
+      "entree": null,
+      "legende": "Aspect indéterminé",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 257,
+      "essai": "targeted-9302",
+      "rang": 51,
+      "score": 0.4997345805168152,
+      "xy": [
+        370,
+        467
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    }
+  ],
+  "14347254046": [
+    {
+      "exemple": 83,
+      "essai": "targeted-9303",
+      "rang": 1,
+      "score": 0.7463558316230774,
+      "xy": [
+        485,
+        447
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 69,
+      "essai": "ordinary-9302",
+      "rang": 10,
+      "score": 0.6228593587875366,
+      "xy": [
+        532,
+        438
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 94,
+      "essai": "ordinary-9302",
+      "rang": 5,
+      "score": 0.6759912967681885,
+      "xy": [
+        578,
+        530
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 61,
+      "essai": "ordinary-9302",
+      "rang": 29,
+      "score": 0.519884467124939,
+      "xy": [
+        334,
+        249
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 65,
+      "essai": "ordinary-9303",
+      "rang": 25,
+      "score": 0.38897505402565,
+      "xy": [
+        59,
+        430
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "A",
+      "essai": "ordinary-9302",
+      "rang": 83,
+      "score": 0.4441625475883484,
+      "xy": [
+        461,
+        284
+      ],
+      "entree": null,
+      "legende": "Contact apparié nº 2",
+      "statut": "Réf. apparié"
+    }
+  ],
+  "8549619981": [
+    {
+      "exemple": 185,
+      "essai": "ordinary-9302",
+      "rang": 1,
+      "score": 0.9050758481025696,
+      "xy": [
+        637,
+        468
+      ],
+      "entree": null,
+      "legende": "Trou ou déchirure",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 46,
+      "essai": "ordinary-9301",
+      "rang": 4,
+      "score": 0.8510730862617493,
+      "xy": [
+        940,
+        55
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 163,
+      "essai": "targeted-9303",
+      "rang": 48,
+      "score": 0.48836764693260193,
+      "xy": [
+        96,
+        439
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 141,
+      "essai": "ordinary-9302",
+      "rang": 89,
+      "score": 0.5328043699264526,
+      "xy": [
+        98,
+        410
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 222,
+      "essai": "ordinary-9303",
+      "rang": 90,
+      "score": 0.3918473422527313,
+      "xy": [
+        314,
+        617
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 211,
+      "essai": "ordinary-9302",
+      "rang": 41,
+      "score": 0.6401176452636719,
+      "xy": [
+        406,
+        484
+      ],
+      "entree": null,
+      "legende": "Trou ou déchirure",
+      "statut": "Réf. faux établi"
+    }
+  ],
+  "36377144413": [
+    {
+      "exemple": 114,
+      "essai": "targeted-9301",
+      "rang": 1,
+      "score": 0.9085181951522827,
+      "xy": [
+        802,
+        135
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 15,
+      "essai": "ordinary-9302",
+      "rang": 2,
+      "score": 0.8619250655174255,
+      "xy": [
+        11,
+        31
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 284,
+      "essai": "ordinary-9303",
+      "rang": 42,
+      "score": 0.6013769507408142,
+      "xy": [
+        179,
+        691
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "A",
+      "essai": "ordinary-9301",
+      "rang": 91,
+      "score": 0.6073739528656006,
+      "xy": [
+        472,
+        463
+      ],
+      "entree": null,
+      "legende": "Contact apparié nº 2",
+      "statut": "Réf. apparié"
+    },
+    {
+      "exemple": "D",
+      "essai": "targeted-9301",
+      "rang": 45,
+      "score": 0.7012871503829956,
+      "xy": [
+        468,
+        472
+      ],
+      "entree": null,
+      "legende": "Candidat redondant · entrée 2",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "N",
+      "essai": null,
+      "rang": null,
+      "score": null,
+      "xy": [
+        375.22923076923075,
+        288.28688524590166
+      ],
+      "entree": 1,
+      "legende": "Entrée de référence nº 1",
+      "statut": "Score et rang indisponibles"
+    }
+  ],
+  "2712546351": [
+    {
+      "exemple": 15,
+      "essai": "targeted-9301",
+      "rang": 1,
+      "score": 0.6970304250717163,
+      "xy": [
+        592,
+        352
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 2,
+      "essai": "ordinary-9302",
+      "rang": 2,
+      "score": 0.6817556023597717,
+      "xy": [
+        161,
+        78
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 5,
+      "essai": "targeted-9303",
+      "rang": 2,
+      "score": 0.6407930850982666,
+      "xy": [
+        814,
+        88
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": 17,
+      "essai": "ordinary-9301",
+      "rang": 2,
+      "score": 0.6518477201461792,
+      "xy": [
+        811,
+        362
+      ],
+      "entree": null,
+      "legende": "Trou ou déchirure",
+      "statut": "Réf. non résolu"
+    },
+    {
+      "exemple": "A",
+      "essai": "ordinary-9302",
+      "rang": 13,
+      "score": 0.5244333148002625,
+      "xy": [
+        805,
+        296
+      ],
+      "entree": null,
+      "legende": "Contact apparié nº 7",
+      "statut": "Réf. apparié"
+    },
+    {
+      "exemple": "D",
+      "essai": "ordinary-9301",
+      "rang": 76,
+      "score": 0.36770761013031006,
+      "xy": [
+        480,
+        227
+      ],
+      "entree": null,
+      "legende": "Candidat redondant · entrée 3",
+      "statut": "Réf. non résolu"
+    }
+  ],
+  "8468859144": [
+    {
+      "exemple": 28,
+      "essai": "targeted-9302",
+      "rang": 2,
+      "score": 0.8021523356437683,
+      "xy": [
+        236,
+        415
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 67,
+      "essai": "targeted-9303",
+      "rang": 2,
+      "score": 0.7962197661399841,
+      "xy": [
+        301,
+        524
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 14,
+      "essai": "ordinary-9302",
+      "rang": 18,
+      "score": 0.5569320917129517,
+      "xy": [
+        145,
+        381
+      ],
+      "entree": null,
+      "legende": "Corps de tube",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 24,
+      "essai": "ordinary-9301",
+      "rang": 26,
+      "score": 0.5307302474975586,
+      "xy": [
+        247,
+        408
+      ],
+      "entree": null,
+      "legende": "Extrémité opposée",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": "A",
+      "essai": "targeted-9302",
+      "rang": 40,
+      "score": 0.4836152195930481,
+      "xy": [
+        101,
+        403
+      ],
+      "entree": null,
+      "legende": "Contact apparié nº 6",
+      "statut": "Réf. apparié"
+    },
+    {
+      "exemple": "D",
+      "essai": "targeted-9301",
+      "rang": 69,
+      "score": 0.368416428565979,
+      "xy": [
+        86,
+        343
+      ],
+      "entree": null,
+      "legende": "Candidat redondant · entrée 1",
+      "statut": "Réf. faux établi"
+    }
+  ],
+  "67300452": [
+    {
+      "exemple": 141,
+      "essai": "targeted-9302",
+      "rang": 1,
+      "score": 0.82844477891922,
+      "xy": [
+        491,
+        244
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 161,
+      "essai": "ordinary-9303",
+      "rang": 4,
+      "score": 0.7152581810951233,
+      "xy": [
+        471,
+        261
+      ],
+      "entree": null,
+      "legende": "Motif ou marquage",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 201,
+      "essai": "targeted-9302",
+      "rang": 3,
+      "score": 0.7343144416809082,
+      "xy": [
+        635,
+        288
+      ],
+      "entree": null,
+      "legende": "Aspect indéterminé",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 83,
+      "essai": "ordinary-9302",
+      "rang": 83,
+      "score": 0.34587204456329346,
+      "xy": [
+        155,
+        159
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 275,
+      "essai": "targeted-9301",
+      "rang": 24,
+      "score": 0.49820083379745483,
+      "xy": [
+        481,
+        330
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    },
+    {
+      "exemple": 121,
+      "essai": "ordinary-9302",
+      "rang": 68,
+      "score": 0.3907143175601959,
+      "xy": [
+        161,
+        223
+      ],
+      "entree": null,
+      "legende": "Fond ou support",
+      "statut": "Réf. faux établi"
+    }
+  ]
+}

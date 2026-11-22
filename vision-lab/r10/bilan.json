@@ -1,0 +1,116 @@
+{
+  "photos": 12,
+  "listes": 72,
+  "propositions": 6912,
+  "positions_visuelles": 2660,
+  "visibles_sans_candidat_six_essais": 10,
+  "aspects": {
+    "F": "fond ou support",
+    "M": "motif ou marquage",
+    "H": "trou ou déchirure",
+    "O": "ombre",
+    "T": "corps de tube",
+    "E": "extrémité opposée",
+    "I": "aspect indéterminé"
+  },
+  "comptages": {
+    "avant": {
+      "F": 2282,
+      "I": 670,
+      "T": 165,
+      "H": 662,
+      "M": 872,
+      "E": 159,
+      "O": 4
+    },
+    "examinees": {
+      "F": 2282,
+      "I": 673,
+      "T": 167,
+      "H": 662,
+      "M": 873,
+      "E": 161,
+      "O": 4
+    },
+    "top3": {
+      "F": 83,
+      "T": 20,
+      "H": 39,
+      "M": 23,
+      "E": 24,
+      "I": 27
+    },
+    "references_avant": {
+      "faux établi": 4366,
+      "non résolu": 448
+    }
+  },
+  "essais": {
+    "ordinary-9301": {
+      "listes_avec_candidat": 6,
+      "apparies_96": 18,
+      "apparies_3": 0,
+      "sans_candidat": 17,
+      "avant": 794,
+      "non_resolus_avant": 82,
+      "pics_redondants": 3,
+      "entrees_plusieurs_voisins": 5,
+      "pics_partages": 3
+    },
+    "ordinary-9302": {
+      "listes_avec_candidat": 6,
+      "apparies_96": 18,
+      "apparies_3": 0,
+      "sans_candidat": 17,
+      "avant": 855,
+      "non_resolus_avant": 61,
+      "pics_redondants": 1,
+      "entrees_plusieurs_voisins": 4,
+      "pics_partages": 3
+    },
+    "ordinary-9303": {
+      "listes_avec_candidat": 5,
+      "apparies_96": 18,
+      "apparies_3": 1,
+      "sans_candidat": 17,
+      "avant": 783,
+      "non_resolus_avant": 40,
+      "pics_redondants": 0,
+      "entrees_plusieurs_voisins": 2,
+      "pics_partages": 2
+    },
+    "targeted-9301": {
+      "listes_avec_candidat": 5,
+      "apparies_96": 14,
+      "apparies_3": 0,
+      "sans_candidat": 21,
+      "avant": 778,
+      "non_resolus_avant": 104,
+      "pics_redondants": 3,
+      "entrees_plusieurs_voisins": 4,
+      "pics_partages": 2
+    },
+    "targeted-9302": {
+      "listes_avec_candidat": 4,
+      "apparies_96": 16,
+      "apparies_3": 1,
+      "sans_candidat": 19,
+      "avant": 831,
+      "non_resolus_avant": 100,
+      "pics_redondants": 0,
+      "entrees_plusieurs_voisins": 3,
+      "pics_partages": 3
+    },
+    "targeted-9303": {
+      "listes_avec_candidat": 5,
+      "apparies_96": 18,
+      "apparies_3": 2,
+      "sans_candidat": 17,
+      "avant": 773,
+      "non_resolus_avant": 61,
+      "pics_redondants": 0,
+      "entrees_plusieurs_voisins": 2,
+      "pics_partages": 2
+    }
+  }
+}
