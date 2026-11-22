@@ -1,0 +1,168 @@
+{
+  "racines": {
+    "R8": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab",
+    "R9": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab"
+  },
+  "fichiers": [
+    {
+      "nom": "dev.json",
+      "racine": "R9",
+      "emplacement": "data/r9/dev.json",
+      "role": "Manifeste figé du développement",
+      "octets": 25179,
+      "sha256": "dd183e14d3d97cbebf595b6fb70a6b4f4c39bda0567cab01210d7862b787e862"
+    },
+    {
+      "nom": "experiences.zip",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/experiences.zip",
+      "role": "Capsule R9, six membres de prédictions de développement lus",
+      "octets": 4899935,
+      "sha256": "36fc082e96ed56ba2e26bb10cec1010d54bb95ad362e7e0c48a3bb32c40b07fe"
+    },
+    {
+      "nom": "ordinary-9301.pt",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/ordinary-9301.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9301",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+    },
+    {
+      "nom": "ordinary-9302.pt",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/ordinary-9302.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9302",
+      "octets": 865807,
+      "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+    },
+    {
+      "nom": "ordinary-9303.pt",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/ordinary-9303.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9303",
+      "octets": 865807,
+      "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+    },
+    {
+      "nom": "targeted-9301.pt",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/targeted-9301.pt",
+      "role": "Checkpoint final R9 figé, targeted-9301",
+      "octets": 865807,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+    },
+    {
+      "nom": "targeted-9302.pt",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/targeted-9302.pt",
+      "role": "Checkpoint final R9 figé, targeted-9302",
+      "octets": 865807,
+      "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+    },
+    {
+      "nom": "targeted-9303.pt",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/targeted-9303.pt",
+      "role": "Checkpoint final R9 figé, targeted-9303",
+      "octets": 865807,
+      "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+    },
+    {
+      "nom": "3996564090.png",
+      "racine": "R8",
+      "emplacement": "data/r8/work/3996564090.png",
+      "role": "Photo de développement · Wesley Fryer",
+      "octets": 1899805,
+      "sha256": "00ae570b88ab6d8e16718fa8d935f5970554b171db77bd5a838723d24bf7a5b2"
+    },
+    {
+      "nom": "929865.png",
+      "racine": "R8",
+      "emplacement": "data/r8/work/929865.png",
+      "role": "Photo de développement · Staff Sgt. Brent Powell",
+      "octets": 1517226,
+      "sha256": "26014f6c3bf3d5e56be4267ecb43abcdd34d14ee4f0779d6c18376ee340d72cd"
+    },
+    {
+      "nom": "6791193480.png",
+      "racine": "R8",
+      "emplacement": "data/r8/work/6791193480.png",
+      "role": "Photo de développement · russellstreet",
+      "octets": 1063333,
+      "sha256": "dd7d8f0b85d8acb907b3a303d573b8698f75ad090801266baddf1e74cc1d9632"
+    },
+    {
+      "nom": "49398629148.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/49398629148.png",
+      "role": "Photo de développement · Ivan Radic",
+      "octets": 1076303,
+      "sha256": "ebb793a1fab9438a6cf4cce0d75cbe489c753b795d22f50ce1ac47784f1688e6"
+    },
+    {
+      "nom": "955488046.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/955488046.png",
+      "role": "Photo de développement · gothick_matt",
+      "octets": 1386966,
+      "sha256": "9ae63f81beb441282e2a9f553b47e230ddf872431039592f2eebdd283c4ea53a"
+    },
+    {
+      "nom": "3771007694.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/3771007694.png",
+      "role": "Photo de développement · April L. Sanders",
+      "octets": 1650887,
+      "sha256": "66d4c57cb70e1f70030493e62142b82bfc7e5d95e29acb57feaa96291d9c751c"
+    },
+    {
+      "nom": "14347254046.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/14347254046.png",
+      "role": "Photo de développement · TheNickster",
+      "octets": 1392657,
+      "sha256": "f3d82769383c27af9c7e8770538cc1672bd9e40f07c3c44d2bf2cc74faf597eb"
+    },
+    {
+      "nom": "8549619981.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/8549619981.png",
+      "role": "Photo de développement · TimWilson",
+      "octets": 815339,
+      "sha256": "0b7a2954ff816d0daaa543e383df0fcc05134f8feec05606607eb4c25cabf6b2"
+    },
+    {
+      "nom": "36377144413.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/36377144413.png",
+      "role": "Photo de développement · vastateparksstaff",
+      "octets": 1864722,
+      "sha256": "d953b4b1a69417a641d2f4bf573f3d63fac7a1d87783e429155b20a03446e905"
+    },
+    {
+      "nom": "2712546351.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/2712546351.png",
+      "role": "Photo de développement · cobaltfish",
+      "octets": 821116,
+      "sha256": "c42dffe28f52722e2af51cbbeaae99e6e657c39370b3efe0d396d357d576dd9e"
+    },
+    {
+      "nom": "8468859144.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/8468859144.png",
+      "role": "Photo de développement · Framsókn",
+      "octets": 520731,
+      "sha256": "3f6753f37be8700107071d163ff89fc16d1d420726ad1867dcf642bc48b1e22e"
+    },
+    {
+      "nom": "67300452.png",
+      "racine": "R9",
+      "emplacement": "data/r9/work/67300452.png",
+      "role": "Photo de développement · Iain Cuthbertson",
+      "octets": 341972,
+      "sha256": "1cd5b745b20def59b437e5f898f67a31ba07ca5ff21ab5d8d090367865ac4b0d"
+    }
+  ]
+}

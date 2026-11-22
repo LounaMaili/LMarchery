@@ -1,0 +1,19 @@
+{
+  "checkpoints_qualifies": [
+    "ordinary-9301",
+    "ordinary-9302",
+    "ordinary-9303",
+    "targeted-9301",
+    "targeted-9302",
+    "targeted-9303"
+  ],
+  "critere_1": true,
+  "entrees_recuperees": 3,
+  "provenances_recuperees": [
+    "Framsókn",
+    "Wesley Fryer",
+    "vastateparksstaff"
+  ],
+  "critere_2": true,
+  "limite_materielle": true
+}

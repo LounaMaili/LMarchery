@@ -58,6 +58,15 @@ class LearningTests(unittest.TestCase):
         maps[0,11,19]=.9
         peaks,_=decode(maps)
         self.assertEqual([p for p,s in peaks],[[10,11],[19,11]])
+        self.assertEqual(decode(maps, max_peaks=192)[0], peaks)
+        # A tie spans both cutoffs. Historical callers keep the first 96.
+        crowded = np.zeros((2, 160, 160), np.float32)
+        crowded[0, 5::10, 5::10] = .8
+        short, _ = decode(crowded)
+        long, _ = decode(crowded, max_peaks=192)
+        self.assertEqual((len(short), len(long)), (96, 192))
+        self.assertEqual(short, long[:96])
+        self.assertEqual([p for p, _ in long], sorted(p for p, _ in long))
 
     def test_threshold_budget_includes_unresolved_and_all_off(self):
         from r7.evaluate import select

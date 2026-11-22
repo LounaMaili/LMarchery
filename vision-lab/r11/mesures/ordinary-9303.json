@@ -1,0 +1,1856 @@
+{
+  "96": {
+    "strates": {
+      "tous": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 18,
+          "proposals": 1152,
+          "unmatched": 1134,
+          "false": 945,
+          "unresolved": 189,
+          "silent": 0,
+          "empty_with_points": 3
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 13,
+          "proposals": 288,
+          "unmatched": 275,
+          "false": 186,
+          "unresolved": 89,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 11,
+          "proposals": 672,
+          "unmatched": 661,
+          "false": 474,
+          "unresolved": 187,
+          "silent": 0,
+          "empty_with_points": 2
+        },
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 288,
+          "unmatched": 288,
+          "false": 288,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 3
+        }
+      },
+      "a050": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 7,
+          "proposals": 443,
+          "unmatched": 436,
+          "false": 403,
+          "unresolved": 33,
+          "silent": 0,
+          "empty_with_points": 3
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 5,
+          "proposals": 165,
+          "unmatched": 160,
+          "false": 133,
+          "unresolved": 27,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 5,
+          "proposals": 279,
+          "unmatched": 274,
+          "false": 242,
+          "unresolved": 32,
+          "silent": 0,
+          "empty_with_points": 2
+        },
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 86,
+          "unmatched": 86,
+          "false": 86,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 3
+        }
+      },
+      "decision_r9": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        }
+      }
+    },
+    "photos": {
+      "3996564090": {
+        "provenance": "Wesley Fryer",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 1,
+            "rang": 32,
+            "score": 0.5623165965080261,
+            "rang_attribue": 32
+          },
+          "3": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "4": {
+            "voisins": 1,
+            "rang": 2,
+            "score": 0.7056183218955994,
+            "rang_attribue": 2
+          },
+          "5": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "6": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 6,
+            "matched": 2,
+            "proposals": 96,
+            "unmatched": 94,
+            "false": 94,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 6,
+            "matched": 2,
+            "proposals": 76,
+            "unmatched": 74,
+            "false": 74,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "929865": {
+        "provenance": "Staff Sgt. Brent Powell",
+        "taille_image": [
+          1408,
+          1139
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 1,
+            "rang": 33,
+            "score": 0.36861270666122437,
+            "rang_attribue": 33
+          },
+          "3": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 3,
+            "matched": 1,
+            "proposals": 96,
+            "unmatched": 95,
+            "false": 0,
+            "unresolved": 95,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 5,
+            "unmatched": 5,
+            "false": 0,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "6791193480": {
+        "provenance": "russellstreet",
+        "taille_image": [
+          1024,
+          683
+        ],
+        "candidats": 96,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 96,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 4,
+            "unmatched": 4,
+            "false": 4,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "49398629148": {
+        "provenance": "Ivan Radic",
+        "taille_image": [
+          1024,
+          683
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 92,
+            "unresolved": 4,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 28,
+            "unmatched": 28,
+            "false": 28,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "955488046": {
+        "provenance": "gothick_matt",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 96,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 20,
+            "unmatched": 20,
+            "false": 20,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "3771007694": {
+        "provenance": "April L. Sanders",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 96,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 95,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 59,
+            "unmatched": 59,
+            "false": 58,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "14347254046": {
+        "provenance": "TheNickster",
+        "taille_image": [
+          1024,
+          683
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 1,
+            "rang": 76,
+            "score": 0.3074020743370056,
+            "rang_attribue": 76
+          },
+          "2": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 54,
+            "score": 0.3351065516471863,
+            "rang_attribue": 54
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 3,
+            "matched": 2,
+            "proposals": 96,
+            "unmatched": 94,
+            "false": 94,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 4,
+            "unmatched": 4,
+            "false": 4,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "8549619981": {
+        "provenance": "TimWilson",
+        "taille_image": [
+          1024,
+          622
+        ],
+        "candidats": 96,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 96,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 40,
+            "unmatched": 40,
+            "false": 40,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "36377144413": {
+        "provenance": "vastateparksstaff",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "3": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "4": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "5": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 96,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 96,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "2712546351": {
+        "provenance": "cobaltfish",
+        "taille_image": [
+          1024,
+          685
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 1,
+            "rang": 32,
+            "score": 0.4863426387310028,
+            "rang_attribue": 32
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 34,
+            "score": 0.4814758896827698,
+            "rang_attribue": 34
+          },
+          "4": {
+            "voisins": 1,
+            "rang": 18,
+            "score": 0.5391770601272583,
+            "rang_attribue": 18
+          },
+          "5": {
+            "voisins": 1,
+            "rang": 25,
+            "score": 0.5159788131713867,
+            "rang_attribue": 25
+          },
+          "6": {
+            "voisins": 1,
+            "rang": 51,
+            "score": 0.43092599511146545,
+            "rang_attribue": 51
+          },
+          "7": {
+            "voisins": 1,
+            "rang": 4,
+            "score": 0.617234468460083,
+            "rang_attribue": 4
+          },
+          "10": {
+            "voisins": 1,
+            "rang": 77,
+            "score": 0.405187726020813,
+            "rang_attribue": 77
+          },
+          "11": {
+            "voisins": 1,
+            "rang": 54,
+            "score": 0.4242061972618103,
+            "rang_attribue": 54
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 9,
+            "matched": 8,
+            "proposals": 96,
+            "unmatched": 88,
+            "false": 0,
+            "unresolved": 88,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 9,
+            "matched": 3,
+            "proposals": 30,
+            "unmatched": 27,
+            "false": 0,
+            "unresolved": 27,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "8468859144": {
+        "provenance": "Framsókn",
+        "taille_image": [
+          612,
+          612
+        ],
+        "candidats": 96,
+        "contacts": {
+          "1": {
+            "voisins": 2,
+            "rang": 23,
+            "score": 0.5644106864929199,
+            "rang_attribue": 23
+          },
+          "2": {
+            "voisins": 2,
+            "rang": 23,
+            "score": 0.5644106864929199,
+            "rang_attribue": 33
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 59,
+            "score": 0.4218452274799347,
+            "rang_attribue": 59
+          },
+          "4": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "6": {
+            "voisins": 1,
+            "rang": 50,
+            "score": 0.447439044713974,
+            "rang_attribue": 50
+          },
+          "7": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "8": {
+            "voisins": 1,
+            "rang": 93,
+            "score": 0.3795185387134552,
+            "rang_attribue": 93
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 7,
+            "matched": 5,
+            "proposals": 96,
+            "unmatched": 91,
+            "false": 90,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 7,
+            "matched": 2,
+            "proposals": 39,
+            "unmatched": 37,
+            "false": 37,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "67300452": {
+        "provenance": "Iain Cuthbertson",
+        "taille_image": [
+          639,
+          426
+        ],
+        "candidats": 96,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 96,
+            "unmatched": 96,
+            "false": 96,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 42,
+            "unmatched": 42,
+            "false": 42,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "seuil_r9": 2.0,
+    "seuil_selectionne": 2.0,
+    "premier_contact_global": {
+      "threshold": 0.7056183218955994,
+      "photos": 12,
+      "known": 35,
+      "matched": 1,
+      "proposals": 42,
+      "unmatched": 41,
+      "false": 40,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 2
+    }
+  },
+  "192": {
+    "strates": {
+      "tous": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 23,
+          "proposals": 2304,
+          "unmatched": 2281,
+          "false": 1886,
+          "unresolved": 395,
+          "silent": 0,
+          "empty_with_points": 3
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 14,
+          "proposals": 576,
+          "unmatched": 562,
+          "false": 377,
+          "unresolved": 185,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 14,
+          "proposals": 1344,
+          "unmatched": 1330,
+          "false": 938,
+          "unresolved": 392,
+          "silent": 0,
+          "empty_with_points": 2
+        },
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 576,
+          "unmatched": 576,
+          "false": 576,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 3
+        }
+      },
+      "a050": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 7,
+          "proposals": 523,
+          "unmatched": 516,
+          "false": 483,
+          "unresolved": 33,
+          "silent": 0,
+          "empty_with_points": 3
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 5,
+          "proposals": 245,
+          "unmatched": 240,
+          "false": 213,
+          "unresolved": 27,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 5,
+          "proposals": 359,
+          "unmatched": 354,
+          "false": 322,
+          "unresolved": 32,
+          "silent": 0,
+          "empty_with_points": 2
+        },
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 86,
+          "unmatched": 86,
+          "false": 86,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 3
+        }
+      },
+      "decision_r9": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 12,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 7,
+          "empty_with_points": 0
+        },
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        }
+      }
+    },
+    "photos": {
+      "3996564090": {
+        "provenance": "Wesley Fryer",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 1,
+            "rang": 32,
+            "score": 0.5623165965080261,
+            "rang_attribue": 32
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 101,
+            "score": 0.48187166452407837,
+            "rang_attribue": 101
+          },
+          "4": {
+            "voisins": 1,
+            "rang": 2,
+            "score": 0.7056183218955994,
+            "rang_attribue": 2
+          },
+          "5": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "6": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 6,
+            "matched": 3,
+            "proposals": 192,
+            "unmatched": 189,
+            "false": 189,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 6,
+            "matched": 2,
+            "proposals": 76,
+            "unmatched": 74,
+            "false": 74,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "929865": {
+        "provenance": "Staff Sgt. Brent Powell",
+        "taille_image": [
+          1408,
+          1139
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 1,
+            "rang": 182,
+            "score": 0.25094783306121826,
+            "rang_attribue": 182
+          },
+          "2": {
+            "voisins": 2,
+            "rang": 33,
+            "score": 0.36861270666122437,
+            "rang_attribue": 152
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 132,
+            "score": 0.27047890424728394,
+            "rang_attribue": 132
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 3,
+            "matched": 3,
+            "proposals": 192,
+            "unmatched": 189,
+            "false": 0,
+            "unresolved": 189,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 5,
+            "unmatched": 5,
+            "false": 0,
+            "unresolved": 5,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "6791193480": {
+        "provenance": "russellstreet",
+        "taille_image": [
+          1024,
+          683
+        ],
+        "candidats": 192,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 192,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 4,
+            "unmatched": 4,
+            "false": 4,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "49398629148": {
+        "provenance": "Ivan Radic",
+        "taille_image": [
+          1024,
+          683
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 173,
+            "unresolved": 19,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 28,
+            "unmatched": 28,
+            "false": 28,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "955488046": {
+        "provenance": "gothick_matt",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 192,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 20,
+            "unmatched": 20,
+            "false": 20,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "3771007694": {
+        "provenance": "April L. Sanders",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 192,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 190,
+            "unresolved": 2,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 59,
+            "unmatched": 59,
+            "false": 58,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "14347254046": {
+        "provenance": "TheNickster",
+        "taille_image": [
+          1024,
+          683
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 1,
+            "rang": 76,
+            "score": 0.3074020743370056,
+            "rang_attribue": 76
+          },
+          "2": {
+            "voisins": 1,
+            "rang": 106,
+            "score": 0.28632739186286926,
+            "rang_attribue": 106
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 54,
+            "score": 0.3351065516471863,
+            "rang_attribue": 54
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 3,
+            "matched": 3,
+            "proposals": 192,
+            "unmatched": 189,
+            "false": 189,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 4,
+            "unmatched": 4,
+            "false": 4,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "8549619981": {
+        "provenance": "TimWilson",
+        "taille_image": [
+          1024,
+          622
+        ],
+        "candidats": 192,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 192,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 40,
+            "unmatched": 40,
+            "false": 40,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "36377144413": {
+        "provenance": "vastateparksstaff",
+        "taille_image": [
+          1024,
+          768
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "3": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "4": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "5": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 192,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 176,
+            "unmatched": 176,
+            "false": 176,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "2712546351": {
+        "provenance": "cobaltfish",
+        "taille_image": [
+          1024,
+          685
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "2": {
+            "voisins": 1,
+            "rang": 32,
+            "score": 0.4863426387310028,
+            "rang_attribue": 32
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 34,
+            "score": 0.4814758896827698,
+            "rang_attribue": 34
+          },
+          "4": {
+            "voisins": 1,
+            "rang": 18,
+            "score": 0.5391770601272583,
+            "rang_attribue": 18
+          },
+          "5": {
+            "voisins": 1,
+            "rang": 25,
+            "score": 0.5159788131713867,
+            "rang_attribue": 25
+          },
+          "6": {
+            "voisins": 1,
+            "rang": 51,
+            "score": 0.43092599511146545,
+            "rang_attribue": 51
+          },
+          "7": {
+            "voisins": 1,
+            "rang": 4,
+            "score": 0.617234468460083,
+            "rang_attribue": 4
+          },
+          "10": {
+            "voisins": 1,
+            "rang": 77,
+            "score": 0.405187726020813,
+            "rang_attribue": 77
+          },
+          "11": {
+            "voisins": 1,
+            "rang": 54,
+            "score": 0.4242061972618103,
+            "rang_attribue": 54
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 9,
+            "matched": 8,
+            "proposals": 192,
+            "unmatched": 184,
+            "false": 0,
+            "unresolved": 184,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 9,
+            "matched": 3,
+            "proposals": 30,
+            "unmatched": 27,
+            "false": 0,
+            "unresolved": 27,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "8468859144": {
+        "provenance": "Framsókn",
+        "taille_image": [
+          612,
+          612
+        ],
+        "candidats": 192,
+        "contacts": {
+          "1": {
+            "voisins": 2,
+            "rang": 23,
+            "score": 0.5644106864929199,
+            "rang_attribue": 23
+          },
+          "2": {
+            "voisins": 2,
+            "rang": 23,
+            "score": 0.5644106864929199,
+            "rang_attribue": 33
+          },
+          "3": {
+            "voisins": 1,
+            "rang": 59,
+            "score": 0.4218452274799347,
+            "rang_attribue": 59
+          },
+          "4": {
+            "voisins": 0,
+            "rang": null,
+            "score": null,
+            "rang_attribue": null
+          },
+          "6": {
+            "voisins": 1,
+            "rang": 50,
+            "score": 0.447439044713974,
+            "rang_attribue": 50
+          },
+          "7": {
+            "voisins": 1,
+            "rang": 104,
+            "score": 0.36852365732192993,
+            "rang_attribue": 104
+          },
+          "8": {
+            "voisins": 1,
+            "rang": 93,
+            "score": 0.3795185387134552,
+            "rang_attribue": 93
+          }
+        },
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 7,
+            "matched": 6,
+            "proposals": 192,
+            "unmatched": 186,
+            "false": 185,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "a050": {
+            "photos": 1,
+            "known": 7,
+            "matched": 2,
+            "proposals": 39,
+            "unmatched": 37,
+            "false": 37,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 7,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "67300452": {
+        "provenance": "Iain Cuthbertson",
+        "taille_image": [
+          639,
+          426
+        ],
+        "candidats": 192,
+        "contacts": {},
+        "mesures": {
+          "tous": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 192,
+            "unmatched": 192,
+            "false": 192,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "a050": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 42,
+            "unmatched": 42,
+            "false": 42,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 1
+          },
+          "decision_r9": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        }
+      }
+    },
+    "seuil_r9": 2.0,
+    "seuil_selectionne": 2.0,
+    "premier_contact_global": {
+      "threshold": 0.7056183218955994,
+      "photos": 12,
+      "known": 35,
+      "matched": 1,
+      "proposals": 42,
+      "unmatched": 41,
+      "false": 40,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 2
+    }
+  },
+  "comparaison": {
+    "gain": 5,
+    "gains_par_provenance": {
+      "Wesley Fryer": 1,
+      "Staff Sgt. Brent Powell": 2,
+      "russellstreet": 0,
+      "Ivan Radic": 0,
+      "gothick_matt": 0,
+      "April L. Sanders": 0,
+      "TheNickster": 1,
+      "TimWilson": 0,
+      "vastateparksstaff": 0,
+      "cobaltfish": 0,
+      "Framsókn": 1,
+      "Iain Cuthbertson": 0
+    },
+    "provenances_gagnantes": [
+      "Wesley Fryer",
+      "Staff Sgt. Brent Powell",
+      "TheNickster",
+      "Framsókn"
+    ],
+    "nouvelles_entrees_admissibles": {
+      "3996564090": [
+        "3"
+      ],
+      "929865": [
+        "1",
+        "3"
+      ],
+      "6791193480": [],
+      "49398629148": [],
+      "955488046": [],
+      "3771007694": [],
+      "14347254046": [
+        "2"
+      ],
+      "8549619981": [],
+      "36377144413": [],
+      "2712546351": [],
+      "8468859144": [
+        "7"
+      ],
+      "67300452": []
+    }
+  }
+}
