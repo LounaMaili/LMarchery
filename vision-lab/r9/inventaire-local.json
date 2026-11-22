@@ -1,0 +1,198 @@
+{
+  "algorithme": "SHA-256 sur les octets du fichier",
+  "racines": {
+    "R9": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab",
+    "R7": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab"
+  },
+  "fichiers": [
+    {
+      "nom": "corpus-banque.zip",
+      "role": "Banque vérifiée, annotations, décisions et plans scellés. Contient aussi le registre réservé.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/corpus-banque.zip",
+      "octets": 2750015,
+      "sha256": "b5a58507e263d0d1a9890ec1ac4c23ced2693da64f2be000cd2d411a3dc0bec2"
+    },
+    {
+      "nom": "sources-publiques.zip",
+      "role": "Dérivés et notices de découverte. Inclut les acquisitions réservées.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/sources-publiques.zip",
+      "octets": 67761994,
+      "sha256": "b69f3e263f80c427809b3810a27eaf9867b6198e058cc6972b155212fa1c0e4e"
+    },
+    {
+      "nom": "experiences.zip",
+      "role": "Six essais validés, poids, pics, mesures et journal.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/experiences.zip",
+      "octets": 4899935,
+      "sha256": "36fc082e96ed56ba2e26bb10cec1010d54bb95ad362e7e0c48a3bb32c40b07fe"
+    },
+    {
+      "nom": "courbes-par-provenance.zip",
+      "role": "Quatorze graphiques statistiques également publiés individuellement.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/courbes-par-provenance.zip",
+      "octets": 1319565,
+      "sha256": "20d191ef39b8691cebfedf77c49a646fe351dac7f0886d24d6a4484a7308df3e"
+    },
+    {
+      "nom": "imagenet.pt",
+      "role": "Checkpoint R7 initial commun aux deux bras.",
+      "statut": "référence",
+      "racine": "R7",
+      "emplacement": "artifacts/r7/imagenet.pt",
+      "octets": 864842,
+      "sha256": "672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27"
+    },
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Checkpoint final du bras ordinary, graine 9301, pas 96.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/ordinary-9301.pt",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+    },
+    {
+      "nom": "targeted-9301.pt",
+      "role": "Checkpoint final du bras targeted, graine 9301, pas 96.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/targeted-9301.pt",
+      "octets": 865807,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+    },
+    {
+      "nom": "ordinary-9302.pt",
+      "role": "Checkpoint final du bras ordinary, graine 9302, pas 96.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/ordinary-9302.pt",
+      "octets": 865807,
+      "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+    },
+    {
+      "nom": "targeted-9302.pt",
+      "role": "Checkpoint final du bras targeted, graine 9302, pas 96.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/targeted-9302.pt",
+      "octets": 865807,
+      "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+    },
+    {
+      "nom": "ordinary-9303.pt",
+      "role": "Checkpoint final du bras ordinary, graine 9303, pas 96.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/ordinary-9303.pt",
+      "octets": 865807,
+      "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+    },
+    {
+      "nom": "targeted-9303.pt",
+      "role": "Checkpoint final du bras targeted, graine 9303, pas 96.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/train/targeted-9303.pt",
+      "octets": 865807,
+      "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+    },
+    {
+      "nom": "9301.json",
+      "role": "Plan apparié scellé, graine 9301.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "data/r9/plans/9301.json",
+      "octets": 130052,
+      "sha256": "f4f05138365a7d0eb656b89f1bb81ce53d92c13dfc3b74fde891abbbc2aed828"
+    },
+    {
+      "nom": "9301.json",
+      "role": "Plan initial de la graine 9301.",
+      "statut": "premier lancement interrompu",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/preflight/plans/9301.json",
+      "octets": 130052,
+      "sha256": "f4f05138365a7d0eb656b89f1bb81ce53d92c13dfc3b74fde891abbbc2aed828"
+    },
+    {
+      "nom": "9302.json",
+      "role": "Plan apparié scellé, graine 9302.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "data/r9/plans/9302.json",
+      "octets": 130142,
+      "sha256": "2bc6d93b395ee0513a970203f74da344b31139283d4918dd8e345372f1e9b107"
+    },
+    {
+      "nom": "9302.json",
+      "role": "Plan initial de la graine 9302.",
+      "statut": "premier lancement interrompu",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/preflight/plans/9302.json",
+      "octets": 130069,
+      "sha256": "f2a7db86d71f9d196d8e53c3e6e04fee7368415a6e2e664e3fb5432c11e426d4"
+    },
+    {
+      "nom": "9303.json",
+      "role": "Plan apparié scellé, graine 9303.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "data/r9/plans/9303.json",
+      "octets": 130030,
+      "sha256": "388f12e3bb8b3552a54f1d97d98ff91f48e1d4027d0b39c4582777e9ed002ea0"
+    },
+    {
+      "nom": "9303.json",
+      "role": "Plan initial de la graine 9303.",
+      "statut": "premier lancement interrompu",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/preflight/plans/9303.json",
+      "octets": 130025,
+      "sha256": "0e283aa99768e29fd2c36433f47613633822abe0893ba43b34f051d67647ae3c"
+    },
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Poids ordinary, graine 9301, obtenus avant la correction.",
+      "statut": "premier lancement interrompu",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/preflight/train/ordinary-9301.pt",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+    },
+    {
+      "nom": "targeted-9301.pt",
+      "role": "Poids targeted, graine 9301, obtenus avant la correction.",
+      "statut": "premier lancement interrompu",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/preflight/train/targeted-9301.pt",
+      "octets": 865807,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+    },
+    {
+      "nom": "seal.json",
+      "role": "Empreintes du scellement utilisé pour les six essais.",
+      "statut": "référence",
+      "racine": "R9",
+      "emplacement": "data/r9/seal.json",
+      "octets": 803,
+      "sha256": "e0b99e6bd0ad6b4bb9b5225ed154a0b7d10d5dd746bcab2d7813c03b712c6bde"
+    },
+    {
+      "nom": "seal.json",
+      "role": "Empreintes du scellement initial.",
+      "statut": "premier lancement interrompu",
+      "racine": "R9",
+      "emplacement": "artifacts/r9/preflight/seal.json",
+      "octets": 803,
+      "sha256": "6677707671d15650e03d4a5067b36a5318b7f0e821c3906039abd072baed3a06"
+    }
+  ]
+}

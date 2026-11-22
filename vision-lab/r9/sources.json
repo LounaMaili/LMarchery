@@ -1,0 +1,809 @@
+{
+  "partitions": [
+    "train",
+    "dev"
+  ],
+  "photos": [
+    {
+      "split": "train",
+      "id": "13-00",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "48cc026abbdecfd3887532793a1abcfcbc0cce083d1f9a106f422fa5c02cd67e",
+      "banque": {
+        "motif imprimé": 3,
+        "perforation ou usure": 4
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "13/00.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F00.png?datasetVersionNumber=1",
+        "source_sha256": "ff42a8781abaaa113fd3e1eb6100d3f70a66037709be84594e78105f15baf6ff",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "13-01",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 1,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "banque": {
+        "motif imprimé": 3,
+        "corps de tube": 2,
+        "perforation ou usure": 1
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "13/01.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F01.png?datasetVersionNumber=1",
+        "source_sha256": "ce9c9e6e4c86f2ccb21c8c522ce2770e4bd9a1fdbae493db3504583826c5fea6",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F01.json?datasetVersionNumber=1",
+        "annotation_sha256": "cf2d0e2b130a9b0995a63d508d009a1034022eb223d41026b4ffaba1455ae3f3",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "13-03",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 3,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "71f53e1b375678f82559185372ce1cd683330ab8a79a4efe46d2825e6d13f5fe",
+      "banque": {
+        "corps de tube": 3,
+        "perforation ou usure": 2
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "13/03.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F03.png?datasetVersionNumber=1",
+        "source_sha256": "509956b2a0f0a87cf7d4b7df19034a025f115d12138b462d980324ffb490b1ea",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F03.json?datasetVersionNumber=1",
+        "annotation_sha256": "5c350603e38efbc566709069d96fcc25e045cd9562d813977a181db2e65b94c2",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "70-00",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "b9fbdc336307e11311c6faa5fbc7e70dc1bc2e928d9748a4a94ba23d793bd68d",
+      "banque": {
+        "motif imprimé": 4,
+        "perforation ou usure": 3,
+        "bord ou fixation": 1
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "70/00.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F00.png?datasetVersionNumber=1",
+        "source_sha256": "5419c8136f10643a253bda9b6858567a8b0b43ccd9c93a9807ef2f21b9eefb82",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "70-01",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 1,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "banque": {
+        "motif imprimé": 3,
+        "corps de tube": 3,
+        "perforation ou usure": 3
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "70/01.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F01.png?datasetVersionNumber=1",
+        "source_sha256": "6b1c83b854db8bc399d1a0d79eb068b53182e6c321860fc512ab220ee6c8e239",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F01.json?datasetVersionNumber=1",
+        "annotation_sha256": "99704210faacfdc7bc8057fe918e7a83fd8b79a3fcadf54bb643f3db7e3a9dd7",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "70-03",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 2,
+      "entrees_incertaines": 1,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "e5b1323b0d44757bb773b09bb5738cbe4054acbccba68d17a4d5e5e9e6ffeb10",
+      "banque": {
+        "motif imprimé": 2,
+        "corps de tube": 3,
+        "perforation ou usure": 1
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "70/03.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F03.png?datasetVersionNumber=1",
+        "source_sha256": "9ddc4932469747710c2acecb6a8f5af6f3d30efba2f9e4b6b9dba319fca293c0",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F03.json?datasetVersionNumber=1",
+        "annotation_sha256": "0070f3e8ffe0d54f03166efa85a567d30859b652113e16993416b807e1a1d271",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "90-00",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "3f7dc917af4221b8776044fa40461c3da3e524b63751d0fdb95e2933ae0e3acc",
+      "banque": {
+        "motif imprimé": 5,
+        "bord ou fixation": 4
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "90/00.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F00.png?datasetVersionNumber=1",
+        "source_sha256": "80198a75e6ed86a55e90509c17232957e45cd2e9244c126f8ebefe92d74ba136",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "90-01",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 1,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "08877b33cdb43ff913e744194cca3bbea646b915a851289261e44a85b02a2a64",
+      "banque": {
+        "motif imprimé": 4,
+        "corps de tube": 2,
+        "perforation ou usure": 1,
+        "bord ou fixation": 1
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "90/01.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F01.png?datasetVersionNumber=1",
+        "source_sha256": "039c404513f4152cca93f0d23ef7947dc55224ea4f00d2d5b47fc9646dafd960",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F01.json?datasetVersionNumber=1",
+        "annotation_sha256": "cabe65a30252b3cdc23588ff16a8d84d4c45aa8f10acc20e6de8b049d7895b46",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "90-03",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "grouped"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 3,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "571eb514dfef5099237c8c6030d9efe2a6aa47630878a42377da2add699b923e",
+      "banque": {
+        "motif imprimé": 1,
+        "corps de tube": 3,
+        "perforation ou usure": 2
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "90/03.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F03.png?datasetVersionNumber=1",
+        "source_sha256": "24bf7451eddc1e125b1ec7ad13f806e8046866f36cd7cb8a3738e5442d4141a1",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F03.json?datasetVersionNumber=1",
+        "annotation_sha256": "97d83e828dfa9a01bd9283afde50df9646ac4368fb1ae44a4db8cba45bed23ef",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "101-00",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "52ce436dfb910455010b3f8e64338b89414af511082dbf07394173101b4e6914",
+      "banque": {
+        "motif imprimé": 4,
+        "bord ou fixation": 6
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "101/00.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F00.png?datasetVersionNumber=1",
+        "source_sha256": "f220d3a27297839eff1347b79079169a39ede37f2995048d5055e061b02bd01e",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "101-01",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 1,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "71ed4c10d441ea75568d90244ee0f357cba634371dccfd373645688e79e78017",
+      "banque": {
+        "motif imprimé": 3,
+        "corps de tube": 2,
+        "bord ou fixation": 4
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "101/01.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F01.png?datasetVersionNumber=1",
+        "source_sha256": "7297b9ee904fb1bd9eb41de5f0720f5ad49fea66d562554eb5a62736b01cfdc6",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F01.json?datasetVersionNumber=1",
+        "annotation_sha256": "5b889a5a32a23cb8a90b173492d1a05dcf6b8b4dcd582b747cf4782f989274f7",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "101-03",
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "grouped"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 3,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "514ae367de7f8eed70f380c7527e94ec21678f0d6b213538f8919821ac95244d",
+      "banque": {
+        "corps de tube": 3,
+        "perforation ou usure": 3
+      },
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "101/03.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F03.png?datasetVersionNumber=1",
+        "source_sha256": "1ecb2ec9ee906bc928eedbdd1bbe28d9ee29a59c372c0127125d1a1341aa05e8",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F03.json?datasetVersionNumber=1",
+        "annotation_sha256": "e13889636b233247b466531e6e8f076022cf643b4311da517cd976a0ed23efb9",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "split": "train",
+      "id": "7245527662",
+      "provenance": "jrladia",
+      "supports": [
+        "winnipeg"
+      ],
+      "conditions": [
+        "worn",
+        "multiple"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 3,
+      "entrees_incertaines": 1,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "banque": {
+        "motif imprimé": 7,
+        "perforation ou usure": 1
+      },
+      "source": {
+        "url": "https://www.flickr.com/photos/34859133@N06/7245527662",
+        "credit": "jrladia",
+        "title": "Heartland Archery | Winnipeg",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "6980ee05e701f0ad3cc125dc1a9a9e6956c96d74cbf6d59df5418a13c915a8a5",
+        "notice_sha256": "de91c8ddc05750f21baca553e72fe29d64647727b8c3a6109c4c2ef0da45662b"
+      }
+    },
+    {
+      "split": "train",
+      "id": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "supports": [
+        "lynch"
+      ],
+      "conditions": [
+        "worn",
+        "grouped"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 5,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "banque": {
+        "corps de tube": 1,
+        "bord ou fixation": 4,
+        "ombre de tube": 1
+      },
+      "source": {
+        "url": "https://www.flickr.com/photos/25195310@N02/5115614018",
+        "credit": "Danielle Walquist Lynch",
+        "title": "Corey's archery target",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "60b56e339834a10035447e39346e986aaa47ac1ebf93f982962288c060bb0546",
+        "notice_sha256": "695f9ea27452a03c3ead9087eb061a53c2b12f09194bc39b862211445156eaa3"
+      }
+    },
+    {
+      "split": "train",
+      "id": "7092795309",
+      "provenance": "Amirsp",
+      "supports": [
+        "amirsp"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "ae03b311b09c665b6cdcc80c959f81512aa8de93559b4a70f14cce92207458c6",
+      "banque": {
+        "motif imprimé": 2,
+        "perforation ou usure": 3
+      },
+      "source": {
+        "url": "https://www.flickr.com/photos/75215183@N00/7092795309",
+        "credit": "Amirsp",
+        "title": "Archery Target",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "ad8d350b1a89294919b190e835dd1feadcd1ea30c92afccaa1561cc64d7dce6c",
+        "notice_sha256": "d79db5b157ae89a36f3961d0c2b6e8c4b4a6e83893bd26cf9b686ea1c71d86f8"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "3996564090",
+      "provenance": "Wesley Fryer",
+      "supports": [
+        "fryer"
+      ],
+      "conditions": [
+        "worn",
+        "multiple"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 6,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "00ae570b88ab6d8e16718fa8d935f5970554b171db77bd5a838723d24bf7a5b2",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/31442459@N00/3996564090",
+        "credit": "Wesley Fryer",
+        "title": "My archery target",
+        "license": "BY-SA 2.0",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sha256": "e61ddbcca94f6c4c679b53b14175f50d073cadd987b620c7931b0f29f8b0e4ff",
+        "notice_sha256": "2361cbe2b9da353ce14a4d075e7e0a6672e2a76fc4073c6740fa1fd686a7b824"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "929865",
+      "provenance": "Staff Sgt. Brent Powell",
+      "supports": [
+        "powell"
+      ],
+      "conditions": [
+        "worn",
+        "occlusion"
+      ],
+      "inventaire_complet": false,
+      "contacts_visibles": 3,
+      "entrees_incertaines": 1,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "26014f6c3bf3d5e56be4267ecb43abcdd34d14ee4f0779d6c18376ee340d72cd",
+      "banque": {},
+      "source": {
+        "url": "https://www.dvidshub.net/image/929865/army-veteran-overcomes-injuries-compete-gold-warrior-games",
+        "credit": "Staff Sgt. Brent Powell",
+        "license": "Public Domain (DVIDS)",
+        "terms": "https://www.dvidshub.net/about/copyright",
+        "sha256": "577633ba0defd254363214fb0f2c06aa3094b9b71906dc52373763d79f08d24a",
+        "notice_sha256": "704199a81f31bfd7da2aa21fb8174dfda5192758b6fda4197d6a8d157411c129",
+        "virin": "130507-A-BQ341-002"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "6791193480",
+      "provenance": "russellstreet",
+      "supports": [
+        "russell"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "dd7d8f0b85d8acb907b3a303d573b8698f75ad090801266baddf1e74cc1d9632",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/27345927@N07/6791193480",
+        "credit": "russellstreet",
+        "title": "Archery Target",
+        "license": "BY-SA 2.0",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sha256": "11ba6b2560f50f4131ac34c8d4bfbd3d56b3f1c2ba300db772144fb0ed8d4ddd",
+        "notice_sha256": "ba26e0bf82c7146087f30937415ef76f7433447ac76aa38b3121b7202dc4e811"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "49398629148",
+      "provenance": "Ivan Radic",
+      "supports": [
+        "radic-avant",
+        "radic-arriere"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 1,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "ebb793a1fab9438a6cf4cce0d75cbe489c753b795d22f50ce1ac47784f1688e6",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/26344495@N05/49398629148",
+        "credit": "Ivan Radic",
+        "title": "Targets at an archery range",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "81f03a0de07af90d78dfab7bde8d8aeff8d80e8156dc13bff66053c731a9e4a5",
+        "notice_sha256": "32a83f05cd0f1399aea75b2301e9b66e847649aae84825bf86b5b107845291d2"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "955488046",
+      "provenance": "gothick_matt",
+      "supports": [
+        "stand-955488046"
+      ],
+      "conditions": [
+        "single"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 1,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "9ae63f81beb441282e2a9f553b47e230ddf872431039592f2eebdd283c4ea53a",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/41308227@N00/955488046",
+        "credit": "gothick_matt",
+        "title": "PICT4802.JPG",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "80166634b5988463514d68cf02c9a416159524a0f1a766798232014f55758ce3",
+        "notice_sha256": "d8023872767922314e38f2aa3a65728e57449ac06a85756fd5506e3b608ea20a"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "3771007694",
+      "provenance": "April L. Sanders",
+      "supports": [
+        "stand-3771007694"
+      ],
+      "conditions": [
+        "occlusion"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 1,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "66d4c57cb70e1f70030493e62142b82bfc7e5d95e29acb57feaa96291d9c751c",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/25708509@N00/3771007694",
+        "credit": "April L. Sanders",
+        "title": "",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "ff77f61f80e16346c9a4271752ecf8446344c91606844be63ac56aa2ad69e7b9",
+        "notice_sha256": "bd9698d6ec6344a517d73906c9b78bfd6bf856d9cc1567b9739be88edfd2b37b"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "14347254046",
+      "provenance": "TheNickster",
+      "supports": [
+        "stand-14347254046"
+      ],
+      "conditions": [
+        "multiple"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 3,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "f3d82769383c27af9c7e8770538cc1672bd9e40f07c3c44d2bf2cc74faf597eb",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/49503073847@N01/14347254046",
+        "credit": "TheNickster",
+        "title": "Bullseye!",
+        "license": "BY-SA 2.0",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sha256": "0fb16da7f347bc699384c7b6844441ad4902811c5d1451f76dfd62932b4cd5fc",
+        "notice_sha256": "24a122d49743072f1205dd72023cb88769a7e42c141384d7b9c54951aef48485"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "8549619981",
+      "provenance": "TimWilson",
+      "supports": [
+        "stand-8549619981"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "0b7a2954ff816d0daaa543e383df0fcc05134f8feec05606607eb4c25cabf6b2",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/70816538@N00/8549619981",
+        "credit": "TimWilson",
+        "title": "First 300 round attempt",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "358b03cb65eee7dddd8baedecf211f9842bf1db841aad49f4f2c25aa412312b5",
+        "notice_sha256": "2856853e8a876f1613431007f8cab24d1e805e795013eab0f3de35f9ae590d45"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "36377144413",
+      "provenance": "vastateparksstaff",
+      "supports": [
+        "stand-36377144413"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 5,
+      "entrees_incertaines": 0,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "d953b4b1a69417a641d2f4bf573f3d63fac7a1d87783e429155b20a03446e905",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/37922399@N05/36377144413",
+        "credit": "vastateparksstaff",
+        "title": "archery twin lakes state park",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "5e32797aa53c6566d934bfeb93c1cadbc178e026c01c0f680abd4573141e0e53",
+        "notice_sha256": "4bd02d2edc7b7a2e00d4765a3219c1a6333eebb57a253820de940e3f5a387699"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "2712546351",
+      "provenance": "cobaltfish",
+      "supports": [
+        "stand-2712546351"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "inventaire_complet": false,
+      "contacts_visibles": 9,
+      "entrees_incertaines": 2,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "c42dffe28f52722e2af51cbbeaae99e6e657c39370b3efe0d396d357d576dd9e",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/23765024@N05/2712546351",
+        "credit": "cobaltfish",
+        "title": "Some arrows in the target",
+        "license": "BY-SA 2.0",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sha256": "e676741de59937763dfcd766ffd88cffaa99d5e647f067f55a959381b34c75a5",
+        "notice_sha256": "d55605c5885eaf7ab04ad2d9992a726b0d0689761dabe7679bc73cf5cfe925f0"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "8468859144",
+      "provenance": "Framsókn",
+      "supports": [
+        "stand-8468859144"
+      ],
+      "conditions": [
+        "grouped"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 7,
+      "entrees_incertaines": 1,
+      "temoin_vide": false,
+      "pixels_travail_sha256": "3f6753f37be8700107071d163ff89fc16d1d420726ad1867dcf642bc48b1e22e",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/34598927@N04/8468859144",
+        "credit": "Framsókn",
+        "title": "Sumir voru með meðfædda hæfileika",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "ad541e926e0f600f753d573ec1a456c602eeed11f71c401a6b74f3307663f2a7",
+        "notice_sha256": "9b6ca4d2ffe0fab1bfa636c613f441e4e9877ebcd6f48a5afefede0898a1afaf"
+      }
+    },
+    {
+      "split": "dev",
+      "id": "67300452",
+      "provenance": "Iain Cuthbertson",
+      "supports": [
+        "stand-67300452"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "inventaire_complet": true,
+      "contacts_visibles": 0,
+      "entrees_incertaines": 0,
+      "temoin_vide": true,
+      "pixels_travail_sha256": "1cd5b745b20def59b437e5f898f67a31ba07ca5ff21ab5d8d090367865ac4b0d",
+      "banque": {},
+      "source": {
+        "url": "https://www.flickr.com/photos/34574952@N00/67300452",
+        "credit": "Iain Cuthbertson",
+        "title": "img_0972",
+        "license": "BY-SA 2.0",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "sha256": "7960ef62fefaa7244e85f3b9f1c76c3854ec3a16871f66a1f52445ab18517668",
+        "notice_sha256": "d24d2bbec39a7404a8610d9ecf613503876dfd496462261cfd15951a41ce0447"
+      }
+    }
+  ]
+}

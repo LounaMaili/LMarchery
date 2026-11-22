@@ -83,4 +83,4 @@ jobs:
               raise SystemExit(1)
           PYTEST
       - name: Model, window fusion and decoder tests
-        run: python -m unittest -v test_r3.LearningTests test_r6 test_r8
+        run: python -m unittest -v test_r3.LearningTests test_r6 test_r8 test_r9

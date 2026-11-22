@@ -1,0 +1,19 @@
+# R9 · Protocole avant entraînement
+
+Parent R8 `f70a5bce9248dc675f94fd3a9dc71877e7fb1810`. Le checkpoint initial R7 ImageNet porte le SHA-256 `672d6b0b24c9713e6b8aa4df34a2cf3d5718f182de777e6032e3156fa06c8b27`. Les résultats et la lecture humaine R8 restent historiques.
+
+## Fenêtres et supervision
+
+Le train est limité aux 15 photos exhaustives du train R8. Leurs entrées lisibles, polygones de tubes disponibles et zones ignorées sont conservés. La banque part des faux pics de R7 sur ces seules photos. Examiner les pixels de chaque exemple retenu. Conserver photo, support, provenance, hachage, centre, score, classe visuelle et placements admissibles. Les pics d’une autre acquisition servent à vérifier la présence d’une confusion uniquement sur les images examinées.
+
+Pour chaque graine 9301, 9302 et 9303, produire un plan apparié avant toute mise à jour. Par lot de huit fenêtres de 320 × 320, quatre fenêtres positives identiques sont centrées avec jitter sur une entrée visible et quatre sont négatives. Pour chaque paire négative, choisir la même image et la même symétrie. Dans le bras ordinaire, tirer uniformément une origine admissible par rejet. Dans le bras ciblé, choisir un placement contenant l’exemple négatif vérifié. Les deux fenêtres négatives excluent toutes les zones incertaines et tous les contacts, avec une garde de 14 px pour conserver le support complet des gaussiennes. Le tirage des négatifs est équilibré en espérance par support, puis par photo et catégorie présente. Le tirage des positifs est équilibré par support positif, photo et entrée. Comparer les empreintes et conserver les plans.
+
+Construire la carte des contacts à partir de toutes les entrées visibles de la fenêtre. Ignorer les zones incertaines. Pour la segmentation, utiliser les polygones annotés de Crigges, le fond connu des vides et les pixels centraux de tube visuellement vérifiés des autres supports. Ignorer le reste des photos sans masque dense. Conserver les mêmes annotations, données et règle de supervision dans les deux bras.
+
+## Budget et sélection
+
+AdamW neuf à 0,001, pertes R7, réseau, fusion, NMS et maximum de 96 propositions R7. Exécuter séquentiellement 96 mises à jour par essai et choisir le checkpoint final. Évaluer sur photos entières aux pas 0, 24, 48, 72 et 96. Le seuil 0,50 sert à la description. Dire qu’un diagnostic est stable dans les trois derniers relevés à 0,50 seulement si le nombre de contacts appariés est identique et si l’étendue des non-appariées ne dépasse pas max(1, 10 % de leur maximum) sur le lot considéré.
+
+Sur le développement commun, considérer l’abstention totale (2,0) et les scores distincts réellement observés. Les propositions de même score entrent ensemble. Parmi les seuils respectant au plus 0,25 non-appariée/photo, maximiser les contacts appariés, puis minimiser les non-appariées, puis prendre le seuil le plus haut. Le budget inclut les faux et les non résolus. L’appariement R6 un à un utilise 10 px à grand côté 704. Rapporter la courbe par provenance, les vides, les usés et les groupes dans les deux bras et pour chaque graine. Les mesures intermédiaires ne modifient ni les plans ni la durée.
+
+Geler la liste des acquisitions du test futur avant toute comparaison, avec un cas d’entrée masquée dont la région pourra être adjugée. Si les deux bras s’abstiennent au budget sur toutes les graines, arrêter après développement. Pour préparer une adjudication puis ouvrir le test, demander un gain strict en nombre de contacts retrouvés du bras ciblé sur au moins deux graines, aucune perte sur la troisième, un gain cumulé sur au moins deux provenances positives et aucun déclenchement supplémentaire sur témoin vide dans chaque comparaison appariée. En cas de progrès cohérent, la graine 9301 est la candidate prédéfinie. Sinon, conserver le test fermé. Les critères GO R6 et le NO-GO Android restent en vigueur.
