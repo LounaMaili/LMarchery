@@ -67,5 +67,20 @@ jobs:
           python -m pip install --only-binary=:all: --require-hashes -r requirements-ci.txt
           python -m pip install --only-binary=:all: --require-hashes \
             --extra-index-url https://download.pytorch.org/whl/cpu -r requirements-r3-cpu.txt
+          python -m pip install --only-binary=:all: --require-hashes --no-deps \
+            --extra-index-url https://download.pytorch.org/whl/cpu -r requirements-r8-cpu.txt
+      - name: Three required R7 learning tests
+        run: |
+          python - <<'PYTEST'
+          import unittest
+          from test_r7 import LearningTests
+          suite = unittest.defaultTestLoader.loadTestsFromTestCase(LearningTests)
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          executed = result.testsRun - len(result.skipped)
+          passed = executed - len(result.errors) - len(result.failures)
+          print(f"Executed {executed}, passed {passed}, skipped {len(result.skipped)}")
+          if result.testsRun != 3 or result.skipped or not result.wasSuccessful():
+              raise SystemExit(1)
+          PYTEST
       - name: Model, window fusion and decoder tests
-        run: python -m unittest -v test_r3.LearningTests test_r6
+        run: python -m unittest -v test_r3.LearningTests test_r6 test_r8
