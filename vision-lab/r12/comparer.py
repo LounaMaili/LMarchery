@@ -61,8 +61,14 @@ def compare(r8, r9, media, out):
             peaks, tubes = decode(maps, max_peaks=192)
             common = perf_counter()-start
             digest = sha256(maps.tobytes(order='C')).hexdigest()
-            if ident in existing and (peaks != existing[ident] or digest != audit[name]['photos'][ident]['sha256_cartes']):
-                raise ValueError('Échec de parité R11 '+name+'/'+ident)
+            if ident in existing:
+                archived = existing[ident]
+                same_points = len(peaks) == len(archived) and all(
+                    xy == old_xy and score.hex() == old_score.hex()
+                    for (xy, score), (old_xy, old_score) in zip(peaks,archived,strict=True))
+                same_map = digest == audit[name]['photos'][ident]['sha256_cartes']
+                if not (same_map and same_points):
+                    raise ValueError(f'Parité R11 {name}/{ident} : carte={same_map}, pics={same_points}')
             start = perf_counter()
             scale, board, mask, supported = repere(im, maps[1])
             detected = [tube.ends*scale for tube in tubes]
