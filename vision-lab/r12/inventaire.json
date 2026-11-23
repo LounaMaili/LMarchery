@@ -1,0 +1,205 @@
+[
+  {
+    "nom": "sources-admises.zip",
+    "role": "Dérivés, notices et lecture des 12 nouvelles acquisitions",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/sources-admises.zip",
+    "octets": 4462781,
+    "sha256": "82a132eecd18a2c586161143181f98c3ae46ae7fdb32ea2821e588e2efa07468"
+  },
+  {
+    "nom": "catalogues.zip",
+    "role": "Catalogues de découverte et journaux, conservés localement",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/catalogues.zip",
+    "octets": 7335750,
+    "sha256": "cbb1820bba90626d3a321cca8054180ecc1c7d631e42c9b3a0aeebb237c45025"
+  },
+  {
+    "nom": "parite-initiale.log",
+    "role": "Premier arrêt avant mesure",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/parite-initiale.log",
+    "octets": 570,
+    "sha256": "154b44054ccabef067f2387111f9181e978c95e322b4c38831449aaf48177a96"
+  },
+  {
+    "nom": "dev.json",
+    "role": "Manifeste figé du développement",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/dev.json",
+    "octets": 25179,
+    "sha256": "dd183e14d3d97cbebf595b6fb70a6b4f4c39bda0567cab01210d7862b787e862"
+  },
+  {
+    "nom": "experiences.zip",
+    "role": "Capsule R9, six membres de prédictions de développement lus",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/experiences.zip",
+    "octets": 4899935,
+    "sha256": "36fc082e96ed56ba2e26bb10cec1010d54bb95ad362e7e0c48a3bb32c40b07fe"
+  },
+  {
+    "nom": "ordinary-9301.pt",
+    "role": "Checkpoint final R9 figé, ordinary-9301",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+    "octets": 865807,
+    "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+  },
+  {
+    "nom": "ordinary-9302.pt",
+    "role": "Checkpoint final R9 figé, ordinary-9302",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9302.pt",
+    "octets": 865807,
+    "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+  },
+  {
+    "nom": "ordinary-9303.pt",
+    "role": "Checkpoint final R9 figé, ordinary-9303",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9303.pt",
+    "octets": 865807,
+    "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+  },
+  {
+    "nom": "targeted-9301.pt",
+    "role": "Checkpoint final R9 figé, targeted-9301",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9301.pt",
+    "octets": 865807,
+    "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+  },
+  {
+    "nom": "targeted-9302.pt",
+    "role": "Checkpoint final R9 figé, targeted-9302",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9302.pt",
+    "octets": 865807,
+    "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+  },
+  {
+    "nom": "targeted-9303.pt",
+    "role": "Checkpoint final R9 figé, targeted-9303",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9303.pt",
+    "octets": 865807,
+    "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+  },
+  {
+    "nom": "3996564090.png",
+    "role": "Photo de développement · Wesley Fryer",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/3996564090.png",
+    "octets": 1899805,
+    "sha256": "00ae570b88ab6d8e16718fa8d935f5970554b171db77bd5a838723d24bf7a5b2"
+  },
+  {
+    "nom": "929865.png",
+    "role": "Photo de développement · Staff Sgt. Brent Powell",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/929865.png",
+    "octets": 1517226,
+    "sha256": "26014f6c3bf3d5e56be4267ecb43abcdd34d14ee4f0779d6c18376ee340d72cd"
+  },
+  {
+    "nom": "6791193480.png",
+    "role": "Photo de développement · russellstreet",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/6791193480.png",
+    "octets": 1063333,
+    "sha256": "dd7d8f0b85d8acb907b3a303d573b8698f75ad090801266baddf1e74cc1d9632"
+  },
+  {
+    "nom": "49398629148.png",
+    "role": "Photo de développement · Ivan Radic",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/49398629148.png",
+    "octets": 1076303,
+    "sha256": "ebb793a1fab9438a6cf4cce0d75cbe489c753b795d22f50ce1ac47784f1688e6"
+  },
+  {
+    "nom": "955488046.png",
+    "role": "Photo de développement · gothick_matt",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/955488046.png",
+    "octets": 1386966,
+    "sha256": "9ae63f81beb441282e2a9f553b47e230ddf872431039592f2eebdd283c4ea53a"
+  },
+  {
+    "nom": "3771007694.png",
+    "role": "Photo de développement · April L. Sanders",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/3771007694.png",
+    "octets": 1650887,
+    "sha256": "66d4c57cb70e1f70030493e62142b82bfc7e5d95e29acb57feaa96291d9c751c"
+  },
+  {
+    "nom": "14347254046.png",
+    "role": "Photo de développement · TheNickster",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/14347254046.png",
+    "octets": 1392657,
+    "sha256": "f3d82769383c27af9c7e8770538cc1672bd9e40f07c3c44d2bf2cc74faf597eb"
+  },
+  {
+    "nom": "8549619981.png",
+    "role": "Photo de développement · TimWilson",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/8549619981.png",
+    "octets": 815339,
+    "sha256": "0b7a2954ff816d0daaa543e383df0fcc05134f8feec05606607eb4c25cabf6b2"
+  },
+  {
+    "nom": "36377144413.png",
+    "role": "Photo de développement · vastateparksstaff",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/36377144413.png",
+    "octets": 1864722,
+    "sha256": "d953b4b1a69417a641d2f4bf573f3d63fac7a1d87783e429155b20a03446e905"
+  },
+  {
+    "nom": "2712546351.png",
+    "role": "Photo de développement · cobaltfish",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/2712546351.png",
+    "octets": 821116,
+    "sha256": "c42dffe28f52722e2af51cbbeaae99e6e657c39370b3efe0d396d357d576dd9e"
+  },
+  {
+    "nom": "8468859144.png",
+    "role": "Photo de développement · Framsókn",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/8468859144.png",
+    "octets": 520731,
+    "sha256": "3f6753f37be8700107071d163ff89fc16d1d420726ad1867dcf642bc48b1e22e"
+  },
+  {
+    "nom": "67300452.png",
+    "role": "Photo de développement · Iain Cuthbertson",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/67300452.png",
+    "octets": 341972,
+    "sha256": "1cd5b745b20def59b437e5f898f67a31ba07ca5ff21ab5d8d090367865ac4b0d"
+  },
+  {
+    "nom": "ordinary-9301.json",
+    "role": "Sortie brute du passage final, durées incluses",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/predictions-finales/ordinary-9301.json",
+    "octets": 355674,
+    "sha256": "3ef65d307318233075415e042a004e5082c21ff02167fecd800814ffd80eafe3"
+  },
+  {
+    "nom": "ordinary-9302.json",
+    "role": "Sortie brute du passage final, durées incluses",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/predictions-finales/ordinary-9302.json",
+    "octets": 356219,
+    "sha256": "8ac624ac04025ca7ce6b8d5db4b391c8b4ad3cc8e77ff19afd7d2f118e1e18af"
+  },
+  {
+    "nom": "ordinary-9303.json",
+    "role": "Sortie brute du passage final, durées incluses",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/predictions-finales/ordinary-9303.json",
+    "octets": 355520,
+    "sha256": "0f299bf9a6b9d58f63b10efe738190ae8fa98d3f301f39feb34f7656dc78cc7f"
+  },
+  {
+    "nom": "targeted-9301.json",
+    "role": "Sortie brute du passage final, durées incluses",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/predictions-finales/targeted-9301.json",
+    "octets": 359387,
+    "sha256": "c01d33ed78c44114d2c821fd6c91086e93da4c53d703b45312295793906f6b01"
+  },
+  {
+    "nom": "targeted-9302.json",
+    "role": "Sortie brute du passage final, durées incluses",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/predictions-finales/targeted-9302.json",
+    "octets": 355758,
+    "sha256": "586493d656c2babd45289662977a6e0907a3ca114d63d8b166f85e8f86165c81"
+  },
+  {
+    "nom": "targeted-9303.json",
+    "role": "Sortie brute du passage final, durées incluses",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/artifacts/r12/predictions-finales/targeted-9303.json",
+    "octets": 343894,
+    "sha256": "799fe81896a415021064acf6a683c0680545d6fca9d9eb5b294e9f5f64f3bfec"
+  }
+]

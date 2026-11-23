@@ -1,0 +1,1001 @@
+{
+  "lecture": "lecture visuelle assistée sur photographie, avant prédictions",
+  "photos": [
+    {
+      "id": "18105652008",
+      "group": "zigazou76",
+      "boards": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "flags": [
+        "multiple",
+        "grouped",
+        "occlusion"
+      ],
+      "size": [
+        1024,
+        683
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              303.04285714285714,
+              300.0492505353319
+            ],
+            [
+              379.1114285714286,
+              300.0492505353319
+            ]
+          ],
+          "entry": [
+            292.80285714285714,
+            300.0492505353319
+          ]
+        },
+        {
+          "axis": [
+            [
+              380.57428571428574,
+              474.0899357601713
+            ],
+            [
+              477.12285714285713,
+              463.8522483940043
+            ]
+          ],
+          "entry": [
+            363.02,
+            477.01498929336185
+          ]
+        },
+        {
+          "axis": [
+            [
+              680.46,
+              406.813704496788
+            ],
+            [
+              757.9914285714285,
+              405.3511777301927
+            ]
+          ],
+          "entry": [
+            661.4428571428572,
+            408.2762312633833
+          ]
+        },
+        {
+          "axis": [
+            [
+              676.0714285714286,
+              415.5888650963597
+            ],
+            [
+              853.0771428571428,
+              411.2012847965739
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              692.1628571428571,
+              441.9143468950749
+            ],
+            [
+              804.8028571428572,
+              443.37687366167023
+            ]
+          ],
+          "entry": null
+        }
+      ],
+      "exhaustive": false,
+      "ignore": [
+        [
+          [
+            526.86,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            522.3533190578158
+          ]
+        ]
+      ],
+      "split": "train",
+      "source": {
+        "id": "18105652008",
+        "url": "https://www.flickr.com/photos/38712296@N07/18105652008",
+        "pixels_url": "https://live.staticflickr.com/8840/18105652008_bcefc2b983_b.jpg",
+        "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+        "size": 426302,
+        "credit": "zigazou76",
+        "author_url": "https://www.flickr.com/photos/38712296@N07",
+        "title": "Cibles pour le tir à l’arc",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "3b161e339753b12a1d5831568c697b84b212552d77fb0cd237c13b19a309f8f5"
+      },
+      "dhash64": "0x222cc89cb616ac15"
+    },
+    {
+      "id": "20873987148",
+      "group": "Tomi Backman",
+      "boards": [
+        "20873987148-1"
+      ],
+      "flags": [
+        "multiple",
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "size": [
+        1024,
+        576
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              169.92285714285714,
+              435.88578680203045
+            ],
+            [
+              501.99142857142857,
+              270.68781725888323
+            ]
+          ],
+          "entry": [
+            510.7685714285714,
+            267.7639593908629
+          ]
+        },
+        {
+          "axis": [
+            [
+              221.12285714285713,
+              422.7284263959391
+            ],
+            [
+              510.7685714285714,
+              295.5406091370558
+            ]
+          ],
+          "entry": [
+            522.4714285714285,
+            289.6928934010152
+          ]
+        },
+        {
+          "axis": [
+            [
+              240.14,
+              482.6675126903553
+            ],
+            [
+              510.7685714285714,
+              307.23604060913704
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              349.8542857142857,
+              434.42385786802026
+            ],
+            [
+              541.4885714285714,
+              317.4695431472081
+            ]
+          ],
+          "entry": [
+            551.7285714285714,
+            310.15989847715736
+          ]
+        },
+        {
+          "axis": [
+            [
+              324.98571428571427,
+              539.6827411167512
+            ],
+            [
+              572.2085714285714,
+              326.24111675126903
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              446.40285714285716,
+              443.1954314720812
+            ],
+            [
+              580.9857142857143,
+              332.0888324873096
+            ]
+          ],
+          "entry": null
+        }
+      ],
+      "exhaustive": false,
+      "ignore": [
+        [
+          [
+            497.60285714285715,
+            264.84010152284264
+          ],
+          [
+            600.0028571428571,
+            343.78426395939084
+          ]
+        ]
+      ],
+      "split": "nouveau",
+      "source": {
+        "id": "20873987148",
+        "url": "https://www.flickr.com/photos/mrbackman/20873987148",
+        "pixels_url": "https://live.staticflickr.com/5834/20873987148_9843d2df0d_b.jpg",
+        "sha256": "fcb7d89ca9ec78df775f99fe7dd46aeb4aa8509a43df0890ac4c5c8fa13e7d45",
+        "size": 191965,
+        "credit": "Tomi Backman",
+        "author_url": "https://www.flickr.com/photos/mrbackman",
+        "title": "Kasaantuu ne pikkuhiljaa",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "43321de7944c25b02c3a47afdedf3460192b9223d0e23f7fc3bc65e47a047d97"
+      },
+      "dhash64": "0xe0d1c9c1c9110991"
+    },
+    {
+      "id": "24614689941",
+      "group": "renatomitra",
+      "boards": [
+        "24614689941-1"
+      ],
+      "flags": [
+        "multiple",
+        "grouped",
+        "worn"
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              224.04857142857142,
+              379.1114285714286
+            ],
+            [
+              585.3742857142857,
+              361.5571428571429
+            ]
+          ],
+          "entry": [
+            616.0942857142857,
+            358.63142857142856
+          ]
+        },
+        {
+          "axis": [
+            [
+              207.95714285714286,
+              463.95714285714286
+            ],
+            [
+              561.9685714285714,
+              390.8142857142857
+            ]
+          ],
+          "entry": [
+            583.9114285714286,
+            384.96285714285716
+          ]
+        },
+        {
+          "axis": [
+            [
+              575.1342857142857,
+              727.2714285714286
+            ],
+            [
+              605.8542857142858,
+              402.51714285714286
+            ]
+          ],
+          "entry": [
+            608.78,
+            368.87142857142857
+          ]
+        }
+      ],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "train",
+      "source": {
+        "id": "24614689941",
+        "url": "https://www.flickr.com/photos/groovenite/24614689941",
+        "pixels_url": "https://live.staticflickr.com/1543/24614689941_69acf60c45_b.jpg",
+        "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+        "size": 99973,
+        "credit": "renatomitra",
+        "author_url": "https://www.flickr.com/photos/groovenite",
+        "title": "Heute hatte ich meine erste Lektion im Bogenschiessen. #arrow #archery #target #fokus",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "51149ec7f68f2366dbbc9ee83967db334e1a46b98be54e6d673d2b360f24af9c"
+      },
+      "dhash64": "0xa6495969ebac3030"
+    },
+    {
+      "id": "36258219964",
+      "group": "maggiewilson177",
+      "boards": [
+        "36258219964-1"
+      ],
+      "flags": [
+        "multiple",
+        "worn",
+        "occlusion"
+      ],
+      "size": [
+        1024,
+        576
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              320.59714285714284,
+              143.5
+            ],
+            [
+              330.83714285714285,
+              137.6522842639594
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              449.3285714285714,
+              399.33756345177665
+            ],
+            [
+              480.04857142857145,
+              440.2715736040609
+            ]
+          ],
+          "entry": [
+            440.5514285714286,
+            386.1802030456853
+          ]
+        },
+        {
+          "axis": [
+            [
+              512.2314285714285,
+              377.4086294416243
+            ],
+            [
+              547.34,
+              422.7284263959391
+            ]
+          ],
+          "entry": [
+            501.99142857142857,
+            359.8654822335025
+          ]
+        }
+      ],
+      "exhaustive": true,
+      "ignore": [
+        [
+          [
+            289.87714285714287,
+            105.48984771573603
+          ],
+          [
+            360.0942857142857,
+            163.96700507614213
+          ]
+        ]
+      ],
+      "split": "nouveau",
+      "source": {
+        "id": "36258219964",
+        "url": "https://www.flickr.com/photos/157809786@N07/36258219964",
+        "pixels_url": "https://live.staticflickr.com/4433/36258219964_369dfcb884_b.jpg",
+        "sha256": "7e93a73cd17828aeca0b022db408b111110467728db6fb33b55baf58afc3a93d",
+        "size": 79524,
+        "credit": "maggiewilson177",
+        "author_url": "https://www.flickr.com/photos/157809786@N07",
+        "title": "Some fine shooting",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "61f259998f32ccd5f1e6226f5d9ee2a3619e843bb595d9b1834b280018f8184f"
+      },
+      "dhash64": "0x99a5a4f0e0e0a1c9"
+    },
+    {
+      "id": "4169106197",
+      "group": "cristina.sanvito",
+      "boards": [
+        "4169106197-1"
+      ],
+      "flags": [
+        "single"
+      ],
+      "size": [
+        640,
+        480
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              220.0,
+              168.0
+            ],
+            [
+              333.0,
+              181.0
+            ]
+          ],
+          "entry": [
+            341.0,
+            182.0
+          ]
+        }
+      ],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "train",
+      "source": {
+        "id": "4169106197",
+        "url": "https://www.flickr.com/photos/40385177@N07/4169106197",
+        "pixels_url": "https://live.staticflickr.com/2769/4169106197_6338bf59ca_z.jpg",
+        "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+        "size": 97351,
+        "credit": "cristina.sanvito",
+        "author_url": "https://www.flickr.com/photos/40385177@N07",
+        "title": "centro!",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "26373215420846c761950e196c4f5d66be4c48a9cca10406ceab07e084646ef9"
+      },
+      "dhash64": "0xaa5a69a8f1b1b9b1"
+    },
+    {
+      "id": "53151623584",
+      "group": "ttillma8",
+      "boards": [
+        "53151623584-1"
+      ],
+      "flags": [
+        "multiple",
+        "grouped",
+        "worn"
+      ],
+      "size": [
+        768,
+        1024
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              162.60857142857142,
+              741.9
+            ],
+            [
+              282.5628571428571,
+              507.84285714285716
+            ]
+          ],
+          "entry": [
+            285.48857142857145,
+            500.5285714285714
+          ]
+        },
+        {
+          "axis": [
+            [
+              267.9342857142857,
+              602.9285714285714
+            ],
+            [
+              323.52285714285716,
+              474.19714285714286
+            ]
+          ],
+          "entry": [
+            324.98571428571427,
+            466.8828571428571
+          ]
+        },
+        {
+          "axis": [
+            [
+              449.3285714285714,
+              687.7742857142857
+            ],
+            [
+              431.7742857142857,
+              540.0257142857142
+            ]
+          ],
+          "entry": [
+            430.31142857142856,
+            528.3228571428572
+          ]
+        },
+        {
+          "axis": [
+            [
+              466.8828571428571,
+              686.3114285714286
+            ],
+            [
+              447.86571428571426,
+              532.7114285714285
+            ]
+          ],
+          "entry": [
+            447.86571428571426,
+            521.0085714285714
+          ]
+        },
+        {
+          "axis": [
+            [
+              592.6885714285714,
+              690.7
+            ],
+            [
+              461.0314285714286,
+              501.99142857142857
+            ]
+          ],
+          "entry": [
+            452.2542857142857,
+            488.8257142857143
+          ]
+        },
+        {
+          "axis": [
+            [
+              620.4828571428571,
+              705.3285714285714
+            ],
+            [
+              493.2142857142857,
+              532.7114285714285
+            ]
+          ],
+          "entry": [
+            485.9,
+            519.5457142857143
+          ]
+        }
+      ],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "nouveau",
+      "source": {
+        "id": "53151623584",
+        "url": "https://www.flickr.com/photos/199041303@N07/53151623584",
+        "pixels_url": "https://live.staticflickr.com/65535/53151623584_51847a7e1d_b.jpg",
+        "sha256": "7196105b35bbba08750768aa806209acbc428ffe23fdf0730fcb9d13e8b4b84e",
+        "size": 451449,
+        "credit": "ttillma8",
+        "author_url": "https://www.flickr.com/photos/199041303@N07",
+        "title": "Archery Target",
+        "terms": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "notice_sha256": "62318c4b9cf09105d001dd8353c278bc5801b3a658b0321064a02b785ce8089d"
+      },
+      "dhash64": "0x2bc3ced2f4d21b13"
+    },
+    {
+      "id": "wc71488242",
+      "group": "Bernard Gagnon",
+      "boards": [
+        "wc71488242-1"
+      ],
+      "flags": [
+        "multiple",
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "size": [
+        1280,
+        1280
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              371.6142857142857,
+              188.75714285714284
+            ],
+            [
+              600.1857142857143,
+              269.2142857142857
+            ]
+          ],
+          "entry": [
+            611.1571428571428,
+            272.87142857142857
+          ]
+        },
+        {
+          "axis": [
+            [
+              263.7285714285714,
+              479.5
+            ],
+            [
+              528.8714285714285,
+              517.9
+            ]
+          ],
+          "entry": [
+            545.3285714285714,
+            523.3857142857142
+          ]
+        },
+        {
+          "axis": [
+            [
+              210.7,
+              499.6142857142857
+            ],
+            [
+              501.4428571428571,
+              525.2142857142857
+            ]
+          ],
+          "entry": [
+            516.0714285714286,
+            528.8714285714285
+          ]
+        },
+        {
+          "axis": [
+            [
+              261.9,
+              506.9285714285714
+            ],
+            [
+              510.5857142857143,
+              607.5
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              234.47142857142856,
+              495.95714285714286
+            ],
+            [
+              499.6142857142857,
+              596.5285714285714
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              102.81428571428572,
+              523.3857142857142
+            ],
+            [
+              378.92857142857144,
+              592.8714285714285
+            ]
+          ],
+          "entry": [
+            393.5571428571428,
+            596.5285714285714
+          ]
+        },
+        {
+          "axis": [
+            [
+              154.0142857142857,
+              581.9
+            ],
+            [
+              433.7857142857143,
+              655.0428571428571
+            ]
+          ],
+          "entry": [
+            444.75714285714287,
+            660.5285714285714
+          ]
+        },
+        {
+          "axis": [
+            [
+              150.35714285714286,
+              609.3285714285714
+            ],
+            [
+              419.15714285714284,
+              693.4428571428571
+            ]
+          ],
+          "entry": [
+            439.27142857142854,
+            700.7571428571429
+          ]
+        },
+        {
+          "axis": [
+            [
+              166.81428571428572,
+              636.7571428571429
+            ],
+            [
+              452.07142857142856,
+              730.0142857142857
+            ]
+          ],
+          "entry": [
+            470.35714285714283,
+            737.3285714285714
+          ]
+        },
+        {
+          "axis": [
+            [
+              228.98571428571427,
+              806.8142857142857
+            ],
+            [
+              433.7857142857143,
+              854.3571428571428
+            ]
+          ],
+          "entry": [
+            450.24285714285713,
+            858.0142857142857
+          ]
+        },
+        {
+          "axis": [
+            [
+              245.44285714285712,
+              986.0142857142857
+            ],
+            [
+              528.8714285714285,
+              1031.7285714285713
+            ]
+          ],
+          "entry": [
+            545.3285714285714,
+            1035.3857142857144
+          ]
+        }
+      ],
+      "exhaustive": false,
+      "ignore": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "split": "train",
+      "source": {
+        "id": "wc71488242",
+        "credit": "Bernard Gagnon",
+        "terms": "https://creativecommons.org/licenses/by-sa/4.0",
+        "title": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+        "pixels_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Changlimithang_Archery_Ground%2C_Thimphu_08.jpg/1280px-Changlimithang_Archery_Ground%2C_Thimphu_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+        "size": 592714,
+        "revision_sha1": "cf38b8fbbbb1a50327f4711c7ceea62df29488e2",
+        "notice_sha256": "6b03c97c12201ef3491bbaf6377037b372685a79d1a23503d1145fa7f6a318a6"
+      },
+      "dhash64": "0x2aa2e27464246cfc"
+    },
+    {
+      "id": "128831925",
+      "group": "Evil Julia",
+      "boards": [
+        "128831925-1"
+      ],
+      "flags": [
+        "empty"
+      ],
+      "size": [
+        640,
+        480
+      ],
+      "marks": [],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "train",
+      "source": {
+        "id": "128831925",
+        "url": "https://www.flickr.com/photos/evil_julia/128831925",
+        "pixels_url": "https://live.staticflickr.com/54/128831925_d23dbf92ea_z.jpg",
+        "sha256": "3f8f84f54f03b94f0e7992416af75b639da352c81587922749806f501a3d958a",
+        "size": 104271,
+        "credit": "Evil Julia",
+        "author_url": "https://www.flickr.com/photos/evil_julia",
+        "title": "03Yabusame",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "46afd43ffd7954a0209a5f65d517de04c65865e5df00cf72d2179444a364f300"
+      },
+      "dhash64": "0x4e9c7a584864a4cd"
+    },
+    {
+      "id": "15503462606",
+      "group": "chb1848",
+      "boards": [
+        "15503462606-1"
+      ],
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "size": [
+        1024,
+        681
+      ],
+      "marks": [],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "nouveau",
+      "source": {
+        "id": "15503462606",
+        "url": "https://www.flickr.com/photos/chb1848/15503462606",
+        "pixels_url": "https://live.staticflickr.com/5599/15503462606_c309695645_b.jpg",
+        "sha256": "cf93f91e0bcdd65364a2757b003d59a0173f900eed8378d57ab796bb22ade304",
+        "size": 186149,
+        "credit": "chb1848",
+        "author_url": "https://www.flickr.com/photos/chb1848",
+        "title": "Target",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "09a0334c8b8a1e8509c3c92027f3c8e1c9512b539109ade0d0493139bbca71fa"
+      },
+      "dhash64": "0xf0f0e8ecd8f0f0f0"
+    },
+    {
+      "id": "4592998057",
+      "group": "Vassilis Online",
+      "boards": [
+        "4592998057-1"
+      ],
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "size": [
+        1024,
+        770
+      ],
+      "marks": [],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "train",
+      "source": {
+        "id": "4592998057",
+        "url": "https://www.flickr.com/photos/vassilisonline/4592998057",
+        "pixels_url": "https://live.staticflickr.com/3334/4592998057_03e31e64cb_b.jpg",
+        "sha256": "b6ed07c9926f834b7d4a259fe5b36963d82f60355a48f94b6e3a8f85c51cc367",
+        "size": 217553,
+        "credit": "Vassilis Online",
+        "author_url": "https://www.flickr.com/photos/vassilisonline",
+        "title": "Archery",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "46466d8bede877937960f9b8a7da79516059fb85509ec2d9c07330f9af6b0f8f"
+      },
+      "dhash64": "0x7c685455454d6071"
+    },
+    {
+      "id": "51590434805",
+      "group": "mikecogh",
+      "boards": [
+        "51590434805-1"
+      ],
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "size": [
+        1024,
+        768
+      ],
+      "marks": [],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "nouveau",
+      "source": {
+        "id": "51590434805",
+        "url": "https://www.flickr.com/photos/mikecogh/51590434805",
+        "pixels_url": "https://live.staticflickr.com/65535/51590434805_4269f2be71_b.jpg",
+        "sha256": "112f5b7067d1abaa8aa408a3a2ecec4798158e3d4a6a7390661763c7d2296277",
+        "size": 450046,
+        "credit": "mikecogh",
+        "author_url": "https://www.flickr.com/photos/mikecogh",
+        "title": "Archery Target",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "9351c13784071266b61e7034100f2176e1b3b38c841a001142516fbf0fd24f93"
+      },
+      "dhash64": "0x9f8fcdbdb8ab2c78"
+    },
+    {
+      "id": "wc130852209",
+      "group": "China News Service",
+      "boards": [
+        "wc130852209-1"
+      ],
+      "flags": [
+        "empty"
+      ],
+      "size": [
+        1280,
+        720
+      ],
+      "marks": [],
+      "exhaustive": true,
+      "ignore": [],
+      "split": "train",
+      "source": {
+        "id": "wc130852209",
+        "credit": "China News Service",
+        "terms": "https://creativecommons.org/licenses/by/4.0",
+        "title": "File:Arrow target of Kongpo whistling arrows.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Arrow_target_of_Kongpo_whistling_arrows.jpg",
+        "pixels_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Arrow_target_of_Kongpo_whistling_arrows.jpg/1280px-Arrow_target_of_Kongpo_whistling_arrows.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sha256": "db5be72d26ae6f19428adc978f93eea555284bcf23f811cac1fe4a7a9d1ceef5",
+        "size": 182785,
+        "revision_sha1": "04b103e5bde3958d3879c1d80a07b0ca9e1ae64e",
+        "notice_sha256": "2ba022f4eaf6fd3bc96fd4a1424adbd63c3d0e5aa0cbf3fef2ca0e8469bcf121"
+      },
+      "dhash64": "0xe6576ac6405151f1"
+    }
+  ],
+  "effectifs": {
+    "train": {
+      "photos": 7,
+      "provenances_occupees": 4,
+      "contacts": 16,
+      "inconnues": 4,
+      "temoins": 3
+    },
+    "nouveau": {
+      "photos": 5,
+      "provenances_occupees": 3,
+      "contacts": 11,
+      "inconnues": 4,
+      "temoins": 2
+    }
+  },
+  "apprentissage_admissible": false,
+  "distance_minimale_dhash_entre_nouvelles_et_avec_douze_historiques": 21,
+  "derives_uniques_verifies": 149
+}
