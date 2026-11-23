@@ -1,0 +1,13 @@
+{
+  "B_cout_reduit": [
+    "ordinary-9301",
+    "ordinary-9302",
+    "targeted-9301",
+    "targeted-9302",
+    "targeted-9303"
+  ],
+  "indice_geometrique": true,
+  "B_gain_transporte": [],
+  "critere_transport": false,
+  "C_execute": false
+}

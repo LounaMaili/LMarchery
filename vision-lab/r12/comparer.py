@@ -21,7 +21,20 @@ LAB = Path(__file__).resolve().parents[1]
 
 
 def save(path, content):
-    path.write_text(json.dumps(content, ensure_ascii=False, separators=(',', ':'), allow_nan=False)+'\n')
+    # Une ligne par candidat pour que les scores soient lisibles dans GitHub.
+    with path.open('w') as f:
+        f.write('{\n')
+        for index,(ident,photo) in enumerate(content.items()):
+            if index:
+                f.write(',\n')
+            f.write('  '+json.dumps(ident)+': {\n')
+            for key,value in photo.items():
+                if key != 'candidats':
+                    f.write('    '+json.dumps(key)+': '+json.dumps(value,allow_nan=False)+',\n')
+            f.write('    "candidats": [\n')
+            f.write(',\n'.join('      '+json.dumps(p,allow_nan=False) for p in photo['candidats']))
+            f.write('\n    ]\n  }')
+        f.write('\n}\n')
 
 
 def compare(r8, r9, media, out):

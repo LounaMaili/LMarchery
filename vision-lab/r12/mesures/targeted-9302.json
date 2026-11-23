@@ -1,0 +1,5823 @@
+{
+  "methodes": {
+    "A": {
+      "historique": {
+        "seuil": 2.0,
+        "operation": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 7,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          }
+        },
+        "enveloppe_seuil": 2.0,
+        "enveloppe": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 7,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          }
+        },
+        "couverture": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 20,
+            "proposals": 2304,
+            "unmatched": 2284,
+            "false": 1901,
+            "unresolved": 383,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 13,
+            "proposals": 576,
+            "unmatched": 563,
+            "false": 377,
+            "unresolved": 186,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 11,
+            "proposals": 1344,
+            "unmatched": 1333,
+            "false": 953,
+            "unresolved": 380,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 186,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 0,
+              "unresolved": 191,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 0,
+              "unresolved": 186,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 191,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 0,
+              "unresolved": 191,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 191,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 0,
+              "unresolved": 186,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 186,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 576,
+            "unmatched": 576,
+            "false": 576,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 3
+          }
+        },
+        "budget_tenu": true,
+        "premier_contact": {
+          "threshold": 0.6171109080314636,
+          "photos": 12,
+          "known": 35,
+          "matched": 1,
+          "proposals": 135,
+          "unmatched": 134,
+          "false": 132,
+          "unresolved": 2,
+          "silent": 2,
+          "empty_with_points": 2
+        },
+        "surcout_ms_mediane": 0.0
+      },
+      "nouveau": {
+        "seuil": 2.0,
+        "operation": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          }
+        },
+        "enveloppe_seuil": 0.8031137585639954,
+        "enveloppe": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 4,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 4,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          }
+        },
+        "couverture": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 10,
+            "proposals": 960,
+            "unmatched": 950,
+            "false": 760,
+            "unresolved": 190,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 8,
+            "proposals": 384,
+            "unmatched": 376,
+            "false": 187,
+            "unresolved": 189,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 10,
+            "proposals": 960,
+            "unmatched": 950,
+            "false": 760,
+            "unresolved": 190,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 0,
+              "unresolved": 189,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 2,
+              "proposals": 192,
+              "unmatched": 190,
+              "false": 189,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 5,
+              "proposals": 192,
+              "unmatched": 187,
+              "false": 187,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 0,
+              "unresolved": 189,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 2,
+              "proposals": 192,
+              "unmatched": 190,
+              "false": 189,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 5,
+              "proposals": 192,
+              "unmatched": 187,
+              "false": 187,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 384,
+            "unmatched": 384,
+            "false": 384,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 2
+          }
+        },
+        "budget_tenu": true,
+        "premier_contact": {
+          "threshold": 0.8031137585639954,
+          "photos": 5,
+          "known": 11,
+          "matched": 1,
+          "proposals": 1,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 4,
+          "empty_with_points": 0
+        },
+        "surcout_ms_mediane": 0.0
+      }
+    },
+    "B": {
+      "historique": {
+        "seuil": 2.0,
+        "operation": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 7,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          }
+        },
+        "enveloppe_seuil": 2.0,
+        "enveloppe": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 7,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          }
+        },
+        "couverture": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 20,
+            "proposals": 2304,
+            "unmatched": 2284,
+            "false": 1901,
+            "unresolved": 383,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 13,
+            "proposals": 576,
+            "unmatched": 563,
+            "false": 377,
+            "unresolved": 186,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 11,
+            "proposals": 1344,
+            "unmatched": 1333,
+            "false": 953,
+            "unresolved": 380,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 186,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 0,
+              "unresolved": 191,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 0,
+              "unresolved": 186,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 191,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 0,
+              "unresolved": 191,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 191,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 0,
+              "unresolved": 186,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 186,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 576,
+            "unmatched": 576,
+            "false": 576,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 3
+          }
+        },
+        "budget_tenu": true,
+        "premier_contact": {
+          "threshold": 0.9304785818124832,
+          "photos": 12,
+          "known": 35,
+          "matched": 1,
+          "proposals": 9,
+          "unmatched": 8,
+          "false": 7,
+          "unresolved": 1,
+          "silent": 7,
+          "empty_with_points": 1
+        },
+        "surcout_ms_mediane": 5.943395500253246
+      },
+      "nouveau": {
+        "seuil": 2.0,
+        "operation": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          }
+        },
+        "enveloppe_seuil": 2.0,
+        "enveloppe": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          }
+        },
+        "couverture": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 10,
+            "proposals": 960,
+            "unmatched": 950,
+            "false": 760,
+            "unresolved": 190,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 8,
+            "proposals": 384,
+            "unmatched": 376,
+            "false": 187,
+            "unresolved": 189,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 10,
+            "proposals": 960,
+            "unmatched": 950,
+            "false": 760,
+            "unresolved": 190,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 0,
+              "unresolved": 189,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 2,
+              "proposals": 192,
+              "unmatched": 190,
+              "false": 189,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 5,
+              "proposals": 192,
+              "unmatched": 187,
+              "false": 187,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 0,
+              "unresolved": 189,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 2,
+              "proposals": 192,
+              "unmatched": 190,
+              "false": 189,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 5,
+              "proposals": 192,
+              "unmatched": 187,
+              "false": 187,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 384,
+            "unmatched": 384,
+            "false": 384,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 2
+          }
+        },
+        "budget_tenu": true,
+        "premier_contact": {
+          "threshold": 0.8031137585639954,
+          "photos": 5,
+          "known": 11,
+          "matched": 1,
+          "proposals": 14,
+          "unmatched": 13,
+          "false": 12,
+          "unresolved": 1,
+          "silent": 2,
+          "empty_with_points": 1
+        },
+        "surcout_ms_mediane": 6.1765039990859805
+      }
+    },
+    "O": {
+      "historique": {
+        "seuil": 2.0,
+        "operation": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 7,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          }
+        },
+        "enveloppe_seuil": 2.0,
+        "enveloppe": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 12,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 7,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          }
+        },
+        "couverture": {
+          "all": {
+            "photos": 12,
+            "known": 35,
+            "matched": 20,
+            "proposals": 2304,
+            "unmatched": 2284,
+            "false": 1901,
+            "unresolved": 383,
+            "silent": 0,
+            "empty_with_points": 3
+          },
+          "grouped": {
+            "photos": 3,
+            "known": 21,
+            "matched": 13,
+            "proposals": 576,
+            "unmatched": 563,
+            "false": 377,
+            "unresolved": 186,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 7,
+            "known": 24,
+            "matched": 11,
+            "proposals": 1344,
+            "unmatched": 1333,
+            "false": 953,
+            "unresolved": 380,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "per_group": {
+            "April L. Sanders": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Framsókn": {
+              "photos": 1,
+              "known": 7,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 186,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Iain Cuthbertson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "Ivan Radic": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "Staff Sgt. Brent Powell": {
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 0,
+              "unresolved": 191,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "TheNickster": {
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "TimWilson": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "Wesley Fryer": {
+              "photos": 1,
+              "known": 6,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "cobaltfish": {
+              "photos": 1,
+              "known": 9,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 0,
+              "unresolved": 186,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "gothick_matt": {
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "russellstreet": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "vastateparksstaff": {
+              "photos": 1,
+              "known": 5,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 191,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "3996564090",
+              "group": "Wesley Fryer",
+              "boards": [
+                "fryer"
+              ],
+              "flags": [
+                "worn",
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "929865",
+              "group": "Staff Sgt. Brent Powell",
+              "boards": [
+                "powell"
+              ],
+              "flags": [
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 0,
+              "unresolved": 191,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "6791193480",
+              "group": "russellstreet",
+              "boards": [
+                "russell"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "49398629148",
+              "group": "Ivan Radic",
+              "boards": [
+                "radic-avant",
+                "radic-arriere"
+              ],
+              "flags": [
+                "single",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "955488046",
+              "group": "gothick_matt",
+              "boards": [
+                "stand-955488046"
+              ],
+              "flags": [
+                "single"
+              ],
+              "photos": 1,
+              "known": 1,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "3771007694",
+              "group": "April L. Sanders",
+              "boards": [
+                "stand-3771007694"
+              ],
+              "flags": [
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 189,
+              "unresolved": 3,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "14347254046",
+              "group": "TheNickster",
+              "boards": [
+                "stand-14347254046"
+              ],
+              "flags": [
+                "multiple"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 189,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8549619981",
+              "group": "TimWilson",
+              "boards": [
+                "stand-8549619981"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "36377144413",
+              "group": "vastateparksstaff",
+              "boards": [
+                "stand-36377144413"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 5,
+              "matched": 1,
+              "proposals": 192,
+              "unmatched": 191,
+              "false": 191,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "2712546351",
+              "group": "cobaltfish",
+              "boards": [
+                "stand-2712546351"
+              ],
+              "flags": [
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 9,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 0,
+              "unresolved": 186,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "8468859144",
+              "group": "Framsókn",
+              "boards": [
+                "stand-8468859144"
+              ],
+              "flags": [
+                "grouped"
+              ],
+              "photos": 1,
+              "known": 7,
+              "matched": 6,
+              "proposals": 192,
+              "unmatched": 186,
+              "false": 186,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "67300452",
+              "group": "Iain Cuthbertson",
+              "boards": [
+                "stand-67300452"
+              ],
+              "flags": [
+                "empty"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            }
+          ],
+          "empty": {
+            "photos": 3,
+            "known": 0,
+            "matched": 0,
+            "proposals": 576,
+            "unmatched": 576,
+            "false": 576,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 3
+          }
+        },
+        "budget_tenu": true,
+        "premier_contact": {
+          "threshold": 0.722336725383067,
+          "photos": 12,
+          "known": 35,
+          "matched": 1,
+          "proposals": 63,
+          "unmatched": 62,
+          "false": 59,
+          "unresolved": 3,
+          "silent": 1,
+          "empty_with_points": 2
+        },
+        "surcout_ms_mediane": 0.3015635002157069
+      },
+      "nouveau": {
+        "seuil": 2.0,
+        "operation": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 5,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          }
+        },
+        "enveloppe_seuil": 0.8041637341721037,
+        "enveloppe": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 5,
+            "proposals": 6,
+            "unmatched": 1,
+            "false": 1,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 5,
+            "proposals": 6,
+            "unmatched": 1,
+            "false": 1,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 5,
+            "proposals": 6,
+            "unmatched": 1,
+            "false": 1,
+            "unresolved": 0,
+            "silent": 3,
+            "empty_with_points": 0
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 4,
+              "proposals": 5,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 1,
+              "proposals": 1,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 4,
+              "proposals": 5,
+              "unmatched": 1,
+              "false": 1,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 0,
+              "unmatched": 0,
+              "false": 0,
+              "unresolved": 0,
+              "silent": 1,
+              "empty_with_points": 0
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 2,
+            "empty_with_points": 0
+          }
+        },
+        "couverture": {
+          "all": {
+            "photos": 5,
+            "known": 11,
+            "matched": 10,
+            "proposals": 960,
+            "unmatched": 950,
+            "false": 760,
+            "unresolved": 190,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "grouped": {
+            "photos": 2,
+            "known": 9,
+            "matched": 8,
+            "proposals": 384,
+            "unmatched": 376,
+            "false": 187,
+            "unresolved": 189,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "worn": {
+            "photos": 5,
+            "known": 11,
+            "matched": 10,
+            "proposals": 960,
+            "unmatched": 950,
+            "false": 760,
+            "unresolved": 190,
+            "silent": 0,
+            "empty_with_points": 2
+          },
+          "per_group": {
+            "Tomi Backman": {
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 0,
+              "unresolved": 189,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "chb1848": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "maggiewilson177": {
+              "photos": 1,
+              "known": 2,
+              "matched": 2,
+              "proposals": 192,
+              "unmatched": 190,
+              "false": 189,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            "mikecogh": {
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            "ttillma8": {
+              "photos": 1,
+              "known": 6,
+              "matched": 5,
+              "proposals": 192,
+              "unmatched": 187,
+              "false": 187,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            }
+          },
+          "photos": [
+            {
+              "id": "20873987148",
+              "group": "Tomi Backman",
+              "boards": [
+                "20873987148-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 3,
+              "matched": 3,
+              "proposals": 192,
+              "unmatched": 189,
+              "false": 0,
+              "unresolved": 189,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "36258219964",
+              "group": "maggiewilson177",
+              "boards": [
+                "36258219964-1"
+              ],
+              "flags": [
+                "multiple",
+                "worn",
+                "occlusion"
+              ],
+              "photos": 1,
+              "known": 2,
+              "matched": 2,
+              "proposals": 192,
+              "unmatched": 190,
+              "false": 189,
+              "unresolved": 1,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "53151623584",
+              "group": "ttillma8",
+              "boards": [
+                "53151623584-1"
+              ],
+              "flags": [
+                "multiple",
+                "grouped",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 6,
+              "matched": 5,
+              "proposals": 192,
+              "unmatched": 187,
+              "false": 187,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 0
+            },
+            {
+              "id": "15503462606",
+              "group": "chb1848",
+              "boards": [
+                "15503462606-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            },
+            {
+              "id": "51590434805",
+              "group": "mikecogh",
+              "boards": [
+                "51590434805-1"
+              ],
+              "flags": [
+                "empty",
+                "worn"
+              ],
+              "photos": 1,
+              "known": 0,
+              "matched": 0,
+              "proposals": 192,
+              "unmatched": 192,
+              "false": 192,
+              "unresolved": 0,
+              "silent": 0,
+              "empty_with_points": 1
+            }
+          ],
+          "empty": {
+            "photos": 2,
+            "known": 0,
+            "matched": 0,
+            "proposals": 384,
+            "unmatched": 384,
+            "false": 384,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 2
+          }
+        },
+        "budget_tenu": true,
+        "premier_contact": {
+          "threshold": 0.9492084522014985,
+          "photos": 5,
+          "known": 11,
+          "matched": 1,
+          "proposals": 1,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 4,
+          "empty_with_points": 0
+        },
+        "surcout_ms_mediane": 0.46233700049924664
+      }
+    }
+  },
+  "tubes": {
+    "historique": {
+      "all": {
+        "axes": 40,
+        "aligned": 2,
+        "mask_hits": 354,
+        "samples": 840
+      },
+      "visible": {
+        "axes": 35,
+        "aligned": 2,
+        "mask_hits": 286,
+        "samples": 735
+      },
+      "occluded": {
+        "axes": 5,
+        "aligned": 0,
+        "mask_hits": 68,
+        "samples": 105
+      },
+      "grouped": {
+        "axes": 24,
+        "aligned": 0,
+        "mask_hits": 295,
+        "samples": 504
+      },
+      "detected": 52,
+      "ends_near_entry": 2,
+      "ends_near_opposite": 1,
+      "photos": 12
+    },
+    "nouveau": {
+      "all": {
+        "axes": 15,
+        "aligned": 0,
+        "mask_hits": 139,
+        "samples": 315
+      },
+      "visible": {
+        "axes": 11,
+        "aligned": 0,
+        "mask_hits": 76,
+        "samples": 231
+      },
+      "occluded": {
+        "axes": 4,
+        "aligned": 0,
+        "mask_hits": 63,
+        "samples": 84
+      },
+      "grouped": {
+        "axes": 12,
+        "aligned": 0,
+        "mask_hits": 139,
+        "samples": 252
+      },
+      "detected": 29,
+      "ends_near_entry": 0,
+      "ends_near_opposite": 2,
+      "photos": 5
+    }
+  }
+}
