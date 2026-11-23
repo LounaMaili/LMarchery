@@ -22,6 +22,7 @@ import com.lmarchery.feature.photo.EndPhotoScreen
 fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToHistory: () -> Unit = {}) {
     val state by controller.state.collectAsStateWithLifecycle()
     var photoEndUuid by rememberSaveable(state.saved?.uuid) { mutableStateOf<String?>(null) }
+    var groupingEndUuid by rememberSaveable(state.saved?.uuid) { mutableStateOf<String?>(null) }
     state.saved?.let { session ->
         val captured = session.ends.singleOrNull { it.uuid == photoEndUuid }
         if (captured != null) {
@@ -39,6 +40,11 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                 )
             }
             return
+        }
+    }
+    groupingEndUuid?.let { uuid ->
+        state.saved?.ends?.find { it.uuid == uuid }?.let { captured ->
+            EndGroupingSummaryDialog(EndGroupingSummarySource(captured.end, captured.configuration)) { groupingEndUuid = null }
         }
     }
     var leave by rememberSaveable { mutableStateOf(false) }
@@ -94,7 +100,8 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
     } }
     BackHandler(onBack = back)
     if (state.saved?.status == SessionStatus.IN_PROGRESS && state.form == null) {
-        ConfiguredRange(state, controller, back, { finishEpoch = state.epoch }, { photoEndUuid = it })
+        ConfiguredRange(state, controller, back, { finishEpoch = state.epoch },
+            openPhoto = { photoEndUuid = it }, openGrouping = { groupingEndUuid = it })
     } else {
         Scaffold(
             bottomBar = {
@@ -142,6 +149,9 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                         TextButton(controller::editMetadata, enabled = state.canForm) { Text("Modifier les métadonnées et le matériel") }
                     }
                     items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { captured ->
+                        TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                            Text("Bilan · volée ${captured.end.index}")
+                        }
                         ConfiguredEndCard(session, captured)
                         TextButton({ photoEndUuid = captured.uuid }, enabled = state.canNavigate) {
                             Text("Photo · volée ${captured.end.index}")

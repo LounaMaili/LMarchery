@@ -64,6 +64,9 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         return
     }
     var photoEndUuid by rememberSaveable(state.session?.uuid) { mutableStateOf<String?>(null) }
+    var groupingEndUuid by rememberSaveable(state.session?.uuid, state.configuredSaved?.uuid) {
+        mutableStateOf<String?>(null)
+    }
     val photoSession = state.session
     val photoEnd = photoSession?.ends?.singleOrNull { it.uuid == photoEndUuid }
     if (state.screen == SessionScreen.SESSION && photoSession != null && photoEnd != null) {
@@ -79,6 +82,17 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
             )
         }
         return
+    }
+    if (state.screen == SessionScreen.SESSION) groupingEndUuid?.let { uuid ->
+        val legacy = state.session?.let { session ->
+            session.ends.find { it.uuid == uuid }?.let { end ->
+                state.saved?.profiles?.singleOrNull()?.let { profile -> legacyGroupingSource(session, profile, end) }
+            }
+        }
+        val source = legacy ?: state.configuredSaved?.ends?.find { it.uuid == uuid }?.let {
+            EndGroupingSummarySource(it.end, it.configuration)
+        }
+        source?.let { EndGroupingSummaryDialog(it) { groupingEndUuid = null } }
     }
     var confirmLeave by rememberSaveable { mutableStateOf(false) }
     var cancellationLeaveToken by rememberSaveable { mutableStateOf<Long?>(null) }
@@ -225,6 +239,9 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             item(key = "configured-back") { TextButton(onClick = back, enabled = state.canNavigate) { Text("Retour aux séances") } }
                             if (configured.ends.isEmpty()) item(key = "configured-empty") { Text("Aucune volée enregistrée ; configuration initiale conservée.") }
                             items(configured.ends.sortedBy { it.end.index }, key = { "configured-${it.uuid}" }) { captured ->
+                                TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                                    Text("Bilan · volée ${captured.end.index}")
+                                }
                                 ConfiguredEndCard(configured, captured)
                             }
                         }
@@ -242,7 +259,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             item(key = "session-equipment") { SessionEquipmentPanel(state, controller) }
                             state.displayedEnd?.let { end -> item(key = "target") {
                                 Text("Volée ${end.index} · ${if (end.status == EndStatus.VALIDATED) "Validée · lecture seule" else "En saisie"} · ${end.activeImpacts.size}/${session.arrowCountPerEnd ?: "libre"} flèches", style = MaterialTheme.typography.titleMedium)
-                                TextButton({ photoEndUuid = end.uuid }, enabled = state.canNavigate) { Text("Photo du blason") }
+                                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    TextButton({ photoEndUuid = end.uuid }, enabled = state.canNavigate) { Text("Photo du blason") }
+                                    TextButton({ groupingEndUuid = end.uuid }, enabled = state.canNavigate) { Text("Bilan") }
+                                }
                                 val interaction = when {
                                     state.impactPicking != null -> TargetInteraction.SELECT_IMPACT
                                     state.impactDrag != null && state.canProposeReposition -> TargetInteraction.DRAG_IMPACT

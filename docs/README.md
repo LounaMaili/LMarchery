@@ -69,6 +69,11 @@ et [plan de consolidation vers main](plan-consolidation-main.md).
 | 48 | Annulation logique durable des impacts, Room 4 et archive V4 | [adr/048-annulation-logique-durable-impacts.md](adr/048-annulation-logique-durable-impacts.md) |
 | 49 | Presets de séance locaux | [adr/049-presets-de-seance-locaux.md](adr/049-presets-de-seance-locaux.md) |
 | 50 | Saisie manuelle assistée par photo | [adr/050-saisie-photo-manuelle.md](adr/050-saisie-photo-manuelle.md) |
+| 51 | Groupements et dispersion des impacts archivés | [adr/051-groupements-et-dispersion.md](adr/051-groupements-et-dispersion.md) |
+| 52 | Lieux favoris et lignes de tir | [adr/052-lieux-et-lignes-de-tir.md](adr/052-lieux-et-lignes-de-tir.md) |
+| 53 | Azimut de la ligne de tir et boussole | [adr/053-azimut-et-boussole.md](adr/053-azimut-et-boussole.md) |
+| 54 | Observations météo et composantes du vent | [adr/054-observations-meteo-et-vent.md](adr/054-observations-meteo-et-vent.md) |
+| 55 | Identité d’une flèche physique | [adr/055-fleches-physiques.md](adr/055-fleches-physiques.md) |
 
 Protocole SAF V3 reporté : [validation sans appareil / campagne future](validation-saf-v3-pr42.md).
 

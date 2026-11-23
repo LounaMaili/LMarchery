@@ -27,6 +27,7 @@ internal fun ConfiguredRange(
     back: () -> Unit,
     finish: () -> Unit,
     openPhoto: (String) -> Unit,
+    openGrouping: (String) -> Unit,
 ) {
     val session = requireNotNull(state.saved)
     val captured = state.selectedEnd
@@ -89,6 +90,12 @@ internal fun ConfiguredRange(
         text = {
             LazyColumn(Modifier.heightIn(max = 455.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 item {
+                    if (captured != null) {
+                        TextButton({
+                            showDetails = false
+                            openGrouping(captured.uuid)
+                        }, enabled = state.canNavigate) { Text("Bilan de la volée ${captured.end.index}") }
+                    }
                     ConfiguredSessionSummary(session, readOnly = false)
                     TextButton({ showDetails = false; controller.editMetadata() }, enabled = state.canForm) {
                         Text("Modifier les métadonnées et le matériel")
@@ -106,6 +113,10 @@ internal fun ConfiguredRange(
                         Modifier.fillMaxWidth(), enabled = state.canNavigate) {
                         Text("Voir la volée ${focus.end.index} · ${if (focus.end.status == EndStatus.VALIDATED) "validée" else "en saisie"}")
                     }
+                    if (focus.uuid != captured?.uuid) TextButton({
+                        showDetails = false
+                        openGrouping(focus.uuid)
+                    }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
                     ConfiguredEndCard(session, focus)
                     ImpactCancellationHistory(focus.end, focus.configuration.regulatoryEdition)
                 }
