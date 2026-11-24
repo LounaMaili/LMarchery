@@ -1,0 +1,952 @@
+[
+  {
+    "photo": "fl31990323",
+    "rang": 0,
+    "provenance": "bluepelican",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        80.6447574457992,
+        69.9001712953169
+      ],
+      [
+        200.84940456523077,
+        139.87314771201818
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "fl31990323",
+    "rang": 26,
+    "provenance": "bluepelican",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        165.38681030273438,
+        70.94502258300781
+      ],
+      [
+        209.70578002929688,
+        103.9305648803711
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "fl31990323",
+    "rang": 53,
+    "provenance": "bluepelican",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        474.5692510820825,
+        353.95629706736656
+      ],
+      [
+        505.9364385820825,
+        368.5095502411947
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "fl31990323",
+    "rang": 79,
+    "provenance": "bluepelican",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        597.54248046875,
+        57.09798812866211
+      ],
+      [
+        606.3102416992188,
+        30.853923797607422
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "fl31990323",
+    "rang": 106,
+    "provenance": "bluepelican",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        396.7548828125,
+        378.24078369140625
+      ],
+      [
+        399.2150573730469,
+        354.23052978515625
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "fl51204504370",
+    "rang": 0,
+    "provenance": "Moo.The.Cow",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        817.1786027105177,
+        200.87694053934476
+      ],
+      [
+        823.6774680397727,
+        573.6831942471591
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "fl51204504370",
+    "rang": 30,
+    "provenance": "Moo.The.Cow",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        835.7997159090909,
+        209.93281693892047
+      ],
+      [
+        837.4885475852273,
+        310.0270330255682
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "fl51204504370",
+    "rang": 60,
+    "provenance": "Moo.The.Cow",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        246.20432350852272,
+        399.0623668323864
+      ],
+      [
+        255.26697887073863,
+        348.4739435369318
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "fl51204504370",
+    "rang": 90,
+    "provenance": "Moo.The.Cow",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        429.17666903409093,
+        335.0281427556818
+      ],
+      [
+        447.8717595880682,
+        298.93033114346593
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "fl51204504370",
+    "rang": 121,
+    "provenance": "Moo.The.Cow",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        626.3996360085227,
+        488.21120383522725
+      ],
+      [
+        648.4798916903409,
+        461.15229936079544
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "rang": 0,
+    "provenance": "arrowcounting",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1207.0977135225464,
+        1.202886073588786
+      ],
+      [
+        1216.4716123362134,
+        523.7430734705704
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "rang": 16,
+    "provenance": "arrowcounting",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1291.7872314453125,
+        74.30538177490234
+      ],
+      [
+        1362.9313005354388,
+        5.479772189531289
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "rang": 33,
+    "provenance": "arrowcounting",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        191.732666015625,
+        683.851806640625
+      ],
+      [
+        204.9942626953125,
+        620.985107421875
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "rang": 49,
+    "provenance": "arrowcounting",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        587.22900390625,
+        504.9730224609375
+      ],
+      [
+        629.68896484375,
+        537.5252685546875
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "rang": 66,
+    "provenance": "arrowcounting",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        328.86138916015625,
+        258.0534362792969
+      ],
+      [
+        376.346435546875,
+        265.6469421386719
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "rang": 0,
+    "provenance": "Archery Scoring",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1.198129653930664,
+        1016.6371459960938
+      ],
+      [
+        336.2138366699219,
+        1061.5198974609375
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "rang": 44,
+    "provenance": "Archery Scoring",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        666.4428100585938,
+        100.84811401367188
+      ],
+      [
+        744.330322265625,
+        173.1246337890625
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "rang": 88,
+    "provenance": "Archery Scoring",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        770.943359375,
+        910.7614135742188
+      ],
+      [
+        846.1385498046875,
+        863.5724487304688
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "rang": 132,
+    "provenance": "Archery Scoring",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        932.58740234375,
+        1092.4376220703125
+      ],
+      [
+        992.262451171875,
+        1039.57080078125
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "rang": 177,
+    "provenance": "Archery Scoring",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        776.31591796875,
+        386.2371520996094
+      ],
+      [
+        789.3690185546875,
+        453.1414794921875
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc107063652",
+    "rang": 0,
+    "provenance": "Jim Barton",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        320.22471049899906,
+        127.33984017963746
+      ],
+      [
+        641.471509606643,
+        140.63349856855004
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc107063652",
+    "rang": 34,
+    "provenance": "Jim Barton",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        406.48176019841975,
+        175.4514525581327
+      ],
+      [
+        464.0166542746804,
+        185.59677516953627
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc107063652",
+    "rang": 68,
+    "provenance": "Jim Barton",
+    "partition": "dev_indep",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        145.91757239945352,
+        238.62893270613222
+      ],
+      [
+        190.09544271639243,
+        244.68702985785984
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc107063652",
+    "rang": 102,
+    "provenance": "Jim Barton",
+    "partition": "dev_indep",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        665.7900267368497,
+        157.38716202264936
+      ],
+      [
+        700.7692738031254,
+        161.60429023111743
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc107063652",
+    "rang": 137,
+    "provenance": "Jim Barton",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        280.5911671031605,
+        132.48381700638538
+      ],
+      [
+        309.11032936789775,
+        135.80099228625645
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc11001401",
+    "rang": 0,
+    "provenance": "4028mdk09",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        795.5009155273438,
+        527.2695922851562
+      ],
+      [
+        1030.1340906392638,
+        1274.9521542192836
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc11001401",
+    "rang": 16,
+    "provenance": "4028mdk09",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        915.4044002863637,
+        613.1499520247983
+      ],
+      [
+        953.0051879882812,
+        716.5209350585938
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc11001401",
+    "rang": 32,
+    "provenance": "4028mdk09",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        925.8861871601526,
+        769.6031319107959
+      ],
+      [
+        989.7632119565282,
+        728.908398970627
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc11001401",
+    "rang": 48,
+    "provenance": "4028mdk09",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        568.5440673828125,
+        532.2501220703125
+      ],
+      [
+        623.8740844726562,
+        524.65380859375
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc11001401",
+    "rang": 64,
+    "provenance": "4028mdk09",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        395.1063232421875,
+        715.3656616210938
+      ],
+      [
+        424.4787292480469,
+        677.38037109375
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130798782",
+    "rang": 0,
+    "provenance": "N Chadwick",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        315.5071721014776,
+        274.2829331121029
+      ],
+      [
+        441.94189453125,
+        283.45257568359375
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130798782",
+    "rang": 13,
+    "provenance": "N Chadwick",
+    "partition": "dev_indep",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        471.9673542344933,
+        117.77696181941191
+      ],
+      [
+        479.0327633431159,
+        66.09083608224304
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130798782",
+    "rang": 26,
+    "provenance": "N Chadwick",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        432.85174560546875,
+        39.449485778808594
+      ],
+      [
+        435.8258056640625,
+        0.4496675133705139
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130798782",
+    "rang": 39,
+    "provenance": "N Chadwick",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        427.7410888671875,
+        123.21966552734375
+      ],
+      [
+        430.9054870605469,
+        94.26902770996094
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130798782",
+    "rang": 53,
+    "provenance": "N Chadwick",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        314.89471435546875,
+        239.4600830078125
+      ],
+      [
+        318.81158447265625,
+        215.53277587890625
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc156353437",
+    "rang": 0,
+    "provenance": "Alan Hughes",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        1223.4176224060907,
+        661.2813655988723
+      ],
+      [
+        1226.8822566101642,
+        976.2430282483258
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc156353437",
+    "rang": 10,
+    "provenance": "Alan Hughes",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        984.5501207500707,
+        879.954709074394
+      ],
+      [
+        1183.2591222984008,
+        918.5214749678685
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc156353437",
+    "rang": 21,
+    "provenance": "Alan Hughes",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        649.3768003723723,
+        473.9921410141282
+      ],
+      [
+        652.5543280307562,
+        383.62006081959333
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc156353437",
+    "rang": 31,
+    "provenance": "Alan Hughes",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1166.79296875,
+        836.3513793945312
+      ],
+      [
+        1168.543212890625,
+        783.826416015625
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc156353437",
+    "rang": 42,
+    "provenance": "Alan Hughes",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1148.7642822265625,
+        883.6724853515625
+      ],
+      [
+        1196.4913330078125,
+        892.4358520507812
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc16492853",
+    "rang": 0,
+    "provenance": "Ozizo",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        393.9674072265625,
+        397.7471618652344
+      ],
+      [
+        726.35595703125,
+        349.4796447753906
+      ]
+    ],
+    "lecture": "tube",
+    "statut": "tube"
+  },
+  {
+    "photo": "wc16492853",
+    "rang": 22,
+    "provenance": "Ozizo",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        298.963623046875,
+        526.2319946289062
+      ],
+      [
+        306.9631652832031,
+        621.18994140625
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc16492853",
+    "rang": 44,
+    "provenance": "Ozizo",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        233.17227172851562,
+        657.4954833984375
+      ],
+      [
+        262.956787109375,
+        731.0944213867188
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc16492853",
+    "rang": 66,
+    "provenance": "Ozizo",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        386.6513671875,
+        581.1051025390625
+      ],
+      [
+        391.14178466796875,
+        516.0698852539062
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc16492853",
+    "rang": 89,
+    "provenance": "Ozizo",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1362.764404296875,
+        148.07228088378906
+      ],
+      [
+        1382.8795166015625,
+        193.020751953125
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc82322984-t22",
+    "rang": 0,
+    "provenance": "Voltmetro",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1290.4625244140625,
+        608.1769409179688
+      ],
+      [
+        1374.1703630356094,
+        127.9571183326741
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc82322984-t22",
+    "rang": 37,
+    "provenance": "Voltmetro",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        934.998046875,
+        358.488037109375
+      ],
+      [
+        957.4910888671875,
+        250.98658752441406
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc82322984-t22",
+    "rang": 74,
+    "provenance": "Voltmetro",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        936.3306274414062,
+        581.2158203125
+      ],
+      [
+        965.1786499023438,
+        649.20458984375
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc82322984-t22",
+    "rang": 111,
+    "provenance": "Voltmetro",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        493.1987609863281,
+        223.4467010498047
+      ],
+      [
+        520.7064208984375,
+        173.45094299316406
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc82322984-t22",
+    "rang": 148,
+    "provenance": "Voltmetro",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1255.4244384765625,
+        483.38360595703125
+      ],
+      [
+        1274.9891357421875,
+        439.2999267578125
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  }
+]

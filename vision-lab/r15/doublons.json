@@ -1,0 +1,294 @@
+{
+  "seuil_dhash": 4,
+  "bits": 64,
+  "acquisitions_R14": 185,
+  "fichiers_par_catalogue": {
+    "R14": 185,
+    "rf-empty": 12,
+    "rf-key": 12,
+    "commons": 29,
+    "flickr": 41,
+    "shotplot": 4,
+    "video": 1
+  },
+  "comparaisons": [
+    {
+      "catalogues": "R14 × commons",
+      "paires": 5365,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "R14 × flickr",
+      "paires": 7585,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "R14 × rf-empty",
+      "paires": 2220,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "R14 × rf-key",
+      "paires": 2220,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "R14 × shotplot",
+      "paires": 740,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "R14 × video",
+      "paires": 185,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "commons × commons",
+      "paires": 406,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "commons × flickr",
+      "paires": 1189,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "commons × rf-empty",
+      "paires": 348,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "commons × rf-key",
+      "paires": 348,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "commons × shotplot",
+      "paires": 116,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "commons × video",
+      "paires": 29,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "flickr × flickr",
+      "paires": 820,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "flickr × rf-empty",
+      "paires": 492,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "flickr × rf-key",
+      "paires": 492,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "flickr × shotplot",
+      "paires": 164,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "flickr × video",
+      "paires": 41,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "rf-empty × rf-empty",
+      "paires": 66,
+      "sha256_identiques": 0,
+      "dhash_alerte": 3
+    },
+    {
+      "catalogues": "rf-empty × rf-key",
+      "paires": 144,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "rf-empty × shotplot",
+      "paires": 48,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "rf-empty × video",
+      "paires": 12,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "rf-key × rf-key",
+      "paires": 66,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "rf-key × shotplot",
+      "paires": 48,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "rf-key × video",
+      "paires": 12,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "shotplot × shotplot",
+      "paires": 6,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    },
+    {
+      "catalogues": "shotplot × video",
+      "paires": 4,
+      "sha256_identiques": 0,
+      "dhash_alerte": 0
+    }
+  ],
+  "proches_par_admission": [
+    {
+      "photo": "fl31990323",
+      "population": "R14",
+      "distance": 21,
+      "voisin": "37-00"
+    },
+    {
+      "photo": "fl31990323",
+      "population": "autres_admissions",
+      "distance": 29,
+      "voisin": "wc82322984-t22"
+    },
+    {
+      "photo": "fl51204504370",
+      "population": "R14",
+      "distance": 22,
+      "voisin": "67300452"
+    },
+    {
+      "photo": "fl51204504370",
+      "population": "autres_admissions",
+      "distance": 26,
+      "voisin": "wc11001401"
+    },
+    {
+      "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "population": "R14",
+      "distance": 17,
+      "voisin": "8468859144"
+    },
+    {
+      "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "population": "autres_admissions",
+      "distance": 26,
+      "voisin": "rf-key-0ijARYt7fTFFlaDVSrdA"
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "population": "R14",
+      "distance": 25,
+      "voisin": "20873987148"
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "population": "autres_admissions",
+      "distance": 26,
+      "voisin": "rf-empty-0pHGx6yITFtGgR4Uen1L"
+    },
+    {
+      "photo": "wc107063652",
+      "population": "R14",
+      "distance": 21,
+      "voisin": "4592998057"
+    },
+    {
+      "photo": "wc107063652",
+      "population": "autres_admissions",
+      "distance": 25,
+      "voisin": "wc156353437"
+    },
+    {
+      "photo": "wc11001401",
+      "population": "R14",
+      "distance": 23,
+      "voisin": "5115614018"
+    },
+    {
+      "photo": "wc11001401",
+      "population": "autres_admissions",
+      "distance": 26,
+      "voisin": "fl51204504370"
+    },
+    {
+      "photo": "wc130798782",
+      "population": "R14",
+      "distance": 22,
+      "voisin": "15503462606"
+    },
+    {
+      "photo": "wc130798782",
+      "population": "autres_admissions",
+      "distance": 29,
+      "voisin": "rf-key-0ijARYt7fTFFlaDVSrdA"
+    },
+    {
+      "photo": "wc156353437",
+      "population": "R14",
+      "distance": 22,
+      "voisin": "67300452"
+    },
+    {
+      "photo": "wc156353437",
+      "population": "autres_admissions",
+      "distance": 25,
+      "voisin": "wc107063652"
+    },
+    {
+      "photo": "wc16492853",
+      "population": "R14",
+      "distance": 19,
+      "voisin": "24-00"
+    },
+    {
+      "photo": "wc16492853",
+      "population": "autres_admissions",
+      "distance": 26,
+      "voisin": "wc82322984-t22"
+    },
+    {
+      "photo": "wc82322984-t22",
+      "population": "R14",
+      "distance": 20,
+      "voisin": "37348131162"
+    },
+    {
+      "photo": "wc82322984-t22",
+      "population": "autres_admissions",
+      "distance": 26,
+      "voisin": "wc16492853"
+    }
+  ]
+}

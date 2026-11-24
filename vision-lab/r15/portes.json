@@ -1,0 +1,98 @@
+{
+  "partitions": {
+    "train": {
+      "criteres": {
+        "provenances_occupees": {
+          "observe": 9,
+          "minimum": 6,
+          "manque": 0
+        },
+        "entrees_distinctes": {
+          "observe": 143,
+          "minimum": 30,
+          "manque": 0
+        },
+        "axes_traces_distincts": {
+          "observe": 41,
+          "minimum": 30,
+          "manque": 0
+        },
+        "groupes": {
+          "observe": 7,
+          "minimum": 2,
+          "manque": 0
+        },
+        "supports_vides_uses": {
+          "observe": 4,
+          "minimum": 2,
+          "manque": 0
+        },
+        "segments_negatifs": {
+          "observe": 45,
+          "minimum": 30,
+          "manque": 0
+        },
+        "acquisitions_negatives": {
+          "observe": 11,
+          "minimum": 6,
+          "manque": 0
+        },
+        "occupees_avec_negatifs": {
+          "observe": 7,
+          "minimum": 3,
+          "manque": 0
+        }
+      },
+      "diversite_negatifs": true,
+      "admissible": true
+    },
+    "dev_indep": {
+      "criteres": {
+        "provenances_occupees": {
+          "observe": 7,
+          "minimum": 4,
+          "manque": 0
+        },
+        "entrees_distinctes": {
+          "observe": 18,
+          "minimum": 12,
+          "manque": 0
+        },
+        "axes_traces_distincts": {
+          "observe": 24,
+          "minimum": 12,
+          "manque": 0
+        },
+        "groupes": {
+          "observe": 4,
+          "minimum": 2,
+          "manque": 0
+        },
+        "supports_vides_uses": {
+          "observe": 2,
+          "minimum": 2,
+          "manque": 0
+        },
+        "segments_negatifs": {
+          "observe": 51,
+          "minimum": 12,
+          "manque": 0
+        },
+        "acquisitions_negatives": {
+          "observe": 11,
+          "minimum": 4,
+          "manque": 0
+        },
+        "occupees_avec_negatifs": {
+          "observe": 7,
+          "minimum": 2,
+          "manque": 0
+        }
+      },
+      "diversite_negatifs": true,
+      "admissible": true
+    }
+  },
+  "deux_portes_franchies": true,
+  "entrainement_execute": false
+}

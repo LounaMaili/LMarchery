@@ -1,0 +1,1198 @@
+{
+  "date": "2026-11-24",
+  "lecteur": "lecture visuelle assistée R15, sans adjudication humaine indépendante",
+  "repere": "pixels orientés de travail, grand côté au plus 1408, x droite y bas; précision de lecture indicative, en pixels de travail",
+  "photos": [
+    {
+      "id": "fl31990323",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "bluepelican",
+      "supports": [
+        "Ahane–Murroe / bloc à face tressée"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "taille": [
+        640,
+        480
+      ],
+      "sha256_pixels": "c9efe6f8a73716ae5db8356d35e0e7d4bf3b5ca4d6945b634086ee45516913c8",
+      "complet": false,
+      "regions_ignorees": [
+        [
+          [
+            300,
+            258
+          ],
+          [
+            438,
+            351
+          ]
+        ],
+        [
+          [
+            0,
+            85
+          ],
+          [
+            223,
+            183
+          ]
+        ]
+      ],
+      "tubes": [
+        {
+          "instance": "fl31990323:1",
+          "axe": [
+            [
+              466,
+              286
+            ],
+            [
+              184,
+              130
+            ]
+          ],
+          "bouts_trace": [
+            [
+              466,
+              286
+            ],
+            [
+              184,
+              130
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            466,
+            286
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 4,
+          "observation": "Fût bois clair supérieur dont le bout disparaît dans la matière."
+        },
+        {
+          "instance": "fl31990323:2",
+          "axe": [
+            [
+              467,
+              320
+            ],
+            [
+              295,
+              264
+            ]
+          ],
+          "bouts_trace": [
+            [
+              467,
+              320
+            ],
+            [
+              295,
+              264
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            467,
+            320
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 4,
+          "observation": "Partie claire inférieure individualisable près du papier."
+        },
+        {
+          "instance": "fl31990323:3",
+          "axe": [
+            [
+              305,
+              239
+            ],
+            [
+              170,
+              204
+            ]
+          ],
+          "bouts_trace": [
+            [
+              305,
+              239
+            ],
+            [
+              170,
+              204
+            ]
+          ],
+          "masque_source": false,
+          "entree": null,
+          "contact_visible": false,
+          "statut": "ambigu_ou_occulte",
+          "precision_lecture_px": null,
+          "observation": "Fût violet; jonction perdue parmi les autres."
+        },
+        {
+          "instance": "fl31990323:4",
+          "axe": [
+            [
+              335,
+              226
+            ],
+            [
+              231,
+              165
+            ]
+          ],
+          "bouts_trace": [
+            [
+              335,
+              226
+            ],
+            [
+              231,
+              165
+            ]
+          ],
+          "masque_source": false,
+          "entree": null,
+          "contact_visible": false,
+          "statut": "ambigu_ou_occulte",
+          "precision_lecture_px": null,
+          "observation": "Partie centrale visible, prolongement vers la face ambigu."
+        },
+        {
+          "instance": "fl31990323:5",
+          "axe": [
+            [
+              277,
+              337
+            ],
+            [
+              120,
+              310
+            ]
+          ],
+          "bouts_trace": [
+            [
+              277,
+              337
+            ],
+            [
+              120,
+              310
+            ]
+          ],
+          "masque_source": false,
+          "entree": null,
+          "contact_visible": false,
+          "statut": "ambigu_ou_occulte",
+          "precision_lecture_px": null,
+          "observation": "Partie claire au premier plan, extrémité masquée à la jonction des empennages."
+        }
+      ],
+      "observation": "La légende du photographe confirme que les flèches sont dans la cible. Faisceau très superposé. Deux aboutissements clairs au bord de la pièce tressée, les autres bouts dans la bande sombre restent partiels. La vue Jan1 de la même séance a été écartée.",
+      "source": {
+        "catalogue": "flickr",
+        "url": "https://www.flickr.com/photos/37854512@N00/31990323",
+        "notice_licence": "https://www.flickr.com/photos/37854512@N00/31990323",
+        "credit": "bluepelican",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://live.staticflickr.com/21/31990323_50de6446ce_z.jpg",
+        "sha256_source": "c9efe6f8a73716ae5db8356d35e0e7d4bf3b5ca4d6945b634086ee45516913c8",
+        "octets_source": 88816,
+        "dimensions_orientees": [
+          640,
+          480
+        ],
+        "type_fichier_source": "Copie JPEG mise à disposition par le photographe sur Flickr",
+        "fichier_travail": "fl31990323.jpg"
+      },
+      "partition": "train",
+      "strate_affectation": "occupee",
+      "rang_affectation": 5
+    },
+    {
+      "id": "fl51204504370",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "Moo.The.Cow",
+      "supports": [
+        "salle / deux faces verticales, bloc blanc"
+      ],
+      "conditions": [],
+      "taille": [
+        1024,
+        768
+      ],
+      "sha256_pixels": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+      "complet": false,
+      "regions_ignorees": [
+        [
+          [
+            378,
+            445
+          ],
+          [
+            420,
+            665
+          ]
+        ]
+      ],
+      "tubes": [
+        {
+          "instance": "fl51204504370:1",
+          "axe": [
+            [
+              562,
+              379
+            ],
+            [
+              390,
+              381
+            ]
+          ],
+          "bouts_trace": [
+            [
+              562,
+              379
+            ],
+            [
+              390,
+              381
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            562,
+            379
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 2,
+          "observation": "Jonction tube–support visible."
+        }
+      ],
+      "observation": "Une flèche horizontale est fichée dans le jaune de droite. Les objets verticaux au premier plan, devant la personne, sont ignorés pour la supervision.",
+      "source": {
+        "catalogue": "flickr",
+        "url": "https://www.flickr.com/photos/michael-kwok/51204504370",
+        "notice_licence": "https://www.flickr.com/photos/michael-kwok/51204504370",
+        "credit": "Moo.The.Cow",
+        "licence_image": "https://creativecommons.org/licenses/by/2.0/",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://live.staticflickr.com/65535/51204504370_9ef5351138_b.jpg",
+        "sha256_source": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+        "octets_source": 161356,
+        "dimensions_orientees": [
+          1024,
+          768
+        ],
+        "type_fichier_source": "Copie JPEG mise à disposition par le photographe sur Flickr",
+        "fichier_travail": "fl51204504370.jpg"
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "occupee",
+      "rang_affectation": 6
+    },
+    {
+      "id": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "arrowcounting",
+      "supports": [
+        "feuille sur tapis sombre / série arrowcounting"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "taille": [
+        1408,
+        792
+      ],
+      "sha256_pixels": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "complet": true,
+      "regions_ignorees": [],
+      "tubes": [],
+      "observation": "Quatre coins et pourtour de la feuille visibles, centre jaune troué et petits arrachements sur les anneaux. Cordons en bord du tapis. Deux vues 0_empty de la série regroupées.",
+      "source": {
+        "catalogue": "rf-empty",
+        "url": "https://universe.roboflow.com/arrowcounting/arrow_counting/images/0pHGx6yITFtGgR4Uen1L",
+        "notice_licence": "https://universe.roboflow.com/arrowcounting/arrow_counting",
+        "credit": "arrowcounting",
+        "licence_image": "https://creativecommons.org/licenses/by/4.0/",
+        "licence_ann_source": "https://creativecommons.org/licenses/by/4.0/",
+        "annotation": "Classe 0_empty vérifiée sur toute la feuille",
+        "url_octets": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0pHGx6yITFtGgR4Uen1L/original.jpg",
+        "sha256_source": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+        "octets_source": 2840566,
+        "dimensions_orientees": [
+          1920,
+          1080
+        ],
+        "type_fichier_source": "Fichier source de la plateforme; génération antérieure inconnue",
+        "fichier_travail": "rf-empty-0pHGx6yITFtGgR4Uen1L.jpg"
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "vide_use",
+      "rang_affectation": 1
+    },
+    {
+      "id": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "Archery Scoring",
+      "supports": [
+        "papier concentrique sur chevalet bois / série Samsung"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "taille": [
+        1056,
+        1408
+      ],
+      "sha256_pixels": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "complet": false,
+      "regions_ignorees": [],
+      "tubes": [
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:1",
+          "axe": [
+            [
+              370,
+              386
+            ],
+            [
+              20,
+              997
+            ]
+          ],
+          "bouts_trace": [
+            [
+              370,
+              386
+            ],
+            [
+              20,
+              997
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            370,
+            386
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:2",
+          "axe": [
+            [
+              537,
+              503
+            ],
+            [
+              319,
+              1168
+            ]
+          ],
+          "bouts_trace": [
+            [
+              537,
+              503
+            ],
+            [
+              319,
+              1168
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            537,
+            503
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:3",
+          "axe": [
+            [
+              694,
+              423
+            ],
+            [
+              654,
+              987
+            ]
+          ],
+          "bouts_trace": [
+            [
+              694,
+              423
+            ],
+            [
+              654,
+              987
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            694,
+            423
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:4",
+          "axe": [
+            [
+              732,
+              455
+            ],
+            [
+              688,
+              966
+            ]
+          ],
+          "bouts_trace": [
+            [
+              732,
+              455
+            ],
+            [
+              688,
+              966
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            732,
+            455
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+          "axe": [
+            [
+              755,
+              531
+            ],
+            [
+              749,
+              602
+            ]
+          ],
+          "bouts_trace": [
+            [
+              755,
+              531
+            ],
+            [
+              749,
+              602
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            755,
+            531
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 4,
+          "observation": "Contour supérieur droit au chiffre 5. Trait court arrêté avant superposition."
+        },
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:6",
+          "axe": [
+            [
+              753,
+              610
+            ],
+            [
+              741,
+              877
+            ]
+          ],
+          "bouts_trace": [
+            [
+              753,
+              610
+            ],
+            [
+              741,
+              877
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            753,
+            610
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 5,
+          "observation": "Second liseré à droite du premier tube, avec deuxième marque de jonction et empennage distinct."
+        }
+      ],
+      "observation": "Six tubes, dont deux presque alignés sur le chiffre 5. Les six paires de points du calque de 150 × 200 sont relues sur le JPEG 3024 × 4032 orienté. Le haut et le côté de la feuille sont coupés. Les coordonnées d’entrée sont relues sur les jonctions, les deux derniers traits sont limités aux portions discernables.",
+      "source": {
+        "catalogue": "rf-key",
+        "url": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints/images/0ijARYt7fTFFlaDVSrdA",
+        "notice_licence": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints",
+        "credit": "Archery Scoring",
+        "licence_image": "https://creativecommons.org/licenses/by/4.0/",
+        "licence_ann_source": "https://creativecommons.org/licenses/by/4.0/",
+        "annotation": "Points/tracés du calque source vérifiés et précisés sur les pixels",
+        "url_octets": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0ijARYt7fTFFlaDVSrdA/original.jpg",
+        "sha256_source": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+        "octets_source": 2972520,
+        "dimensions_orientees": [
+          3024,
+          4032
+        ],
+        "type_fichier_source": "Original photographique fourni par le compte, EXIF et résolution native concordants",
+        "fichier_travail": "rf-key-0ijARYt7fTFFlaDVSrdA.jpg"
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "occupee",
+      "rang_affectation": 1
+    },
+    {
+      "id": "wc107063652",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "Jim Barton",
+      "supports": [
+        "Hogg Park / toile sur panneaux de mousse"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "taille": [
+        800,
+        530
+      ],
+      "sha256_pixels": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+      "complet": true,
+      "regions_ignorees": [],
+      "tubes": [],
+      "observation": "Silhouette imprimée sur toile. Perforations et déchirures dans le flanc brun et au-dessus du dos, visibles sur le fichier entier. Aucun tube. La toile effilochée en bas n’est pas la seule preuve d’usure.",
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_target,_Hogg_Park_-_geograph.org.uk_-_2248040.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_target,_Hogg_Park_-_geograph.org.uk_-_2248040.jpg",
+        "credit": "Jim Barton",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/2.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Archery_target%2C_Hogg_Park_-_geograph.org.uk_-_2248040.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+        "octets_source": 213398,
+        "dimensions_orientees": [
+          800,
+          530
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc107063652.jpg"
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "vide_use",
+      "rang_affectation": 2
+    },
+    {
+      "id": "wc11001401",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "4028mdk09",
+      "supports": [
+        "chevalet de paille / Bade-Wurtemberg"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "taille": [
+        1056,
+        1408
+      ],
+      "sha256_pixels": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "complet": true,
+      "regions_ignorees": [],
+      "tubes": [
+        {
+          "instance": "wc11001401:1",
+          "axe": [
+            [
+              399,
+              606
+            ],
+            [
+              140,
+              582
+            ]
+          ],
+          "bouts_trace": [
+            [
+              399,
+              606
+            ],
+            [
+              140,
+              582
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            399,
+            606
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc11001401:2",
+          "axe": [
+            [
+              381,
+              643
+            ],
+            [
+              132,
+              629
+            ]
+          ],
+          "bouts_trace": [
+            [
+              381,
+              643
+            ],
+            [
+              132,
+              629
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            381,
+            643
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc11001401:3",
+          "axe": [
+            [
+              377,
+              657
+            ],
+            [
+              136,
+              639
+            ]
+          ],
+          "bouts_trace": [
+            [
+              377,
+              657
+            ],
+            [
+              136,
+              639
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            377,
+            657
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc11001401:4",
+          "axe": [
+            [
+              385,
+              675
+            ],
+            [
+              150,
+              654
+            ]
+          ],
+          "bouts_trace": [
+            [
+              385,
+              675
+            ],
+            [
+              150,
+              654
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            385,
+            675
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc11001401:5",
+          "axe": [
+            [
+              394,
+              698
+            ],
+            [
+              147,
+              673
+            ]
+          ],
+          "bouts_trace": [
+            [
+              394,
+              698
+            ],
+            [
+              147,
+              673
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            394,
+            698
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        }
+      ],
+      "observation": "Cinq fûts noirs à empennage orange devant un unique blason entier. Les cinq jonctions sont séparables et des perforations antérieures entourent le jaune.",
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_shooting_at_a_WA_target_in_Northern_Baden,_Wuerttemberg,_Germany.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_shooting_at_a_WA_target_in_Northern_Baden,_Wuerttemberg,_Germany.jpg",
+        "credit": "4028mdk09",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/3.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Archery_shooting_at_a_WA_target_in_Northern_Baden%2C_Wuerttemberg%2C_Germany.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+        "octets_source": 4316454,
+        "dimensions_orientees": [
+          2736,
+          3648
+        ],
+        "type_fichier_source": "Original photographique fourni par le compte, EXIF et résolution native concordants",
+        "fichier_travail": "wc11001401.jpg"
+      },
+      "partition": "train",
+      "strate_affectation": "occupee",
+      "rang_affectation": 3
+    },
+    {
+      "id": "wc130798782",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "N Chadwick",
+      "supports": [
+        "Geograph 4645584 / quatre feuilles sous bois"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "taille": [
+        640,
+        426
+      ],
+      "sha256_pixels": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+      "complet": true,
+      "regions_ignorees": [],
+      "tubes": [],
+      "observation": "Quatre feuilles entières côte à côte et aucune tige visible. La définition ne permet pas de certifier l’usure. Un seul groupe physique et une seule photo.",
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_4645584.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_4645584.jpg",
+        "credit": "N Chadwick",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/2.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/4/47/Archery_targets_-_geograph.org.uk_-_4645584.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+        "octets_source": 103991,
+        "dimensions_orientees": [
+          640,
+          426
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc130798782.jpg"
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "autre_vide",
+      "rang_affectation": 1
+    },
+    {
+      "id": "wc156353437",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "Alan Hughes",
+      "supports": [
+        "Geograph 7043212 / deux chevalets devant filet"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "taille": [
+        1408,
+        1056
+      ],
+      "sha256_pixels": "5fcfe8947cdfdeec616bf3c9c8b1c187c60b88fc2ae7fd6ab40e789529f6dd1b",
+      "complet": true,
+      "regions_ignorees": [],
+      "tubes": [],
+      "observation": "Les deux feuilles sont visibles en entier. Sur celle de droite, série de perforations et lèvres de papier dans le jaune, le rouge et le bleu à droite. Aucun tube. Les deux chevalets comptent comme une acquisition.",
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_7043212.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_7043212.jpg",
+        "credit": "Alan Hughes",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/2.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Archery_targets_-_geograph.org.uk_-_7043212.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "5fcfe8947cdfdeec616bf3c9c8b1c187c60b88fc2ae7fd6ab40e789529f6dd1b",
+        "octets_source": 1804547,
+        "dimensions_orientees": [
+          2048,
+          1536
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc156353437.jpg"
+      },
+      "partition": "train",
+      "strate_affectation": "vide_use",
+      "rang_affectation": 3
+    },
+    {
+      "id": "wc16492853",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "Ozizo",
+      "supports": [
+        "deux mato / butte de terre"
+      ],
+      "conditions": [],
+      "taille": [
+        1408,
+        1056
+      ],
+      "sha256_pixels": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+      "complet": false,
+      "regions_ignorees": [
+        [
+          [
+            0,
+            200
+          ],
+          [
+            1407,
+            455
+          ]
+        ],
+        [
+          [
+            1130,
+            295
+          ],
+          [
+            1407,
+            506
+          ]
+        ]
+      ],
+      "tubes": [
+        {
+          "instance": "wc16492853:1",
+          "axe": [
+            [
+              439,
+              666
+            ],
+            [
+              1215,
+              548
+            ]
+          ],
+          "bouts_trace": [
+            [
+              439,
+              666
+            ],
+            [
+              1215,
+              548
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            439,
+            666
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 4,
+          "observation": "Jonction tube–support visible."
+        }
+      ],
+      "observation": "Un long tube entre dans le quadrant inférieur droit du mato de gauche. Plusieurs traits passent derrière ou au-dessus des supports. Leurs contacts avec un mato sont indéterminés.",
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Target_of_Kyudo.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Target_of_Kyudo.jpg",
+        "credit": "Ozizo",
+        "licence_image": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/2/23/Target_of_Kyudo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+        "octets_source": 479911,
+        "dimensions_orientees": [
+          2016,
+          1512
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc16492853.jpg"
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "occupee",
+      "rang_affectation": 4
+    },
+    {
+      "id": "wc82322984-t22",
+      "etapes": [
+        "R15"
+      ],
+      "provenance": "Voltmetro",
+      "supports": [
+        "Moscou 2019 / deux faces compound"
+      ],
+      "conditions": [
+        "grouped"
+      ],
+      "taille": [
+        1408,
+        792
+      ],
+      "sha256_pixels": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "complet": false,
+      "regions_ignorees": [],
+      "tubes": [
+        {
+          "instance": "wc82322984-t22:1",
+          "axe": [
+            [
+              638,
+              311
+            ],
+            [
+              43,
+              299
+            ]
+          ],
+          "bouts_trace": [
+            [
+              638,
+              311
+            ],
+            [
+              43,
+              299
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            638,
+            311
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc82322984-t22:2",
+          "axe": [
+            [
+              605,
+              331
+            ],
+            [
+              99,
+              333
+            ]
+          ],
+          "bouts_trace": [
+            [
+              605,
+              331
+            ],
+            [
+              99,
+              333
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            605,
+            331
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc82322984-t22:3",
+          "axe": [
+            [
+              1118,
+              377
+            ],
+            [
+              583,
+              349
+            ]
+          ],
+          "bouts_trace": [
+            [
+              1118,
+              377
+            ],
+            [
+              583,
+              349
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            1118,
+            377
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        },
+        {
+          "instance": "wc82322984-t22:4",
+          "axe": [
+            [
+              1159,
+              410
+            ],
+            [
+              612,
+              387
+            ]
+          ],
+          "bouts_trace": [
+            [
+              1159,
+              410
+            ],
+            [
+              612,
+              387
+            ]
+          ],
+          "masque_source": false,
+          "entree": [
+            1159,
+            410
+          ],
+          "contact_visible": true,
+          "statut": "visible",
+          "precision_lecture_px": 3,
+          "observation": "Jonction tube–support visible."
+        }
+      ],
+      "observation": "Image 550 du film de 23 secondes, après la dernière arrivée visible. Deux tubes par feuille, quatre entrées distinctes, ombres verticales. Les bords extérieurs du support sont partiellement cadrés.",
+      "source": {
+        "catalogue": "video-commons",
+        "url": "https://commons.wikimedia.org/wiki/File:2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm",
+        "credit": "Voltmetro",
+        "licence_image": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/9/9b/2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "5cdaf9c37eb2f03529644229894af4dbf1178292dac30b70c6971879787e1458",
+        "octets_source": 14210351,
+        "dimensions_orientees": [
+          1920,
+          1080
+        ],
+        "type_fichier_source": "Original vidéo publié par son auteur; image extraite à 22 s",
+        "fichier_travail": "wc82322984-t22.png",
+        "instant_s": 22.0,
+        "image_decodee": 550,
+        "base_temps": "25 images/s",
+        "duree_s": 23,
+        "images_independantes": 1
+      },
+      "partition": "dev_indep",
+      "strate_affectation": "occupee",
+      "rang_affectation": 2
+    }
+  ]
+}

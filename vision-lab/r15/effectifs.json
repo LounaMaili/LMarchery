@@ -1,0 +1,774 @@
+{
+  "partitions": {
+    "train": {
+      "total": {
+        "photos": 162,
+        "provenances_occupees": 9,
+        "instances_distinctes": 168,
+        "entrees_distinctes": 143,
+        "axes_traces_distincts": 41,
+        "groupes": 7,
+        "supports_vides_uses": 4,
+        "segments_negatifs": 45,
+        "acquisitions_negatives": 11,
+        "occupees_avec_negatifs": 7,
+        "classes_negatives": {
+          "blason": 26,
+          "decor": 19
+        }
+      },
+      "delta_R15": {
+        "photos": 3,
+        "provenances_occupees": 2,
+        "instances_distinctes": 10,
+        "entrees_distinctes": 7,
+        "axes_traces_distincts": 10,
+        "groupes": 2,
+        "supports_vides_uses": 1,
+        "segments_negatifs": 12,
+        "acquisitions_negatives": 3,
+        "occupees_avec_negatifs": 2,
+        "classes_negatives": {
+          "decor": 5,
+          "blason": 7
+        }
+      },
+      "par_provenance": {
+        "4028mdk09": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 5,
+          "axes_traces_distincts": 5,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "decor": 3,
+            "blason": 2
+          }
+        },
+        "Alan Hughes": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "blason": 4,
+            "decor": 1
+          }
+        },
+        "Amirsp": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Bernard Gagnon": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 11,
+          "entrees_distinctes": 9,
+          "axes_traces_distincts": 11,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 4,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "decor": 3,
+            "blason": 1
+          }
+        },
+        "China News Service": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "decor": 2,
+            "blason": 3
+          }
+        },
+        "Crigges": {
+          "photos": 149,
+          "provenances_occupees": 1,
+          "instances_distinctes": 129,
+          "entrees_distinctes": 112,
+          "axes_traces_distincts": 2,
+          "groupes": 1,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 4,
+            "decor": 1
+          }
+        },
+        "Danielle Walquist Lynch": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 5,
+          "axes_traces_distincts": 5,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Evil Julia": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "decor": 5
+          }
+        },
+        "Vassilis Online": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "decor": 3,
+            "blason": 2
+          }
+        },
+        "bluepelican": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 2,
+          "axes_traces_distincts": 5,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 2,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "decor": 1,
+            "blason": 1
+          }
+        },
+        "cristina.sanvito": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 3,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 3
+          }
+        },
+        "jrladia": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 4,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 4,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "renatomitra": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 3,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 3,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 3,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 3
+          }
+        },
+        "zigazou76": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 5,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 3,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 3
+          }
+        }
+      }
+    },
+    "dev_indep": {
+      "total": {
+        "photos": 11,
+        "provenances_occupees": 7,
+        "instances_distinctes": 24,
+        "entrees_distinctes": 18,
+        "axes_traces_distincts": 24,
+        "groupes": 4,
+        "supports_vides_uses": 2,
+        "segments_negatifs": 51,
+        "acquisitions_negatives": 11,
+        "occupees_avec_negatifs": 7,
+        "classes_negatives": {
+          "blason": 34,
+          "decor": 17
+        }
+      },
+      "delta_R15": {
+        "photos": 7,
+        "provenances_occupees": 4,
+        "instances_distinctes": 12,
+        "entrees_distinctes": 12,
+        "axes_traces_distincts": 12,
+        "groupes": 2,
+        "supports_vides_uses": 2,
+        "segments_negatifs": 34,
+        "acquisitions_negatives": 7,
+        "occupees_avec_negatifs": 4,
+        "classes_negatives": {
+          "decor": 13,
+          "blason": 21
+        }
+      },
+      "par_provenance": {
+        "Archery Scoring": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 6,
+          "entrees_distinctes": 6,
+          "axes_traces_distincts": 6,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "decor": 2,
+            "blason": 3
+          }
+        },
+        "DWZ": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "decor": 4,
+            "blason": 1
+          }
+        },
+        "Jim Barton": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "blason": 5
+          }
+        },
+        "Moo.The.Cow": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "decor": 3,
+            "blason": 2
+          }
+        },
+        "N Chadwick": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "blason": 2,
+            "decor": 3
+          }
+        },
+        "Ozizo": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 4,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 3,
+            "decor": 1
+          }
+        },
+        "Special Olympics Oesterreich": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 5
+          }
+        },
+        "Voltmetro": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 4,
+          "entrees_distinctes": 4,
+          "axes_traces_distincts": 4,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 5
+          }
+        },
+        "arrowcounting": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 5,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {
+            "decor": 4,
+            "blason": 1
+          }
+        },
+        "juantiagues": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 6,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 6,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 4,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 4
+          }
+        },
+        "surtr": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 4,
+          "axes_traces_distincts": 5,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 3,
+          "acquisitions_negatives": 1,
+          "occupees_avec_negatifs": 1,
+          "classes_negatives": {
+            "blason": 3
+          }
+        }
+      }
+    },
+    "dev_explore": {
+      "total": {
+        "photos": 22,
+        "provenances_occupees": 14,
+        "instances_distinctes": 63,
+        "entrees_distinctes": 51,
+        "axes_traces_distincts": 63,
+        "groupes": 5,
+        "supports_vides_uses": 6,
+        "segments_negatifs": 0,
+        "acquisitions_negatives": 0,
+        "occupees_avec_negatifs": 0,
+        "classes_negatives": {}
+      },
+      "delta_R15": {
+        "photos": 0,
+        "provenances_occupees": 0,
+        "instances_distinctes": 0,
+        "entrees_distinctes": 0,
+        "axes_traces_distincts": 0,
+        "groupes": 0,
+        "supports_vides_uses": 0,
+        "segments_negatifs": 0,
+        "acquisitions_negatives": 0,
+        "occupees_avec_negatifs": 0,
+        "classes_negatives": {}
+      },
+      "par_provenance": {
+        "April L. Sanders": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Bultro": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Enric": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Framsókn": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 8,
+          "entrees_distinctes": 7,
+          "axes_traces_distincts": 8,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Iain Cuthbertson": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Ivan Radic": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Marcy Sanchez": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 2,
+          "axes_traces_distincts": 5,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Sgt. 1st Class Raymond Piper": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 3,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 3,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Staff Sgt. Brent Powell": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 4,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 4,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "TheNickster": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 3,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 3,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "TimWilson": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Tomi Backman": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 6,
+          "entrees_distinctes": 3,
+          "axes_traces_distincts": 6,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Wesley Fryer": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 6,
+          "entrees_distinctes": 6,
+          "axes_traces_distincts": 6,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "Wilfried Wittkowsky, 2005": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "chb1848": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "cobaltfish": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 11,
+          "entrees_distinctes": 9,
+          "axes_traces_distincts": 11,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "gothick_matt": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 1,
+          "entrees_distinctes": 1,
+          "axes_traces_distincts": 1,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "maggiewilson177": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 3,
+          "entrees_distinctes": 2,
+          "axes_traces_distincts": 3,
+          "groupes": 0,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "mikecogh": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "russellstreet": {
+          "photos": 1,
+          "provenances_occupees": 0,
+          "instances_distinctes": 0,
+          "entrees_distinctes": 0,
+          "axes_traces_distincts": 0,
+          "groupes": 0,
+          "supports_vides_uses": 1,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "ttillma8": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 6,
+          "entrees_distinctes": 6,
+          "axes_traces_distincts": 6,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        },
+        "vastateparksstaff": {
+          "photos": 1,
+          "provenances_occupees": 1,
+          "instances_distinctes": 5,
+          "entrees_distinctes": 5,
+          "axes_traces_distincts": 5,
+          "groupes": 1,
+          "supports_vides_uses": 0,
+          "segments_negatifs": 0,
+          "acquisitions_negatives": 0,
+          "occupees_avec_negatifs": 0,
+          "classes_negatives": {}
+        }
+      }
+    }
+  }
+}
