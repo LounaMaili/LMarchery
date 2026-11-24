@@ -1,0 +1,657 @@
+{
+  "version": "R17-1",
+  "date": "2026-11-24",
+  "methode": "Lecture assistée, sans adjudication humaine indépendante",
+  "connaissance_prealable": "Verdict global R16 et certaines acquisitions déjà examinées. Scores individuels et décisions du vérificateur masqués.",
+  "gel": "04ac53bd50c4ef46be5dae40caabb8e492142eb7",
+  "lectures": [
+    {
+      "cas": "R17-01",
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "13-01",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le fût sombre part de l’empennage bleu, traverse le rouge et se termine dans le jaune troué. Le segment suit son milieu et s’arrête dans le fût."
+    },
+    {
+      "cas": "R17-02",
+      "photo": "70-01",
+      "provenance": "Crigges",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "70-01",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "proposition_versionnee",
+      "correction": "R17-C1",
+      "observation": "Le segment traverse sur le même fût la limite bleu–rouge. Sa fin précède le jaune. Dans le jaune, le second bout de l’axe initial dépasse la jonction et se poursuit sur du papier déjà perforé."
+    },
+    {
+      "cas": "R17-03",
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "5115614018:2",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le tube du haut du groupe inférieur monte légèrement vers la droite. Son ombre descend au contact de l’anneau noir. Le segment est sur la tige et s’arrête avant ce coude."
+    },
+    {
+      "cas": "R17-04",
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "5115614018:3",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La tige noire intermédiaire arrive sur le papier blanc au-dessus du tube à plumes rouges et jaunes. Le segment suit son bord inférieur. Un court tronçon de tige reste visible avant la jonction à droite."
+    },
+    {
+      "cas": "R17-05",
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "18105652008:1",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "proposition_versionnee",
+      "correction": "R17-C2",
+      "observation": "Le liseré inférieur du seul fût orange sur la silhouette brune conduit à sa disparition à gauche. Le point initial est posé plus à droite, sur le flanc orange encore visible. Le bout gauche de la proposition est au raccord avec le support."
+    },
+    {
+      "cas": "R17-06",
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "4169106197:1",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La hampe à empennage vert traverse la feuille blanche et les anneaux de la face 2. Le segment s’arrête avant l’entrée dans le jaune, d’où descend une ombre oblique."
+    },
+    {
+      "cas": "R17-07",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:9",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le tube noir inférieur associé aux plumes orangées passe sous le tube à bandes. Sa partie centrale est distincte sur le panneau rouge puis sur la zone blanche. Le bout droit atteint le bord du raccord sombre."
+    },
+    {
+      "cas": "R17-08",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:10",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "suit_partie_visible",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le fût violacé est isolé sous le groupe principal, devant le rouge puis le décor peint. Le tracé part à la sortie des plumes claires et rejoint l’extrémité visible au bord du motif noir."
+    },
+    {
+      "cas": "R17-09",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:3",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le fût noir presque horizontal passe sous la tige à bandes et aboutit dans le rose. Le segment en suit le flanc. Un intervalle de fût noir reste visible à droite avant la jonction."
+    },
+    {
+      "cas": "R17-10",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:7",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La tige sombre à plumes claires traverse le panneau rouge entre un tube plus haut et la tige rayée du dessous. L’extrémité droite de la proposition atteint le raccord avec la bande colorée."
+    },
+    {
+      "cas": "R17-11",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:2",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La tige supérieure porte des bandes sur toute la partie relue. Elle reste distincte du fût noir du dessous près du jaune. Le bout droit est sur son extrémité arrondie."
+    },
+    {
+      "cas": "R17-12",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "positif_fit",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:11",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le fût rayé du bas est isolé devant le sol puis la bordure rose. Le segment suit la dernière partie du corps, mais du fût est encore visible avant sa disparition à droite."
+    },
+    {
+      "cas": "R17-13",
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "ensemble": "exclu_ignore",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "18105652008:3",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": true,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Sur le sac de droite, le fût orange est identifiable entre deux tiges noires et sa jonction est visible à gauche. Tout le segment traverse le rectangle gelé couvrant le faisceau sur la silhouette sombre."
+    },
+    {
+      "cas": "R17-14",
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "ensemble": "exclu_ignore",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "18105652008:5",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": true,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La hampe sombre portant un reflet vert et des plumes rouges se distingue de la tige orange au-dessus. Le segment suit le corps entre reflet et plumes, entièrement dans la région ignorée. Sa jonction sur le support reste inconnue."
+    },
+    {
+      "cas": "R17-15",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "ensemble": "exclu_ignore",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc71488242:4",
+          "lecture": "ambigue"
+        },
+        {
+          "instance": "wc71488242:5",
+          "lecture": "ambigue"
+        }
+      ],
+      "bilan_geometrie": "indecidable",
+      "etendue": "indecidable",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": true,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Deux tubes obliques, l’un sombre et l’autre marqué de bandes, se chevauchent jusqu’au blason. Le segment longe leur liseré supérieur. Les deux traits de référence y sont presque confondus et les deux jonctions sont masquées. Le rectangle couvre cette partie commune."
+    },
+    {
+      "cas": "R17-16",
+      "photo": "fl31990323",
+      "provenance": "bluepelican",
+      "ensemble": "exclu_ignore",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "fl31990323:2",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": true,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le fût clair inférieur rejoint la face tressée à droite sous deux autres traits. Le segment suit son flanc et finit avant la jonction. La région ignorée recouvre pratiquement tout ce tronçon près du faisceau."
+    },
+    {
+      "cas": "R17-17",
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "9436017284:1",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le long fût violet se distingue sur le ciel. À gauche, sa jonction et son ombre sont visibles sur le bord blanc du blason. La proposition s’arrête sur la longueur du fût, loin de cette jonction."
+    },
+    {
+      "cas": "R17-18",
+      "photo": "37348131162",
+      "provenance": "Special Olympics Oesterreich",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "37348131162:1",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "suit_partie_visible",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Sur le rouge puis le jaune, la tige unique relie les plumes bleues à la jonction. Une ombre plonge depuis cette dernière. Le segment suit la tige jusqu’au raccord et reste distinct de cette ombre."
+    },
+    {
+      "cas": "R17-19",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "36725328420:2",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "portion_delimitee",
+      "portion": "Partie remontant hors du rectangle, avant la convergence avec la tige supérieure.",
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La deuxième tige claire en partant du haut remonte légèrement vers la droite sur le bleu puis le rouge. Le segment suit cette pente. À la sortie supérieure du rectangle, une portion reste visible avant la convergence des tiges. La jonction dans le support abîmé est indécidable."
+    },
+    {
+      "cas": "R17-20",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "36725328420:1",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La tige claire presque horizontale du haut passe du blanc au rouge. Le segment en suit le milieu avant que les trajectoires se rapprochent. Il ne résout pas la jonction dans la zone déchirée."
+    },
+    {
+      "cas": "R17-21",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "36725328420:6",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "La tige foncée inférieure est séparée du faisceau et touche le papier jaune déchiqueté. Le segment suit le corps, mais sa fin droite précède nettement le raccord visible."
+    },
+    {
+      "cas": "R17-22",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "36725328420:4",
+          "lecture": "ambigue"
+        }
+      ],
+      "bilan_geometrie": "indecidable",
+      "etendue": "indecidable",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Les deux hampes claires du milieu se rapprochent puis se croisent. Le segment commence dans cette convergence et termine sur leur silhouette commune. Le bois est reconnaissable, mais la continuité propre au tube 4 ne peut être suivie sur toute la proposition."
+    },
+    {
+      "cas": "R17-23",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "36725328420:3",
+          "lecture": "incorrecte"
+        }
+      ],
+      "bilan_geometrie": "erreur_demontree",
+      "etendue": "sans_portion_attribuable_a_la_reference",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Deux hampes claires sont séparables sur le bleu et le rouge. Le trait de référence 3 est sur celle du haut. Le segment magenta suit celle du dessous, avec une limite distincte entre les deux. Les jonctions restent masquées."
+    },
+    {
+      "cas": "R17-24",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "36725328420:4",
+          "lecture": "incorrecte"
+        }
+      ],
+      "bilan_geometrie": "erreur_demontree",
+      "etendue": "sans_portion_attribuable_a_la_reference",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "À gauche du croisement, on distingue deux départs de hampes claires à ligature rouge. Le trait 4 part sur la hampe supérieure. Le segment issu du même voisinage géométrique part sur la hampe inférieure. La superposition ultérieure ne rétablit pas cette identité."
+    },
+    {
+      "cas": "R17-25",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "ensemble": "dev_strict",
+      "matiere": "indecidable",
+      "associations": [
+        {
+          "instance": "36725328420:5",
+          "lecture": "ambigue"
+        }
+      ],
+      "bilan_geometrie": "indecidable",
+      "etendue": "indecidable",
+      "bout": "entree_inconnue",
+      "bout_sur_imprime": false,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le liseré presque horizontal passe sous une encoche blanche puis une ligature rouge, dans un empilement noir. La hampe associée à la plume bleu-jaune descend légèrement. On ne peut suivre la même matière et la même identité sur la proposition entière."
+    },
+    {
+      "cas": "R17-26",
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+          "lecture": "ambigue"
+        }
+      ],
+      "bilan_geometrie": "indecidable",
+      "etendue": "indecidable",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": true,
+      "usage_visible": "aucun_fragment_retenu",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Un fût sombre sort sous le chiffre 5. Le segment passe au bord gauche, puis continue au-delà de l’arrivée du deuxième tube presque superposé. La vue native ne permet pas d’attribuer toute cette longueur à l’instance 5. Son bout supérieur se prolonge dans le chiffre imprimé."
+    },
+    {
+      "cas": "R17-27",
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "sans_relation_etablie",
+      "bout_sur_imprime": true,
+      "usage_visible": "portion_delimitee",
+      "portion": "Bord droit entre les ordonnées de travail 540 et 595, sous le chiffre et avant la seconde jonction.",
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Le bord droit du fût 5 est lisible entre sa jonction sous le chiffre et l’arrivée latérale du deuxième tube. Le segment suit ce bord, puis dépasse la jonction vers le trait imprimé du 5. Seule la portion intermédiaire est attribuable comme fragment."
+    },
+    {
+      "cas": "R17-28",
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "ensemble": "dev_strict",
+      "matiere": "tube_confirme",
+      "associations": [
+        {
+          "instance": "wc82322984-t22:1",
+          "lecture": "correcte"
+        }
+      ],
+      "bilan_geometrie": "confirmee",
+      "etendue": "fragment_correct_incomplet",
+      "bout": "pertinent_sur_jonction",
+      "bout_sur_imprime": false,
+      "usage_visible": "segment_observable",
+      "portion": null,
+      "maintien_exclusion_R16": false,
+      "annotation": "conserver",
+      "correction": null,
+      "observation": "Sur la face gauche, la tige du haut reste distincte de la tige parallèle inférieure et de son ombre verticale. Le segment en suit la partie côté blason et son bout droit atteint la jonction dans le jaune."
+    }
+  ]
+}

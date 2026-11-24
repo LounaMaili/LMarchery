@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R17 · Relecture des segments</title>
+<style>
+:root{color-scheme:light;font:16px/1.45 "Source Sans 3",Arial,sans-serif;color:#192d38;background:#f7f8f7}
+*{box-sizing:border-box}body{margin:0}main{max-width:1280px;margin:auto;padding:1.6rem clamp(.7rem,3vw,3rem)}
+h1{font-size:1.8rem;line-height:1.1;margin:.25rem 0 1.2rem}select,button{font:inherit;color:inherit;background:white;border:1px solid #94a3a7;border-radius:.25rem;padding:.4rem .55rem}button{cursor:pointer}
+#nav,fieldset{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap}fieldset{margin:1rem 0;border:1px solid #bbc7c9;min-width:0;padding:.6rem .8rem}label{display:inline-flex;align-items:center;gap:.3rem}#refs{display:contents}
+.views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}figure{margin:0}figcaption{font-weight:600;margin-bottom:.3rem}
+canvas{width:100%;height:auto;display:block;background:#e7e9e8;border:1px solid #abb4b8}#meta{font-size:.93rem}a{color:#155575}
+@media(max-width:730px){.views{grid-template-columns:1fr}select{max-width:100%}}
+</style>
+<main>
+<h1>Relecture des segments R17</h1>
+<div id="nav"><label>Cas <select id="cas"></select></label><button id="prev" type="button">Précédent</button><button id="next" type="button">Suivant</button></div>
+<fieldset><legend>Calques</legend><span id="refs"></span><label><input id="segment" type="checkbox">Segment émis</label><label><input id="entree" type="checkbox">Entrée visible</label><label><input id="ignore" type="checkbox">Régions ignorées</label><button id="raw" type="button">Photo seule</button><button id="all" type="button">Superposer</button></fieldset>
+<div class="views"><figure><figcaption>Contexte</figcaption><canvas id="contexte" width="520" height="308" aria-label="Contexte photographique et calques sélectionnés"></canvas></figure><figure><figcaption>Agrandissement</figcaption><canvas id="detail" width="520" height="308" aria-label="Agrandissement photographique et calques sélectionnés"></canvas></figure></div>
+<p id="meta" aria-live="polite"></p><p><a id="plate">Planche à six vues</a> · <a id="author">Source photographique</a> · <a id="terms">Licence</a></p>
+</main>
+<script src="figures/calques.js"></script>
+<script>
+'use strict';
+const el = id => document.getElementById(id);
+const select = el('cas');
+let current, photo;
+for (const p of planchesR17) select.add(new Option(p.cas+' · '+p.droits.credit,p.cas));
+function boxes() { return Array.from(document.querySelectorAll('input[type=checkbox]')); }
+function setLayers(state) { for(const b of boxes()) b.checked=state && !b.disabled; draw(); }
+function draw() {
+  if (!current || !photo) return;
+  for (const key of ['contexte','detail']) {
+    const ctx=el(key).getContext('2d'), view=current[key], [sx,sy,tx,ty]=view.affine;
+    ctx.clearRect(0,0,520,308);
+    ctx.drawImage(photo,...view.source,0,0,520,308);
+    const xy=([x,y]) => [sx*x+tx,sy*y+ty];
+    function line(points,color,dashes=[]) {
+      ctx.beginPath(); points.forEach((v,j) => j ? ctx.lineTo(...xy(v)) : ctx.moveTo(...xy(v)));
+      ctx.setLineDash(dashes); ctx.lineWidth=4;ctx.strokeStyle='#20232b';ctx.stroke();
+      ctx.lineWidth=2;ctx.strokeStyle=color;ctx.stroke();ctx.setLineDash([]);
+    }
+    if(el('ignore').checked) for(const [[x,y],[u,v]] of current.regions_ignorees) {
+      const [a,b]=xy([x,y]), [c,d]=xy([u,v]);
+      ctx.fillStyle='rgba(255,219,35,.13)';ctx.fillRect(a,b,c-a,d-b);
+      line([[x,y],[u,y],[u,v],[x,v],[x,y]],'#fbe342',[7,5]);
+    }
+    current.references.forEach((r,i) => {if(el('ref'+i).checked) line(r.axe,['#00fff2','#78b8ff'][i]);});
+    if(el('segment').checked) {
+      line(current.segment,'#ff32bb',[7,5]);
+      for(const point of current.segment) {ctx.beginPath();ctx.arc(...xy(point),2.6,0,2*Math.PI);ctx.fillStyle='#ff32bb';ctx.fill();}
+    }
+    if(el('entree').checked) for(const r of current.references) if(r.entree) {
+      ctx.beginPath();ctx.arc(...xy(r.entree),5,0,2*Math.PI);ctx.lineWidth=4;ctx.strokeStyle='#20232b';ctx.stroke();
+      ctx.lineWidth=2;ctx.strokeStyle='#ff9a20';ctx.stroke();
+    }
+  }
+}
+function choose(i) {
+  select.selectedIndex=i; current=planchesR17[i];photo=null;
+  for(const k of ['contexte','detail']) el(k).getContext('2d').clearRect(0,0,520,308);
+  el('refs').replaceChildren();
+  current.references.forEach((r,i) => {
+    const label=document.createElement('label'), box=document.createElement('input');
+    box.type='checkbox';box.id='ref'+i;box.onchange=draw;
+    label.append(box,'Axe '+r.instance);el('refs').append(label);
+  });
+  el('entree').disabled=!current.references.some(r => r.entree);
+  el('ignore').disabled=current.regions_ignorees.length===0;
+  setLayers(false);
+  el('prev').disabled=i===0;el('next').disabled=i===planchesR17.length-1;
+  el('plate').href='figures/'+current.fichier;
+  el('author').href=current.droits.url;el('terms').href=current.droits.licence;el('terms').textContent=current.droits.nom_licence;
+  const picked=current, im=new Image();
+  im.onload=()=>{if(current===picked){photo=im;draw();el('meta').textContent=picked.droits.credit+' · '+picked.droits.titre+(el('entree').disabled?' · Entrée de coordonnée inconnue':'');}};
+  im.onerror=()=>{if(current===picked)el('meta').textContent='Planche indisponible. Conserver le dossier figures à côté de la visionneuse.';};
+  el('meta').textContent='Chargement de la planche…';im.src=el('plate').href;
+}
+select.onchange=()=>choose(select.selectedIndex);
+el('prev').onclick=()=>choose(select.selectedIndex-1);el('next').onclick=()=>choose(select.selectedIndex+1);
+el('raw').onclick=()=>setLayers(false);el('all').onclick=()=>setLayers(true);
+for(const k of ['entree','ignore','segment'])el(k).onchange=draw;
+choose(0);
+</script>
+</html>
