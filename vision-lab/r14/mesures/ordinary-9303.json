@@ -1,0 +1,2477 @@
+{
+  "par_photo": {
+    "3996564090": {
+      "provenance": "Wesley Fryer",
+      "partition": "historique",
+      "flags": [
+        "worn",
+        "multiple"
+      ],
+      "ms_LSD": 299.2295159999685,
+      "mesures": {
+        "LSD": {
+          "segments": 3,
+          "tubes": 6,
+          "entrees": 6,
+          "strict": 1,
+          "strict_1a1": 1,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 1,
+          "tubes": 6,
+          "entrees": 6,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 2,
+          "tubes": 6,
+          "entrees": 6,
+          "strict": 1,
+          "strict_1a1": 1,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "929865": {
+      "provenance": "Staff Sgt. Brent Powell",
+      "partition": "historique",
+      "flags": [
+        "worn",
+        "occlusion"
+      ],
+      "ms_LSD": 367.15028899999425,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 4,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 3,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 17,
+          "tubes": 4,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 3,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 15,
+          "tubes": 4,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "6791193480": {
+      "provenance": "russellstreet",
+      "partition": "historique",
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "ms_LSD": 298.14392399998724,
+      "mesures": {
+        "LSD": {
+          "segments": 13,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 13
+        },
+        "paire": {
+          "segments": 7,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 7
+        },
+        "isole": {
+          "segments": 6,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 6
+        }
+      }
+    },
+    "49398629148": {
+      "provenance": "Ivan Radic",
+      "partition": "historique",
+      "flags": [
+        "single",
+        "worn"
+      ],
+      "ms_LSD": 312.3349460000213,
+      "mesures": {
+        "LSD": {
+          "segments": 22,
+          "tubes": 1,
+          "entrees": 1,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 1,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 8,
+          "tubes": 1,
+          "entrees": 1,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 1,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 14,
+          "tubes": 1,
+          "entrees": 1,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "955488046": {
+      "provenance": "gothick_matt",
+      "partition": "historique",
+      "flags": [
+        "single"
+      ],
+      "ms_LSD": 380.832005000002,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 1,
+          "entrees": 1,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 24,
+          "tubes": 1,
+          "entrees": 1,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 8,
+          "tubes": 1,
+          "entrees": 1,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "3771007694": {
+      "provenance": "April L. Sanders",
+      "partition": "historique",
+      "flags": [
+        "occlusion"
+      ],
+      "ms_LSD": 342.3555760000454,
+      "mesures": {
+        "LSD": {
+          "segments": 15,
+          "tubes": 1,
+          "entrees": 0,
+          "strict": 1,
+          "strict_1a1": 1,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 14,
+          "tubes": 1,
+          "entrees": 0,
+          "strict": 1,
+          "strict_1a1": 1,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 1,
+          "tubes": 1,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "14347254046": {
+      "provenance": "TheNickster",
+      "partition": "historique",
+      "flags": [
+        "multiple"
+      ],
+      "ms_LSD": 338.49351800000704,
+      "mesures": {
+        "LSD": {
+          "segments": 20,
+          "tubes": 3,
+          "entrees": 3,
+          "strict": 2,
+          "strict_1a1": 2,
+          "bout_proche": 3,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 9,
+          "tubes": 3,
+          "entrees": 3,
+          "strict": 2,
+          "strict_1a1": 2,
+          "bout_proche": 3,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 11,
+          "tubes": 3,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "8549619981": {
+      "provenance": "TimWilson",
+      "partition": "historique",
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "ms_LSD": 380.45500800001264,
+      "mesures": {
+        "LSD": {
+          "segments": 16,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 16
+        },
+        "paire": {
+          "segments": 5,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 5
+        },
+        "isole": {
+          "segments": 11,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 11
+        }
+      }
+    },
+    "36377144413": {
+      "provenance": "vastateparksstaff",
+      "partition": "historique",
+      "flags": [
+        "grouped",
+        "worn"
+      ],
+      "ms_LSD": 327.260071000012,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 5,
+          "entrees": 5,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 14,
+          "tubes": 5,
+          "entrees": 5,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 18,
+          "tubes": 5,
+          "entrees": 5,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "2712546351": {
+      "provenance": "cobaltfish",
+      "partition": "historique",
+      "flags": [
+        "grouped",
+        "worn"
+      ],
+      "ms_LSD": 365.2441749999866,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 11,
+          "entrees": 9,
+          "strict": 4,
+          "strict_1a1": 4,
+          "bout_proche": 5,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 20,
+          "tubes": 11,
+          "entrees": 9,
+          "strict": 2,
+          "strict_1a1": 2,
+          "bout_proche": 5,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 12,
+          "tubes": 11,
+          "entrees": 9,
+          "strict": 2,
+          "strict_1a1": 2,
+          "bout_proche": 1,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "8468859144": {
+      "provenance": "Framsókn",
+      "partition": "historique",
+      "flags": [
+        "grouped"
+      ],
+      "ms_LSD": 413.0384669999785,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 8,
+          "entrees": 7,
+          "strict": 4,
+          "strict_1a1": 4,
+          "bout_proche": 6,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 17,
+          "tubes": 8,
+          "entrees": 7,
+          "strict": 4,
+          "strict_1a1": 4,
+          "bout_proche": 5,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 15,
+          "tubes": 8,
+          "entrees": 7,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 1,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "67300452": {
+      "provenance": "Iain Cuthbertson",
+      "partition": "historique",
+      "flags": [
+        "empty"
+      ],
+      "ms_LSD": 403.06086999999025,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 32
+        },
+        "paire": {
+          "segments": 17,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 17
+        },
+        "isole": {
+          "segments": 15,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 15
+        }
+      }
+    },
+    "20873987148": {
+      "provenance": "Tomi Backman",
+      "partition": "nouveau",
+      "flags": [
+        "multiple",
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "ms_LSD": 428.72520599996733,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 6,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 25,
+          "tubes": 6,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 7,
+          "tubes": 6,
+          "entrees": 3,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "36258219964": {
+      "provenance": "maggiewilson177",
+      "partition": "nouveau",
+      "flags": [
+        "multiple",
+        "worn",
+        "occlusion"
+      ],
+      "ms_LSD": 387.8157880000117,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 3,
+          "entrees": 2,
+          "strict": 1,
+          "strict_1a1": 1,
+          "bout_proche": 1,
+          "bout_strict_1a1": 1,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 32,
+          "tubes": 3,
+          "entrees": 2,
+          "strict": 1,
+          "strict_1a1": 1,
+          "bout_proche": 1,
+          "bout_strict_1a1": 1,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 0,
+          "tubes": 3,
+          "entrees": 2,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "53151623584": {
+      "provenance": "ttillma8",
+      "partition": "nouveau",
+      "flags": [
+        "multiple",
+        "grouped",
+        "worn"
+      ],
+      "ms_LSD": 400.7980580000208,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 6,
+          "entrees": 6,
+          "strict": 5,
+          "strict_1a1": 5,
+          "bout_proche": 5,
+          "bout_strict_1a1": 4,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 19,
+          "tubes": 6,
+          "entrees": 6,
+          "strict": 3,
+          "strict_1a1": 3,
+          "bout_proche": 3,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 13,
+          "tubes": 6,
+          "entrees": 6,
+          "strict": 2,
+          "strict_1a1": 2,
+          "bout_proche": 3,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "15503462606": {
+      "provenance": "chb1848",
+      "partition": "nouveau",
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "ms_LSD": 348.98777099999734,
+      "mesures": {
+        "LSD": {
+          "segments": 32,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 32
+        },
+        "paire": {
+          "segments": 25,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 25
+        },
+        "isole": {
+          "segments": 7,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 7
+        }
+      }
+    },
+    "51590434805": {
+      "provenance": "mikecogh",
+      "partition": "nouveau",
+      "flags": [
+        "empty",
+        "worn"
+      ],
+      "ms_LSD": 297.27912199996354,
+      "mesures": {
+        "LSD": {
+          "segments": 9,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 9
+        },
+        "paire": {
+          "segments": 3,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 3
+        },
+        "isole": {
+          "segments": 6,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 6
+        }
+      }
+    }
+  },
+  "strates": {
+    "ensemble": {
+      "photos": 17,
+      "ms_LSD_mediane": 365.2441749999866,
+      "mesures": {
+        "LSD": {
+          "segments": 418,
+          "tubes": 55,
+          "entrees": 46,
+          "strict": 18,
+          "strict_1a1": 18,
+          "bout_proche": 24,
+          "bout_strict_1a1": 9,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 102
+        },
+        "paire": {
+          "segments": 257,
+          "tubes": 55,
+          "entrees": 46,
+          "strict": 13,
+          "strict_1a1": 13,
+          "bout_proche": 21,
+          "bout_strict_1a1": 7,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 57
+        },
+        "isole": {
+          "segments": 161,
+          "tubes": 55,
+          "entrees": 46,
+          "strict": 5,
+          "strict_1a1": 5,
+          "bout_proche": 5,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 45
+        }
+      }
+    },
+    "historique": {
+      "photos": 12,
+      "ms_LSD_mediane": 353.799875500016,
+      "mesures": {
+        "LSD": {
+          "segments": 281,
+          "tubes": 40,
+          "entrees": 35,
+          "strict": 12,
+          "strict_1a1": 12,
+          "bout_proche": 18,
+          "bout_strict_1a1": 4,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 61
+        },
+        "paire": {
+          "segments": 153,
+          "tubes": 40,
+          "entrees": 35,
+          "strict": 9,
+          "strict_1a1": 9,
+          "bout_proche": 17,
+          "bout_strict_1a1": 4,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 29
+        },
+        "isole": {
+          "segments": 128,
+          "tubes": 40,
+          "entrees": 35,
+          "strict": 3,
+          "strict_1a1": 3,
+          "bout_proche": 2,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 32
+        }
+      }
+    },
+    "nouveau": {
+      "photos": 5,
+      "ms_LSD_mediane": 387.8157880000117,
+      "mesures": {
+        "LSD": {
+          "segments": 137,
+          "tubes": 15,
+          "entrees": 11,
+          "strict": 6,
+          "strict_1a1": 6,
+          "bout_proche": 6,
+          "bout_strict_1a1": 5,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 41
+        },
+        "paire": {
+          "segments": 104,
+          "tubes": 15,
+          "entrees": 11,
+          "strict": 4,
+          "strict_1a1": 4,
+          "bout_proche": 4,
+          "bout_strict_1a1": 3,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 28
+        },
+        "isole": {
+          "segments": 33,
+          "tubes": 15,
+          "entrees": 11,
+          "strict": 2,
+          "strict_1a1": 2,
+          "bout_proche": 3,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 13
+        }
+      }
+    },
+    "worn": {
+      "photos": 12,
+      "ms_LSD_mediane": 357.115972999992,
+      "mesures": {
+        "LSD": {
+          "segments": 287,
+          "tubes": 42,
+          "entrees": 35,
+          "strict": 11,
+          "strict_1a1": 11,
+          "bout_proche": 15,
+          "bout_strict_1a1": 5,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 70
+        },
+        "paire": {
+          "segments": 176,
+          "tubes": 42,
+          "entrees": 35,
+          "strict": 6,
+          "strict_1a1": 6,
+          "bout_proche": 13,
+          "bout_strict_1a1": 3,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 40
+        },
+        "isole": {
+          "segments": 111,
+          "tubes": 42,
+          "entrees": 35,
+          "strict": 5,
+          "strict_1a1": 5,
+          "bout_proche": 4,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 30
+        }
+      }
+    },
+    "grouped": {
+      "photos": 5,
+      "ms_LSD_mediane": 400.7980580000208,
+      "mesures": {
+        "LSD": {
+          "segments": 160,
+          "tubes": 36,
+          "entrees": 30,
+          "strict": 13,
+          "strict_1a1": 13,
+          "bout_proche": 16,
+          "bout_strict_1a1": 6,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 0
+        },
+        "paire": {
+          "segments": 95,
+          "tubes": 36,
+          "entrees": 30,
+          "strict": 9,
+          "strict_1a1": 9,
+          "bout_proche": 13,
+          "bout_strict_1a1": 4,
+          "tubes_plusieurs_segments": 1,
+          "segments_plusieurs_tubes": 1,
+          "parasites_sur_vide": 0
+        },
+        "isole": {
+          "segments": 65,
+          "tubes": 36,
+          "entrees": 30,
+          "strict": 4,
+          "strict_1a1": 4,
+          "bout_proche": 5,
+          "bout_strict_1a1": 2,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 0
+        }
+      }
+    },
+    "empty": {
+      "photos": 5,
+      "ms_LSD_mediane": 348.98777099999734,
+      "mesures": {
+        "LSD": {
+          "segments": 102,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 102
+        },
+        "paire": {
+          "segments": 57,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 57
+        },
+        "isole": {
+          "segments": 45,
+          "tubes": 0,
+          "entrees": 0,
+          "strict": 0,
+          "strict_1a1": 0,
+          "bout_proche": 0,
+          "bout_strict_1a1": 0,
+          "tubes_plusieurs_segments": 0,
+          "segments_plusieurs_tubes": 0,
+          "parasites_sur_vide": 45
+        }
+      }
+    }
+  },
+  "contacts_LSD": {
+    "historique": {
+      "seuil": 0.9512959728509384,
+      "operation": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 3,
+          "proposals": 6,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 3,
+          "proposals": 6,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 1,
+          "proposals": 4,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 2,
+            "proposals": 2,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 3,
+            "unmatched": 3,
+            "false": 3,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          }
+        },
+        "photos": [
+          {
+            "id": "3996564090",
+            "group": "Wesley Fryer",
+            "boards": [
+              "fryer"
+            ],
+            "flags": [
+              "worn",
+              "multiple"
+            ],
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "929865",
+            "group": "Staff Sgt. Brent Powell",
+            "boards": [
+              "powell"
+            ],
+            "flags": [
+              "worn",
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "6791193480",
+            "group": "russellstreet",
+            "boards": [
+              "russell"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "49398629148",
+            "group": "Ivan Radic",
+            "boards": [
+              "radic-avant",
+              "radic-arriere"
+            ],
+            "flags": [
+              "single",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "955488046",
+            "group": "gothick_matt",
+            "boards": [
+              "stand-955488046"
+            ],
+            "flags": [
+              "single"
+            ],
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "3771007694",
+            "group": "April L. Sanders",
+            "boards": [
+              "stand-3771007694"
+            ],
+            "flags": [
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "14347254046",
+            "group": "TheNickster",
+            "boards": [
+              "stand-14347254046"
+            ],
+            "flags": [
+              "multiple"
+            ],
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "8549619981",
+            "group": "TimWilson",
+            "boards": [
+              "stand-8549619981"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "36377144413",
+            "group": "vastateparksstaff",
+            "boards": [
+              "stand-36377144413"
+            ],
+            "flags": [
+              "grouped",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 3,
+            "unmatched": 3,
+            "false": 3,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "2712546351",
+            "group": "cobaltfish",
+            "boards": [
+              "stand-2712546351"
+            ],
+            "flags": [
+              "grouped",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 9,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "8468859144",
+            "group": "Framsókn",
+            "boards": [
+              "stand-8468859144"
+            ],
+            "flags": [
+              "grouped"
+            ],
+            "photos": 1,
+            "known": 7,
+            "matched": 2,
+            "proposals": 2,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "67300452",
+            "group": "Iain Cuthbertson",
+            "boards": [
+              "stand-67300452"
+            ],
+            "flags": [
+              "empty"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        ],
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        }
+      },
+      "enveloppe_seuil": 0.9512959728509384,
+      "enveloppe": {
+        "all": {
+          "photos": 12,
+          "known": 35,
+          "matched": 3,
+          "proposals": 6,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 9,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 3,
+          "known": 21,
+          "matched": 3,
+          "proposals": 6,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 7,
+          "known": 24,
+          "matched": 1,
+          "proposals": 4,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "April L. Sanders": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Framsókn": {
+            "photos": 1,
+            "known": 7,
+            "matched": 2,
+            "proposals": 2,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "Iain Cuthbertson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Ivan Radic": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Staff Sgt. Brent Powell": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TheNickster": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "TimWilson": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "Wesley Fryer": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "cobaltfish": {
+            "photos": 1,
+            "known": 9,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "gothick_matt": {
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "russellstreet": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "vastateparksstaff": {
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 3,
+            "unmatched": 3,
+            "false": 3,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          }
+        },
+        "photos": [
+          {
+            "id": "3996564090",
+            "group": "Wesley Fryer",
+            "boards": [
+              "fryer"
+            ],
+            "flags": [
+              "worn",
+              "multiple"
+            ],
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "929865",
+            "group": "Staff Sgt. Brent Powell",
+            "boards": [
+              "powell"
+            ],
+            "flags": [
+              "worn",
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "6791193480",
+            "group": "russellstreet",
+            "boards": [
+              "russell"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "49398629148",
+            "group": "Ivan Radic",
+            "boards": [
+              "radic-avant",
+              "radic-arriere"
+            ],
+            "flags": [
+              "single",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "955488046",
+            "group": "gothick_matt",
+            "boards": [
+              "stand-955488046"
+            ],
+            "flags": [
+              "single"
+            ],
+            "photos": 1,
+            "known": 1,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "3771007694",
+            "group": "April L. Sanders",
+            "boards": [
+              "stand-3771007694"
+            ],
+            "flags": [
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "14347254046",
+            "group": "TheNickster",
+            "boards": [
+              "stand-14347254046"
+            ],
+            "flags": [
+              "multiple"
+            ],
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "8549619981",
+            "group": "TimWilson",
+            "boards": [
+              "stand-8549619981"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "36377144413",
+            "group": "vastateparksstaff",
+            "boards": [
+              "stand-36377144413"
+            ],
+            "flags": [
+              "grouped",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 5,
+            "matched": 0,
+            "proposals": 3,
+            "unmatched": 3,
+            "false": 3,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "2712546351",
+            "group": "cobaltfish",
+            "boards": [
+              "stand-2712546351"
+            ],
+            "flags": [
+              "grouped",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 9,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "8468859144",
+            "group": "Framsókn",
+            "boards": [
+              "stand-8468859144"
+            ],
+            "flags": [
+              "grouped"
+            ],
+            "photos": 1,
+            "known": 7,
+            "matched": 2,
+            "proposals": 2,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "67300452",
+            "group": "Iain Cuthbertson",
+            "boards": [
+              "stand-67300452"
+            ],
+            "flags": [
+              "empty"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        ],
+        "empty": {
+          "photos": 3,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 3,
+          "empty_with_points": 0
+        }
+      },
+      "couverture": {
+        "photos": 12,
+        "known": 35,
+        "matched": 23,
+        "proposals": 2304,
+        "unmatched": 2281,
+        "false": 1886,
+        "unresolved": 395,
+        "silent": 0,
+        "empty_with_points": 3
+      },
+      "premier": {
+        "threshold": 0.9809589660088226,
+        "photos": 12,
+        "known": 35,
+        "matched": 1,
+        "proposals": 2,
+        "unmatched": 1,
+        "false": 1,
+        "unresolved": 0,
+        "silent": 10,
+        "empty_with_points": 0
+      },
+      "premier_par_provenance": {
+        "Wesley Fryer": {
+          "threshold": 0.7056183534207023,
+          "photos": 1,
+          "known": 6,
+          "matched": 1,
+          "proposals": 5,
+          "unmatched": 4,
+          "false": 4,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Staff Sgt. Brent Powell": {
+          "threshold": 0.3807241812724144,
+          "photos": 1,
+          "known": 3,
+          "matched": 1,
+          "proposals": 35,
+          "unmatched": 34,
+          "false": 0,
+          "unresolved": 34,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "russellstreet": null,
+        "Ivan Radic": null,
+        "gothick_matt": null,
+        "April L. Sanders": null,
+        "TheNickster": {
+          "threshold": 0.3351065516471863,
+          "photos": 1,
+          "known": 3,
+          "matched": 1,
+          "proposals": 54,
+          "unmatched": 53,
+          "false": 53,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "TimWilson": null,
+        "vastateparksstaff": null,
+        "cobaltfish": {
+          "threshold": 0.9809589660088226,
+          "photos": 1,
+          "known": 9,
+          "matched": 1,
+          "proposals": 1,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Framsókn": {
+          "threshold": 0.9645535449553714,
+          "photos": 1,
+          "known": 7,
+          "matched": 1,
+          "proposals": 1,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "Iain Cuthbertson": null
+      },
+      "traces_supprimes": 0
+    },
+    "nouveau": {
+      "seuil": 0.9512959728509384,
+      "operation": {
+        "all": {
+          "photos": 5,
+          "known": 11,
+          "matched": 0,
+          "proposals": 1,
+          "unmatched": 1,
+          "false": 0,
+          "unresolved": 1,
+          "silent": 4,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 2,
+          "known": 9,
+          "matched": 0,
+          "proposals": 1,
+          "unmatched": 1,
+          "false": 0,
+          "unresolved": 1,
+          "silent": 1,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 5,
+          "known": 11,
+          "matched": 0,
+          "proposals": 1,
+          "unmatched": 1,
+          "false": 0,
+          "unresolved": 1,
+          "silent": 4,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Tomi Backman": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 1,
+            "unmatched": 1,
+            "false": 0,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          "chb1848": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "maggiewilson177": {
+            "photos": 1,
+            "known": 2,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "mikecogh": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "ttillma8": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        },
+        "photos": [
+          {
+            "id": "20873987148",
+            "group": "Tomi Backman",
+            "boards": [
+              "20873987148-1"
+            ],
+            "flags": [
+              "multiple",
+              "grouped",
+              "worn",
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 1,
+            "unmatched": 1,
+            "false": 0,
+            "unresolved": 1,
+            "silent": 0,
+            "empty_with_points": 0
+          },
+          {
+            "id": "36258219964",
+            "group": "maggiewilson177",
+            "boards": [
+              "36258219964-1"
+            ],
+            "flags": [
+              "multiple",
+              "worn",
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 2,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "53151623584",
+            "group": "ttillma8",
+            "boards": [
+              "53151623584-1"
+            ],
+            "flags": [
+              "multiple",
+              "grouped",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "15503462606",
+            "group": "chb1848",
+            "boards": [
+              "15503462606-1"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "51590434805",
+            "group": "mikecogh",
+            "boards": [
+              "51590434805-1"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        ],
+        "empty": {
+          "photos": 2,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 2,
+          "empty_with_points": 0
+        }
+      },
+      "enveloppe_seuil": 2.0,
+      "enveloppe": {
+        "all": {
+          "photos": 5,
+          "known": 11,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "grouped": {
+          "photos": 2,
+          "known": 9,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 2,
+          "empty_with_points": 0
+        },
+        "worn": {
+          "photos": 5,
+          "known": 11,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 5,
+          "empty_with_points": 0
+        },
+        "per_group": {
+          "Tomi Backman": {
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "chb1848": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "maggiewilson177": {
+            "photos": 1,
+            "known": 2,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "mikecogh": {
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          "ttillma8": {
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        },
+        "photos": [
+          {
+            "id": "20873987148",
+            "group": "Tomi Backman",
+            "boards": [
+              "20873987148-1"
+            ],
+            "flags": [
+              "multiple",
+              "grouped",
+              "worn",
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 3,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "36258219964",
+            "group": "maggiewilson177",
+            "boards": [
+              "36258219964-1"
+            ],
+            "flags": [
+              "multiple",
+              "worn",
+              "occlusion"
+            ],
+            "photos": 1,
+            "known": 2,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "53151623584",
+            "group": "ttillma8",
+            "boards": [
+              "53151623584-1"
+            ],
+            "flags": [
+              "multiple",
+              "grouped",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 6,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "15503462606",
+            "group": "chb1848",
+            "boards": [
+              "15503462606-1"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          },
+          {
+            "id": "51590434805",
+            "group": "mikecogh",
+            "boards": [
+              "51590434805-1"
+            ],
+            "flags": [
+              "empty",
+              "worn"
+            ],
+            "photos": 1,
+            "known": 0,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 1,
+            "empty_with_points": 0
+          }
+        ],
+        "empty": {
+          "photos": 2,
+          "known": 0,
+          "matched": 0,
+          "proposals": 0,
+          "unmatched": 0,
+          "false": 0,
+          "unresolved": 0,
+          "silent": 2,
+          "empty_with_points": 0
+        }
+      },
+      "couverture": {
+        "photos": 5,
+        "known": 11,
+        "matched": 9,
+        "proposals": 960,
+        "unmatched": 951,
+        "false": 760,
+        "unresolved": 191,
+        "silent": 0,
+        "empty_with_points": 2
+      },
+      "premier": {
+        "threshold": 0.7593325085518035,
+        "photos": 5,
+        "known": 11,
+        "matched": 1,
+        "proposals": 48,
+        "unmatched": 47,
+        "false": 32,
+        "unresolved": 15,
+        "silent": 2,
+        "empty_with_points": 1
+      },
+      "premier_par_provenance": {
+        "Tomi Backman": {
+          "threshold": 0.5180704593658637,
+          "photos": 1,
+          "known": 3,
+          "matched": 1,
+          "proposals": 89,
+          "unmatched": 88,
+          "false": 0,
+          "unresolved": 88,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "maggiewilson177": {
+          "threshold": 0.3217097818851471,
+          "photos": 1,
+          "known": 2,
+          "matched": 1,
+          "proposals": 4,
+          "unmatched": 3,
+          "false": 3,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "ttillma8": {
+          "threshold": 0.7593325085518035,
+          "photos": 1,
+          "known": 6,
+          "matched": 1,
+          "proposals": 13,
+          "unmatched": 12,
+          "false": 12,
+          "unresolved": 0,
+          "silent": 0,
+          "empty_with_points": 0
+        },
+        "chb1848": null,
+        "mikecogh": null
+      },
+      "traces_supprimes": 0
+    }
+  }
+}

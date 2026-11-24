@@ -1,0 +1,1297 @@
+[
+  {
+    "nom": "90-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-00.png",
+    "octets": 1766980,
+    "sha256": "3f7dc917af4221b8776044fa40461c3da3e524b63751d0fdb95e2933ae0e3acc"
+  },
+  {
+    "nom": "90-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-01.png",
+    "octets": 1771440,
+    "sha256": "08877b33cdb43ff913e744194cca3bbea646b915a851289261e44a85b02a2a64"
+  },
+  {
+    "nom": "90-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-02.png",
+    "octets": 1773886,
+    "sha256": "8747ac95767365c3c24578f31c7ba69a20527399a49d7be6c53e8b4111d0ea91"
+  },
+  {
+    "nom": "90-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-03.png",
+    "octets": 1777636,
+    "sha256": "571eb514dfef5099237c8c6030d9efe2a6aa47630878a42377da2add699b923e"
+  },
+  {
+    "nom": "90-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-04.png",
+    "octets": 1775950,
+    "sha256": "388fda6c3439cd4be3ddf7048d2ba2dffaabc48971a78880969352f4a8bdf974"
+  },
+  {
+    "nom": "90-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-05.png",
+    "octets": 1780261,
+    "sha256": "ceee809a929af82417aed5a75275efaf0b6676a297badb6f1e5a194a2ee7a679"
+  },
+  {
+    "nom": "90-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-06.png",
+    "octets": 1784046,
+    "sha256": "ddb3f4f975f1b6253bb66bef5d8f436dd9e69760217cc91835b77a77ee3f3d7e"
+  },
+  {
+    "nom": "90-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/90-07.png",
+    "octets": 1786172,
+    "sha256": "b5710e1bf0950d46b3c717383feaa198a8c9da19c5d66cc394305e2fcfb0a0b7"
+  },
+  {
+    "nom": "37-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/37-00.png",
+    "octets": 1765624,
+    "sha256": "e704e0848c1aeb17f2e9316eadeb418b9ac40cdd450da824cbef9055678b95b9"
+  },
+  {
+    "nom": "37-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/37-01.png",
+    "octets": 1766993,
+    "sha256": "2ea7eb0e15d891dccdb55ca51ad3d26814d065e54d99e87d4ae5f6e9aa291b72"
+  },
+  {
+    "nom": "37-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/37-05.png",
+    "octets": 1775835,
+    "sha256": "fcd91d3e3ff820afee4630071139b29e9f045ba327666b2a99069084f1b7b5b8"
+  },
+  {
+    "nom": "37-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/37-06.png",
+    "octets": 1777391,
+    "sha256": "cc713af8196d6800f309d3d003b24be40dc5c9f0eb08410788e639d8c4aac03e"
+  },
+  {
+    "nom": "37-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/37-07.png",
+    "octets": 1780021,
+    "sha256": "7c9931c2a798ff95fe28b5ef498ee906d58e83c0fedb0499dd08e231a026d614"
+  },
+  {
+    "nom": "101-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-00.png",
+    "octets": 1728144,
+    "sha256": "52ce436dfb910455010b3f8e64338b89414af511082dbf07394173101b4e6914"
+  },
+  {
+    "nom": "101-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-01.png",
+    "octets": 1732112,
+    "sha256": "71ed4c10d441ea75568d90244ee0f357cba634371dccfd373645688e79e78017"
+  },
+  {
+    "nom": "101-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-02.png",
+    "octets": 1736876,
+    "sha256": "76b3422753812b7999280ece715d6e54c4b20c18b2f6db5388ba311cd47e01b0"
+  },
+  {
+    "nom": "101-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-03.png",
+    "octets": 1738148,
+    "sha256": "514ae367de7f8eed70f380c7527e94ec21678f0d6b213538f8919821ac95244d"
+  },
+  {
+    "nom": "101-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-04.png",
+    "octets": 1742949,
+    "sha256": "ab5dc433ae838900101ca79937ee4a3685bcb3301abf1e9028e80693b4d75a9d"
+  },
+  {
+    "nom": "101-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-05.png",
+    "octets": 1742423,
+    "sha256": "01966171749a2d78dff7e824220fb5dcde0f4e2ee04d57a2c447350968fc7235"
+  },
+  {
+    "nom": "101-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-06.png",
+    "octets": 1744741,
+    "sha256": "97e6dd6826fed85610691d84ba7d1a59b0ffb1c3433103109f0ea94f1d2f97e6"
+  },
+  {
+    "nom": "101-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/101-07.png",
+    "octets": 1747224,
+    "sha256": "9212620742025d69c8e23d30a90e25a34ee68ab800596e7f18999ae553845276"
+  },
+  {
+    "nom": "95-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-00.png",
+    "octets": 1722757,
+    "sha256": "8447d5210bcc225085e3411914f9f19fc0717af337f3042c36a0a2101758e70f"
+  },
+  {
+    "nom": "95-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-01.png",
+    "octets": 1728051,
+    "sha256": "88ebb1885d423298d9813913c077b7cc55700511df97fdacc61f029804aacd0f"
+  },
+  {
+    "nom": "95-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-02.png",
+    "octets": 1735687,
+    "sha256": "6d6f694b018a21cf4d6a3066099dd7a99effb7291a6d065d14ac8a7691b785cf"
+  },
+  {
+    "nom": "95-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-03.png",
+    "octets": 1734815,
+    "sha256": "6d026d9e32f074ac522da857408adef4996604aec2eef41ec72f33844f00be17"
+  },
+  {
+    "nom": "95-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-04.png",
+    "octets": 1741889,
+    "sha256": "f73e0a806293e5f213dafda0376812f5e23fe4a3fb2f27b9eb3f40f7176d68df"
+  },
+  {
+    "nom": "95-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-05.png",
+    "octets": 1743652,
+    "sha256": "dfb106fa192806f8e71654b12ab07c1ed96577ba0671f2fce4dd6c877b3d9949"
+  },
+  {
+    "nom": "95-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-06.png",
+    "octets": 1742177,
+    "sha256": "7cbeb34d0ac1cce8f14a7cdfbcc771b71d734183a4ad5627aa9449257cbedf34"
+  },
+  {
+    "nom": "95-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/95-07.png",
+    "octets": 1751643,
+    "sha256": "2c15adfc51de82aaa919fdf086b903948a6f087a43e68061f1354e9a9f4a516d"
+  },
+  {
+    "nom": "88-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-00.png",
+    "octets": 1770230,
+    "sha256": "2133f813312f5a2c3cff22636bbb25c505a99df999792cb991f1e0ea4f7b7aa3"
+  },
+  {
+    "nom": "88-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-01.png",
+    "octets": 1774374,
+    "sha256": "72e7342f75f59d3949fb5103a51601dd93740d948f514ed1fff8d5c711d529ee"
+  },
+  {
+    "nom": "88-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-02.png",
+    "octets": 1775582,
+    "sha256": "550d20b65384105c0de45c7ef2fce7a919ab924ffd45ad1b7ccae125b4029308"
+  },
+  {
+    "nom": "88-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-03.png",
+    "octets": 1778650,
+    "sha256": "9ff64097f633ff1422a8380233a6471a7ad0777fbe6c8f2721f00486d35a8b43"
+  },
+  {
+    "nom": "88-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-04.png",
+    "octets": 1779391,
+    "sha256": "f3ad9d89b55ca8f3f87a8f9ed51588d3f9e6e1b475595ab77cb6873d6cbfbc1d"
+  },
+  {
+    "nom": "88-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-05.png",
+    "octets": 1783394,
+    "sha256": "6dc48ee0168b0271dbc9a36e75d62754ecd5039d18892a2959bab58133831c0e"
+  },
+  {
+    "nom": "88-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-06.png",
+    "octets": 1784608,
+    "sha256": "277000d6ebbb8ac6d8499fcb69f3c8e5369fc902f505576a3d753319d5dbb5f6"
+  },
+  {
+    "nom": "88-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/88-07.png",
+    "octets": 1788170,
+    "sha256": "79fb0b55f48df1dc884d4ddbaee8a1179b4d189866cc5916f5aaff737db31478"
+  },
+  {
+    "nom": "24-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-00.png",
+    "octets": 1751108,
+    "sha256": "b728cb3e79ee23afa57527ffba9d2c383acd336514b4ba8a73a2a1903ef7f55d"
+  },
+  {
+    "nom": "24-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-01.png",
+    "octets": 1754768,
+    "sha256": "90279fbb624cefa9741b5e65103dfaa00372108e68f562a1395453ca383e758b"
+  },
+  {
+    "nom": "24-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-02.png",
+    "octets": 1757894,
+    "sha256": "b9e5cefb0d72297991ecddc44a60b2dd0ccb5516cafef22818c6cb5f1979d0cf"
+  },
+  {
+    "nom": "24-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-03.png",
+    "octets": 1760302,
+    "sha256": "d50bd7f06dfb1ff7cdd87495dacc1b3158a8aaa98a028adcb54f6f708791b98d"
+  },
+  {
+    "nom": "24-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-04.png",
+    "octets": 1763110,
+    "sha256": "f041695357e58c30fdc8aa70f55ff0a04d1d3ca9b107ee611cc024bbbf487063"
+  },
+  {
+    "nom": "24-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-05.png",
+    "octets": 1765443,
+    "sha256": "80384bf57a8dc6ea4f22578b26eb4e1406fed11b3e542e47990e09809ae7cc72"
+  },
+  {
+    "nom": "24-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-06.png",
+    "octets": 1767055,
+    "sha256": "a57509c0f97d7f7b514608a8d4af9dd2b97998e934e1a7eb6d0a3b6a2440995e"
+  },
+  {
+    "nom": "24-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/24-07.png",
+    "octets": 1771465,
+    "sha256": "f811fd2cad63059214d34f3d394263ddce187298a1528cd2ddf48572190c693f"
+  },
+  {
+    "nom": "102-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-00.png",
+    "octets": 1725206,
+    "sha256": "4100786374e628ed1d55d168f5d4f86459184c47cee48b47dc59e4acbe4033fc"
+  },
+  {
+    "nom": "102-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-01.png",
+    "octets": 1729000,
+    "sha256": "1db3a69a43205f90cdc1e81d0c5014f8d640fd558106ed664dd77ef6cfb047f6"
+  },
+  {
+    "nom": "102-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-02.png",
+    "octets": 1733814,
+    "sha256": "942f771107fc55ee78efe5691f1b3ad559a771fffbc18d9398472d65b79c3865"
+  },
+  {
+    "nom": "102-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-03.png",
+    "octets": 1735965,
+    "sha256": "5fcaaa0337b1a25f8cf8716e95dc1a1be1bada0b9bcf39b46045a2e39ac675bb"
+  },
+  {
+    "nom": "102-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-04.png",
+    "octets": 1742778,
+    "sha256": "9ce7318b13333218fe857e34799db67577b3ffb96d52632d0ec75a15d386d0ce"
+  },
+  {
+    "nom": "102-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-05.png",
+    "octets": 1745395,
+    "sha256": "f98fa28951858f0fdbc5833daa8f7db64998f92115cfb2ff59e1548de53eee95"
+  },
+  {
+    "nom": "102-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/102-06.png",
+    "octets": 1748651,
+    "sha256": "d10da135a15503f00e98b3b6eec5f547771c14d729ab2ac765ae6e42b850e63c"
+  },
+  {
+    "nom": "107-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-00.png",
+    "octets": 1717638,
+    "sha256": "30632f134f57fb22443ff3add39483a3b0eb98808ba8739a1cafa219c7aa3ed7"
+  },
+  {
+    "nom": "107-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-01.png",
+    "octets": 1721412,
+    "sha256": "067be4a97d4923e684a054fd4f19424e6723d6eff81231789e2bab69e86a36f7"
+  },
+  {
+    "nom": "107-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-02.png",
+    "octets": 1725157,
+    "sha256": "aa7f151929135d7353cb51ace4f51873a9d9561220e4f9b00473b9c35f8f5a63"
+  },
+  {
+    "nom": "107-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-03.png",
+    "octets": 1731985,
+    "sha256": "8f7b85abe074638cd7123bf64af16ee6e6255328750e675a3d15e8a41153db30"
+  },
+  {
+    "nom": "107-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-04.png",
+    "octets": 1733681,
+    "sha256": "5b52079f5d3c4e816679c4086a48f3c8e7eeba6555b720c676c26d6b28fb50eb"
+  },
+  {
+    "nom": "107-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-05.png",
+    "octets": 1736868,
+    "sha256": "56280485a3a4da5fd2e3db188d7772fbf918b81a8d177bc24666d8c879afc813"
+  },
+  {
+    "nom": "107-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-06.png",
+    "octets": 1740308,
+    "sha256": "87f15681ce13331bdff035ed1d857fdf14cbbb171c7455db5eb650455cd4ddd3"
+  },
+  {
+    "nom": "107-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/107-07.png",
+    "octets": 1744044,
+    "sha256": "8cf3cab79528db8b7a8822722fb2fea2553e68754aa94f548b7265b7cab445dc"
+  },
+  {
+    "nom": "13-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-00.png",
+    "octets": 1732079,
+    "sha256": "48cc026abbdecfd3887532793a1abcfcbc0cce083d1f9a106f422fa5c02cd67e"
+  },
+  {
+    "nom": "13-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+    "octets": 1731722,
+    "sha256": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe"
+  },
+  {
+    "nom": "13-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-02.png",
+    "octets": 1735255,
+    "sha256": "49214a6a6e41916c521cf470dc5f71b6607dd21e5fda579535e1f5ef085759d8"
+  },
+  {
+    "nom": "13-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-03.png",
+    "octets": 1737931,
+    "sha256": "71f53e1b375678f82559185372ce1cd683330ab8a79a4efe46d2825e6d13f5fe"
+  },
+  {
+    "nom": "13-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-04.png",
+    "octets": 1739568,
+    "sha256": "d32c4d7e492c76f3c2a169113d1b446c1f4368c2ac19a60380c2bdc95191372b"
+  },
+  {
+    "nom": "13-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-05.png",
+    "octets": 1745385,
+    "sha256": "d8602ca6e46ad844815984fc3c2da0367c52f4c2a5e8d7b5cfde78738fa9e15e"
+  },
+  {
+    "nom": "13-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-06.png",
+    "octets": 1747495,
+    "sha256": "7397ff8277f8666c605ef9b114d1d530b5a5e40e4a3b5e1b090edb698406567d"
+  },
+  {
+    "nom": "13-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-07.png",
+    "octets": 1747482,
+    "sha256": "be9c0265050bb0bb9b45db2b27f8fb8e34cc85f22df41bb8c601168aa96b0592"
+  },
+  {
+    "nom": "75-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/75-00.png",
+    "octets": 1815173,
+    "sha256": "fc37fd8bc0a587a411556dafe4705a3ee2f86e4bd2041d0b1d8121fc7a1ffea9"
+  },
+  {
+    "nom": "75-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/75-01.png",
+    "octets": 1816404,
+    "sha256": "30db17d7728d2332b119d5c855311ea5345aeeb6773bd520e1bad36c9129787b"
+  },
+  {
+    "nom": "75-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/75-02.png",
+    "octets": 1813939,
+    "sha256": "4d30925efac23827fa993cd0e602bf482926a423945c30bf456cf81215fbbd3a"
+  },
+  {
+    "nom": "75-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/75-04.png",
+    "octets": 1820524,
+    "sha256": "897a126f737bf68585afc1d1da2204a92ff0616668dd87a8ca1317ebdb448c0c"
+  },
+  {
+    "nom": "75-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/75-06.png",
+    "octets": 1825898,
+    "sha256": "64fbe6346888f314d16b7de41ae9afe91dd3e8bee825882753ecd2f384715d71"
+  },
+  {
+    "nom": "75-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/75-07.png",
+    "octets": 1824594,
+    "sha256": "dd4d2c62176fe308d784b295ba805032925a44f3313c7e06407109cf0f45b307"
+  },
+  {
+    "nom": "63-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-00.png",
+    "octets": 1779513,
+    "sha256": "e472a48306a8ff8f1020c7463b3fa43c9bf94b9db9eaf4d102a4580cf16854c6"
+  },
+  {
+    "nom": "63-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-01.png",
+    "octets": 1780681,
+    "sha256": "3eb9acfa6f90a79c42685e08e7905e62c67eff9b5896b4d4e572882e32a22dcb"
+  },
+  {
+    "nom": "63-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-02.png",
+    "octets": 1785476,
+    "sha256": "c33a955c5a574011268ff61ccef691cedcdbad86da089e5a04ed92bda9c2f7f2"
+  },
+  {
+    "nom": "63-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-03.png",
+    "octets": 1789613,
+    "sha256": "03c892eb0c362090752139e727e258143c8fbd3f9fbc1b410291b245dc229b9d"
+  },
+  {
+    "nom": "63-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-04.png",
+    "octets": 1788695,
+    "sha256": "b903616c1a547902d79973d7451d3698b7236d97f6ad628a9d7166e63cd3dca4"
+  },
+  {
+    "nom": "63-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-05.png",
+    "octets": 1790698,
+    "sha256": "495b4773725ef7d573551e8c855d387dba9d5e04b56899f0aaeb350ac5051357"
+  },
+  {
+    "nom": "63-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-06.png",
+    "octets": 1793138,
+    "sha256": "00f92375c68998275f6077a669cd3f3f3d4bfa6adbcf1ca9be594542c7c84519"
+  },
+  {
+    "nom": "63-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/63-07.png",
+    "octets": 1796346,
+    "sha256": "241e8cd904f44318c61ba25f09a0269b1383d0a8e6835271545a97d377f4f9cc"
+  },
+  {
+    "nom": "69-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-00.png",
+    "octets": 1761434,
+    "sha256": "83965428021853162619d8e013b3d1f2def8d66833a959fb1de57763cb95f99c"
+  },
+  {
+    "nom": "69-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-01.png",
+    "octets": 1766050,
+    "sha256": "29dede51640506aaa967b57a082b10e8c67211b7163ea7074c5b543f1cf2719f"
+  },
+  {
+    "nom": "69-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-02.png",
+    "octets": 1774328,
+    "sha256": "a99cd8beae4fcdecd679b54334fc78bb827959698914fc86e7ca22fe2af03cc1"
+  },
+  {
+    "nom": "69-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-03.png",
+    "octets": 1777456,
+    "sha256": "30b83990f9a2767ea2e38df10fac65cb36c3674db14f0c08733a4d91de5694b3"
+  },
+  {
+    "nom": "69-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-04.png",
+    "octets": 1780400,
+    "sha256": "1f7c1ba6b3fddbf6f63d134a6f44100eeb272a84cf7be168a804e2cd3c874e44"
+  },
+  {
+    "nom": "69-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-05.png",
+    "octets": 1784249,
+    "sha256": "6420cc1f097caec732c3b10889de15a18b20b10925fb0f46fbc111edc7d2604c"
+  },
+  {
+    "nom": "69-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-06.png",
+    "octets": 1786756,
+    "sha256": "86443f92614d4b5cb7ebbf3a11e42a6bc6269fa200d174f0aa0ca1a194511f0a"
+  },
+  {
+    "nom": "69-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/69-07.png",
+    "octets": 1789817,
+    "sha256": "847ee35844aa7f6d26d78fb615adda611ba0cc329f07b85034dafdb1d69cc577"
+  },
+  {
+    "nom": "40-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-00.png",
+    "octets": 1781991,
+    "sha256": "58ff143e702df07c2060a841bd4bb373e8f01da0736abcc6a923c704ab70d597"
+  },
+  {
+    "nom": "40-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-01.png",
+    "octets": 1783686,
+    "sha256": "5111f5722778f1ff14f63739cabf26f974b286e70d19deebb9a26160696d3d5e"
+  },
+  {
+    "nom": "40-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-02.png",
+    "octets": 1785841,
+    "sha256": "f4a90a26014b5346e3cab4bdbc76fdf41dfcccf441f20a294bcd5cbce6f0e615"
+  },
+  {
+    "nom": "40-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-03.png",
+    "octets": 1787687,
+    "sha256": "48477342bdfbe318d8796dcf788dd7947dba75c01106bf4b24aeb2a7e9a7390d"
+  },
+  {
+    "nom": "40-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-04.png",
+    "octets": 1791977,
+    "sha256": "0009ad841638eda5d254e52d46b25324c69539845fd76659653d9445e0b9133e"
+  },
+  {
+    "nom": "40-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-05.png",
+    "octets": 1796751,
+    "sha256": "4f1fd194f02d45d568408f9f61eb6670d7755a947b83f7f027905b042e1c65ce"
+  },
+  {
+    "nom": "40-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/40-07.png",
+    "octets": 1798911,
+    "sha256": "3e471677f89a3b5555dccb600200c44864adebbd73ce95721688481481ada5b1"
+  },
+  {
+    "nom": "98-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/98-00.png",
+    "octets": 1722753,
+    "sha256": "7af67c4387598ad5491ea24db0dc98af9b024b10c459f5c9ef038cfe3c15296e"
+  },
+  {
+    "nom": "98-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/98-01.png",
+    "octets": 1730199,
+    "sha256": "5fed791a5b02102ebaf8fa491b0dac1785171ffca958e003a970f108f12401ed"
+  },
+  {
+    "nom": "98-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/98-02.png",
+    "octets": 1730066,
+    "sha256": "cdac5a00e2354d0817bb52cd9d2e11378c0b7cd065f0c55e08bf0e6ee7c49345"
+  },
+  {
+    "nom": "98-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/98-03.png",
+    "octets": 1736535,
+    "sha256": "fbd44557416f2d62a78c1e25342af9722bac6c0260d044cb0db08d707d8e3bf0"
+  },
+  {
+    "nom": "98-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/98-04.png",
+    "octets": 1737766,
+    "sha256": "b7b9e2107facf02c9a89c105f2cbda556c9196c27efe15fd1c8b5fb4b50cfd10"
+  },
+  {
+    "nom": "98-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/98-05.png",
+    "octets": 1740546,
+    "sha256": "3fa9d67e4603ce39276837e31406cbd24cfcf60f4b04b6c372497ad1c70b129e"
+  },
+  {
+    "nom": "100-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-00.png",
+    "octets": 1727091,
+    "sha256": "b401896d50ecccd1ef70520425364787f513c61c783c5f64bdbe4d68c67b93e6"
+  },
+  {
+    "nom": "100-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-01.png",
+    "octets": 1728044,
+    "sha256": "202cdeb5a843c54aec53746b38ad9f25f8e392a7730102cea14565bb58ee3829"
+  },
+  {
+    "nom": "100-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-02.png",
+    "octets": 1730724,
+    "sha256": "26f5d622af7fe2198b7915b2aa76f9477b005e205c04a24dc319f4b59f8897d5"
+  },
+  {
+    "nom": "100-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-03.png",
+    "octets": 1737012,
+    "sha256": "421daaa8d11859daa370bfb22e0d0b790379feab297863f0d1a41efa972e271d"
+  },
+  {
+    "nom": "100-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-04.png",
+    "octets": 1738886,
+    "sha256": "57301722041470625302ed32ac1fc6fd8a496e52d83d715d6ea04372e3f1a6b5"
+  },
+  {
+    "nom": "100-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-05.png",
+    "octets": 1745235,
+    "sha256": "477c9bf74fc0fba43be083007bac1ff83b754d388595a4c9243810aabd589b85"
+  },
+  {
+    "nom": "100-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/100-06.png",
+    "octets": 1746020,
+    "sha256": "3aa8906500f2d32fb5966a1bb843c90ba17a60cadf428ba9b8b68520f7d2f143"
+  },
+  {
+    "nom": "70-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-00.png",
+    "octets": 1787448,
+    "sha256": "b9fbdc336307e11311c6faa5fbc7e70dc1bc2e928d9748a4a94ba23d793bd68d"
+  },
+  {
+    "nom": "70-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+    "octets": 1791284,
+    "sha256": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888"
+  },
+  {
+    "nom": "70-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-02.png",
+    "octets": 1791504,
+    "sha256": "da841929ba571479f29f179cb17ca43251d86fefc75b1766ed11b59747d203d6"
+  },
+  {
+    "nom": "70-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-03.png",
+    "octets": 1791920,
+    "sha256": "e5b1323b0d44757bb773b09bb5738cbe4054acbccba68d17a4d5e5e9e6ffeb10"
+  },
+  {
+    "nom": "70-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-04.png",
+    "octets": 1793316,
+    "sha256": "4363d30f7bd7f5d11361181c7de4285ec6a61b9ae34ed83757437bfabda1a65f"
+  },
+  {
+    "nom": "70-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-05.png",
+    "octets": 1794851,
+    "sha256": "6ad8503536ce7b111988dcd0cdf57ed7a139fffa95c4e46be3973081074cb56c"
+  },
+  {
+    "nom": "70-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-06.png",
+    "octets": 1798096,
+    "sha256": "ec29fa9fcbb10bffb13a51edabad215f47e718e7ccd38f47751703c15a3bcb01"
+  },
+  {
+    "nom": "70-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-07.png",
+    "octets": 1797636,
+    "sha256": "93cf402f17ce7d532c1d856ebaf180ccd97eeda6be5be752b4fadeccfe30cd5d"
+  },
+  {
+    "nom": "67-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-00.png",
+    "octets": 1782675,
+    "sha256": "96241385f04f117369b5771d0c949966f9fc179194557ece940b40bde27a509d"
+  },
+  {
+    "nom": "67-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-01.png",
+    "octets": 1783924,
+    "sha256": "87bffeac06f51dc86cc42770e8dbaa504c99930d51d457c7da0c6695d6fd3927"
+  },
+  {
+    "nom": "67-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-02.png",
+    "octets": 1785447,
+    "sha256": "f1c6a5d5e46a2210b573d06e28f8cf603b0a92707751a9307d56e9df3c4f45f3"
+  },
+  {
+    "nom": "67-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-03.png",
+    "octets": 1787456,
+    "sha256": "26bdeb34cca4ba2043c48a9e531cf69ef37908e2281a365544481806092575b0"
+  },
+  {
+    "nom": "67-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-04.png",
+    "octets": 1791418,
+    "sha256": "e065661b72aed296f53b87f5c338de02fa586d927620004ea69df9e733dcbc06"
+  },
+  {
+    "nom": "67-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-05.png",
+    "octets": 1788734,
+    "sha256": "65d24d461a8ef4e5afa9b37e534a0fe3ed704838dd9579cb76bb675e8008bb75"
+  },
+  {
+    "nom": "67-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-06.png",
+    "octets": 1792338,
+    "sha256": "cad8dbd3d686b68e5afa468452622a243b3e7a3476ab3cd8f98b60db77472a91"
+  },
+  {
+    "nom": "67-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/67-07.png",
+    "octets": 1788439,
+    "sha256": "bc07d9480e39c9346bdd82c6a6930589095cc25a1beaae12a00fcdb1c637351e"
+  },
+  {
+    "nom": "14-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-00.png",
+    "octets": 1731788,
+    "sha256": "867fbc0e879e67797f69a1f0f8b0095095ddd1f7a4b41250996e5cd9a1e43128"
+  },
+  {
+    "nom": "14-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-01.png",
+    "octets": 1732668,
+    "sha256": "0f618e376d189808470d8e85e882978f8f8fc906941e82a7ff8fec2a07af3711"
+  },
+  {
+    "nom": "14-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-02.png",
+    "octets": 1737353,
+    "sha256": "895a96b6b963b819c9ae1fdc33e2797bad3a1bfd9084b7d36a962d199f672d3d"
+  },
+  {
+    "nom": "14-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-03.png",
+    "octets": 1741229,
+    "sha256": "f532854dfe66390f8348909b3080665cd0a96c482d0ba276c05654f7c4285757"
+  },
+  {
+    "nom": "14-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-04.png",
+    "octets": 1741327,
+    "sha256": "8d502a4936c2b7399c8cfe4d3502f0461cc77bcb75d82be93844c32fe99fdf62"
+  },
+  {
+    "nom": "14-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-05.png",
+    "octets": 1748694,
+    "sha256": "41f8d3a3f92d44fdb9a0e10e0a9809f7e5ab9af423483ff463feb1759ddb9e34"
+  },
+  {
+    "nom": "14-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-06.png",
+    "octets": 1751199,
+    "sha256": "9ac796439b64709d5570773260b2913ec01a257292cf05733b849d9c3da399fd"
+  },
+  {
+    "nom": "14-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/14-07.png",
+    "octets": 1751260,
+    "sha256": "4cda0196ec0dc4ac9e09f9ef3e3967c3f3dc33b8f3f84bc9dee89228ee818755"
+  },
+  {
+    "nom": "44-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-00.png",
+    "octets": 1780449,
+    "sha256": "ba0dff8d5810308ddde00ae7673a235aaedf986d35f20b3ca6e7b08e938793a1"
+  },
+  {
+    "nom": "44-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-01.png",
+    "octets": 1781980,
+    "sha256": "61171b7c26b874c1a1eae1fd68d6313201457b55108302e46f40eaf7e4c3546d"
+  },
+  {
+    "nom": "44-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-02.png",
+    "octets": 1789315,
+    "sha256": "75ce01b95024e93d77c9f046e612501b09eb4cdf19d7c434bcecb3553e01b5b1"
+  },
+  {
+    "nom": "44-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-03.png",
+    "octets": 1793091,
+    "sha256": "3142b72960467c2453f923afb75e40f4bbe4f0a0ea5f8459fa203f88c431bef2"
+  },
+  {
+    "nom": "44-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-04.png",
+    "octets": 1795428,
+    "sha256": "198dcefc8d2a1a4f295de518ad9494b0474a3b2bc3872891336285345c7c2004"
+  },
+  {
+    "nom": "44-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-06.png",
+    "octets": 1796919,
+    "sha256": "9469969f2ee90f19c0305baef904a082adc87c777fe72f5888c811e9100d6ec0"
+  },
+  {
+    "nom": "44-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/44-07.png",
+    "octets": 1800833,
+    "sha256": "e0da1e02d165508f15367e421bf696f8e56169786dc89aa8eeefa3b02aa8013d"
+  },
+  {
+    "nom": "39-00.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-00.png",
+    "octets": 1780921,
+    "sha256": "da8fac9a7d857f6fa963ca088b185d13053979f56a019069d16cc8de5c457022"
+  },
+  {
+    "nom": "39-01.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-01.png",
+    "octets": 1780658,
+    "sha256": "5316859ba5e2f3d36d7eb4c709bc60ddd26fc3a95ce6ce9a6ec25ad880f1c402"
+  },
+  {
+    "nom": "39-02.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-02.png",
+    "octets": 1786814,
+    "sha256": "899c83bdb31dc8ead43d5770b0eab457c23e41e66d1b3c38d7fb46d53f0f38e6"
+  },
+  {
+    "nom": "39-03.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-03.png",
+    "octets": 1789804,
+    "sha256": "8baeaf5e7820964ce654ca630f11b4e7d939a61d4adbcc3be435530af50b7838"
+  },
+  {
+    "nom": "39-04.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-04.png",
+    "octets": 1792095,
+    "sha256": "7f22e2084980b19211981babc245ac2e747a6e63e0bb8dd5dc27bb2927fbcec4"
+  },
+  {
+    "nom": "39-05.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-05.png",
+    "octets": 1794850,
+    "sha256": "2afcfb8e550a0b09baf45c74b3aaad63ddb140ce0b87c6446192053b61b348ba"
+  },
+  {
+    "nom": "39-06.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-06.png",
+    "octets": 1795641,
+    "sha256": "9742f9814c0e234bb5fc97d4616b886763e4f970b81046a897a5f8d91c56a15f"
+  },
+  {
+    "nom": "39-07.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/39-07.png",
+    "octets": 1799806,
+    "sha256": "2bfe2f9d8934e940e52999eb2be93931cd4001e79151618de02b386bce50e94f"
+  },
+  {
+    "nom": "150946804.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/commons/150946804.jpg",
+    "octets": 4474258,
+    "sha256": "54f93f94a830318579cffc76e660c28dc4f89b3c11e9ba8da9302ec2ecf95135"
+  },
+  {
+    "nom": "23785698.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/commons/23785698.jpg",
+    "octets": 259076,
+    "sha256": "000ce63affbc389c9ff7471c131ae928810bc92385b835d35c78f15062890ea5"
+  },
+  {
+    "nom": "130303446.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/commons/130303446.jpg",
+    "octets": 2432946,
+    "sha256": "7f9240ccea202de40c8133a964871c86d97ff58cfa371c8c6a23f3cbd8d9fdea"
+  },
+  {
+    "nom": "570904.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/dvids/570904.jpg",
+    "octets": 1021164,
+    "sha256": "6f40265e5b85f8ac15c9f008ebbebb37617185548c7e4dd4c03f3f84fc73ef2c"
+  },
+  {
+    "nom": "4194279.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/dvids/4194279.jpg",
+    "octets": 692774,
+    "sha256": "a515ba4270927a3da7284a121f24b9e29c89302455380fbb5493344f609227e3"
+  },
+  {
+    "nom": "7245527662.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+    "octets": 780209,
+    "sha256": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302"
+  },
+  {
+    "nom": "5115614018.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+    "octets": 1108495,
+    "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d"
+  },
+  {
+    "nom": "7092795309.png",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/7092795309.png",
+    "octets": 473847,
+    "sha256": "ae03b311b09c665b6cdcc80c959f81512aa8de93559b4a70f14cce92207458c6"
+  },
+  {
+    "nom": "3996564090.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/3996564090.png",
+    "octets": 1899805,
+    "sha256": "00ae570b88ab6d8e16718fa8d935f5970554b171db77bd5a838723d24bf7a5b2"
+  },
+  {
+    "nom": "929865.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/929865.png",
+    "octets": 1517226,
+    "sha256": "26014f6c3bf3d5e56be4267ecb43abcdd34d14ee4f0779d6c18376ee340d72cd"
+  },
+  {
+    "nom": "6791193480.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/6791193480.png",
+    "octets": 1063333,
+    "sha256": "dd7d8f0b85d8acb907b3a303d573b8698f75ad090801266baddf1e74cc1d9632"
+  },
+  {
+    "nom": "49398629148.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/49398629148.png",
+    "octets": 1076303,
+    "sha256": "ebb793a1fab9438a6cf4cce0d75cbe489c753b795d22f50ce1ac47784f1688e6"
+  },
+  {
+    "nom": "955488046.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/955488046.png",
+    "octets": 1386966,
+    "sha256": "9ae63f81beb441282e2a9f553b47e230ddf872431039592f2eebdd283c4ea53a"
+  },
+  {
+    "nom": "3771007694.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/3771007694.png",
+    "octets": 1650887,
+    "sha256": "66d4c57cb70e1f70030493e62142b82bfc7e5d95e29acb57feaa96291d9c751c"
+  },
+  {
+    "nom": "14347254046.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/14347254046.png",
+    "octets": 1392657,
+    "sha256": "f3d82769383c27af9c7e8770538cc1672bd9e40f07c3c44d2bf2cc74faf597eb"
+  },
+  {
+    "nom": "8549619981.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/8549619981.png",
+    "octets": 815339,
+    "sha256": "0b7a2954ff816d0daaa543e383df0fcc05134f8feec05606607eb4c25cabf6b2"
+  },
+  {
+    "nom": "36377144413.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/36377144413.png",
+    "octets": 1864722,
+    "sha256": "d953b4b1a69417a641d2f4bf573f3d63fac7a1d87783e429155b20a03446e905"
+  },
+  {
+    "nom": "2712546351.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/2712546351.png",
+    "octets": 821116,
+    "sha256": "c42dffe28f52722e2af51cbbeaae99e6e657c39370b3efe0d396d357d576dd9e"
+  },
+  {
+    "nom": "8468859144.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/8468859144.png",
+    "octets": 520731,
+    "sha256": "3f6753f37be8700107071d163ff89fc16d1d420726ad1867dcf642bc48b1e22e"
+  },
+  {
+    "nom": "67300452.png",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/work/67300452.png",
+    "octets": 341972,
+    "sha256": "1cd5b745b20def59b437e5f898f67a31ba07ca5ff21ab5d8d090367865ac4b0d"
+  },
+  {
+    "nom": "18105652008.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+    "octets": 426302,
+    "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f"
+  },
+  {
+    "nom": "20873987148.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/20873987148.jpg",
+    "octets": 191965,
+    "sha256": "fcb7d89ca9ec78df775f99fe7dd46aeb4aa8509a43df0890ac4c5c8fa13e7d45"
+  },
+  {
+    "nom": "24614689941.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+    "octets": 99973,
+    "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888"
+  },
+  {
+    "nom": "36258219964.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/36258219964.jpg",
+    "octets": 79524,
+    "sha256": "7e93a73cd17828aeca0b022db408b111110467728db6fb33b55baf58afc3a93d"
+  },
+  {
+    "nom": "4169106197.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+    "octets": 97351,
+    "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5"
+  },
+  {
+    "nom": "53151623584.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/53151623584.jpg",
+    "octets": 451449,
+    "sha256": "7196105b35bbba08750768aa806209acbc428ffe23fdf0730fcb9d13e8b4b84e"
+  },
+  {
+    "nom": "wc71488242.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+    "octets": 592714,
+    "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491"
+  },
+  {
+    "nom": "128831925.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/128831925.jpg",
+    "octets": 104271,
+    "sha256": "3f8f84f54f03b94f0e7992416af75b639da352c81587922749806f501a3d958a"
+  },
+  {
+    "nom": "15503462606.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/15503462606.jpg",
+    "octets": 186149,
+    "sha256": "cf93f91e0bcdd65364a2757b003d59a0173f900eed8378d57ab796bb22ade304"
+  },
+  {
+    "nom": "4592998057.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/4592998057.jpg",
+    "octets": 217553,
+    "sha256": "b6ed07c9926f834b7d4a259fe5b36963d82f60355a48f94b6e3a8f85c51cc367"
+  },
+  {
+    "nom": "51590434805.jpg",
+    "role": "dev_explore",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/51590434805.jpg",
+    "octets": 450046,
+    "sha256": "112f5b7067d1abaa8aa408a3a2ecec4798158e3d4a6a7390661763c7d2296277"
+  },
+  {
+    "nom": "wc130852209.jpg",
+    "role": "train",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc130852209.jpg",
+    "octets": 182785,
+    "sha256": "db5be72d26ae6f19428adc978f93eea555284bcf23f811cac1fe4a7a9d1ceef5"
+  },
+  {
+    "nom": "9436017284.jpg",
+    "role": "dev_indep",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+    "octets": 203063,
+    "sha256": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057"
+  },
+  {
+    "nom": "37348131162.jpg",
+    "role": "dev_indep",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+    "octets": 134046,
+    "sha256": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59"
+  },
+  {
+    "nom": "89744300.jpg",
+    "role": "dev_indep",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/89744300.jpg",
+    "octets": 228255,
+    "sha256": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b"
+  },
+  {
+    "nom": "36725328420.jpg",
+    "role": "dev_indep",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+    "octets": 150499,
+    "sha256": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87"
+  }
+]

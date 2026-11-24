@@ -1,0 +1,252 @@
+{
+  "requetes": [
+    [
+      "pfeile zielscheibe treffer",
+      1
+    ],
+    [
+      "pijlen blazoen",
+      1
+    ],
+    [
+      "flechas en la diana",
+      1
+    ],
+    [
+      "kyudo mato arrows target",
+      1
+    ],
+    [
+      "archery arrows Portsmouth round",
+      1
+    ],
+    [
+      "archery face three spot arrows",
+      1
+    ],
+    [
+      "arrows in straw boss archery",
+      1
+    ],
+    [
+      "tir à l'arc flèches groupées",
+      1
+    ],
+    [
+      "archery target worn face holes",
+      1
+    ],
+    [
+      "archery target",
+      16
+    ],
+    [
+      "archery target",
+      18
+    ],
+    [
+      "archery target",
+      20
+    ],
+    [
+      "archery target",
+      22
+    ],
+    [
+      "arrows target",
+      10
+    ],
+    [
+      "arrows target",
+      12
+    ],
+    [
+      "archery practice",
+      7
+    ],
+    [
+      "archery practice",
+      9
+    ]
+  ],
+  "erreurs": [],
+  "lectures": [
+    {
+      "id": "36725328420",
+      "group": "juantiagues",
+      "source": {
+        "id": "36725328420",
+        "source": "https://www.flickr.com/photos/juantiagues/36725328420",
+        "credit": "juantiagues",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "pixels_url": "https://live.staticflickr.com/4405/36725328420_462f189f34_b.jpg",
+        "sha256": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+        "octets": 150499,
+        "notice_sha256": "dea808b35369649d1282842b59b147ad72ac00a4aac676f220749e21fccc03ca",
+        "requete": 2
+      },
+      "size": [
+        1024,
+        768
+      ],
+      "boards": [
+        "36725328420-1"
+      ],
+      "flags": [
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "exhaustive": false,
+      "ignore": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              364,
+              320
+            ],
+            [
+              674,
+              327
+            ]
+          ],
+          "entry": null,
+          "visibility": "ambiguous"
+        },
+        {
+          "axis": [
+            [
+              327,
+              353
+            ],
+            [
+              641,
+              335
+            ]
+          ],
+          "entry": null,
+          "visibility": "ambiguous"
+        },
+        {
+          "axis": [
+            [
+              330,
+              361
+            ],
+            [
+              581,
+              362
+            ]
+          ],
+          "entry": null,
+          "visibility": "occluded"
+        },
+        {
+          "axis": [
+            [
+              315,
+              391
+            ],
+            [
+              548,
+              397
+            ]
+          ],
+          "entry": null,
+          "visibility": "occluded"
+        },
+        {
+          "axis": [
+            [
+              115,
+              399
+            ],
+            [
+              253,
+              409
+            ]
+          ],
+          "entry": null,
+          "visibility": "ambiguous"
+        },
+        {
+          "axis": [
+            [
+              392,
+              498
+            ],
+            [
+              604,
+              495
+            ]
+          ],
+          "entry": [
+            617,
+            495
+          ],
+          "visibility": "visible"
+        }
+      ],
+      "note": "Lecture assistée partielle. Objet interposé et tubes superposés. Un contact lisible sous le groupe. La région ambiguë est exclue des négatifs."
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "3236244214",
+      "source": "https://www.flickr.com/photos/pushandplay/3236244214",
+      "motif": "documentation composée"
+    },
+    {
+      "id": "48078008041",
+      "source": "https://www.flickr.com/photos/145649385@N08/48078008041",
+      "motif": "illustration"
+    },
+    {
+      "id": "1271163886",
+      "source": "https://www.flickr.com/photos/sidewalk_flying/1271163886",
+      "motif": "scène en cours"
+    },
+    {
+      "id": "3076320960",
+      "source": "https://www.flickr.com/photos/vsmithuk/3076320960",
+      "motif": "scène en cours"
+    },
+    {
+      "id": "6464717433",
+      "source": "https://www.flickr.com/photos/ynys_fawr/6464717433",
+      "motif": "scène en cours"
+    },
+    {
+      "id": "21954773771",
+      "source": "https://www.flickr.com/photos/zsoltsandor83/21954773771",
+      "motif": "support figuratif 3D hors géométrie du blason"
+    },
+    {
+      "id": "3076310856",
+      "source": "https://www.flickr.com/photos/vsmithuk/3076310856",
+      "motif": "scène en cours"
+    },
+    {
+      "id": "3075484909",
+      "source": "https://www.flickr.com/photos/vsmithuk/3075484909",
+      "motif": "scène en cours"
+    },
+    {
+      "id": "16062091131",
+      "source": "https://www.flickr.com/photos/bnpositive/16062091131",
+      "motif": "blasons distants et inventaire non vérifiable"
+    }
+  ]
+}

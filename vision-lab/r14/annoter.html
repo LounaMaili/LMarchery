@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; img-src blob:; style-src 'unsafe-inline'; connect-src 'none'">
+<title>LMarchery · Annotation des photos</title>
+<style>
+body { margin: 2rem auto; padding: 0 1rem; max-width: 80rem; font: 1rem system-ui, sans-serif; color: #152238; }
+h1 { font-size: 1.7rem; }
+fieldset { margin: .8rem 0; border: 1px solid #8da0b5; border-radius: .5rem; }
+label { display: inline-block; margin: .4rem; }
+button { margin: .3rem; min-height: 2rem; font: inherit; }
+input, select { font: inherit; }
+canvas { display: block; max-width: 100%; margin-top: .8rem; border: 1px solid #8da0b5; cursor: crosshair; }
+#status { min-height: 1.4rem; }
+</style>
+<script src="../r3/annotate.js" defer></script>
+<script src="./outil.js" defer></script>
+<h1>Annoter une photo après volée</h1>
+<fieldset>
+  <legend>Acquisition locale</legend>
+  <label>Provenance (alias) <input id="source" maxlength="80"></label>
+  <label>Séance <input id="session" maxlength="80"></label>
+  <label>Support physique <input id="board" maxlength="80"></label>
+  <label>Partition <select id="split"><option value="documentaire">À affecter</option><option value="train">Apprentissage</option><option value="dev">Développement</option><option value="reserve">Réservée</option></select></label>
+  <label>Photo <input id="photo" type="file" accept="image/png,image/jpeg"></label>
+  <label>Identifiant du lecteur <input id="reader" maxlength="80"></label>
+  <button id="load">Ouvrir</button>
+</fieldset>
+<fieldset id="controls" disabled>
+  <legend>Repères et tubes</legend>
+  <label>Contact
+    <select id="visibility">
+      <option value="visible">Visible</option><option value="occluded">Masqué</option>
+      <option value="ambiguous">Ambigu</option><option value="out_of_frame">Hors cadre</option>
+    </select>
+  </label>
+  <label>Extrémité <select id="tail"><option value="visible">Visible</option><option value="clipped">Coupée</option></select></label>
+  <label>Incertitude (px) <input id="uncertainty" type="number" min="0" value="5" size="4"></label>
+  <label>Groupe <input id="group" maxlength="60"></label>
+  <label><input id="boundary" type="checkbox"> Près d’un cordon</label>
+  <button id="shaft">Tracer un tube</button>
+  <label>Nom du repère facultatif <input id="landmark" maxlength="60"></label>
+  <button id="geometry">Marquer un repère</button>
+  <label>Segment parasite <select id="negativeKind"><option value="blason">Anneau, imprimé ou bord du blason</option><option value="decor">Décor</option><option value="ombre">Ombre</option><option value="autre">Autre parasite vérifié</option></select></label>
+  <button id="negative">Tracer un parasite vérifié</button>
+  <button id="ignore">Délimiter une zone incertaine</button>
+  <button id="undo">Annuler le tracé ou le dernier élément</button>
+  <label><input id="worn" type="checkbox"> Support usé</label>
+  <label><input id="grouped" type="checkbox"> Tubes groupés</label>
+  <label><input id="complete" type="checkbox"> Inventaire complet, même sans flèche</label>
+  <button id="export">Exporter le relevé JSON</button>
+</fieldset>
+<p id="status" role="status"></p>
+<canvas id="canvas" hidden aria-label="Photographie à annoter"></canvas>
+</html>
