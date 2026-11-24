@@ -1,0 +1,3187 @@
+{
+  "sources": {
+    "annotations.json": {
+      "nom": "annotations.json",
+      "role": "Manifeste historique; seules lignes train/dév utilisées",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/annotations.json",
+      "octets": 322788,
+      "sha256": "0328c99331902c0b63ae1ed65bbffe994e21480e9b72d72fb4fd01abedde56e5"
+    },
+    "corpus.json": {
+      "nom": "corpus.json",
+      "role": "Manifeste historique; seules lignes train/dév utilisées",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/corpus.json",
+      "octets": 53113,
+      "sha256": "e6bf88fa2a465078d855493a66d667d739efc5d68081e166a2a4124fa81d877f"
+    }
+  },
+  "photos": {
+    "90-00": {
+      "sequence": "90",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "90-01": {
+      "sequence": "90",
+      "frame": 1,
+      "new_instance": "90-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "cabe65a30252b3cdc23588ff16a8d84d4c45aa8f10acc20e6de8b049d7895b46"
+    },
+    "90-02": {
+      "sequence": "90",
+      "frame": 2,
+      "new_instance": "90-02",
+      "previous_instances": [
+        "90-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "7db06a88566acded3ffda6ac1d69851ddf19185293dbb560f976e473da3058c7"
+    },
+    "90-03": {
+      "sequence": "90",
+      "frame": 3,
+      "new_instance": "90-03",
+      "previous_instances": [
+        "90-01",
+        "90-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "97d83e828dfa9a01bd9283afde50df9646ac4368fb1ae44a4db8cba45bed23ef"
+    },
+    "90-04": {
+      "sequence": "90",
+      "frame": 4,
+      "new_instance": "90-04",
+      "previous_instances": [
+        "90-01",
+        "90-02",
+        "90-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "2400f31866829ad7034f192b35d255a9fc61eb4c3032947c98ca1ba245252d12"
+    },
+    "90-05": {
+      "sequence": "90",
+      "frame": 5,
+      "new_instance": "90-05",
+      "previous_instances": [
+        "90-01",
+        "90-02",
+        "90-03",
+        "90-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "435355c9431ece69d768341e62d1b7b4d962816001d498c019fa35d572d4aeeb"
+    },
+    "90-06": {
+      "sequence": "90",
+      "frame": 6,
+      "new_instance": "90-06",
+      "previous_instances": [
+        "90-01",
+        "90-02",
+        "90-03",
+        "90-04",
+        "90-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "47cf76d2e77da91a71c45e719726b152bcda119d543d06d0cb5095c426029a6d"
+    },
+    "90-07": {
+      "sequence": "90",
+      "frame": 7,
+      "new_instance": "90-07",
+      "previous_instances": [
+        "90-01",
+        "90-02",
+        "90-03",
+        "90-04",
+        "90-05",
+        "90-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "90/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/90%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "f1216aab29148bb92895bae871b59205f3b457589c63ef75025db33a62b87f39"
+    },
+    "37-00": {
+      "sequence": "37",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "37/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "37-01": {
+      "sequence": "37",
+      "frame": 1,
+      "new_instance": "37-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "37/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/37%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "7d45179f74840e071c43ae9b87d83fed95d11b00f56879464b15d381eb0cecde"
+    },
+    "37-05": {
+      "sequence": "37",
+      "frame": 5,
+      "new_instance": "37-05",
+      "previous_instances": [
+        "37-01",
+        "37-02",
+        "37-03",
+        "37-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "37/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/37%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "45a2ec51b53f7bba27a9376289172aa96d6a9c8e5c097d93bdb5e918bcc919d7"
+    },
+    "37-06": {
+      "sequence": "37",
+      "frame": 6,
+      "new_instance": "37-06",
+      "previous_instances": [
+        "37-01",
+        "37-02",
+        "37-03",
+        "37-04",
+        "37-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "37/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/37%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "41486e7cbbc2c9a9a5fb5cccc0aa7e136c663bc997c6ecf9bf474883832e36ca"
+    },
+    "37-07": {
+      "sequence": "37",
+      "frame": 7,
+      "new_instance": "37-07",
+      "previous_instances": [
+        "37-01",
+        "37-02",
+        "37-03",
+        "37-04",
+        "37-05",
+        "37-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "37/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/37%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "77d6c5ff731a87d113000df0ad4d70ad395fb1c078f442d1ddcd61fbc39398e7"
+    },
+    "101-00": {
+      "sequence": "101",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "101-01": {
+      "sequence": "101",
+      "frame": 1,
+      "new_instance": "101-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "5b889a5a32a23cb8a90b173492d1a05dcf6b8b4dcd582b747cf4782f989274f7"
+    },
+    "101-02": {
+      "sequence": "101",
+      "frame": 2,
+      "new_instance": "101-02",
+      "previous_instances": [
+        "101-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "6410704168b59b12ed4f0416129c41cba04f55e93a8b19d2430c6c2f15c4b0be"
+    },
+    "101-03": {
+      "sequence": "101",
+      "frame": 3,
+      "new_instance": "101-03",
+      "previous_instances": [
+        "101-01",
+        "101-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "e13889636b233247b466531e6e8f076022cf643b4311da517cd976a0ed23efb9"
+    },
+    "101-04": {
+      "sequence": "101",
+      "frame": 4,
+      "new_instance": "101-04",
+      "previous_instances": [
+        "101-01",
+        "101-02",
+        "101-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "4bf95b2b2de08f0d33e0638a73be36e28907c7e60cfaf391fdb26d7a4c85017d"
+    },
+    "101-05": {
+      "sequence": "101",
+      "frame": 5,
+      "new_instance": "101-05",
+      "previous_instances": [
+        "101-01",
+        "101-02",
+        "101-03",
+        "101-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "f21352c67e876dc7902e317d76754e8fd973632ecf579e44d6e02fc9b2686001"
+    },
+    "101-06": {
+      "sequence": "101",
+      "frame": 6,
+      "new_instance": "101-06",
+      "previous_instances": [
+        "101-01",
+        "101-02",
+        "101-03",
+        "101-04",
+        "101-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "586d9e12838cf7312cb4c0459c6d2716e9fbf1534d02bfa615eefbff5087617e"
+    },
+    "101-07": {
+      "sequence": "101",
+      "frame": 7,
+      "new_instance": "101-07",
+      "previous_instances": [
+        "101-01",
+        "101-02",
+        "101-03",
+        "101-04",
+        "101-05",
+        "101-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "101/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/101%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "399312d08dedcf0dc8ebf6e04138ca99784372d07d94a5e096b0dda6b02739d1"
+    },
+    "95-00": {
+      "sequence": "95",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "95-01": {
+      "sequence": "95",
+      "frame": 1,
+      "new_instance": "95-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "120223f18a3b27102051bd9ea03af7b33237432184a865b5a7613c2b27d14d9c"
+    },
+    "95-02": {
+      "sequence": "95",
+      "frame": 2,
+      "new_instance": "95-02",
+      "previous_instances": [
+        "95-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "0fcca62b0733bfa563b8d954260da832416101d589c26a60bfb58041d0ba204e"
+    },
+    "95-03": {
+      "sequence": "95",
+      "frame": 3,
+      "new_instance": "95-03",
+      "previous_instances": [
+        "95-01",
+        "95-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "bc601a9ef61c36322d537f4801153c6c0746d7ec18002d9e3ebfb1b33f3e2a14"
+    },
+    "95-04": {
+      "sequence": "95",
+      "frame": 4,
+      "new_instance": "95-04",
+      "previous_instances": [
+        "95-01",
+        "95-02",
+        "95-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "0a04fe6b92569452024e244d38dd60052e65c2e3d32cf702fa3623f6b004c35f"
+    },
+    "95-05": {
+      "sequence": "95",
+      "frame": 5,
+      "new_instance": "95-05",
+      "previous_instances": [
+        "95-01",
+        "95-02",
+        "95-03",
+        "95-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "5c0c1db26200ed6ac6763897679af440f917516777e7084b19676529f905318d"
+    },
+    "95-06": {
+      "sequence": "95",
+      "frame": 6,
+      "new_instance": "95-06",
+      "previous_instances": [
+        "95-01",
+        "95-02",
+        "95-03",
+        "95-04",
+        "95-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "a9889bbe9539c5280f720644d392924108113a4e8edbe98dcb5fe0b7b62bb9fe"
+    },
+    "95-07": {
+      "sequence": "95",
+      "frame": 7,
+      "new_instance": "95-07",
+      "previous_instances": [
+        "95-01",
+        "95-02",
+        "95-03",
+        "95-04",
+        "95-05",
+        "95-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "95/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/95%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "62c799fe4ab1c6f3110659ac74b039bee584138137895188c0b2e8c60a20c241"
+    },
+    "88-00": {
+      "sequence": "88",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "88-01": {
+      "sequence": "88",
+      "frame": 1,
+      "new_instance": "88-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "fa6d83b87b19837a3014afa947df4323578dff47f9547a58af5cd6fc6c36aa20"
+    },
+    "88-02": {
+      "sequence": "88",
+      "frame": 2,
+      "new_instance": "88-02",
+      "previous_instances": [
+        "88-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "eb0ac8b44b43661b8a044f973edc0132475a273233cd6e8f1ded5b849a89177f"
+    },
+    "88-03": {
+      "sequence": "88",
+      "frame": 3,
+      "new_instance": "88-03",
+      "previous_instances": [
+        "88-01",
+        "88-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "fc1225bfe3898110b1f59b004af315d54309383190ba2e4f49a0cfb330e3c03e"
+    },
+    "88-04": {
+      "sequence": "88",
+      "frame": 4,
+      "new_instance": "88-04",
+      "previous_instances": [
+        "88-01",
+        "88-02",
+        "88-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "e1ca61a0ae40238a24ad38a114cd8cf37a49ff1ffc942d96b18e7377838d86e6"
+    },
+    "88-05": {
+      "sequence": "88",
+      "frame": 5,
+      "new_instance": "88-05",
+      "previous_instances": [
+        "88-01",
+        "88-02",
+        "88-03",
+        "88-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "ef5bc66ddda3f943dcd642306296a94853e89a42dd06fbc920e405f5daf96b20"
+    },
+    "88-06": {
+      "sequence": "88",
+      "frame": 6,
+      "new_instance": "88-06",
+      "previous_instances": [
+        "88-01",
+        "88-02",
+        "88-03",
+        "88-04",
+        "88-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "1b37d43b8131329fd9821cc98831097ff30f3e3c4caa82ba9e5fd38795734a83"
+    },
+    "88-07": {
+      "sequence": "88",
+      "frame": 7,
+      "new_instance": "88-07",
+      "previous_instances": [
+        "88-01",
+        "88-02",
+        "88-03",
+        "88-04",
+        "88-05",
+        "88-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "88/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/88%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "a8c0521db0ea7c5637665089018b0175a56c65eaa4a62cda1f84f48cff6085f9"
+    },
+    "24-00": {
+      "sequence": "24",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "24-01": {
+      "sequence": "24",
+      "frame": 1,
+      "new_instance": "24-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "50326e93042c5f6cc660afd620b4ff22c5bd9947fd1e19843e80a79bab0afebb"
+    },
+    "24-02": {
+      "sequence": "24",
+      "frame": 2,
+      "new_instance": "24-02",
+      "previous_instances": [
+        "24-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "201cd96ee2d76eb0baf80f266605eac2c0380f6cf9b15df26d9a8239b314ec49"
+    },
+    "24-03": {
+      "sequence": "24",
+      "frame": 3,
+      "new_instance": "24-03",
+      "previous_instances": [
+        "24-01",
+        "24-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "6b33b29a396c36fe6a8eb2656226c59e53c0c5b3e46f6d1fa4e8f50c8d161789"
+    },
+    "24-04": {
+      "sequence": "24",
+      "frame": 4,
+      "new_instance": "24-04",
+      "previous_instances": [
+        "24-01",
+        "24-02",
+        "24-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "7f3daeb216e71eb1a22d6594beb2be796c8b22747319c12080527ca716cf5a8d"
+    },
+    "24-05": {
+      "sequence": "24",
+      "frame": 5,
+      "new_instance": "24-05",
+      "previous_instances": [
+        "24-01",
+        "24-02",
+        "24-03",
+        "24-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "2e786dd67fc6e50bc51cf9f4656605003a1d8ef93068bcda10ef02a5ffc0736f"
+    },
+    "24-06": {
+      "sequence": "24",
+      "frame": 6,
+      "new_instance": "24-06",
+      "previous_instances": [
+        "24-01",
+        "24-02",
+        "24-03",
+        "24-04",
+        "24-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "bf850ebdfe8d62385a42e7f639fbc8d2ae7478cc7461958e93dba886dde3ace3"
+    },
+    "24-07": {
+      "sequence": "24",
+      "frame": 7,
+      "new_instance": "24-07",
+      "previous_instances": [
+        "24-01",
+        "24-02",
+        "24-03",
+        "24-04",
+        "24-05",
+        "24-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "24/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/24%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "5792f5150c20f4c293dd08b5e42e7f331703eaeba03a6f5adeefa39896788011"
+    },
+    "102-00": {
+      "sequence": "102",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "102-01": {
+      "sequence": "102",
+      "frame": 1,
+      "new_instance": "102-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/102%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "4590d9fc614be031e34f4d98c316fb3bd4739b3b2213eeb0e611a7a30ce6baa7"
+    },
+    "102-02": {
+      "sequence": "102",
+      "frame": 2,
+      "new_instance": "102-02",
+      "previous_instances": [
+        "102-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/102%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "73142f2966f5c47956e671d4ce1bfe1692089bffc0f250fb742f3f28d9604633"
+    },
+    "102-03": {
+      "sequence": "102",
+      "frame": 3,
+      "new_instance": "102-03",
+      "previous_instances": [
+        "102-01",
+        "102-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/102%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "33e668959464c1b12dc6f59e46a84f7a60f42aec479887efcde762f28b5a516a"
+    },
+    "102-04": {
+      "sequence": "102",
+      "frame": 4,
+      "new_instance": "102-04",
+      "previous_instances": [
+        "102-01",
+        "102-02",
+        "102-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/102%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "18a94cad69d02a0e4fc30c9e27ce2036bcf335241023abed84744d5d83f2f8b7"
+    },
+    "102-05": {
+      "sequence": "102",
+      "frame": 5,
+      "new_instance": "102-05",
+      "previous_instances": [
+        "102-01",
+        "102-02",
+        "102-03",
+        "102-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/102%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "76a77e7b3c24444c37fd457b2a1045cfdd95a34258586bbda474fa823b47f602"
+    },
+    "102-06": {
+      "sequence": "102",
+      "frame": 6,
+      "new_instance": "102-06",
+      "previous_instances": [
+        "102-01",
+        "102-02",
+        "102-03",
+        "102-04",
+        "102-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "102/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/102%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "fba8bbb438bb74e6b961865194866252eb7ac2da1626b2236c6c0c97ef67476f"
+    },
+    "107-00": {
+      "sequence": "107",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "107-01": {
+      "sequence": "107",
+      "frame": 1,
+      "new_instance": "107-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "2faa33d97a3e3ab41c5393e28939071dd82e77155d11aef60b38faeba8f2a361"
+    },
+    "107-02": {
+      "sequence": "107",
+      "frame": 2,
+      "new_instance": "107-02",
+      "previous_instances": [
+        "107-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "d737d94fd2752315f337e1f3bb81bc1452214c00a8707ff8ba5d1ec87eca07f3"
+    },
+    "107-03": {
+      "sequence": "107",
+      "frame": 3,
+      "new_instance": "107-03",
+      "previous_instances": [
+        "107-01",
+        "107-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "594a26fa116747e8c225b8e470f039776d9313e7b16efd6c0a94d81cec96da28"
+    },
+    "107-04": {
+      "sequence": "107",
+      "frame": 4,
+      "new_instance": "107-04",
+      "previous_instances": [
+        "107-01",
+        "107-02",
+        "107-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "3f6d59a18cf2f08b042a04445002d1077129c2110767253c29e3c4a84f402069"
+    },
+    "107-05": {
+      "sequence": "107",
+      "frame": 5,
+      "new_instance": "107-05",
+      "previous_instances": [
+        "107-01",
+        "107-02",
+        "107-03",
+        "107-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "0602980fd2da9683e854e5ef701771dc1dfe724ecd716e0e897703e9abf594b0"
+    },
+    "107-06": {
+      "sequence": "107",
+      "frame": 6,
+      "new_instance": "107-06",
+      "previous_instances": [
+        "107-01",
+        "107-02",
+        "107-03",
+        "107-04",
+        "107-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "5da70b2f2f57193d63451e726707bfb44c7b77ddc1b8a2112b90f5ab96c7e740"
+    },
+    "107-07": {
+      "sequence": "107",
+      "frame": 7,
+      "new_instance": "107-07",
+      "previous_instances": [
+        "107-01",
+        "107-02",
+        "107-03",
+        "107-04",
+        "107-05",
+        "107-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "107/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/107%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "ea15de7fb58841d617d46bed7f23bf28a9dc3600ef0b9935e9c727fc510ca4ee"
+    },
+    "13-00": {
+      "sequence": "13",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "13-01": {
+      "sequence": "13",
+      "frame": 1,
+      "new_instance": "13-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "cf2d0e2b130a9b0995a63d508d009a1034022eb223d41026b4ffaba1455ae3f3"
+    },
+    "13-02": {
+      "sequence": "13",
+      "frame": 2,
+      "new_instance": "13-02",
+      "previous_instances": [
+        "13-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "671143ace5e0ad130c334a72f3b7ef57cf89ce4d3dea228b097035d20ab34e9d"
+    },
+    "13-03": {
+      "sequence": "13",
+      "frame": 3,
+      "new_instance": "13-03",
+      "previous_instances": [
+        "13-01",
+        "13-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "5c350603e38efbc566709069d96fcc25e045cd9562d813977a181db2e65b94c2"
+    },
+    "13-04": {
+      "sequence": "13",
+      "frame": 4,
+      "new_instance": "13-04",
+      "previous_instances": [
+        "13-01",
+        "13-02",
+        "13-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "e8f3728064e134bf84c7b5512001f80c69f1e7cd99957e484fe5517cc640bd18"
+    },
+    "13-05": {
+      "sequence": "13",
+      "frame": 5,
+      "new_instance": "13-05",
+      "previous_instances": [
+        "13-01",
+        "13-02",
+        "13-03",
+        "13-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "2abc98d9b8519da4e055bfae5bca504f2dfd331fd53d197848fff017a8253362"
+    },
+    "13-06": {
+      "sequence": "13",
+      "frame": 6,
+      "new_instance": "13-06",
+      "previous_instances": [
+        "13-01",
+        "13-02",
+        "13-03",
+        "13-04",
+        "13-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "3c86450a03841cbd6fe3bc580240a809f4ed793852e9d40c765f1edefd1bb537"
+    },
+    "13-07": {
+      "sequence": "13",
+      "frame": 7,
+      "new_instance": "13-07",
+      "previous_instances": [
+        "13-01",
+        "13-02",
+        "13-03",
+        "13-04",
+        "13-05",
+        "13-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "13/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "ed137a2bf4ede7630e5f320cfb97063cee02d4fac9a83711cda17f12485f2d0b"
+    },
+    "75-00": {
+      "sequence": "75",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "75/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "75-01": {
+      "sequence": "75",
+      "frame": 1,
+      "new_instance": "75-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "75/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/75%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "d12d6164915ca7de3a0112df54511ccb962f7d1e5e8da0e184e45b17c0b1a505"
+    },
+    "75-02": {
+      "sequence": "75",
+      "frame": 2,
+      "new_instance": "75-02",
+      "previous_instances": [
+        "75-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "75/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/75%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "943b7dfa54f23594094a56031f635a0076570b992c1dfbc4a091ca0379c7b152"
+    },
+    "75-04": {
+      "sequence": "75",
+      "frame": 4,
+      "new_instance": "75-04",
+      "previous_instances": [
+        "75-01",
+        "75-02",
+        "75-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "75/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/75%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "7849deee6e46a35b2b41e64517718ee9e48e47c6b97aedda81ba326c0d24edbe"
+    },
+    "75-06": {
+      "sequence": "75",
+      "frame": 6,
+      "new_instance": "75-06",
+      "previous_instances": [
+        "75-01",
+        "75-02",
+        "75-03",
+        "75-04",
+        "75-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "75/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/75%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "b5e67f0a3e08e59b3fb5c04fd629df996cb3b8097b80b33458718881cca014ff"
+    },
+    "75-07": {
+      "sequence": "75",
+      "frame": 7,
+      "new_instance": "75-07",
+      "previous_instances": [
+        "75-01",
+        "75-02",
+        "75-03",
+        "75-04",
+        "75-05",
+        "75-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "75/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/75%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "f42f201581b31d2fc36ac8031992b2ca7ed7fbdb09bfb761d2c8eb3cbc4b056c"
+    },
+    "63-00": {
+      "sequence": "63",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "63-01": {
+      "sequence": "63",
+      "frame": 1,
+      "new_instance": "63-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "6916af5ced71863793ac0ebb3c3b92662c374dc198f2b44fac825441ac80a062"
+    },
+    "63-02": {
+      "sequence": "63",
+      "frame": 2,
+      "new_instance": "63-02",
+      "previous_instances": [
+        "63-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "250d79577a07d4de48a9239688aab11b6e374853267c82e467b366be1befe8b1"
+    },
+    "63-03": {
+      "sequence": "63",
+      "frame": 3,
+      "new_instance": "63-03",
+      "previous_instances": [
+        "63-01",
+        "63-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "e930943107c5645bd9debc19f962ac1bbea9225f595d68a85685ffa8b40592bd"
+    },
+    "63-04": {
+      "sequence": "63",
+      "frame": 4,
+      "new_instance": "63-04",
+      "previous_instances": [
+        "63-01",
+        "63-02",
+        "63-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "76ea9c138d430ca24dee072125da2c52798674f903c80ff9c8c1f3e6b65c4686"
+    },
+    "63-05": {
+      "sequence": "63",
+      "frame": 5,
+      "new_instance": "63-05",
+      "previous_instances": [
+        "63-01",
+        "63-02",
+        "63-03",
+        "63-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "054203ddea313fcb5f65781fb6f28ee4b78bfec4a1c976fe04096149a85cfd7a"
+    },
+    "63-06": {
+      "sequence": "63",
+      "frame": 6,
+      "new_instance": "63-06",
+      "previous_instances": [
+        "63-01",
+        "63-02",
+        "63-03",
+        "63-04",
+        "63-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "e5f467f7172d2e2857ec284a7badebcef25e382928968c92e509ffb8c1d1a9f2"
+    },
+    "63-07": {
+      "sequence": "63",
+      "frame": 7,
+      "new_instance": "63-07",
+      "previous_instances": [
+        "63-01",
+        "63-02",
+        "63-03",
+        "63-04",
+        "63-05",
+        "63-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "63/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/63%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "3748b04de4b0d3667dd3de38fd1767fae96faa6a555107d3e3c9da9756911da2"
+    },
+    "69-00": {
+      "sequence": "69",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "69-01": {
+      "sequence": "69",
+      "frame": 1,
+      "new_instance": "69-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "06a3762a5718bbee3781b63d2a0081213ab2f252588ba0dcc4f0a0d9aed26498"
+    },
+    "69-02": {
+      "sequence": "69",
+      "frame": 2,
+      "new_instance": "69-02",
+      "previous_instances": [
+        "69-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "c561e3007fc5cf3eb948c222c7d14d855b3aa8a832afd30fd4610faa8abd1c4e"
+    },
+    "69-03": {
+      "sequence": "69",
+      "frame": 3,
+      "new_instance": "69-03",
+      "previous_instances": [
+        "69-01",
+        "69-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "e8ac6f12afdd6f5d5ef5e27fd33ae0f7172e8a814bce247e321b32a5a9bed246"
+    },
+    "69-04": {
+      "sequence": "69",
+      "frame": 4,
+      "new_instance": "69-04",
+      "previous_instances": [
+        "69-01",
+        "69-02",
+        "69-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "33e99005ea44194ee4ececc90523910086ecc497459471a13fb147eb18122735"
+    },
+    "69-05": {
+      "sequence": "69",
+      "frame": 5,
+      "new_instance": "69-05",
+      "previous_instances": [
+        "69-01",
+        "69-02",
+        "69-03",
+        "69-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "d1f283a1f5728b33295fd671b0ce967cdaedeec62bf78de13c0c8f85e1a345b4"
+    },
+    "69-06": {
+      "sequence": "69",
+      "frame": 6,
+      "new_instance": "69-06",
+      "previous_instances": [
+        "69-01",
+        "69-02",
+        "69-03",
+        "69-04",
+        "69-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "83df53f3a09d4986b875c035c5df0a79d417c15d8e0e86c10a9dbbecca2fe0cd"
+    },
+    "69-07": {
+      "sequence": "69",
+      "frame": 7,
+      "new_instance": "69-07",
+      "previous_instances": [
+        "69-01",
+        "69-02",
+        "69-03",
+        "69-04",
+        "69-05",
+        "69-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "69/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/69%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "b139c14df4a7612819e1c3a927396a4808912acf60f1f98eb76ce4455174a298"
+    },
+    "40-00": {
+      "sequence": "40",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "40-01": {
+      "sequence": "40",
+      "frame": 1,
+      "new_instance": "40-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/40%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "150c18e4ffa3e9decdc717eb23a77f3d1524c109892fd5df321749a4287cc2f5"
+    },
+    "40-02": {
+      "sequence": "40",
+      "frame": 2,
+      "new_instance": "40-02",
+      "previous_instances": [
+        "40-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/40%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "211724569c58834f15d24a79d0eece7b5c057420bc8f18998eb47982ae26b92a"
+    },
+    "40-03": {
+      "sequence": "40",
+      "frame": 3,
+      "new_instance": "40-03",
+      "previous_instances": [
+        "40-01",
+        "40-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/40%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "6ee338346a83c5271fb1184321247c17d399aa5c98bae5aefb4d34389a2b7945"
+    },
+    "40-04": {
+      "sequence": "40",
+      "frame": 4,
+      "new_instance": "40-04",
+      "previous_instances": [
+        "40-01",
+        "40-02",
+        "40-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/40%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "be882405507c93ea0508ab8037639e5ccddd55402949358c17d65cf845802d06"
+    },
+    "40-05": {
+      "sequence": "40",
+      "frame": 5,
+      "new_instance": "40-05",
+      "previous_instances": [
+        "40-01",
+        "40-02",
+        "40-03",
+        "40-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/40%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "0caed8ec2fa2da3e1f5660093be0b63be2922ec5f46b1c7823c9f8608902b9ba"
+    },
+    "40-07": {
+      "sequence": "40",
+      "frame": 7,
+      "new_instance": "40-07",
+      "previous_instances": [
+        "40-01",
+        "40-02",
+        "40-03",
+        "40-04",
+        "40-05",
+        "40-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "40/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/40%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "bf1243e624428b50bd1b3380fa80b8ea16aefc56a34e25494a62cf0678996b9e"
+    },
+    "98-00": {
+      "sequence": "98",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "98/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "98-01": {
+      "sequence": "98",
+      "frame": 1,
+      "new_instance": "98-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "98/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/98%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "4595f91d2ff401b531395da5c50d8587a678a70c9c03b183ed11e90adec10fa3"
+    },
+    "98-02": {
+      "sequence": "98",
+      "frame": 2,
+      "new_instance": "98-02",
+      "previous_instances": [
+        "98-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "98/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/98%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "690ff4277ac1205f773ac549e0642904eb406fa39789f317e12d6b04894205ec"
+    },
+    "98-03": {
+      "sequence": "98",
+      "frame": 3,
+      "new_instance": "98-03",
+      "previous_instances": [
+        "98-01",
+        "98-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "98/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/98%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "755beea7b6e663ea738f38d990edad8802984438688071d82118661425602d5d"
+    },
+    "98-04": {
+      "sequence": "98",
+      "frame": 4,
+      "new_instance": "98-04",
+      "previous_instances": [
+        "98-01",
+        "98-02",
+        "98-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "98/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/98%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "2957fbf78de8113872344e5a2d13df79dbf9956f76325214b7a856f540324cec"
+    },
+    "98-05": {
+      "sequence": "98",
+      "frame": 5,
+      "new_instance": "98-05",
+      "previous_instances": [
+        "98-01",
+        "98-02",
+        "98-03",
+        "98-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "98/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/98%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "3ba8f916bd7a2d5eab0fda4893158a02a189a33bf7322a1b674335c71e7f60b8"
+    },
+    "100-00": {
+      "sequence": "100",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "100-01": {
+      "sequence": "100",
+      "frame": 1,
+      "new_instance": "100-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/100%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "765ae07235f8904ab0919995b041db8ab11edebab0c829db8194ce0fc58f0b16"
+    },
+    "100-02": {
+      "sequence": "100",
+      "frame": 2,
+      "new_instance": "100-02",
+      "previous_instances": [
+        "100-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/100%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "4cb27b27fcb4d43960543732c96825ca6444a1fcb6236d491fa0b2d028f36edd"
+    },
+    "100-03": {
+      "sequence": "100",
+      "frame": 3,
+      "new_instance": "100-03",
+      "previous_instances": [
+        "100-01",
+        "100-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/100%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "42b919c28b216707132de4de0b789b470bdce3f66db65fa8f3ab5d4bafba82a4"
+    },
+    "100-04": {
+      "sequence": "100",
+      "frame": 4,
+      "new_instance": "100-04",
+      "previous_instances": [
+        "100-01",
+        "100-02",
+        "100-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/100%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "8c40d264be52abaa58e056ab50462841fc2e59a3f54d8aa857fe2264c519d055"
+    },
+    "100-05": {
+      "sequence": "100",
+      "frame": 5,
+      "new_instance": "100-05",
+      "previous_instances": [
+        "100-01",
+        "100-02",
+        "100-03",
+        "100-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/100%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "06255041071a3b556fb8786265b91f514d71018014a4d9897b63670cfbe421ea"
+    },
+    "100-06": {
+      "sequence": "100",
+      "frame": 6,
+      "new_instance": "100-06",
+      "previous_instances": [
+        "100-01",
+        "100-02",
+        "100-03",
+        "100-04",
+        "100-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "100/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/100%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "9a7c80523ac30498e3d8988de3ee561fda4d202cf8cb966741ba9da3d970e458"
+    },
+    "70-00": {
+      "sequence": "70",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "70-01": {
+      "sequence": "70",
+      "frame": 1,
+      "new_instance": "70-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "99704210faacfdc7bc8057fe918e7a83fd8b79a3fcadf54bb643f3db7e3a9dd7"
+    },
+    "70-02": {
+      "sequence": "70",
+      "frame": 2,
+      "new_instance": "70-02",
+      "previous_instances": [
+        "70-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "b85840855f6ab9ecbd3c3681e1d02f3aa91feb2bd4b809105dfc9b2e2cb7fbc3"
+    },
+    "70-03": {
+      "sequence": "70",
+      "frame": 3,
+      "new_instance": "70-03",
+      "previous_instances": [
+        "70-01",
+        "70-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "0070f3e8ffe0d54f03166efa85a567d30859b652113e16993416b807e1a1d271"
+    },
+    "70-04": {
+      "sequence": "70",
+      "frame": 4,
+      "new_instance": "70-04",
+      "previous_instances": [
+        "70-01",
+        "70-02",
+        "70-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "3b88d3f52ef10c34e930c273611138edadec217e5c0b734e836125c68581015c"
+    },
+    "70-05": {
+      "sequence": "70",
+      "frame": 5,
+      "new_instance": "70-05",
+      "previous_instances": [
+        "70-01",
+        "70-02",
+        "70-03",
+        "70-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "6167be373eebdc4eece91e3794dd7be638da40c63b68a60b372670275eab67fd"
+    },
+    "70-06": {
+      "sequence": "70",
+      "frame": 6,
+      "new_instance": "70-06",
+      "previous_instances": [
+        "70-01",
+        "70-02",
+        "70-03",
+        "70-04",
+        "70-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "a4e10711d9fb3327baac74c868a6e0f924682c116981c4cf3fca59484e1979fc"
+    },
+    "70-07": {
+      "sequence": "70",
+      "frame": 7,
+      "new_instance": "70-07",
+      "previous_instances": [
+        "70-01",
+        "70-02",
+        "70-03",
+        "70-04",
+        "70-05",
+        "70-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "70/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "db2cfdaefe357dddf4a1e1b2b79a3b654ef08af1d8346c0d2113d4e61ba4133a"
+    },
+    "67-00": {
+      "sequence": "67",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "67-01": {
+      "sequence": "67",
+      "frame": 1,
+      "new_instance": "67-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "5f2b0c9afb3d89e14117a1d8182fdc644fe1c144599ca368f37e615da67eb172"
+    },
+    "67-02": {
+      "sequence": "67",
+      "frame": 2,
+      "new_instance": "67-02",
+      "previous_instances": [
+        "67-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "bcd7689852914467455386c38545c896c3596edf139de68dde3a93e5357cc30c"
+    },
+    "67-03": {
+      "sequence": "67",
+      "frame": 3,
+      "new_instance": "67-03",
+      "previous_instances": [
+        "67-01",
+        "67-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "61bda10e99c3af8b52fc2a7851f0de71127526384d69dc1a2c4d866df00b5cd8"
+    },
+    "67-04": {
+      "sequence": "67",
+      "frame": 4,
+      "new_instance": "67-04",
+      "previous_instances": [
+        "67-01",
+        "67-02",
+        "67-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "1f36e9462dff14f09b0f848aecbe325ee27ea48de743ce83e890d39cb56fb661"
+    },
+    "67-05": {
+      "sequence": "67",
+      "frame": 5,
+      "new_instance": "67-05",
+      "previous_instances": [
+        "67-01",
+        "67-02",
+        "67-03",
+        "67-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "e1cff4c9dadb9debbbdcffe0ce351c431b31e207d8a22e5817f04c6bbb40bcc7"
+    },
+    "67-06": {
+      "sequence": "67",
+      "frame": 6,
+      "new_instance": "67-06",
+      "previous_instances": [
+        "67-01",
+        "67-02",
+        "67-03",
+        "67-04",
+        "67-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "e2c2ba35df894291894afab696f54dd4f100eec2864aad62cc8db198f1591443"
+    },
+    "67-07": {
+      "sequence": "67",
+      "frame": 7,
+      "new_instance": "67-07",
+      "previous_instances": [
+        "67-01",
+        "67-02",
+        "67-03",
+        "67-04",
+        "67-05",
+        "67-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "67/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/67%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "c68eed406370774cb5ce47ae0b2477a2b634b12d698aed92071109f21697a43a"
+    },
+    "14-00": {
+      "sequence": "14",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "14-01": {
+      "sequence": "14",
+      "frame": 1,
+      "new_instance": "14-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "468f794a508089da47284c3d67ffc8c5265bac83bf09b3544fa41a6e09b4ca0b"
+    },
+    "14-02": {
+      "sequence": "14",
+      "frame": 2,
+      "new_instance": "14-02",
+      "previous_instances": [
+        "14-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "555d19d8b88a8772141b17d178b93ea9738197c1b7e7c18b6dcebb7b1da7d48d"
+    },
+    "14-03": {
+      "sequence": "14",
+      "frame": 3,
+      "new_instance": "14-03",
+      "previous_instances": [
+        "14-01",
+        "14-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "b59dc4070d5210070392e42835320c08cf94ceb2cdb71fa68833a250fc945c90"
+    },
+    "14-04": {
+      "sequence": "14",
+      "frame": 4,
+      "new_instance": "14-04",
+      "previous_instances": [
+        "14-01",
+        "14-02",
+        "14-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "3853a90418bb2df6af1353fab376c72de82143b43b7eb557b062623a677e5457"
+    },
+    "14-05": {
+      "sequence": "14",
+      "frame": 5,
+      "new_instance": "14-05",
+      "previous_instances": [
+        "14-01",
+        "14-02",
+        "14-03",
+        "14-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "b7b57c7e559e872650bbde30f1183965c251e7a74dec72e863525690ceb02b25"
+    },
+    "14-06": {
+      "sequence": "14",
+      "frame": 6,
+      "new_instance": "14-06",
+      "previous_instances": [
+        "14-01",
+        "14-02",
+        "14-03",
+        "14-04",
+        "14-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "43528fa4443281e37ee7bb1ae8f8911c34fe7a978b24b793661f7c9c187707f2"
+    },
+    "14-07": {
+      "sequence": "14",
+      "frame": 7,
+      "new_instance": "14-07",
+      "previous_instances": [
+        "14-01",
+        "14-02",
+        "14-03",
+        "14-04",
+        "14-05",
+        "14-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "14/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/14%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "b23fba181e8635c67fd1990a0a3f29ad6fb159a127b4666cfe3335cd8f5a5b0c"
+    },
+    "44-00": {
+      "sequence": "44",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "44-01": {
+      "sequence": "44",
+      "frame": 1,
+      "new_instance": "44-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/44%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "c415920782dd5d7ce910e82696b80add92273305508f2ddaae20cd8dc5b1f40e"
+    },
+    "44-02": {
+      "sequence": "44",
+      "frame": 2,
+      "new_instance": "44-02",
+      "previous_instances": [
+        "44-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/44%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "f02d49f56b125703b3d1b455aca8d02b682b88d796ca07cce6fd3a63fd99b7b4"
+    },
+    "44-03": {
+      "sequence": "44",
+      "frame": 3,
+      "new_instance": "44-03",
+      "previous_instances": [
+        "44-01",
+        "44-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/44%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "985f82cbc65dbda26c7d773959ceaed460ff2f4db0acb4969bf031b944aad027"
+    },
+    "44-04": {
+      "sequence": "44",
+      "frame": 4,
+      "new_instance": "44-04",
+      "previous_instances": [
+        "44-01",
+        "44-02",
+        "44-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/44%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "99b8aab6b6475b4c32f297afdfa1bafcde7880c297ffecf86d875113dafb0238"
+    },
+    "44-06": {
+      "sequence": "44",
+      "frame": 6,
+      "new_instance": "44-06",
+      "previous_instances": [
+        "44-01",
+        "44-02",
+        "44-03",
+        "44-04",
+        "44-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/44%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "920716ce131ec83adf0d99e3af31a4689f5c3d15a556d70ea0ed345581e24de0"
+    },
+    "44-07": {
+      "sequence": "44",
+      "frame": 7,
+      "new_instance": "44-07",
+      "previous_instances": [
+        "44-01",
+        "44-02",
+        "44-03",
+        "44-04",
+        "44-05",
+        "44-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "44/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/44%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "0251221b2848375bc1bb047067463358c81ae15045cc97e1aeacf9b21a71618c"
+    },
+    "39-00": {
+      "sequence": "39",
+      "frame": 0,
+      "new_instance": null,
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/00.png",
+      "annotation_url": null,
+      "annotation_sha256": null
+    },
+    "39-01": {
+      "sequence": "39",
+      "frame": 1,
+      "new_instance": "39-01",
+      "previous_instances": [],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/01.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F01.json?datasetVersionNumber=1",
+      "annotation_sha256": "476f83df063d05bae05a0f109083e0783aa32da1da1c9ccc5a4d39266c556c32"
+    },
+    "39-02": {
+      "sequence": "39",
+      "frame": 2,
+      "new_instance": "39-02",
+      "previous_instances": [
+        "39-01"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/02.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F02.json?datasetVersionNumber=1",
+      "annotation_sha256": "1084a95dbf63244b0bb283456cd7ac21bf77cfb423a5bf6f900da8da16b6920b"
+    },
+    "39-03": {
+      "sequence": "39",
+      "frame": 3,
+      "new_instance": "39-03",
+      "previous_instances": [
+        "39-01",
+        "39-02"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/03.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F03.json?datasetVersionNumber=1",
+      "annotation_sha256": "48f8d2986ba4f1f1768d46925fa355ced894d7b7fb1b7d05b575fe89e095cf30"
+    },
+    "39-04": {
+      "sequence": "39",
+      "frame": 4,
+      "new_instance": "39-04",
+      "previous_instances": [
+        "39-01",
+        "39-02",
+        "39-03"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/04.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F04.json?datasetVersionNumber=1",
+      "annotation_sha256": "08489c3f33ae1eb8d3edabc4fc08ffe589de65b755e7fe94f9bee5179c63f41e"
+    },
+    "39-05": {
+      "sequence": "39",
+      "frame": 5,
+      "new_instance": "39-05",
+      "previous_instances": [
+        "39-01",
+        "39-02",
+        "39-03",
+        "39-04"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/05.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F05.json?datasetVersionNumber=1",
+      "annotation_sha256": "2f96e4ffad408a5d96b679bca57763bdb6f0facc40493f227d6cdfca40fc4b89"
+    },
+    "39-06": {
+      "sequence": "39",
+      "frame": 6,
+      "new_instance": "39-06",
+      "previous_instances": [
+        "39-01",
+        "39-02",
+        "39-03",
+        "39-04",
+        "39-05"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/06.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F06.json?datasetVersionNumber=1",
+      "annotation_sha256": "cd04a17cb0b1e7f25034a743cbc1d7f75d6bfaa32ab27f492aa86e831789d467"
+    },
+    "39-07": {
+      "sequence": "39",
+      "frame": 7,
+      "new_instance": "39-07",
+      "previous_instances": [
+        "39-01",
+        "39-02",
+        "39-03",
+        "39-04",
+        "39-05",
+        "39-06"
+      ],
+      "previous_status": "sequence_history_only_no_current_geometry",
+      "oriented_size": [
+        2988,
+        3984
+      ],
+      "work_size": [
+        1056,
+        1408
+      ],
+      "source_file": "39/07.png",
+      "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/39%2F07.json?datasetVersionNumber=1",
+      "annotation_sha256": "1269fd82b4f77e904c73f214618c18c6ace4a96904f690fabf20ee7cfa004511"
+    }
+  }
+}

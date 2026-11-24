@@ -1,0 +1,156 @@
+{
+  "capsule": {
+    "nom": "r17-lecture.zip",
+    "role": "Visionneuse hors ligne, planches, loupes et crédits",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r17/vision-lab/artifacts/r17/r17-lecture.zip",
+    "octets": 8778791,
+    "sha256": "ffbb120907b6fffb8b485c1f3905c7306d23c0380f716f7d04eab60ae2f720e8"
+  },
+  "photos_relues": [
+    {
+      "photo": "13-01",
+      "nom": "13-01.png",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "octets": 1731722,
+      "sha256": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe"
+    },
+    {
+      "photo": "70-01",
+      "nom": "70-01.png",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "octets": 1791284,
+      "sha256": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888"
+    },
+    {
+      "photo": "5115614018",
+      "nom": "5115614018.png",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "octets": 1108495,
+      "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d"
+    },
+    {
+      "photo": "18105652008",
+      "nom": "18105652008.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "octets": 426302,
+      "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f"
+    },
+    {
+      "photo": "4169106197",
+      "nom": "4169106197.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "octets": 97351,
+      "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5"
+    },
+    {
+      "photo": "wc71488242",
+      "nom": "wc71488242.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "octets": 592714,
+      "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491"
+    },
+    {
+      "photo": "9436017284",
+      "nom": "9436017284.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+      "octets": 203063,
+      "sha256": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057"
+    },
+    {
+      "photo": "37348131162",
+      "nom": "37348131162.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+      "octets": 134046,
+      "sha256": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59"
+    },
+    {
+      "photo": "36725328420",
+      "nom": "36725328420.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+      "octets": 150499,
+      "sha256": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87"
+    },
+    {
+      "photo": "fl31990323",
+      "nom": "fl31990323.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/fl31990323.jpg",
+      "octets": 88816,
+      "sha256": "c9efe6f8a73716ae5db8356d35e0e7d4bf3b5ca4d6945b634086ee45516913c8"
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "nom": "rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "octets": 2972520,
+      "sha256": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1"
+    },
+    {
+      "photo": "wc82322984-t22",
+      "nom": "wc82322984-t22.png",
+      "role": "Source photographique publique de lecture",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc82322984-t22.png",
+      "octets": 973526,
+      "sha256": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829"
+    }
+  ],
+  "annotations_historiques": {
+    "annotations.json": {
+      "nom": "annotations.json",
+      "role": "Manifeste historique; seules lignes train/dév utilisées",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/annotations.json",
+      "octets": 322788,
+      "sha256": "0328c99331902c0b63ae1ed65bbffe994e21480e9b72d72fb4fd01abedde56e5"
+    },
+    "corpus.json": {
+      "nom": "corpus.json",
+      "role": "Manifeste historique; seules lignes train/dév utilisées",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/corpus.json",
+      "octets": 53113,
+      "sha256": "e6bf88fa2a465078d855493a66d667d739efc5d68081e166a2a4124fa81d877f"
+    }
+  },
+  "poids_documentaire": {
+    "nom": "ordinary-9301.pt",
+    "role": "Checkpoint final R9 figé, ordinary-9301",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+    "octets": 865807,
+    "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+  },
+  "corpus_R14": {
+    "nom": "r14-documentation.zip",
+    "role": "Collecte R14 et supports de lecture assistée locaux",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/artifacts/r14-documentation.zip",
+    "octets": 8014031,
+    "sha256": "b6d3c6d8418bee1c7613ece64ebe233fbc8cef8eb26adbd86a3e861c1d338900"
+  },
+  "corpus_R15": [
+    {
+      "nom": "r15-acquisitions.zip",
+      "role": "Dix images admises, film source et calque Roboflow",
+      "octets": 28170281,
+      "sha256": "b581ce460171dbda67033f0abe5cd02fe3ca2efc82af9fae1a1c5d54b31f9d9f",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/artifacts/r15/r15-acquisitions.zip",
+      "membres": 12
+    },
+    {
+      "nom": "r15-audit-web.zip",
+      "role": "Autres médias examinés, notices publiques, planches et relevés de lecture",
+      "octets": 236468839,
+      "sha256": "cf0a7141095936d0f01c91dbcc69c20f9b02e44b0387cf5453775d2b5468242a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/artifacts/r15/r15-audit-web.zip",
+      "membres": 241
+    }
+  ],
+  "cartes_R16": "Aucun accès aux cartes, seules les sorties publiques ordinary-9301 ont été utilisées."
+}

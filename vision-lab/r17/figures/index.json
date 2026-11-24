@@ -1,0 +1,2425 @@
+[
+  {
+    "cas": "R17-01",
+    "photo": "13-01",
+    "fichier": "R17-01.jpg",
+    "sha256": "42c635f32a10eb2bd157cdd20b1b4807445a3070967c566c467269cedb1726fe",
+    "cadre_detail": [
+      264,
+      628,
+      554,
+      813
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.21875,
+        0.21875,
+        144.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.6655172413793105,
+        1.664864864864865,
+        -421.6965517241379,
+        -1045.535135135135
+      ]
+    },
+    "segment": [
+      [
+        332.66490225,
+        675.616257576
+      ],
+      [
+        457.587509672,
+        748.249375252
+      ]
+    ],
+    "references": [
+      {
+        "instance": "13-01",
+        "axe": [
+          [
+            284,
+            648
+          ],
+          [
+            529,
+            791
+          ]
+        ],
+        "entree": [
+          533.3666666666667,
+          792.4895582329317
+        ],
+        "contact_visible": true,
+        "statut_initial": "source_and_assisted_visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Crigges",
+      "titre": "13/01.png",
+      "url": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    }
+  },
+  {
+    "cas": "R17-02",
+    "photo": "70-01",
+    "fichier": "R17-02.jpg",
+    "sha256": "1d4f06336fb05585bec47ea6a32da75e7dae575edda482a79ad7d5b477603470",
+    "cadre_detail": [
+      207,
+      699,
+      537,
+      852
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.21875,
+        0.21875,
+        144.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.5757575757575757,
+        1.5751633986928104,
+        -326.1818181818182,
+        -1068.0392156862745
+      ]
+    },
+    "segment": [
+      [
+        282.263452204,
+        742.602631334
+      ],
+      [
+        429.46534997,
+        799.400156036
+      ]
+    ],
+    "references": [
+      {
+        "instance": "70-01",
+        "axe": [
+          [
+            230,
+            722
+          ],
+          [
+            514,
+            829
+          ]
+        ],
+        "entree": [
+          496.04348597182496,
+          824.7627334700898
+        ],
+        "contact_visible": true,
+        "statut_initial": "source_and_assisted_visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Crigges",
+      "titre": "70/01.png",
+      "url": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    }
+  },
+  {
+    "cas": "R17-03",
+    "photo": "5115614018",
+    "fichier": "R17-03.jpg",
+    "sha256": "10a5f475d1affb523633de8d48f8cb65bd915e739b65f4e6d2c7d222ad4fa87c",
+    "cadre_detail": [
+      223,
+      326,
+      489,
+      441
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.451171875,
+        0.45095168374816985,
+        29.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.9548872180451127,
+        1.9565217391304348,
+        -435.9398496240602,
+        -596.8260869565217
+      ]
+    },
+    "segment": [
+      [
+        338.87138406690906,
+        387.22503037755746
+      ],
+      [
+        449.85476030981823,
+        377.14240572364895
+      ]
+    ],
+    "references": [
+      {
+        "instance": "5115614018:2",
+        "axe": [
+          [
+            243.34,
+            391.5215355805243
+          ],
+          [
+            441.74,
+            377.4522471910112
+          ]
+        ],
+        "entree": [
+          468.62,
+          376.17322097378275
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Danielle Walquist Lynch",
+      "titre": "Corey's archery target",
+      "url": "https://www.flickr.com/photos/25195310@N02/5115614018",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    }
+  },
+  {
+    "cas": "R17-04",
+    "photo": "5115614018",
+    "fichier": "R17-04.jpg",
+    "sha256": "64fca3636cd917f676cf50a77469ed9823321bb16e02ca71aba2f11e66720bec",
+    "cadre_detail": [
+      255,
+      353,
+      447,
+      437
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.451171875,
+        0.45095168374816985,
+        29.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        2.7083333333333335,
+        2.7142857142857144,
+        -690.625,
+        -918.1428571428571
+      ]
+    },
+    "segment": [
+      [
+        346.46612131345455,
+        392.99894685614044
+      ],
+      [
+        420.8967063214546,
+        397.12590669699796
+      ]
+    ],
+    "references": [
+      {
+        "instance": "5115614018:3",
+        "axe": [
+          [
+            275.34000000000003,
+            395.35861423220973
+          ],
+          [
+            417.42,
+            395.35861423220973
+          ]
+        ],
+        "entree": [
+          426.38,
+          395.35861423220973
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Danielle Walquist Lynch",
+      "titre": "Corey's archery target",
+      "url": "https://www.flickr.com/photos/25195310@N02/5115614018",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    }
+  },
+  {
+    "cas": "R17-05",
+    "photo": "18105652008",
+    "fichier": "R17-05.jpg",
+    "sha256": "b61e3a28995efea77eddfd303e795c90dec49ece61586a98c26a6f1413754c58",
+    "cadre_detail": [
+      262,
+      260,
+      400,
+      343
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.451171875,
+        0.45095168374816985,
+        29.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        3.710144927536232,
+        3.710843373493976,
+        -968.0579710144928,
+        -964.8192771084338
+      ]
+    },
+    "segment": [
+      [
+        282.6204279112727,
+        299.18333701234894
+      ],
+      [
+        362.69591175418185,
+        303.0874587039638
+      ]
+    ],
+    "references": [
+      {
+        "instance": "18105652008:1",
+        "axe": [
+          [
+            303.04285714285714,
+            300.0492505353319
+          ],
+          [
+            379.1114285714286,
+            300.0492505353319
+          ]
+        ],
+        "entree": [
+          292.80285714285714,
+          300.0492505353319
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          526.86,
+          365.8629550321199
+        ],
+        [
+          902.8142857142857,
+          522.3533190578158
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "zigazou76",
+      "titre": "Cibles pour le tir à l’arc",
+      "url": "https://www.flickr.com/photos/38712296@N07/18105652008",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    }
+  },
+  {
+    "cas": "R17-06",
+    "photo": "4169106197",
+    "fichier": "R17-06.jpg",
+    "sha256": "b58f9cef4b5afdadfdf09beaf9b4f55efc78a86f4391df6ec2fdbde72ff8893b",
+    "cadre_detail": [
+      200,
+      134,
+      361,
+      216
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.6421875,
+        0.6416666666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        3.229813664596273,
+        3.231707317073171,
+        -645.9627329192547,
+        -412.0487804878049
+      ]
+    },
+    "segment": [
+      [
+        230.409003969,
+        168.495546978
+      ],
+      [
+        317.855018373,
+        180.150698345
+      ]
+    ],
+    "references": [
+      {
+        "instance": "4169106197:1",
+        "axe": [
+          [
+            220.0,
+            168.0
+          ],
+          [
+            333.0,
+            181.0
+          ]
+        ],
+        "entree": [
+          341.0,
+          182.0
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "cristina.sanvito",
+      "titre": "centro!",
+      "url": "https://www.flickr.com/photos/40385177@N07/4169106197",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    }
+  },
+  {
+    "cas": "R17-07",
+    "photo": "wc71488242",
+    "fichier": "R17-07.jpg",
+    "sha256": "2f4c464596b339a264f35e4e4f7c2558ab727babaa38a266b65a6bf339edf380",
+    "cadre_detail": [
+      142,
+      611,
+      495,
+      763
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.4730878186968839,
+        1.4736842105263157,
+        -209.17847025495752,
+        -858.421052631579
+      ]
+    },
+    "segment": [
+      [
+        189.13927945272727,
+        639.3868741127272
+      ],
+      [
+        469.16931152363634,
+        733.3979936072727
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:9",
+        "axe": [
+          [
+            166.81428571428572,
+            636.7571428571429
+          ],
+          [
+            452.07142857142856,
+            730.0142857142857
+          ]
+        ],
+        "entree": [
+          470.35714285714283,
+          737.3285714285714
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-08",
+    "photo": "wc71488242",
+    "fichier": "R17-08.jpg",
+    "sha256": "91773c12c62a1bdb36602ed7934bfe485b9a452e0e99aa7ca31aa356cdae06c8",
+    "cadre_detail": [
+      208,
+      775,
+      471,
+      888
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.9771863117870723,
+        1.9734513274336283,
+        -411.25475285171103,
+        -1487.424778761062
+      ]
+    },
+    "segment": [
+      [
+        229.32479421999997,
+        804.4051718054545
+      ],
+      [
+        446.1455422890909,
+        857.500542010909
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:10",
+        "axe": [
+          [
+            228.98571428571427,
+            806.8142857142857
+          ],
+          [
+            433.7857142857143,
+            854.3571428571428
+          ]
+        ],
+        "entree": [
+          450.24285714285713,
+          858.0142857142857
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-09",
+    "photo": "wc71488242",
+    "fichier": "R17-09.jpg",
+    "sha256": "add861461f54393f26c0c28224bd0c7229b0bf5904b33f5427c4e02c00c62f5a",
+    "cadre_detail": [
+      186,
+      438,
+      541,
+      591
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.4647887323943662,
+        1.4640522875816993,
+        -272.4507042253521,
+        -599.2549019607843
+      ]
+    },
+    "segment": [
+      [
+        294.64511586,
+        506.41874730909086
+      ],
+      [
+        508.2679962763636,
+        524.7574813290909
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:3",
+        "axe": [
+          [
+            210.7,
+            499.6142857142857
+          ],
+          [
+            501.4428571428571,
+            525.2142857142857
+          ]
+        ],
+        "entree": [
+          516.0714285714286,
+          528.8714285714285
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-10",
+    "photo": "wc71488242",
+    "fichier": "R17-10.jpg",
+    "sha256": "bdad7f2e9e79c530880e95a762be94b723ac19760ca852efe56d0b917884e7e5",
+    "cadre_detail": [
+      130,
+      548,
+      469,
+      694
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.5339233038348083,
+        1.5342465753424657,
+        -199.41002949852506,
+        -798.7671232876712
+      ]
+    },
+    "segment": [
+      [
+        247.84364279454542,
+        599.9650103181818
+      ],
+      [
+        443.2997973581818,
+        659.050648190909
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:7",
+        "axe": [
+          [
+            154.0142857142857,
+            581.9
+          ],
+          [
+            433.7857142857143,
+            655.0428571428571
+          ]
+        ],
+        "entree": [
+          444.75714285714287,
+          660.5285714285714
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-11",
+    "photo": "wc71488242",
+    "fichier": "R17-11.jpg",
+    "sha256": "bddcca3133a51ae970ac4386207261a601244c4296f884a4296a20149978dbcd",
+    "cadre_detail": [
+      241,
+      431,
+      568,
+      572
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.5902140672782874,
+        1.5886524822695036,
+        -383.2415902140673,
+        -642.7092198581561
+      ]
+    },
+    "segment": [
+      [
+        367.3845503981818,
+        496.5181845290909
+      ],
+      [
+        542.3265255599999,
+        521.8100877818181
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:2",
+        "axe": [
+          [
+            263.7285714285714,
+            479.5
+          ],
+          [
+            528.8714285714285,
+            517.9
+          ]
+        ],
+        "entree": [
+          545.3285714285714,
+          523.3857142857142
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-12",
+    "photo": "wc71488242",
+    "fichier": "R17-12.jpg",
+    "sha256": "cde6749a0c9bf22b72435138918d7a867852c9fdad0c73f0443ce28c2caa2739",
+    "cadre_detail": [
+      221,
+      935,
+      570,
+      1086
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.489971346704871,
+        1.490066225165563,
+        -329.2836676217765,
+        -1352.2119205298013
+      ]
+    },
+    "segment": [
+      [
+        362.2502274945454,
+        1004.860728870909
+      ],
+      [
+        530.913196910909,
+        1033.8825017763636
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:11",
+        "axe": [
+          [
+            245.44285714285712,
+            986.0142857142857
+          ],
+          [
+            528.8714285714285,
+            1031.7285714285713
+          ]
+        ],
+        "entree": [
+          545.3285714285714,
+          1035.3857142857144
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-13",
+    "photo": "18105652008",
+    "fichier": "R17-13.jpg",
+    "sha256": "83e6a80944d683d5756ed708ad62a1b7e8bf4a3e498bfad3578628b2d0870797",
+    "cadre_detail": [
+      640,
+      367,
+      778,
+      450
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.451171875,
+        0.45095168374816985,
+        29.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        3.710144927536232,
+        3.710843373493976,
+        -2370.4927536231885,
+        -1361.879518072289
+      ]
+    },
+    "segment": [
+      [
+        660.907448509091,
+        411.30587677678517
+      ],
+      [
+        737.305131392,
+        410.3284493954533
+      ]
+    ],
+    "references": [
+      {
+        "instance": "18105652008:3",
+        "axe": [
+          [
+            680.46,
+            406.813704496788
+          ],
+          [
+            757.9914285714285,
+            405.3511777301927
+          ]
+        ],
+        "entree": [
+          661.4428571428572,
+          408.2762312633833
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          526.86,
+          365.8629550321199
+        ],
+        [
+          902.8142857142857,
+          522.3533190578158
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "zigazou76",
+      "titre": "Cibles pour le tir à l’arc",
+      "url": "https://www.flickr.com/photos/38712296@N07/18105652008",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    }
+  },
+  {
+    "cas": "R17-14",
+    "photo": "18105652008",
+    "fichier": "R17-14.jpg",
+    "sha256": "1eba9cd977956c2a2d333e4cadf2fff9add750a9eaf9199556f88e0752df855b",
+    "cadre_detail": [
+      672,
+      401,
+      825,
+      484
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.451171875,
+        0.45095168374816985,
+        29.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        3.3986928104575163,
+        3.397590361445783,
+        -2283.921568627451,
+        -1349.433734939759
+      ]
+    },
+    "segment": [
+      [
+        740.8401711432726,
+        440.84248953254047
+      ],
+      [
+        800.8850930181817,
+        441.88129438626385
+      ]
+    ],
+    "references": [
+      {
+        "instance": "18105652008:5",
+        "axe": [
+          [
+            692.1628571428571,
+            441.9143468950749
+          ],
+          [
+            804.8028571428572,
+            443.37687366167023
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "inconnu_ou_occulte"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          526.86,
+          365.8629550321199
+        ],
+        [
+          902.8142857142857,
+          522.3533190578158
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "zigazou76",
+      "titre": "Cibles pour le tir à l’arc",
+      "url": "https://www.flickr.com/photos/38712296@N07/18105652008",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    }
+  },
+  {
+    "cas": "R17-15",
+    "photo": "wc71488242",
+    "fichier": "R17-15.jpg",
+    "sha256": "40e7151691808996449e758dfbbc566de58769fecd588ea84908025aa512629e",
+    "cadre_detail": [
+      211,
+      472,
+      551,
+      631
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.240625,
+        0.240625,
+        106.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.5294117647058822,
+        1.528301886792453,
+        -322.70588235294116,
+        -689.3584905660377
+      ]
+    },
+    "segment": [
+      [
+        353.3235307181818,
+        537.7185058599999
+      ],
+      [
+        527.00583718,
+        605.7343639018181
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc71488242:4",
+        "axe": [
+          [
+            261.9,
+            506.9285714285714
+          ],
+          [
+            510.5857142857143,
+            607.5
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "inconnu_ou_occulte"
+      },
+      {
+        "instance": "wc71488242:5",
+        "axe": [
+          [
+            234.47142857142856,
+            495.95714285714286
+          ],
+          [
+            499.6142857142857,
+            596.5285714285714
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "inconnu_ou_occulte"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          464.87142857142857,
+          567.2714285714286
+        ],
+        [
+          548.9857142857143,
+          633.1
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "Bernard Gagnon",
+      "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+      "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+      "nom_licence": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "cas": "R17-16",
+    "photo": "fl31990323",
+    "fichier": "R17-16.jpg",
+    "sha256": "83b4f44463113ca114cb3321cc5f4cc9dfaaaa4e764b6f8cca972645b0b7daea",
+    "cadre_detail": [
+      275,
+      244,
+      487,
+      340
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.6421875,
+        0.6416666666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        2.452830188679245,
+        2.4479166666666665,
+        -674.5283018867924,
+        -561.2916666666666
+      ]
+    },
+    "segment": [
+      [
+        310.242523193,
+        270.539794922
+      ],
+      [
+        438.300872803,
+        312.589416504
+      ]
+    ],
+    "references": [
+      {
+        "instance": "fl31990323:2",
+        "axe": [
+          [
+            467,
+            320
+          ],
+          [
+            295,
+            264
+          ]
+        ],
+        "entree": [
+          467,
+          320
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          300,
+          258
+        ],
+        [
+          438,
+          351
+        ]
+      ],
+      [
+        [
+          0,
+          85
+        ],
+        [
+          223,
+          183
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "bluepelican",
+      "titre": "fl31990323",
+      "url": "https://www.flickr.com/photos/37854512@N00/31990323",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-17",
+    "photo": "9436017284",
+    "fichier": "R17-17.jpg",
+    "sha256": "2e84c5ab28c9b0513ee8cfb7d597f287015324f565016ac9047f142580890c15",
+    "cadre_detail": [
+      255,
+      0,
+      758,
+      228
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.30078125,
+        0.30078125,
+        144.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.0337972166998013,
+        1.0350877192982457,
+        -263.6182902584493,
+        36.0
+      ]
+    },
+    "segment": [
+      [
+        373.51408589802884,
+        150.7892130600446
+      ],
+      [
+        722.6468423726332,
+        5.072679004559177
+      ]
+    ],
+    "references": [
+      {
+        "instance": "9436017284:1",
+        "axe": [
+          [
+            722.8828571428571,
+            7.545714285714286
+          ],
+          [
+            304.5057142857143,
+            187.47714285714287
+          ]
+        ],
+        "entree": [
+          289.87714285714287,
+          193.32857142857142
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          231.36285714285714,
+          561.9685714285714
+        ],
+        [
+          276.7114285714286,
+          630.7228571428572
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "surtr",
+      "titre": "clustering",
+      "url": "https://www.flickr.com/photos/surtr/9436017284",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-18",
+    "photo": "37348131162",
+    "fichier": "R17-18.jpg",
+    "sha256": "68851d161b0a5470899c481254943254920917acb655b8db72392d8cecff65e9",
+    "cadre_detail": [
+      275,
+      230,
+      498,
+      327
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.453125,
+        0.45294117647058824,
+        28.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        2.3318385650224216,
+        2.329896907216495,
+        -641.2556053811659,
+        -494.8762886597938
+      ]
+    },
+    "segment": [
+      [
+        295.65577652322503,
+        285.18808999356736
+      ],
+      [
+        477.5693063527705,
+        271.967543890636
+      ]
+    ],
+    "references": [
+      {
+        "instance": "37348131162:1",
+        "axe": [
+          [
+            297.19142857142856,
+            283.9301075268817
+          ],
+          [
+            469.80857142857144,
+            273.69354838709677
+          ]
+        ],
+        "entree": [
+          477.12285714285713,
+          272.23118279569894
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Special Olympics Oesterreich",
+      "titre": "Familientage - Bogenschießen",
+      "url": "https://www.flickr.com/photos/so-austria/37348131162",
+      "licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "nom_licence": "CC0 1.0"
+    }
+  },
+  {
+    "cas": "R17-19",
+    "photo": "36725328420",
+    "fichier": "R17-19.jpg",
+    "sha256": "91955ceebd268d58061dcf7f35cfe62caf7d12327b669978466340e57c9556c4",
+    "cadre_detail": [
+      300,
+      260,
+      684,
+      425
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.3541666666666667,
+        1.3515151515151516,
+        -406.25,
+        -309.3939393939394
+      ]
+    },
+    "segment": [
+      [
+        484.8721470397259,
+        345.1479918399473
+      ],
+      [
+        657.4152933465441,
+        331.84998491523135
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:2",
+        "axe": [
+          [
+            327,
+            353
+          ],
+          [
+            641,
+            335
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "ambiguous"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-20",
+    "photo": "36725328420",
+    "fichier": "R17-20.jpg",
+    "sha256": "8cf12116042a69944817b566d0ade2a268b01af8afb0ee2bf2311427585ada67",
+    "cadre_detail": [
+      339,
+      246,
+      699,
+      401
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.4444444444444444,
+        1.4451612903225806,
+        -489.6666666666667,
+        -313.50967741935483
+      ]
+    },
+    "segment": [
+      [
+        475.4756772579419,
+        321.22442292510647
+      ],
+      [
+        640.9486442323737,
+        323.54912995635647
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:1",
+        "axe": [
+          [
+            364,
+            320
+          ],
+          [
+            674,
+            327
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "ambiguous"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-21",
+    "photo": "36725328420",
+    "fichier": "R17-21.jpg",
+    "sha256": "2860dd6d9e69564c21dd7bbff5a83628bab497e27ec65b07d1fa269fce93d0be",
+    "cadre_detail": [
+      372,
+      439,
+      637,
+      554
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.9622641509433962,
+        1.9652173913043478,
+        -729.9622641509434,
+        -821.7304347826087
+      ]
+    },
+    "segment": [
+      [
+        459.04888849235755,
+        496.3554833350597
+      ],
+      [
+        597.315308594844,
+        495.2291934998706
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:6",
+        "axe": [
+          [
+            392,
+            498
+          ],
+          [
+            604,
+            495
+          ]
+        ],
+        "entree": [
+          617,
+          495
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-22",
+    "photo": "36725328420",
+    "fichier": "R17-22.jpg",
+    "sha256": "99a1f8c15b189ecee60d6a52bd150974d4fc8e7ce8c30142e2214eb9b4cc49ea",
+    "cadre_detail": [
+      295,
+      331,
+      585,
+      457
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.793103448275862,
+        1.7936507936507937,
+        -528.9655172413793,
+        -552.6984126984127
+      ]
+    },
+    "segment": [
+      [
+        435.3484631982974,
+        394.9893645615975
+      ],
+      [
+        564.6008791659343,
+        397.0033955060171
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:4",
+        "axe": [
+          [
+            315,
+            391
+          ],
+          [
+            548,
+            397
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "occluded"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-23",
+    "photo": "36725328420",
+    "fichier": "R17-23.jpg",
+    "sha256": "d8df19a4bdd78a7e63a37e36bf1329250815c8959f0d8ffb828094580aacd95d",
+    "cadre_detail": [
+      309,
+      302,
+      602,
+      428
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.7747440273037542,
+        1.7777777777777777,
+        -548.3959044368601,
+        -494.8888888888889
+      ]
+    },
+    "segment": [
+      [
+        433.5894886363636,
+        367.44413618607956
+      ],
+      [
+        573.6704545454545,
+        369.70851828835225
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:3",
+        "axe": [
+          [
+            330,
+            361
+          ],
+          [
+            581,
+            362
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "occluded"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-24",
+    "photo": "36725328420",
+    "fichier": "R17-24.jpg",
+    "sha256": "6d17055ecaa62668f61b90895f91de3573077bcc65d8c638ec565de8a36cd862",
+    "cadre_detail": [
+      295,
+      336,
+      568,
+      455
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.9047619047619047,
+        1.9075630252100841,
+        -561.9047619047619,
+        -600.9411764705883
+      ]
+    },
+    "segment": [
+      [
+        320.8936656605114,
+        400.05229048295456
+      ],
+      [
+        471.8206504700672,
+        399.1822324017397
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:4",
+        "axe": [
+          [
+            315,
+            391
+          ],
+          [
+            548,
+            397
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "occluded"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-25",
+    "photo": "36725328420",
+    "fichier": "R17-25.jpg",
+    "sha256": "d518ee14269b9ac537478005c2d5209b688b7b96a5cd1562b5556a37967897af",
+    "cadre_detail": [
+      95,
+      363,
+      273,
+      445
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.4013671875,
+        0.4010416666666667,
+        54.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        2.9213483146067416,
+        2.926829268292683,
+        -277.5280898876405,
+        -1028.439024390244
+      ]
+    },
+    "segment": [
+      [
+        168.18510298295453,
+        402.86709872159093
+      ],
+      [
+        230.01185191761363,
+        401.4130859375
+      ]
+    ],
+    "references": [
+      {
+        "instance": "36725328420:5",
+        "axe": [
+          [
+            115,
+            399
+          ],
+          [
+            253,
+            409
+          ]
+        ],
+        "entree": null,
+        "contact_visible": false,
+        "statut_initial": "ambiguous"
+      }
+    ],
+    "regions_ignorees": [
+      [
+        [
+          165,
+          337
+        ],
+        [
+          684,
+          470
+        ]
+      ]
+    ],
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "cas": "R17-26",
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "fichier": "R17-26.jpg",
+    "sha256": "40a3306db637eafb0dab5b7753a9d12881d74be6e35b47f29227ee030d98def3",
+    "cadre_detail": [
+      645,
+      506,
+      850,
+      702
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.21875,
+        0.21875,
+        144.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        1.5707317073170732,
+        1.5714285714285714,
+        -914.1219512195122,
+        -795.1428571428571
+      ]
+    },
+    "segment": [
+      [
+        740.1956176757812,
+        681.1761474609375
+      ],
+      [
+        751.0198974609375,
+        526.583984375
+      ]
+    ],
+    "references": [
+      {
+        "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+        "axe": [
+          [
+            755,
+            531
+          ],
+          [
+            749,
+            602
+          ]
+        ],
+        "entree": [
+          755,
+          531
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Archery Scoring",
+      "titre": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "url": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints/images/0ijARYt7fTFFlaDVSrdA",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    }
+  },
+  {
+    "cas": "R17-27",
+    "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "fichier": "R17-27.jpg",
+    "sha256": "8ea6f16fd3ddf9c1cc558968d0211595e7e6477f0c8e4e9b68cecf7a4dd39ed5",
+    "cadre_detail": [
+      689,
+      500,
+      819,
+      624
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.21875,
+        0.21875,
+        144.0,
+        0.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        2.4846153846153847,
+        2.4838709677419355,
+        -1613.9,
+        -1241.9354838709678
+      ]
+    },
+    "segment": [
+      [
+        752.3643798828125,
+        603.8423461914062
+      ],
+      [
+        759.2379150390625,
+        520.8761596679688
+      ]
+    ],
+    "references": [
+      {
+        "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+        "axe": [
+          [
+            755,
+            531
+          ],
+          [
+            749,
+            602
+          ]
+        ],
+        "entree": [
+          755,
+          531
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Archery Scoring",
+      "titre": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "url": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints/images/0ijARYt7fTFFlaDVSrdA",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    }
+  },
+  {
+    "cas": "R17-28",
+    "photo": "wc82322984-t22",
+    "fichier": "R17-28.jpg",
+    "sha256": "842e704b0ce735023434554cb39febee6beeaf60f18d0529c20091b8f8ca98cf",
+    "cadre_detail": [
+      0,
+      156,
+      686,
+      454
+    ],
+    "contexte": {
+      "source": [
+        10,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.3693181818181818,
+        0.3686868686868687,
+        0.0,
+        8.0
+      ]
+    },
+    "detail": {
+      "source": [
+        540,
+        84,
+        520,
+        308
+      ],
+      "affine": [
+        0.7580174927113703,
+        0.7583892617449665,
+        0.0,
+        -77.30872483221476
+      ]
+    },
+    "segment": [
+      [
+        346.2979637622933,
+        303.9685931462234
+      ],
+      [
+        636.2749229908089,
+        310.06389954270776
+      ]
+    ],
+    "references": [
+      {
+        "instance": "wc82322984-t22:1",
+        "axe": [
+          [
+            638,
+            311
+          ],
+          [
+            43,
+            299
+          ]
+        ],
+        "entree": [
+          638,
+          311
+        ],
+        "contact_visible": true,
+        "statut_initial": "visible"
+      }
+    ],
+    "regions_ignorees": [],
+    "droits": {
+      "credit": "Voltmetro",
+      "titre": "wc82322984-t22",
+      "url": "https://commons.wikimedia.org/wiki/File:2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm",
+      "licence": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "nom_licence": "CC0 1.0"
+    }
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "version": "R17-2",
+  "statut": "Propositions documentées de lecture assistée, non adjugées",
+  "base_annotations": "R15 conservée pour les résultats R16 et pour les tableaux de disponibilité par instance",
+  "precision": "Coordonnées approximatives en pixels de travail orientés. Incertitude estimée de lecture, sans mesure interlecteurs.",
+  "corrections": [
+    {
+      "id": "R17-C1",
+      "cas": "R17-02",
+      "photo": "70-01",
+      "instance": "70-01",
+      "champ": "axe",
+      "avant": [
+        [
+          230,
+          722
+        ],
+        [
+          514,
+          829
+        ]
+      ],
+      "propose": [
+        [
+          230,
+          722
+        ],
+        [
+          495,
+          824
+        ]
+      ],
+      "incertitude_nouveau_bout_px": 4,
+      "justification": "Le deuxième bout à (514,829) est sur le jaune au-delà de la silhouette sombre. Raccourcir le trait jusqu’au fût visible près de la jonction. Le contact source est conservé."
+    },
+    {
+      "id": "R17-C2",
+      "cas": "R17-05",
+      "photo": "18105652008",
+      "instance": "18105652008:1",
+      "champ": "entree",
+      "avant": [
+        292.80285714285714,
+        300.0492505353319
+      ],
+      "propose": [
+        284,
+        299
+      ],
+      "incertitude_nouveau_point_px": 3,
+      "justification": "La limite gauche du fût orange disparaît dans la surface brune près de (284,299). Le point initial est sur son corps plusieurs pixels à droite. La coordonnée proposée provient de la jonction visible sur la photo."
+    }
+  ]
+}

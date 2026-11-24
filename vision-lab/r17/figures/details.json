@@ -1,0 +1,146 @@
+[
+  {
+    "cas": "R17-02",
+    "cadre_travail": [
+      438,
+      778,
+      543,
+      853
+    ],
+    "cadre_source": [
+      438,
+      778,
+      543,
+      853
+    ],
+    "fichier": "R17-02-loupe.jpg",
+    "droits": {
+      "credit": "Crigges",
+      "titre": "70/01.png",
+      "url": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    },
+    "sha256": "8ecf2a0aad28f552ba36f6e51d50d50770781649cce17428aa3c4ecc64925dc0"
+  },
+  {
+    "cas": "R17-05",
+    "cadre_travail": [
+      249,
+      268,
+      326,
+      329
+    ],
+    "cadre_source": [
+      249,
+      268,
+      326,
+      329
+    ],
+    "fichier": "R17-05-loupe.jpg",
+    "droits": {
+      "credit": "zigazou76",
+      "titre": "Cibles pour le tir à l’arc",
+      "url": "https://www.flickr.com/photos/38712296@N07/18105652008",
+      "licence": "https://creativecommons.org/licenses/by/2.0/",
+      "nom_licence": "CC BY 2.0"
+    },
+    "sha256": "2fce4e64b1d0146a228f65a66956886ddae3197421a9637baf8ade8e4335d5c8"
+  },
+  {
+    "cas": "R17-23",
+    "cadre_travail": [
+      318,
+      342,
+      605,
+      381
+    ],
+    "cadre_source": [
+      318,
+      342,
+      605,
+      381
+    ],
+    "fichier": "R17-23-loupe.jpg",
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    },
+    "sha256": "4e2cde8334aeaeb5f4326e11d474835e075719c8e8bebac6a0921d4acefecb00"
+  },
+  {
+    "cas": "R17-24",
+    "cadre_travail": [
+      292,
+      374,
+      595,
+      417
+    ],
+    "cadre_source": [
+      292,
+      374,
+      595,
+      417
+    ],
+    "fichier": "R17-24-loupe.jpg",
+    "droits": {
+      "credit": "juantiagues",
+      "titre": "36725328420",
+      "url": "https://www.flickr.com/photos/juantiagues/36725328420",
+      "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "nom_licence": "CC BY-SA 2.0"
+    },
+    "sha256": "d4570048680de0e13e6860041613f450d91431fdb1cd639ecb5929d5851177b2"
+  },
+  {
+    "cas": "R17-26",
+    "cadre_travail": [
+      720,
+      507,
+      778,
+      692
+    ],
+    "cadre_source": [
+      2062,
+      1452,
+      2228,
+      1982
+    ],
+    "fichier": "R17-26-loupe.jpg",
+    "droits": {
+      "credit": "Archery Scoring",
+      "titre": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "url": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints/images/0ijARYt7fTFFlaDVSrdA",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    },
+    "sha256": "d45dc87e67f7a27688c2bfe40ef7ed1079b636eee71887b6b7338c21eccc19d3"
+  },
+  {
+    "cas": "R17-27",
+    "cadre_travail": [
+      724,
+      508,
+      778,
+      633
+    ],
+    "cadre_source": [
+      2073,
+      1455,
+      2228,
+      1813
+    ],
+    "fichier": "R17-27-loupe.jpg",
+    "droits": {
+      "credit": "Archery Scoring",
+      "titre": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "url": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints/images/0ijARYt7fTFFlaDVSrdA",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "nom_licence": "CC BY 4.0"
+    },
+    "sha256": "334530cbec7e26143016581547ed268874568eea3cf06710e86b285fee1d6899"
+  }
+]
