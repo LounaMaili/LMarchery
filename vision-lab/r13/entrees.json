@@ -1,0 +1,38 @@
+{
+  "r12/historique.json": {
+    "octets": 14034,
+    "sha256": "887ea3ae3ef82834c6f38dffbac91b35094f48eadcc88bb7f00653b87a13deac"
+  },
+  "r12/nouvelles.json": {
+    "octets": 24788,
+    "sha256": "c5acd75662e8de557d8fea80c4d7fa8a5ed893248f69f98ae204c292000be235"
+  },
+  "r13/collecte.json": {
+    "octets": 5365,
+    "sha256": "c7e70db3f827c3cd4bcab89674f65c6a5dc8d8cac2e1d73c699219596633111e"
+  },
+  "r12/predictions/ordinary-9301.json": {
+    "octets": 400525,
+    "sha256": "9a49282c747b6b19ff06e5e86db566e350ea79b03c98f3dd8bdf011d801bbc3f"
+  },
+  "r12/predictions/ordinary-9302.json": {
+    "octets": 401099,
+    "sha256": "1cb16dc0737f41437aa01cabbcb7a892e5c5751eb39f42315656c9534da16856"
+  },
+  "r12/predictions/ordinary-9303.json": {
+    "octets": 400223,
+    "sha256": "0dcbba487eacaa35a3e20520882f0982163c1db80e9b79c435b5e5800ab4df00"
+  },
+  "r12/predictions/targeted-9301.json": {
+    "octets": 404277,
+    "sha256": "713eff5f148dae90972775696bf7804814430dfafab8094df4dabcc015129069"
+  },
+  "r12/predictions/targeted-9302.json": {
+    "octets": 400384,
+    "sha256": "687a34e9d0d422f3737ab36928d0a8d793fc5446b3d064c19a044f70b9f93e4f"
+  },
+  "r12/predictions/targeted-9303.json": {
+    "octets": 388508,
+    "sha256": "46d0e286c3d5670a8dbaf2633ac1cd3cc3281e2c8df47306a6b2f5b2e54fdf59"
+  }
+}
