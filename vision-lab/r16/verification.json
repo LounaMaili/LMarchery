@@ -1,0 +1,129 @@
+{
+  "manifeste": "affcc38c6410717f419815cd0e60c7346af911090043cb914967f450cc620812",
+  "pieces": 11,
+  "photos": 195,
+  "partitions": {
+    "train": 162,
+    "dev_indep": 11,
+    "dev_explore": 22
+  },
+  "capsules": 2,
+  "poids": 6,
+  "matrices": 6,
+  "seuils_B_herites": {
+    "ordinary-9301": 0.949845477120129,
+    "ordinary-9302": 0.9717186613979988,
+    "ordinary-9303": 0.9512959728509384,
+    "targeted-9301": 0.9611005586550166,
+    "targeted-9302": 0.97654622567146,
+    "targeted-9303": 0.9514127482705219
+  },
+  "colonnes": [
+    "longueur_px",
+    "deux_contours",
+    "largeur_mediane_px",
+    "largeur_mad_px",
+    "contraste_transversal",
+    "continuite_longitudinale",
+    "moyenne_masque",
+    "ecart_aspect_bouts"
+  ],
+  "portes": {
+    "partitions": {
+      "train": {
+        "criteres": {
+          "provenances_occupees": {
+            "observe": 9,
+            "minimum": 6,
+            "manque": 0
+          },
+          "entrees_distinctes": {
+            "observe": 143,
+            "minimum": 30,
+            "manque": 0
+          },
+          "axes_traces_distincts": {
+            "observe": 41,
+            "minimum": 30,
+            "manque": 0
+          },
+          "groupes": {
+            "observe": 7,
+            "minimum": 2,
+            "manque": 0
+          },
+          "supports_vides_uses": {
+            "observe": 4,
+            "minimum": 2,
+            "manque": 0
+          },
+          "segments_negatifs": {
+            "observe": 45,
+            "minimum": 30,
+            "manque": 0
+          },
+          "acquisitions_negatives": {
+            "observe": 11,
+            "minimum": 6,
+            "manque": 0
+          },
+          "occupees_avec_negatifs": {
+            "observe": 7,
+            "minimum": 3,
+            "manque": 0
+          }
+        },
+        "diversite_negatifs": true,
+        "admissible": true
+      },
+      "dev_indep": {
+        "criteres": {
+          "provenances_occupees": {
+            "observe": 7,
+            "minimum": 4,
+            "manque": 0
+          },
+          "entrees_distinctes": {
+            "observe": 18,
+            "minimum": 12,
+            "manque": 0
+          },
+          "axes_traces_distincts": {
+            "observe": 24,
+            "minimum": 12,
+            "manque": 0
+          },
+          "groupes": {
+            "observe": 4,
+            "minimum": 2,
+            "manque": 0
+          },
+          "supports_vides_uses": {
+            "observe": 2,
+            "minimum": 2,
+            "manque": 0
+          },
+          "segments_negatifs": {
+            "observe": 51,
+            "minimum": 12,
+            "manque": 0
+          },
+          "acquisitions_negatives": {
+            "observe": 11,
+            "minimum": 4,
+            "manque": 0
+          },
+          "occupees_avec_negatifs": {
+            "observe": 7,
+            "minimum": 2,
+            "manque": 0
+          }
+        },
+        "diversite_negatifs": true,
+        "admissible": true
+      }
+    },
+    "deux_portes_franchies": true,
+    "entrainement_execute": false
+  }
+}
