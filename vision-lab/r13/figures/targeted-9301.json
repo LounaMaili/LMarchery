@@ -1,0 +1,5623 @@
+{
+ "historique": {
+  "couts": {
+   "H": 87,
+   "A": 0,
+   "B": 0,
+   "O0": 25,
+   "O20": 125,
+   "O40": 129,
+   "F20": 22,
+   "F40": 23
+  },
+  "axes": [
+   5,
+   12
+  ],
+  "parasites": [
+   10,
+   61
+  ],
+  "courbes": {
+   "H": [
+    {
+     "budget": 0,
+     "dernier_seuil_admissible": 2.0,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 12,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 7,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.25,
+     "dernier_seuil_admissible": 0.8894715905189514,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 0,
+      "proposals": 3,
+      "unmatched": 3,
+      "false": 3,
+      "unresolved": 0,
+      "silent": 9,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 0.5,
+     "dernier_seuil_admissible": 0.8709753155708313,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 0,
+      "proposals": 6,
+      "unmatched": 6,
+      "false": 6,
+      "unresolved": 0,
+      "silent": 9,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 3,
+      "unmatched": 3,
+      "false": 3,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 5,
+      "unmatched": 5,
+      "false": 5,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 1,
+     "dernier_seuil_admissible": 0.8299419283866882,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 0,
+      "proposals": 12,
+      "unmatched": 12,
+      "false": 12,
+      "unresolved": 0,
+      "silent": 8,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 6,
+      "unmatched": 6,
+      "false": 6,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 10,
+      "unmatched": 10,
+      "false": 10,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 2,
+     "dernier_seuil_admissible": 0.7925379872322083,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 0,
+      "proposals": 24,
+      "unmatched": 24,
+      "false": 24,
+      "unresolved": 0,
+      "silent": 6,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 9,
+       "unmatched": 9,
+       "false": 9,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 10,
+       "unmatched": 10,
+       "false": 10,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 11,
+      "unmatched": 11,
+      "false": 11,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 21,
+      "unmatched": 21,
+      "false": 21,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 4,
+     "dernier_seuil_admissible": 0.7535492777824402,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 0,
+      "proposals": 48,
+      "unmatched": 48,
+      "false": 48,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 13,
+       "unmatched": 13,
+       "false": 13,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 22,
+       "unmatched": 22,
+       "false": 22,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 24,
+      "unmatched": 24,
+      "false": 24,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 38,
+      "unmatched": 38,
+      "false": 38,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 8,
+     "dernier_seuil_admissible": 0.6942805051803589,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 1,
+      "proposals": 97,
+      "unmatched": 96,
+      "false": 95,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 10,
+       "unmatched": 10,
+       "false": 10,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 6,
+       "unmatched": 6,
+       "false": 6,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 6,
+       "unmatched": 6,
+       "false": 6,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 18,
+       "unmatched": 18,
+       "false": 18,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 1,
+       "proposals": 49,
+       "unmatched": 48,
+       "false": 48,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 1,
+      "proposals": 56,
+      "unmatched": 55,
+      "false": 54,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 1,
+      "proposals": 76,
+      "unmatched": 75,
+      "false": 74,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 1
+     }
+    }
+   ],
+   "A": [
+    {
+     "budget": 0,
+     "dernier_seuil_admissible": 0.9798851975790209,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 1,
+      "proposals": 1,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 11,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 7,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.25,
+     "dernier_seuil_admissible": 0.958256942024406,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 1,
+      "proposals": 4,
+      "unmatched": 3,
+      "false": 3,
+      "unresolved": 0,
+      "silent": 9,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 6,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.5,
+     "dernier_seuil_admissible": 0.9423695964367619,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 3,
+      "proposals": 9,
+      "unmatched": 6,
+      "false": 6,
+      "unresolved": 0,
+      "silent": 7,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 1,
+       "proposals": 5,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 2,
+      "proposals": 6,
+      "unmatched": 4,
+      "false": 4,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 2,
+      "proposals": 7,
+      "unmatched": 5,
+      "false": 5,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 1,
+     "dernier_seuil_admissible": 0.9203292490780843,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 3,
+      "proposals": 15,
+      "unmatched": 12,
+      "false": 12,
+      "unresolved": 0,
+      "silent": 6,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 1,
+       "proposals": 9,
+       "unmatched": 8,
+       "false": 8,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 2,
+      "proposals": 10,
+      "unmatched": 8,
+      "false": 8,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 2,
+      "proposals": 11,
+      "unmatched": 9,
+      "false": 9,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 2,
+     "dernier_seuil_admissible": 0.9005491375903711,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 3,
+      "proposals": 27,
+      "unmatched": 24,
+      "false": 24,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 1,
+       "proposals": 16,
+       "unmatched": 15,
+       "false": 15,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 2,
+      "proposals": 18,
+      "unmatched": 16,
+      "false": 16,
+      "unresolved": 0,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 2,
+      "proposals": 20,
+      "unmatched": 18,
+      "false": 18,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 4,
+     "dernier_seuil_admissible": 0.8691399693489075,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 3,
+      "proposals": 51,
+      "unmatched": 48,
+      "false": 47,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 3
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 6,
+       "unmatched": 6,
+       "false": 6,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 3,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 1,
+       "proposals": 2,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 1,
+       "proposals": 27,
+       "unmatched": 26,
+       "false": 26,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 2,
+      "proposals": 30,
+      "unmatched": 28,
+      "false": 27,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 2,
+      "proposals": 38,
+      "unmatched": 36,
+      "false": 35,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 2
+     }
+    },
+    {
+     "budget": 8,
+     "dernier_seuil_admissible": 0.8102643268894469,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 4,
+      "proposals": 100,
+      "unmatched": 96,
+      "false": 90,
+      "unresolved": 6,
+      "silent": 1,
+      "empty_with_points": 3
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 11,
+       "unmatched": 11,
+       "false": 11,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 3,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 6,
+       "unmatched": 6,
+       "false": 6,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 8,
+       "unmatched": 8,
+       "false": 8,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 2,
+       "proposals": 8,
+       "unmatched": 6,
+       "false": 0,
+       "unresolved": 6,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 1,
+       "proposals": 51,
+       "unmatched": 50,
+       "false": 50,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 3,
+      "proposals": 60,
+      "unmatched": 57,
+      "false": 51,
+      "unresolved": 6,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 3,
+      "proposals": 78,
+      "unmatched": 75,
+      "false": 69,
+      "unresolved": 6,
+      "silent": 1,
+      "empty_with_points": 2
+     }
+    }
+   ],
+   "B": [
+    {
+     "budget": 0,
+     "dernier_seuil_admissible": 0.9871366673712034,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 1,
+      "proposals": 1,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 11,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 7,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.25,
+     "dernier_seuil_admissible": 0.9518290271506092,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 2,
+      "proposals": 5,
+      "unmatched": 3,
+      "false": 3,
+      "unresolved": 0,
+      "silent": 8,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 1,
+       "proposals": 2,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 1,
+      "proposals": 3,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 6,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.5,
+     "dernier_seuil_admissible": 0.9184555687789143,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 3,
+      "proposals": 9,
+      "unmatched": 6,
+      "false": 6,
+      "unresolved": 0,
+      "silent": 7,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 2,
+       "proposals": 4,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 2,
+      "proposals": 6,
+      "unmatched": 4,
+      "false": 4,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 6,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 1,
+     "dernier_seuil_admissible": 0.8979494137401343,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 4,
+      "proposals": 16,
+      "unmatched": 12,
+      "false": 12,
+      "unresolved": 0,
+      "silent": 6,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 2,
+       "proposals": 6,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 3,
+      "proposals": 11,
+      "unmatched": 8,
+      "false": 8,
+      "unresolved": 0,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 1,
+      "proposals": 5,
+      "unmatched": 4,
+      "false": 4,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 2,
+     "dernier_seuil_admissible": 0.870964810317055,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 5,
+      "proposals": 29,
+      "unmatched": 24,
+      "false": 24,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 2,
+       "proposals": 10,
+       "unmatched": 8,
+       "false": 8,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 1,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 2,
+       "proposals": 2,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 7,
+       "unmatched": 7,
+       "false": 7,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 4,
+      "proposals": 19,
+      "unmatched": 15,
+      "false": 15,
+      "unresolved": 0,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 2,
+      "proposals": 13,
+      "unmatched": 11,
+      "false": 11,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 4,
+     "dernier_seuil_admissible": 0.8180635875364176,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 7,
+      "proposals": 55,
+      "unmatched": 48,
+      "false": 47,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 3,
+       "proposals": 12,
+       "unmatched": 9,
+       "false": 9,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 10,
+       "unmatched": 10,
+       "false": 10,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 2,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 3,
+       "proposals": 4,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 14,
+       "unmatched": 14,
+       "false": 14,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 6,
+      "proposals": 30,
+      "unmatched": 24,
+      "false": 23,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 3,
+      "proposals": 25,
+      "unmatched": 22,
+      "false": 21,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 8,
+     "dernier_seuil_admissible": 0.7648499608039856,
+     "ensemble": {
+      "photos": 12,
+      "known": 35,
+      "matched": 7,
+      "proposals": 103,
+      "unmatched": 96,
+      "false": 93,
+      "unresolved": 3,
+      "silent": 2,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "April L. Sanders": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Framsókn": {
+       "photos": 1,
+       "known": 7,
+       "matched": 3,
+       "proposals": 18,
+       "unmatched": 15,
+       "false": 15,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Iain Cuthbertson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 21,
+       "unmatched": 21,
+       "false": 21,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Ivan Radic": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "Staff Sgt. Brent Powell": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "TheNickster": {
+       "photos": 1,
+       "known": 3,
+       "matched": 1,
+       "proposals": 3,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "TimWilson": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 13,
+       "unmatched": 13,
+       "false": 13,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "Wesley Fryer": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "cobaltfish": {
+       "photos": 1,
+       "known": 9,
+       "matched": 3,
+       "proposals": 6,
+       "unmatched": 3,
+       "false": 0,
+       "unresolved": 3,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "gothick_matt": {
+       "photos": 1,
+       "known": 1,
+       "matched": 0,
+       "proposals": 6,
+       "unmatched": 6,
+       "false": 6,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "russellstreet": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "vastateparksstaff": {
+       "photos": 1,
+       "known": 5,
+       "matched": 0,
+       "proposals": 27,
+       "unmatched": 27,
+       "false": 27,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 3,
+      "known": 21,
+      "matched": 6,
+      "proposals": 51,
+      "unmatched": 45,
+      "false": 42,
+      "unresolved": 3,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 7,
+      "known": 24,
+      "matched": 3,
+      "proposals": 51,
+      "unmatched": 48,
+      "false": 45,
+      "unresolved": 3,
+      "silent": 2,
+      "empty_with_points": 1
+     }
+    }
+   ]
+  }
+ },
+ "nouveau": {
+  "couts": {
+   "H": 2,
+   "A": 26,
+   "B": 14,
+   "O0": 0,
+   "O20": 3,
+   "O40": 5,
+   "F20": 0,
+   "F40": 0
+  },
+  "axes": [
+   0,
+   6
+  ],
+  "parasites": [
+   40,
+   43
+  ],
+  "courbes": {
+   "H": [
+    {
+     "budget": 0,
+     "dernier_seuil_admissible": 2.0,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.25,
+     "dernier_seuil_admissible": 0.8605058789253235,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 0,
+      "unresolved": 1,
+      "silent": 4,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 0,
+      "unresolved": 1,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 0,
+      "unresolved": 1,
+      "silent": 4,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.5,
+     "dernier_seuil_admissible": 0.8450860381126404,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 3,
+      "unmatched": 2,
+      "false": 1,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 1,
+       "proposals": 2,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 1,
+      "proposals": 3,
+      "unmatched": 2,
+      "false": 1,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 3,
+      "unmatched": 2,
+      "false": 1,
+      "unresolved": 1,
+      "silent": 3,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 1,
+     "dernier_seuil_admissible": 0.8202463388442993,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 6,
+      "unmatched": 5,
+      "false": 3,
+      "unresolved": 2,
+      "silent": 3,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 0,
+       "unresolved": 2,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 1,
+       "proposals": 4,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 1,
+      "proposals": 6,
+      "unmatched": 5,
+      "false": 3,
+      "unresolved": 2,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 6,
+      "unmatched": 5,
+      "false": 3,
+      "unresolved": 2,
+      "silent": 3,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 2,
+     "dernier_seuil_admissible": 0.8038100004196167,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 13,
+      "unmatched": 10,
+      "false": 7,
+      "unresolved": 3,
+      "silent": 3,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 0,
+       "unresolved": 3,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 3,
+       "proposals": 10,
+       "unmatched": 7,
+       "false": 7,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 3,
+      "proposals": 13,
+      "unmatched": 10,
+      "false": 7,
+      "unresolved": 3,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 13,
+      "unmatched": 10,
+      "false": 7,
+      "unresolved": 3,
+      "silent": 3,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 4,
+     "dernier_seuil_admissible": 0.7731385231018066,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 23,
+      "unmatched": 20,
+      "false": 16,
+      "unresolved": 4,
+      "silent": 2,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 0,
+       "unresolved": 4,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 3,
+       "proposals": 18,
+       "unmatched": 15,
+       "false": 15,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 3,
+      "proposals": 22,
+      "unmatched": 19,
+      "false": 15,
+      "unresolved": 4,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 23,
+      "unmatched": 20,
+      "false": 16,
+      "unresolved": 4,
+      "silent": 2,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 8,
+     "dernier_seuil_admissible": 0.7355150580406189,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 43,
+      "unmatched": 40,
+      "false": 31,
+      "unresolved": 9,
+      "silent": 2,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 9,
+       "unmatched": 9,
+       "false": 0,
+       "unresolved": 9,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 3,
+       "proposals": 31,
+       "unmatched": 28,
+       "false": 28,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 3,
+      "proposals": 40,
+      "unmatched": 37,
+      "false": 28,
+      "unresolved": 9,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 43,
+      "unmatched": 40,
+      "false": 31,
+      "unresolved": 9,
+      "silent": 2,
+      "empty_with_points": 1
+     }
+    }
+   ],
+   "A": [
+    {
+     "budget": 0,
+     "dernier_seuil_admissible": 2.0,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.25,
+     "dernier_seuil_admissible": 0.9523636448158644,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 0.5,
+     "dernier_seuil_admissible": 0.9401451577642114,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 1,
+     "dernier_seuil_admissible": 0.9255516760372668,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 5,
+      "unmatched": 5,
+      "false": 5,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 3,
+      "unmatched": 3,
+      "false": 3,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 5,
+      "unmatched": 5,
+      "false": 5,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 2,
+     "dernier_seuil_admissible": 0.903248110058136,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 10,
+      "unmatched": 10,
+      "false": 10,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 7,
+       "unmatched": 7,
+       "false": 7,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 7,
+      "unmatched": 7,
+      "false": 7,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 10,
+      "unmatched": 10,
+      "false": 10,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 4,
+     "dernier_seuil_admissible": 0.8771751037429694,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 20,
+      "unmatched": 20,
+      "false": 20,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 14,
+       "unmatched": 14,
+       "false": 14,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 14,
+      "unmatched": 14,
+      "false": 14,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 20,
+      "unmatched": 20,
+      "false": 20,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 2
+     }
+    },
+    {
+     "budget": 8,
+     "dernier_seuil_admissible": 0.8448873054909736,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 41,
+      "unmatched": 40,
+      "false": 39,
+      "unresolved": 1,
+      "silent": 1,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 3,
+       "unmatched": 3,
+       "false": 3,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 11,
+       "unmatched": 11,
+       "false": 11,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 1,
+       "proposals": 26,
+       "unmatched": 25,
+       "false": 25,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 1,
+      "proposals": 27,
+      "unmatched": 26,
+      "false": 25,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 41,
+      "unmatched": 40,
+      "false": 39,
+      "unresolved": 1,
+      "silent": 1,
+      "empty_with_points": 2
+     }
+    }
+   ],
+   "B": [
+    {
+     "budget": 0,
+     "dernier_seuil_admissible": 2.0,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 2,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 0,
+      "unmatched": 0,
+      "false": 0,
+      "unresolved": 0,
+      "silent": 5,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.25,
+     "dernier_seuil_admissible": 0.9626734000941596,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 0
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 4,
+      "empty_with_points": 0
+     }
+    },
+    {
+     "budget": 0.5,
+     "dernier_seuil_admissible": 0.9598244010186541,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 1,
+      "unmatched": 1,
+      "false": 1,
+      "unresolved": 0,
+      "silent": 1,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 2,
+      "unmatched": 2,
+      "false": 2,
+      "unresolved": 0,
+      "silent": 3,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 1,
+     "dernier_seuil_admissible": 0.9372847146677854,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 5,
+      "unmatched": 5,
+      "false": 4,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 3,
+      "unmatched": 3,
+      "false": 2,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 5,
+      "unmatched": 5,
+      "false": 4,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 2,
+     "dernier_seuil_admissible": 0.8925927038274823,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 10,
+      "unmatched": 10,
+      "false": 9,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 1
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 0,
+       "unresolved": 1,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 5,
+       "unmatched": 5,
+       "false": 5,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 4,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 0,
+      "proposals": 5,
+      "unmatched": 5,
+      "false": 4,
+      "unresolved": 1,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 0,
+      "proposals": 10,
+      "unmatched": 10,
+      "false": 9,
+      "unresolved": 1,
+      "silent": 2,
+      "empty_with_points": 1
+     }
+    },
+    {
+     "budget": 4,
+     "dernier_seuil_admissible": 0.8398835634050233,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 21,
+      "unmatched": 20,
+      "false": 16,
+      "unresolved": 4,
+      "silent": 1,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 4,
+       "unmatched": 4,
+       "false": 0,
+       "unresolved": 4,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 8,
+       "unmatched": 8,
+       "false": 8,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 1,
+       "unmatched": 1,
+       "false": 1,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 1,
+       "proposals": 8,
+       "unmatched": 7,
+       "false": 7,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 1,
+      "proposals": 12,
+      "unmatched": 11,
+      "false": 7,
+      "unresolved": 4,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 1,
+      "proposals": 21,
+      "unmatched": 20,
+      "false": 16,
+      "unresolved": 4,
+      "silent": 1,
+      "empty_with_points": 2
+     }
+    },
+    {
+     "budget": 8,
+     "dernier_seuil_admissible": 0.7933254837989807,
+     "ensemble": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 43,
+      "unmatched": 40,
+      "false": 31,
+      "unresolved": 9,
+      "silent": 1,
+      "empty_with_points": 2
+     },
+     "provenances": {
+      "Tomi Backman": {
+       "photos": 1,
+       "known": 3,
+       "matched": 0,
+       "proposals": 9,
+       "unmatched": 9,
+       "false": 0,
+       "unresolved": 9,
+       "silent": 0,
+       "empty_with_points": 0
+      },
+      "chb1848": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 13,
+       "unmatched": 13,
+       "false": 13,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "maggiewilson177": {
+       "photos": 1,
+       "known": 2,
+       "matched": 0,
+       "proposals": 0,
+       "unmatched": 0,
+       "false": 0,
+       "unresolved": 0,
+       "silent": 1,
+       "empty_with_points": 0
+      },
+      "mikecogh": {
+       "photos": 1,
+       "known": 0,
+       "matched": 0,
+       "proposals": 2,
+       "unmatched": 2,
+       "false": 2,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 1
+      },
+      "ttillma8": {
+       "photos": 1,
+       "known": 6,
+       "matched": 3,
+       "proposals": 19,
+       "unmatched": 16,
+       "false": 16,
+       "unresolved": 0,
+       "silent": 0,
+       "empty_with_points": 0
+      }
+     },
+     "groupes": {
+      "photos": 2,
+      "known": 9,
+      "matched": 3,
+      "proposals": 28,
+      "unmatched": 25,
+      "false": 16,
+      "unresolved": 9,
+      "silent": 0,
+      "empty_with_points": 0
+     },
+     "uses": {
+      "photos": 5,
+      "known": 11,
+      "matched": 3,
+      "proposals": 43,
+      "unmatched": 40,
+      "false": 31,
+      "unresolved": 9,
+      "silent": 1,
+      "empty_with_points": 2
+     }
+    }
+   ]
+  }
+ }
+}

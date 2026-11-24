@@ -1,0 +1,218 @@
+{
+  "statut": "pilote documentaire, hors inférence",
+  "distincts_verifies": 159,
+  "lectures": [
+    {
+      "id": "9436017284",
+      "group": "surtr",
+      "source": {
+        "id": "9436017284",
+        "url": "https://www.flickr.com/photos/surtr/9436017284",
+        "pixels_url": "https://live.staticflickr.com/7328/9436017284_681260a6f4_b.jpg",
+        "sha256": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+        "size": 203063,
+        "credit": "surtr",
+        "author_url": "https://www.flickr.com/photos/surtr",
+        "title": "clustering",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "16e501a8ad508202e72a37434267dbc2084a844b97a86ffe465de93148e4976f"
+      },
+      "size": [
+        768,
+        1024
+      ],
+      "boards": [
+        "9436017284-1"
+      ],
+      "flags": [
+        "worn",
+        "grouped"
+      ],
+      "exhaustive": false,
+      "ignore": [
+        [
+          [
+            231.36285714285714,
+            561.9685714285714
+          ],
+          [
+            276.7114285714286,
+            630.7228571428572
+          ]
+        ]
+      ],
+      "marks": [
+        {
+          "axis": [
+            [
+              722.8828571428571,
+              7.545714285714286
+            ],
+            [
+              304.5057142857143,
+              187.47714285714287
+            ]
+          ],
+          "entry": [
+            289.87714285714287,
+            193.32857142857142
+          ]
+        },
+        {
+          "axis": [
+            [
+              749.2142857142857,
+              592.6885714285714
+            ],
+            [
+              313.28285714285715,
+              493.2142857142857
+            ]
+          ],
+          "entry": [
+            297.19142857142856,
+            490.2885714285714
+          ]
+        },
+        {
+          "axis": [
+            [
+              724.3457142857143,
+              782.86
+            ],
+            [
+              270.86,
+              576.5971428571429
+            ]
+          ],
+          "entry": [
+            250.38,
+            569.2828571428571
+          ]
+        },
+        {
+          "axis": [
+            [
+              736.0485714285714,
+              992.0485714285714
+            ],
+            [
+              281.1,
+              611.7057142857143
+            ]
+          ],
+          "entry": null
+        },
+        {
+          "axis": [
+            [
+              749.2142857142857,
+              753.6028571428571
+            ],
+            [
+              284.0257142857143,
+              621.9457142857143
+            ]
+          ],
+          "entry": [
+            259.15714285714284,
+            617.5571428571428
+          ]
+        }
+      ]
+    },
+    {
+      "id": "37348131162",
+      "group": "Special Olympics Oesterreich",
+      "source": {
+        "id": "37348131162",
+        "url": "https://www.flickr.com/photos/so-austria/37348131162",
+        "pixels_url": "https://live.staticflickr.com/4393/37348131162_66ecc82f28_b.jpg",
+        "sha256": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+        "size": 134046,
+        "credit": "Special Olympics Oesterreich",
+        "author_url": "https://www.flickr.com/photos/so-austria",
+        "title": "Familientage - Bogenschießen",
+        "terms": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "notice_sha256": "27ca35a75dd43f5b63cf64150af93bf7db134dada38ecdeb714ce3bd1b9e79b4"
+      },
+      "size": [
+        1024,
+        680
+      ],
+      "boards": [
+        "37348131162-1"
+      ],
+      "flags": [
+        "worn"
+      ],
+      "exhaustive": true,
+      "ignore": [],
+      "marks": [
+        {
+          "axis": [
+            [
+              297.19142857142856,
+              283.9301075268817
+            ],
+            [
+              469.80857142857144,
+              273.69354838709677
+            ]
+          ],
+          "entry": [
+            477.12285714285713,
+            272.23118279569894
+          ]
+        }
+      ]
+    },
+    {
+      "id": "89744300",
+      "group": "DWZ",
+      "source": {
+        "id": "89744300",
+        "url": "https://www.flickr.com/photos/dwz/89744300",
+        "pixels_url": "https://live.staticflickr.com/14/89744300_ad0a1cd306_b.jpg",
+        "sha256": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b",
+        "size": 228255,
+        "credit": "DWZ",
+        "author_url": "https://www.flickr.com/photos/dwz",
+        "title": "DSC00053",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "73bd548904b3251996a14d5f85facce3bbee333cf1aede7abad468fd865115bd"
+      },
+      "size": [
+        1024,
+        768
+      ],
+      "boards": [
+        "89744300-1",
+        "89744300-2",
+        "89744300-3",
+        "89744300-4",
+        "89744300-5",
+        "89744300-6",
+        "89744300-7",
+        "89744300-8"
+      ],
+      "flags": [
+        "empty"
+      ],
+      "exhaustive": true,
+      "ignore": [],
+      "marks": []
+    }
+  ],
+  "requetes": [
+    [
+      "Flickr",
+      19
+    ],
+    [
+      "Flickr complément",
+      16
+    ]
+  ],
+  "regle": "Une provenance par photographe. Élimination des références des catalogues historiques avant inspection. Deux vues de DWZ, une seule admise. Grand côté de lecture 700 puis projection R7."
+}

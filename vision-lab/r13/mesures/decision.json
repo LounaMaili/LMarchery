@@ -1,0 +1,114 @@
+{
+  "essais": {
+    "ordinary-9301": {
+      "gains": {
+        "historique": {
+          "delta": 9,
+          "acquisitions": 4
+        },
+        "nouveau": {
+          "delta": 6,
+          "acquisitions": 2
+        }
+      },
+      "parasites": {
+        "A": 32,
+        "B": 103
+      },
+      "geo": false,
+      "contact": false
+    },
+    "ordinary-9302": {
+      "gains": {
+        "historique": {
+          "delta": 11,
+          "acquisitions": 4
+        },
+        "nouveau": {
+          "delta": 6,
+          "acquisitions": 2
+        }
+      },
+      "parasites": {
+        "A": 44,
+        "B": 105
+      },
+      "geo": false,
+      "contact": false
+    },
+    "ordinary-9303": {
+      "gains": {
+        "historique": {
+          "delta": 10,
+          "acquisitions": 4
+        },
+        "nouveau": {
+          "delta": 6,
+          "acquisitions": 2
+        }
+      },
+      "parasites": {
+        "A": 33,
+        "B": 102
+      },
+      "geo": false,
+      "contact": false
+    },
+    "targeted-9301": {
+      "gains": {
+        "historique": {
+          "delta": 7,
+          "acquisitions": 4
+        },
+        "nouveau": {
+          "delta": 6,
+          "acquisitions": 2
+        }
+      },
+      "parasites": {
+        "A": 50,
+        "B": 104
+      },
+      "geo": false,
+      "contact": false
+    },
+    "targeted-9302": {
+      "gains": {
+        "historique": {
+          "delta": 10,
+          "acquisitions": 4
+        },
+        "nouveau": {
+          "delta": 6,
+          "acquisitions": 2
+        }
+      },
+      "parasites": {
+        "A": 16,
+        "B": 104
+      },
+      "geo": false,
+      "contact": false
+    },
+    "targeted-9303": {
+      "gains": {
+        "historique": {
+          "delta": 11,
+          "acquisitions": 5
+        },
+        "nouveau": {
+          "delta": 6,
+          "acquisitions": 2
+        }
+      },
+      "parasites": {
+        "A": 20,
+        "B": 106
+      },
+      "geo": false,
+      "contact": false
+    }
+  },
+  "geometrie": false,
+  "contacts": false
+}
