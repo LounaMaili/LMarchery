@@ -1,5 +1,7 @@
 package com.lmarchery.feature.configured
 
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,6 +22,7 @@ import com.lmarchery.feature.scoring.TargetCanvas
 import com.lmarchery.feature.scoring.TargetInteraction
 import com.lmarchery.feature.sessions.*
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun ConfiguredRange(
     state: ConfiguredEditorState,
@@ -37,6 +40,11 @@ internal fun ConfiguredRange(
     var showDetails by rememberSaveable(session.uuid) { mutableStateOf(false) }
     var showImpacts by rememberSaveable(captured?.uuid) { mutableStateOf(false) }
 
+    if (showDetails && state.canNavigate) {
+        SessionInformation(state, controller, { showDetails = false }, finish, openGrouping)
+        return
+    }
+
     Column(
         Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).safeDrawingPadding()
             .preciseTouchGuard(controller, { controller.state.value.guardTargetTouches },
@@ -44,18 +52,27 @@ internal fun ConfiguredRange(
     ) {
         Surface(color = MaterialTheme.colorScheme.primary, contentColor = MaterialTheme.colorScheme.onPrimary) {
             Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 5.dp)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    val colors = ButtonDefaults.textButtonColors(
-                        contentColor = LocalContentColor.current,
-                        disabledContentColor = LocalContentColor.current.copy(alpha = .58f),
-                    )
-                    TextButton(back, enabled = !state.busy,
-                        colors = colors) { Text("‹ Historique") }
-                    Spacer(Modifier.weight(1f))
-                    if (captured != null) TextButton({ openPhoto(captured.uuid) }, enabled = state.canNavigate,
-                        colors = colors) { Text("Photo") }
-                    TextButton({ showDetails = true }, enabled = state.canNavigate,
-                        colors = colors) { Text("Séance") }
+                FlowRow(
+                    Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(4.dp),
+                ) {
+                    val color = LocalContentColor.current
+                    val colors = ButtonDefaults.outlinedButtonColors(
+                        contentColor = color, disabledContentColor = color.copy(alpha = .58f))
+                    val border = BorderStroke(1.dp, color.copy(alpha = .60f))
+                    TextButton(back, enabled = !state.busy, colors = ButtonDefaults.textButtonColors(contentColor = color)) {
+                        Text("‹ Historique")
+                    }
+                    OutlinedButton({ showDetails = true }, enabled = state.canNavigate, colors = colors, border = border) {
+                        Text("Séance")
+                    }
+                    if (captured != null) {
+                        OutlinedButton({ openGrouping(captured.uuid) }, enabled = state.canNavigate, colors = colors, border = border) {
+                            Text("Bilan")
+                        }
+                        TextButton({ openPhoto(captured.uuid) }, enabled = state.canNavigate,
+                            colors = ButtonDefaults.textButtonColors(contentColor = color)) { Text("Photo") }
+                    }
                 }
                 Text(session.metadata.title, style = MaterialTheme.typography.titleLarge, maxLines = 1,
                     overflow = TextOverflow.Ellipsis)
@@ -83,49 +100,6 @@ internal fun ConfiguredRange(
             }
         }
     }
-
-    if (showDetails) AlertDialog(
-        onDismissRequest = { showDetails = false },
-        title = { Text("Séance et volées") },
-        text = {
-            LazyColumn(Modifier.heightIn(max = 455.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                item {
-                    if (captured != null) {
-                        TextButton({
-                            showDetails = false
-                            openGrouping(captured.uuid)
-                        }, enabled = state.canNavigate) { Text("Bilan de la volée ${captured.end.index}") }
-                    }
-                    state.savedPlace?.let { AdoptedPlaceLabel(it) }
-                    com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.end.index }, state.canNavigate)
-                    ConfiguredSessionSummary(session, readOnly = false)
-                    TextButton({ showDetails = false; controller.editMetadata() }, enabled = state.canForm) {
-                        Text("Modifier les métadonnées et le matériel")
-                    }
-                    TextButton({ showDetails = false; controller.nextEnd(state.epoch) }, enabled = state.canForm) {
-                        Text(if (session.ends.isEmpty()) "Créer la première volée" else "Volée suivante")
-                    }
-                    TextButton({ showDetails = false; controller.editNextEnd(state.epoch) }, enabled = state.canForm) {
-                        Text(nextEndSettingsLabel)
-                    }
-                    TextButton({ showDetails = false; finish() }, enabled = state.canForm) { Text("Terminer la séance") }
-                }
-                items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { focus ->
-                    OutlinedButton({ controller.selectEnd(focus.uuid); showDetails = false },
-                        Modifier.fillMaxWidth(), enabled = state.canNavigate) {
-                        Text("Voir la volée ${focus.end.index} · ${if (focus.end.status == EndStatus.VALIDATED) "validée" else "en saisie"}")
-                    }
-                    if (focus.uuid != captured?.uuid) TextButton({
-                        showDetails = false
-                        openGrouping(focus.uuid)
-                    }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
-                    ConfiguredEndCard(session, focus)
-                    ImpactCancellationHistory(focus.end, focus.configuration.regulatoryEdition)
-                }
-            }
-        },
-        confirmButton = { TextButton({ showDetails = false }) { Text("Fermer") } },
-    )
 
     val picking = state.impactPicking
     if (captured != null && context != null && (showImpacts || (picking?.candidates?.size ?: 0) > 1)) {
@@ -188,6 +162,65 @@ internal fun ConfiguredRange(
         text = { ConfiguredReconciliationActions(state, controller) },
         confirmButton = { TextButton(back) { Text("Revenir à l’historique") } },
     )
+}
+
+@Composable
+@OptIn(ExperimentalLayoutApi::class)
+private fun SessionInformation(state: ConfiguredEditorState, controller: ConfiguredSessionController,
+    backToRange: () -> Unit, finish: () -> Unit, openGrouping: (String) -> Unit) {
+    val session = requireNotNull(state.saved)
+    var allEnds by rememberSaveable(session.uuid) { mutableStateOf(false) }
+    BackHandler(onBack = backToRange)
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
+            OutlinedButton(backToRange, Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) { Text("‹ Retour au tir") }
+            LazyColumn(
+                Modifier.weight(1f).fillMaxWidth(),
+                contentPadding = PaddingValues(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                item {
+                    Text("Informations de séance", style = MaterialTheme.typography.headlineSmall)
+                    ConfiguredSessionSummary(session, readOnly = false)
+                }
+                item {
+                    state.savedPlace?.let { AdoptedPlaceLabel(it) }
+                    com.lmarchery.feature.weather.WeatherSection(session.uuid,
+                        session.ends.map { it.uuid to it.end.index }, state.canNavigate, showOnEntry = true)
+                }
+                item {
+                    OutlinedButton({ backToRange(); controller.editMetadata() }, enabled = state.canForm) {
+                        Text("Modifier les détails et le matériel")
+                    }
+                }
+                item {
+                    Text("Volées", style = MaterialTheme.typography.titleMedium)
+                    OutlinedButton({ allEnds = !allEnds }) {
+                        Text(if (allEnds) "Masquer les volées" else "Consulter les volées (${session.ends.size})")
+                    }
+                }
+                if (allEnds) items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { focus ->
+                    ConfiguredEndCard(session, focus) {
+                        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            OutlinedButton({ controller.selectEnd(focus.uuid); backToRange() }, enabled = state.canNavigate) {
+                                Text("Voir la volée ${focus.end.index}")
+                            }
+                            TextButton({ openGrouping(focus.uuid) }, enabled = state.canNavigate) { Text("Bilan · volée ${focus.end.index}") }
+                        }
+                    }
+                }
+                item {
+                    OutlinedButton({ backToRange(); controller.nextEnd(state.epoch) }, enabled = state.canForm) {
+                        Text(if (session.ends.isEmpty()) "Créer la première volée" else "Volée suivante")
+                    }
+                    OutlinedButton({ backToRange(); controller.editNextEnd(state.epoch) }, enabled = state.canForm) {
+                        Text(nextEndSettingsLabel)
+                    }
+                    TextButton({ backToRange(); finish() }, enabled = state.canForm) { Text("Terminer la séance") }
+                }
+            }
+        }
+    }
 }
 
 @Composable

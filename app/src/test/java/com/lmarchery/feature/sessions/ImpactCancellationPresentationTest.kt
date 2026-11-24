@@ -60,7 +60,8 @@ class ImpactCancellationPresentationTest {
     @Test fun `score rows distinguish active miss from preserved cancelled ten`() {
         val s = session().cancelImpact(id(2), id(12), now)
         val row = presentEndScore(s.ends.single())
-        assertEquals(listOf("#1 : 10", "#3 : M"), row.arrows); assertEquals(10, row.total)
+        assertEquals(listOf("Flèche 1 · 10 points", "Flèche 3 · M (0 point)"), row.arrows)
+        assertEquals(10, row.total)
         assertEquals(10, s.ends.single().impacts[1].scoreFinal)
         assertTrue(s.ends.single().impacts[2].isMiss)
     }

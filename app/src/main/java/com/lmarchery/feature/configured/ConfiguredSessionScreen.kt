@@ -18,9 +18,16 @@ import com.lmarchery.feature.sessions.*
 import com.lmarchery.feature.photo.EndPhotoKey
 import com.lmarchery.feature.photo.EndPhotoScreen
 
+private enum class CreationSection(val label: String) { SETUP("Réglages"), PLACE("Lieu"), DETAILS("Détails") }
+
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToHistory: () -> Unit = {}) {
     val state by controller.state.collectAsStateWithLifecycle()
+    (state.form as? ConfiguredForm.PlaceCatalogue)?.let {
+        PlaceCatalogueScreen(it, state, controller)
+        return
+    }
     var photoEndUuid by rememberSaveable(state.saved?.uuid) { mutableStateOf<String?>(null) }
     var groupingEndUuid by rememberSaveable(state.saved?.uuid) { mutableStateOf<String?>(null) }
     state.saved?.let { session ->
@@ -56,6 +63,7 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
     }
     val creation = state.form as? ConfiguredForm.Creation
     val presets = state.presets
+    var section by rememberSaveable(creation?.token) { mutableStateOf(CreationSection.SETUP) }
     if (creation != null && presets?.nameDraft != null) {
         val token = creation.token
         val dismiss = { controller.cancelPresetName(token) }
@@ -104,6 +112,19 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
             openPhoto = { photoEndUuid = it }, openGrouping = { groupingEndUuid = it })
     } else {
         Scaffold(
+            topBar = {
+                if (creation != null) Surface(tonalElevation = 2.dp) {
+                    Column(Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal = 16.dp)) {
+                        TextButton(back, enabled = !state.busy) { Text("‹ Séances") }
+                        Text("Nouvelle séance", style = MaterialTheme.typography.titleLarge)
+                        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            CreationSection.entries.filter { controller.supportsPlaces || it != CreationSection.PLACE }.forEach {
+                                FilterChip(section == it, { section = it }, { Text(it.label) }, enabled = state.ready)
+                            }
+                        }
+                    }
+                }
+            },
             bottomBar = {
                 creation?.let { form ->
                     Surface(tonalElevation = 3.dp) {
@@ -130,7 +151,9 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
                 Modifier.fillMaxSize().padding(padding).padding(horizontal = 20.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp), contentPadding = PaddingValues(bottom = 16.dp),
             ) {
-                item { TextButton(onClick = back, enabled = !state.busy) { Text("‹  Retour aux séances") } }
+                if (creation == null) item {
+                    TextButton(onClick = back, enabled = !state.busy) { Text("‹  Retour aux séances") }
+                }
                 if (state.busy) item { LinearProgressIndicator(Modifier.fillMaxWidth()) }
                 state.problem?.takeUnless { creation != null || state.form is ConfiguredForm.PresetEdit }?.let { problem ->
                     item { Text(problem.message, color = MaterialTheme.colorScheme.error) }
@@ -140,23 +163,29 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
 
                 val form = state.form
                 if (form != null && form !is ConfiguredForm.PresetDeletion) {
-                    item(key = form.token) { ConfiguredFormFields(form, state, controller) }
+                    item(key = form.token) {
+                        if (creation != null && section == CreationSection.PLACE) {
+                            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) { PlacePicker(creation, state, controller) }
+                        } else ConfiguredFormFields(form, state, controller, section == CreationSection.DETAILS)
+                    }
                 }
                 if (form == null) state.saved?.let { session ->
-                    state.savedPlace?.let { place -> item { AdoptedPlaceLabel(place) } }
-                    item { com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.end.index }, false) }
                     item { ConfiguredSessionSummary(session, readOnly = session.status == SessionStatus.COMPLETED) }
+                    state.savedPlace?.let { place -> item { AdoptedPlaceLabel(place) } }
+                    item { com.lmarchery.feature.weather.WeatherSection(session.uuid,
+                        session.ends.map { it.uuid to it.end.index }, false, showOnEntry = true) }
                     if (session.status == SessionStatus.DRAFT) item {
                         Button(controller::start, enabled = state.canForm) { Text("Démarrer la séance") }
                         TextButton(controller::editMetadata, enabled = state.canForm) { Text("Modifier les métadonnées et le matériel") }
                     }
                     items(session.ends.sortedBy { it.end.index }, key = { it.uuid }) { captured ->
-                        TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
-                            Text("Bilan · volée ${captured.end.index}")
-                        }
-                        ConfiguredEndCard(session, captured)
-                        TextButton({ photoEndUuid = captured.uuid }, enabled = state.canNavigate) {
-                            Text("Photo · volée ${captured.end.index}")
+                        ConfiguredEndCard(session, captured) {
+                            TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                                Text("Bilan · volée ${captured.end.index}")
+                            }
+                            TextButton({ photoEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                                Text("Photo · volée ${captured.end.index}")
+                            }
                         }
                     }
                 }
@@ -204,7 +233,8 @@ fun ConfiguredSessionScreen(controller: ConfiguredSessionController, onReturnToH
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorState, c: ConfiguredSessionController) {
+private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorState, c: ConfiguredSessionController,
+    details: Boolean) {
     val token = form.token
     val creation = form as? ConfiguredForm.Creation
     val editingPreset = form is ConfiguredForm.PresetEdit
@@ -223,13 +253,12 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
     }
 
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(when (form) {
-            is ConfiguredForm.Creation -> "Nouvelle séance"
+        if (creation == null) Text(when (form) {
             is ConfiguredForm.NextEnd -> "Prochaine volée"
             is ConfiguredForm.PresetEdit -> "Modifier le preset"
             else -> "Métadonnées"
         }, style = MaterialTheme.typography.headlineMedium)
-        if (creation != null) {
+        if (creation != null && !details) {
             Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainer) {
                 FlowRow(
                     Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 4.dp),
@@ -240,8 +269,7 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
                 }
             }
         }
-        if (creation != null && c.supportsPlaces) PlacePicker(creation, state, c)
-        if (metadata != null && form !is ConfiguredForm.Metadata) {
+        if (metadata != null && form !is ConfiguredForm.Metadata && (creation == null || !details)) {
             OutlinedTextField(
                 metadata.title, { c.title(token, it) }, Modifier.fillMaxWidth(), enabled = state.ready,
                 label = { Text(if (editingPreset) "Nom du preset" else "Titre de la séance") }, singleLine = true,
@@ -252,12 +280,12 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
         }
         if (config != null) {
             val enabled = state.ready
-            ConfigurationBasics(token, config, enabled, c)
-            OutlinedButton({ more = !more }, Modifier.fillMaxWidth()) {
+            if (!details || creation == null) ConfigurationBasics(token, config, enabled, c)
+            if (creation == null) OutlinedButton({ more = !more }, Modifier.fillMaxWidth()) {
                 Text(if (more) "Masquer les options" else if (metadata != null) "Options de tir et matériel" else "Options de tir")
             }
-            if (more) {
-                Text("Lieu de tir", style = MaterialTheme.typography.titleSmall)
+            if (if (creation != null) details else more) {
+                Text("Environnement de tir", style = MaterialTheme.typography.titleSmall)
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     FilterChip(config.indoor, { c.indoor(token, true) }, { Text("Salle") }, enabled = enabled)
                     FilterChip(!config.indoor, { c.indoor(token, false) }, { Text("Extérieur") }, enabled = enabled)
@@ -270,7 +298,7 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
                 }
             }
         }
-        if (metadata != null && more) {
+        if (metadata != null && (if (creation != null) details else more)) {
             if (form is ConfiguredForm.Metadata)
                 OutlinedTextField(metadata.title, { c.title(token, it) }, Modifier.fillMaxWidth(),
                     enabled = state.ready, label = { Text("Titre de la séance") }, singleLine = true)
@@ -279,7 +307,8 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
             if (!editingPreset) {
                 OutlinedTextField(metadata.location.orEmpty(), { c.location(token, it) }, Modifier.fillMaxWidth(),
-                    enabled = state.ready, label = { Text("Lieu (facultatif)") })
+                    enabled = state.ready, label = { Text("Lieu en texte libre (facultatif)") },
+                    supportingText = { Text("Note indépendante du lieu favori.") })
                 OutlinedTextField(metadata.notes.orEmpty(), { c.notes(token, it) }, Modifier.fillMaxWidth(),
                     enabled = state.ready, label = { Text("Notes (facultatif)") })
             }
@@ -291,7 +320,7 @@ private fun ConfiguredFormFields(form: ConfiguredForm, state: ConfiguredEditorSt
             EquipmentChoiceFields(state.equipmentChoices, metadata.equipment, state.ready, original = original,
                 choose = { kind, uuid -> c.chooseEquipment(token, kind, uuid) })
         }
-        if (creation != null && state.presets?.items != null) {
+        if (creation != null && details && state.presets?.items != null) {
             TextButton({ c.namePreset(token) }, enabled = state.ready) { Text("Enregistrer comme preset") }
             state.presets.savedName?.let { Text("Preset enregistré : $it", color = MaterialTheme.colorScheme.primary) }
         }

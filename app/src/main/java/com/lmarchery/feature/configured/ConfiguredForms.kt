@@ -72,6 +72,7 @@ data class ConfiguredMetadataDraft(val title: String = "", val plannedEnds: Stri
 
 sealed interface ConfiguredForm {
     val token: Long
+    data class PlaceCatalogue(override val token: Long) : ConfiguredForm
     data class Creation(override val token: Long, val configuration: ConfigurationDraft = ConfigurationDraft(),
         val metadata: ConfiguredMetadataDraft = ConfiguredMetadataDraft(),
         val presetEquipment: EquipmentSelection = EquipmentSelection(),

@@ -63,6 +63,10 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
         EquipmentScreen(equipmentController)
         return
     }
+    if (state.screen == SessionScreen.LIST && backupsOpen) {
+        BackupScreen(state, exportCoordinator, importCoordinator) { backupsOpen = false }
+        return
+    }
     var photoEndUuid by rememberSaveable(state.session?.uuid) { mutableStateOf<String?>(null) }
     var groupingEndUuid by rememberSaveable(state.session?.uuid, state.configuredSaved?.uuid) {
         mutableStateOf<String?>(null)
@@ -179,6 +183,14 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         }
                         if (!historyOpen) item(key = "list-actions") {
                             SessionHomeLaunch(state.ready, configuredController?.let { it::create }, controller::configure)
+                            OutlinedButton({ backupsOpen = true }, Modifier.fillMaxWidth(), enabled = state.ready) {
+                                Text("Sauvegardes")
+                            }
+                            configuredController?.takeIf { it.supportsPlaces }?.let { places ->
+                                OutlinedButton(places::openPlaceCatalogue, Modifier.fillMaxWidth(), enabled = state.ready) {
+                                    Text("Mes lieux de tir")
+                                }
+                            }
                         }
                         val history = presentSessionHistory(state.entries)
                         val sections = buildList {
@@ -201,17 +213,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                         if (historyOpen) item(key = "refresh") {
                             TextButton(controller::refresh, enabled = state.ready) { Text("Actualiser la liste") }
                         }
-                        if (!historyOpen) {
-                            item(key = "backups-heading") {
-                                OutlinedButton({ backupsOpen = !backupsOpen }, enabled = !state.archiveOperationLocked) {
-                                    Text(if (backupsOpen) "Masquer les sauvegardes" else "Sauvegardes")
-                                }
-                            }
-                            if (backupsOpen || state.archiveOperationLocked) {
-                                item(key = "export") { ExportPanel(exportCoordinator, state) }
-                                item(key = "import") { ImportPanel(importCoordinator, state) }
-                            }
-                        }
+
                     }
 
                     SessionScreen.CREATE -> item(key = "configuration") {
@@ -235,23 +237,26 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                     }
                     SessionScreen.SESSION -> {
                         state.configuredSaved?.let { configured ->
-                            item(key = "weather") { com.lmarchery.feature.weather.WeatherSection(configured.uuid, configured.ends.map { it.uuid to it.end.index }, false) }
                             item(key = "configured-summary") { ConfiguredSessionSummary(configured) }
+                            item(key = "weather") { com.lmarchery.feature.weather.WeatherSection(configured.uuid, configured.ends.map { it.uuid to it.end.index }, false) }
                             item(key = "configured-back") { TextButton(onClick = back, enabled = state.canNavigate) { Text("Retour aux séances") } }
-                            if (configured.ends.isEmpty()) item(key = "configured-empty") { Text("Aucune volée enregistrée ; configuration initiale conservée.") }
                             items(configured.ends.sortedBy { it.end.index }, key = { "configured-${it.uuid}" }) { captured ->
-                                TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
-                                    Text("Bilan · volée ${captured.end.index}")
+                                ConfiguredEndCard(configured, captured) {
+                                    TextButton({ groupingEndUuid = captured.uuid }, enabled = state.canNavigate) {
+                                        Text("Bilan · volée ${captured.end.index}")
+                                    }
                                 }
-                                ConfiguredEndCard(configured, captured)
                             }
                         }
                         val session = state.session
                         if (session != null) {
                             item(key = "session-summary") {
                                 Text(session.title, style = MaterialTheme.typography.titleLarge)
+                                Text(session.date.shortLabel(), style = MaterialTheme.typography.bodySmall)
+                                Text(session.shootingLabel())
                                 Text(session.status.label())
-                                Text("Score validé : ${state.validatedTotal}", style = MaterialTheme.typography.titleMedium)
+                                Text("Score validé · ${state.validatedTotal.pointsLabel()}", style = MaterialTheme.typography.titleMedium)
+                                Text("${session.ends.count { it.status == EndStatus.VALIDATED }} volée(s) validée(s)")
                                 if (session.status != SessionStatus.COMPLETED && state.editingEnd != null)
                                     Text("Volée en cours : ${state.provisionalTotal} point(s) provisoires")
                                 if (session.status == SessionStatus.COMPLETED) Text("Scores en lecture seule. La séance est terminée ; seules les associations de matériel restent modifiables.")
@@ -313,7 +318,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed)
                                 item(key = "impact-edit") { ImpactEditPanel(state, controller) }
                             state.displayedEnd?.let { shown ->
-                                item(key = "cancel-history-${shown.uuid}") { ImpactCancellationHistory(shown, state.saved?.profiles?.single()?.regulatoryEdition) }
+                                item(key = "cancel-history-${shown.uuid}") { EndImpactHistory(shown, state.saved?.profiles?.single()?.regulatoryEdition) }
                             }
                             if (state.supportedConfiguration && session.status == SessionStatus.IN_PROGRESS && state.isEditingDisplayed) {
                                 items(state.displayedEnd!!.activeImpacts, key = { "select-${it.uuid}" }) { impact ->
@@ -340,10 +345,6 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                             }
                             item(key = "score-details") { SessionScorePanel(session) }
                             item(key = "weather") { com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.index }, session.status == SessionStatus.IN_PROGRESS && state.canNavigate) }
-                            item(key = "session-details") {
-                                Text("${session.targetType.name} · ${session.distanceM} m")
-                                Text(session.civilDateLabel(), style = MaterialTheme.typography.bodySmall)
-                            }
                             item(key = "limitations") { Text("Corrections explicites avant validation : position ou score. Aucune suppression ni modification après validation.", style = MaterialTheme.typography.bodySmall) }
                         }
                     }
@@ -397,12 +398,34 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                 if (state.busy) Text("Relecture en cours…")
                 state.problem?.let { problem -> Text(problem.message, color = MaterialTheme.colorScheme.error) }
                 stored.ends.forEach { end ->
-                    Text("Volée ${end.index} (${end.status}) : ${end.activeImpacts.joinToString { "#${it.index} ${it.scoreLabel()}" }}")
-                    ImpactCancellationHistory(end, archive.profiles.single().regulatoryEdition)
+                    Text("Volée ${end.index} (${end.status.label()}) · ${end.activeImpacts.joinToString { "#${it.index} ${it.scoreLabel()}" }}")
+                    EndImpactHistory(end, archive.profiles.single().regulatoryEdition)
                 }
             } },
             confirmButton = { TextButton(onClick = controller::reloadAndDiscard, enabled = !state.busy) { Text("Abandonner l’action et recharger") } },
             dismissButton = { TextButton(onClick = controller::closePreview, enabled = !state.busy) { Text("Conserver l’action locale") } })
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun BackupScreen(state: SessionUiState, exporter: ExportCoordinator, importer: ImportCoordinator, back: () -> Unit) {
+    var restoring by rememberSaveable { mutableStateOf(false) }
+    val canLeave = !state.archiveOperationLocked
+    BackHandler { if (canLeave) back() }
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+        Column(Modifier.fillMaxSize().safeDrawingPadding()) {
+            OutlinedButton(back, Modifier.padding(horizontal = 16.dp, vertical = 4.dp), enabled = canLeave) { Text("‹ Accueil") }
+            Text("Sauvegardes", Modifier.padding(horizontal = 16.dp), style = MaterialTheme.typography.headlineSmall)
+            FlowRow(Modifier.padding(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FilterChip(!restoring, { restoring = false }, { Text("Exporter") }, enabled = canLeave)
+                FilterChip(restoring, { restoring = true }, { Text("Restaurer") }, enabled = canLeave)
+            }
+            LazyColumn(Modifier.fillMaxWidth().weight(1f), contentPadding = PaddingValues(16.dp)) {
+                if (restoring) item(key = "import") { ImportPanel(importer, state) }
+                else item(key = "export") { ExportPanel(exporter, state) }
+            }
+        }
     }
 }
 
