@@ -1,0 +1,132 @@
+{
+  "geometrie": {
+    "ordinary-9301": {
+      "LSD": {
+        "parasites_sur_vide": 103,
+        "strict_1a1": 18,
+        "bout_strict_1a1": 9
+      },
+      "paire": {
+        "parasites_sur_vide": 57,
+        "strict_1a1": 13,
+        "bout_strict_1a1": 7
+      },
+      "isole": {
+        "parasites_sur_vide": 46,
+        "strict_1a1": 5,
+        "bout_strict_1a1": 2
+      }
+    },
+    "ordinary-9302": {
+      "LSD": {
+        "parasites_sur_vide": 105,
+        "strict_1a1": 18,
+        "bout_strict_1a1": 9
+      },
+      "paire": {
+        "parasites_sur_vide": 57,
+        "strict_1a1": 13,
+        "bout_strict_1a1": 7
+      },
+      "isole": {
+        "parasites_sur_vide": 48,
+        "strict_1a1": 5,
+        "bout_strict_1a1": 2
+      }
+    },
+    "ordinary-9303": {
+      "LSD": {
+        "parasites_sur_vide": 102,
+        "strict_1a1": 18,
+        "bout_strict_1a1": 9
+      },
+      "paire": {
+        "parasites_sur_vide": 57,
+        "strict_1a1": 13,
+        "bout_strict_1a1": 7
+      },
+      "isole": {
+        "parasites_sur_vide": 45,
+        "strict_1a1": 5,
+        "bout_strict_1a1": 2
+      }
+    },
+    "targeted-9301": {
+      "LSD": {
+        "parasites_sur_vide": 104,
+        "strict_1a1": 18,
+        "bout_strict_1a1": 9
+      },
+      "paire": {
+        "parasites_sur_vide": 56,
+        "strict_1a1": 13,
+        "bout_strict_1a1": 7
+      },
+      "isole": {
+        "parasites_sur_vide": 48,
+        "strict_1a1": 5,
+        "bout_strict_1a1": 2
+      }
+    },
+    "targeted-9302": {
+      "LSD": {
+        "parasites_sur_vide": 104,
+        "strict_1a1": 18,
+        "bout_strict_1a1": 9
+      },
+      "paire": {
+        "parasites_sur_vide": 57,
+        "strict_1a1": 13,
+        "bout_strict_1a1": 7
+      },
+      "isole": {
+        "parasites_sur_vide": 47,
+        "strict_1a1": 5,
+        "bout_strict_1a1": 2
+      }
+    },
+    "targeted-9303": {
+      "LSD": {
+        "parasites_sur_vide": 106,
+        "strict_1a1": 18,
+        "bout_strict_1a1": 9
+      },
+      "paire": {
+        "parasites_sur_vide": 59,
+        "strict_1a1": 13,
+        "bout_strict_1a1": 7
+      },
+      "isole": {
+        "parasites_sur_vide": 47,
+        "strict_1a1": 5,
+        "bout_strict_1a1": 2
+      }
+    }
+  },
+  "admission": {
+    "Tous sur vide": [
+      13,
+      44
+    ],
+    "Tubes lus": [
+      5,
+      6
+    ],
+    "Blason lu": [
+      7,
+      4
+    ],
+    "Décor lu": [
+      5,
+      6
+    ],
+    "Incertain lu": [
+      0,
+      1
+    ]
+  },
+  "ordre_admission": [
+    "échouent",
+    "satisfont"
+  ]
+}

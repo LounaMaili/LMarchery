@@ -1,0 +1,191 @@
+[
+  {
+    "nom": "r14-documentation.zip",
+    "role": "Collecte R14 et supports de lecture assistée locaux",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/artifacts/r14-documentation.zip",
+    "octets": 8014031,
+    "sha256": "b6d3c6d8418bee1c7613ece64ebe233fbc8cef8eb26adbd86a3e861c1d338900"
+  },
+  {
+    "nom": "annotations.json",
+    "role": "Manifeste historique; seules lignes train/dév utilisées",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/annotations.json",
+    "octets": 322788,
+    "sha256": "0328c99331902c0b63ae1ed65bbffe994e21480e9b72d72fb4fd01abedde56e5"
+  },
+  {
+    "nom": "external.json",
+    "role": "Manifeste historique; seules lignes train/dév utilisées",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/external.json",
+    "octets": 11739,
+    "sha256": "7b7e6b75f82625f996581c90be7dac3ce8ac0d832e5aaaff2671a17ede5f117c"
+  },
+  {
+    "nom": "corpus.json",
+    "role": "Manifeste historique; seules lignes train/dév utilisées",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/corpus.json",
+    "octets": 53113,
+    "sha256": "e6bf88fa2a465078d855493a66d667d739efc5d68081e166a2a4124fa81d877f"
+  },
+  {
+    "nom": "dev.json",
+    "role": "Manifeste historique; seules lignes train/dév utilisées",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/data/r9/dev.json",
+    "octets": 25179,
+    "sha256": "dd183e14d3d97cbebf595b6fb70a6b4f4c39bda0567cab01210d7862b787e862"
+  },
+  {
+    "nom": "18105652008.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+    "octets": 426302,
+    "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f"
+  },
+  {
+    "nom": "20873987148.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/20873987148.jpg",
+    "octets": 191965,
+    "sha256": "fcb7d89ca9ec78df775f99fe7dd46aeb4aa8509a43df0890ac4c5c8fa13e7d45"
+  },
+  {
+    "nom": "24614689941.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+    "octets": 99973,
+    "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888"
+  },
+  {
+    "nom": "36258219964.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/36258219964.jpg",
+    "octets": 79524,
+    "sha256": "7e93a73cd17828aeca0b022db408b111110467728db6fb33b55baf58afc3a93d"
+  },
+  {
+    "nom": "4169106197.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+    "octets": 97351,
+    "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5"
+  },
+  {
+    "nom": "53151623584.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/53151623584.jpg",
+    "octets": 451449,
+    "sha256": "7196105b35bbba08750768aa806209acbc428ffe23fdf0730fcb9d13e8b4b84e"
+  },
+  {
+    "nom": "wc71488242.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+    "octets": 592714,
+    "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491"
+  },
+  {
+    "nom": "128831925.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/128831925.jpg",
+    "octets": 104271,
+    "sha256": "3f8f84f54f03b94f0e7992416af75b639da352c81587922749806f501a3d958a"
+  },
+  {
+    "nom": "15503462606.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/15503462606.jpg",
+    "octets": 186149,
+    "sha256": "cf93f91e0bcdd65364a2757b003d59a0173f900eed8378d57ab796bb22ade304"
+  },
+  {
+    "nom": "4592998057.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/4592998057.jpg",
+    "octets": 217553,
+    "sha256": "b6ed07c9926f834b7d4a259fe5b36963d82f60355a48f94b6e3a8f85c51cc367"
+  },
+  {
+    "nom": "51590434805.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/51590434805.jpg",
+    "octets": 450046,
+    "sha256": "112f5b7067d1abaa8aa408a3a2ecec4798158e3d4a6a7390661763c7d2296277"
+  },
+  {
+    "nom": "wc130852209.jpg",
+    "role": "Acquisition publique R12",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc130852209.jpg",
+    "octets": 182785,
+    "sha256": "db5be72d26ae6f19428adc978f93eea555284bcf23f811cac1fe4a7a9d1ceef5"
+  },
+  {
+    "nom": "9436017284.jpg",
+    "role": "Acquisition publique R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+    "octets": 203063,
+    "sha256": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057"
+  },
+  {
+    "nom": "37348131162.jpg",
+    "role": "Acquisition publique R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+    "octets": 134046,
+    "sha256": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59"
+  },
+  {
+    "nom": "89744300.jpg",
+    "role": "Acquisition publique R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/89744300.jpg",
+    "octets": 228255,
+    "sha256": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b"
+  },
+  {
+    "nom": "36725328420.jpg",
+    "role": "Acquisition publique R14",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+    "octets": 150499,
+    "sha256": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87"
+  },
+  {
+    "nom": "ordinary-9301.pt",
+    "role": "Poids R9, référence des sorties R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+    "octets": 865807,
+    "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+  },
+  {
+    "nom": "ordinary-9302.pt",
+    "role": "Poids R9, référence des sorties R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9302.pt",
+    "octets": 865807,
+    "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+  },
+  {
+    "nom": "ordinary-9303.pt",
+    "role": "Poids R9, référence des sorties R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9303.pt",
+    "octets": 865807,
+    "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+  },
+  {
+    "nom": "targeted-9301.pt",
+    "role": "Poids R9, référence des sorties R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9301.pt",
+    "octets": 865807,
+    "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+  },
+  {
+    "nom": "targeted-9302.pt",
+    "role": "Poids R9, référence des sorties R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9302.pt",
+    "octets": 865807,
+    "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+  },
+  {
+    "nom": "targeted-9303.pt",
+    "role": "Poids R9, référence des sorties R13",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9303.pt",
+    "octets": 865807,
+    "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+  }
+]

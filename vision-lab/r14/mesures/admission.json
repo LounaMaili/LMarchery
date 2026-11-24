@@ -1,0 +1,3990 @@
+{
+  "par_photo": {
+    "3996564090": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 50.32999406833038,
+        "soutien": 0.8571428571428571,
+        "contraste": 110.0,
+        "hors_condition_isole": false,
+        "lecture": "incertain"
+      },
+      {
+        "segment": 1,
+        "famille": "isole",
+        "longueur": 49.63921882399952,
+        "soutien": 0.6666666666666666,
+        "contraste": 10.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 2,
+        "famille": "isole",
+        "longueur": 79.06392309318069,
+        "soutien": 0.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      }
+    ],
+    "929865": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 89.94536544940837,
+        "soutien": 0.0,
+        "contraste": 126.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 86.20838781264558,
+        "soutien": 0.0,
+        "contraste": 68.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 68.43442337434183,
+        "soutien": 0.0,
+        "contraste": 88.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 52.28674420736289,
+        "soutien": 0.0,
+        "contraste": 103.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 36.58004566459881,
+        "soutien": 0.23809523809523808,
+        "contraste": 24.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 32.318072291704965,
+        "soutien": 0.2857142857142857,
+        "contraste": 69.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 50.35375677640219,
+        "soutien": 0.09523809523809523,
+        "contraste": 41.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 51.13009372749875,
+        "soutien": 0.0,
+        "contraste": 67.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 39.41294538623588,
+        "soutien": 0.0,
+        "contraste": 146.0,
+        "hors_condition_isole": true,
+        "lecture": "tube"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 33.229627724102066,
+        "soutien": 0.0,
+        "contraste": 186.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 35.28711906514948,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 31.103508969508365,
+        "soutien": 0.0,
+        "contraste": 90.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 49.00463614244508,
+        "soutien": 0.0,
+        "contraste": 85.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 31.924265069625008,
+        "soutien": 0.0,
+        "contraste": 114.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "isole",
+        "longueur": 138.766564044087,
+        "soutien": 0.047619047619047616,
+        "contraste": 66.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 176.6767500144524,
+        "soutien": 0.0,
+        "contraste": 87.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 27.696934617774648,
+        "soutien": 0.09523809523809523,
+        "contraste": 113.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "isole",
+        "longueur": 167.86001012990076,
+        "soutien": 0.0,
+        "contraste": 60.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "paire",
+        "longueur": 30.19201675147722,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "paire",
+        "longueur": 29.8287851797081,
+        "soutien": 0.0,
+        "contraste": 58.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 20,
+        "famille": "isole",
+        "longueur": 141.08806559513033,
+        "soutien": 0.0,
+        "contraste": 57.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "isole",
+        "longueur": 132.8356264685097,
+        "soutien": 0.0,
+        "contraste": 72.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "isole",
+        "longueur": 97.57847481491868,
+        "soutien": 0.0,
+        "contraste": 46.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 94.28013987876791,
+        "soutien": 0.0,
+        "contraste": 46.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "isole",
+        "longueur": 44.033866023728216,
+        "soutien": 0.0,
+        "contraste": 28.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 25,
+        "famille": "isole",
+        "longueur": 81.72845003374636,
+        "soutien": 0.0,
+        "contraste": 64.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "isole",
+        "longueur": 73.48853079122078,
+        "soutien": 0.0,
+        "contraste": 57.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "isole",
+        "longueur": 47.50361319966686,
+        "soutien": 0.0,
+        "contraste": 45.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "isole",
+        "longueur": 44.304975970028195,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 57.5523986003758,
+        "soutien": 0.0,
+        "contraste": 36.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "isole",
+        "longueur": 61.647765359894805,
+        "soutien": 0.0,
+        "contraste": 58.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "isole",
+        "longueur": 58.21509817805547,
+        "soutien": 0.0,
+        "contraste": 43.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      }
+    ],
+    "6791193480": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 107.5434308391416,
+        "soutien": 1.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 58.08017962110574,
+        "soutien": 1.0,
+        "contraste": 50.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 47.86289133547514,
+        "soutien": 1.0,
+        "contraste": 55.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 83.41290096716203,
+        "soutien": 0.047619047619047616,
+        "contraste": 118.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 29.735931186409566,
+        "soutien": 0.5714285714285714,
+        "contraste": 8.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 30.293735655985838,
+        "soutien": 0.0,
+        "contraste": 37.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 30.288886849707943,
+        "soutien": 0.0,
+        "contraste": 9.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 93.28576307581889,
+        "soutien": 0.09523809523809523,
+        "contraste": 56.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 8,
+        "famille": "isole",
+        "longueur": 88.94739969965313,
+        "soutien": 0.09523809523809523,
+        "contraste": 57.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "isole",
+        "longueur": 116.29673639121901,
+        "soutien": 0.0,
+        "contraste": 48.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 59.24580019873552,
+        "soutien": 0.09523809523809523,
+        "contraste": 27.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "isole",
+        "longueur": 59.69911931334825,
+        "soutien": 0.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "isole",
+        "longueur": 49.93888281165634,
+        "soutien": 0.0,
+        "contraste": 22.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ],
+    "49398629148": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 117.5762060318649,
+        "soutien": 0.0,
+        "contraste": 62.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 91.1445965441266,
+        "soutien": 0.0,
+        "contraste": 66.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 85.58316061406342,
+        "soutien": 0.0,
+        "contraste": 109.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 113.82134449702731,
+        "soutien": 0.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 58.714372903569135,
+        "soutien": 0.0,
+        "contraste": 65.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "isole",
+        "longueur": 266.4469001859264,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 76.26368098379902,
+        "soutien": 0.0,
+        "contraste": 73.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 201.2486059148907,
+        "soutien": 0.0,
+        "contraste": 38.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "isole",
+        "longueur": 155.90628500441213,
+        "soutien": 0.0,
+        "contraste": 18.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 27.414409355205084,
+        "soutien": 0.0,
+        "contraste": 67.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 150.51832294553623,
+        "soutien": 0.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 47.409347238205235,
+        "soutien": 0.0,
+        "contraste": 80.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 12,
+        "famille": "isole",
+        "longueur": 147.55423709895425,
+        "soutien": 0.0,
+        "contraste": 47.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "isole",
+        "longueur": 119.20195813018753,
+        "soutien": 0.0,
+        "contraste": 60.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "isole",
+        "longueur": 101.24960469494147,
+        "soutien": 0.0,
+        "contraste": 32.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 81.17593685502338,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "isole",
+        "longueur": 73.97852086564659,
+        "soutien": 0.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "isole",
+        "longueur": 44.227730602620014,
+        "soutien": 0.0,
+        "contraste": 20.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "isole",
+        "longueur": 62.510814226231275,
+        "soutien": 0.0,
+        "contraste": 36.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "isole",
+        "longueur": 59.82960927648674,
+        "soutien": 0.0,
+        "contraste": 28.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "isole",
+        "longueur": 61.49847838045543,
+        "soutien": 0.0,
+        "contraste": 112.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "isole",
+        "longueur": 41.92292635829456,
+        "soutien": 0.0,
+        "contraste": 35.0,
+        "hors_condition_isole": false,
+        "lecture": "incertain"
+      }
+    ],
+    "955488046": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 152.61114636708643,
+        "soutien": 0.0,
+        "contraste": 50.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 157.62461739622069,
+        "soutien": 0.0,
+        "contraste": 46.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "isole",
+        "longueur": 77.61560935964508,
+        "soutien": 0.8571428571428571,
+        "contraste": 47.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 108.99545715543452,
+        "soutien": 0.0,
+        "contraste": 49.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 85.00512505329769,
+        "soutien": 0.0,
+        "contraste": 42.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 58.95023425174613,
+        "soutien": 0.0,
+        "contraste": 66.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 56.46833691118551,
+        "soutien": 0.0,
+        "contraste": 75.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 46.08965703903948,
+        "soutien": 0.09523809523809523,
+        "contraste": 51.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 44.02078300732538,
+        "soutien": 0.0,
+        "contraste": 65.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 41.640388739976004,
+        "soutien": 0.0,
+        "contraste": 86.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 42.04448770676162,
+        "soutien": 0.0,
+        "contraste": 79.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 41.925593173083136,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 37.60341106764246,
+        "soutien": 0.0,
+        "contraste": 75.0,
+        "hors_condition_isole": true,
+        "lecture": "tube"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 37.786668837285006,
+        "soutien": 0.0,
+        "contraste": 84.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 36.53259021395495,
+        "soutien": 0.0,
+        "contraste": 82.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 38.07761917270633,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 35.288952893858635,
+        "soutien": 0.0,
+        "contraste": 92.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "paire",
+        "longueur": 35.13528607815012,
+        "soutien": 0.09523809523809523,
+        "contraste": 160.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "paire",
+        "longueur": 37.77573845085043,
+        "soutien": 0.0,
+        "contraste": 81.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "paire",
+        "longueur": 35.11242891328031,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "paire",
+        "longueur": 34.897747067381,
+        "soutien": 0.0,
+        "contraste": 84.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "paire",
+        "longueur": 34.65366155963105,
+        "soutien": 0.0,
+        "contraste": 87.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "isole",
+        "longueur": 218.75853101510359,
+        "soutien": 0.0,
+        "contraste": 83.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 188.7281539619035,
+        "soutien": 0.0,
+        "contraste": 41.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "paire",
+        "longueur": 27.514909005621863,
+        "soutien": 0.0,
+        "contraste": 89.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "paire",
+        "longueur": 26.967256356410793,
+        "soutien": 0.0,
+        "contraste": 153.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "isole",
+        "longueur": 120.02991916079189,
+        "soutien": 0.0,
+        "contraste": 62.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 27,
+        "famille": "paire",
+        "longueur": 33.727434663589875,
+        "soutien": 0.0,
+        "contraste": 25.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 28,
+        "famille": "isole",
+        "longueur": 90.01588740563247,
+        "soutien": 0.0,
+        "contraste": 68.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 83.79414969550349,
+        "soutien": 0.0,
+        "contraste": 38.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "isole",
+        "longueur": 41.296531232760856,
+        "soutien": 0.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "isole",
+        "longueur": 60.12863909246902,
+        "soutien": 0.0,
+        "contraste": 20.0,
+        "hors_condition_isole": false,
+        "lecture": "incertain"
+      }
+    ],
+    "3771007694": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 188.81175766053522,
+        "soutien": 0.0,
+        "contraste": 130.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 93.74641448180024,
+        "soutien": 0.3333333333333333,
+        "contraste": 102.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 46.51739103784035,
+        "soutien": 0.5714285714285714,
+        "contraste": 74.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 59.212478998396776,
+        "soutien": 0.047619047619047616,
+        "contraste": 114.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 35.7943365474591,
+        "soutien": 1.0,
+        "contraste": 7.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 59.38367045538132,
+        "soutien": 0.47619047619047616,
+        "contraste": 66.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 33.23372865982673,
+        "soutien": 0.6666666666666666,
+        "contraste": 73.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 47.49652964464189,
+        "soutien": 0.7619047619047619,
+        "contraste": 2.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 41.46450115400132,
+        "soutien": 0.19047619047619047,
+        "contraste": 15.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 56.59327517589048,
+        "soutien": 0.047619047619047616,
+        "contraste": 69.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 52.68086209874943,
+        "soutien": 0.0,
+        "contraste": 67.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 50.63515978234852,
+        "soutien": 0.0,
+        "contraste": 52.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 33.685761030758464,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "isole",
+        "longueur": 43.098858052215284,
+        "soutien": 0.38095238095238093,
+        "contraste": 0.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 30.6072796749518,
+        "soutien": 0.09523809523809523,
+        "contraste": 18.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 27.291014492772778,
+        "soutien": 0.0,
+        "contraste": 183.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 16,
+        "famille": "isole",
+        "longueur": 44.87430813074556,
+        "soutien": 0.0,
+        "contraste": 32.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ],
+    "14347254046": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 106.06595953340673,
+        "soutien": 0.0,
+        "contraste": 82.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 67.60327346631533,
+        "soutien": 0.0,
+        "contraste": 82.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 38.79113898934232,
+        "soutien": 0.38095238095238093,
+        "contraste": 83.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "isole",
+        "longueur": 53.17833681594577,
+        "soutien": 0.5238095238095238,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "incertain"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 45.430536040854705,
+        "soutien": 0.0,
+        "contraste": 133.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "isole",
+        "longueur": 222.50428164833406,
+        "soutien": 0.0,
+        "contraste": 48.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 32.71815936846106,
+        "soutien": 0.0,
+        "contraste": 142.0,
+        "hors_condition_isole": true,
+        "lecture": "tube"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 28.674458532437736,
+        "soutien": 0.0,
+        "contraste": 22.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 27.413509143866733,
+        "soutien": 0.0,
+        "contraste": 36.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 29.71039029421781,
+        "soutien": 0.0,
+        "contraste": 13.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 119.04102176574811,
+        "soutien": 0.0,
+        "contraste": 18.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 32.01455436784707,
+        "soutien": 0.0,
+        "contraste": 22.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 12,
+        "famille": "isole",
+        "longueur": 90.0199335401289,
+        "soutien": 0.0,
+        "contraste": 22.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "isole",
+        "longueur": 85.10813972810699,
+        "soutien": 0.0,
+        "contraste": 28.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "isole",
+        "longueur": 57.51320922645542,
+        "soutien": 0.0,
+        "contraste": 35.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 72.66741989229398,
+        "soutien": 0.0,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "isole",
+        "longueur": 66.4197930115138,
+        "soutien": 0.0,
+        "contraste": 50.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "isole",
+        "longueur": 62.0987033650126,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "isole",
+        "longueur": 43.31433655967015,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "isole",
+        "longueur": 52.511491651824066,
+        "soutien": 0.0,
+        "contraste": 49.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ],
+    "8549619981": [
+      {
+        "segment": 0,
+        "famille": "isole",
+        "longueur": 701.2514408173303,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 56.277867068326515,
+        "soutien": 0.14285714285714285,
+        "contraste": 116.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 2,
+        "famille": "isole",
+        "longueur": 442.511196270426,
+        "soutien": 0.0,
+        "contraste": 68.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "isole",
+        "longueur": 415.0017323517529,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "isole",
+        "longueur": 206.26055566419015,
+        "soutien": 0.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 58.7500008065729,
+        "soutien": 0.0,
+        "contraste": 41.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 45.88110600831271,
+        "soutien": 0.0,
+        "contraste": 106.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 232.55376322001595,
+        "soutien": 0.0,
+        "contraste": 43.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 27.94259174634996,
+        "soutien": 0.0,
+        "contraste": 73.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 27.6132438158088,
+        "soutien": 0.0,
+        "contraste": 85.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 48.760429785956056,
+        "soutien": 0.0,
+        "contraste": 19.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 11,
+        "famille": "isole",
+        "longueur": 43.749991673070674,
+        "soutien": 0.0,
+        "contraste": 50.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "isole",
+        "longueur": 41.835874941135856,
+        "soutien": 0.0,
+        "contraste": 56.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "isole",
+        "longueur": 41.00304941037565,
+        "soutien": 0.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "isole",
+        "longueur": 41.21351561361232,
+        "soutien": 0.0,
+        "contraste": 50.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 41.0030449855679,
+        "soutien": 0.0,
+        "contraste": 58.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ],
+    "36377144413": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 58.57201277946165,
+        "soutien": 1.0,
+        "contraste": 104.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 1,
+        "famille": "isole",
+        "longueur": 207.6328579903813,
+        "soutien": 0.6666666666666666,
+        "contraste": 62.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 142.08657989587658,
+        "soutien": 0.0,
+        "contraste": 119.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 143.59473617884754,
+        "soutien": 0.0,
+        "contraste": 91.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 45.29415313446356,
+        "soutien": 1.0,
+        "contraste": 94.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "isole",
+        "longueur": 51.02408150527514,
+        "soutien": 1.0,
+        "contraste": 11.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 38.59455808846034,
+        "soutien": 0.9523809523809523,
+        "contraste": 118.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 55.074449944731434,
+        "soutien": 0.9047619047619048,
+        "contraste": 8.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "isole",
+        "longueur": 144.64392171614296,
+        "soutien": 0.47619047619047616,
+        "contraste": 11.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "isole",
+        "longueur": 97.22923545339026,
+        "soutien": 0.7619047619047619,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 43.45468257868654,
+        "soutien": 1.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 39.2480184221912,
+        "soutien": 1.0,
+        "contraste": 33.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 85.4498772097307,
+        "soutien": 0.0,
+        "contraste": 68.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 67.67927611762966,
+        "soutien": 0.0,
+        "contraste": 58.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 61.61849221333029,
+        "soutien": 0.0,
+        "contraste": 63.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 42.57654709923381,
+        "soutien": 0.8571428571428571,
+        "contraste": 20.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 46.9201487377536,
+        "soutien": 0.0,
+        "contraste": 45.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "isole",
+        "longueur": 42.01057140615393,
+        "soutien": 0.47619047619047616,
+        "contraste": 0.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "paire",
+        "longueur": 39.192200595319974,
+        "soutien": 0.0,
+        "contraste": 40.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "isole",
+        "longueur": 53.70531866712991,
+        "soutien": 0.3333333333333333,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 20,
+        "famille": "isole",
+        "longueur": 50.83988886775362,
+        "soutien": 0.7142857142857143,
+        "contraste": 27.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "paire",
+        "longueur": 51.903834604311285,
+        "soutien": 0.0,
+        "contraste": 46.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "paire",
+        "longueur": 49.60406079529491,
+        "soutien": 0.0,
+        "contraste": 51.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 42.43664912832585,
+        "soutien": 0.42857142857142855,
+        "contraste": 15.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "paire",
+        "longueur": 46.803285575443894,
+        "soutien": 0.0,
+        "contraste": 2.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 25,
+        "famille": "isole",
+        "longueur": 41.36788483328046,
+        "soutien": 0.5238095238095238,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "isole",
+        "longueur": 73.34859890523076,
+        "soutien": 0.14285714285714285,
+        "contraste": 42.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "isole",
+        "longueur": 75.49798986447364,
+        "soutien": 0.0,
+        "contraste": 19.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "isole",
+        "longueur": 82.28034693976961,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 54.814823669854476,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "isole",
+        "longueur": 75.3812290168184,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "isole",
+        "longueur": 62.81967474969552,
+        "soutien": 0.0,
+        "contraste": 18.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      }
+    ],
+    "2712546351": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 185.24438011638506,
+        "soutien": 0.9523809523809523,
+        "contraste": 33.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 122.30857655422915,
+        "soutien": 1.0,
+        "contraste": 54.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 122.37928936217536,
+        "soutien": 0.9047619047619048,
+        "contraste": 45.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 130.58618582386634,
+        "soutien": 0.5238095238095238,
+        "contraste": 77.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 92.86585516112473,
+        "soutien": 0.9523809523809523,
+        "contraste": 73.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 87.22523360294132,
+        "soutien": 1.0,
+        "contraste": 38.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 43.07603720276215,
+        "soutien": 1.0,
+        "contraste": 93.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 82.7718392035168,
+        "soutien": 1.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 8,
+        "famille": "isole",
+        "longueur": 84.63047869879603,
+        "soutien": 0.6190476190476191,
+        "contraste": 10.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 85.18454462650863,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 85.49933652654177,
+        "soutien": 1.0,
+        "contraste": 51.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "isole",
+        "longueur": 126.03276612524633,
+        "soutien": 0.5714285714285714,
+        "contraste": 45.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 48.0972410282811,
+        "soutien": 0.5238095238095238,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "isole",
+        "longueur": 55.57199783208595,
+        "soutien": 1.0,
+        "contraste": 15.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 47.58378035137523,
+        "soutien": 0.2857142857142857,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 65.19636910193852,
+        "soutien": 0.0,
+        "contraste": 36.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 35.30196778836358,
+        "soutien": 0.9047619047619048,
+        "contraste": 118.0,
+        "hors_condition_isole": true,
+        "lecture": "tube"
+      },
+      {
+        "segment": 17,
+        "famille": "paire",
+        "longueur": 60.84610486019314,
+        "soutien": 0.0,
+        "contraste": 37.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "isole",
+        "longueur": 41.31827505226385,
+        "soutien": 1.0,
+        "contraste": 7.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "isole",
+        "longueur": 61.35464221148741,
+        "soutien": 1.0,
+        "contraste": 43.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "paire",
+        "longueur": 49.76444273772565,
+        "soutien": 0.047619047619047616,
+        "contraste": 37.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "paire",
+        "longueur": 52.00836274076071,
+        "soutien": 0.0,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "paire",
+        "longueur": 42.628584526133224,
+        "soutien": 0.0,
+        "contraste": 17.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 42.66440351955861,
+        "soutien": 1.0,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 24,
+        "famille": "paire",
+        "longueur": 42.639620064838965,
+        "soutien": 0.0,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "paire",
+        "longueur": 28.985094030749604,
+        "soutien": 0.19047619047619047,
+        "contraste": 35.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "paire",
+        "longueur": 30.921536511290856,
+        "soutien": 0.23809523809523808,
+        "contraste": 32.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "paire",
+        "longueur": 36.650885567169325,
+        "soutien": 0.0,
+        "contraste": 4.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "paire",
+        "longueur": 35.531399950897615,
+        "soutien": 0.047619047619047616,
+        "contraste": 32.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "paire",
+        "longueur": 36.42869665063016,
+        "soutien": 0.0,
+        "contraste": 128.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "paire",
+        "longueur": 36.96771704211668,
+        "soutien": 0.0,
+        "contraste": 29.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "paire",
+        "longueur": 35.53395886084821,
+        "soutien": 0.0,
+        "contraste": 31.0,
+        "hors_condition_isole": true,
+        "lecture": "tube"
+      }
+    ],
+    "8468859144": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 117.52952046751108,
+        "soutien": 1.0,
+        "contraste": 167.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 1,
+        "famille": "isole",
+        "longueur": 272.9883538794547,
+        "soutien": 1.0,
+        "contraste": 69.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 101.450560589272,
+        "soutien": 1.0,
+        "contraste": 91.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 114.9392449996676,
+        "soutien": 1.0,
+        "contraste": 79.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 97.35726181393653,
+        "soutien": 1.0,
+        "contraste": 166.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "isole",
+        "longueur": 214.79819495050037,
+        "soutien": 1.0,
+        "contraste": 33.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 81.51254232417894,
+        "soutien": 1.0,
+        "contraste": 81.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 86.63804808497852,
+        "soutien": 1.0,
+        "contraste": 75.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 123.3436361061516,
+        "soutien": 1.0,
+        "contraste": 22.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 72.86672386815879,
+        "soutien": 1.0,
+        "contraste": 133.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 107.49082293677533,
+        "soutien": 1.0,
+        "contraste": 0.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 59.62828992554358,
+        "soutien": 1.0,
+        "contraste": 147.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 42.75613997842765,
+        "soutien": 1.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 41.29638750807989,
+        "soutien": 1.0,
+        "contraste": 74.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 42.01727574997296,
+        "soutien": 1.0,
+        "contraste": 33.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 63.65187385360179,
+        "soutien": 1.0,
+        "contraste": 2.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 54.68564632581486,
+        "soutien": 1.0,
+        "contraste": 56.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "paire",
+        "longueur": 32.74923838145315,
+        "soutien": 1.0,
+        "contraste": 54.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "isole",
+        "longueur": 66.42115702594002,
+        "soutien": 1.0,
+        "contraste": 10.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "paire",
+        "longueur": 32.98133952909229,
+        "soutien": 1.0,
+        "contraste": 18.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "paire",
+        "longueur": 32.69228694184359,
+        "soutien": 1.0,
+        "contraste": 66.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "isole",
+        "longueur": 43.81826215797634,
+        "soutien": 1.0,
+        "contraste": 2.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "isole",
+        "longueur": 43.37538019854146,
+        "soutien": 1.0,
+        "contraste": 11.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 66.06129841565674,
+        "soutien": 1.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 24,
+        "famille": "isole",
+        "longueur": 42.50661780820639,
+        "soutien": 1.0,
+        "contraste": 27.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "isole",
+        "longueur": 40.93523820847552,
+        "soutien": 1.0,
+        "contraste": 3.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "isole",
+        "longueur": 40.85183730067653,
+        "soutien": 1.0,
+        "contraste": 10.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "isole",
+        "longueur": 40.860121064516655,
+        "soutien": 1.0,
+        "contraste": 1.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "paire",
+        "longueur": 29.05541048028458,
+        "soutien": 1.0,
+        "contraste": 42.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 47.243025330242574,
+        "soutien": 1.0,
+        "contraste": 4.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "isole",
+        "longueur": 41.36380339489813,
+        "soutien": 1.0,
+        "contraste": 20.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "isole",
+        "longueur": 63.245275933947184,
+        "soutien": 1.0,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      }
+    ],
+    "67300452": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 276.2507187345953,
+        "soutien": 0.0,
+        "contraste": 15.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 85.71985592948218,
+        "soutien": 1.0,
+        "contraste": 135.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 96.49631725071666,
+        "soutien": 1.0,
+        "contraste": 123.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "isole",
+        "longueur": 146.24760203192986,
+        "soutien": 1.0,
+        "contraste": 17.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 95.69666070886487,
+        "soutien": 1.0,
+        "contraste": 20.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 62.753873600862185,
+        "soutien": 1.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 74.89596229242076,
+        "soutien": 1.0,
+        "contraste": 21.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 80.01298170618661,
+        "soutien": 1.0,
+        "contraste": 10.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 55.045952033221404,
+        "soutien": 1.0,
+        "contraste": 53.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "isole",
+        "longueur": 202.5121466607419,
+        "soutien": 0.42857142857142855,
+        "contraste": 15.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "isole",
+        "longueur": 81.25612816600416,
+        "soutien": 1.0,
+        "contraste": 1.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "isole",
+        "longueur": 79.99942194938903,
+        "soutien": 1.0,
+        "contraste": 5.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "isole",
+        "longueur": 91.25179621160389,
+        "soutien": 0.9523809523809523,
+        "contraste": 11.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 52.16425146726159,
+        "soutien": 1.0,
+        "contraste": 102.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 96.43422855773336,
+        "soutien": 0.0,
+        "contraste": 147.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 91.28413376457904,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "isole",
+        "longueur": 67.60152949731584,
+        "soutien": 1.0,
+        "contraste": 6.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "paire",
+        "longueur": 96.25810360383899,
+        "soutien": 0.0,
+        "contraste": 12.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "isole",
+        "longueur": 50.62056413267193,
+        "soutien": 1.0,
+        "contraste": 19.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 19,
+        "famille": "paire",
+        "longueur": 63.90485820983089,
+        "soutien": 1.0,
+        "contraste": 83.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "isole",
+        "longueur": 53.730725736166185,
+        "soutien": 1.0,
+        "contraste": 63.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "paire",
+        "longueur": 56.18743552179544,
+        "soutien": 1.0,
+        "contraste": 66.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "paire",
+        "longueur": 32.757518762872124,
+        "soutien": 0.8095238095238095,
+        "contraste": 112.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 72.52181379673623,
+        "soutien": 1.0,
+        "contraste": 36.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "isole",
+        "longueur": 71.81602901871776,
+        "soutien": 1.0,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "isole",
+        "longueur": 68.676155270004,
+        "soutien": 1.0,
+        "contraste": 32.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "paire",
+        "longueur": 87.40754471407037,
+        "soutien": 0.0,
+        "contraste": 7.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "isole",
+        "longueur": 65.04128607076484,
+        "soutien": 1.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "isole",
+        "longueur": 73.83492849028582,
+        "soutien": 1.0,
+        "contraste": 93.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 78.76012039652805,
+        "soutien": 0.5238095238095238,
+        "contraste": 8.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "paire",
+        "longueur": 97.3842672797638,
+        "soutien": 0.0,
+        "contraste": 92.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 31,
+        "famille": "isole",
+        "longueur": 61.427697234315204,
+        "soutien": 1.0,
+        "contraste": 84.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ],
+    "20873987148": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 239.7687266983893,
+        "soutien": 0.6666666666666666,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 131.93577624354867,
+        "soutien": 0.9047619047619048,
+        "contraste": 96.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 156.18518666097265,
+        "soutien": 0.38095238095238093,
+        "contraste": 32.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 143.79678613974264,
+        "soutien": 1.0,
+        "contraste": 37.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 123.64426283895347,
+        "soutien": 0.38095238095238093,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 124.1313259625641,
+        "soutien": 0.3333333333333333,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "isole",
+        "longueur": 95.47970835500378,
+        "soutien": 1.0,
+        "contraste": 68.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 116.19524879904847,
+        "soutien": 0.14285714285714285,
+        "contraste": 15.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 122.02508170774462,
+        "soutien": 0.09523809523809523,
+        "contraste": 19.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 115.8750877106441,
+        "soutien": 0.09523809523809523,
+        "contraste": 8.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 88.96979295408347,
+        "soutien": 0.2857142857142857,
+        "contraste": 1.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 120.25586950398082,
+        "soutien": 0.09523809523809523,
+        "contraste": 27.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 85.7774305197048,
+        "soutien": 0.23809523809523808,
+        "contraste": 2.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 67.78433825190633,
+        "soutien": 0.42857142857142855,
+        "contraste": 0.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "isole",
+        "longueur": 81.23136782067797,
+        "soutien": 1.0,
+        "contraste": 5.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 37.5628232045642,
+        "soutien": 1.0,
+        "contraste": 108.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 64.03348766317936,
+        "soutien": 0.2857142857142857,
+        "contraste": 7.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "isole",
+        "longueur": 60.3319280148676,
+        "soutien": 0.9047619047619048,
+        "contraste": 19.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "paire",
+        "longueur": 38.2646722903594,
+        "soutien": 1.0,
+        "contraste": 6.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "paire",
+        "longueur": 57.11459405501992,
+        "soutien": 0.47619047619047616,
+        "contraste": 7.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "isole",
+        "longueur": 52.0191968143685,
+        "soutien": 1.0,
+        "contraste": 43.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 21,
+        "famille": "isole",
+        "longueur": 70.99115533976277,
+        "soutien": 0.9047619047619048,
+        "contraste": 41.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "isole",
+        "longueur": 126.2644289462867,
+        "soutien": 0.2857142857142857,
+        "contraste": 18.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "paire",
+        "longueur": 86.32381495206697,
+        "soutien": 0.0,
+        "contraste": 4.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "isole",
+        "longueur": 93.93895753996924,
+        "soutien": 0.6666666666666666,
+        "contraste": 13.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "paire",
+        "longueur": 32.91355052642718,
+        "soutien": 1.0,
+        "contraste": 76.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "paire",
+        "longueur": 90.27253169964122,
+        "soutien": 0.0,
+        "contraste": 13.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "paire",
+        "longueur": 47.28104108635022,
+        "soutien": 0.42857142857142855,
+        "contraste": 2.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "paire",
+        "longueur": 83.56320820061963,
+        "soutien": 0.0,
+        "contraste": 4.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "paire",
+        "longueur": 63.71532648247147,
+        "soutien": 0.14285714285714285,
+        "contraste": 45.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "paire",
+        "longueur": 62.04388510090368,
+        "soutien": 0.0,
+        "contraste": 1.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 31,
+        "famille": "isole",
+        "longueur": 77.38903025119359,
+        "soutien": 0.38095238095238093,
+        "contraste": 2.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      }
+    ],
+    "36258219964": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 71.10194523853392,
+        "soutien": 0.0,
+        "contraste": 104.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 63.892295474429204,
+        "soutien": 0.0,
+        "contraste": 105.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 63.77360868469508,
+        "soutien": 0.0,
+        "contraste": 105.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 62.86879573903762,
+        "soutien": 0.0,
+        "contraste": 95.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 63.161342219446446,
+        "soutien": 0.0,
+        "contraste": 116.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 58.67310452626658,
+        "soutien": 0.0,
+        "contraste": 46.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 57.17233192286105,
+        "soutien": 0.0,
+        "contraste": 31.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 55.96119837908646,
+        "soutien": 0.0,
+        "contraste": 96.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 55.450190101083884,
+        "soutien": 0.0,
+        "contraste": 108.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 54.334030408464585,
+        "soutien": 0.0,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 53.84425568633605,
+        "soutien": 0.0,
+        "contraste": 44.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 51.548124895122,
+        "soutien": 0.0,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 50.06227170919035,
+        "soutien": 0.0,
+        "contraste": 28.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 50.0609422721829,
+        "soutien": 0.0,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 47.788134869024816,
+        "soutien": 0.0,
+        "contraste": 37.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 47.40524336559725,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 47.91958685628879,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "paire",
+        "longueur": 51.21435159293914,
+        "soutien": 0.0,
+        "contraste": 43.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "paire",
+        "longueur": 44.50077358249514,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "paire",
+        "longueur": 41.23144253734876,
+        "soutien": 0.0,
+        "contraste": 27.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "paire",
+        "longueur": 42.157009228744364,
+        "soutien": 0.0,
+        "contraste": 19.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "paire",
+        "longueur": 40.65518914155769,
+        "soutien": 0.0,
+        "contraste": 23.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "paire",
+        "longueur": 40.8115902871037,
+        "soutien": 0.0,
+        "contraste": 33.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "paire",
+        "longueur": 39.150252263133915,
+        "soutien": 0.0,
+        "contraste": 26.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "paire",
+        "longueur": 38.78328072996033,
+        "soutien": 0.0,
+        "contraste": 44.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "paire",
+        "longueur": 37.983538791251426,
+        "soutien": 0.0,
+        "contraste": 43.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "paire",
+        "longueur": 37.76556930039248,
+        "soutien": 0.0,
+        "contraste": 27.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "paire",
+        "longueur": 37.11129582957605,
+        "soutien": 0.0,
+        "contraste": 26.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "paire",
+        "longueur": 37.41765078398956,
+        "soutien": 0.0,
+        "contraste": 24.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "paire",
+        "longueur": 35.20786740692165,
+        "soutien": 0.0,
+        "contraste": 20.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "paire",
+        "longueur": 35.563012585526835,
+        "soutien": 0.0,
+        "contraste": 27.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "paire",
+        "longueur": 36.335134735149325,
+        "soutien": 0.0,
+        "contraste": 20.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      }
+    ],
+    "53151623584": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 119.08559198472021,
+        "soutien": 0.8095238095238095,
+        "contraste": 172.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 105.49861437260492,
+        "soutien": 0.7619047619047619,
+        "contraste": 148.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "isole",
+        "longueur": 109.84475543249391,
+        "soutien": 0.5238095238095238,
+        "contraste": 108.0,
+        "hors_condition_isole": false,
+        "lecture": "tube"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 57.57500865949806,
+        "soutien": 0.7619047619047619,
+        "contraste": 106.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 111.42099757214378,
+        "soutien": 0.5238095238095238,
+        "contraste": 7.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 61.44446143784406,
+        "soutien": 0.38095238095238093,
+        "contraste": 1.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 37.458322756829354,
+        "soutien": 1.0,
+        "contraste": 123.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 36.85911879558085,
+        "soutien": 1.0,
+        "contraste": 109.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 46.25330853209157,
+        "soutien": 0.5714285714285714,
+        "contraste": 22.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "isole",
+        "longueur": 46.24986014559461,
+        "soutien": 1.0,
+        "contraste": 3.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 46.92222127644489,
+        "soutien": 0.47619047619047616,
+        "contraste": 57.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 31.314606337909172,
+        "soutien": 1.0,
+        "contraste": 59.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 31.91000401282189,
+        "soutien": 0.9047619047619048,
+        "contraste": 96.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 13,
+        "famille": "isole",
+        "longueur": 79.95607371314019,
+        "soutien": 0.6190476190476191,
+        "contraste": 58.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "isole",
+        "longueur": 55.80376795115203,
+        "soutien": 0.6190476190476191,
+        "contraste": 4.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "paire",
+        "longueur": 42.64755142118557,
+        "soutien": 0.3333333333333333,
+        "contraste": 62.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 43.308847594904734,
+        "soutien": 0.23809523809523808,
+        "contraste": 99.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "isole",
+        "longueur": 86.82449908949654,
+        "soutien": 0.7142857142857143,
+        "contraste": 64.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "isole",
+        "longueur": 103.0926097546704,
+        "soutien": 0.47619047619047616,
+        "contraste": 77.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "isole",
+        "longueur": 55.148346420131105,
+        "soutien": 0.9523809523809523,
+        "contraste": 49.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 20,
+        "famille": "isole",
+        "longueur": 54.700698634829244,
+        "soutien": 0.47619047619047616,
+        "contraste": 5.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "isole",
+        "longueur": 49.68947643101276,
+        "soutien": 1.0,
+        "contraste": 36.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 22,
+        "famille": "paire",
+        "longueur": 42.10561689941197,
+        "soutien": 0.0,
+        "contraste": 107.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "isole",
+        "longueur": 42.75342092161515,
+        "soutien": 0.47619047619047616,
+        "contraste": 3.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "paire",
+        "longueur": 39.85172790476612,
+        "soutien": 0.0,
+        "contraste": 78.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "isole",
+        "longueur": 40.387255467552336,
+        "soutien": 1.0,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "paire",
+        "longueur": 35.39329131637725,
+        "soutien": 0.0,
+        "contraste": 65.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "isole",
+        "longueur": 40.17539246815936,
+        "soutien": 0.42857142857142855,
+        "contraste": 5.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "paire",
+        "longueur": 34.22478883251796,
+        "soutien": 0.14285714285714285,
+        "contraste": 100.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 42.756566342692146,
+        "soutien": 0.7142857142857143,
+        "contraste": 43.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 30,
+        "famille": "paire",
+        "longueur": 30.923291288655417,
+        "soutien": 0.0,
+        "contraste": 58.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 31,
+        "famille": "paire",
+        "longueur": 30.065807897185827,
+        "soutien": 0.0,
+        "contraste": 72.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      }
+    ],
+    "15503462606": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 36.215851336441425,
+        "soutien": 1.0,
+        "contraste": 89.0,
+        "hors_condition_isole": true,
+        "lecture": "blason"
+      },
+      {
+        "segment": 1,
+        "famille": "paire",
+        "longueur": 58.946525661109284,
+        "soutien": 1.0,
+        "contraste": 46.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 31.914070380038275,
+        "soutien": 1.0,
+        "contraste": 119.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 3,
+        "famille": "paire",
+        "longueur": 42.594047263019874,
+        "soutien": 0.5238095238095238,
+        "contraste": 118.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 51.26616054543788,
+        "soutien": 1.0,
+        "contraste": 47.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 5,
+        "famille": "paire",
+        "longueur": 50.33092438255183,
+        "soutien": 1.0,
+        "contraste": 44.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "paire",
+        "longueur": 49.74765192278118,
+        "soutien": 1.0,
+        "contraste": 41.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 7,
+        "famille": "paire",
+        "longueur": 48.746980417099515,
+        "soutien": 1.0,
+        "contraste": 45.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "paire",
+        "longueur": 47.909194386074496,
+        "soutien": 1.0,
+        "contraste": 49.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "paire",
+        "longueur": 47.907993266463926,
+        "soutien": 1.0,
+        "contraste": 42.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 10,
+        "famille": "paire",
+        "longueur": 62.938859692970155,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 11,
+        "famille": "paire",
+        "longueur": 54.52175062912748,
+        "soutien": 0.6666666666666666,
+        "contraste": 48.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 12,
+        "famille": "paire",
+        "longueur": 56.98278661397065,
+        "soutien": 0.5714285714285714,
+        "contraste": 48.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 13,
+        "famille": "paire",
+        "longueur": 62.006532489219495,
+        "soutien": 0.0,
+        "contraste": 41.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 14,
+        "famille": "paire",
+        "longueur": 58.6717057668759,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 15,
+        "famille": "isole",
+        "longueur": 69.91396186189043,
+        "soutien": 0.8095238095238095,
+        "contraste": 14.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 16,
+        "famille": "paire",
+        "longueur": 39.75864312484235,
+        "soutien": 1.0,
+        "contraste": 48.0,
+        "hors_condition_isole": true,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 17,
+        "famille": "paire",
+        "longueur": 56.968914209280975,
+        "soutien": 0.42857142857142855,
+        "contraste": 53.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 18,
+        "famille": "paire",
+        "longueur": 56.024521784005756,
+        "soutien": 0.0,
+        "contraste": 36.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 19,
+        "famille": "isole",
+        "longueur": 53.13050522328815,
+        "soutien": 1.0,
+        "contraste": 35.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 20,
+        "famille": "paire",
+        "longueur": 56.3713855004482,
+        "soutien": 0.0,
+        "contraste": 32.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 21,
+        "famille": "isole",
+        "longueur": 46.700862680616936,
+        "soutien": 1.0,
+        "contraste": 22.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 22,
+        "famille": "paire",
+        "longueur": 51.92367994247283,
+        "soutien": 0.0,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 23,
+        "famille": "paire",
+        "longueur": 54.2494029658452,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 24,
+        "famille": "paire",
+        "longueur": 50.19502605307717,
+        "soutien": 0.0,
+        "contraste": 35.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 25,
+        "famille": "isole",
+        "longueur": 44.780580289730246,
+        "soutien": 1.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 26,
+        "famille": "paire",
+        "longueur": 47.86021606908419,
+        "soutien": 0.0,
+        "contraste": 39.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 27,
+        "famille": "paire",
+        "longueur": 46.39067832728103,
+        "soutien": 0.0,
+        "contraste": 40.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 28,
+        "famille": "paire",
+        "longueur": 45.06175210670468,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 29,
+        "famille": "isole",
+        "longueur": 45.95503125349393,
+        "soutien": 1.0,
+        "contraste": 13.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 30,
+        "famille": "isole",
+        "longueur": 43.12933453417557,
+        "soutien": 1.0,
+        "contraste": 26.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 31,
+        "famille": "paire",
+        "longueur": 42.665048220448654,
+        "soutien": 0.0,
+        "contraste": 34.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ],
+    "51590434805": [
+      {
+        "segment": 0,
+        "famille": "paire",
+        "longueur": 55.871001443504866,
+        "soutien": 0.5238095238095238,
+        "contraste": 95.0,
+        "hors_condition_isole": false,
+        "lecture": "decor"
+      },
+      {
+        "segment": 1,
+        "famille": "isole",
+        "longueur": 74.1277298123424,
+        "soutien": 1.0,
+        "contraste": 25.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 2,
+        "famille": "paire",
+        "longueur": 41.432198199394016,
+        "soutien": 0.9523809523809523,
+        "contraste": 60.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 3,
+        "famille": "isole",
+        "longueur": 47.64747535821071,
+        "soutien": 1.0,
+        "contraste": 12.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 4,
+        "famille": "paire",
+        "longueur": 32.06394940870182,
+        "soutien": 0.0,
+        "contraste": 93.0,
+        "hors_condition_isole": true,
+        "lecture": "decor"
+      },
+      {
+        "segment": 5,
+        "famille": "isole",
+        "longueur": 71.12059453104688,
+        "soutien": 0.2857142857142857,
+        "contraste": 29.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 6,
+        "famille": "isole",
+        "longueur": 53.80742660758209,
+        "soutien": 0.3333333333333333,
+        "contraste": 54.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      },
+      {
+        "segment": 7,
+        "famille": "isole",
+        "longueur": 41.54595747765596,
+        "soutien": 0.14285714285714285,
+        "contraste": 24.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 8,
+        "famille": "isole",
+        "longueur": 48.774865474374984,
+        "soutien": 0.047619047619047616,
+        "contraste": 18.0,
+        "hors_condition_isole": false,
+        "lecture": "non_lu"
+      },
+      {
+        "segment": 9,
+        "famille": "isole",
+        "longueur": 65.92491742635102,
+        "soutien": 0.0,
+        "contraste": 52.0,
+        "hors_condition_isole": false,
+        "lecture": "blason"
+      }
+    ]
+  },
+  "effectifs": [
+    {
+      "famille": "isole",
+      "photo": "occupee",
+      "lecture": "blason",
+      "hors_condition_isole": false,
+      "n": 11
+    },
+    {
+      "famille": "isole",
+      "photo": "occupee",
+      "lecture": "decor",
+      "hors_condition_isole": false,
+      "n": 7
+    },
+    {
+      "famille": "isole",
+      "photo": "occupee",
+      "lecture": "incertain",
+      "hors_condition_isole": false,
+      "n": 3
+    },
+    {
+      "famille": "isole",
+      "photo": "occupee",
+      "lecture": "non_lu",
+      "hors_condition_isole": false,
+      "n": 82
+    },
+    {
+      "famille": "isole",
+      "photo": "occupee",
+      "lecture": "tube",
+      "hors_condition_isole": false,
+      "n": 11
+    },
+    {
+      "famille": "isole",
+      "photo": "vide",
+      "lecture": "blason",
+      "hors_condition_isole": false,
+      "n": 12
+    },
+    {
+      "famille": "isole",
+      "photo": "vide",
+      "lecture": "decor",
+      "hors_condition_isole": false,
+      "n": 3
+    },
+    {
+      "famille": "isole",
+      "photo": "vide",
+      "lecture": "non_lu",
+      "hors_condition_isole": false,
+      "n": 31
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "blason",
+      "hors_condition_isole": false,
+      "n": 4
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "blason",
+      "hors_condition_isole": true,
+      "n": 7
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "decor",
+      "hors_condition_isole": false,
+      "n": 6
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "decor",
+      "hors_condition_isole": true,
+      "n": 5
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "incertain",
+      "hors_condition_isole": false,
+      "n": 1
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "non_lu",
+      "hors_condition_isole": false,
+      "n": 104
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "non_lu",
+      "hors_condition_isole": true,
+      "n": 66
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "tube",
+      "hors_condition_isole": false,
+      "n": 6
+    },
+    {
+      "famille": "paire",
+      "photo": "occupee",
+      "lecture": "tube",
+      "hors_condition_isole": true,
+      "n": 5
+    },
+    {
+      "famille": "paire",
+      "photo": "vide",
+      "lecture": "blason",
+      "hors_condition_isole": false,
+      "n": 5
+    },
+    {
+      "famille": "paire",
+      "photo": "vide",
+      "lecture": "blason",
+      "hors_condition_isole": true,
+      "n": 2
+    },
+    {
+      "famille": "paire",
+      "photo": "vide",
+      "lecture": "decor",
+      "hors_condition_isole": false,
+      "n": 5
+    },
+    {
+      "famille": "paire",
+      "photo": "vide",
+      "lecture": "decor",
+      "hors_condition_isole": true,
+      "n": 3
+    },
+    {
+      "famille": "paire",
+      "photo": "vide",
+      "lecture": "non_lu",
+      "hors_condition_isole": false,
+      "n": 34
+    },
+    {
+      "famille": "paire",
+      "photo": "vide",
+      "lecture": "non_lu",
+      "hors_condition_isole": true,
+      "n": 8
+    }
+  ]
+}

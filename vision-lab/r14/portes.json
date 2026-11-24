@@ -1,0 +1,97 @@
+{
+  "partitions": {
+    "train": {
+      "criteres": {
+        "provenances_occupees": {
+          "observe": 7,
+          "minimum": 6,
+          "manque": 0
+        },
+        "entrees_distinctes": {
+          "observe": 136,
+          "minimum": 30,
+          "manque": 0
+        },
+        "axes_traces_distincts": {
+          "observe": 31,
+          "minimum": 30,
+          "manque": 0
+        },
+        "groupes": {
+          "observe": 5,
+          "minimum": 2,
+          "manque": 0
+        },
+        "supports_vides_uses": {
+          "observe": 3,
+          "minimum": 2,
+          "manque": 0
+        },
+        "segments_negatifs": {
+          "observe": 33,
+          "minimum": 30,
+          "manque": 0
+        },
+        "acquisitions_negatives": {
+          "observe": 8,
+          "minimum": 6,
+          "manque": 0
+        },
+        "occupees_avec_negatifs": {
+          "observe": 5,
+          "minimum": 3,
+          "manque": 0
+        }
+      },
+      "diversite_negatifs": true,
+      "admissible": true
+    },
+    "dev_indep": {
+      "criteres": {
+        "provenances_occupees": {
+          "observe": 3,
+          "minimum": 4,
+          "manque": 1
+        },
+        "entrees_distinctes": {
+          "observe": 6,
+          "minimum": 12,
+          "manque": 6
+        },
+        "axes_traces_distincts": {
+          "observe": 12,
+          "minimum": 12,
+          "manque": 0
+        },
+        "groupes": {
+          "observe": 2,
+          "minimum": 2,
+          "manque": 0
+        },
+        "supports_vides_uses": {
+          "observe": 0,
+          "minimum": 2,
+          "manque": 2
+        },
+        "segments_negatifs": {
+          "observe": 17,
+          "minimum": 12,
+          "manque": 0
+        },
+        "acquisitions_negatives": {
+          "observe": 4,
+          "minimum": 4,
+          "manque": 0
+        },
+        "occupees_avec_negatifs": {
+          "observe": 3,
+          "minimum": 2,
+          "manque": 0
+        }
+      },
+      "diversite_negatifs": true,
+      "admissible": false
+    }
+  },
+  "apprentissage": false
+}

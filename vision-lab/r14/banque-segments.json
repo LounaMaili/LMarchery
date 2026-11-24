@@ -1,0 +1,1142 @@
+[
+  {
+    "photo": "18105652008",
+    "rang": 0,
+    "provenance": "zigazou76",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        735.826171875,
+        123.17279091692986
+      ],
+      [
+        853.32149628064,
+        15.098389791257661
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "18105652008",
+    "rang": 17,
+    "provenance": "zigazou76",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        588.8169833096591,
+        276.63523150504903
+      ],
+      [
+        597.9170078519429,
+        335.3697746295993
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "18105652008",
+    "rang": 35,
+    "provenance": "zigazou76",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        556.1988192471591,
+        440.1434880033453
+      ],
+      [
+        561.7571910511364,
+        394.9673177516207
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "ignore_region"
+  },
+  {
+    "photo": "18105652008",
+    "rang": 53,
+    "provenance": "zigazou76",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        419.2859552556818,
+        509.2711525775017
+      ],
+      [
+        450.43155184659093,
+        533.1298711249169
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "18105652008",
+    "rang": 71,
+    "provenance": "zigazou76",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        792.3034446022727,
+        317.2619296459442
+      ],
+      [
+        794.7137784090909,
+        282.4129626334982
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "24614689941",
+    "rang": 0,
+    "provenance": "renatomitra",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        585.5835404829545,
+        792.0180220170455
+      ],
+      [
+        614.9728338068181,
+        371.9116876775568
+      ]
+    ],
+    "lecture": "tube",
+    "statut": "tube"
+  },
+  {
+    "photo": "24614689941",
+    "rang": 41,
+    "provenance": "renatomitra",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        862.9507279829545,
+        591.5730202414773
+      ],
+      [
+        915.5918856534091,
+        523.2503995028409
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "24614689941",
+    "rang": 82,
+    "provenance": "renatomitra",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        895.2665681627824,
+        473.58959453931385
+      ],
+      [
+        911.5567847821006,
+        408.11676073249566
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "24614689941",
+    "rang": 123,
+    "provenance": "renatomitra",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        3.573836239901456,
+        736.5340465198864
+      ],
+      [
+        33.29108220880682,
+        697.4461115056819
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "24614689941",
+    "rang": 164,
+    "provenance": "renatomitra",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        480.84619140625,
+        376.7315784801136
+      ],
+      [
+        521.1470614346591,
+        372.04745205965907
+      ]
+    ],
+    "lecture": "tube",
+    "statut": "tube"
+  },
+  {
+    "photo": "4169106197",
+    "rang": 0,
+    "provenance": "cristina.sanvito",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        429.63726806640625,
+        385.3388671875
+      ],
+      [
+        462.8518981933594,
+        125.59008026123047
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4169106197",
+    "rang": 28,
+    "provenance": "cristina.sanvito",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        575.9800415039062,
+        404.4850769042969
+      ],
+      [
+        585.9153442382812,
+        372.4399108886719
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "4169106197",
+    "rang": 57,
+    "provenance": "cristina.sanvito",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        235.5903778076172,
+        274.2799987792969
+      ],
+      [
+        256.0093688964844,
+        254.7774200439453
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "4169106197",
+    "rang": 86,
+    "provenance": "cristina.sanvito",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        431.5472106933594,
+        324.557861328125
+      ],
+      [
+        436.5530700683594,
+        299.3111572265625
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4169106197",
+    "rang": 115,
+    "provenance": "cristina.sanvito",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        286.6160583496094,
+        213.91650390625
+      ],
+      [
+        296.6971740722656,
+        235.70726013183594
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc71488242",
+    "rang": 0,
+    "provenance": "Bernard Gagnon",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        54.63818134908181,
+        179.89598120208717
+      ],
+      [
+        301.0894775390625,
+        392.4621027166193
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc71488242",
+    "rang": 23,
+    "provenance": "Bernard Gagnon",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        17.150774869051844,
+        340.16521107066757
+      ],
+      [
+        33.0291782725941,
+        243.95541104403407
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc71488242",
+    "rang": 46,
+    "provenance": "Bernard Gagnon",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1012.3114568536931,
+        122.26323908025567
+      ],
+      [
+        1076.1328125,
+        114.74219582297584
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc71488242",
+    "rang": 69,
+    "provenance": "Bernard Gagnon",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        1094.2713512073863,
+        1071.9514604048295
+      ],
+      [
+        1144.408291903409,
+        1070.7236550071023
+      ]
+    ],
+    "lecture": "incertain",
+    "statut": "incertain"
+  },
+  {
+    "photo": "wc71488242",
+    "rang": 93,
+    "provenance": "Bernard Gagnon",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        611.728515625,
+        511.4278342507102
+      ],
+      [
+        623.6708762428976,
+        553.4638560901989
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "128831925",
+    "rang": 0,
+    "provenance": "Evil Julia",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        399.0294621501611,
+        477.94451193803775
+      ],
+      [
+        406.54390410969916,
+        294.47235838923666
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "128831925",
+    "rang": 35,
+    "provenance": "Evil Julia",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        457.518592234028,
+        149.3938650819385
+      ],
+      [
+        458.8373178199655,
+        104.39587924209474
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "128831925",
+    "rang": 71,
+    "provenance": "Evil Julia",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        130.625,
+        224.375
+      ],
+      [
+        166.875,
+        224.375
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "128831925",
+    "rang": 106,
+    "provenance": "Evil Julia",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        138.13116455078125,
+        427.8491516113281
+      ],
+      [
+        166.9226837158203,
+        428.49322509765625
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "128831925",
+    "rang": 142,
+    "provenance": "Evil Julia",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        144.2948455810547,
+        58.15206527709961
+      ],
+      [
+        152.010009765625,
+        81.00148010253906
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4592998057",
+    "rang": 0,
+    "provenance": "Vassilis Online",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        355.4395640980114,
+        726.2238281480758
+      ],
+      [
+        799.1194069602273,
+        731.9406797124218
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4592998057",
+    "rang": 40,
+    "provenance": "Vassilis Online",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        28.180397727272727,
+        708.1761979966624
+      ],
+      [
+        111.8262939453125,
+        707.9416568518136
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4592998057",
+    "rang": 80,
+    "provenance": "Vassilis Online",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        442.60111860795456,
+        520.9725634857928
+      ],
+      [
+        506.24973366477275,
+        526.2840764238614
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4592998057",
+    "rang": 120,
+    "provenance": "Vassilis Online",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        657.8595969460227,
+        571.0078300375119
+      ],
+      [
+        698.4054066051136,
+        531.5409963568127
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "4592998057",
+    "rang": 161,
+    "provenance": "Vassilis Online",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        874.0617897727273,
+        239.03731636379078
+      ],
+      [
+        882.142578125,
+        188.51277832723522
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130852209",
+    "rang": 0,
+    "provenance": "China News Service",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        803.9028424214239,
+        183.34328960071912
+      ],
+      [
+        906.6385385345035,
+        650.4260386030167
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130852209",
+    "rang": 35,
+    "provenance": "China News Service",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        277.53212668678975,
+        296.31738836115056
+      ],
+      [
+        303.7629560990767,
+        430.16706986860794
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130852209",
+    "rang": 70,
+    "provenance": "China News Service",
+    "partition": "train",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        449.13148857765486,
+        536.1895381689653
+      ],
+      [
+        531.0105668358224,
+        538.8876804807551
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130852209",
+    "rang": 105,
+    "provenance": "China News Service",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        303.37191495028407,
+        430.6849531693892
+      ],
+      [
+        308.353965065696,
+        489.7390469637784
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "wc130852209",
+    "rang": 140,
+    "provenance": "China News Service",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        650.7151655717329,
+        180.77843405983663
+      ],
+      [
+        661.0746071555398,
+        225.94200827858663
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "9436017284",
+    "rang": 0,
+    "provenance": "surtr",
+    "partition": "dev_indep",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        373.51408589802884,
+        150.7892130600446
+      ],
+      [
+        722.6468423726332,
+        5.072679004559177
+      ]
+    ],
+    "lecture": "tube",
+    "statut": "tube"
+  },
+  {
+    "photo": "9436017284",
+    "rang": 38,
+    "provenance": "surtr",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        483.79736328125,
+        584.7769886363636
+      ],
+      [
+        513.3981267755681,
+        680.4200994318181
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "9436017284",
+    "rang": 76,
+    "provenance": "surtr",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        273.33766867897725,
+        770.0212180397727
+      ],
+      [
+        278.6500133167614,
+        844.7061434659091
+      ]
+    ],
+    "lecture": "tube",
+    "statut": "tube"
+  },
+  {
+    "photo": "9436017284",
+    "rang": 114,
+    "provenance": "surtr",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        503.20791903409093,
+        542.5301402698864
+      ],
+      [
+        526.7754794034091,
+        599.9944957386364
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "9436017284",
+    "rang": 153,
+    "provenance": "surtr",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        95.08021129261364,
+        643.7640713778409
+      ],
+      [
+        138.36409135298297,
+        623.0282759232955
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "37348131162",
+    "rang": 0,
+    "provenance": "Special Olympics Oesterreich",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        33.02045586418649,
+        440.5489464475718
+      ],
+      [
+        50.49350807883523,
+        0.783512240801102
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "37348131162",
+    "rang": 44,
+    "provenance": "Special Olympics Oesterreich",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        549.4188565340909,
+        548.6219565888755
+      ],
+      [
+        608.0324928977273,
+        505.6195642194177
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "37348131162",
+    "rang": 88,
+    "provenance": "Special Olympics Oesterreich",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        680.2938565340909,
+        472.62701833350025
+      ],
+      [
+        705.2522194602273,
+        415.3178392720019
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "37348131162",
+    "rang": 132,
+    "provenance": "Special Olympics Oesterreich",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        816.9482421875,
+        479.04979216746796
+      ],
+      [
+        833.2015269886364,
+        427.58729853181757
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "37348131162",
+    "rang": 177,
+    "provenance": "Special Olympics Oesterreich",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        167.19176136363637,
+        326.1100925543369
+      ],
+      [
+        172.44547895951703,
+        280.4721799671141
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "89744300",
+    "rang": 0,
+    "provenance": "DWZ",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        0.8293264748033173,
+        154.29408748876648
+      ],
+      [
+        493.61416804331316,
+        148.9727525051965
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "89744300",
+    "rang": 12,
+    "provenance": "DWZ",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        695.4245383522727,
+        548.6000088778409
+      ],
+      [
+        768.1688565340909,
+        553.8173828125
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "89744300",
+    "rang": 25,
+    "provenance": "DWZ",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        784.8132102272727,
+        534.2236772017045
+      ],
+      [
+        835.6877663352273,
+        545.2916814630681
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "89744300",
+    "rang": 38,
+    "provenance": "DWZ",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        573.5977450284091,
+        351.0879572088068
+      ],
+      [
+        615.556640625,
+        352.5768377130682
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "89744300",
+    "rang": 51,
+    "provenance": "DWZ",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        864.5274325284091,
+        570.1104403409091
+      ],
+      [
+        899.0459872159091,
+        575.7303799715909
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "36725328420",
+    "rang": 0,
+    "provenance": "juantiagues",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        938.6953312713832,
+        572.0900643276291
+      ],
+      [
+        1023.2457386363636,
+        150.46858354048297
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "36725328420",
+    "rang": 39,
+    "provenance": "juantiagues",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        320.59889914772725,
+        570.0272105823864
+      ],
+      [
+        329.21186967329544,
+        668.2509321732955
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "36725328420",
+    "rang": 79,
+    "provenance": "juantiagues",
+    "partition": "dev_indep",
+    "paire": true,
+    "axe_px_travail": [
+      [
+        550.2929638405456,
+        44.91283272262251
+      ],
+      [
+        607.1210557902427,
+        -0.4064213035775
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "36725328420",
+    "rang": 119,
+    "provenance": "juantiagues",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        524.5134499289773,
+        423.70303622159093
+      ],
+      [
+        584.5085227272727,
+        425.67116477272725
+      ]
+    ],
+    "lecture": "tube",
+    "statut": "tube"
+  },
+  {
+    "photo": "36725328420",
+    "rang": 159,
+    "provenance": "juantiagues",
+    "partition": "dev_indep",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        665.5172674005681,
+        765.8797940340909
+      ],
+      [
+        706.6862571022727,
+        735.8975497159091
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "13-01",
+    "rang": 0,
+    "provenance": "Crigges",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        63.829620361328125,
+        1240.508544921875
+      ],
+      [
+        1046.5419921875,
+        1346.030517578125
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "13-01",
+    "rang": 46,
+    "provenance": "Crigges",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        458.74835205078125,
+        1277.489013671875
+      ],
+      [
+        556.2481689453125,
+        1277.61767578125
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "13-01",
+    "rang": 92,
+    "provenance": "Crigges",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        323.21820068359375,
+        1237.642578125
+      ],
+      [
+        398.671142578125,
+        1266.45654296875
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "13-01",
+    "rang": 138,
+    "provenance": "Crigges",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        0.6024414896965027,
+        421.17169189453125
+      ],
+      [
+        71.17395782470703,
+        403.4472351074219
+      ]
+    ],
+    "lecture": "decor",
+    "statut": "negatif_verifie"
+  },
+  {
+    "photo": "13-01",
+    "rang": 185,
+    "provenance": "Crigges",
+    "partition": "train",
+    "paire": false,
+    "axe_px_travail": [
+      [
+        833.5809936523438,
+        630.6643676757812
+      ],
+      [
+        848.7988891601562,
+        691.2377319335938
+      ]
+    ],
+    "lecture": "blason",
+    "statut": "negatif_verifie"
+  }
+]
