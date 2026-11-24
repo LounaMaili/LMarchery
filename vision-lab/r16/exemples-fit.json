@@ -1,0 +1,1155 @@
+{
+  "checkpoint": "ordinary-9301",
+  "colonnes": [
+    "longueur_px",
+    "deux_contours",
+    "largeur_mediane_px",
+    "largeur_mad_px",
+    "contraste_transversal",
+    "continuite_longitudinale",
+    "moyenne_masque",
+    "ecart_aspect_bouts"
+  ],
+  "exemples": [
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 0,
+      "rang_sortie": 4,
+      "instance": null,
+      "y": 0,
+      "poids": 0.475,
+      "x": [
+        494.1807596,
+        0.0,
+        null,
+        null,
+        47.0,
+        0.0,
+        0.0,
+        0.2574789254
+      ]
+    },
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 21,
+      "rang_sortie": 2,
+      "instance": "13-01",
+      "y": 1,
+      "poids": 1.1875,
+      "x": [
+        72.25169138,
+        1.0,
+        2.874685182,
+        0.04576258859,
+        99.0,
+        1.0,
+        1.0,
+        0.03429936418
+      ]
+    },
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 46,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.475,
+      "x": [
+        48.74995089,
+        0.0,
+        null,
+        null,
+        3.0,
+        0.0,
+        0.0,
+        0.7273432688
+      ]
+    },
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 92,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.475,
+      "x": [
+        40.38375605,
+        0.0,
+        null,
+        null,
+        1.0,
+        0.0,
+        0.0,
+        0.7422784172
+      ]
+    },
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 138,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.475,
+      "x": [
+        36.38164127,
+        0.0,
+        null,
+        null,
+        22.0,
+        0.0,
+        0.0,
+        0.03737261519
+      ]
+    },
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 185,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.475,
+      "x": [
+        31.22785936,
+        0.0,
+        null,
+        null,
+        6.0,
+        0.0,
+        0.0,
+        0.02438338277
+      ]
+    },
+    {
+      "photo": "70-01",
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "rang_longueur": 25,
+      "rang_sortie": 0,
+      "instance": "70-01",
+      "y": 1,
+      "poids": 1.1875,
+      "x": [
+        78.88972924,
+        1.0,
+        2.725632009,
+        0.04607811829,
+        93.0,
+        1.0,
+        1.0,
+        0.2114308855
+      ]
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "bloc": "5115614018",
+      "rang_longueur": 9,
+      "rang_sortie": 1,
+      "instance": "5115614018:2",
+      "y": 1,
+      "poids": 2.375,
+      "x": [
+        76.61587925,
+        1.0,
+        2.547623646,
+        0.05557640681,
+        148.0,
+        1.0,
+        1.0,
+        0.4334005605
+      ]
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "bloc": "5115614018",
+      "rang_longueur": 31,
+      "rang_sortie": 5,
+      "instance": "5115614018:3",
+      "y": 1,
+      "poids": 2.375,
+      "x": [
+        51.24977285,
+        0.0,
+        null,
+        null,
+        103.0,
+        1.0,
+        1.0,
+        0.6501102694
+      ]
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "bloc": "18105652008",
+      "rang_longueur": 3,
+      "rang_sortie": 9,
+      "instance": "18105652008:1",
+      "y": 1,
+      "poids": 2.375,
+      "x": [
+        55.11741009,
+        0.0,
+        null,
+        null,
+        50.0,
+        0.7619047619,
+        0.1428571429,
+        0.04406060283
+      ]
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "bloc": "18105652008",
+      "rang_longueur": 17,
+      "rang_sortie": 17,
+      "instance": null,
+      "y": 0,
+      "poids": 0.7916666666666666,
+      "x": [
+        40.89896059,
+        0.0,
+        null,
+        null,
+        11.0,
+        0.5238095238,
+        0.2857142857,
+        0.2326464157
+      ]
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "bloc": "18105652008",
+      "rang_longueur": 53,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.7916666666666666,
+      "x": [
+        26.98249523,
+        0.0,
+        null,
+        null,
+        46.0,
+        1.0,
+        1.0,
+        0.09704273635
+      ]
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "bloc": "18105652008",
+      "rang_longueur": 71,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.7916666666666666,
+      "x": [
+        24.03817296,
+        0.0,
+        null,
+        null,
+        1.0,
+        0.04761904762,
+        0.0,
+        0.2200084925
+      ]
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "bloc": "24614689941",
+      "rang_longueur": 41,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 1.5833333333333333,
+      "x": [
+        59.2969128,
+        0.0,
+        null,
+        null,
+        57.0,
+        0.0,
+        0.0,
+        0.02832060275
+      ]
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "bloc": "24614689941",
+      "rang_longueur": 82,
+      "rang_sortie": 22,
+      "instance": null,
+      "y": 0,
+      "poids": 1.5833333333333333,
+      "x": [
+        46.38492305,
+        1.0,
+        4.016711988,
+        0.3297290992,
+        32.0,
+        0.0,
+        0.0,
+        0.02333945517
+      ]
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "bloc": "24614689941",
+      "rang_longueur": 123,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 1.5833333333333333,
+      "x": [
+        33.75744975,
+        0.0,
+        null,
+        null,
+        27.0,
+        0.0,
+        0.0,
+        0.004931080472
+      ]
+    },
+    {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "bloc": "4169106197",
+      "rang_longueur": 0,
+      "rang_sortie": 4,
+      "instance": null,
+      "y": 0,
+      "poids": 0.7916666666666666,
+      "x": [
+        261.863789,
+        0.0,
+        null,
+        null,
+        18.0,
+        0.4285714286,
+        0.380952381,
+        0.003669420493
+      ]
+    },
+    {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "bloc": "4169106197",
+      "rang_longueur": 4,
+      "rang_sortie": 1,
+      "instance": "4169106197:1",
+      "y": 1,
+      "poids": 2.375,
+      "x": [
+        88.21931755,
+        1.0,
+        3.225914287,
+        0.1448389273,
+        121.0,
+        1.0,
+        1.0,
+        0.180955458
+      ]
+    },
+    {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "bloc": "4169106197",
+      "rang_longueur": 86,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.7916666666666666,
+      "x": [
+        25.73819528,
+        0.0,
+        null,
+        null,
+        5.0,
+        0.0,
+        0.0,
+        0.1879427885
+      ]
+    },
+    {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "bloc": "4169106197",
+      "rang_longueur": 115,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.7916666666666666,
+      "x": [
+        24.00970535,
+        0.0,
+        null,
+        null,
+        6.0,
+        1.0,
+        1.0,
+        0.3593658999
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 0,
+      "rang_sortie": 12,
+      "instance": null,
+      "y": 0,
+      "poids": 0.59375,
+      "x": [
+        179.0016361,
+        0.0,
+        null,
+        null,
+        27.0,
+        0.5714285714,
+        0.4285714286,
+        0.02168064986
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 2,
+      "rang_sortie": 2,
+      "instance": "wc71488242:9",
+      "y": 1,
+      "poids": 0.3958333333333333,
+      "x": [
+        162.464181,
+        0.0,
+        null,
+        null,
+        38.0,
+        1.0,
+        1.0,
+        0.8609346286
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 5,
+      "rang_sortie": 3,
+      "instance": "wc71488242:10",
+      "y": 1,
+      "poids": 0.3958333333333333,
+      "x": [
+        122.7749259,
+        1.0,
+        3.708905676,
+        0.03579591818,
+        84.0,
+        1.0,
+        1.0,
+        0.2763414241
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 6,
+      "rang_sortie": 4,
+      "instance": "wc71488242:3",
+      "y": 1,
+      "poids": 0.3958333333333333,
+      "x": [
+        117.9247254,
+        1.0,
+        3.70509169,
+        0.269545864,
+        67.0,
+        1.0,
+        1.0,
+        0.09632827882
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 8,
+      "rang_sortie": 1,
+      "instance": "wc71488242:7",
+      "y": 1,
+      "poids": 0.3958333333333333,
+      "x": [
+        112.3053954,
+        1.0,
+        4.24077426,
+        0.2747448845,
+        90.0,
+        1.0,
+        1.0,
+        0.09219949209
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 10,
+      "rang_sortie": 9,
+      "instance": "wc71488242:2",
+      "y": 1,
+      "poids": 0.3958333333333333,
+      "x": [
+        97.21843164,
+        1.0,
+        3.472722737,
+        0.2031616242,
+        30.0,
+        1.0,
+        1.0,
+        0.3885507569
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 11,
+      "rang_sortie": 5,
+      "instance": "wc71488242:11",
+      "y": 1,
+      "poids": 0.3958333333333333,
+      "x": [
+        94.12790138,
+        0.0,
+        null,
+        null,
+        44.0,
+        1.0,
+        0.9523809524,
+        0.01091561412
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 23,
+      "rang_sortie": 29,
+      "instance": null,
+      "y": 0,
+      "poids": 0.59375,
+      "x": [
+        53.63120284,
+        0.0,
+        null,
+        null,
+        34.0,
+        0.380952381,
+        0.2380952381,
+        0.09288779183
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 46,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.59375,
+      "x": [
+        35.34464298,
+        0.0,
+        null,
+        null,
+        12.0,
+        0.1904761905,
+        0.04761904762,
+        0.1539540954
+      ]
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "rang_longueur": 93,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.59375,
+      "x": [
+        24.03473009,
+        0.0,
+        null,
+        null,
+        9.0,
+        0.0,
+        0.0,
+        0.008380623297
+      ]
+    },
+    {
+      "photo": "128831925",
+      "provenance": "Evil Julia",
+      "bloc": "128831925",
+      "rang_longueur": 0,
+      "rang_sortie": 1,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        183.625973,
+        1.0,
+        9.594525923,
+        0.1129838899,
+        44.0,
+        0.0,
+        0.0,
+        0.169891316
+      ]
+    },
+    {
+      "photo": "128831925",
+      "provenance": "Evil Julia",
+      "bloc": "128831925",
+      "rang_longueur": 35,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        45.01730519,
+        1.0,
+        2.664182305,
+        0.2139416262,
+        61.0,
+        0.04761904762,
+        0.0,
+        0.7604250535
+      ]
+    },
+    {
+      "photo": "128831925",
+      "provenance": "Evil Julia",
+      "bloc": "128831925",
+      "rang_longueur": 71,
+      "rang_sortie": 11,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        36.25,
+        1.0,
+        5.0,
+        0.0,
+        4.0,
+        1.0,
+        1.0,
+        0.1954303133
+      ]
+    },
+    {
+      "photo": "128831925",
+      "provenance": "Evil Julia",
+      "bloc": "128831925",
+      "rang_longueur": 106,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        28.79872231,
+        0.0,
+        null,
+        null,
+        30.0,
+        1.0,
+        1.0,
+        0.3390081835
+      ]
+    },
+    {
+      "photo": "128831925",
+      "provenance": "Evil Julia",
+      "bloc": "128831925",
+      "rang_longueur": 142,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        24.1167891,
+        0.0,
+        null,
+        null,
+        3.0,
+        0.7142857143,
+        0.3333333333,
+        0.07440193836
+      ]
+    },
+    {
+      "photo": "4592998057",
+      "provenance": "Vassilis Online",
+      "bloc": "4592998057",
+      "rang_longueur": 0,
+      "rang_sortie": 13,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        305.0551764,
+        0.0,
+        null,
+        null,
+        21.0,
+        0.0,
+        0.0,
+        0.2852478363
+      ]
+    },
+    {
+      "photo": "4592998057",
+      "provenance": "Vassilis Online",
+      "bloc": "4592998057",
+      "rang_longueur": 40,
+      "rang_sortie": 29,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        57.5067794,
+        0.0,
+        null,
+        null,
+        31.0,
+        0.4285714286,
+        0.0,
+        0.3445528914
+      ]
+    },
+    {
+      "photo": "4592998057",
+      "provenance": "Vassilis Online",
+      "bloc": "4592998057",
+      "rang_longueur": 80,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        43.91031022,
+        0.0,
+        null,
+        null,
+        42.0,
+        0.0,
+        0.0,
+        0.05557955001
+      ]
+    },
+    {
+      "photo": "4592998057",
+      "provenance": "Vassilis Online",
+      "bloc": "4592998057",
+      "rang_longueur": 120,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        38.88715158,
+        0.0,
+        null,
+        null,
+        0.0,
+        0.0,
+        0.0,
+        0.5213058452
+      ]
+    },
+    {
+      "photo": "4592998057",
+      "provenance": "Vassilis Online",
+      "bloc": "4592998057",
+      "rang_longueur": 161,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        35.1527883,
+        0.0,
+        null,
+        null,
+        9.0,
+        0.0,
+        0.0,
+        0.2234205098
+      ]
+    },
+    {
+      "photo": "wc130852209",
+      "provenance": "China News Service",
+      "bloc": "wc130852209",
+      "rang_longueur": 0,
+      "rang_sortie": 0,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        263.0362667,
+        1.0,
+        3.819879024,
+        0.007288144236,
+        54.0,
+        1.0,
+        0.8571428571,
+        0.5618265663
+      ]
+    },
+    {
+      "photo": "wc130852209",
+      "provenance": "China News Service",
+      "bloc": "wc130852209",
+      "rang_longueur": 35,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        75.01764845,
+        0.0,
+        null,
+        null,
+        21.0,
+        0.380952381,
+        0.1904761905,
+        0.08798749366
+      ]
+    },
+    {
+      "photo": "wc130852209",
+      "provenance": "China News Service",
+      "bloc": "wc130852209",
+      "rang_longueur": 70,
+      "rang_sortie": 31,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        45.057937,
+        1.0,
+        6.849154349,
+        0.1024076769,
+        178.0,
+        1.0,
+        1.0,
+        0.05240246969
+      ]
+    },
+    {
+      "photo": "wc130852209",
+      "provenance": "China News Service",
+      "bloc": "wc130852209",
+      "rang_longueur": 105,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        32.59513096,
+        0.0,
+        null,
+        null,
+        9.0,
+        0.5714285714,
+        0.04761904762,
+        0.1470331519
+      ]
+    },
+    {
+      "photo": "wc130852209",
+      "provenance": "China News Service",
+      "bloc": "wc130852209",
+      "rang_longueur": 140,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        25.48504671,
+        0.0,
+        null,
+        null,
+        31.0,
+        1.0,
+        1.0,
+        0.106534926
+      ]
+    },
+    {
+      "photo": "fl31990323",
+      "provenance": "bluepelican",
+      "bloc": "fl31990323",
+      "rang_longueur": 79,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 2.375,
+      "x": [
+        27.66992139,
+        0.0,
+        null,
+        null,
+        15.0,
+        1.0,
+        1.0,
+        0.2252901266
+      ]
+    },
+    {
+      "photo": "fl31990323",
+      "provenance": "bluepelican",
+      "bloc": "fl31990323",
+      "rang_longueur": 106,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 2.375,
+      "x": [
+        24.13596386,
+        0.0,
+        null,
+        null,
+        2.0,
+        1.0,
+        1.0,
+        0.2195868519
+      ]
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "bloc": "wc11001401",
+      "rang_longueur": 0,
+      "rang_sortie": 5,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        391.8169025,
+        0.0,
+        null,
+        null,
+        32.0,
+        0.04761904762,
+        0.0,
+        0.04409735461
+      ]
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "bloc": "wc11001401",
+      "rang_longueur": 16,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        54.99858946,
+        0.0,
+        null,
+        null,
+        9.0,
+        0.0,
+        0.0,
+        0.1826627192
+      ]
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "bloc": "wc11001401",
+      "rang_longueur": 32,
+      "rang_sortie": 6,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        37.86930018,
+        1.0,
+        3.788592889,
+        0.1460538923,
+        111.0,
+        0.8095238095,
+        0.4761904762,
+        0.4925723878
+      ]
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "bloc": "wc11001401",
+      "rang_longueur": 48,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        27.92451776,
+        0.0,
+        null,
+        null,
+        11.0,
+        0.0,
+        0.0,
+        0.07598596342
+      ]
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "bloc": "wc11001401",
+      "rang_longueur": 64,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        24.00843878,
+        0.0,
+        null,
+        null,
+        68.0,
+        0.3333333333,
+        0.04761904762,
+        0.01204386993
+      ]
+    },
+    {
+      "photo": "wc156353437",
+      "provenance": "Alan Hughes",
+      "bloc": "wc156353437",
+      "rang_longueur": 0,
+      "rang_sortie": 0,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        157.4903589,
+        1.0,
+        3.219350106,
+        0.01926898786,
+        120.0,
+        0.8571428571,
+        0.5238095238,
+        0.1727809562
+      ]
+    },
+    {
+      "photo": "wc156353437",
+      "provenance": "Alan Hughes",
+      "bloc": "wc156353437",
+      "rang_longueur": 10,
+      "rang_sortie": 3,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        101.2085257,
+        1.0,
+        7.141383064,
+        0.6408603376,
+        1.0,
+        0.8571428571,
+        0.6666666667,
+        0.6770915814
+      ]
+    },
+    {
+      "photo": "wc156353437",
+      "provenance": "Alan Hughes",
+      "bloc": "wc156353437",
+      "rang_longueur": 21,
+      "rang_sortie": 19,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        45.21396234,
+        1.0,
+        3.197691233,
+        0.3243164842,
+        4.0,
+        0.0,
+        0.0,
+        0.04500489648
+      ]
+    },
+    {
+      "photo": "wc156353437",
+      "provenance": "Alan Hughes",
+      "bloc": "wc156353437",
+      "rang_longueur": 31,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        26.27705811,
+        0.0,
+        null,
+        null,
+        40.0,
+        1.0,
+        1.0,
+        0.001905005993
+      ]
+    },
+    {
+      "photo": "wc156353437",
+      "provenance": "Alan Hughes",
+      "bloc": "wc156353437",
+      "rang_longueur": 42,
+      "rang_sortie": null,
+      "instance": null,
+      "y": 0,
+      "poids": 0.95,
+      "x": [
+        24.26246057,
+        0.0,
+        null,
+        null,
+        7.0,
+        1.0,
+        1.0,
+        0.773647923
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2633 @@
+{
+  "total": {
+    "photos_train": 162,
+    "photos_avec_matrice": 14,
+    "tubes_annotes_distincts": 168,
+    "tubes_avec_axe": 41,
+    "tubes_sans_axe": 127,
+    "tubes_avec_voisin_strict": 17,
+    "stricts_bruts_un_a_un": 16,
+    "positifs": 12,
+    "negatifs": 45,
+    "negatifs_documentes": 45,
+    "negatifs_hors_sortie": 28,
+    "blocs_avec_exemples": 12,
+    "decisions": {
+      "negatif": 45,
+      "sans_supervision": 339,
+      "positif": 12,
+      "zone_ignoree": 32,
+      "lecture_inutilisable": 5
+    },
+    "lignes": 433
+  },
+  "par_acquisition": {
+    "90-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-01",
+        "90-02",
+        "90-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "90-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "90-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "37-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "37-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "37-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "37-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "37-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "37-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "37-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "37-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "37-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-01",
+        "101-02",
+        "101-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "101-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "101-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "95-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "95-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "88-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "88-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "24-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "24-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "102-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "102-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "102-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "102-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "102-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "102-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "102-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "107-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "107-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-01"
+      ],
+      "axes": [
+        "13-01"
+      ],
+      "appariables": [
+        "13-01"
+      ],
+      "appariement_maximal_brut": 1,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 5,
+        "sans_supervision": 30,
+        "positif": 1
+      },
+      "negatifs_dont_hors_sortie": 4,
+      "representants": [
+        "13-01"
+      ]
+    },
+    "13-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-01",
+        "13-02",
+        "13-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "13-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "13-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "75-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "75-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "75-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "75-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "75-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "75-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "75-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "75-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "75-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "75-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "75-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "63-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "63-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "69-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "69-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "40-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "40-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "40-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "40-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "40-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "40-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "40-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "98-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "98-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "98-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "98-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "98-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "98-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "98-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "98-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "98-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "98-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "98-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "100-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "100-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "100-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "100-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "100-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "100-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "100-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-01"
+      ],
+      "axes": [
+        "70-01"
+      ],
+      "appariables": [
+        "70-01"
+      ],
+      "appariement_maximal_brut": 1,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "sans_supervision": 31,
+        "positif": 1
+      },
+      "negatifs_dont_hors_sortie": 0,
+      "representants": [
+        "70-01"
+      ]
+    },
+    "70-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-01",
+        "70-02",
+        "70-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "70-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "70-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "67-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "67-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "14-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "14-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "44-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "44-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "44-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "44-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "44-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "44-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "44-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-00": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-01": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-01"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-02": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-02"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-03": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-03"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-04": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-04"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-05": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-05"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-06": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-06"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "39-07": {
+      "provenance": "Crigges",
+      "bloc": "Crigges / support commun",
+      "instances_annotees": [
+        "39-07"
+      ],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "7245527662": {
+      "provenance": "jrladia",
+      "bloc": "7245527662",
+      "instances_annotees": [
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:3",
+        "7245527662:4"
+      ],
+      "axes": [
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:3",
+        "7245527662:4"
+      ],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "zone_ignoree": 2,
+        "sans_supervision": 30
+      },
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "5115614018": {
+      "provenance": "Danielle Walquist Lynch",
+      "bloc": "5115614018",
+      "instances_annotees": [
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5"
+      ],
+      "axes": [
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5"
+      ],
+      "appariables": [
+        "5115614018:2",
+        "5115614018:3"
+      ],
+      "appariement_maximal_brut": 2,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "sans_supervision": 30,
+        "positif": 2
+      },
+      "negatifs_dont_hors_sortie": 0,
+      "representants": [
+        "5115614018:2",
+        "5115614018:3"
+      ]
+    },
+    "7092795309": {
+      "provenance": "Amirsp",
+      "bloc": "7092795309",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 0,
+      "avec_matrice": false,
+      "decisions": {},
+      "negatifs_dont_hors_sortie": 0,
+      "representants": []
+    },
+    "18105652008": {
+      "provenance": "zigazou76",
+      "bloc": "18105652008",
+      "instances_annotees": [
+        "18105652008:1",
+        "18105652008:2",
+        "18105652008:3",
+        "18105652008:4",
+        "18105652008:5"
+      ],
+      "axes": [
+        "18105652008:1",
+        "18105652008:2",
+        "18105652008:3",
+        "18105652008:4",
+        "18105652008:5"
+      ],
+      "appariables": [
+        "18105652008:1",
+        "18105652008:3",
+        "18105652008:5"
+      ],
+      "appariement_maximal_brut": 3,
+      "sorties": 23,
+      "avec_matrice": true,
+      "decisions": {
+        "lecture_inutilisable": 1,
+        "zone_ignoree": 12,
+        "positif": 1,
+        "sans_supervision": 9,
+        "negatif": 3
+      },
+      "negatifs_dont_hors_sortie": 2,
+      "representants": [
+        "18105652008:1"
+      ]
+    },
+    "24614689941": {
+      "provenance": "renatomitra",
+      "bloc": "24614689941",
+      "instances_annotees": [
+        "24614689941:1",
+        "24614689941:2",
+        "24614689941:3"
+      ],
+      "axes": [
+        "24614689941:1",
+        "24614689941:2",
+        "24614689941:3"
+      ],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "sans_supervision": 32,
+        "negatif": 3
+      },
+      "negatifs_dont_hors_sortie": 2,
+      "representants": []
+    },
+    "4169106197": {
+      "provenance": "cristina.sanvito",
+      "bloc": "4169106197",
+      "instances_annotees": [
+        "4169106197:1"
+      ],
+      "axes": [
+        "4169106197:1"
+      ],
+      "appariables": [
+        "4169106197:1"
+      ],
+      "appariement_maximal_brut": 1,
+      "sorties": 18,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 3,
+        "sans_supervision": 16,
+        "positif": 1,
+        "lecture_inutilisable": 2
+      },
+      "negatifs_dont_hors_sortie": 2,
+      "representants": [
+        "4169106197:1"
+      ]
+    },
+    "wc71488242": {
+      "provenance": "Bernard Gagnon",
+      "bloc": "wc71488242",
+      "instances_annotees": [
+        "wc71488242:1",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:4",
+        "wc71488242:5",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:11"
+      ],
+      "axes": [
+        "wc71488242:1",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:4",
+        "wc71488242:5",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:11"
+      ],
+      "appariables": [
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:4",
+        "wc71488242:5",
+        "wc71488242:7",
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:11"
+      ],
+      "appariement_maximal_brut": 7,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 4,
+        "sans_supervision": 23,
+        "positif": 6,
+        "zone_ignoree": 1,
+        "lecture_inutilisable": 1
+      },
+      "negatifs_dont_hors_sortie": 2,
+      "representants": [
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:3",
+        "wc71488242:7",
+        "wc71488242:2",
+        "wc71488242:11"
+      ]
+    },
+    "128831925": {
+      "provenance": "Evil Julia",
+      "bloc": "128831925",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 5,
+        "sans_supervision": 30
+      },
+      "negatifs_dont_hors_sortie": 3,
+      "representants": []
+    },
+    "4592998057": {
+      "provenance": "Vassilis Online",
+      "bloc": "4592998057",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 5,
+        "sans_supervision": 30
+      },
+      "negatifs_dont_hors_sortie": 3,
+      "representants": []
+    },
+    "wc130852209": {
+      "provenance": "China News Service",
+      "bloc": "wc130852209",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 5,
+        "sans_supervision": 30
+      },
+      "negatifs_dont_hors_sortie": 3,
+      "representants": []
+    },
+    "fl31990323": {
+      "provenance": "bluepelican",
+      "bloc": "fl31990323",
+      "instances_annotees": [
+        "fl31990323:1",
+        "fl31990323:2",
+        "fl31990323:3",
+        "fl31990323:4",
+        "fl31990323:5"
+      ],
+      "axes": [
+        "fl31990323:1",
+        "fl31990323:2",
+        "fl31990323:3",
+        "fl31990323:4",
+        "fl31990323:5"
+      ],
+      "appariables": [
+        "fl31990323:2"
+      ],
+      "appariement_maximal_brut": 1,
+      "sorties": 32,
+      "avec_matrice": true,
+      "decisions": {
+        "zone_ignoree": 17,
+        "sans_supervision": 15,
+        "lecture_inutilisable": 1,
+        "negatif": 2
+      },
+      "negatifs_dont_hors_sortie": 2,
+      "representants": []
+    },
+    "wc11001401": {
+      "provenance": "4028mdk09",
+      "bloc": "wc11001401",
+      "instances_annotees": [
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5"
+      ],
+      "axes": [
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5"
+      ],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 15,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 5,
+        "sans_supervision": 13
+      },
+      "negatifs_dont_hors_sortie": 3,
+      "representants": []
+    },
+    "wc156353437": {
+      "provenance": "Alan Hughes",
+      "bloc": "wc156353437",
+      "instances_annotees": [],
+      "axes": [],
+      "appariables": [],
+      "appariement_maximal_brut": 0,
+      "sorties": 23,
+      "avec_matrice": true,
+      "decisions": {
+        "negatif": 5,
+        "sans_supervision": 20
+      },
+      "negatifs_dont_hors_sortie": 2,
+      "representants": []
+    }
+  },
+  "par_bloc": {
+    "Crigges / support commun": {
+      "negatif": 5,
+      "positif": 2
+    },
+    "5115614018": {
+      "positif": 2
+    },
+    "18105652008": {
+      "positif": 1,
+      "negatif": 3
+    },
+    "24614689941": {
+      "negatif": 3
+    },
+    "4169106197": {
+      "negatif": 3,
+      "positif": 1
+    },
+    "wc71488242": {
+      "negatif": 4,
+      "positif": 6
+    },
+    "128831925": {
+      "negatif": 5
+    },
+    "4592998057": {
+      "negatif": 5
+    },
+    "wc130852209": {
+      "negatif": 5
+    },
+    "fl31990323": {
+      "negatif": 2
+    },
+    "wc11001401": {
+      "negatif": 5
+    },
+    "wc156353437": {
+      "negatif": 5
+    }
+  }
+}

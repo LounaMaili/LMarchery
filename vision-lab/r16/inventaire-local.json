@@ -1,0 +1,136 @@
+{
+  "capsule_cartes": {
+    "nom": "cartes-developpement.zip",
+    "role": "66 paires de cartes avec index interne",
+    "octets": 407191385,
+    "sha256": "9c0c3b5c742c79113f544973bde4347ee9424cc24b1c1ba235fefcd525b4d202",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/artifacts/r16/cartes-developpement.zip"
+  },
+  "index_cartes": {
+    "nom": "inventaire-cartes.json",
+    "role": "Entrées NPZ individuelles et empreintes des canaux",
+    "octets": 34356,
+    "sha256": "91ea486fbfa0f50c52a310afc7435aedac180461bd7bd86fcd4008e0607a337e",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/r16/inventaire-cartes.json"
+  },
+  "poids_figes": [
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9301",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+    },
+    {
+      "nom": "ordinary-9302.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9302",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9302.pt",
+      "octets": 865807,
+      "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+    },
+    {
+      "nom": "ordinary-9303.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9303",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9303.pt",
+      "octets": 865807,
+      "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+    },
+    {
+      "nom": "targeted-9301.pt",
+      "role": "Checkpoint final R9 figé, targeted-9301",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9301.pt",
+      "octets": 865807,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+    },
+    {
+      "nom": "targeted-9302.pt",
+      "role": "Checkpoint final R9 figé, targeted-9302",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9302.pt",
+      "octets": 865807,
+      "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+    },
+    {
+      "nom": "targeted-9303.pt",
+      "role": "Checkpoint final R9 figé, targeted-9303",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9303.pt",
+      "octets": 865807,
+      "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+    }
+  ],
+  "capsules_corpus_R15": [
+    {
+      "nom": "r15-acquisitions.zip",
+      "role": "Dix images admises, film source et calque Roboflow",
+      "octets": 28170281,
+      "sha256": "b581ce460171dbda67033f0abe5cd02fe3ca2efc82af9fae1a1c5d54b31f9d9f",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/artifacts/r15/r15-acquisitions.zip",
+      "membres": 12
+    },
+    {
+      "nom": "r15-audit-web.zip",
+      "role": "Autres médias examinés, notices publiques, planches et relevés de lecture",
+      "octets": 236468839,
+      "sha256": "cf0a7141095936d0f01c91dbcc69c20f9b02e44b0387cf5453775d2b5468242a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/artifacts/r15/r15-audit-web.zip",
+      "membres": 241
+    }
+  ],
+  "capsule_corpus_R14": {
+    "nom": "r14-documentation.zip",
+    "role": "Collecte R14 et supports de lecture assistée locaux",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/artifacts/r14-documentation.zip",
+    "octets": 8014031,
+    "sha256": "b6d3c6d8418bee1c7613ece64ebe233fbc8cef8eb26adbd86a3e861c1d338900"
+  },
+  "index_pixels_R14": {
+    "nom": "inventaire-pixels.json",
+    "role": "185 acquisitions documentées",
+    "octets": 52171,
+    "sha256": "62430662bb50c5c82794ffc29a8cd4be0e6442ac2a8161504d61e4b528239318",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/r14/inventaire-pixels.json"
+  },
+  "index_pixels_R15": {
+    "nom": "inventaire-local.json",
+    "role": "10 nouvelles acquisitions, sources et poids",
+    "octets": 6744,
+    "sha256": "47162baf34034a121aee87002caa3349e3b2c171943cb8b5586491aa49c6ad24",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/r15/inventaire-local.json"
+  },
+  "roues_fit": [
+    {
+      "nom": "joblib-1.5.2-py3-none-any.whl",
+      "role": "Roue du runtime CPU pour l’ajustement unique",
+      "octets": 308396,
+      "sha256": "4e1f0bdbb987e6d843c70cf43714cb276623def372df3c22fe5266b2670bc241",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/artifacts/r16/roues/joblib-1.5.2-py3-none-any.whl"
+    },
+    {
+      "nom": "numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "role": "Roue du runtime CPU pour l’ajustement unique",
+      "octets": 16527618,
+      "sha256": "fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/artifacts/r16/roues/numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    {
+      "nom": "scikit_learn-1.7.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "role": "Roue du runtime CPU pour l’ajustement unique",
+      "octets": 9478381,
+      "sha256": "e5bf3d930aee75a65478df91ac1225ff89cd28e9ac7bd1196853a9229b6adb0b",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/artifacts/r16/roues/scikit_learn-1.7.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    },
+    {
+      "nom": "scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "role": "Roue du runtime CPU pour l’ajustement unique",
+      "octets": 37309455,
+      "sha256": "271e3713e645149ea5ea3e97b57fdab61ce61333f97cfae392c28ba786f9bb49",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/artifacts/r16/roues/scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+    },
+    {
+      "nom": "threadpoolctl-3.6.0-py3-none-any.whl",
+      "role": "Roue du runtime CPU pour l’ajustement unique",
+      "octets": 18638,
+      "sha256": "43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r16/vision-lab/artifacts/r16/roues/threadpoolctl-3.6.0-py3-none-any.whl"
+    }
+  ]
+}
