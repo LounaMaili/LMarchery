@@ -1,0 +1,2121 @@
+{
+  "base": "8ec45fbf88c30fbbdcc09c9eee769aa1f1abe5ea",
+  "checkpoint": "ordinary-9301",
+  "sources_sha256": {
+    "r14/partitions.json": "9adbc119ba9d74ea185b5c9af7056424cb526f4178c9c732e3024b73b734a118",
+    "r15/lectures.json": "952bc9bbfafe80106d6918149472aa6d97cd5dc966043b945ddc0e01ca7a3632",
+    "r15/partitions.json": "ef63d69ead8cd4a3798e3af9f4698a8c6b0bb3c5b7ea224149b53fd02814d884",
+    "r15/manifeste-scelle.json": "c29b0106f869b2c95b1979f0c3330f421560ec8cfed4688b070d1224c4daa5d1",
+    "r16/exemples-fit.json": "0446d4c5d01a8ef1184e8dfe8f84dd10a8c5b1d4453d8624bc2b2135aa92cfde",
+    "r16/candidats-fit.json": "3f3d888fbe84eeb4c78d445bf634856b3cc26a0baf1edb1abc0f79b1214cad00",
+    "r16/effectifs-fit.json": "07c94d17137f9f52aedc371cda40b6197ea90b1677bfb48bce670e7b66e9a35b",
+    "r16/mesures/ordinary-9301.json": "128e57106b0772150544e0e43f7473effec8a481c558a854400a3fef592e5691",
+    "r16/predictions/ordinary-9301.json": "17dab99f1587f2b30be94861894ed366c6b0a1dbec4df7c075c77b73ca1034a9",
+    "r15/caracteristiques/ordinary-9301.csv": "1b0e60006df86cfc4f12acf55bc8ad3acb3c2ad3e1c2a3595ff33f8261935e93"
+  },
+  "entrees_initiales": 28,
+  "par_ensemble": {
+    "positif_fit": 12,
+    "exclu_ignore": 4,
+    "dev_strict": 12
+  },
+  "geometries": 28,
+  "liens_cas_instance": 29,
+  "instances_distinctes": 27,
+  "acquisitions": 12,
+  "provenances": 11,
+  "par_instance": {
+    "13-01": [
+      "R17-01"
+    ],
+    "18105652008:1": [
+      "R17-05"
+    ],
+    "18105652008:3": [
+      "R17-13"
+    ],
+    "18105652008:5": [
+      "R17-14"
+    ],
+    "36725328420:1": [
+      "R17-20"
+    ],
+    "36725328420:2": [
+      "R17-19"
+    ],
+    "36725328420:3": [
+      "R17-23"
+    ],
+    "36725328420:4": [
+      "R17-22",
+      "R17-24"
+    ],
+    "36725328420:5": [
+      "R17-25"
+    ],
+    "36725328420:6": [
+      "R17-21"
+    ],
+    "37348131162:1": [
+      "R17-18"
+    ],
+    "4169106197:1": [
+      "R17-06"
+    ],
+    "5115614018:2": [
+      "R17-03"
+    ],
+    "5115614018:3": [
+      "R17-04"
+    ],
+    "70-01": [
+      "R17-02"
+    ],
+    "9436017284:1": [
+      "R17-17"
+    ],
+    "fl31990323:2": [
+      "R17-16"
+    ],
+    "rf-key-0ijARYt7fTFFlaDVSrdA:5": [
+      "R17-26",
+      "R17-27"
+    ],
+    "wc71488242:10": [
+      "R17-08"
+    ],
+    "wc71488242:11": [
+      "R17-12"
+    ],
+    "wc71488242:2": [
+      "R17-11"
+    ],
+    "wc71488242:3": [
+      "R17-09"
+    ],
+    "wc71488242:4": [
+      "R17-15"
+    ],
+    "wc71488242:5": [
+      "R17-15"
+    ],
+    "wc71488242:7": [
+      "R17-10"
+    ],
+    "wc71488242:9": [
+      "R17-07"
+    ],
+    "wc82322984-t22:1": [
+      "R17-28"
+    ]
+  },
+  "cas": [
+    {
+      "cas": "R17-01",
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "crigges-4"
+      ],
+      "sha256_pixels": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "taille_travail": [
+        1056,
+        1408
+      ],
+      "geometrie_sha256": "e2fe39b36a459345664fe42ddc6570e28f7315564793dd1c6df7281f2c5aa98c",
+      "echelle_704": [
+        0.5,
+        0.5
+      ],
+      "segment_704": [
+        [
+          166.332451125,
+          337.808128788
+        ],
+        [
+          228.793754836,
+          374.124687626
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "13-01",
+          "axe": [
+            [
+              284,
+              648
+            ],
+            [
+              529,
+              791
+            ]
+          ],
+          "entree": [
+            533.3666666666667,
+            792.4895582329317
+          ],
+          "contact_visible": true,
+          "statut_initial": "source_and_assisted_visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-01",
+          "ensemble": "positif_fit",
+          "rang_sortie": 2,
+          "rang_longueur": 21,
+          "instances": [
+            "13-01"
+          ],
+          "poids_train_R16": 1.1875
+        }
+      ]
+    },
+    {
+      "cas": "R17-02",
+      "photo": "70-01",
+      "provenance": "Crigges",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "crigges-4"
+      ],
+      "sha256_pixels": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "taille_travail": [
+        1056,
+        1408
+      ],
+      "geometrie_sha256": "8bfdebcdfdfc4b9c2016641f9d4fe1ebf0a944f19144e391dd522419075c1203",
+      "echelle_704": [
+        0.5,
+        0.5
+      ],
+      "segment_704": [
+        [
+          141.131726102,
+          371.301315667
+        ],
+        [
+          214.732674985,
+          399.700078018
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "70-01",
+          "axe": [
+            [
+              230,
+              722
+            ],
+            [
+              514,
+              829
+            ]
+          ],
+          "entree": [
+            496.04348597182496,
+            824.7627334700898
+          ],
+          "contact_visible": true,
+          "statut_initial": "source_and_assisted_visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-02",
+          "ensemble": "positif_fit",
+          "rang_sortie": 0,
+          "rang_longueur": 25,
+          "instances": [
+            "70-01"
+          ],
+          "poids_train_R16": 1.1875
+        }
+      ]
+    },
+    {
+      "cas": "R17-03",
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "lynch"
+      ],
+      "sha256_pixels": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "taille_travail": [
+        1024,
+        683
+      ],
+      "geometrie_sha256": "b0e1da8f44d1f55262206910207562e769701c2481e829cb2dd04f5e22a40f42",
+      "echelle_704": [
+        0.6875,
+        0.6881405563689604
+      ],
+      "segment_704": [
+        [
+          232.974076546,
+          266.465247844
+        ],
+        [
+          309.275147713,
+          259.526984905
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "5115614018:2",
+          "axe": [
+            [
+              243.34,
+              391.5215355805243
+            ],
+            [
+              441.74,
+              377.4522471910112
+            ]
+          ],
+          "entree": [
+            468.62,
+            376.17322097378275
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-03",
+          "ensemble": "positif_fit",
+          "rang_sortie": 1,
+          "rang_longueur": 9,
+          "instances": [
+            "5115614018:2"
+          ],
+          "poids_train_R16": 2.375
+        }
+      ]
+    },
+    {
+      "cas": "R17-04",
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "lynch"
+      ],
+      "sha256_pixels": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "taille_travail": [
+        1024,
+        683
+      ],
+      "geometrie_sha256": "88df1de73d5792331d623200e872a445011804e2e26d003c0df9b030384181d5",
+      "echelle_704": [
+        0.6875,
+        0.6881405563689604
+      ],
+      "segment_704": [
+        [
+          238.195458403,
+          270.438513942
+        ],
+        [
+          289.366485596,
+          273.278442383
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "5115614018:3",
+          "axe": [
+            [
+              275.34000000000003,
+              395.35861423220973
+            ],
+            [
+              417.42,
+              395.35861423220973
+            ]
+          ],
+          "entree": [
+            426.38,
+            395.35861423220973
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-04",
+          "ensemble": "positif_fit",
+          "rang_sortie": 5,
+          "rang_longueur": 31,
+          "instances": [
+            "5115614018:3"
+          ],
+          "poids_train_R16": 2.375
+        }
+      ]
+    },
+    {
+      "cas": "R17-05",
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "sha256_pixels": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "taille_travail": [
+        1024,
+        683
+      ],
+      "geometrie_sha256": "6642cf0051b0fa0c8cf5412229f2ab26c6131aba0caa6e358271231858caa2a3",
+      "echelle_704": [
+        0.6875,
+        0.6881405563689604
+      ],
+      "segment_704": [
+        [
+          194.301544189,
+          205.880187988
+        ],
+        [
+          249.353439331,
+          208.566772461
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            526.86,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            522.3533190578158
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "18105652008:1",
+          "axe": [
+            [
+              303.04285714285714,
+              300.0492505353319
+            ],
+            [
+              379.1114285714286,
+              300.0492505353319
+            ]
+          ],
+          "entree": [
+            292.80285714285714,
+            300.0492505353319
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-05",
+          "ensemble": "positif_fit",
+          "rang_sortie": 9,
+          "rang_longueur": 3,
+          "instances": [
+            "18105652008:1"
+          ],
+          "poids_train_R16": 2.375
+        }
+      ]
+    },
+    {
+      "cas": "R17-06",
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "4169106197-1"
+      ],
+      "sha256_pixels": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "taille_travail": [
+        640,
+        480
+      ],
+      "geometrie_sha256": "29114404ebf36612c6feb047a4cbc06aa01106e1362b5ede49e266cbfccabb70",
+      "echelle_704": [
+        1.0,
+        1.0
+      ],
+      "segment_704": [
+        [
+          230.409003969,
+          168.495546978
+        ],
+        [
+          317.855018373,
+          180.150698345
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "4169106197:1",
+          "axe": [
+            [
+              220.0,
+              168.0
+            ],
+            [
+              333.0,
+              181.0
+            ]
+          ],
+          "entree": [
+            341.0,
+            182.0
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-06",
+          "ensemble": "positif_fit",
+          "rang_sortie": 1,
+          "rang_longueur": 4,
+          "instances": [
+            "4169106197:1"
+          ],
+          "poids_train_R16": 2.375
+        }
+      ]
+    },
+    {
+      "cas": "R17-07",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "0b0afffcbda2cacf08d0696b96a42532ccc8914824323e78b935c5f125866ce4",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          104.026603699,
+          351.662780762
+        ],
+        [
+          258.043121338,
+          403.368896484
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:9",
+          "axe": [
+            [
+              166.81428571428572,
+              636.7571428571429
+            ],
+            [
+              452.07142857142856,
+              730.0142857142857
+            ]
+          ],
+          "entree": [
+            470.35714285714283,
+            737.3285714285714
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-07",
+          "ensemble": "positif_fit",
+          "rang_sortie": 2,
+          "rang_longueur": 2,
+          "instances": [
+            "wc71488242:9"
+          ],
+          "poids_train_R16": 0.3958333333333333
+        }
+      ]
+    },
+    {
+      "cas": "R17-08",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "77735becbed9ec50d3d3e391841a0c00357a875c63fe7af7b9b160100fba3770",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          126.128636821,
+          442.422844493
+        ],
+        [
+          245.380048259,
+          471.625298106
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:10",
+          "axe": [
+            [
+              228.98571428571427,
+              806.8142857142857
+            ],
+            [
+              433.7857142857143,
+              854.3571428571428
+            ]
+          ],
+          "entree": [
+            450.24285714285713,
+            858.0142857142857
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-08",
+          "ensemble": "positif_fit",
+          "rang_sortie": 3,
+          "rang_longueur": 5,
+          "instances": [
+            "wc71488242:10"
+          ],
+          "poids_train_R16": 0.3958333333333333
+        }
+      ]
+    },
+    {
+      "cas": "R17-09",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "c1427505be7e92b0e7ca1254f195599c6d20556d937cd2802f5497ecffec3adf",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          162.054813723,
+          278.53031102
+        ],
+        [
+          279.547397952,
+          288.616614731
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:3",
+          "axe": [
+            [
+              210.7,
+              499.6142857142857
+            ],
+            [
+              501.4428571428571,
+              525.2142857142857
+            ]
+          ],
+          "entree": [
+            516.0714285714286,
+            528.8714285714285
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-09",
+          "ensemble": "positif_fit",
+          "rang_sortie": 4,
+          "rang_longueur": 6,
+          "instances": [
+            "wc71488242:3"
+          ],
+          "poids_train_R16": 0.3958333333333333
+        }
+      ]
+    },
+    {
+      "cas": "R17-10",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "a599f860628c0efc45504fe29cddd523a5bcc2c1918b6f5b902c25ff2a537ee5",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          136.314003537,
+          329.980755675
+        ],
+        [
+          243.814888547,
+          362.477856505
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:7",
+          "axe": [
+            [
+              154.0142857142857,
+              581.9
+            ],
+            [
+              433.7857142857143,
+              655.0428571428571
+            ]
+          ],
+          "entree": [
+            444.75714285714287,
+            660.5285714285714
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-10",
+          "ensemble": "positif_fit",
+          "rang_sortie": 1,
+          "rang_longueur": 8,
+          "instances": [
+            "wc71488242:7"
+          ],
+          "poids_train_R16": 0.3958333333333333
+        }
+      ]
+    },
+    {
+      "cas": "R17-11",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "104e18d2f00dae0aee174584e60be3a7dc6e618561c624628387a798d98579ed",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          202.061502719,
+          273.085001491
+        ],
+        [
+          298.279589058,
+          286.99554828
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:2",
+          "axe": [
+            [
+              263.7285714285714,
+              479.5
+            ],
+            [
+              528.8714285714285,
+              517.9
+            ]
+          ],
+          "entree": [
+            545.3285714285714,
+            523.3857142857142
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-11",
+          "ensemble": "positif_fit",
+          "rang_sortie": 9,
+          "rang_longueur": 10,
+          "instances": [
+            "wc71488242:2"
+          ],
+          "poids_train_R16": 0.3958333333333333
+        }
+      ]
+    },
+    {
+      "cas": "R17-12",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "17058ecd0bd6ec8916169a2c5778d7bc487c33611df092644381955f12fc79dd",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          199.237625122,
+          552.673400879
+        ],
+        [
+          292.002258301,
+          568.635375977
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:11",
+          "axe": [
+            [
+              245.44285714285712,
+              986.0142857142857
+            ],
+            [
+              528.8714285714285,
+              1031.7285714285713
+            ]
+          ],
+          "entree": [
+            545.3285714285714,
+            1035.3857142857144
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-12",
+          "ensemble": "positif_fit",
+          "rang_sortie": 5,
+          "rang_longueur": 11,
+          "instances": [
+            "wc71488242:11"
+          ],
+          "poids_train_R16": 0.3958333333333333
+        }
+      ]
+    },
+    {
+      "cas": "R17-13",
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "sha256_pixels": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "taille_travail": [
+        1024,
+        683
+      ],
+      "geometrie_sha256": "b5b623c57e3b5b799010a12883fcda7e6587735cba6ac12ca28350adbafc349d",
+      "echelle_704": [
+        0.6875,
+        0.6881405563689604
+      ],
+      "segment_704": [
+        [
+          454.37387085,
+          283.036254883
+        ],
+        [
+          506.897277832,
+          282.363647461
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            526.86,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            522.3533190578158
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "18105652008:3",
+          "axe": [
+            [
+              680.46,
+              406.813704496788
+            ],
+            [
+              757.9914285714285,
+              405.3511777301927
+            ]
+          ],
+          "entree": [
+            661.4428571428572,
+            408.2762312633833
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-13",
+          "ensemble": "exclu_ignore",
+          "rang_sortie": 10,
+          "rang_longueur": 5,
+          "instances": [
+            "18105652008:3"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-14",
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "sha256_pixels": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "taille_travail": [
+        1024,
+        683
+      ],
+      "geometrie_sha256": "91ad503aae384f23e7ece257138e49b70bc4927c792c384c73e1fb9487973dff",
+      "echelle_704": [
+        0.6875,
+        0.6881405563689604
+      ],
+      "segment_704": [
+        [
+          509.327617661,
+          303.361596018
+        ],
+        [
+          550.60850145,
+          304.076439768
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            526.86,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            522.3533190578158
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "18105652008:5",
+          "axe": [
+            [
+              692.1628571428571,
+              441.9143468950749
+            ],
+            [
+              804.8028571428572,
+              443.37687366167023
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "inconnu_ou_occulte"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-14",
+          "ensemble": "exclu_ignore",
+          "rang_sortie": 6,
+          "rang_longueur": 15,
+          "instances": [
+            "18105652008:5"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-15",
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "sha256_pixels": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_travail": [
+        1280,
+        1280
+      ],
+      "geometrie_sha256": "1e57a9afa19809ff20696366b6edf4dd1890e4e3ff0694d34e3aa66f2f71cc2a",
+      "echelle_704": [
+        0.55,
+        0.55
+      ],
+      "segment_704": [
+        [
+          194.327941895,
+          295.745178223
+        ],
+        [
+          289.853210449,
+          333.153900146
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "wc71488242:4",
+          "axe": [
+            [
+              261.9,
+              506.9285714285714
+            ],
+            [
+              510.5857142857143,
+              607.5
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "inconnu_ou_occulte"
+        },
+        {
+          "instance": "wc71488242:5",
+          "axe": [
+            [
+              234.47142857142856,
+              495.95714285714286
+            ],
+            [
+              499.6142857142857,
+              596.5285714285714
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "inconnu_ou_occulte"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-15",
+          "ensemble": "exclu_ignore",
+          "rang_sortie": 14,
+          "rang_longueur": 9,
+          "instances": [
+            "wc71488242:4",
+            "wc71488242:5"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-16",
+      "photo": "fl31990323",
+      "provenance": "bluepelican",
+      "partition_R15": "train",
+      "affectation_R17": "train",
+      "supports": [
+        "Ahane–Murroe / bloc à face tressée"
+      ],
+      "sha256_pixels": "c9efe6f8a73716ae5db8356d35e0e7d4bf3b5ca4d6945b634086ee45516913c8",
+      "taille_travail": [
+        640,
+        480
+      ],
+      "geometrie_sha256": "fc03bcc150372109b03d103d580f4e82a863f7a69842db852d5bcb501e8d096a",
+      "echelle_704": [
+        1.0,
+        1.0
+      ],
+      "segment_704": [
+        [
+          310.242523193,
+          270.539794922
+        ],
+        [
+          438.300872803,
+          312.589416504
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            300,
+            258
+          ],
+          [
+            438,
+            351
+          ]
+        ],
+        [
+          [
+            0,
+            85
+          ],
+          [
+            223,
+            183
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "fl31990323:2",
+          "axe": [
+            [
+              467,
+              320
+            ],
+            [
+              295,
+              264
+            ]
+          ],
+          "entree": [
+            467,
+            320
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-16",
+          "ensemble": "exclu_ignore",
+          "rang_sortie": 8,
+          "rang_longueur": 2,
+          "instances": [
+            "fl31990323:2"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-17",
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "9436017284-1"
+      ],
+      "sha256_pixels": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+      "taille_travail": [
+        768,
+        1024
+      ],
+      "geometrie_sha256": "0487787d490d354f181871eb0ee06fab74e974e018aea790a147f25c20fb8f7a",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          256.7909340548948,
+          103.66758397878066
+        ],
+        [
+          496.8197041311853,
+          3.487466815634434
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            231.36285714285714,
+            561.9685714285714
+          ],
+          [
+            276.7114285714286,
+            630.7228571428572
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "9436017284:1",
+          "axe": [
+            [
+              722.8828571428571,
+              7.545714285714286
+            ],
+            [
+              304.5057142857143,
+              187.47714285714287
+            ]
+          ],
+          "entree": [
+            289.87714285714287,
+            193.32857142857142
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-17",
+          "ensemble": "dev_strict",
+          "rang_sortie": 1,
+          "rang_longueur": 0,
+          "instances": [
+            "9436017284:1"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-18",
+      "photo": "37348131162",
+      "provenance": "Special Olympics Oesterreich",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "37348131162-1"
+      ],
+      "sha256_pixels": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+      "taille_travail": [
+        1024,
+        680
+      ],
+      "geometrie_sha256": "c21a942d36ebcb015f8bb7ad172f131b552d87ee7f52f711649ec8ed6fde0ae7",
+      "echelle_704": [
+        0.6875,
+        0.6882352941176471
+      ],
+      "segment_704": [
+        [
+          203.26334635971722,
+          196.27650899557284
+        ],
+        [
+          328.3288981175297,
+          187.17766256002596
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "37348131162:1",
+          "axe": [
+            [
+              297.19142857142856,
+              283.9301075268817
+            ],
+            [
+              469.80857142857144,
+              273.69354838709677
+            ]
+          ],
+          "entree": [
+            477.12285714285713,
+            272.23118279569894
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-18",
+          "ensemble": "dev_strict",
+          "rang_sortie": 0,
+          "rang_longueur": 6,
+          "instances": [
+            "37348131162:1"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-19",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "a2a1a0f601fda78357e434a3106867122ae59d68ef7d30c816487723ffba4657",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          333.3496010898116,
+          237.28924438996376
+        ],
+        [
+          451.9730141757491,
+          228.14686462922157
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:2",
+          "axe": [
+            [
+              327,
+              353
+            ],
+            [
+              641,
+              335
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "ambiguous"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-19",
+          "ensemble": "dev_strict",
+          "rang_sortie": 0,
+          "rang_longueur": 11,
+          "instances": [
+            "36725328420:2"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-20",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "3819d39b7a2072472e3dfa8b37b235bfbc84929487f5fb7ff18a7923ccd8d1a3",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          326.88952811483506,
+          220.8417907610107
+        ],
+        [
+          440.65219290975693,
+          222.4400268449951
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:1",
+          "axe": [
+            [
+              364,
+              320
+            ],
+            [
+              674,
+              327
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "ambiguous"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-20",
+          "ensemble": "dev_strict",
+          "rang_sortie": 1,
+          "rang_longueur": 12,
+          "instances": [
+            "36725328420:1"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-21",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "6f28cc98eb6a60235d88d1e6df6267f8714ddd481a9f0c455cf5263cb14664e0",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          315.5961108384958,
+          341.24439479285354
+        ],
+        [
+          410.6542746589553,
+          340.470070531161
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:6",
+          "axe": [
+            [
+              392,
+              498
+            ],
+            [
+              604,
+              495
+            ]
+          ],
+          "entree": [
+            617,
+            495
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-21",
+          "ensemble": "dev_strict",
+          "rang_sortie": 2,
+          "rang_longueur": 19,
+          "instances": [
+            "36725328420:6"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-22",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "771ad6120c924a36fe26cb757b2a4117229057a4371573fa7c47c6c1bb4a9282",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          299.30206844882946,
+          271.55518813609825
+        ],
+        [
+          388.1631044265799,
+          272.93983441038677
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:4",
+          "axe": [
+            [
+              315,
+              391
+            ],
+            [
+              548,
+              397
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "occluded"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-22",
+          "ensemble": "dev_strict",
+          "rang_sortie": 6,
+          "rang_longueur": 23,
+          "instances": [
+            "36725328420:4"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-23",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "7f6589e770e18a10dd5ae469bf6b1b2a1ae41f22c0b3403e3f5b05186c445e91",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          298.0927734375,
+          252.6178436279297
+        ],
+        [
+          394.3984375,
+          254.1746063232422
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:3",
+          "axe": [
+            [
+              330,
+              361
+            ],
+            [
+              581,
+              362
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "occluded"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-23",
+          "ensemble": "dev_strict",
+          "rang_sortie": 8,
+          "rang_longueur": 18,
+          "instances": [
+            "36725328420:3"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-24",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "501f1dbcccdc78490fd70f3593f606b9860c0cd55d4f27a4ef97fcbabaad5823",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          220.61439514160156,
+          275.03594970703125
+        ],
+        [
+          324.3766971981712,
+          274.43778477619605
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:4",
+          "axe": [
+            [
+              315,
+              391
+            ],
+            [
+              548,
+              397
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "occluded"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-24",
+          "ensemble": "dev_strict",
+          "rang_sortie": 16,
+          "rang_longueur": 15,
+          "instances": [
+            "36725328420:4"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-25",
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "sha256_pixels": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_travail": [
+        1024,
+        768
+      ],
+      "geometrie_sha256": "94311859986ed4acdd72f69e329128cd8173e333a844071e061811bd329fde01",
+      "echelle_704": [
+        0.6875,
+        0.6875
+      ],
+      "segment_704": [
+        [
+          115.62725830078125,
+          276.97113037109375
+        ],
+        [
+          158.13314819335938,
+          275.97149658203125
+        ]
+      ],
+      "regions_ignorees": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "references": [
+        {
+          "instance": "36725328420:5",
+          "axe": [
+            [
+              115,
+              399
+            ],
+            [
+              253,
+              409
+            ]
+          ],
+          "entree": null,
+          "contact_visible": false,
+          "statut_initial": "ambiguous"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-25",
+          "ensemble": "dev_strict",
+          "rang_sortie": 22,
+          "rang_longueur": 110,
+          "instances": [
+            "36725328420:5"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-26",
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "papier concentrique sur chevalet bois / série Samsung"
+      ],
+      "sha256_pixels": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "taille_travail": [
+        1056,
+        1408
+      ],
+      "geometrie_sha256": "fdb1c66a3310789c503faf8b0d2053dde362ed1c7cac47c36216430b7ddd2391",
+      "echelle_704": [
+        0.5,
+        0.5
+      ],
+      "segment_704": [
+        [
+          370.0978088378906,
+          340.58807373046875
+        ],
+        [
+          375.50994873046875,
+          263.2919921875
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+          "axe": [
+            [
+              755,
+              531
+            ],
+            [
+              749,
+              602
+            ]
+          ],
+          "entree": [
+            755,
+            531
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-26",
+          "ensemble": "dev_strict",
+          "rang_sortie": 21,
+          "rang_longueur": 16,
+          "instances": [
+            "rf-key-0ijARYt7fTFFlaDVSrdA:5"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-27",
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "papier concentrique sur chevalet bois / série Samsung"
+      ],
+      "sha256_pixels": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "taille_travail": [
+        1056,
+        1408
+      ],
+      "geometrie_sha256": "8a9cb7889bb4a0ad0ed4b9160772ed962b0c03efca2eea537df704fbc0bf25c2",
+      "echelle_704": [
+        0.5,
+        0.5
+      ],
+      "segment_704": [
+        [
+          376.18218994140625,
+          301.9211730957031
+        ],
+        [
+          379.61895751953125,
+          260.4380798339844
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+          "axe": [
+            [
+              755,
+              531
+            ],
+            [
+              749,
+              602
+            ]
+          ],
+          "entree": [
+            755,
+            531
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-27",
+          "ensemble": "dev_strict",
+          "rang_sortie": 27,
+          "rang_longueur": 114,
+          "instances": [
+            "rf-key-0ijARYt7fTFFlaDVSrdA:5"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    },
+    {
+      "cas": "R17-28",
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "partition_R15": "dev_indep",
+      "affectation_R17": "dev_explore_R16",
+      "supports": [
+        "Moscou 2019 / deux faces compound"
+      ],
+      "sha256_pixels": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "taille_travail": [
+        1408,
+        792
+      ],
+      "geometrie_sha256": "6f8b3af6c1cf7f3665d360f691bfd2715d3544b320cd4f22f32b8f24a969fa27",
+      "echelle_704": [
+        0.5,
+        0.5
+      ],
+      "segment_704": [
+        [
+          173.14898188114665,
+          151.9842965731117
+        ],
+        [
+          318.13746149540447,
+          155.03194977135388
+        ]
+      ],
+      "regions_ignorees": [],
+      "references": [
+        {
+          "instance": "wc82322984-t22:1",
+          "axe": [
+            [
+              638,
+              311
+            ],
+            [
+              43,
+              299
+            ]
+          ],
+          "entree": [
+            638,
+            311
+          ],
+          "contact_visible": true,
+          "statut_initial": "visible"
+        }
+      ],
+      "filiation": [
+        {
+          "cas_initial": "R17-28",
+          "ensemble": "dev_strict",
+          "rang_sortie": 2,
+          "rang_longueur": 13,
+          "instances": [
+            "wc82322984-t22:1"
+          ],
+          "poids_train_R16": null
+        }
+      ]
+    }
+  ]
+}
