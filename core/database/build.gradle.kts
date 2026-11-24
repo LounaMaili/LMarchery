@@ -43,6 +43,7 @@ kotlin {
                 "feature/sessions/ConfiguredSessionPresentation.kt",
                 "feature/equipment/EquipmentController.kt", "feature/equipment/EquipmentDraft.kt",
                 "feature/export/ExportCoordinator.kt", "feature/archiveimport/ImportCoordinator.kt",
+                "feature/weather/WeatherJournal.kt",
             )
             applicationSources.forEach { relative ->
                 val path = "com/lmarchery/$relative"

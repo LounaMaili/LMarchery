@@ -235,6 +235,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                     }
                     SessionScreen.SESSION -> {
                         state.configuredSaved?.let { configured ->
+                            item(key = "weather") { com.lmarchery.feature.weather.WeatherSection(configured.uuid, configured.ends.map { it.uuid to it.end.index }, false) }
                             item(key = "configured-summary") { ConfiguredSessionSummary(configured) }
                             item(key = "configured-back") { TextButton(onClick = back, enabled = state.canNavigate) { Text("Retour aux séances") } }
                             if (configured.ends.isEmpty()) item(key = "configured-empty") { Text("Aucune volée enregistrée ; configuration initiale conservée.") }
@@ -338,6 +339,7 @@ fun LMarcheryApp(controller: SessionController, exportCoordinator: ExportCoordin
                                 EndScoreCard(presentEndScore(end), end.uuid == state.displayedEnd?.uuid, state.canNavigate) { showEnd(end.uuid) }
                             }
                             item(key = "score-details") { SessionScorePanel(session) }
+                            item(key = "weather") { com.lmarchery.feature.weather.WeatherSection(session.uuid, session.ends.map { it.uuid to it.index }, session.status == SessionStatus.IN_PROGRESS && state.canNavigate) }
                             item(key = "session-details") {
                                 Text("${session.targetType.name} · ${session.distanceM} m")
                                 Text(session.civilDateLabel(), style = MaterialTheme.typography.bodySmall)

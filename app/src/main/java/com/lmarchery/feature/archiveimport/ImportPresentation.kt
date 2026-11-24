@@ -35,7 +35,8 @@ internal fun v4SuccessText(state: ImportState.SucceededV4): String =
     (if (state.emptyArchive) "Archive V${state.version} vide vérifiée ; aucune écriture ni suppression."
     else if (state.alreadyPresent) "V${state.version} déjà présente à l’identique, aucune écriture : ${state.identical.text()}."
     else "Restauration V${state.version} confirmée. Ajoutés : ${state.added.text()}. Identiques : ${state.identical.text()}.") +
-        (if (state.version == 5) " Enregistrements de lieu ajoutés : ${state.newPlaceRecords}." else "") +
+        (if (state.version >= 5) " Enregistrements de lieu ajoutés : ${state.newPlaceRecords}." else "") +
+        (if (state.version == 6) " Relevés météo ajoutés : ${state.newObservations ?: 0}." else "") +
         if (state.refreshFailed) " Actualisation impossible : utilisez Actualiser la liste." else ""
 
 internal fun v4PlanLines(plan: com.lmarchery.core.scoring.archive.v4.ArchiveV4ImportPlan) = v3PlanLines(plan)

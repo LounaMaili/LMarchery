@@ -40,7 +40,7 @@ internal interface SessionDao : StorageReadQueries, ConfigurationDao {
     @Query("SELECT uuid, kind FROM entity_identities WHERE uuid IN (:uuids) UNION SELECT uuid, 'PROFILE' AS kind FROM target_profiles WHERE uuid IN (:uuids) UNION SELECT uuid, 'SESSION' AS kind FROM sessions WHERE uuid IN (:uuids) UNION SELECT uuid, 'END' AS kind FROM ends WHERE uuid IN (:uuids) UNION SELECT uuid, 'IMPACT' AS kind FROM impacts WHERE uuid IN (:uuids) UNION SELECT uuid, 'BOW' AS kind FROM bows WHERE uuid IN (:uuids) UNION SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets WHERE uuid IN (:uuids)")
     suspend fun claimedIdentities(uuids: List<String>): List<IdentityRow>
     // Complete V2 ownership audit, independent of the legacy V1 archive scope.
-    @Query("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') ORDER BY uuid")
+    @Query("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') AND kind != 'WEATHER' ORDER BY uuid")
     override suspend fun allIdentities(): List<IdentityRow>
     @Query("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts UNION ALL SELECT uuid, 'BOW' AS kind FROM bows UNION ALL SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets")
     override suspend fun allRowIdentities(): List<IdentityRow>
@@ -62,10 +62,11 @@ internal interface SessionDao : StorageReadQueries, ConfigurationDao {
 
 @Database(entities = [IdentityRow::class, ProfileRow::class, ZoneRow::class, SessionRow::class,
     EndRow::class, ImpactRow::class, DecisionRow::class, RepositionRow::class, BowRow::class, ArrowSetRow::class,
-    SessionConfigurationRow::class, EndConfigurationRow::class, CancellationRow::class, SiteRow::class, LineRow::class, SessionPlaceRow::class],
-    autoMigrations = [androidx.room.AutoMigration(from = 4, to = 5)], version = 5, exportSchema = true)
+    SessionConfigurationRow::class, EndConfigurationRow::class, CancellationRow::class, SiteRow::class, LineRow::class, SessionPlaceRow::class, WeatherRow::class, WeatherEndRow::class],
+    autoMigrations = [androidx.room.AutoMigration(from = 4, to = 5), androidx.room.AutoMigration(from = 5, to = 6)], version = 6, exportSchema = true)
 internal abstract class SessionDatabase : RoomDatabase() {
     abstract fun records(): SessionDao
+    abstract fun weather(): WeatherDao
     abstract fun places(): PlaceDao
     abstract fun equipment(): EquipmentDao
 }

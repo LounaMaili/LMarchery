@@ -25,7 +25,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             LMarcheryTheme {
-                LMarcheryApp(viewModel.controller, viewModel.exportCoordinator, viewModel.importCoordinator, viewModel.equipmentController, viewModel.configuredController)
+                androidx.compose.runtime.CompositionLocalProvider(com.lmarchery.feature.weather.LocalWeatherJournal provides viewModel.weather) {
+                    LMarcheryApp(viewModel.controller, viewModel.exportCoordinator, viewModel.importCoordinator, viewModel.equipmentController, viewModel.configuredController)
+                }
             }
         }
     }

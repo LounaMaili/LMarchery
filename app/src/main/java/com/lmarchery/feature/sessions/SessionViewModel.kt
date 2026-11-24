@@ -22,6 +22,7 @@ import com.lmarchery.feature.export.ExportCoordinator
 import com.lmarchery.feature.export.ExportDocumentWriter
 
 class SessionViewModel(repository: SessionRepository, source: ArchiveSource, writer: ExportDocumentWriter, importer: ArchiveImporter, reader: ImportDocumentReader, v2Source: ArchiveV2Source? = null, v2Importer: ArchiveV2Importer? = null, equipmentRepository: EquipmentRepository? = null, v3Source: ArchiveV3Source? = null, v3Importer: ArchiveV3Importer? = null, configuredRepository: ConfiguredSessionRepository? = null, presets: SessionPresetRepository? = null) : ViewModel() {
+    val weather = (repository as? RoomSessionRepository)?.let { com.lmarchery.feature.weather.WeatherJournal(it.weather, viewModelScope) }
     val controller = SessionController(repository, viewModelScope, equipmentRepository = equipmentRepository, v3Source = v3Source, v4Source = repository as? com.lmarchery.data.ArchiveV4Source).also { it.refresh() }
     val configuredController = configuredRepository?.let { ConfiguredSessionController(it, viewModelScope, controller::acquireImport, controller::releaseArchiveOperation, controller::refresh, equipmentRepository, presets = presets, places = (configuredRepository as? RoomSessionRepository)?.shootingPlaces) }
     val equipmentController = equipmentRepository?.let { EquipmentController(it, viewModelScope, controller::acquireImport, controller::releaseArchiveOperation) }

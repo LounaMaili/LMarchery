@@ -56,6 +56,21 @@ internal class StrictStorageQueries private constructor(private val connection: 
             args.forEachIndexed { i, value -> statement.bindText(i + 1, value) }
             buildList { while (statement.step()) add(read(Row(statement,textLimit))) }
         }
+    suspend fun weatherRecords(session: String? = null): List<com.lmarchery.core.model.weather.WeatherObservation> {
+        val max = ArchiveV3Limits().maxCollectionElements
+        val where = if (session == null) "" else " WHERE sessionUuid=?"
+        val args = listOfNotNull(session)
+        val weather = rows("SELECT * FROM weather_observations$where ORDER BY uuid LIMIT ${max + 1}", args) { it.weather() }
+        val owners = if (session == null) "" else " WHERE observationUuid IN (SELECT uuid FROM weather_observations WHERE sessionUuid=?)"
+        val links = rows("SELECT * FROM weather_ends$owners ORDER BY observationUuid, endUuid LIMIT ${ArchiveV3Limits().maxTotalElements + 1}", args) {
+            WeatherEndRow(it.s("observationUuid"), it.s("endUuid"))
+        }
+        if (weather.size > max || links.size > ArchiveV3Limits().maxTotalElements) storageBudget("weather", "Trop de relevés ou d’associations.")
+        val byObservation = links.groupBy { it.observationUuid }
+        dataCheck(weather.map { it.uuid }.toSet().containsAll(byObservation.keys), "weather.ends", "Association orpheline.")
+        return weather.map { it.domain(byObservation[it.uuid].orEmpty().map(WeatherEndRow::endUuid)) }
+    }
+
     suspend fun site(uuid: String) = rows("SELECT * FROM shooting_sites WHERE uuid=?", listOf(uuid)) { it.site() }.singleOrNull()
     suspend fun line(uuid: String) = rows("SELECT * FROM shooting_lines WHERE uuid=?", listOf(uuid)) { it.line() }.singleOrNull()
     suspend fun sessionPlace(uuid: String) = rows("SELECT * FROM session_places WHERE sessionUuid=?", listOf(uuid)) { it.sessionPlace() }.singleOrNull()
@@ -77,7 +92,7 @@ internal class StrictStorageQueries private constructor(private val connection: 
         return rows("SELECT * FROM entity_identities WHERE uuid IN (" + uuids.joinToString(",") { "?" } + ")", uuids) { r -> IdentityRow(r.s("uuid"), r.s("kind")) }
     }
     override suspend fun allIdentities(): List<IdentityRow> =
-        rows("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') OR NOT EXISTS (SELECT 1 FROM sqlite_master WHERE type='table' AND name='shooting_sites') ORDER BY uuid", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
+        rows("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') AND (kind != 'WEATHER' OR NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='weather_observations')) OR (kind IN ('SITE','LINE') AND NOT EXISTS (SELECT 1 FROM sqlite_master WHERE name='shooting_sites')) ORDER BY uuid", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
     override suspend fun allRowIdentities(): List<IdentityRow> =
         rows("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts UNION ALL SELECT uuid, 'BOW' AS kind FROM bows UNION ALL SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
     override suspend fun orphanChildPaths(): List<String> =
@@ -169,6 +184,9 @@ private class Row(private val statement: SQLiteStatement, private val textLimit:
         OrientationColumns(long(prefix + "degreesBits"), s(prefix + "north"), s(prefix + "origin"),
             nl(prefix + "uncertaintyBits"), ns(prefix + "confirmedAt")).value()
 
+    fun weather() = WeatherRow(s("uuid"), s("sessionUuid"), i("endCount"), s("observedAt"), s("validFrom"), ns("validUntil"),
+        nl("meanBits"), nl("gustBits"), nl("fromBits"), ns("north"), nl("uncertaintyBits"), i("variable"),
+        nl("temperatureBits"), ns("rain"), nl("precipitationBits"), s("origin"))
     fun site(prefix: String = ""): com.lmarchery.core.model.place.ShootingSite {
         val geo = prefix + "geo_"
         val position = if (!present(geo)) null else PositionColumns(long(geo + "latitudeBits"), long(geo + "longitudeBits"),

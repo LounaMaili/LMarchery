@@ -45,6 +45,8 @@ internal interface PlaceDao {
     @Query("SELECT * FROM entity_identities WHERE kind IN ('SITE','LINE') ORDER BY uuid") suspend fun identities(): List<IdentityRow>
     @Query("SELECT EXISTS(SELECT 1 FROM shooting_sites) OR EXISTS(SELECT 1 FROM shooting_lines) OR EXISTS(SELECT 1 FROM session_places) OR EXISTS(SELECT 1 FROM entity_identities WHERE kind IN ('SITE','LINE'))")
     suspend fun hasPlaceData(): Boolean
+    @Query("SELECT EXISTS(SELECT 1 FROM weather_observations) OR EXISTS(SELECT 1 FROM weather_ends) OR EXISTS(SELECT 1 FROM entity_identities WHERE kind='WEATHER')")
+    suspend fun hasWeatherData(): Boolean
     @Insert suspend fun insert(row: SiteRow)
     @Insert suspend fun insert(row: LineRow)
     @Insert suspend fun insert(row: SessionPlaceRow)
@@ -60,7 +62,12 @@ internal suspend fun PlaceDao.readPlaces(queries: StrictStorageQueries): Shootin
 }
 
 internal suspend fun PlaceDao.requireOlderExport() {
+    requireWeatherFreeExport()
     dataCheck(!hasPlaceData(), "places", "Des lieux ou lignes de tir sont enregistrés. Utilisez la sauvegarde V5.")
+}
+
+internal suspend fun PlaceDao.requireWeatherFreeExport() {
+    dataCheck(!hasWeatherData(), "weather", "Des relevés météo sont enregistrés. Utilisez la sauvegarde V6.")
 }
 
 class RoomShootingPlaces internal constructor(private val db: SessionDatabase, private val ensureOpen: () -> Unit) {
