@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "base": "0941d6e97b41bc67ae040494bad6e1be826b3ae0",
+  "protocole": "ce737c4f7e86f2f07733b860878444929790ad8c",
+  "date": "2026-11-24",
+  "algorithme": "SHA-256 de la concaténation UTF-8 triée par chemin, une ligne sha256(de la pièce) + deux espaces + chemin + LF",
+  "sha256": "affcc38c6410717f419815cd0e60c7346af911090043cb914967f450cc620812",
+  "pieces": {
+    "r14/partitions.json": {
+      "sha256": "9adbc119ba9d74ea185b5c9af7056424cb526f4178c9c732e3024b73b734a118",
+      "octets": 256537
+    },
+    "r14/banque-segments.json": {
+      "sha256": "afca9c8e617e9ca5b580263cb77101d97579b0e4bb27866105f6e0e1ac8239fd",
+      "octets": 21493
+    },
+    "r14/portes.json": {
+      "sha256": "47aa9f4c0cb92624a1787ea930483a51dc70054ddb1460f19920592db7febca2",
+      "octets": 2098
+    },
+    "r15/protocole.md": {
+      "sha256": "8b9dcf01f9955b52981e33cecaf6cfb4661c6d060ca6f2b5f32dc2f254571887",
+      "octets": 5398
+    },
+    "r15/lectures.json": {
+      "sha256": "952bc9bbfafe80106d6918149472aa6d97cd5dc966043b945ddc0e01ca7a3632",
+      "octets": 34094
+    },
+    "r15/partitions.json": {
+      "sha256": "ef63d69ead8cd4a3798e3af9f4698a8c6b0bb3c5b7ea224149b53fd02814d884",
+      "octets": 49736
+    },
+    "r15/banque-segments.json": {
+      "sha256": "c2617ddc5ab1028d6a1c9a3e6c44995ca1a94b4fe332baeab297ff5e4ff1e2d0",
+      "octets": 18199
+    },
+    "r15/doublons.json": {
+      "sha256": "b410827ed66293564232d8ff8c300821839aa1da8a2cd0830a8b4a8ae027424b",
+      "octets": 6305
+    },
+    "r15/effectifs.json": {
+      "sha256": "853f58d5c33cf33104f38bfebc28df3b558268198997106fa4d37d03e09378c7",
+      "octets": 23247
+    },
+    "r15/portes.json": {
+      "sha256": "493166bba2c9f10ed08084ecac3966a854b507b3765b3a71c9917aac1753363d",
+      "octets": 2140
+    },
+    "r15/configuration.json": {
+      "sha256": "e6dae1e03cc13f28dc8f74fe9750ff05c53074bc3362b764fcf8e75ebc5cb895",
+      "octets": 3821
+    }
+  },
+  "photos": 195,
+  "nouvelles": 10,
+  "test": "fermé",
+  "prochaine_etape": "revue du manifeste avant tout entraînement"
+}

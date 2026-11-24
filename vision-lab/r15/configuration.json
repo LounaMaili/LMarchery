@@ -1,0 +1,110 @@
+{
+  "architecture": "R14, régression logistique régularisée prévue; aucune instanciation ou optimisation R15",
+  "generateur": "r13/segments.py",
+  "sha256_generateur": "2bb1587dddf9adeddb506938d962d988d4bd228941f0586017d9129c7f78233f",
+  "cartes": "r7/model.full_maps; tête tube uniquement",
+  "poids": [
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9301",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+    },
+    {
+      "nom": "ordinary-9302.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9302",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9302.pt",
+      "octets": 865807,
+      "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+    },
+    {
+      "nom": "ordinary-9303.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9303",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9303.pt",
+      "octets": 865807,
+      "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+    },
+    {
+      "nom": "targeted-9301.pt",
+      "role": "Checkpoint final R9 figé, targeted-9301",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9301.pt",
+      "octets": 865807,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+    },
+    {
+      "nom": "targeted-9302.pt",
+      "role": "Checkpoint final R9 figé, targeted-9302",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9302.pt",
+      "octets": 865807,
+      "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+    },
+    {
+      "nom": "targeted-9303.pt",
+      "role": "Checkpoint final R9 figé, targeted-9303",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9303.pt",
+      "octets": 865807,
+      "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+    }
+  ],
+  "graines": [
+    9301,
+    9302,
+    9303
+  ],
+  "bras": [
+    "ordinary",
+    "targeted"
+  ],
+  "entrainement": false,
+  "comparaison": false,
+  "selection_de_seuil": false,
+  "photos": [
+    "13-01",
+    "70-01",
+    "7245527662",
+    "5115614018",
+    "18105652008",
+    "24614689941",
+    "4169106197",
+    "wc71488242",
+    "128831925",
+    "4592998057",
+    "wc130852209",
+    "9436017284",
+    "37348131162",
+    "89744300",
+    "36725328420",
+    "fl31990323",
+    "fl51204504370",
+    "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "rf-key-0ijARYt7fTFFlaDVSrdA",
+    "wc107063652",
+    "wc11001401",
+    "wc130798782",
+    "wc156353437",
+    "wc16492853",
+    "wc82322984-t22"
+  ],
+  "regle_photos": "train avec axe tracé ou rang documentaire R14/R15; toutes les acquisitions dev_indep",
+  "budget_passages": 150,
+  "threads_torch": 4,
+  "threads_opencv": 1,
+  "processus_lourds": 1,
+  "repere_max": 704,
+  "colonnes": [
+    "longueur_px",
+    "deux_contours",
+    "largeur_mediane_px",
+    "largeur_mad_px",
+    "contraste_transversal",
+    "continuite_longitudinale",
+    "moyenne_masque",
+    "probabilite_tube_moyenne",
+    "ecart_aspect_bouts"
+  ],
+  "regle_segments": "Toutes les sorties R13 + rangs documentaires des banques avant tri; aucune sélection par classe",
+  "colonnes_annotees_dans_X": false,
+  "largeur_isole": "cellule vide = non observable; famille explicite",
+  "source_verite": "séparée dans les lectures et banques R14/R15"
+}

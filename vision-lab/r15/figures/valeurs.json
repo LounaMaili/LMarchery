@@ -1,0 +1,114 @@
+[
+  {
+    "partition": "train",
+    "critere": "provenances_occupees",
+    "R14": 7,
+    "R15": 9,
+    "minimum": 6
+  },
+  {
+    "partition": "train",
+    "critere": "entrees_distinctes",
+    "R14": 136,
+    "R15": 143,
+    "minimum": 30
+  },
+  {
+    "partition": "train",
+    "critere": "axes_traces_distincts",
+    "R14": 31,
+    "R15": 41,
+    "minimum": 30
+  },
+  {
+    "partition": "train",
+    "critere": "groupes",
+    "R14": 5,
+    "R15": 7,
+    "minimum": 2
+  },
+  {
+    "partition": "train",
+    "critere": "supports_vides_uses",
+    "R14": 3,
+    "R15": 4,
+    "minimum": 2
+  },
+  {
+    "partition": "train",
+    "critere": "segments_negatifs",
+    "R14": 33,
+    "R15": 45,
+    "minimum": 30
+  },
+  {
+    "partition": "train",
+    "critere": "acquisitions_negatives",
+    "R14": 8,
+    "R15": 11,
+    "minimum": 6
+  },
+  {
+    "partition": "train",
+    "critere": "occupees_avec_negatifs",
+    "R14": 5,
+    "R15": 7,
+    "minimum": 3
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "provenances_occupees",
+    "R14": 3,
+    "R15": 7,
+    "minimum": 4
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "entrees_distinctes",
+    "R14": 6,
+    "R15": 18,
+    "minimum": 12
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "axes_traces_distincts",
+    "R14": 12,
+    "R15": 24,
+    "minimum": 12
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "groupes",
+    "R14": 2,
+    "R15": 4,
+    "minimum": 2
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "supports_vides_uses",
+    "R14": 0,
+    "R15": 2,
+    "minimum": 2
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "segments_negatifs",
+    "R14": 17,
+    "R15": 51,
+    "minimum": 12
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "acquisitions_negatives",
+    "R14": 4,
+    "R15": 11,
+    "minimum": 4
+  },
+  {
+    "partition": "dev_indep",
+    "critere": "occupees_avec_negatifs",
+    "R14": 3,
+    "R15": 7,
+    "minimum": 2
+  }
+]
