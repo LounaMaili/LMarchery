@@ -1,5 +1,7 @@
 package com.lmarchery.feature.export
 
+import com.lmarchery.data.ArchiveV5Access
+import com.lmarchery.core.export.ArchiveV5JsonCodec
 import com.lmarchery.core.database.ArchiveReadResult
 import com.lmarchery.core.database.ArchiveV2ReadResult
 import com.lmarchery.core.database.ArchiveV3ReadResult
@@ -25,6 +27,7 @@ sealed interface ExportState {
     data object Available : ExportState
     data object Preparing : ExportState
     data object Validating : ExportState
+    data class ShareCoordinates(val destination: Choosing) : ExportState
     data class Choosing(val fileName: String, val requestId: String, val launched: Boolean = false) : ExportState
     data object Writing : ExportState
     data class Succeeded(val sessionCount: Int, val receipt: ExportReceipt, val schemaVersion: Int = 1,
@@ -35,7 +38,7 @@ sealed interface ExportState {
 }
 
 val ExportState.active get() = this is ExportState.Preparing || this is ExportState.Validating ||
-    this is ExportState.Choosing || this is ExportState.Writing
+    this is ExportState.ShareCoordinates || this is ExportState.Choosing || this is ExportState.Writing
 
 data class ExportReceipt(val displayName: String?, val byteCount: Int, val sha256: String)
 fun interface ExportDocumentWriter {
@@ -74,6 +77,13 @@ class ExportCoordinator(
     fun begin() = beginVersion(1)
     fun beginV2() = beginVersion(2)
     fun beginV3() = beginVersion(3)
+    fun beginV5() = beginVersion(5)
+    fun shareCoordinates(ticket: String, consent: Boolean) {
+        val prompt = state.value as? ExportState.ShareCoordinates ?: return
+        if (prompt.destination.requestId != ticket) return
+        if (consent) mutableState.value = prompt.destination
+        else { clear(); mutableState.value = ExportState.Cancelled; unlock() }
+    }
     fun beginV4() = beginVersion(4)
 
     private fun beginVersion(version: Int) {
@@ -87,7 +97,20 @@ class ExportCoordinator(
         mutableState.value = ExportState.Preparing
         scope.launch {
             try {
-                val bytes = if (version == 4) {
+                var containsCoordinates = false
+                val bytes = if (version == 5) {
+                    val provider = v4Source as? ArchiveV5Access ?: throw ExportProblem("Collecte V5 indisponible.")
+                    val full = withContext(dispatcher) { provider.readArchiveV5() }
+                    containsCoordinates = full.places.containsCoordinates
+                    sessionCount = full.sporting.sessions.size
+                    profileCount = full.sporting.profiles.size
+                    bowCount = full.sporting.bows.size
+                    arrowSetCount = full.sporting.arrowSets.size
+                    endCount = full.sporting.sessions.sumOf { it.ends.size }
+                    impactCount = full.sporting.sessions.sumOf { s -> s.ends.sumOf { it.end.impacts.size } }
+                    mutableState.value = ExportState.Validating
+                    withContext(dispatcher) { ArchiveV5JsonCodec().encode(full) }
+                } else if (version == 4) {
                     val archive = when (val result = withContext(dispatcher) {
                         (v4Source ?: throw ExportProblem("Collecte V4 indisponible ; aucune rétrogradation vers V2/V1.")).readArchiveV4()
                     }) {
@@ -142,7 +165,8 @@ class ExportCoordinator(
                 currentCoroutineContext().ensureActive()
                 prepared = bytes
                 val name = "lmarchery-${if (version > 1) "v$version-" else ""}${DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss").withZone(ZoneOffset.UTC).format(clock.instant())}.lmarchery.json"
-                mutableState.value = ExportState.Choosing(name, UUID.randomUUID().toString())
+                val destination = ExportState.Choosing(name, UUID.randomUUID().toString())
+                mutableState.value = if (containsCoordinates) ExportState.ShareCoordinates(destination) else destination
             } catch (e: CancellationException) {
                 fail("Préparation interrompue. Export non confirmé."); throw e
             } catch (e: ArchiveV3JsonException) { fail("${e.issue.code} · ${e.issue.path} : ${e.issue.detail}") }

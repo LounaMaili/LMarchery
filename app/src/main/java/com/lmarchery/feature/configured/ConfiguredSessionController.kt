@@ -18,6 +18,7 @@ import java.time.Clock
 import java.time.Instant
 import java.time.ZoneId
 import java.util.UUID
+import com.lmarchery.core.model.place.*
 
 /** UI-thread commands. The editor owns the common gate for its entire lifetime, including uncertainty. */
 class ConfiguredSessionController(
@@ -27,6 +28,7 @@ class ConfiguredSessionController(
     private val zone: () -> ZoneId = ZoneId::systemDefault, private val newUuid: () -> String = { UUID.randomUUID().toString() },
     private val onSaved: () -> Unit = {},
     private val presets: SessionPresetRepository? = null,
+    private val places: RoomShootingPlaces? = null,
 ) {
     private val mutableState = MutableStateFlow(ConfiguredEditorState())
     val state = mutableState.asStateFlow()
@@ -80,6 +82,60 @@ class ConfiguredSessionController(
         loadEquipment(ticket)
         loadPresets(ticket)
     }
+    val supportsPlaces get() = places != null
+
+    fun loadPlaces(token: Long) {
+        val store = places ?: return
+        if (creationForm(token) == null) return
+        operation { ui = ui.copy(catalogue = store.catalogue(), problem = null) }
+    }
+
+    fun choosePlace(token: Long, site: ShootingSite?, line: ShootingLine?) {
+        val creation = creationForm(token) ?: return
+        val catalogue = ui.catalogue ?: return
+        if (site != null && site !in catalogue.first || line != null &&
+            (line !in catalogue.second || !line.active || line.siteUuid != site?.uuid)) return
+        ui = ui.copy(form = creation.copy(site = site, line = line, orientation = line?.orientation))
+    }
+
+    fun changeOrientation(token: Long, line: ShootingLine, angle: Double?, north: NorthReference, uncertainty: Double?) {
+        val creation = creationForm(token)?.takeIf { it.line == line } ?: return
+        propose { ui = ui.copy(form = creation.copy(orientation = angle?.let {
+            LineOrientation.manual(it, north, uncertainty, clock.instant())
+        })) }
+    }
+
+    fun saveSite(token: Long, expected: ShootingSite?, proposed: ShootingSite) =
+        changeCatalogue(token, proposed.uuid, null) { save(expected, proposed) }
+
+    internal fun catalogueOrientation(angle: Double?, north: NorthReference, uncertainty: Double?, previous: LineOrientation?): LineOrientation? {
+        val bearing = angle?.let { LineOrientation.manual(it, north, uncertainty, previous?.confirmedAt) }
+        return if (bearing == previous) previous else bearing?.copy(confirmedAt = clock.instant())
+    }
+
+    fun saveLine(token: Long, expected: ShootingLine?, proposed: ShootingLine) =
+        changeCatalogue(token, proposed.siteUuid, proposed.uuid.takeIf { proposed.active }) { save(expected, proposed) }
+
+    private fun changeCatalogue(token: Long, siteUuid: String, lineUuid: String?, save: suspend RoomShootingPlaces.() -> Unit) {
+        val store = places ?: return
+        val creation = creationForm(token) ?: return
+        if (ui.catalogue == null) return
+        operation {
+            // Drop the stale selection even if a write loses its acknowledgement. An explicit read can recover it.
+            ui = ui.copy(catalogue = null, form = creation.copy(site = null, line = null, orientation = null))
+            try { store.save() }
+            catch (e: CancellationException) { throw e }
+            catch (_: Exception) {
+                invalid("Enregistrement du catalogue non confirmé. Relisez les lieux avant toute nouvelle modification.")
+                return@operation
+            }
+            val catalogue = store.catalogue()
+            val site = catalogue.first.single { it.uuid == siteUuid }
+            val line = catalogue.second.singleOrNull { it.uuid == lineUuid && it.siteUuid == site.uuid && it.active }
+            ui = ui.copy(catalogue = catalogue, form = creation.copy(site = site, line = line, orientation = line?.orientation), problem = null)
+        }
+    }
+
     fun reloadPresets(token: Long) {
         val catalog = ui.presets ?: return
         if (creationForm(token) == null || !catalog.loadFailed) return
@@ -226,7 +282,7 @@ class ConfiguredSessionController(
         if (ui.open || !acquire()) return
         ownsGate = true; ui = ConfiguredEditorState(open = true, epoch = epoch())
         operation { when (val read = repository.readConfiguredSession(uuid)) {
-            is ConfiguredSessionReadResult.Found -> ui = ui.copy(saved = read.session, selectedEndUuid = firstEnd(read.session))
+            is ConfiguredSessionReadResult.Found -> ui = ui.copy(saved = read.session, savedPlace = read.place, selectedEndUuid = firstEnd(read.session))
             else -> readProblem(read)
         } }
     }
@@ -356,7 +412,8 @@ class ConfiguredSessionController(
         val created = ConfiguredSession.create(newUuid(), metadata, configuration, now)
         val proposed = if (startImmediately) startWithFirstEnd(created, now) else created
         val label = if (startImmediately) "Créer et démarrer la séance" else "Créer le brouillon configurable"
-        submit(label, ConfiguredWriteRequest.Create(proposed), proposed.ends.firstOrNull()?.uuid)
+        val place = form.site?.let { SessionPlace(created.uuid, now, it, form.line, form.orientation) }
+        submit(label, ConfiguredWriteRequest.Create(proposed, place), proposed.ends.firstOrNull()?.uuid)
     }
 
     fun start() {
@@ -607,7 +664,7 @@ class ConfiguredSessionController(
     private suspend fun write(pending: PendingConfiguredWrite) {
         val request = pending.request
         val result = when (request) {
-            is ConfiguredWriteRequest.Create -> repository.createConfiguredSession(request.proposed)
+            is ConfiguredWriteRequest.Create -> repository.createAtPlace(request)
             is ConfiguredWriteRequest.Update -> repository.updateConfiguredSession(request.expected, request.proposed)
         }
         check(result.request == request) { "Repository acknowledged a different intent." }
@@ -628,7 +685,7 @@ class ConfiguredSessionController(
         if (ui.pending != null) ui = ui.copy(cancellation = ui.cancellation?.copy(phase = CancellationPhase.FAILED))
     }
     private fun accepted(saved: ConfiguredSession, pending: PendingConfiguredWrite, message: String) {
-        ui = ui.copy(saved = saved, pending = null, form = null, compared = null, reconciliation = null, problem = null,
+        ui = ui.copy(saved = saved, savedPlace = (pending.request as? ConfiguredWriteRequest.Create)?.place ?: ui.savedPlace, pending = null, form = null, compared = null, reconciliation = null, problem = null,
             impactDrag = null, selectedEndUuid = pending.context.selectedEndUuid ?: firstEnd(saved), position = null, activeAim = null,
             edit = pending.context.edit?.copy(phase = ImpactEditPhase.CONFIRMED, proposal = ImpactProposal.Selection),
             epoch = epoch(), confirmation = message, cancellation = ui.cancellation?.copy(phase = CancellationPhase.CONFIRMED))
@@ -639,7 +696,7 @@ class ConfiguredSessionController(
         operation {
             when (val read = repository.readConfiguredSession(pending.request.proposed.uuid)) {
                 is ConfiguredSessionReadResult.Found -> when {
-                    read.session == pending.request.proposed -> accepted(read.session, pending, "Proposition intégrale retrouvée en lecture ; aucune nouvelle écriture.")
+                    read.session == pending.request.proposed && (pending.request !is ConfiguredWriteRequest.Create || read.place == pending.request.place) -> accepted(read.session, pending, "Proposition intégrale retrouvée en lecture ; aucune nouvelle écriture.")
                     pending.request is ConfiguredWriteRequest.Update && read.session == pending.request.expected -> ui = ui.copy(compared = read.session,
                         reconciliation = ConfiguredReconciliation.EXPECTED, problem = ConfiguredProblem(ConfiguredProblemKind.REVISION,
                             "État expected intégral retrouvé. Vous pouvez confirmer à nouveau la même intention, sans la reconstruire."))

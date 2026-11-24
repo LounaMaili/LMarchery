@@ -106,8 +106,8 @@ class AppRoomRecipeTest {
 
 internal fun assertRecipeIntegrity(path:Path) {
     assertContentEquals("SQLite format 3\u0000".toByteArray(),Files.newInputStream(path).use { it.readNBytes(16) })
-    assertEquals(listOf("4"),f.rows(path,"PRAGMA user_version"));assertEquals(listOf("ok"),f.rows(path,"PRAGMA integrity_check"))
+    assertEquals(listOf("5"),f.rows(path,"PRAGMA user_version"));assertEquals(listOf("ok"),f.rows(path,"PRAGMA integrity_check"))
     assertTrue(f.rows(path,"PRAGMA foreign_key_check").isEmpty())
     val names=f.rows(path,"SELECT name FROM sqlite_master WHERE type='table' AND name NOT IN ('room_master_table','sqlite_sequence','android_metadata') ORDER BY name")
-    assertEquals((d.tables + "impact_cancellations").sorted(),names)
+    assertEquals((d.tables + listOf("impact_cancellations", "shooting_sites", "shooting_lines", "session_places")).sorted(),names)
 }

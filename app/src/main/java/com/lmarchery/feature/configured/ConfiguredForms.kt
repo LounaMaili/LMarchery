@@ -1,5 +1,8 @@
 package com.lmarchery.feature.configured
 
+import com.lmarchery.core.model.place.LineOrientation
+import com.lmarchery.core.model.place.ShootingLine
+import com.lmarchery.core.model.place.ShootingSite
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.model.time.SessionDateTime
 import com.lmarchery.core.scoring.configured.ConfiguredSessionMetadata
@@ -72,6 +75,9 @@ sealed interface ConfiguredForm {
     data class Creation(override val token: Long, val configuration: ConfigurationDraft = ConfigurationDraft(),
         val metadata: ConfiguredMetadataDraft = ConfiguredMetadataDraft(),
         val presetEquipment: EquipmentSelection = EquipmentSelection(),
+        val site: ShootingSite? = null,
+        val line: ShootingLine? = null,
+        val orientation: LineOrientation? = null,
     ) : ConfiguredForm {
         fun asPreset(uuid: String, name: String, createdAt: Instant) = SessionPreset(uuid, name.trim(),
             configuration.configuration(), metadata.plannedEndCount(),

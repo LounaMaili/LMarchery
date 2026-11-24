@@ -1,5 +1,7 @@
 package com.lmarchery.feature.archiveimport
 
+import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
+import com.lmarchery.core.model.place.ShootingPlaces
 import com.lmarchery.core.database.*
 import com.lmarchery.core.export.*
 import com.lmarchery.core.scoring.archive.ArchiveImportPlan
@@ -26,10 +28,10 @@ sealed interface ImportState {
     data class SucceededV3(val added: ArchiveV3Counts, val identical: ArchiveV3Counts,
         val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false) : ImportState
     data class UnconfirmedV3(val diagnostic: String) : ImportState
-    data class PreviewV4(val plan: ArchiveV4ImportPlan, val confirmationId: String) : ImportState
+    data class PreviewV4(val plan: ArchiveV4ImportPlan, val confirmationId: String, val places: ShootingPlaces? = null, val newPlaceRecords: Int = 0) : ImportState
     data class ConflictV4(val plan: ArchiveV4ImportPlan?, val diagnostic: String) : ImportState
     data class SucceededV4(val added: ArchiveV4Counts, val identical: ArchiveV4Counts,
-        val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false) : ImportState
+        val alreadyPresent: Boolean = false, val emptyArchive: Boolean = false, val refreshFailed: Boolean = false, val version: Int = 4, val newPlaceRecords: Int = 0) : ImportState
     data class UnconfirmedV4(val diagnostic: String) : ImportState
     data object Confirming : ImportState
     data object Importing : ImportState
@@ -105,6 +107,10 @@ class ImportCoordinator(
                 val decoded = withContext(dispatcher) { ArchiveDocumentDecoder(codec, v3Codec).decode(bytes) }
                 if (decoded is ArchiveDocumentRead.Rejected) {
                     finish(ImportState.Failed("${decoded.code} · ${decoded.path} : ${decoded.detail}")); return@launch
+                }
+                if (decoded is ArchiveDocumentRead.V5) {
+                    prepareV4(decoded.archive.sporting, places = decoded.archive.places)
+                    return@launch
                 }
                 if (decoded is ArchiveDocumentRead.V4) { prepareV4(decoded.archive); return@launch }
                 if (decoded is ArchiveDocumentRead.V3) {
@@ -293,10 +299,11 @@ class ImportCoordinator(
         scope.launch {
             try {
                 mutableState.value = ImportState.Importing
+                val version = if (preview.places == null) 4 else 5
                 val success = when (val result = withContext(dispatcher) { preview.commit() }) {
-                    is RestoreV4Result.Imported -> ImportState.SucceededV4(result.added, result.identical)
+                    is RestoreV4Result.Imported -> ImportState.SucceededV4(result.added, result.identical, version = version, newPlaceRecords = preview.newPlaceRecords)
                     is RestoreV4Result.AlreadyPresent -> ImportState.SucceededV4(ArchiveV4Counts(0, 0, 0, 0, 0, 0),
-                        result.identical, alreadyPresent = true, emptyArchive = result.emptyArchive)
+                        result.identical, alreadyPresent = true, emptyArchive = result.emptyArchive, version = version)
                     is RestoreV4Result.Conflict -> {
                         finish(ImportState.ConflictV4(null, "${result.diagnostic.path} : ${result.diagnostic.detail} Nouvel aperçu explicite nécessaire.")); return@launch
                     }
@@ -307,20 +314,20 @@ class ImportCoordinator(
                         return@launch
                     }
                     is RestoreV4Result.TechnicalFailure -> {
-                        finish(ImportState.Failed("Restauration V4 impossible ; aucune écriture métier tentée par cet appel.")); return@launch
+                        finish(ImportState.Failed("Restauration impossible ; aucune écriture métier tentée par cet appel.")); return@launch
                     }
-                    is RestoreV4Result.CommitUnconfirmed -> { uncertainV4("Acquittement du commit V4 indisponible."); return@launch }
+                    is RestoreV4Result.CommitUnconfirmed -> { uncertainV4("Acquittement du commit indisponible."); return@launch }
                 }
                 currentCoroutineContext().ensureActive()
                 finish(success)
                 try { refresh() } catch (_: Exception) { mutableState.value = success.copy(refreshFailed = true) }
             } catch (error: ArchiveV4ImportCancelled) {
                 if (error.commitOutcome == ArchiveV4CommitOutcome.NOT_ATTEMPTED) finish(ImportState.Unconfirmed(false))
-                else uncertainV4("Restauration V4 interrompue ; commit non confirmé.")
+                else uncertainV4("Restauration interrompue ; commit non confirmé.")
                 throw error
             } catch (error: CancellationException) {
-                uncertainV4("Confirmation V4 interrompue ; l’absence d’acquittement ne prouve pas un rollback."); throw error
-            } catch (_: Exception) { uncertainV4("Confirmation V4 impossible ; résultat SQL non démontré.") }
+                uncertainV4("Confirmation interrompue ; l’absence d’acquittement ne prouve pas un rollback."); throw error
+            } catch (_: Exception) { uncertainV4("Confirmation impossible ; résultat SQL non démontré.") }
         }
     }
 
@@ -330,7 +337,7 @@ class ImportCoordinator(
         val previous = candidateV4 ?: return
         mutableState.value = ImportState.Validating
         scope.launch {
-            try { prepareV4(previous.archive, recovering = true) }
+            try { prepareV4(previous.archive, recovering = true, places = previous.places) }
             catch (error: CancellationException) { uncertainV4("Relecture interrompue ; le résultat précédent reste non confirmé."); throw error }
             catch (_: Exception) { uncertainV4("Relecture impossible ; le résultat précédent reste non confirmé.") }
         }
@@ -343,18 +350,23 @@ class ImportCoordinator(
         try { refresh() } catch (_: Exception) { /* Unknown commit remains unknown; no write or retry. */ }
     }
 
-    private suspend fun prepareV4(archive: DomainArchiveV4, recovering: Boolean = false) {
+    private suspend fun prepareV4(archive: DomainArchiveV4, recovering: Boolean = false,
+        places: ShootingPlaces? = null) {
+        val version = if (places == null) 4 else 5
         val importer = v4Repository ?: run {
-            finish(ImportState.Failed("Import V4 indisponible ; aucune conversion vers V2/V1 ni écriture.")); return
+            finish(ImportState.Failed("Import V$version indisponible.")); return
         }
-        when (val result = withContext(dispatcher) { importer.previewImportV4(archive) }) {
+        when (val result = withContext(dispatcher) {
+            if (places == null) importer.previewImportV4(archive)
+            else requireNotNull(importer as? ArchiveV5Access).previewImportV5(DomainArchiveV5(archive, places))
+        }) {
             is PreparedV4Result.Ready -> {
                 currentCoroutineContext().ensureActive()
                 if (!result.candidate.plan.canImport) finish(ImportState.ConflictV4(result.candidate.plan,
-                    "Conflits V4 : aucune catégorie ne sera restaurée ni remplacée."))
+                    "Conflits V$version : aucune catégorie ne sera restaurée ni remplacée."))
                 else {
                     candidateV4 = result.candidate
-                    mutableState.value = ImportState.PreviewV4(result.candidate.plan, UUID.randomUUID().toString())
+                    mutableState.value = ImportState.PreviewV4(result.candidate.plan, UUID.randomUUID().toString(), places, result.candidate.newPlaceRecords)
                 }
             }
             is PreparedV4Result.NeedsIntervention -> {
@@ -363,7 +375,7 @@ class ImportCoordinator(
             }
             is PreparedV4Result.TechnicalFailure -> {
                 if (recovering) uncertainV4("Nouvel aperçu impossible ; résultat précédent toujours non confirmé.")
-                else finish(ImportState.Failed("Prévisualisation V4 impossible. Aucune écriture demandée."))
+                else finish(ImportState.Failed("Prévisualisation V$version impossible. Aucune écriture demandée."))
             }
         }
     }

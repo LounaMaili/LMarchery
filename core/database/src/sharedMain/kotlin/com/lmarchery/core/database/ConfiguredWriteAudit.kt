@@ -7,7 +7,7 @@ import com.lmarchery.core.scoring.configured.ConfiguredSession
 /** Verify raw SQL values outside the permitted delta, including unchanged captures and profile editions.
  * Hashes include type, length and exact bytes (including embedded NUL), never SQLite quote()/text coercion.
  * Call only after bounded, strict V3 validation, on the same writer connection. */
-internal class ConfiguredWriteAudit(before: ArchiveGraph, proposed: ConfiguredSession, legacyProjectionRevision: Boolean = false) {
+internal class ConfiguredWriteAudit(before: ArchiveGraph, proposed: ConfiguredSession, legacyProjectionRevision: Boolean = false, adoptingPlace: Boolean = false) {
     private val old = before.sessions.singleOrNull { it.uuid == proposed.uuid }
     init {
         require(!legacyProjectionRevision || (old != null &&
@@ -23,6 +23,7 @@ internal class ConfiguredWriteAudit(before: ArchiveGraph, proposed: ConfiguredSe
     private val endIds = (old?.ends.orEmpty() + proposed.ends).map { it.uuid }.toSet()
     private val impactIds = (old?.ends.orEmpty() + proposed.ends).flatMap { it.end.impacts }.map { it.uuid }.toSet()
     private val exclusions = linkedMapOf(
+        "session_places" to ("sessionUuid" to if (adoptingPlace) setOf(proposed.uuid) else emptySet()),
         "entity_identities" to ("uuid" to newIds + newProfiles),
         "target_profiles" to ("uuid" to newProfiles), "target_zones" to ("profileUuid" to newProfiles),
         "sessions" to ("uuid" to setOf(proposed.uuid)), "ends" to ("sessionUuid" to setOf(proposed.uuid)),

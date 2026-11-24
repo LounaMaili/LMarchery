@@ -1,5 +1,6 @@
 package com.lmarchery.data
 
+import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
 import com.lmarchery.core.database.*
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.archive.DomainArchiveV2
@@ -49,13 +50,23 @@ fun interface ArchiveV2Source {
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ConfiguredSessionRepository {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ArchiveV5Access, ConfiguredSessionRepository {
     val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
     override suspend fun updateContent(expected: SessionContent, proposed: SessionContent) = withContext(dispatcher) { store.updateSessionContent(expected, proposed) }
+    val shootingPlaces get() = store.places
+    override suspend fun readArchiveV5() = withContext(dispatcher) { store.readArchiveV5() }
+    override suspend fun readSportingGraph() = withContext(dispatcher) { store.readSportingGraph() }
+    override suspend fun previewImportV5(archive: DomainArchiveV5) =
+        withContext(dispatcher) { prepared(store.previewImportV5(archive)) }
     override suspend fun readArchiveV4() = withContext(dispatcher) { store.readArchiveV4() }
     override suspend fun previewImportV4(archive: com.lmarchery.core.scoring.archive.v4.DomainArchiveV4): PreparedV4Result = withContext(dispatcher) {
-        when (val result = store.previewImportV4(archive)) {
+        prepared(store.previewImportV4(archive))
+    }
+    private fun prepared(result: ArchiveV4PreviewResult): PreparedV4Result =
+        when (result) {
             is ArchiveV4PreviewResult.Ready -> PreparedV4Result.Ready(object : PreparedV4Import {
+                override val places = result.preview.incomingPlaces
+                override val newPlaceRecords = result.preview.newPlaceRecords
                 override val archive = result.preview.archive
                 override val plan = result.preview.plan
                 override suspend fun commit() = withContext(dispatcher) { store.importArchiveV4(result.preview).androidResult() }
@@ -63,11 +74,12 @@ class RoomSessionRepository(
             is ArchiveV4PreviewResult.NeedsIntervention -> PreparedV4Result.NeedsIntervention(result.diagnostic)
             is ArchiveV4PreviewResult.TechnicalFailure -> PreparedV4Result.TechnicalFailure(result.cause)
         }
-    }
 
     override suspend fun readConfiguredSession(uuid: String) = withContext(dispatcher) { store.readConfiguredSession(uuid) }
     override suspend fun createConfiguredSession(session: com.lmarchery.core.scoring.configured.ConfiguredSession) =
         withContext(dispatcher) { store.createConfiguredSession(session) }
+    override suspend fun createAtPlace(request: ConfiguredWriteRequest.Create) =
+        withContext(dispatcher) { store.createConfiguredSession(request.proposed, request.place) }
     override suspend fun updateConfiguredSession(expected: com.lmarchery.core.scoring.configured.ConfiguredSession,
         proposed: com.lmarchery.core.scoring.configured.ConfiguredSession) =
         withContext(dispatcher) { store.updateConfiguredSession(expected, proposed) }

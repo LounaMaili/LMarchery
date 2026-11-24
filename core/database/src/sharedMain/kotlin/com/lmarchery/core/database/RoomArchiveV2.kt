@@ -18,6 +18,7 @@ internal class RoomArchiveV2(private val database: SessionDatabase, private val 
         val caller = currentCoroutineContext()
         caller.ensureActive(); ensureOpen()
         database.useReaderConnection { it.deferredTransaction {
+            database.places().requireOlderExport()
             val archive = collect(caller)
             caller.ensureActive()
             ArchiveV2ReadResult.Found(archive)

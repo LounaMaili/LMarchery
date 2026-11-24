@@ -41,6 +41,13 @@ internal class JsonFields(private val obj: JsonObject, private val path: String)
         if (!Regex("-?(0|[1-9][0-9]*)").matches(raw)) invalid("$path.$name", "Expected an integer literal.", "TYPE")
         return raw.toIntOrNull() ?: invalid("$path.$name", "Integer outside Int range.")
     }
+    fun double(name: String): Double {
+        val raw = number(name)
+        val value = raw.toDoubleOrNull() ?: invalid("$path.$name", "Invalid Double.")
+        if (!value.isFinite() || value == 0.0 && BigDecimal(raw).signum() != 0)
+            invalid("$path.$name", "Double overflow or nonzero underflow.")
+        return value
+    }
     fun float(name: String): Float {
         val raw = number(name)
         val value = raw.toFloatOrNull() ?: invalid("$path.$name", "Invalid Float.")

@@ -1,5 +1,8 @@
 package com.lmarchery.feature.configured
 
+import com.lmarchery.core.model.place.SessionPlace
+import com.lmarchery.core.model.place.ShootingLine
+import com.lmarchery.core.model.place.ShootingSite
 import com.lmarchery.core.database.*
 import com.lmarchery.core.model.session.*
 import com.lmarchery.core.scoring.configured.ConfiguredSession
@@ -48,6 +51,8 @@ data class ConfiguredEditorState(
     val impactDrag: ImpactDragContext? = null,
     val cancellation: com.lmarchery.feature.sessions.ImpactCancellationDialog? = null,
     val presets: SessionPresetsState? = null,
+    val catalogue: Pair<List<ShootingSite>, List<ShootingLine>>? = null,
+    val savedPlace: SessionPlace? = null,
 ) {
     val selectedEnd get() = saved?.ends?.singleOrNull { it.uuid == selectedEndUuid }
     val ready get() = open && !busy && pending == null && cancellation == null

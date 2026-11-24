@@ -96,6 +96,7 @@ internal fun ConfiguredRange(
                             openGrouping(captured.uuid)
                         }, enabled = state.canNavigate) { Text("Bilan de la volée ${captured.end.index}") }
                     }
+                    state.savedPlace?.let { AdoptedPlaceLabel(it) }
                     ConfiguredSessionSummary(session, readOnly = false)
                     TextButton({ showDetails = false; controller.editMetadata() }, enabled = state.canForm) {
                         Text("Modifier les métadonnées et le matériel")

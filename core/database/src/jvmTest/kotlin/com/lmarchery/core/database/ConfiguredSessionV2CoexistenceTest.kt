@@ -39,7 +39,7 @@ class ConfiguredSessionV2CoexistenceTest {
         }
         val originalRows = EquipmentTestData.contents(path)
         EquipmentTestData.denyWrites(path)
-        assertEquals(listOf("4"), EquipmentTestData.rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("5"), EquipmentTestData.rows(path, "PRAGMA user_version"))
         openSessionStore(path).use { store ->
             // Explicit historical V1 read is separate from the full V2 backup read.
             val fullV2 = store.fullV2()
@@ -129,12 +129,12 @@ class ConfiguredSessionV2CoexistenceTest {
             assertIs<EquipmentCreateResult.Created>(store.equipment.create(EquipmentTestData.bow()))
             assertIs<EquipmentCreateResult.Created>(store.equipment.create(EquipmentTestData.arrows()))
         }
-        assertEquals(listOf("4"), EquipmentTestData.rows(path, "PRAGMA user_version"))
+        assertEquals(listOf("5"), EquipmentTestData.rows(path, "PRAGMA user_version"))
         val expectedRows = oldRows + ("entity_identities" to (oldRows.getValue("entity_identities") + listOf(
             "${EquipmentTestData.id(800)}|BOW", "${EquipmentTestData.id(801)}|ARROW_SET")).sorted())
         assertEquals(expectedRows, EquipmentTestData.contents(path, EquipmentTestData.oldTables))
         assertEquals(oldSchema, EquipmentTestData.rows(path,
-            "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations','impact_cancellations') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
+            "SELECT type,name,tbl_name,sql FROM sqlite_master WHERE tbl_name NOT IN ('room_master_table','bows','arrow_sets','session_configurations','end_configurations','impact_cancellations','shooting_sites','shooting_lines','session_places') AND name NOT LIKE 'sqlite_%' ORDER BY name"))
         assertEquals(listOf("0"), EquipmentTestData.rows(path, "SELECT count(*) FROM impact_cancellations"))
         val before = EquipmentTestData.contents(path)
         EquipmentTestData.denyWrites(path)

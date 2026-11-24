@@ -44,15 +44,16 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
     val state by coordinator.state.collectAsStateWithLifecycle()
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Sauvegardes JSON V4 / V3 / V2 / V1", style = MaterialTheme.typography.titleMedium)
+            Text("Sauvegardes JSON V5 / V4 / V3 / V2 / V1", style = MaterialTheme.typography.titleMedium)
             Text("Le fichier est lisible en clair et peut contenir des informations personnelles. L’import contrôlé est accessible depuis la liste des séances.",
                 style = MaterialTheme.typography.bodySmall)
             Text("Les photos et leurs repères restent sur cet appareil. Ils ne figurent dans aucune sauvegarde JSON.",
                 style = MaterialTheme.typography.bodySmall)
             Text(when (val current = state) {
-                ExportState.Available -> "V4 : séances, matériel et annulations définitives. Les presets restent sur cet appareil et ne figurent dans aucune sauvegarde. V1/V2/V3 refusent toute perte de preuve. V3 : sauvegarde complète incluant les configurations exactes de chaque volée. V1/V2 refusent toute séance configurable, même homogène. V2 : toutes les séances, tous les profils et le catalogue matériel, y compris sans séance. V1 : séances et profils associés uniquement, sans matériel."
+                ExportState.Available -> "V5 inclut les lieux, les lignes et leurs instantanés. V4 : séances, matériel et annulations définitives. Les presets restent sur cet appareil et ne figurent dans aucune sauvegarde. Dès qu’un lieu est enregistré, choisissez V5. V1/V2/V3 refusent toute perte de preuve. V3 : sauvegarde complète incluant les configurations exactes de chaque volée. V1/V2 refusent toute séance configurable, même homogène. V2 : toutes les séances, tous les profils et le catalogue matériel, y compris sans séance. V1 : séances et profils associés uniquement, sans matériel."
                 ExportState.Preparing -> "Préparation : lecture d’un instantané cohérent…"
                 ExportState.Validating -> "Validation : encodage, décodage et reconstruction du contenu…"
+                is ExportState.ShareCoordinates -> "Cette sauvegarde contient des coordonnées géographiques. Toute personne qui reçoit le fichier pourra les lire."
                 is ExportState.Choosing -> "Choisissez la destination du fichier ${current.fileName}."
                 ExportState.Writing -> "Écriture et relecture du document… Sauvegarde non encore confirmée."
                 is ExportState.Succeeded -> "Export V${current.schemaVersion} confirmé après relecture : ${current.sessionCount} séance(s), ${current.profileCount} profil(s), ${if (current.schemaVersion >= 3) "${current.endCount} volée(s), ${current.impactCount} impact(s), " else ""}${current.bowCount} arc(s), ${current.arrowSetCount} jeu(x) de flèches, ${current.receipt.byteCount} octets.\nFichier : ${current.receipt.displayName ?: "destination choisie"}.\nL’import contrôlé est accessible depuis la liste des séances."
@@ -60,13 +61,19 @@ fun ExportPanel(coordinator: ExportCoordinator, sessionState: SessionUiState) {
                 is ExportState.Failed -> current.diagnostic + if (current.potentiallyIncomplete)
                     "\nLe document peut être vide ou incomplet. Ne l’utilisez pas comme sauvegarde ; choisissez un nouveau document lors d’une nouvelle tentative." else ""
             })
-            if (state.active && state !is ExportState.Choosing) LinearProgressIndicator(Modifier.fillMaxWidth())
+            if (state.active && state !is ExportState.ShareCoordinates && state !is ExportState.Choosing) LinearProgressIndicator(Modifier.fillMaxWidth())
             if (sessionState.busy || sessionState.pending != null || sessionState.impactEdit != null)
                 Text("Pour exporter, terminez l’opération en cours, résolvez toute sauvegarde non confirmée et fermez la sélection/correction. Un candidat non enregistré n’est pas exporté.")
+            (state as? ExportState.ShareCoordinates)?.let { prompt ->
+                Button({ coordinator.shareCoordinates(prompt.destination.requestId, true) }) { Text("Inclure les coordonnées et choisir le fichier") }
+                TextButton({ coordinator.shareCoordinates(prompt.destination.requestId, false) }) { Text("Annuler") }
+            }
+            Button(onClick = coordinator::beginV5,
+                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter la sauvegarde V5 avec les lieux") }
             Button(onClick = coordinator::beginV4,
-                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter la sauvegarde complète V4") }
+                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter au format V4") }
             Button(onClick = coordinator::beginV3,
-                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter la sauvegarde complète V3") }
+                enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter au format V3") }
             OutlinedButton(onClick = coordinator::beginV2,
                 enabled = !state.active && sessionState.ready && sessionState.impactEdit == null) { Text("Exporter V2 — séances historiques et matériel") }
             OutlinedButton(onClick = coordinator::begin,

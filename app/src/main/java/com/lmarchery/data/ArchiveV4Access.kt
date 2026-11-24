@@ -1,13 +1,25 @@
 package com.lmarchery.data
 
+import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
+import com.lmarchery.core.model.place.ShootingPlaces
 import com.lmarchery.core.database.*
 import com.lmarchery.core.scoring.archive.v4.*
 
-fun interface ArchiveV4Source { suspend fun readArchiveV4(): ArchiveV4ReadResult }
+fun interface ArchiveV4Source {
+    suspend fun readArchiveV4(): ArchiveV4ReadResult
+    suspend fun readSportingGraph(): ArchiveV4ReadResult = readArchiveV4()
+}
+
+interface ArchiveV5Access {
+    suspend fun readArchiveV5(): DomainArchiveV5
+    suspend fun previewImportV5(archive: DomainArchiveV5): PreparedV4Result
+}
 
 /** Exact opaque Room preview; a displayed plan never authorizes construction of a SQL candidate. */
 interface PreparedV4Import {
     val archive: DomainArchiveV4
+    val places: ShootingPlaces? get() = null
+    val newPlaceRecords: Int get() = 0
     val plan: ArchiveV4ImportPlan
     suspend fun commit(): RestoreV4Result
 }

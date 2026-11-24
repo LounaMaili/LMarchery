@@ -44,7 +44,7 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
     val legacy = SessionController(repository, scope, clock, { ZoneId.of("Europe/Paris") }, ::uuid,
         equipmentRepository = repository.equipment, v3Source = repository, v4Source = repository)
     val configured = ConfiguredSessionController(repository, scope, legacy::acquireImport, legacy::releaseArchiveOperation,
-        legacy::refresh, repository.equipment, clock, { ZoneId.of("Europe/Paris") }, ::uuid)
+        legacy::refresh, repository.equipment, clock, { ZoneId.of("Europe/Paris") }, ::uuid, places = store.places)
     val equipment = EquipmentController(repository.equipment, scope, legacy::acquireImport, legacy::releaseArchiveOperation, clock, ::uuid)
     val documents = DiskIntegrationDocuments(path.resolveSibling(path.fileName.toString()+"-documents"))
     val exporter = ExportCoordinator(repository, VerifyingDocumentWriter(documents), scope,

@@ -37,7 +37,7 @@ internal object ArchiveV3DiskData {
     /** Construct genuine historical files from frozen Room DDL/hash and copy ONLY the old table data.
      * The seed runs current Room; it supplies values, never a relabelled schema or migrated file. */
     suspend fun historical(path: Path, version: Int, source: DomainArchiveV2 = source(catalog = version >= 2)) {
-        require(version in 1..3)
+        require(version in 1..4)
         require(version >= 2 || source.bows.isEmpty() && source.arrowSets.isEmpty())
         val seed = path.resolveSibling(path.fileName.toString() + ".seed")
         openSessionStore(seed).use { assertIs<ArchiveV2ImportResult.Imported>(it.restoreV2(source)) }
@@ -48,7 +48,7 @@ internal object ArchiveV3DiskData {
             sql("ATTACH DATABASE '${seed.toString().replace("'", "''")}' AS seed")
             sql("BEGIN IMMEDIATE")
             ddl.filter { it.isNotBlank() && !it.startsWith("--") }.forEach(::sql)
-            (when (version) { 1 -> f.oldTables; 2 -> f.tables; else -> tables }).forEach { sql("INSERT INTO `$it` SELECT * FROM seed.`$it`") }
+            (when (version) { 1 -> f.oldTables; 2 -> f.tables; 3 -> tables; else -> tables + "impact_cancellations" }).forEach { sql("INSERT INTO `$it` SELECT * FROM seed.`$it`") }
             sql("COMMIT"); sql("DETACH DATABASE seed")
         }
         assertEquals(listOf(version.toString()), f.rows(path,"PRAGMA user_version"))

@@ -56,12 +56,28 @@ internal class StrictStorageQueries private constructor(private val connection: 
             args.forEachIndexed { i, value -> statement.bindText(i + 1, value) }
             buildList { while (statement.step()) add(read(Row(statement,textLimit))) }
         }
+    suspend fun site(uuid: String) = rows("SELECT * FROM shooting_sites WHERE uuid=?", listOf(uuid)) { it.site() }.singleOrNull()
+    suspend fun line(uuid: String) = rows("SELECT * FROM shooting_lines WHERE uuid=?", listOf(uuid)) { it.line() }.singleOrNull()
+    suspend fun sessionPlace(uuid: String) = rows("SELECT * FROM session_places WHERE sessionUuid=?", listOf(uuid)) { it.sessionPlace() }.singleOrNull()
+
+    suspend fun siteCatalogue() = boundedPlaces("shooting_sites", "uuid") { it.site() } to
+        boundedPlaces("shooting_lines", "uuid") { it.line() }
+
+    suspend fun sessionPlaces() = boundedPlaces("session_places", "sessionUuid") { it.sessionPlace() }
+
+    private suspend fun <T> boundedPlaces(table: String, key: String, map: (Row) -> T): List<T> {
+        val max = ArchiveV3Limits().maxCollectionElements
+        return rows("SELECT * FROM $table ORDER BY $key LIMIT ${max + 1}", read = map).also {
+            if (it.size > max) storageBudget(table, "Catalogue ou historique trop volumineux.")
+        }
+    }
+
     override suspend fun identities(uuids: List<String>): List<IdentityRow> {
         if (uuids.isEmpty()) return emptyList()
         return rows("SELECT * FROM entity_identities WHERE uuid IN (" + uuids.joinToString(",") { "?" } + ")", uuids) { r -> IdentityRow(r.s("uuid"), r.s("kind")) }
     }
     override suspend fun allIdentities(): List<IdentityRow> =
-        rows("SELECT * FROM entity_identities ORDER BY uuid", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
+        rows("SELECT * FROM entity_identities WHERE kind NOT IN ('SITE','LINE') OR NOT EXISTS (SELECT 1 FROM sqlite_master WHERE type='table' AND name='shooting_sites') ORDER BY uuid", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
     override suspend fun allRowIdentities(): List<IdentityRow> =
         rows("SELECT uuid, 'PROFILE' AS kind FROM target_profiles UNION ALL SELECT uuid, 'SESSION' AS kind FROM sessions UNION ALL SELECT uuid, 'END' AS kind FROM ends UNION ALL SELECT uuid, 'IMPACT' AS kind FROM impacts UNION ALL SELECT uuid, 'BOW' AS kind FROM bows UNION ALL SELECT uuid, 'ARROW_SET' AS kind FROM arrow_sets", emptyList()) { r -> IdentityRow(r.s("uuid"),r.s("kind")) }
     override suspend fun orphanChildPaths(): List<String> =
@@ -148,6 +164,29 @@ private class Row(private val statement: SQLiteStatement, private val textLimit:
         time("previousUpdated"),i("newXBits"),i("newYBits"),time("changed"),ns("reason"))
     fun bow() = BowRow(s("uuid"),s("name"),ns("type"),ni("drawWeightLbsBits"),ns("brand"),ns("model"),ns("notes"),time("created"),time("updated"))
     fun arrowSet() = ArrowSetRow(s("uuid"),s("name"),ns("spine"),ns("length"),ns("pointWeight"),ns("nock"),ns("vanes"),ns("material"),ns("notes"),time("created"),time("updated"))
+    private fun present(prefix: String) = columns.any { (name, i) -> name.startsWith(prefix) && !statement.isNull(i) }
+    private fun orientation(prefix: String) = if (!present(prefix)) null else
+        OrientationColumns(long(prefix + "degreesBits"), s(prefix + "north"), s(prefix + "origin"),
+            nl(prefix + "uncertaintyBits"), ns(prefix + "confirmedAt")).value()
+
+    fun site(prefix: String = ""): com.lmarchery.core.model.place.ShootingSite {
+        val geo = prefix + "geo_"
+        val position = if (!present(geo)) null else PositionColumns(long(geo + "latitudeBits"), long(geo + "longitudeBits"),
+            ns(geo + "origin"), nl(geo + "accuracyBits")).value()
+        return com.lmarchery.core.model.place.ShootingSite(s(prefix + "uuid"), s(prefix + "name"), ns(prefix + "description"), position)
+    }
+
+    fun line(prefix: String = ""): com.lmarchery.core.model.place.ShootingLine {
+        val active = i(prefix + "active")
+        dataCheck(active in 0..1, path(prefix + "active"), "Statut de ligne invalide.")
+        return com.lmarchery.core.model.place.ShootingLine(s(prefix + "uuid"), s(prefix + "siteUuid"), s(prefix + "name"),
+            ns(prefix + "description"), orientation(prefix + "bearing_"), active == 1)
+    }
+
+    fun sessionPlace() = com.lmarchery.core.model.place.SessionPlace(s("sessionUuid"),
+        com.lmarchery.core.model.time.UtcTimestamps.parse(s("adoptedAt")), site("site_"),
+        if (present("line_")) line("line_") else null, orientation("effective_"))
+
     fun configuration() = StoredEndConfiguration(s("profileUuid"),ns("regulatoryEdition"),i("distanceM"),s("arrowCountMode"),ni("arrowCountPerEnd"),i("isIndoor"),s("scoringMode"))
 }
 

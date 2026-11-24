@@ -120,7 +120,7 @@ class SessionController(
         }
     }
     private suspend fun configuredArchive(): Pair<ArchiveGraph?, UiProblem?> {
-        if (v4Source != null) return when (val r = v4Source.readArchiveV4()) {
+        if (v4Source != null) return when (val r = v4Source.readSportingGraph()) {
             is ArchiveV4ReadResult.Found -> r.archive to null
             is ArchiveV4ReadResult.NeedsIntervention -> null to UiProblem(ProblemKind.INTERVENTION, "${r.diagnostic.path} : ${r.diagnostic.detail}")
             is ArchiveV4ReadResult.TechnicalFailure -> null to technical(r.cause)

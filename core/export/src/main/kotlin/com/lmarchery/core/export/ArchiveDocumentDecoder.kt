@@ -1,5 +1,6 @@
 package com.lmarchery.core.export
 
+import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
 import com.lmarchery.core.scoring.archive.DomainArchive
 import com.lmarchery.core.scoring.archive.DomainArchiveV2
 import com.lmarchery.core.scoring.archive.v3.DomainArchiveV3
@@ -10,6 +11,7 @@ sealed interface ArchiveDocumentRead {
     data class V1(val archive: DomainArchive) : ArchiveDocumentRead
     data class V2(val archive: DomainArchiveV2) : ArchiveDocumentRead
     data class V3(val archive: DomainArchiveV3) : ArchiveDocumentRead
+    data class V5(val archive: DomainArchiveV5) : ArchiveDocumentRead
     data class V4(val archive: DomainArchiveV4) : ArchiveDocumentRead
     data class Rejected(val code: String, val path: String, val detail: String,
         val historicalIssue: JsonIssue? = null, val v3Issue: ArchiveV3JsonIssue? = null) : ArchiveDocumentRead
@@ -39,6 +41,7 @@ class ArchiveDocumentDecoder(
                 is ArchiveV4JsonRead.Accepted -> ArchiveDocumentRead.V4(result.archive)
                 is ArchiveV4JsonRead.Rejected -> result.issue.rejected()
             }
+            5 -> ArchiveDocumentRead.V5(ArchiveV5JsonCodec().decode(bytes))
             else -> ArchiveDocumentRead.Rejected("UNSUPPORTED_VERSION", "$.schemaVersion", "Unsupported archive schema; no downgrade is available.")
         }
     } catch (error: ArchiveJsonException) { error.issue.rejected() }

@@ -132,7 +132,7 @@ class RoomArchiveV3ReadTest {
     }
     @Test fun `one read transaction spans captures sessions profiles and catalog under concurrent writes`() = runBlocking<Unit> {
         seed();val old=d.configured(d.source());val entered=CountDownLatch(1);val resume=CountDownLatch(1);val once=AtomicBoolean(false)
-        hookedStore(path) { sql,result -> if (sql=="SELECT * FROM entity_identities ORDER BY uuid" && result && once.compareAndSet(false,true)) {
+        hookedStore(path) { sql,result -> if (sql.isSportingRegistryScan() && result && once.compareAndSet(false,true)) {
             entered.countDown();check(resume.await(20,TimeUnit.SECONDS))
         } }.use { reader ->
             val pending=async(Dispatchers.IO) { reader.fullV3() }

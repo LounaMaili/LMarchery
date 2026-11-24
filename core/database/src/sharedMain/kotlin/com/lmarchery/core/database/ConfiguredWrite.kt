@@ -1,12 +1,13 @@
 package com.lmarchery.core.database
 
+import com.lmarchery.core.model.place.SessionPlace
 import com.lmarchery.core.scoring.configured.ConfiguredSession
 import java.util.concurrent.CancellationException
 
 /** Keep this exact immutable intent until confirmation or explicit reconciliation; never rebase a retry. */
 sealed interface ConfiguredWriteRequest {
     val proposed: ConfiguredSession
-    data class Create(override val proposed: ConfiguredSession) : ConfiguredWriteRequest
+    data class Create(override val proposed: ConfiguredSession, val place: SessionPlace? = null) : ConfiguredWriteRequest
     data class Update(val expected: ConfiguredSession, override val proposed: ConfiguredSession) : ConfiguredWriteRequest
 }
 
