@@ -110,13 +110,18 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
       catch (e: CancellationException) { throw e }
       catch (e: Exception) { ArchiveV4ReadResult.TechnicalFailure(e) }
 
-    suspend fun readArchiveV6(): com.lmarchery.core.scoring.archive.v6.DomainArchiveV6 {
+    suspend fun readArchiveV6() = readWeatherArchive(legacyExport = true).base
+    suspend fun readArchiveV7() = readWeatherArchive(legacyExport = false)
+
+    private suspend fun readWeatherArchive(legacyExport: Boolean): com.lmarchery.core.scoring.archive.v7.DomainArchiveV7 {
         check(!closed.get())
         val caller = currentCoroutineContext()
         return database.useReaderConnection { c -> c.deferredTransaction {
             val queries = StrictStorageQueries(c)
             val v5 = DomainArchiveV5(collectArchiveV4(queries, caller, ArchiveV3Limits()), database.places().readPlaces(queries))
-            com.lmarchery.core.scoring.archive.v6.DomainArchiveV6(v5, database.allWeather(queries))
+            if (legacyExport) database.places().requireEstimateFreeExport()
+            val v6 = com.lmarchery.core.scoring.archive.v6.DomainArchiveV6(v5, database.allWeather(queries))
+            com.lmarchery.core.scoring.archive.v7.DomainArchiveV7(v6, database.allEstimates(queries))
         } }
     }
 
@@ -146,6 +151,9 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val archiveV3Import = RoomArchiveV3Import(database) { check(!closed.get()) { "Session store is closed." } }
     private val archiveV4Import = RoomArchiveV4Import(database) { check(!closed.get()) { "Session store is closed." } }
+    suspend fun previewImportV7(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7) =
+        archiveV4Import.preview(archive.base.base.sporting, archive.base.base.places, archive.base.observations, archive.estimates)
+
     suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6) =
         archiveV4Import.preview(archive.base.sporting, archive.base.places, archive.observations)
     suspend fun previewImportV5(archive: DomainArchiveV5) = archiveV4Import.preview(archive.sporting, archive.places)

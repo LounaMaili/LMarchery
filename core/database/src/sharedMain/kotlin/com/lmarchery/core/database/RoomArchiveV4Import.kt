@@ -2,6 +2,8 @@ package com.lmarchery.core.database
 
 import androidx.room.*
 import com.lmarchery.core.model.weather.WeatherObservation
+import com.lmarchery.core.model.weather.SessionEstimate
+import com.lmarchery.core.scoring.archive.v7.DomainArchiveV7
 import com.lmarchery.core.scoring.archive.v6.DomainArchiveV6
 import com.lmarchery.core.model.place.ShootingPlaces
 import com.lmarchery.core.scoring.archive.v5.DomainArchiveV5
@@ -13,7 +15,8 @@ import java.util.concurrent.CancellationException
 
 /** Archive append only: one reader preview and one writer confirmation, never a loop of public create calls. */
 internal class RoomArchiveV4Import(private val database: SessionDatabase, private val ensureOpen: () -> Unit) {
-    suspend fun preview(source: DomainArchiveV4, places: ShootingPlaces? = null, weather: List<WeatherObservation>? = null): ArchiveV4PreviewResult = try {
+    suspend fun preview(source: DomainArchiveV4, places: ShootingPlaces? = null, weather: List<WeatherObservation>? = null,
+        estimates: List<SessionEstimate>? = null): ArchiveV4PreviewResult = try {
         val caller = currentCoroutineContext()
         caller.ensureActive(); ensureOpen()
         val archive = validateStoredV4(source.toSnapshot())
@@ -27,10 +30,13 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
             if (places != null) DomainArchiveV5(archive, places)
             val additions = placeAdditions(places ?: ShootingPlaces.EMPTY, baseline, archive, before)
             val stored = database.allWeather(queries)
-            DomainArchiveV6(DomainArchiveV5(before, baseline), stored)
+            val knownEstimates = database.allEstimates(queries)
+            DomainArchiveV7(DomainArchiveV6(DomainArchiveV5(before, baseline), stored), knownEstimates)
             val incoming = weatherAdditions(weather.orEmpty(), stored, before, archive, additions.appendTo(baseline))
+            val newEstimates = estimateAdditions(estimates.orEmpty(), knownEstimates, before, archive,
+                additions.appendTo(baseline), stored + incoming)
             ArchiveV4PreviewResult.Ready(ArchiveV4ImportPreview(archive, plan, before, places, baseline, additions.count,
-                weather, incoming.size, fingerprint))
+                weather, incoming.size, estimates, newEstimates.size, fingerprint))
         } }
     } catch (error: CorruptV3Storage) { ArchiveV4PreviewResult.NeedsIntervention(error.diagnostic) }
       catch (error: CorruptStorage) { ArchiveV4PreviewResult.NeedsIntervention(error.v3Diagnostic()) }
@@ -57,7 +63,10 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
                 val places = placeAdditions(confirmed.incomingPlaces ?: ShootingPlaces.EMPTY, oldPlaces, source, before)
                 val knownWeather = database.allWeather(queries)
                 val weather = weatherAdditions(confirmed.weather.orEmpty(), knownWeather, before, source, places.appendTo(oldPlaces))
-                if (!plan.hasAdditions && places.count == 0 && weather.isEmpty()) {
+                val storedEstimates = database.allEstimates(queries)
+                val estimates = estimateAdditions(confirmed.estimates.orEmpty(), storedEstimates, before, source,
+                    places.appendTo(oldPlaces), knownWeather + weather)
+                if (!plan.hasAdditions && places.count == 0 && weather.isEmpty() && estimates.isEmpty()) {
                     caller.ensureActive()
                     return@immediateTransaction ArchiveV4ImportResult.AlreadyPresent(confirmed, plan.identicalCounts(), plan.isEmptyArchive && (confirmed.incomingPlaces ?: ShootingPlaces.EMPTY) == ShootingPlaces.EMPTY)
                 }
@@ -73,15 +82,18 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
                 val expected = validateStoredV4(snapshotArchiveV4(
                     (before.profiles + profiles).sortedBy { it.definition!!.uuid }, (before.sessions + sessions).sortedBy { it.uuid },
                     (before.bows + bows).sortedBy { it.uuid }, (before.arrowSets + arrows).sortedBy { it.uuid }))
-                DomainArchiveV6(DomainArchiveV5(expected, places.appendTo(oldPlaces)), knownWeather + weather)
+                val union = DomainArchiveV7(DomainArchiveV6(DomainArchiveV5(expected, places.appendTo(oldPlaces)),
+                    knownWeather + weather), storedEstimates + estimates)
+                val estimateIds = estimates.map { it.uuid }.toSet()
                 val weatherIds = weather.map { it.uuid }.toSet()
                 val knownIds = before.identitiesV3()
                 val newIds = source.identitiesV3().values.filter { it.uuid !in knownIds }
                 val newEnds = sessions.flatMap { it.ends }.map { it.uuid }.toSet()
                 val newImpacts = sessions.flatMap { it.ends.flatMap { e -> e.end.impacts.map { it.uuid } } }.toSet()
                 val exclusions = mapOf(
+                    "weather_estimates" to ("uuid" to estimateIds),
                     "weather_observations" to ("uuid" to weatherIds), "weather_ends" to ("observationUuid" to weatherIds),
-                    "entity_identities" to ("uuid" to (newIds.map { it.uuid } + places.sites.map { it.uuid } + places.lines.map { it.uuid } + weatherIds).toSet()),
+                    "entity_identities" to ("uuid" to (newIds.map { it.uuid } + places.sites.map { it.uuid } + places.lines.map { it.uuid } + weatherIds + estimateIds).toSet()),
                     "shooting_sites" to ("uuid" to places.sites.map { it.uuid }.toSet()),
                     "shooting_lines" to ("uuid" to places.lines.map { it.uuid }.toSet()),
                     "session_places" to ("sessionUuid" to places.snapshots.map { it.sessionUuid }.toSet()),
@@ -109,6 +121,8 @@ internal class RoomArchiveV4Import(private val database: SessionDatabase, privat
                 arrows.forEach { caller.ensureActive(); database.equipment().insertArrowSet(it.row()) }
                 places.insert(database)
                 for (observation in weather) database.insertWeather(observation)
+                for (estimate in estimates) database.insertEstimate(estimate)
+                dataCheck(database.allEstimates(queries) == union.estimates, "weather_estimates", "Relecture divergente.")
                 dataCheck(database.allWeather(queries) == (knownWeather + weather).sortedBy { it.uuid },
                     "weather", "Relecture des observations divergente.")
                 dataCheck(database.places().readPlaces(queries) == places.appendTo(oldPlaces), "import.places", "Catalogue ou instantanés divergents.")
@@ -136,6 +150,17 @@ private fun weatherAdditions(incoming: List<WeatherObservation>, stored: List<We
     val occupied = known.identitiesV3().keys + source.identitiesV3().keys + places.sites.map { it.uuid } + places.lines.map { it.uuid }
     dataCheck((byId.keys + incoming.map { it.uuid }).none { it in occupied }, "weather.uuid", "UUID déjà occupé.")
     for (o in incoming) dataCheck(byId[o.uuid]?.let { it == o } != false, "weather[${o.uuid}]", "Relevé connu divergent.")
+    return incoming.filter { it.uuid !in byId }
+}
+
+private fun estimateAdditions(incoming: List<SessionEstimate>, stored: List<SessionEstimate>,
+    known: DomainArchiveV4, source: DomainArchiveV4, places: ShootingPlaces, weather: List<WeatherObservation>): List<SessionEstimate> {
+    val byId = stored.associateBy { it.uuid }
+    val reserved = known.identitiesV3().keys + source.identitiesV3().keys + places.sites.map { it.uuid } +
+        places.lines.map { it.uuid } + weather.map { it.uuid }
+    dataCheck((byId.keys + incoming.map { it.uuid }).none { it in reserved }, "weather_estimates.uuid", "UUID déjà occupé.")
+    for (record in incoming) dataCheck(byId[record.uuid]?.let { it == record } != false,
+        "weather_estimates[${record.uuid}]", "Estimation connue divergente.")
     return incoming.filter { it.uuid !in byId }
 }
 

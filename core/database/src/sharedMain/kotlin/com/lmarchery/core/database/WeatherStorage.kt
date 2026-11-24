@@ -31,6 +31,10 @@ internal data class WeatherEndRow(val observationUuid: String, val endUuid: Stri
 internal interface WeatherDao {
     @Query("SELECT count(*) FROM weather_observations") suspend fun countObservations(): Long
     @Query("SELECT count(*) FROM weather_ends") suspend fun countLinks(): Long
+    @Query("SELECT uuid FROM entity_identities WHERE kind='ESTIMATE' ORDER BY uuid")
+    suspend fun estimateIdentities(): List<String>
+    @Query("SELECT count(*) FROM weather_estimates") suspend fun countEstimates(): Long
+    @Insert suspend fun insert(row: EstimateRow)
     @Insert suspend fun insert(row: WeatherRow)
     @Insert suspend fun insert(row: WeatherEndRow)
     @Query("SELECT uuid FROM entity_identities WHERE kind='WEATHER' ORDER BY uuid")
@@ -52,7 +56,8 @@ internal suspend fun SessionDatabase.allWeather(q: StrictStorageQueries): List<W
     return values
 }
 
-data class WeatherDetails(val observations: List<WeatherObservation>, val place: com.lmarchery.core.model.place.SessionPlace?)
+data class WeatherDetails(val observations: List<WeatherObservation>, val place: com.lmarchery.core.model.place.SessionPlace?,
+    val estimates: List<SessionEstimate>)
 
 class RoomWeather internal constructor(private val db: SessionDatabase, private val ensureOpen: () -> Unit) {
     suspend fun list(sessionUuid: String) = details(sessionUuid).observations
@@ -65,7 +70,24 @@ class RoomWeather internal constructor(private val db: SessionDatabase, private 
             val observations = queries.weatherRecords(sessionUuid).also { records ->
                 dataCheck(records.all { owners.containsAll(it.scope.endUuids) }, "weather.ends", "Volée étrangère à la séance du relevé.")
             }
-            WeatherDetails(observations, queries.sessionPlace(sessionUuid))
+            WeatherDetails(observations, queries.sessionPlace(sessionUuid), queries.estimates(sessionUuid))
+        } }
+    }
+
+    suspend fun recordEstimate(record: SessionEstimate) {
+        ensureOpen()
+        db.useWriterConnection { c -> c.immediateTransaction {
+            val q = StrictStorageQueries(c)
+            val known = q.estimates(record.sessionUuid).find { it.uuid == record.uuid }
+            if (known == record) {
+                dataCheck(q.identities(listOf(record.uuid)) == listOf(IdentityRow(record.uuid, "ESTIMATE")),
+                    "weather_estimates.identities", "Identité d’estimation incohérente.")
+                return@immediateTransaction
+            }
+            require(known == null && q.session(record.sessionUuid)?.status == "IN_PROGRESS") { "Séance close ou UUID occupé." }
+            require(db.weather().countEstimates() < com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits().maxCollectionElements)
+            db.insertEstimate(record)
+            check(q.estimates(record.sessionUuid).single { it.uuid == record.uuid } == record)
         } }
     }
 

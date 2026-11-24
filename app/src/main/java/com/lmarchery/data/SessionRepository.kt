@@ -50,10 +50,13 @@ fun interface ArchiveV2Source {
 class RoomSessionRepository(
     private val store: RoomSessionStore,
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ArchiveV5Access, ArchiveV6Access, ConfiguredSessionRepository {
+) : SessionRepository, ArchiveSource, ArchiveImporter, ArchiveV2Source, ArchiveV2Importer, ArchiveV3Source, ArchiveV3Importer, ArchiveV4Source, ArchiveV4Importer, ArchiveV5Access, ArchiveV6Access, ArchiveV7Access, ConfiguredSessionRepository {
     val equipment: EquipmentRepository = RoomEquipmentRepository(store.equipment, dispatcher)
     override suspend fun updateContent(expected: SessionContent, proposed: SessionContent) = withContext(dispatcher) { store.updateSessionContent(expected, proposed) }
     val weather get() = store.weather
+    override suspend fun readArchiveV7() = withContext(dispatcher) { store.readArchiveV7() }
+    override suspend fun previewImportV7(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7) =
+        withContext(dispatcher) { prepared(store.previewImportV7(archive)) }
     override suspend fun readArchiveV6() = withContext(dispatcher) { store.readArchiveV6() }
     override suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6) =
         withContext(dispatcher) { prepared(store.previewImportV6(archive)) }
@@ -72,6 +75,8 @@ class RoomSessionRepository(
             is ArchiveV4PreviewResult.Ready -> PreparedV4Result.Ready(object : PreparedV4Import {
                 override val places = result.preview.incomingPlaces
                 override val weather = result.preview.weather
+                override val estimates = result.preview.estimates
+                override val newEstimates = result.preview.newEstimates
                 override val newObservations = result.preview.newObservations
                 override val newPlaceRecords = result.preview.newPlaceRecords
                 override val archive = result.preview.archive

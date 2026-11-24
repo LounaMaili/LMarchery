@@ -37,7 +37,7 @@ internal object ArchiveV3DiskData {
     /** Construct genuine historical files from frozen Room DDL/hash and copy ONLY the old table data.
      * The seed runs current Room; it supplies values, never a relabelled schema or migrated file. */
     suspend fun historical(path: Path, version: Int, source: DomainArchiveV2 = source(catalog = version >= 2)) {
-        require(version in 1..5)
+        require(version in 1..6)
         require(version >= 2 || source.bows.isEmpty() && source.arrowSets.isEmpty())
         val seed = path.resolveSibling(path.fileName.toString() + ".seed")
         openSessionStore(seed).use { assertIs<ArchiveV2ImportResult.Imported>(it.restoreV2(source)) }
