@@ -3,6 +3,11 @@ package com.lmarchery.core.export
 import com.google.gson.JsonParser
 import com.lmarchery.core.export.V3CodecFixtures as f
 import com.lmarchery.core.scoring.archive.v4.*
+import com.lmarchery.core.scoring.configured.configuredSessionScoringContexts
+import com.lmarchery.core.scoring.grouping.calculateTargetZoneDistribution
+import java.nio.file.Files
+import java.nio.file.Path
+import org.junit.jupiter.api.io.TempDir
 import kotlin.test.*
 
 class ArchiveV4JsonCodecTest {
@@ -21,6 +26,24 @@ class ArchiveV4JsonCodecTest {
         old.zip(restored).forEach { (x, y) -> assertEquals(x.point.x.toRawBits(), y.point.x.toRawBits()); assertEquals(x.point.y.toRawBits(), y.point.y.toRawBits()) }
         assertEquals(f.now.plusSeconds(30).plusNanos(7).toString(), read.snapshot.cancellations!!.single().cancelledAt)
     }
+    @Test fun `zone analysis preserves the decoded archive and its bytes on disk`(@TempDir directory: Path) {
+        val bytes = codec.encode(archive())
+        val path = Files.write(directory.resolve("synthetic-v4.json"), bytes)
+        val decoded = assertIs<ArchiveV4JsonRead.Accepted>(codec.decode(Files.readAllBytes(path))).archive
+        val contexts = configuredSessionScoringContexts(decoded.sessions.single())
+
+        val recurve = calculateTargetZoneDistribution(listOf(contexts.first()))
+        assertEquals(3, recurve.counts.retainedImpactCount)
+        assertEquals(1, recurve.zones.single { it.zone.score == 8 }.frequency.count)
+        assertEquals(9, contexts.first().end.impacts.single { it.uuid == f.id(101) }.scoreFinal)
+        val compound = calculateTargetZoneDistribution(listOf(contexts.single { it.end.uuid == f.id(12) }))
+        assertEquals(1, compound.counts.cancelledImpactCount)
+        assertEquals(0, compound.zones.sumOf { it.frequency.count })
+
+        assertContentEquals(bytes, codec.encode(decoded))
+        assertContentEquals(bytes, Files.readAllBytes(path))
+    }
+
     @Test fun `empty V4 has an explicit evidence list and deterministic independent wire representation`() {
         val empty = assertIs<ArchiveV4Reconstruction.Accepted>(reconstructArchiveV4(ArchiveV4Snapshot(4, 1, emptyList(), emptyList(), emptyList(), emptyList(), emptyList()))).archive
         val expected = """
