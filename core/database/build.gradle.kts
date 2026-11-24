@@ -41,6 +41,7 @@ kotlin {
                 "feature/sessions/ImpactPicking.kt",
                 "feature/sessions/ScoreDecisionOptions.kt", "feature/sessions/SessionPresentation.kt",
                 "feature/sessions/ConfiguredSessionPresentation.kt",
+                "feature/sessions/EndGroupingSummary.kt",
                 "feature/equipment/EquipmentController.kt", "feature/equipment/EquipmentDraft.kt",
                 "feature/export/ExportCoordinator.kt", "feature/archiveimport/ImportCoordinator.kt",
                 "feature/weather/WeatherJournal.kt", "feature/weather/EstimateJournal.kt",
