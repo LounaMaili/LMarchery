@@ -10,6 +10,11 @@ fun interface ArchiveV4Source {
     suspend fun readSportingGraph(): ArchiveV4ReadResult = readArchiveV4()
 }
 
+interface ArchiveV8Access {
+    suspend fun readArchiveV8(): com.lmarchery.core.scoring.archive.v7.DomainArchiveV7
+    suspend fun previewImportV8(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7): PreparedV4Result
+}
+
 interface ArchiveV7Access {
     suspend fun readArchiveV7(): com.lmarchery.core.scoring.archive.v7.DomainArchiveV7
     suspend fun previewImportV7(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7): PreparedV4Result

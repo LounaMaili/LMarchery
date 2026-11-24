@@ -16,6 +16,14 @@ private fun label(value: String) {
 
 enum class NorthReference { TRUE_NORTH, MAGNETIC_NORTH }
 enum class ManualOrigin { MANUAL }
+enum class OrientationOrigin { MANUAL, SENSOR_CONFIRMED }
+enum class CompassMethod { ROTATION_VECTOR, GEOMAGNETIC_ROTATION_VECTOR }
+enum class CompassQuality { MEDIUM, HIGH }
+
+data class CompassReading(val magneticDegrees: Double, val measuredAt: Instant,
+    val method: CompassMethod, val quality: CompassQuality) {
+    init { require(magneticDegrees >= 0 && magneticDegrees < 360) }
+}
 
 data class GeoPosition(val latitude: Double, val longitude: Double,
     val origin: ManualOrigin? = null, val accuracyMetres: Double? = null) {
@@ -27,9 +35,15 @@ data class GeoPosition(val latitude: Double, val longitude: Double,
 
 /** Clockwise from the specified north, from the archer towards the targets. */
 data class LineOrientation(val degrees: Double, val reference: NorthReference,
-    val origin: ManualOrigin, val uncertaintyDegrees: Double? = null, val confirmedAt: Instant? = null) {
+    val origin: OrientationOrigin, val uncertaintyDegrees: Double? = null, val confirmedAt: Instant? = null,
+    val reading: CompassReading? = null) {
     init {
         require(degrees >= 0 && degrees < 360)
+        require((origin == OrientationOrigin.SENSOR_CONFIRMED) == (reading != null))
+        if (reading != null) {
+            require(reference == NorthReference.MAGNETIC_NORTH && uncertaintyDegrees == null)
+            require(confirmedAt != null && confirmedAt >= reading.measuredAt)
+        }
         require(uncertaintyDegrees == null || uncertaintyDegrees in 0.0..180.0)
     }
 
@@ -39,7 +53,7 @@ data class LineOrientation(val degrees: Double, val reference: NorthReference,
             val remainder = angle % 360.0
             val normalized = if (remainder < 0) remainder + 360.0 else remainder
             return LineOrientation(if (normalized == 360.0 || normalized == 0.0) 0.0 else normalized,
-                reference, ManualOrigin.MANUAL, uncertainty, at)
+                reference, OrientationOrigin.MANUAL, uncertainty, at)
         }
     }
 }
@@ -77,6 +91,8 @@ class ShootingPlaces(sites: List<ShootingSite>, lines: List<ShootingLine>, snaps
         require(snapshots.all { it.site.uuid in siteIds && (it.line == null || owners[it.line.uuid] == it.site.uuid) })
     }
 
+    val containsCompassReadings get() = lines.any { it.orientation?.reading != null } ||
+        snapshots.any { it.line?.orientation?.reading != null || it.orientation?.reading != null }
     val containsCoordinates get() = sites.any { it.position != null } || snapshots.any { it.site.position != null }
     override fun equals(other: Any?) = other is ShootingPlaces && sites == other.sites && lines == other.lines && snapshots == other.snapshots
     override fun hashCode() = arrayOf(sites, lines, snapshots).contentHashCode()

@@ -12,14 +12,19 @@ internal data class PositionColumns(val latitudeBits: Long, val longitudeBits: L
 }
 
 internal data class OrientationColumns(val degreesBits: Long, val north: String, val origin: String,
-    val uncertaintyBits: Long?, val confirmedAt: String?) {
+    val uncertaintyBits: Long?, val confirmedAt: String?, val rawMagneticBits: Long?, val measuredAt: String?,
+    val method: String?, val sensorQuality: String?) {
     fun value() = LineOrientation(Double.fromBits(degreesBits), NorthReference.valueOf(north),
-        ManualOrigin.valueOf(origin), uncertaintyBits?.let(Double::fromBits), confirmedAt?.let(UtcTimestamps::parse))
+        OrientationOrigin.valueOf(origin), uncertaintyBits?.let(Double::fromBits), confirmedAt?.let(UtcTimestamps::parse),
+        if (rawMagneticBits == null && measuredAt == null && method == null && sensorQuality == null) null else
+            CompassReading(Double.fromBits(requireNotNull(rawMagneticBits)), UtcTimestamps.parse(requireNotNull(measuredAt)),
+                CompassMethod.valueOf(requireNotNull(method)), CompassQuality.valueOf(requireNotNull(sensorQuality))))
 }
 
 private fun GeoPosition.columns() = PositionColumns(latitude.toBits(), longitude.toBits(), origin?.name, accuracyMetres?.toBits())
 private fun LineOrientation.columns() = OrientationColumns(degrees.toBits(), reference.name, origin.name,
-    uncertaintyDegrees?.toBits(), confirmedAt?.let(UtcTimestamps::format))
+    uncertaintyDegrees?.toBits(), confirmedAt?.let(UtcTimestamps::format), reading?.magneticDegrees?.toBits(),
+    reading?.measuredAt?.let(UtcTimestamps::format), reading?.method?.name, reading?.quality?.name)
 
 @Entity(tableName = "shooting_sites")
 internal data class SiteRow(@PrimaryKey val uuid: String, val name: String, val description: String?,

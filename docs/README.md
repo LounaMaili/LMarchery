@@ -90,3 +90,4 @@ Campagne isolée : [LMarchery TEST et protocole Android](validation-android-sand
 - [Sauvegarde JSON V6 et observations météo manuelles](export-format-v6.md).
 - [Sauvegarde JSON V5, lieux, instantanés et partage de coordonnées](export-format-v5.md).
 - [Sauvegarde JSON V7 et estimations de fournisseur](export-format-v7.md).
+- [Sauvegarde JSON V8 et provenance des orientations assistées](export-format-v8.md).

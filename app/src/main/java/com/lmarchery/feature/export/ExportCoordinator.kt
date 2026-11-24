@@ -79,6 +79,7 @@ class ExportCoordinator(
     fun begin() = beginVersion(1)
     fun beginV2() = beginVersion(2)
     fun beginV3() = beginVersion(3)
+    fun beginV8() = beginVersion(8)
     fun beginV7() = beginVersion(7)
     fun beginV6() = beginVersion(6)
     fun beginV5() = beginVersion(5)
@@ -103,7 +104,9 @@ class ExportCoordinator(
             try {
                 var containsCoordinates = false
                 val bytes = if (version >= 5) {
-                    val v7 = if (version == 7) withContext(dispatcher) {
+                    val v7 = if (version == 8) withContext(dispatcher) {
+                        (v4Source as? com.lmarchery.data.ArchiveV8Access ?: throw ExportProblem("Collecte V8 indisponible.")).readArchiveV8()
+                    } else if (version == 7) withContext(dispatcher) {
                         (v4Source as? com.lmarchery.data.ArchiveV7Access ?: throw ExportProblem("Collecte V7 indisponible.")).readArchiveV7()
                     } else null
                     val weather = v7?.base ?: if (version == 6) withContext(dispatcher) {
@@ -123,7 +126,8 @@ class ExportCoordinator(
                     impactCount = full.sporting.sessions.sumOf { s -> s.ends.sumOf { it.end.impacts.size } }
                     mutableState.value = ExportState.Validating
                     withContext(dispatcher) {
-                        if (v7 != null) com.lmarchery.core.export.ArchiveV7JsonCodec().encode(v7)
+                        if (version == 8) com.lmarchery.core.export.ArchiveV8JsonCodec().encode(requireNotNull(v7))
+                        else if (v7 != null) com.lmarchery.core.export.ArchiveV7JsonCodec().encode(v7)
                         else if (weather == null) ArchiveV5JsonCodec().encode(full)
                         else com.lmarchery.core.export.ArchiveV6JsonCodec().encode(weather)
                     }

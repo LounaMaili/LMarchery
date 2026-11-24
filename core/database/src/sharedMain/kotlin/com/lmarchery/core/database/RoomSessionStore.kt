@@ -110,16 +110,18 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
       catch (e: CancellationException) { throw e }
       catch (e: Exception) { ArchiveV4ReadResult.TechnicalFailure(e) }
 
-    suspend fun readArchiveV6() = readWeatherArchive(legacyExport = true).base
-    suspend fun readArchiveV7() = readWeatherArchive(legacyExport = false)
+    suspend fun readArchiveV6() = readWeatherArchive(6).base
+    suspend fun readArchiveV7() = readWeatherArchive(7)
+    suspend fun readArchiveV8() = readWeatherArchive(8)
 
-    private suspend fun readWeatherArchive(legacyExport: Boolean): com.lmarchery.core.scoring.archive.v7.DomainArchiveV7 {
+    private suspend fun readWeatherArchive(version: Int): com.lmarchery.core.scoring.archive.v7.DomainArchiveV7 {
         check(!closed.get())
         val caller = currentCoroutineContext()
         return database.useReaderConnection { c -> c.deferredTransaction {
             val queries = StrictStorageQueries(c)
             val v5 = DomainArchiveV5(collectArchiveV4(queries, caller, ArchiveV3Limits()), database.places().readPlaces(queries))
-            if (legacyExport) database.places().requireEstimateFreeExport()
+            if (version < 8) v5.places.requireManualOrientations()
+            if (version < 7) database.places().requireEstimateFreeExport()
             val v6 = com.lmarchery.core.scoring.archive.v6.DomainArchiveV6(v5, database.allWeather(queries))
             com.lmarchery.core.scoring.archive.v7.DomainArchiveV7(v6, database.allEstimates(queries))
         } }
@@ -132,7 +134,7 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
             val queries = StrictStorageQueries(c)
             database.places().requireWeatherFreeExport()
             val sporting = collectArchiveV4(queries, caller, com.lmarchery.core.scoring.archive.v3.ArchiveV3Limits())
-            DomainArchiveV5(sporting, database.places().readPlaces(queries))
+            DomainArchiveV5(sporting, database.places().readPlaces(queries).also { it.requireManualOrientations() })
         } }
     }
 
@@ -151,12 +153,25 @@ class RoomSessionStore internal constructor(private val database: SessionDatabas
 
     private val archiveV3Import = RoomArchiveV3Import(database) { check(!closed.get()) { "Session store is closed." } }
     private val archiveV4Import = RoomArchiveV4Import(database) { check(!closed.get()) { "Session store is closed." } }
-    suspend fun previewImportV7(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7) =
+    private fun com.lmarchery.core.model.place.ShootingPlaces.requireManualOrientations() =
+        dataCheck(!containsCompassReadings, "places.orientation", "Une mesure de boussole est enregistrée. Utilisez la sauvegarde V8.")
+
+    suspend fun previewImportV8(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7) =
         archiveV4Import.preview(archive.base.base.sporting, archive.base.base.places, archive.base.observations, archive.estimates)
 
-    suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6) =
-        archiveV4Import.preview(archive.base.sporting, archive.base.places, archive.observations)
-    suspend fun previewImportV5(archive: DomainArchiveV5) = archiveV4Import.preview(archive.sporting, archive.places)
+    suspend fun previewImportV7(archive: com.lmarchery.core.scoring.archive.v7.DomainArchiveV7): ArchiveV4PreviewResult {
+        archive.base.base.places.requireManualOrientations()
+        return archiveV4Import.preview(archive.base.base.sporting, archive.base.base.places, archive.base.observations, archive.estimates)
+    }
+
+    suspend fun previewImportV6(archive: com.lmarchery.core.scoring.archive.v6.DomainArchiveV6): ArchiveV4PreviewResult {
+        archive.base.places.requireManualOrientations()
+        return archiveV4Import.preview(archive.base.sporting, archive.base.places, archive.observations)
+    }
+    suspend fun previewImportV5(archive: DomainArchiveV5): ArchiveV4PreviewResult {
+        archive.places.requireManualOrientations()
+        return archiveV4Import.preview(archive.sporting, archive.places)
+    }
     suspend fun previewImportV4(archive: com.lmarchery.core.scoring.archive.v4.DomainArchiveV4): ArchiveV4PreviewResult = archiveV4Import.preview(archive)
     suspend fun importArchiveV4(confirmed: ArchiveV4ImportPreview): ArchiveV4ImportResult = archiveV4Import.restore(confirmed)
     suspend fun previewImportV3(archive: com.lmarchery.core.scoring.archive.v3.DomainArchiveV3): ArchiveV3PreviewResult =

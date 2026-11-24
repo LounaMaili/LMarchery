@@ -45,8 +45,8 @@ class RoomSessionStoreTest {
         assertEquals("SQLite format 3\u0000", Files.readAllBytes(path).take(16).toByteArray().toString(Charsets.US_ASCII))
         val version = scalar("SELECT sqlite_version()")
         assertTrue(version.startsWith("3."))
-        assertEquals("7", scalar("PRAGMA user_version"))
-        println("Real SQLite $version; on-disk header and user_version=6 verified; database closed and reopened")
+        assertEquals("8", scalar("PRAGMA user_version"))
+        println("Real SQLite $version; on-disk header and user_version=8 verified; database closed and reopened")
         openSessionStore(path).use { store ->
             assertEquals(source, assertIs<SessionReadResult.Found>(store.read(source.uuid)).session)
         }

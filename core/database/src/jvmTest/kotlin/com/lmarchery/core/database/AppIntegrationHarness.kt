@@ -94,7 +94,7 @@ internal class AppIntegrationHarness(val path: Path, val store: RoomSessionStore
         return value
     }
     suspend fun prepareExport(version: Int): ExportState.Choosing {
-        onUi { when(version) {1 -> exporter.begin();2 -> exporter.beginV2();3 -> exporter.beginV3();4 -> exporter.beginV4();5 -> exporter.beginV5();6 -> exporter.beginV6();else -> error("Version") } }
+        onUi { when(version) {1 -> exporter.begin();2 -> exporter.beginV2();3 -> exporter.beginV3();4 -> exporter.beginV4();5 -> exporter.beginV5();6 -> exporter.beginV6();7 -> exporter.beginV7();8 -> exporter.beginV8();else -> error("Version") } }
         return assertIs(awaitUiState(exporter.state) { it is ExportState.Choosing || it is ExportState.Failed })
     }
     suspend fun export(version: Int, name: String): ByteArray {
