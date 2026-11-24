@@ -1,0 +1,1049 @@
+{
+  "poids": {
+    "ordinary-9301": {
+      "segments": {
+        "segments_compatibles_stricts": 12,
+        "proba_max_segment_strict": 0.4239453838219851,
+        "photos": 11,
+        "candidats": 2112,
+        "cpu_mediane_ns": 15700,
+        "bras": {
+          "B": {
+            "segments": 305,
+            "tubes": 24,
+            "entrees": 18,
+            "strict": 10,
+            "strict_1a1": 10,
+            "bout_proche": 14,
+            "tubes_lus_occupes": 1,
+            "non_lus_occupes": 221,
+            "non_resolus_occupes": 221,
+            "dont_traversant_ignore": 34,
+            "bout_strict_1a1": 3,
+            "faux_occupes": 2,
+            "dont_non_resolus_avec_voisin_strict": 11,
+            "parasites_sur_vide": 81,
+            "tubes_plusieurs_segments": 2,
+            "segments_plusieurs_tubes": 0,
+            "incertains_occupes": 0
+          },
+          "V": {
+            "segments": 21,
+            "tubes": 24,
+            "entrees": 18,
+            "non_lus_occupes": 15,
+            "non_resolus_occupes": 15,
+            "dont_traversant_ignore": 3,
+            "bout_proche": 3,
+            "parasites_sur_vide": 6,
+            "strict": 0,
+            "strict_1a1": 0,
+            "bout_strict_1a1": 0,
+            "tubes_plusieurs_segments": 0,
+            "segments_plusieurs_tubes": 0,
+            "faux_occupes": 0,
+            "tubes_lus_occupes": 0,
+            "incertains_occupes": 0,
+            "dont_non_resolus_avec_voisin_strict": 0
+          }
+        },
+        "criteres": {
+          "parasites_sur_vide": {
+            "B": 81,
+            "V": 6,
+            "numerateur": 75,
+            "denominateur": 81,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "faux_occupes": {
+            "B": 2,
+            "V": 0,
+            "numerateur": 2,
+            "denominateur": 2,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "strict_1a1": {
+            "B": 10,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 10,
+            "minimum_pct": 90,
+            "atteint": false
+          },
+          "bout_strict_1a1": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 3,
+            "minimum_pct": 90,
+            "atteint": false
+          }
+        },
+        "documentaires_hors_sortie": {
+          "negatif_verifie": 44,
+          "tube": 3
+        }
+      },
+      "contacts": {
+        "B": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 14,
+            "proposals": 2112,
+            "unmatched": 2098,
+            "false": 959,
+            "unresolved": 1139,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.949845477120129,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 2,
+            "proposals": 5,
+            "unmatched": 3,
+            "false": 0,
+            "unresolved": 3,
+            "silent": 8,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 0.9955698793970196,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 10,
+            "empty_with_points": 0
+          }
+        },
+        "V": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 14,
+            "proposals": 2112,
+            "unmatched": 2098,
+            "false": 959,
+            "unresolved": 1139,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.949845477120129,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 2,
+            "proposals": 4,
+            "unmatched": 2,
+            "false": 0,
+            "unresolved": 2,
+            "silent": 9,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 0.9575244390821018,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 2,
+            "proposals": 4,
+            "unmatched": 2,
+            "false": 0,
+            "unresolved": 2,
+            "silent": 9,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "qualifie": false
+    },
+    "ordinary-9302": {
+      "segments": {
+        "segments_compatibles_stricts": 12,
+        "proba_max_segment_strict": 0.4239453838219851,
+        "photos": 11,
+        "candidats": 2112,
+        "cpu_mediane_ns": 15790,
+        "bras": {
+          "B": {
+            "segments": 304,
+            "tubes": 24,
+            "entrees": 18,
+            "strict": 10,
+            "strict_1a1": 10,
+            "bout_proche": 14,
+            "tubes_lus_occupes": 2,
+            "non_lus_occupes": 220,
+            "non_resolus_occupes": 220,
+            "dont_traversant_ignore": 33,
+            "bout_strict_1a1": 3,
+            "faux_occupes": 2,
+            "dont_non_resolus_avec_voisin_strict": 11,
+            "parasites_sur_vide": 80,
+            "tubes_plusieurs_segments": 2,
+            "segments_plusieurs_tubes": 0,
+            "incertains_occupes": 0
+          },
+          "V": {
+            "segments": 20,
+            "tubes": 24,
+            "entrees": 18,
+            "non_lus_occupes": 15,
+            "non_resolus_occupes": 15,
+            "dont_traversant_ignore": 3,
+            "bout_proche": 3,
+            "parasites_sur_vide": 5,
+            "strict": 0,
+            "strict_1a1": 0,
+            "bout_strict_1a1": 0,
+            "tubes_plusieurs_segments": 0,
+            "segments_plusieurs_tubes": 0,
+            "faux_occupes": 0,
+            "tubes_lus_occupes": 0,
+            "incertains_occupes": 0,
+            "dont_non_resolus_avec_voisin_strict": 0
+          }
+        },
+        "criteres": {
+          "parasites_sur_vide": {
+            "B": 80,
+            "V": 5,
+            "numerateur": 75,
+            "denominateur": 80,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "faux_occupes": {
+            "B": 2,
+            "V": 0,
+            "numerateur": 2,
+            "denominateur": 2,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "strict_1a1": {
+            "B": 10,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 10,
+            "minimum_pct": 90,
+            "atteint": false
+          },
+          "bout_strict_1a1": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 3,
+            "minimum_pct": 90,
+            "atteint": false
+          }
+        },
+        "documentaires_hors_sortie": {
+          "negatif_verifie": 44,
+          "tube": 2
+        }
+      },
+      "contacts": {
+        "B": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 10,
+            "proposals": 2112,
+            "unmatched": 2102,
+            "false": 959,
+            "unresolved": 1143,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "local_R9": {
+            "seuil": 0.9526875078069754,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 3,
+            "proposals": 4,
+            "unmatched": 1,
+            "false": 0,
+            "unresolved": 1,
+            "silent": 9,
+            "empty_with_points": 0
+          },
+          "historique": {
+            "seuil": 0.9717186613979988,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 10,
+            "empty_with_points": 0
+          }
+        },
+        "V": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 10,
+            "proposals": 2112,
+            "unmatched": 2102,
+            "false": 959,
+            "unresolved": 1143,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "local_R9": {
+            "seuil": 0.9526875078069754,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 3,
+            "proposals": 4,
+            "unmatched": 1,
+            "false": 0,
+            "unresolved": 1,
+            "silent": 9,
+            "empty_with_points": 0
+          },
+          "historique": {
+            "seuil": 0.9717186613979988,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 10,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "qualifie": false
+    },
+    "ordinary-9303": {
+      "segments": {
+        "segments_compatibles_stricts": 12,
+        "proba_max_segment_strict": 0.4239453838219851,
+        "photos": 11,
+        "candidats": 2112,
+        "cpu_mediane_ns": 15829,
+        "bras": {
+          "B": {
+            "segments": 305,
+            "tubes": 24,
+            "entrees": 18,
+            "strict": 10,
+            "strict_1a1": 10,
+            "bout_proche": 14,
+            "tubes_lus_occupes": 1,
+            "non_lus_occupes": 220,
+            "non_resolus_occupes": 220,
+            "dont_traversant_ignore": 33,
+            "bout_strict_1a1": 3,
+            "faux_occupes": 3,
+            "dont_non_resolus_avec_voisin_strict": 11,
+            "parasites_sur_vide": 81,
+            "tubes_plusieurs_segments": 2,
+            "segments_plusieurs_tubes": 0,
+            "incertains_occupes": 0
+          },
+          "V": {
+            "segments": 17,
+            "tubes": 24,
+            "entrees": 18,
+            "non_lus_occupes": 10,
+            "non_resolus_occupes": 10,
+            "dont_traversant_ignore": 3,
+            "parasites_sur_vide": 7,
+            "bout_proche": 1,
+            "strict": 0,
+            "strict_1a1": 0,
+            "bout_strict_1a1": 0,
+            "tubes_plusieurs_segments": 0,
+            "segments_plusieurs_tubes": 0,
+            "faux_occupes": 0,
+            "tubes_lus_occupes": 0,
+            "incertains_occupes": 0,
+            "dont_non_resolus_avec_voisin_strict": 0
+          }
+        },
+        "criteres": {
+          "parasites_sur_vide": {
+            "B": 81,
+            "V": 7,
+            "numerateur": 74,
+            "denominateur": 81,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "faux_occupes": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 3,
+            "denominateur": 3,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "strict_1a1": {
+            "B": 10,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 10,
+            "minimum_pct": 90,
+            "atteint": false
+          },
+          "bout_strict_1a1": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 3,
+            "minimum_pct": 90,
+            "atteint": false
+          }
+        },
+        "documentaires_hors_sortie": {
+          "negatif_verifie": 43,
+          "tube": 3
+        }
+      },
+      "contacts": {
+        "B": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 16,
+            "proposals": 2112,
+            "unmatched": 2096,
+            "false": 959,
+            "unresolved": 1137,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.9512959728509384,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 2,
+            "proposals": 4,
+            "unmatched": 2,
+            "false": 1,
+            "unresolved": 1,
+            "silent": 9,
+            "empty_with_points": 1
+          },
+          "local_R9": {
+            "seuil": 0.9542124413532297,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 2,
+            "proposals": 4,
+            "unmatched": 2,
+            "false": 1,
+            "unresolved": 1,
+            "silent": 9,
+            "empty_with_points": 1
+          }
+        },
+        "V": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 16,
+            "proposals": 2112,
+            "unmatched": 2096,
+            "false": 959,
+            "unresolved": 1137,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.9512959728509384,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 2,
+            "unmatched": 1,
+            "false": 0,
+            "unresolved": 1,
+            "silent": 10,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 0.9542124413532297,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 2,
+            "unmatched": 1,
+            "false": 0,
+            "unresolved": 1,
+            "silent": 10,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "qualifie": false
+    },
+    "targeted-9301": {
+      "segments": {
+        "segments_compatibles_stricts": 12,
+        "proba_max_segment_strict": 0.4450013783549084,
+        "photos": 11,
+        "candidats": 2112,
+        "cpu_mediane_ns": 15840,
+        "bras": {
+          "B": {
+            "segments": 303,
+            "tubes": 24,
+            "entrees": 18,
+            "strict": 10,
+            "strict_1a1": 10,
+            "bout_proche": 14,
+            "tubes_lus_occupes": 1,
+            "non_lus_occupes": 218,
+            "non_resolus_occupes": 218,
+            "dont_traversant_ignore": 31,
+            "bout_strict_1a1": 3,
+            "faux_occupes": 3,
+            "dont_non_resolus_avec_voisin_strict": 11,
+            "parasites_sur_vide": 81,
+            "tubes_plusieurs_segments": 2,
+            "segments_plusieurs_tubes": 0,
+            "incertains_occupes": 0
+          },
+          "V": {
+            "segments": 18,
+            "tubes": 24,
+            "entrees": 18,
+            "non_lus_occupes": 13,
+            "non_resolus_occupes": 13,
+            "dont_traversant_ignore": 3,
+            "bout_proche": 3,
+            "parasites_sur_vide": 5,
+            "strict": 0,
+            "strict_1a1": 0,
+            "bout_strict_1a1": 0,
+            "tubes_plusieurs_segments": 0,
+            "segments_plusieurs_tubes": 0,
+            "faux_occupes": 0,
+            "tubes_lus_occupes": 0,
+            "incertains_occupes": 0,
+            "dont_non_resolus_avec_voisin_strict": 0
+          }
+        },
+        "criteres": {
+          "parasites_sur_vide": {
+            "B": 81,
+            "V": 5,
+            "numerateur": 76,
+            "denominateur": 81,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "faux_occupes": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 3,
+            "denominateur": 3,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "strict_1a1": {
+            "B": 10,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 10,
+            "minimum_pct": 90,
+            "atteint": false
+          },
+          "bout_strict_1a1": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 3,
+            "minimum_pct": 90,
+            "atteint": false
+          }
+        },
+        "documentaires_hors_sortie": {
+          "negatif_verifie": 43,
+          "tube": 3
+        }
+      },
+      "contacts": {
+        "B": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 11,
+            "proposals": 2112,
+            "unmatched": 2101,
+            "false": 959,
+            "unresolved": 1142,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.9611005586550166,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 4,
+            "unmatched": 3,
+            "false": 0,
+            "unresolved": 3,
+            "silent": 9,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 0.9938745809296435,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 1,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 10,
+            "empty_with_points": 0
+          }
+        },
+        "V": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 11,
+            "proposals": 2112,
+            "unmatched": 2101,
+            "false": 959,
+            "unresolved": 1142,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "local_R9": {
+            "seuil": 0.9601095315491665,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 3,
+            "proposals": 5,
+            "unmatched": 2,
+            "false": 0,
+            "unresolved": 2,
+            "silent": 9,
+            "empty_with_points": 0
+          },
+          "historique": {
+            "seuil": 0.9611005586550166,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 3,
+            "unmatched": 2,
+            "false": 0,
+            "unresolved": 2,
+            "silent": 10,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "qualifie": false
+    },
+    "targeted-9302": {
+      "segments": {
+        "segments_compatibles_stricts": 12,
+        "proba_max_segment_strict": 0.4239453838219851,
+        "photos": 11,
+        "candidats": 2112,
+        "cpu_mediane_ns": 15820,
+        "bras": {
+          "B": {
+            "segments": 304,
+            "tubes": 24,
+            "entrees": 18,
+            "strict": 10,
+            "strict_1a1": 10,
+            "bout_proche": 14,
+            "tubes_lus_occupes": 1,
+            "non_lus_occupes": 218,
+            "non_resolus_occupes": 218,
+            "dont_traversant_ignore": 31,
+            "bout_strict_1a1": 3,
+            "faux_occupes": 3,
+            "dont_non_resolus_avec_voisin_strict": 11,
+            "parasites_sur_vide": 82,
+            "tubes_plusieurs_segments": 2,
+            "segments_plusieurs_tubes": 0,
+            "incertains_occupes": 0
+          },
+          "V": {
+            "segments": 18,
+            "tubes": 24,
+            "entrees": 18,
+            "non_lus_occupes": 12,
+            "non_resolus_occupes": 12,
+            "dont_traversant_ignore": 3,
+            "parasites_sur_vide": 6,
+            "strict": 0,
+            "strict_1a1": 0,
+            "bout_proche": 0,
+            "bout_strict_1a1": 0,
+            "tubes_plusieurs_segments": 0,
+            "segments_plusieurs_tubes": 0,
+            "faux_occupes": 0,
+            "tubes_lus_occupes": 0,
+            "incertains_occupes": 0,
+            "dont_non_resolus_avec_voisin_strict": 0
+          }
+        },
+        "criteres": {
+          "parasites_sur_vide": {
+            "B": 82,
+            "V": 6,
+            "numerateur": 76,
+            "denominateur": 82,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "faux_occupes": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 3,
+            "denominateur": 3,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "strict_1a1": {
+            "B": 10,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 10,
+            "minimum_pct": 90,
+            "atteint": false
+          },
+          "bout_strict_1a1": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 3,
+            "minimum_pct": 90,
+            "atteint": false
+          }
+        },
+        "documentaires_hors_sortie": {
+          "negatif_verifie": 43,
+          "tube": 3
+        }
+      },
+      "contacts": {
+        "B": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 14,
+            "proposals": 2112,
+            "unmatched": 2098,
+            "false": 959,
+            "unresolved": 1139,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.97654622567146,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 11,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 2.0,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 11,
+            "empty_with_points": 0
+          }
+        },
+        "V": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 14,
+            "proposals": 2112,
+            "unmatched": 2098,
+            "false": 959,
+            "unresolved": 1139,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.97654622567146,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 11,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 2.0,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 11,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "qualifie": false
+    },
+    "targeted-9303": {
+      "segments": {
+        "segments_compatibles_stricts": 12,
+        "proba_max_segment_strict": 0.4239453838219851,
+        "photos": 11,
+        "candidats": 2112,
+        "cpu_mediane_ns": 15809,
+        "bras": {
+          "B": {
+            "segments": 306,
+            "tubes": 24,
+            "entrees": 18,
+            "strict": 10,
+            "strict_1a1": 10,
+            "bout_proche": 14,
+            "tubes_lus_occupes": 1,
+            "non_lus_occupes": 218,
+            "non_resolus_occupes": 218,
+            "dont_traversant_ignore": 31,
+            "bout_strict_1a1": 3,
+            "faux_occupes": 3,
+            "dont_non_resolus_avec_voisin_strict": 11,
+            "parasites_sur_vide": 84,
+            "tubes_plusieurs_segments": 2,
+            "segments_plusieurs_tubes": 0,
+            "incertains_occupes": 0
+          },
+          "V": {
+            "segments": 22,
+            "tubes": 24,
+            "entrees": 18,
+            "bout_proche": 2,
+            "non_lus_occupes": 15,
+            "non_resolus_occupes": 15,
+            "dont_traversant_ignore": 3,
+            "parasites_sur_vide": 7,
+            "strict": 0,
+            "strict_1a1": 0,
+            "bout_strict_1a1": 0,
+            "tubes_plusieurs_segments": 0,
+            "segments_plusieurs_tubes": 0,
+            "faux_occupes": 0,
+            "tubes_lus_occupes": 0,
+            "incertains_occupes": 0,
+            "dont_non_resolus_avec_voisin_strict": 0
+          }
+        },
+        "criteres": {
+          "parasites_sur_vide": {
+            "B": 84,
+            "V": 7,
+            "numerateur": 77,
+            "denominateur": 84,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "faux_occupes": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 3,
+            "denominateur": 3,
+            "minimum_pct": 60,
+            "atteint": true
+          },
+          "strict_1a1": {
+            "B": 10,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 10,
+            "minimum_pct": 90,
+            "atteint": false
+          },
+          "bout_strict_1a1": {
+            "B": 3,
+            "V": 0,
+            "numerateur": 0,
+            "denominateur": 3,
+            "minimum_pct": 90,
+            "atteint": false
+          }
+        },
+        "documentaires_hors_sortie": {
+          "negatif_verifie": 43,
+          "tube": 3
+        }
+      },
+      "contacts": {
+        "B": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 13,
+            "proposals": 2112,
+            "unmatched": 2099,
+            "false": 959,
+            "unresolved": 1140,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "historique": {
+            "seuil": 0.9514127482705219,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 2,
+            "unmatched": 2,
+            "false": 0,
+            "unresolved": 2,
+            "silent": 9,
+            "empty_with_points": 0
+          },
+          "local_R9": {
+            "seuil": 2.0,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 11,
+            "empty_with_points": 0
+          }
+        },
+        "V": {
+          "couverture": {
+            "seuil": 0.0,
+            "budget_tenu": false,
+            "photos": 11,
+            "known": 18,
+            "matched": 13,
+            "proposals": 2112,
+            "unmatched": 2099,
+            "false": 959,
+            "unresolved": 1140,
+            "silent": 0,
+            "empty_with_points": 4
+          },
+          "local_R9": {
+            "seuil": 0.9432766731944584,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 1,
+            "proposals": 3,
+            "unmatched": 2,
+            "false": 1,
+            "unresolved": 1,
+            "silent": 8,
+            "empty_with_points": 1
+          },
+          "historique": {
+            "seuil": 0.9514127482705219,
+            "budget_tenu": true,
+            "photos": 11,
+            "known": 18,
+            "matched": 0,
+            "proposals": 0,
+            "unmatched": 0,
+            "false": 0,
+            "unresolved": 0,
+            "silent": 11,
+            "empty_with_points": 0
+          }
+        }
+      },
+      "qualifie": false
+    }
+  },
+  "poids_qualifies": 0,
+  "minimum": 4,
+  "succes": false,
+  "sur_les_exemples_du_fit": {
+    "negatifs": {
+      "exemples": 45,
+      "gardes": 2
+    },
+    "positifs": {
+      "exemples": 12,
+      "gardes": 7
+    }
+  }
+}
