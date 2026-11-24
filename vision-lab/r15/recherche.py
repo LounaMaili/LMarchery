@@ -104,7 +104,8 @@ def commons():
 def roboflow():
     examples=[]
     for key in ('rf-empty','rf-key'):
-        data=(NOTICES/key).read_text()
+        project = {'rf-key':'archery-scoring/archery-scoring-keypoints','rf-empty':'arrowcounting/arrow_counting'}[key]
+        data=fetch('https://universe.roboflow.com/'+project,NOTICES/key).decode()
         objects=[json.JSONDecoder().raw_decode(data[m.start():])[0] for m in
                  re.finditer(re.escape('{"@context":"https://schema.org","@type":"ImageObject"'),data)]
         if not objects:

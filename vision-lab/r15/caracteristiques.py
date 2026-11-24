@@ -12,10 +12,13 @@ from r12.geometrie import repere, samples, continuity, direction, surface
 from r13.segments import reconstruct, length, frame, profile, sample, intervals
 from r15.corpus import LAB, corpus, bank, fingerprint
 from r15.recherche import MEDIA, read, save
+from r15.restaurer import historique
 
 NAMES = ('longueur_px','deux_contours','largeur_mediane_px','largeur_mad_px',
          'contraste_transversal','continuite_longitudinale','moyenne_masque','probabilite_tube_moyenne',
          'ecart_aspect_bouts')
+# Huit entrées spécifiées dans R14. La probabilité continue documente la binarisation.
+INPUTS = tuple(name for name in NAMES if name != 'probabilite_tube_moyenne')
 KEYS = ('photo','partition','rang_longueur','rang_sortie_R13','prelevement_documentaire',
         'x0','y0','x1','y1')
 
@@ -119,7 +122,7 @@ def write_model(name, model, photos, paths, documentary, out):
     return dict(fichier=csv_path.name,sha256=fingerprint(csv_path),photos=records)
 
 
-def main(out):
+def main(out, worktrees=None):
     import torch
     from r7.model import ContactNet
     cfg = read(LAB/'configuration.json')
@@ -129,7 +132,7 @@ def main(out):
     photos = eligible()
     if [p['id'] for p in photos]!=cfg['photos'] or len(photos)*len(cfg['poids'])!=cfg['budget_passages']:
         raise ValueError('Population différente du gel')
-    paths = {r['sha256']:Path(r['emplacement']) for r in read('r14/inventaire-pixels.json')}
+    paths = {r['sha256']:historique(r['emplacement'],worktrees) for r in read('r14/inventaire-pixels.json')}
     paths.update({p['sha256_pixels']:MEDIA/p['source']['fichier_travail'] for p in read(LAB/'lectures.json')['photos']})
     documentary = {}
     for s in bank():
@@ -140,7 +143,7 @@ def main(out):
     torch.use_deterministic_algorithms(True)
     report = {}
     for weight in cfg['poids']:
-        path = Path(weight['emplacement'])
+        path = historique(weight['emplacement'],worktrees)
         if fingerprint(path)!=weight['sha256']:
             raise ValueError(path.name)
         torch.manual_seed(int(path.stem.split('-')[1]))
@@ -149,7 +152,8 @@ def main(out):
         model.eval()
         report[path.stem] = write_model(path.stem,model,photos,paths,documentary,out)
         print(path.stem,len(photos),'photos',flush=True)
-    save(out/'index.json',dict(manifeste_sha256=manifest['sha256'],colonnes_entree=NAMES,
+    save(out/'index.json',dict(manifeste_sha256=manifest['sha256'],colonnes_entree=INPUTS,colonnes_mesurees=NAMES,
+        colonne_documentaire='probabilite_tube_moyenne',
         nombre_passages=sum(len(v['photos']) for v in report.values()),poids=report))
 
 
@@ -157,4 +161,13 @@ if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('out',type=Path)
-    main(parser.parse_args().out)
+    parser.add_argument('--worktrees',type=Path,help='racine alternative des worktrees historiques')
+    args=parser.parse_args()
+    if args.out.exists():
+        parser.error('Utiliser un répertoire de sortie neuf pour préserver les données publiées')
+    from tempfile import TemporaryDirectory
+    args.out.parent.mkdir(parents=True,exist_ok=True)
+    with TemporaryDirectory(dir=args.out.parent) as tmp:
+        prepared=Path(tmp)/'caracteristiques'
+        main(prepared,args.worktrees)
+        prepared.rename(args.out)

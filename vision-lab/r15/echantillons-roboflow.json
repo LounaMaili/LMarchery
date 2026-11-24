@@ -1,0 +1,513 @@
+{
+  "echantillons": [
+    {
+      "id": "rf-empty-0FMmIxlnpz4tnRZO96pq",
+      "project": "rf-empty",
+      "label": "1_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0FMmIxlnpz4tnRZO96pq/original.jpg",
+      "octets": 3148837,
+      "sha256": "16ff38bd63dd0225c5dce5fb97123084b930c488efed83fd7531941256eb009b",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-0HSyYHmjRWlOOJa84pGV",
+      "project": "rf-empty",
+      "label": "1_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0HSyYHmjRWlOOJa84pGV/original.jpg",
+      "octets": 2465197,
+      "sha256": "0c57a37d2df216ed6508b0d08a84f55706f37a289bfdbea0c1ce5f8a65fbc23f",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-0O3iN0iOdBi8fIpzBvtu",
+      "project": "rf-empty",
+      "label": "1_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0O3iN0iOdBi8fIpzBvtu/original.jpg",
+      "octets": 2422761,
+      "sha256": "149b3f3f8f8e1b524094293b85fd7653d31ab12091d5b85f36f33266e12a5b13",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-0PmrfOoQhwfT8BPiDYMR",
+      "project": "rf-empty",
+      "label": "1_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0PmrfOoQhwfT8BPiDYMR/original.jpg",
+      "octets": 4060570,
+      "sha256": "31cd766bae6cabe04cfff6decfd36f53916e698ad2ac2d67e315b780990e6667",
+      "dimensions_fichier": [
+        2400,
+        1080
+      ],
+      "dimensions_orientees": [
+        2400,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "project": "rf-empty",
+      "label": "0_empty",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0pHGx6yITFtGgR4Uen1L/original.jpg",
+      "octets": 2840566,
+      "sha256": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-0v9PsaVIk22z41bM1tad",
+      "project": "rf-empty",
+      "label": "5_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0v9PsaVIk22z41bM1tad/original.jpg",
+      "octets": 4012605,
+      "sha256": "23b315a0d37cf120d5e7e30398574a1f4d4bd928164a7952426e391659bc4c07",
+      "dimensions_fichier": [
+        2400,
+        1080
+      ],
+      "dimensions_orientees": [
+        2400,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-1CA8oozsU9CjZAmfiCp6",
+      "project": "rf-empty",
+      "label": "2_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/1CA8oozsU9CjZAmfiCp6/original.jpg",
+      "octets": 4172098,
+      "sha256": "bbf082f61309d6017a1168a43c0757f35e09b836661911b2c370d18a7c1d5f51",
+      "dimensions_fichier": [
+        2400,
+        1080
+      ],
+      "dimensions_orientees": [
+        2400,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-1DT1ayJQy2CHsddpF9T5",
+      "project": "rf-empty",
+      "label": "5_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/1DT1ayJQy2CHsddpF9T5/original.jpg",
+      "octets": 3714921,
+      "sha256": "3815a57d37c21de1fdc1e8ca85bd24274fa05a603429497859f31099b080c701",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-1KCv8mWyLT4re9yosGuJ",
+      "project": "rf-empty",
+      "label": "1_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/1KCv8mWyLT4re9yosGuJ/original.jpg",
+      "octets": 2678976,
+      "sha256": "5ef05528b8f0222d4ea6b9b65c55a98bd55616f9dbe390ac65fdb7453d3d4f60",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-1d5AFn5Gp89xV1D6oinh",
+      "project": "rf-empty",
+      "label": "0_empty",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/1d5AFn5Gp89xV1D6oinh/original.jpg",
+      "octets": 3786951,
+      "sha256": "72cf4d8fe786a40a88286cb48d0d7b99f231b26010dee38c8b68a36c951bbd19",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-1jpyCCGzHfMTdErYeRf3",
+      "project": "rf-empty",
+      "label": "5_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/1jpyCCGzHfMTdErYeRf3/original.jpg",
+      "octets": 4074168,
+      "sha256": "a186050f40a38bc3d0e71faeac62796eca7724feb3a6d4a510dab114d5fa6aa2",
+      "dimensions_fichier": [
+        2400,
+        1080
+      ],
+      "dimensions_orientees": [
+        2400,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-empty-1xAhj0qECqpuSpOOM1zO",
+      "project": "rf-empty",
+      "label": "5_arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "arrowcounting",
+      "pixels": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/1xAhj0qECqpuSpOOM1zO/original.jpg",
+      "octets": 2251036,
+      "sha256": "b915deb80e6835487486970d5f7472fe44fb58eaa10bd5ef95f76eb14a862f8e",
+      "dimensions_fichier": [
+        1920,
+        1080
+      ],
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "materiel": null,
+      "date_exif": null
+    },
+    {
+      "id": "rf-key-0Vdu0AkPeTuQJdS6xr3O",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0Vdu0AkPeTuQJdS6xr3O/original.jpg",
+      "octets": 3082230,
+      "sha256": "d207c8f7dfab1638fe28ecf6830b2f7ef2bc6133ab7015c7684bda575e0ddd52",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:09:14"
+    },
+    {
+      "id": "rf-key-0YXUvKDWiQap35SyL3rD",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0YXUvKDWiQap35SyL3rD/original.jpg",
+      "octets": 3117108,
+      "sha256": "95500da0820a76576edb506e0634defd469447c9391cc264d483bcd4fbccedda",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:01:30"
+    },
+    {
+      "id": "rf-key-0ZlSVxKOCNzDWbUvY2oa",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0ZlSVxKOCNzDWbUvY2oa/original.jpg",
+      "octets": 2715745,
+      "sha256": "d1a6b4d21783c2e6948707b6b52a7bb078fc88c69ce73eb137944cfaff312692",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:07:29"
+    },
+    {
+      "id": "rf-key-0ft7pPu1F7ixwH2yGgPJ",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0ft7pPu1F7ixwH2yGgPJ/original.jpg",
+      "octets": 2909207,
+      "sha256": "24bffd0cf5fa28d731c796ca1b3d13187d5bf745634853249f1c24beb1dbefff",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:10:07"
+    },
+    {
+      "id": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0ijARYt7fTFFlaDVSrdA/original.jpg",
+      "octets": 2972520,
+      "sha256": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:08:02"
+    },
+    {
+      "id": "rf-key-0lNB5qSjvef5OEJjwCut",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0lNB5qSjvef5OEJjwCut/original.jpg",
+      "octets": 3660504,
+      "sha256": "392ceb74191df451186ebe1b53700d3d6a4e03a4ae6e6d7370d112fdb560fde0",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:01:16"
+    },
+    {
+      "id": "rf-key-0niaAineK4oh8kG7E1NV",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0niaAineK4oh8kG7E1NV/original.jpg",
+      "octets": 3541097,
+      "sha256": "6fdeb861c02201cde7c9f9149b22f8ced2b587c6934e968f830b592d08fd8d0e",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:09:27"
+    },
+    {
+      "id": "rf-key-0tlL3N7L76WvavC32WGx",
+      "project": "rf-key",
+      "label": "",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0tlL3N7L76WvavC32WGx/original.jpg",
+      "octets": 3122338,
+      "sha256": "47810b03668f37b54fb8243eb56045f832d2f229f3032930c6ab4d83d70f04d6",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:09:27"
+    },
+    {
+      "id": "rf-key-0vdWzMP7IL0VD82vM9kx",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0vdWzMP7IL0VD82vM9kx/original.jpg",
+      "octets": 3312715,
+      "sha256": "72bd410ffeb322c847bf98dbfd86d81dd4e5d1335708e8febbd6712f955abbf7",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:09:30"
+    },
+    {
+      "id": "rf-key-1Ge8TCZFMV94JK3QeNIi",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/1Ge8TCZFMV94JK3QeNIi/original.jpg",
+      "octets": 3927173,
+      "sha256": "64b5dadc568e9551097d58846dc38732b29609e97e7eb449c09bbbeea613c482",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:08:09"
+    },
+    {
+      "id": "rf-key-1H2D6geyxy7h8xKEBzJ0",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/1H2D6geyxy7h8xKEBzJ0/original.jpg",
+      "octets": 3276057,
+      "sha256": "f223a065b789bee1361115070fc91120ebd7f00dade9c84ca1ea804e58030212",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:10:11"
+    },
+    {
+      "id": "rf-key-1ISk51fAFd5aMdjWdFj7",
+      "project": "rf-key",
+      "label": "arrow",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "Archery Scoring",
+      "pixels": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/1ISk51fAFd5aMdjWdFj7/original.jpg",
+      "octets": 3725960,
+      "sha256": "edf1efc7b345e892dc5cb69aeea312af1624109f0cdc0327bffb3f7c233e580d",
+      "dimensions_fichier": [
+        4032,
+        3024
+      ],
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "materiel": "SM-G975F",
+      "date_exif": "2025:09:13"
+    }
+  ],
+  "alertes_dhash": [
+    {
+      "a": "rf-empty-0HSyYHmjRWlOOJa84pGV",
+      "b": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "distance": 3,
+      "exact": false
+    },
+    {
+      "a": "rf-empty-0O3iN0iOdBi8fIpzBvtu",
+      "b": "rf-empty-1xAhj0qECqpuSpOOM1zO",
+      "distance": 4,
+      "exact": false
+    },
+    {
+      "a": "rf-empty-0v9PsaVIk22z41bM1tad",
+      "b": "rf-empty-1CA8oozsU9CjZAmfiCp6",
+      "distance": 2,
+      "exact": false
+    }
+  ],
+  "calque": {
+    "url": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0ijARYt7fTFFlaDVSrdA/annotation-archery-scoring-keypoints.png?v=0",
+    "dimensions": [
+      150,
+      200
+    ],
+    "sha256": "39c59acb15623825a0c6aba600f26fbb0798a562dcc1d8cdabe8dee196b22679",
+    "precision": "Centres graphiques quantifiés, traits et entrées vérifiés sur le JPEG source, dont les deux tubes presque confondus à droite."
+  }
+}

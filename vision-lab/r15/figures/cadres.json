@@ -1,0 +1,53 @@
+[
+  {
+    "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+    "credit": "arrowcounting",
+    "licence": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://universe.roboflow.com/arrowcounting/arrow_counting/images/0pHGx6yITFtGgR4Uen1L",
+    "dimensions_source": [
+      1920,
+      1080
+    ],
+    "cadre_detail": [
+      862,
+      439,
+      1082,
+      677
+    ],
+    "transformation": "À gauche, image entière réduite avec rectangle; à droite, extrait sans marquage."
+  },
+  {
+    "photo": "wc107063652",
+    "credit": "Jim Barton",
+    "licence": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Archery_target,_Hogg_Park_-_geograph.org.uk_-_2248040.jpg",
+    "dimensions_source": [
+      800,
+      530
+    ],
+    "cadre_detail": [
+      260,
+      208,
+      540,
+      432
+    ],
+    "transformation": "À gauche, image entière réduite avec rectangle; à droite, extrait sans marquage."
+  },
+  {
+    "photo": "wc156353437",
+    "credit": "Alan Hughes",
+    "licence": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_7043212.jpg",
+    "dimensions_source": [
+      2048,
+      1536
+    ],
+    "cadre_detail": [
+      1402,
+      1040,
+      1742,
+      1320
+    ],
+    "transformation": "À gauche, image entière réduite avec rectangle; à droite, extrait sans marquage."
+  }
+]

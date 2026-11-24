@@ -1,0 +1,149 @@
+{
+  "capsules": [
+    {
+      "nom": "r15-acquisitions.zip",
+      "role": "Dix images admises, film source et calque Roboflow",
+      "octets": 28170281,
+      "sha256": "b581ce460171dbda67033f0abe5cd02fe3ca2efc82af9fae1a1c5d54b31f9d9f",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/artifacts/r15/r15-acquisitions.zip",
+      "membres": 12
+    },
+    {
+      "nom": "r15-audit-web.zip",
+      "role": "Autres médias examinés, notices publiques, planches et relevés de lecture",
+      "octets": 236468839,
+      "sha256": "cf0a7141095936d0f01c91dbcc69c20f9b02e44b0387cf5453775d2b5468242a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/artifacts/r15/r15-audit-web.zip",
+      "membres": 241
+    }
+  ],
+  "acquisitions": [
+    {
+      "nom": "fl31990323.jpg",
+      "role": "train / bluepelican",
+      "octets": 88816,
+      "sha256": "c9efe6f8a73716ae5db8356d35e0e7d4bf3b5ca4d6945b634086ee45516913c8",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/fl31990323.jpg"
+    },
+    {
+      "nom": "fl51204504370.jpg",
+      "role": "dev_indep / Moo.The.Cow",
+      "octets": 161356,
+      "sha256": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/fl51204504370.jpg"
+    },
+    {
+      "nom": "rf-empty-0pHGx6yITFtGgR4Uen1L.jpg",
+      "role": "dev_indep / arrowcounting",
+      "octets": 2840566,
+      "sha256": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/rf-empty-0pHGx6yITFtGgR4Uen1L.jpg"
+    },
+    {
+      "nom": "rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "role": "dev_indep / Archery Scoring",
+      "octets": 2972520,
+      "sha256": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/rf-key-0ijARYt7fTFFlaDVSrdA.jpg"
+    },
+    {
+      "nom": "wc107063652.jpg",
+      "role": "dev_indep / Jim Barton",
+      "octets": 213398,
+      "sha256": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc107063652.jpg"
+    },
+    {
+      "nom": "wc11001401.jpg",
+      "role": "train / 4028mdk09",
+      "octets": 4316454,
+      "sha256": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg"
+    },
+    {
+      "nom": "wc130798782.jpg",
+      "role": "dev_indep / N Chadwick",
+      "octets": 103991,
+      "sha256": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc130798782.jpg"
+    },
+    {
+      "nom": "wc156353437.jpg",
+      "role": "train / Alan Hughes",
+      "octets": 1804547,
+      "sha256": "5fcfe8947cdfdeec616bf3c9c8b1c187c60b88fc2ae7fd6ab40e789529f6dd1b",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc156353437.jpg"
+    },
+    {
+      "nom": "wc16492853.jpg",
+      "role": "dev_indep / Ozizo",
+      "octets": 479911,
+      "sha256": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc16492853.jpg"
+    },
+    {
+      "nom": "wc82322984-t22.png",
+      "role": "dev_indep / Voltmetro",
+      "octets": 973526,
+      "sha256": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc82322984-t22.png"
+    }
+  ],
+  "film": {
+    "nom": "wc82322984.webm",
+    "role": "Original du frame 550",
+    "octets": 14210351,
+    "sha256": "5cdaf9c37eb2f03529644229894af4dbf1178292dac30b70c6971879787e1458",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc82322984.webm"
+  },
+  "poids": [
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9301",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+    },
+    {
+      "nom": "ordinary-9302.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9302",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9302.pt",
+      "octets": 865807,
+      "sha256": "2c6223c196e533d46526bf431154a579521924e0e7e3781e14e3b984a579cd90"
+    },
+    {
+      "nom": "ordinary-9303.pt",
+      "role": "Checkpoint final R9 figé, ordinary-9303",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9303.pt",
+      "octets": 865807,
+      "sha256": "82c277c4ab0c13353b60233e81b6cbffed11f6ccb3d49d5622f7dc182ef01fc2"
+    },
+    {
+      "nom": "targeted-9301.pt",
+      "role": "Checkpoint final R9 figé, targeted-9301",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9301.pt",
+      "octets": 865807,
+      "sha256": "d6909251ad09699d4223ee2347fa5e56d956a3c4720d9b0de40c766eb0f574e8"
+    },
+    {
+      "nom": "targeted-9302.pt",
+      "role": "Checkpoint final R9 figé, targeted-9302",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9302.pt",
+      "octets": 865807,
+      "sha256": "1c4990886f69dd0cbc8d3144ecac3351032ea43e5bf3cfbbfcca0dcd8dcbb1f9"
+    },
+    {
+      "nom": "targeted-9303.pt",
+      "role": "Checkpoint final R9 figé, targeted-9303",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/targeted-9303.pt",
+      "octets": 865807,
+      "sha256": "5c4533ac3d43fceca38ad154825050413292368dde22b41487654f9aa569b5c1"
+    }
+  ],
+  "historique": {
+    "index": "r14/inventaire-pixels.json",
+    "sha256": "62430662bb50c5c82794ffc29a8cd4be0e6442ac2a8161504d61e4b528239318",
+    "capsules": "r14/inventaire.json",
+    "sha256_capsules": "437168b00c4adfb542c18327dd7b76ff924fd0e18cc18bbc9f0c58cca10d2f33"
+  }
+}
