@@ -1,0 +1,229 @@
+{
+  "capsule": {
+    "nom": "r18-annotations-revue.zip",
+    "role": "Corpus annoté, cartes et consultation hors ligne",
+    "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r18/vision-lab/artifacts/r18/r18-annotations-revue.zip",
+    "octets": 10267770,
+    "sha256": "48b337ff60239b3fa39ac713ba64155935ff32fd4b36f25c4e2551a5f37e0786"
+  },
+  "fichiers_sources": [
+    {
+      "photo": "13-01",
+      "nom": "01.png",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/crigges/originals/13/01.png",
+      "octets": 14283070,
+      "sha256": "ce9c9e6e4c86f2ccb21c8c522ce2770e4bd9a1fdbae493db3504583826c5fea6"
+    },
+    {
+      "photo": "13-01",
+      "nom": "13-01.png",
+      "role": "Fichier de référence R17",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "octets": 1731722,
+      "sha256": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe"
+    },
+    {
+      "photo": "13-01",
+      "nom": "01.json",
+      "role": "Annotation LabelMe source, conservée",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/crigges/originals/13/01.json",
+      "octets": 1462,
+      "sha256": "cf2d0e2b130a9b0995a63d508d009a1034022eb223d41026b4ffaba1455ae3f3"
+    },
+    {
+      "photo": "70-01",
+      "nom": "01.png",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/crigges/originals/70/01.png",
+      "octets": 14739906,
+      "sha256": "6b1c83b854db8bc399d1a0d79eb068b53182e6c321860fc512ab220ee6c8e239"
+    },
+    {
+      "photo": "70-01",
+      "nom": "70-01.png",
+      "role": "Fichier de référence R17",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "octets": 1791284,
+      "sha256": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888"
+    },
+    {
+      "photo": "70-01",
+      "nom": "01.json",
+      "role": "Annotation LabelMe source, conservée",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r7/vision-lab/data/r7/crigges/originals/70/01.json",
+      "octets": 1210,
+      "sha256": "99704210faacfdc7bc8057fe918e7a83fd8b79a3fcadf54bb643f3db7e3a9dd7"
+    },
+    {
+      "photo": "7245527662",
+      "nom": "7245527662.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/media/7245527662.jpg",
+      "octets": 131394,
+      "sha256": "6980ee05e701f0ad3cc125dc1a9a9e6956c96d74cbf6d59df5418a13c915a8a5"
+    },
+    {
+      "photo": "7245527662",
+      "nom": "7245527662.png",
+      "role": "Fichier de référence R17",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "octets": 780209,
+      "sha256": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302"
+    },
+    {
+      "photo": "5115614018",
+      "nom": "5115614018.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/media/5115614018.jpg",
+      "octets": 204546,
+      "sha256": "60b56e339834a10035447e39346e986aaa47ac1ebf93f982962288c060bb0546"
+    },
+    {
+      "photo": "5115614018",
+      "nom": "5115614018.png",
+      "role": "Fichier de référence R17",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "octets": 1108495,
+      "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d"
+    },
+    {
+      "photo": "18105652008",
+      "nom": "18105652008.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "octets": 426302,
+      "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f"
+    },
+    {
+      "photo": "24614689941",
+      "nom": "24614689941.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "octets": 99973,
+      "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888"
+    },
+    {
+      "photo": "4169106197",
+      "nom": "4169106197.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "octets": 97351,
+      "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5"
+    },
+    {
+      "photo": "wc71488242",
+      "nom": "wc71488242.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "octets": 592714,
+      "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491"
+    },
+    {
+      "photo": "9436017284",
+      "nom": "9436017284.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+      "octets": 203063,
+      "sha256": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057"
+    },
+    {
+      "photo": "37348131162",
+      "nom": "37348131162.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+      "octets": 134046,
+      "sha256": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59"
+    },
+    {
+      "photo": "89744300",
+      "nom": "89744300.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r13/vision-lab/data/r13/media/89744300.jpg",
+      "octets": 228255,
+      "sha256": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b"
+    },
+    {
+      "photo": "36725328420",
+      "nom": "36725328420.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+      "octets": 150499,
+      "sha256": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87"
+    },
+    {
+      "photo": "fl51204504370",
+      "nom": "fl51204504370.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/fl51204504370.jpg",
+      "octets": 161356,
+      "sha256": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799"
+    },
+    {
+      "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "nom": "rf-empty-0pHGx6yITFtGgR4Uen1L.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/rf-empty-0pHGx6yITFtGgR4Uen1L.jpg",
+      "octets": 2840566,
+      "sha256": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a"
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "nom": "rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "octets": 2972520,
+      "sha256": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1"
+    },
+    {
+      "photo": "wc107063652",
+      "nom": "wc107063652.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc107063652.jpg",
+      "octets": 213398,
+      "sha256": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8"
+    },
+    {
+      "photo": "wc11001401",
+      "nom": "wc11001401.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "octets": 4316454,
+      "sha256": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f"
+    },
+    {
+      "photo": "wc130798782",
+      "nom": "wc130798782.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc130798782.jpg",
+      "octets": 103991,
+      "sha256": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118"
+    },
+    {
+      "photo": "wc16492853",
+      "nom": "wc16492853.jpg",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc16492853.jpg",
+      "octets": 479911,
+      "sha256": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b"
+    },
+    {
+      "photo": "wc82322984-t22",
+      "nom": "wc82322984-t22.png",
+      "role": "Source photographique ou trame publique",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc82322984-t22.png",
+      "octets": 973526,
+      "sha256": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829"
+    },
+    {
+      "photo": "wc82322984-t22",
+      "nom": "wc82322984.webm",
+      "role": "Film source de la trame à 22 s",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r15/vision-lab/data/r15/media/wc82322984.webm",
+      "octets": 14210351,
+      "sha256": "5cdaf9c37eb2f03529644229894af4dbf1178292dac30b70c6971879787e1458"
+    }
+  ],
+  "poids_utilises": [],
+  "date": "2026-11-25"
+}

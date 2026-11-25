@@ -1,0 +1,115 @@
+{
+  "version": "R18-1",
+  "photo": "37348131162",
+  "provenance": "Special Olympics Oesterreich",
+  "partition": "dev_explore_R16",
+  "dimensions": [1024, 680],
+  "supports": [
+    "37348131162-1"
+  ],
+  "role": "developpement_occupe",
+  "historique_R17_complet": true,
+  "emprise_diffusee": [
+    0,
+    0,
+    1024,
+    680
+  ],
+  "lecture_vue": "Champ entier relu. Les plages de fond dessinées et les fragments identifiés délimitent la supervision.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [445, 135],
+      [585, 135],
+      [585, 216],
+      [445, 216]
+    ],
+    [
+      [305, 325],
+      [445, 325],
+      [445, 405],
+      [305, 405]
+    ]
+  ],
+  "regions_ignorees": [],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "37348131162:1",
+      "instance_R17": "37348131162:1",
+      "prioritaire": false,
+      "face": "37348131162-1",
+      "historique": {
+        "axe": [
+          [297.19142857142856, 283.9301075268817],
+          [469.80857142857144, 273.69354838709677]
+        ],
+        "entree": [477.12285714285713, 272.23118279569894],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Corps après les petites ailettes bleues jusqu’au jaune. Le long trait descendant est une ombre.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [321.07, 281.19],
+          [336.35, 280.35],
+          [351.59, 278.99],
+          [353.98, 278.63],
+          [366.88, 278.26],
+          [382.12, 276.84],
+          [390.91, 276.39],
+          [397.37, 275.57],
+          [412.64, 274.63],
+          [427.9, 273.51],
+          [433.81, 273.42],
+          [443.18, 272.6],
+          [458.44, 271.54],
+          [473.7, 270.48],
+          [474.0, 275.52],
+          [458.73, 276.45],
+          [443.46, 277.37],
+          [434.05, 277.52],
+          [428.2, 278.45],
+          [412.93, 279.49],
+          [397.67, 280.54],
+          [391.16, 280.64],
+          [382.39, 281.43],
+          [367.13, 282.5],
+          [354.26, 283.4],
+          [351.87, 283.57],
+          [336.59, 284.49],
+          [321.33, 285.58]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [321.2, 283.385],
+          [336.47, 282.42],
+          [351.73, 281.28],
+          [354.12, 281.015],
+          [367.005, 280.38],
+          [382.255, 279.135],
+          [391.035, 278.515],
+          [397.52, 278.055],
+          [412.785, 277.06],
+          [428.05, 275.98],
+          [433.93, 275.47],
+          [443.32, 274.985],
+          [458.585, 273.995],
+          [473.85, 273.0]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [477.12285714285713, 272.23118279569894],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}
