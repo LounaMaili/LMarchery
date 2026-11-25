@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="335" viewBox="0 0 940 335" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>R19 sur les neuf photos d’apprentissage</title>
+  <desc>Les masques, les axes et les entrées sont appariés séparément. Le triplet exige une seule requête pour la même flèche.</desc>
+  <rect x="0" y="0" width="940" height="335" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">R19 sur les neuf photos d’apprentissage</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Les masques, les axes et les entrées sont appariés séparément. Le triplet exige une seule requête pour la même flèche.</text>
+  <text x="33" y="108" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Masques appariés</text>
+  <text x="33" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="76" y="133" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="76" y="133" width="103.0" height="12" fill="#087e87" rx="2" />
+  <text x="184" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">31/31</text>
+  <text x="33" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="76" y="182" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="76" y="182" width="103.0" height="12" fill="#aa4a0a" rx="2" />
+  <text x="184" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">31/31</text>
+  <text x="33" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="76" y="231" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="76" y="231" width="103.0" height="12" fill="#7052ae" rx="2" />
+  <text x="184" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">31/31</text>
+  <text x="257" y="108" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Axes admis retrouvés</text>
+  <text x="257" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="300" y="133" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="300" y="133" width="29.903225806451612" height="12" fill="#087e87" rx="2" />
+  <text x="408" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9/31</text>
+  <text x="257" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="300" y="182" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="300" y="182" width="53.16129032258065" height="12" fill="#aa4a0a" rx="2" />
+  <text x="408" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">16/31</text>
+  <text x="257" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="300" y="231" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="300" y="231" width="53.16129032258065" height="12" fill="#7052ae" rx="2" />
+  <text x="408" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">16/31</text>
+  <text x="481" y="108" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Entrées avant seuil</text>
+  <text x="481" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="524" y="133" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="524" y="133" width="43.57692307692308" height="12" fill="#087e87" rx="2" />
+  <text x="632" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">11/26</text>
+  <text x="481" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="524" y="182" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="524" y="182" width="47.53846153846154" height="12" fill="#aa4a0a" rx="2" />
+  <text x="632" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">12/26</text>
+  <text x="481" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="524" y="231" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="524" y="231" width="39.61538461538461" height="12" fill="#7052ae" rx="2" />
+  <text x="632" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">10/26</text>
+  <text x="705" y="108" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Triplets avant seuil</text>
+  <text x="705" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="748" y="133" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="748" y="133" width="7.923076923076923" height="12" fill="#087e87" rx="2" />
+  <text x="856" y="144" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2/26</text>
+  <text x="705" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="748" y="182" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="748" y="182" width="3.9615384615384617" height="12" fill="#aa4a0a" rx="2" />
+  <text x="856" y="193" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1/26</text>
+  <text x="705" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="748" y="231" width="103" height="12" fill="#e1e5e4" rx="2" />
+  <rect x="748" y="231" width="3.9615384615384617" height="12" fill="#7052ae" rx="2" />
+  <text x="856" y="242" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1/26</text>
+  <text x="33" y="303" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Un masque peut être apparié avec un faible Dice. Dice moyen par graine  0,252  ·  0,251  ·  0,274.</text>
+</svg>
