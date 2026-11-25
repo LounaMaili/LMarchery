@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="460" viewBox="0 0 1020 460" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Pixels natifs sur le domaine évaluable</title>
+  <desc>Sommes des 31 attributions de masque R19. Dans chaque paire, le témoin est à gauche et le candidat Dice à droite.</desc>
+  <rect x="0" y="0" width="1020" height="460" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Pixels natifs sur le domaine évaluable</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Sommes des 31 attributions de masque R19. Dans chaque paire, le témoin est à gauche et le candidat Dice à droite.</text>
+  <text x="45" y="110" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Référence retrouvée</text>
+  <text x="45" y="150" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pas 96</text>
+  <text x="45" y="174" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="94" y="160" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="140" y="174" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">26 378</text>
+  <rect x="194" y="160" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="240" y="174" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">47 317</text>
+  <text x="45" y="201" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="94" y="187" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="140" y="201" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">41 948</text>
+  <rect x="194" y="187" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="240" y="201" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">46 975</text>
+  <text x="45" y="228" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="94" y="214" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="140" y="228" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">30 425</text>
+  <rect x="194" y="214" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="240" y="228" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">31 862</text>
+  <text x="45" y="283" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pas 768</text>
+  <text x="45" y="307" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="94" y="293" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="140" y="307" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">59 592</text>
+  <rect x="194" y="293" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="240" y="307" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">78 189</text>
+  <text x="45" y="334" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="94" y="320" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="140" y="334" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">75 738</text>
+  <rect x="194" y="320" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="240" y="334" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">64 138</text>
+  <text x="45" y="361" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="94" y="347" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="140" y="361" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">73 228</text>
+  <rect x="194" y="347" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="240" y="361" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">79 885</text>
+  <text x="376" y="110" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Pixels ajoutés à tort</text>
+  <text x="376" y="150" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pas 96</text>
+  <text x="376" y="174" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="425" y="160" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="471" y="174" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">154 306</text>
+  <rect x="525" y="160" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="571" y="174" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">252 071</text>
+  <text x="376" y="201" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="425" y="187" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="471" y="201" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">213 120</text>
+  <rect x="525" y="187" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="571" y="201" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">231 046</text>
+  <text x="376" y="228" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="425" y="214" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="471" y="228" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">134 482</text>
+  <rect x="525" y="214" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="571" y="228" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">140 699</text>
+  <text x="376" y="283" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pas 768</text>
+  <text x="376" y="307" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="425" y="293" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="471" y="307" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">118 234</text>
+  <rect x="525" y="293" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="571" y="307" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">108 989</text>
+  <text x="376" y="334" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="425" y="320" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="471" y="334" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">220 949</text>
+  <rect x="525" y="320" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="571" y="334" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">121 349</text>
+  <text x="376" y="361" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="425" y="347" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="471" y="361" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">139 001</text>
+  <rect x="525" y="347" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="571" y="361" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">126 254</text>
+  <text x="707" y="110" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Référence manquée</text>
+  <text x="707" y="150" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pas 96</text>
+  <text x="707" y="174" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="756" y="160" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="802" y="174" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">69 172</text>
+  <rect x="856" y="160" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="902" y="174" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">48 233</text>
+  <text x="707" y="201" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="756" y="187" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="802" y="201" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">53 602</text>
+  <rect x="856" y="187" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="902" y="201" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">48 575</text>
+  <text x="707" y="228" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="756" y="214" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="802" y="228" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">65 125</text>
+  <rect x="856" y="214" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="902" y="228" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">63 688</text>
+  <text x="707" y="283" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pas 768</text>
+  <text x="707" y="307" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="756" y="293" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="802" y="307" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">35 958</text>
+  <rect x="856" y="293" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="902" y="307" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">17 361</text>
+  <text x="707" y="334" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="756" y="320" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="802" y="334" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">19 812</text>
+  <rect x="856" y="320" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="902" y="334" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">31 412</text>
+  <text x="707" y="361" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="756" y="347" width="93" height="20" rx="2" fill="#d7e9e6" />
+  <text x="802" y="361" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">22 322</text>
+  <rect x="856" y="347" width="93" height="20" rx="2" fill="#fae2d5" />
+  <text x="902" y="361" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">15 665</text>
+</svg>
