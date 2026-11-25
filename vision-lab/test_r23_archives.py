@@ -1,4 +1,6 @@
 """Audit depuis GitHub sans poids, photos sources ni nouvel appel du réseau."""
+import base64
+from hashlib import sha256
 import math
 from pathlib import Path
 import tempfile
@@ -12,6 +14,22 @@ from r23.mesures import replay
 from r23.presenter import render
 
 
+def svg_pixels_and_vectors(document):
+    root=ET.fromstring(document)
+    images=root.findall('.//{http://www.w3.org/2000/svg}image')
+    href='{http://www.w3.org/1999/xlink}href'
+    for item in images:
+        prefix,encoded=item.attrib[href].split(',',1)
+        if prefix!='data:image/png;base64':
+            raise ValueError('Raster SVG différent du format PNG intégré')
+        data=np.frombuffer(base64.b64decode(encoded,validate=True),dtype=np.uint8)
+        pixels=cv.imdecode(data,cv.IMREAD_UNCHANGED)
+        if pixels is None:
+            raise ValueError('PNG illisible')
+        item.set(href,f'{pixels.shape}/{pixels.dtype}/'+sha256(pixels.tobytes()).hexdigest())
+    return len(images),ET.tostring(root)
+
+
 class ArchivesR23(unittest.TestCase):
     def test_rejouer_toutes_les_tables_les_figures_et_les_paires(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -21,6 +39,11 @@ class ArchivesR23(unittest.TestCase):
             distances=0
             for f in sorted(p for p in out.rglob('*') if p.is_file()):
                 published=ROOT/f.relative_to(out)
+                if f.suffix=='.svg':
+                    actual=svg_pixels_and_vectors(f.read_bytes())
+                    self.assertEqual(actual[0],8,f.name)
+                    self.assertEqual(actual,svg_pixels_and_vectors(published.read_bytes()),f.name)
+                    continue
                 if f.parent.name!='mesures' or f.name=='effectifs.json':
                     self.assertEqual(f.read_bytes(),published.read_bytes(),f.name)
                     continue
@@ -35,6 +58,20 @@ class ArchivesR23(unittest.TestCase):
                             distances+=1
                 self.assertEqual(actual,ref,f.name)
             print(f'Rejeu R23 : {distances} distances géométriques dans la tolérance. Autres valeurs exactes.')
+
+    def test_compression_libre_pixels_et_geometrie_exacts(self):
+        def drawing(pixels,level,x):
+            ok,png=cv.imencode('.png',pixels,[cv.IMWRITE_PNG_COMPRESSION,level])
+            self.assertTrue(ok)
+            b64=base64.b64encode(png).decode()
+            return f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image x="{x}" xlink:href="data:image/png;base64,{b64}"/></svg>'
+        pixels=np.zeros((48,48,3),dtype=np.uint8)
+        a,b=drawing(pixels,0,4),drawing(pixels,9,4)
+        self.assertNotEqual(a,b)
+        self.assertEqual(svg_pixels_and_vectors(a),svg_pixels_and_vectors(b))
+        self.assertNotEqual(svg_pixels_and_vectors(a),svg_pixels_and_vectors(drawing(pixels,9,5)))
+        pixels[0,0,0]=1
+        self.assertNotEqual(svg_pixels_and_vectors(a),svg_pixels_and_vectors(drawing(pixels,9,4)))
 
     def test_budget_parite_et_calcul_independant_depuis_les_cellules(self):
         config=read(ROOT/'configuration.json')

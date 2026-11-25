@@ -1,0 +1,7 @@
+# Historique des contrôles R23
+
+Le protocole, la consolidation des journaux et le code de capture et de mesure ont été publiés avant les huit passages. [Gel du 25 novembre 2026](https://github.com/LounaMaili/LMarchery/commit/9a517b3fb6e90809769a000d3a22870dc364fc43)
+
+Le premier contrôle GitHub du rejeu des preuves a signalé que les octets compressés d’un PNG intégré à la planche Gagnon nº 11 différaient entre le runner Ubuntu et la machine d’exécution. Le test s’arrêtait sur le premier SVG différent. [Publication initiale des preuves](https://github.com/LounaMaili/LMarchery/commit/ff80beca5e43daf6d2b32446daee8f61f4bec6f1) · [Journal initial](https://github.com/LounaMaili/LMarchery/actions/runs/45677359761/job/139428359913)
+
+La correction concerne le contrôle de rendu et sa commande de reproduction. Le test décode chaque PNG, compare la forme, le type et tous les pixels à l’identique, puis compare tous les éléments et attributs du SVG. Un contrôle synthétique accepte deux compressions réellement distinctes de la même image et détecte le changement d’une composante d’un pixel ou le déplacement d’un panneau. Les cartes, valeurs, preuves de parité, figures publiées et conclusions conservent leurs empreintes initiales. Le contrôle géométrique des distances reste celui du protocole. Le rejeu de cette vérification utilise les grilles enregistrées. [Contrôles du rejeu](../test_r23_archives.py) · [Commandes](reproduire.md)

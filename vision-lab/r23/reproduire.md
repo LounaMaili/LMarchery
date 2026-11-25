@@ -15,7 +15,7 @@ python -m r23.presenter "$out_r23" --source r23
 cmp r23/historique.json "$out_r23/historique.json"
 cmp r23/mesures/effectifs.json "$out_r23/mesures/effectifs.json"
 diff -r r23/tableaux "$out_r23/tableaux"
-diff -r --exclude=README.md r23/figures "$out_r23/figures"
+cmp r23/figures/donnees.json "$out_r23/figures/donnees.json"
 for f in tableaux.md concurrence.md supports.md
 do
     cmp "r23/$f" "$out_r23/$f" || exit 1
@@ -23,7 +23,7 @@ done
 python -m unittest -v test_r23 test_r23_archives
 ```
 
-Le test vérifie les JSON de mesure en entier. Lors d’un rejeu sur un autre CPU, seule la distance géométrique recalculée en repère 704 accepte l’écart R22 de deux ULP et son côté du seuil doit rester identique. Tous les autres champs et les figures sont comparés exactement. Ces commandes utilisent les probabilités exportées dans leur précision historique. Les probabilités de cellule, les deux bornes des rangs et les poids du support peuvent être consultés dans les six cent vingt-quatre lignes de mesure. L’axe et le masque se rapportent à la même requête locale et au même état. [Tables lisibles par état](tableaux.md) · [Mesures JSON](mesures) · [Support des trois entrées détaillées](supports.md)
+Le test vérifie les JSON de mesure en entier. Lors d’un rejeu sur un autre CPU, seule la distance géométrique recalculée en repère 704 accepte l’écart R22 de deux ULP et son côté du seuil doit rester identique. Tous les autres champs sont comparés exactement. Pour chaque SVG, le test compare exactement les pixels de ses huit panneaux et tous les éléments vectoriels, y compris positions, textes et échelle. Deux encodages PNG sans perte peuvent produire les mêmes pixels avec des octets compressés différents. [Historique du contrôle de rendu](corrections.md) Ces commandes utilisent les probabilités exportées dans leur précision historique. Les probabilités de cellule, les deux bornes des rangs et les poids du support peuvent être consultés dans les six cent vingt-quatre lignes de mesure. L’axe et le masque se rapportent à la même requête locale et au même état. [Tables lisibles par état](tableaux.md) · [Mesures JSON](mesures) · [Support des trois entrées détaillées](supports.md)
 
 ## Exécution originale et rejeu des champs conservés
 
