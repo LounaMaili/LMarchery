@@ -1,0 +1,1242 @@
+{
+  "version": 1,
+  "base_R17": "08e4ce04300ec33d7152534d6804fc6fb3391623",
+  "acquisitions": [
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "partition": "train",
+      "supports": [
+        "crigges-4"
+      ],
+      "role": "compatibilite_Crigges",
+      "instances_R17": [
+        "13-01"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [
+        "13-01"
+      ],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r7/vision-lab/data/r7/crigges/originals/13/01.png",
+      "taille_octets": 14283070,
+      "sha256_source": "ce9c9e6e4c86f2ccb21c8c522ce2770e4bd9a1fdbae493db3504583826c5fea6",
+      "fichier_reference": "vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "sha256_reference": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "taille_reference_octets": 1731722,
+      "dimensions_stockees": [
+        2988,
+        3984
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        2988,
+        3984
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "echelle_oriente_travail": [
+        0.3534136546184739,
+        0.3534136546184739
+      ],
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "13/01.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F01.png?datasetVersionNumber=1",
+        "source_sha256": "ce9c9e6e4c86f2ccb21c8c522ce2770e4bd9a1fdbae493db3504583826c5fea6",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/13%2F01.json?datasetVersionNumber=1",
+        "annotation_sha256": "cf2d0e2b130a9b0995a63d508d009a1034022eb223d41026b4ffaba1455ae3f3",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "photo": "70-01",
+      "provenance": "Crigges",
+      "partition": "train",
+      "supports": [
+        "crigges-4"
+      ],
+      "role": "compatibilite_Crigges",
+      "instances_R17": [
+        "70-01"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [
+        "70-01"
+      ],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r7/vision-lab/data/r7/crigges/originals/70/01.png",
+      "taille_octets": 14739906,
+      "sha256_source": "6b1c83b854db8bc399d1a0d79eb068b53182e6c321860fc512ab220ee6c8e239",
+      "fichier_reference": "vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "sha256_reference": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "taille_reference_octets": 1791284,
+      "dimensions_stockees": [
+        2988,
+        3984
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        2988,
+        3984
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "echelle_oriente_travail": [
+        0.3534136546184739,
+        0.3534136546184739
+      ],
+      "source": {
+        "source": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "credit": "Crigges",
+        "version": 1,
+        "license": "CC BY 4.0",
+        "source_file": "70/01.png",
+        "source_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F01.png?datasetVersionNumber=1",
+        "source_sha256": "6b1c83b854db8bc399d1a0d79eb068b53182e6c321860fc512ab220ee6c8e239",
+        "annotation_url": "https://www.kaggle.com/api/v1/datasets/download/crigges/arrow-sequences/70%2F01.json?datasetVersionNumber=1",
+        "annotation_sha256": "99704210faacfdc7bc8057fe918e7a83fd8b79a3fcadf54bb643f3db7e3a9dd7",
+        "terms": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "partition": "train",
+      "supports": [
+        "winnipeg"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:3",
+        "7245527662:4"
+      ],
+      "prioritaires_R17": [
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:4"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            492.94,
+            261.2136105860113
+          ],
+          [
+            578.7,
+            322.64272211720225
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r8/vision-lab/data/r8/media/7245527662.jpg",
+      "taille_octets": 131394,
+      "sha256_source": "6980ee05e701f0ad3cc125dc1a9a9e6956c96d74cbf6d59df5418a13c915a8a5",
+      "fichier_reference": "vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "sha256_reference": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "taille_reference_octets": 780209,
+      "dimensions_stockees": [
+        1024,
+        677
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        677
+      ],
+      "dimensions_travail": [
+        1024,
+        677
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "url": "https://www.flickr.com/photos/34859133@N06/7245527662",
+        "credit": "jrladia",
+        "title": "Heartland Archery | Winnipeg",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "6980ee05e701f0ad3cc125dc1a9a9e6956c96d74cbf6d59df5418a13c915a8a5",
+        "notice_sha256": "de91c8ddc05750f21baca553e72fe29d64647727b8c3a6109c4c2ef0da45662b"
+      }
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "partition": "train",
+      "supports": [
+        "lynch"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5"
+      ],
+      "prioritaires_R17": [
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r8/vision-lab/data/r8/media/5115614018.jpg",
+      "taille_octets": 204546,
+      "sha256_source": "60b56e339834a10035447e39346e986aaa47ac1ebf93f982962288c060bb0546",
+      "fichier_reference": "vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "sha256_reference": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "taille_reference_octets": 1108495,
+      "dimensions_stockees": [
+        1024,
+        683
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        683
+      ],
+      "dimensions_travail": [
+        1024,
+        683
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "url": "https://www.flickr.com/photos/25195310@N02/5115614018",
+        "credit": "Danielle Walquist Lynch",
+        "title": "Corey's archery target",
+        "license": "BY 2.0",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "sha256": "60b56e339834a10035447e39346e986aaa47ac1ebf93f982962288c060bb0546",
+        "notice_sha256": "695f9ea27452a03c3ead9087eb061a53c2b12f09194bc39b862211445156eaa3"
+      }
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "partition": "train",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "18105652008:1",
+        "18105652008:2",
+        "18105652008:3",
+        "18105652008:4",
+        "18105652008:5"
+      ],
+      "prioritaires_R17": [
+        "18105652008:1",
+        "18105652008:2"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            526.86,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            522.3533190578158
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "taille_octets": 426302,
+      "sha256_source": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "sha256_reference": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "taille_reference_octets": 426302,
+      "dimensions_stockees": [
+        1024,
+        683
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        683
+      ],
+      "dimensions_travail": [
+        1024,
+        683
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "18105652008",
+        "url": "https://www.flickr.com/photos/38712296@N07/18105652008",
+        "pixels_url": "https://live.staticflickr.com/8840/18105652008_bcefc2b983_b.jpg",
+        "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+        "size": 426302,
+        "credit": "zigazou76",
+        "author_url": "https://www.flickr.com/photos/38712296@N07",
+        "title": "Cibles pour le tir à l’arc",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "3b161e339753b12a1d5831568c697b84b212552d77fb0cd237c13b19a309f8f5"
+      }
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "partition": "train",
+      "supports": [
+        "24614689941-1"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "24614689941:1",
+        "24614689941:2",
+        "24614689941:3"
+      ],
+      "prioritaires_R17": [
+        "24614689941:1",
+        "24614689941:2",
+        "24614689941:3"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "taille_octets": 99973,
+      "sha256_source": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "sha256_reference": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "taille_reference_octets": 99973,
+      "dimensions_stockees": [
+        1024,
+        1024
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        1024
+      ],
+      "dimensions_travail": [
+        1024,
+        1024
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "24614689941",
+        "url": "https://www.flickr.com/photos/groovenite/24614689941",
+        "pixels_url": "https://live.staticflickr.com/1543/24614689941_69acf60c45_b.jpg",
+        "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+        "size": 99973,
+        "credit": "renatomitra",
+        "author_url": "https://www.flickr.com/photos/groovenite",
+        "title": "Heute hatte ich meine erste Lektion im Bogenschiessen. #arrow #archery #target #fokus",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "51149ec7f68f2366dbbc9ee83967db334e1a46b98be54e6d673d2b360f24af9c"
+      }
+    },
+    {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "partition": "train",
+      "supports": [
+        "4169106197-1"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "4169106197:1"
+      ],
+      "prioritaires_R17": [
+        "4169106197:1"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "taille_octets": 97351,
+      "sha256_source": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "sha256_reference": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "taille_reference_octets": 97351,
+      "dimensions_stockees": [
+        640,
+        480
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        640,
+        480
+      ],
+      "dimensions_travail": [
+        640,
+        480
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "4169106197",
+        "url": "https://www.flickr.com/photos/40385177@N07/4169106197",
+        "pixels_url": "https://live.staticflickr.com/2769/4169106197_6338bf59ca_z.jpg",
+        "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+        "size": 97351,
+        "credit": "cristina.sanvito",
+        "author_url": "https://www.flickr.com/photos/40385177@N07",
+        "title": "centro!",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "26373215420846c761950e196c4f5d66be4c48a9cca10406ceab07e084646ef9"
+      }
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "partition": "train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "wc71488242:1",
+        "wc71488242:10",
+        "wc71488242:11",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:4",
+        "wc71488242:5",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9"
+      ],
+      "prioritaires_R17": [
+        "wc71488242:1",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:11"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "taille_octets": 592714,
+      "sha256_source": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "sha256_reference": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "taille_reference_octets": 592714,
+      "dimensions_stockees": [
+        1280,
+        1280
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1280,
+        1280
+      ],
+      "dimensions_travail": [
+        1280,
+        1280
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "wc71488242",
+        "credit": "Bernard Gagnon",
+        "terms": "https://creativecommons.org/licenses/by-sa/4.0",
+        "title": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+        "pixels_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Changlimithang_Archery_Ground%2C_Thimphu_08.jpg/1280px-Changlimithang_Archery_Ground%2C_Thimphu_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+        "size": 592714,
+        "revision_sha1": "cf38b8fbbbb1a50327f4711c7ceea62df29488e2",
+        "notice_sha256": "6b03c97c12201ef3491bbaf6377037b372685a79d1a23503d1145fa7f6a318a6"
+      }
+    },
+    {
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "9436017284-1"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "9436017284:1",
+        "9436017284:2",
+        "9436017284:3",
+        "9436017284:4",
+        "9436017284:5"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            231.36285714285714,
+            561.9685714285714
+          ],
+          [
+            276.7114285714286,
+            630.7228571428572
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+      "taille_octets": 203063,
+      "sha256_source": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+      "fichier_reference": "vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+      "sha256_reference": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+      "taille_reference_octets": 203063,
+      "dimensions_stockees": [
+        768,
+        1024
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        768,
+        1024
+      ],
+      "dimensions_travail": [
+        768,
+        1024
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "9436017284",
+        "url": "https://www.flickr.com/photos/surtr/9436017284",
+        "pixels_url": "https://live.staticflickr.com/7328/9436017284_681260a6f4_b.jpg",
+        "sha256": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+        "size": 203063,
+        "credit": "surtr",
+        "author_url": "https://www.flickr.com/photos/surtr",
+        "title": "clustering",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "notice_sha256": "16e501a8ad508202e72a37434267dbc2084a844b97a86ffe465de93148e4976f"
+      }
+    },
+    {
+      "photo": "37348131162",
+      "provenance": "Special Olympics Oesterreich",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "37348131162-1"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "37348131162:1"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+      "taille_octets": 134046,
+      "sha256_source": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+      "fichier_reference": "vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+      "sha256_reference": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+      "taille_reference_octets": 134046,
+      "dimensions_stockees": [
+        1024,
+        680
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        680
+      ],
+      "dimensions_travail": [
+        1024,
+        680
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "37348131162",
+        "url": "https://www.flickr.com/photos/so-austria/37348131162",
+        "pixels_url": "https://live.staticflickr.com/4393/37348131162_66ecc82f28_b.jpg",
+        "sha256": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+        "size": 134046,
+        "credit": "Special Olympics Oesterreich",
+        "author_url": "https://www.flickr.com/photos/so-austria",
+        "title": "Familientage - Bogenschießen",
+        "terms": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "notice_sha256": "27ca35a75dd43f5b63cf64150af93bf7db134dada38ecdeb714ce3bd1b9e79b4"
+      }
+    },
+    {
+      "photo": "89744300",
+      "provenance": "DWZ",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "89744300-1",
+        "89744300-2",
+        "89744300-3",
+        "89744300-4",
+        "89744300-5",
+        "89744300-6",
+        "89744300-7",
+        "89744300-8"
+      ],
+      "role": "temoin_vide",
+      "instances_R17": [],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r13/vision-lab/data/r13/media/89744300.jpg",
+      "taille_octets": 228255,
+      "sha256_source": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b",
+      "fichier_reference": "vision-lab-r13/vision-lab/data/r13/media/89744300.jpg",
+      "sha256_reference": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b",
+      "taille_reference_octets": 228255,
+      "dimensions_stockees": [
+        1024,
+        768
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        768
+      ],
+      "dimensions_travail": [
+        1024,
+        768
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "89744300",
+        "url": "https://www.flickr.com/photos/dwz/89744300",
+        "pixels_url": "https://live.staticflickr.com/14/89744300_ad0a1cd306_b.jpg",
+        "sha256": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b",
+        "size": 228255,
+        "credit": "DWZ",
+        "author_url": "https://www.flickr.com/photos/dwz",
+        "title": "DSC00053",
+        "terms": "https://creativecommons.org/licenses/by/2.0/",
+        "notice_sha256": "73bd548904b3251996a14d5f85facce3bbee333cf1aede7abad468fd865115bd"
+      }
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "36725328420-1"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "36725328420:1",
+        "36725328420:2",
+        "36725328420:3",
+        "36725328420:4",
+        "36725328420:5",
+        "36725328420:6"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            165,
+            337
+          ],
+          [
+            684,
+            470
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+      "taille_octets": 150499,
+      "sha256_source": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "fichier_reference": "vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+      "sha256_reference": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "taille_reference_octets": 150499,
+      "dimensions_stockees": [
+        1024,
+        768
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        768
+      ],
+      "dimensions_travail": [
+        1024,
+        768
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "id": "36725328420",
+        "source": "https://www.flickr.com/photos/juantiagues/36725328420",
+        "credit": "juantiagues",
+        "terms": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "pixels_url": "https://live.staticflickr.com/4405/36725328420_462f189f34_b.jpg",
+        "sha256": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+        "octets": 150499,
+        "notice_sha256": "dea808b35369649d1282842b59b147ad72ac00a4aac676f220749e21fccc03ca",
+        "requete": 2
+      }
+    },
+    {
+      "photo": "fl51204504370",
+      "provenance": "Moo.The.Cow",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "salle / deux faces verticales, bloc blanc"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "fl51204504370:1"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            378,
+            445
+          ],
+          [
+            420,
+            665
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/fl51204504370.jpg",
+      "taille_octets": 161356,
+      "sha256_source": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/fl51204504370.jpg",
+      "sha256_reference": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+      "taille_reference_octets": 161356,
+      "dimensions_stockees": [
+        1024,
+        768
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1024,
+        768
+      ],
+      "dimensions_travail": [
+        1024,
+        768
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "catalogue": "flickr",
+        "url": "https://www.flickr.com/photos/michael-kwok/51204504370",
+        "notice_licence": "https://www.flickr.com/photos/michael-kwok/51204504370",
+        "credit": "Moo.The.Cow",
+        "licence_image": "https://creativecommons.org/licenses/by/2.0/",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://live.staticflickr.com/65535/51204504370_9ef5351138_b.jpg",
+        "sha256_source": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+        "octets_source": 161356,
+        "dimensions_orientees": [
+          1024,
+          768
+        ],
+        "type_fichier_source": "Copie JPEG mise à disposition par le photographe sur Flickr",
+        "fichier_travail": "fl51204504370.jpg"
+      }
+    },
+    {
+      "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "provenance": "arrowcounting",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "feuille sur tapis sombre / série arrowcounting"
+      ],
+      "role": "temoin_vide",
+      "instances_R17": [],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/rf-empty-0pHGx6yITFtGgR4Uen1L.jpg",
+      "taille_octets": 2840566,
+      "sha256_source": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/rf-empty-0pHGx6yITFtGgR4Uen1L.jpg",
+      "sha256_reference": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "taille_reference_octets": 2840566,
+      "dimensions_stockees": [
+        1920,
+        1080
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "dimensions_travail": [
+        1408,
+        792
+      ],
+      "echelle_oriente_travail": [
+        0.7333333333333333,
+        0.7333333333333333
+      ],
+      "source": {
+        "catalogue": "rf-empty",
+        "url": "https://universe.roboflow.com/arrowcounting/arrow_counting/images/0pHGx6yITFtGgR4Uen1L",
+        "notice_licence": "https://universe.roboflow.com/arrowcounting/arrow_counting",
+        "credit": "arrowcounting",
+        "licence_image": "https://creativecommons.org/licenses/by/4.0/",
+        "licence_ann_source": "https://creativecommons.org/licenses/by/4.0/",
+        "annotation": "Classe 0_empty vérifiée sur toute la feuille",
+        "url_octets": "https://source.roboflow.com/uOu7h19RbPP9mwujrTEFnvCzQCJ3/0pHGx6yITFtGgR4Uen1L/original.jpg",
+        "sha256_source": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+        "octets_source": 2840566,
+        "dimensions_orientees": [
+          1920,
+          1080
+        ],
+        "type_fichier_source": "Fichier source de la plateforme; génération antérieure inconnue",
+        "fichier_travail": "rf-empty-0pHGx6yITFtGgR4Uen1L.jpg"
+      }
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "papier concentrique sur chevalet bois / série Samsung"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "rf-key-0ijARYt7fTFFlaDVSrdA:1",
+        "rf-key-0ijARYt7fTFFlaDVSrdA:2",
+        "rf-key-0ijARYt7fTFFlaDVSrdA:3",
+        "rf-key-0ijARYt7fTFFlaDVSrdA:4",
+        "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+        "rf-key-0ijARYt7fTFFlaDVSrdA:6"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "taille_octets": 2972520,
+      "sha256_source": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "sha256_reference": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "taille_reference_octets": 2972520,
+      "dimensions_stockees": [
+        4032,
+        3024
+      ],
+      "exif": 6,
+      "dimensions_orientees": [
+        3024,
+        4032
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "echelle_oriente_travail": [
+        0.3492063492063492,
+        0.3492063492063492
+      ],
+      "source": {
+        "catalogue": "rf-key",
+        "url": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints/images/0ijARYt7fTFFlaDVSrdA",
+        "notice_licence": "https://universe.roboflow.com/archery-scoring/archery-scoring-keypoints",
+        "credit": "Archery Scoring",
+        "licence_image": "https://creativecommons.org/licenses/by/4.0/",
+        "licence_ann_source": "https://creativecommons.org/licenses/by/4.0/",
+        "annotation": "Points/tracés du calque source vérifiés et précisés sur les pixels",
+        "url_octets": "https://source.roboflow.com/cUOe7hNn8xXLL4UKaF8zqBD49x42/0ijARYt7fTFFlaDVSrdA/original.jpg",
+        "sha256_source": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+        "octets_source": 2972520,
+        "dimensions_orientees": [
+          3024,
+          4032
+        ],
+        "type_fichier_source": "Original photographique fourni par le compte, EXIF et résolution native concordants",
+        "fichier_travail": "rf-key-0ijARYt7fTFFlaDVSrdA.jpg"
+      }
+    },
+    {
+      "photo": "wc107063652",
+      "provenance": "Jim Barton",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "Hogg Park / toile sur panneaux de mousse"
+      ],
+      "role": "temoin_vide",
+      "instances_R17": [],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/wc107063652.jpg",
+      "taille_octets": 213398,
+      "sha256_source": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc107063652.jpg",
+      "sha256_reference": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+      "taille_reference_octets": 213398,
+      "dimensions_stockees": [
+        800,
+        530
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        800,
+        530
+      ],
+      "dimensions_travail": [
+        800,
+        530
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_target,_Hogg_Park_-_geograph.org.uk_-_2248040.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_target,_Hogg_Park_-_geograph.org.uk_-_2248040.jpg",
+        "credit": "Jim Barton",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/2.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Archery_target%2C_Hogg_Park_-_geograph.org.uk_-_2248040.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+        "octets_source": 213398,
+        "dimensions_orientees": [
+          800,
+          530
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc107063652.jpg"
+      }
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "partition": "train",
+      "supports": [
+        "chevalet de paille / Bade-Wurtemberg"
+      ],
+      "role": "silhouettes_train",
+      "instances_R17": [
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5"
+      ],
+      "prioritaires_R17": [
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5"
+      ],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "taille_octets": 4316454,
+      "sha256_source": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "sha256_reference": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "taille_reference_octets": 4316454,
+      "dimensions_stockees": [
+        2736,
+        3648
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        2736,
+        3648
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "echelle_oriente_travail": [
+        0.38596491228070173,
+        0.38596491228070173
+      ],
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_shooting_at_a_WA_target_in_Northern_Baden,_Wuerttemberg,_Germany.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_shooting_at_a_WA_target_in_Northern_Baden,_Wuerttemberg,_Germany.jpg",
+        "credit": "4028mdk09",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/3.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Archery_shooting_at_a_WA_target_in_Northern_Baden%2C_Wuerttemberg%2C_Germany.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+        "octets_source": 4316454,
+        "dimensions_orientees": [
+          2736,
+          3648
+        ],
+        "type_fichier_source": "Original photographique fourni par le compte, EXIF et résolution native concordants",
+        "fichier_travail": "wc11001401.jpg"
+      }
+    },
+    {
+      "photo": "wc130798782",
+      "provenance": "N Chadwick",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "Geograph 4645584 / quatre feuilles sous bois"
+      ],
+      "role": "temoin_vide",
+      "instances_R17": [],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": true,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/wc130798782.jpg",
+      "taille_octets": 103991,
+      "sha256_source": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc130798782.jpg",
+      "sha256_reference": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+      "taille_reference_octets": 103991,
+      "dimensions_stockees": [
+        640,
+        426
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        640,
+        426
+      ],
+      "dimensions_travail": [
+        640,
+        426
+      ],
+      "echelle_oriente_travail": [
+        1.0,
+        1.0
+      ],
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_4645584.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Archery_targets_-_geograph.org.uk_-_4645584.jpg",
+        "credit": "N Chadwick",
+        "licence_image": "https://creativecommons.org/licenses/by-sa/2.0",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/4/47/Archery_targets_-_geograph.org.uk_-_4645584.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+        "octets_source": 103991,
+        "dimensions_orientees": [
+          640,
+          426
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc130798782.jpg"
+      }
+    },
+    {
+      "photo": "wc16492853",
+      "provenance": "Ozizo",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "deux mato / butte de terre"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "wc16492853:1"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [
+        [
+          [
+            0,
+            200
+          ],
+          [
+            1407,
+            455
+          ]
+        ],
+        [
+          [
+            1130,
+            295
+          ],
+          [
+            1407,
+            506
+          ]
+        ]
+      ],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/wc16492853.jpg",
+      "taille_octets": 479911,
+      "sha256_source": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc16492853.jpg",
+      "sha256_reference": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+      "taille_reference_octets": 479911,
+      "dimensions_stockees": [
+        2016,
+        1512
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        2016,
+        1512
+      ],
+      "dimensions_travail": [
+        1408,
+        1056
+      ],
+      "echelle_oriente_travail": [
+        0.6984126984126984,
+        0.6984126984126984
+      ],
+      "source": {
+        "catalogue": "commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Target_of_Kyudo.jpg",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:Target_of_Kyudo.jpg",
+        "credit": "Ozizo",
+        "licence_image": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/2/23/Target_of_Kyudo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+        "octets_source": 479911,
+        "dimensions_orientees": [
+          2016,
+          1512
+        ],
+        "type_fichier_source": "Original publié sur Commons; résolution native de prise non établie",
+        "fichier_travail": "wc16492853.jpg"
+      }
+    },
+    {
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "partition": "dev_explore_R16",
+      "supports": [
+        "Moscou 2019 / deux faces compound"
+      ],
+      "role": "developpement_occupe",
+      "instances_R17": [
+        "wc82322984-t22:1",
+        "wc82322984-t22:2",
+        "wc82322984-t22:3",
+        "wc82322984-t22:4"
+      ],
+      "prioritaires_R17": [],
+      "controle_Crigges": [],
+      "regions_ignorees_R17": [],
+      "inventaire_R17_complet": false,
+      "source_locale": "vision-lab-r15/vision-lab/data/r15/media/wc82322984-t22.png",
+      "taille_octets": 973526,
+      "sha256_source": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc82322984-t22.png",
+      "sha256_reference": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "taille_reference_octets": 973526,
+      "dimensions_stockees": [
+        1920,
+        1080
+      ],
+      "exif": 1,
+      "dimensions_orientees": [
+        1920,
+        1080
+      ],
+      "dimensions_travail": [
+        1408,
+        792
+      ],
+      "echelle_oriente_travail": [
+        0.7333333333333333,
+        0.7333333333333333
+      ],
+      "source": {
+        "catalogue": "video-commons",
+        "url": "https://commons.wikimedia.org/wiki/File:2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm",
+        "notice_licence": "https://commons.wikimedia.org/wiki/File:2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm",
+        "credit": "Voltmetro",
+        "licence_image": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "licence_ann_source": null,
+        "annotation": "Lecture assistée R15 sur la photographie",
+        "url_octets": "https://upload.wikimedia.org/wikipedia/commons/9/9b/2019-09-06_-_Archery_World_Cup_Final_-_Mixed_Compound_-_Perfect_score.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "sha256_source": "5cdaf9c37eb2f03529644229894af4dbf1178292dac30b70c6971879787e1458",
+        "octets_source": 14210351,
+        "dimensions_orientees": [
+          1920,
+          1080
+        ],
+        "type_fichier_source": "Original vidéo publié par son auteur; image extraite à 22 s",
+        "fichier_travail": "wc82322984-t22.png",
+        "instant_s": 22.0,
+        "image_decodee": 550,
+        "base_temps": "25 images/s",
+        "duree_s": 23,
+        "images_independantes": 1
+      }
+    }
+  ]
+}
