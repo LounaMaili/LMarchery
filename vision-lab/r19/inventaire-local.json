@@ -1,0 +1,40 @@
+{
+  "checkpoints": [
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Checkpoint hérité R9, ordinary-9301",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Checkpoint final R19, graine 9301, pas 96",
+      "octets": 897303,
+      "sha256": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9301/final.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Checkpoint final R19, graine 9302, pas 96",
+      "octets": 897303,
+      "sha256": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9302/final.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Checkpoint final R19, graine 9303, pas 96",
+      "octets": 897303,
+      "sha256": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9303/final.pt"
+    }
+  ],
+  "corpus": "../r18/inventaire-local.json",
+  "reference_B": {
+    "fichier": "r16/predictions/ordinary-9301.json",
+    "sha256": "17dab99f1587f2b30be94861894ed366c6b0a1dbec4df7c075c77b73ca1034a9"
+  },
+  "configuration": "c69ada4c0367286bb452be059005613446c24a4567810bfc5b6bc01715445767",
+  "plans": "9010c53aa5901cecbfbff775348ee799a70e2046c17c9f90ccec7706a5beb0ae",
+  "donnees": "933e4bd81389b5e4effc69150debd3befc6a502471223a8a7eda7c184eaa6372"
+}

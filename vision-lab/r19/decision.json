@@ -1,0 +1,180 @@
+{
+  "poursuivre": false,
+  "graines": {
+    "9301": {
+      "gain_net": 0,
+      "provenances_en_gain": [],
+      "par_provenance": {
+        "surtr": {
+          "gains": [],
+          "pertes": []
+        },
+        "Special Olympics Oesterreich": {
+          "gains": [],
+          "pertes": []
+        },
+        "DWZ": {
+          "gains": [],
+          "pertes": []
+        },
+        "juantiagues": {
+          "gains": [],
+          "pertes": []
+        },
+        "Moo.The.Cow": {
+          "gains": [],
+          "pertes": []
+        },
+        "arrowcounting": {
+          "gains": [],
+          "pertes": []
+        },
+        "Archery Scoring": {
+          "gains": [],
+          "pertes": []
+        },
+        "Jim Barton": {
+          "gains": [],
+          "pertes": []
+        },
+        "N Chadwick": {
+          "gains": [],
+          "pertes": []
+        },
+        "Ozizo": {
+          "gains": [],
+          "pertes": []
+        },
+        "Voltmetro": {
+          "gains": [
+            "wc82322984-t22:2"
+          ],
+          "pertes": [
+            "wc82322984-t22:4"
+          ]
+        }
+      },
+      "gain_sur_deux_provenances": false,
+      "sans_recul": true,
+      "budget": true,
+      "vides": true,
+      "axes": false
+    },
+    "9302": {
+      "gain_net": -1,
+      "provenances_en_gain": [],
+      "par_provenance": {
+        "surtr": {
+          "gains": [],
+          "pertes": []
+        },
+        "Special Olympics Oesterreich": {
+          "gains": [],
+          "pertes": []
+        },
+        "DWZ": {
+          "gains": [],
+          "pertes": []
+        },
+        "juantiagues": {
+          "gains": [],
+          "pertes": []
+        },
+        "Moo.The.Cow": {
+          "gains": [],
+          "pertes": []
+        },
+        "arrowcounting": {
+          "gains": [],
+          "pertes": []
+        },
+        "Archery Scoring": {
+          "gains": [],
+          "pertes": []
+        },
+        "Jim Barton": {
+          "gains": [],
+          "pertes": []
+        },
+        "N Chadwick": {
+          "gains": [],
+          "pertes": []
+        },
+        "Ozizo": {
+          "gains": [],
+          "pertes": []
+        },
+        "Voltmetro": {
+          "gains": [],
+          "pertes": [
+            "wc82322984-t22:4"
+          ]
+        }
+      },
+      "gain_sur_deux_provenances": false,
+      "sans_recul": false,
+      "budget": true,
+      "vides": true,
+      "axes": false
+    },
+    "9303": {
+      "gain_net": 0,
+      "provenances_en_gain": [],
+      "par_provenance": {
+        "surtr": {
+          "gains": [],
+          "pertes": []
+        },
+        "Special Olympics Oesterreich": {
+          "gains": [],
+          "pertes": []
+        },
+        "DWZ": {
+          "gains": [],
+          "pertes": []
+        },
+        "juantiagues": {
+          "gains": [],
+          "pertes": []
+        },
+        "Moo.The.Cow": {
+          "gains": [],
+          "pertes": []
+        },
+        "arrowcounting": {
+          "gains": [],
+          "pertes": []
+        },
+        "Archery Scoring": {
+          "gains": [],
+          "pertes": []
+        },
+        "Jim Barton": {
+          "gains": [],
+          "pertes": []
+        },
+        "N Chadwick": {
+          "gains": [],
+          "pertes": []
+        },
+        "Ozizo": {
+          "gains": [],
+          "pertes": []
+        },
+        "Voltmetro": {
+          "gains": [
+            "wc82322984-t22:2"
+          ],
+          "pertes": [
+            "wc82322984-t22:4"
+          ]
+        }
+      },
+      "gain_sur_deux_provenances": false,
+      "sans_recul": true,
+      "budget": true,
+      "vides": true,
+      "axes": false
+    }
+  }
+}

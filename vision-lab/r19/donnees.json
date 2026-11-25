@@ -1,0 +1,469 @@
+{
+  "checkpoint_initial": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+  "reference_B": "17dab99f1587f2b30be94861894ed366c6b0a1dbec4df7c075c77b73ca1034a9",
+  "validites": "0696d06b15cb444813c02758eab7c873167cb2f32d46a3a93b03931e0cd0727d",
+  "photos": [
+    {
+      "photo": "13-01",
+      "partition": "train",
+      "provenance": "Crigges",
+      "role": "compatibilite_Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "sha256_reference": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "sha256_BGR_travail": "0da198c6feeac093bc6e76a1eeb9a4328a53f0150c7e6631f22aeec05e61d831",
+      "sha256_source": "ce9c9e6e4c86f2ccb21c8c522ce2770e4bd9a1fdbae493db3504583826c5fea6",
+      "sha256_annotation": "236a683959d10137c92a1c48845d4388cc4af12cd1373b1a046d8216952c02f9",
+      "sha256_masque": "bf61494f45ca6bf1e84475865c3cf5e6753b1d86d8250fc8b0793887aebd4d06"
+    },
+    {
+      "photo": "70-01",
+      "partition": "train",
+      "provenance": "Crigges",
+      "role": "compatibilite_Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "sha256_reference": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "sha256_BGR_travail": "46fa788c8a29f52e5c7587f6ac1affa23be863ea78e46a04ba6f2ca7b38f6c5d",
+      "sha256_source": "6b1c83b854db8bc399d1a0d79eb068b53182e6c321860fc512ab220ee6c8e239",
+      "sha256_annotation": "0b4259be7771642e4363f6a011bda6c6bc642d991ed2fda54acad9e9c37a4a27",
+      "sha256_masque": "d8f25fc48ccaf2a1c9cddf2e6eca5992122b0acaa5f6c8a03a1962eab88bdf1f"
+    },
+    {
+      "photo": "7245527662",
+      "partition": "train",
+      "provenance": "jrladia",
+      "role": "silhouettes_train",
+      "supports": [
+        "winnipeg"
+      ],
+      "conditions": [
+        "worn",
+        "multiple"
+      ],
+      "dimensions_travail": [
+        1024,
+        677
+      ],
+      "fichier_reference": "vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "sha256_reference": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "sha256_BGR_travail": "49e89bafee15301e4a331f71acfc2322268a854d6d0b409e5e7c12b2eda4c66a",
+      "sha256_source": "6980ee05e701f0ad3cc125dc1a9a9e6956c96d74cbf6d59df5418a13c915a8a5",
+      "sha256_annotation": "7a4003f7d2d21eb3ebfb3981222fe84daa90980a9fe1d41fd990fd7241dff9f9",
+      "sha256_masque": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c"
+    },
+    {
+      "photo": "5115614018",
+      "partition": "train",
+      "provenance": "Danielle Walquist Lynch",
+      "role": "silhouettes_train",
+      "supports": [
+        "lynch"
+      ],
+      "conditions": [
+        "worn",
+        "grouped"
+      ],
+      "dimensions_travail": [
+        1024,
+        683
+      ],
+      "fichier_reference": "vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "sha256_reference": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "sha256_BGR_travail": "a489480ab2145c01758f4387e2b9cbe23bd2b1dd21207b08dba235dd49f6a7f0",
+      "sha256_source": "60b56e339834a10035447e39346e986aaa47ac1ebf93f982962288c060bb0546",
+      "sha256_annotation": "30cef19c24300b34e8406299049f6f0bb24c0cfc86f40add7f14615be6bbf5f2",
+      "sha256_masque": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4"
+    },
+    {
+      "photo": "18105652008",
+      "partition": "train",
+      "provenance": "zigazou76",
+      "role": "silhouettes_train",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "occlusion"
+      ],
+      "dimensions_travail": [
+        1024,
+        683
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "sha256_reference": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "sha256_BGR_travail": "b43b8156af85d098b971c13f85ebc8c880e202a797e60baadb5d3b29657b38ab",
+      "sha256_source": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "sha256_annotation": "77895526f142ac39d377200606319e41b1c92c2fadd2c834b9a4339e0e117f71",
+      "sha256_masque": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d"
+    },
+    {
+      "photo": "24614689941",
+      "partition": "train",
+      "provenance": "renatomitra",
+      "role": "silhouettes_train",
+      "supports": [
+        "24614689941-1"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1024,
+        1024
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "sha256_reference": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "sha256_BGR_travail": "1400a1bb4aa3dea1b2c02008658423e615ecfc7933c16cb017503055a97b2a44",
+      "sha256_source": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "sha256_annotation": "aee7428ccae33a0ffdb2912821f16344d68f6faf3fa2fe9b924e1ae28691166b",
+      "sha256_masque": "e05a381f237277c0b601c4f18fc2efa91fb5ee3c9002bf3df8cdc8e1e4332d59"
+    },
+    {
+      "photo": "4169106197",
+      "partition": "train",
+      "provenance": "cristina.sanvito",
+      "role": "silhouettes_train",
+      "supports": [
+        "4169106197-1"
+      ],
+      "conditions": [
+        "single"
+      ],
+      "dimensions_travail": [
+        640,
+        480
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "sha256_reference": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "sha256_BGR_travail": "b6bc999370c759bcd7221598fcc7ebe506c855ee25f719d47cc8a3af74d0d25e",
+      "sha256_source": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "sha256_annotation": "f273b555eec39b73bf6f86ff599b54b6e042a8e0bfa47e87f0d7a60fcd055c2d",
+      "sha256_masque": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8"
+    },
+    {
+      "photo": "wc71488242",
+      "partition": "train",
+      "provenance": "Bernard Gagnon",
+      "role": "silhouettes_train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "dimensions_travail": [
+        1280,
+        1280
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "sha256_reference": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "sha256_BGR_travail": "ae957c45cae309d31cfee7592b0e1fdb1adfaeaeb660ded6f17fe00c1d1ac8be",
+      "sha256_source": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "sha256_annotation": "86e94a2e24cb1a7360a9b8687fb9f7e642cc1ab5062e4e62db2636e78018dfac",
+      "sha256_masque": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e"
+    },
+    {
+      "photo": "9436017284",
+      "partition": "dev_explore_R16",
+      "provenance": "surtr",
+      "role": "developpement_occupe",
+      "supports": [
+        "9436017284-1"
+      ],
+      "conditions": [
+        "worn",
+        "grouped"
+      ],
+      "dimensions_travail": [
+        768,
+        1024
+      ],
+      "fichier_reference": "vision-lab-r13/vision-lab/data/r13/media/9436017284.jpg",
+      "sha256_reference": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+      "sha256_BGR_travail": "b200facc01132c6ace6ac44afde9296a01f8f653d8dc6be28756cabd983ab185",
+      "sha256_source": "469db76f84f8a64b02a2010f4160a52560619018d8595ac605f9262a5c9f6057",
+      "sha256_annotation": "0c01f2108cb08be491597859a0ca09e6fa50d05dfde77ce4c8641c1c0895284f",
+      "sha256_masque": "ab9cd7d9175056b7df9cb5900d2f736fa9a8a7ae0a189aed79d7987043faa5bd"
+    },
+    {
+      "photo": "37348131162",
+      "partition": "dev_explore_R16",
+      "provenance": "Special Olympics Oesterreich",
+      "role": "developpement_occupe",
+      "supports": [
+        "37348131162-1"
+      ],
+      "conditions": [
+        "worn"
+      ],
+      "dimensions_travail": [
+        1024,
+        680
+      ],
+      "fichier_reference": "vision-lab-r13/vision-lab/data/r13/media/37348131162.jpg",
+      "sha256_reference": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+      "sha256_BGR_travail": "7487ca9a3851fe62b479a5c2d5d42337c781ebefca7c78f944489f6e38d65ab0",
+      "sha256_source": "451f043d533f1b9646a75d976d962314bcd9363275d1fbf8a6af443aeb45aa59",
+      "sha256_annotation": "2a7a81ea6d46c0d7ae8fdca43b435a02ce61bae6d1582ca2c46388d1c2dbbd3f",
+      "sha256_masque": "7c5743a0a040e38f3d24d920f36e96e35df5c01aeed2845f2a6525904925d1a8"
+    },
+    {
+      "photo": "89744300",
+      "partition": "dev_explore_R16",
+      "provenance": "DWZ",
+      "role": "temoin_vide",
+      "supports": [
+        "89744300-1",
+        "89744300-2",
+        "89744300-3",
+        "89744300-4",
+        "89744300-5",
+        "89744300-6",
+        "89744300-7",
+        "89744300-8"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "dimensions_travail": [
+        1024,
+        768
+      ],
+      "fichier_reference": "vision-lab-r13/vision-lab/data/r13/media/89744300.jpg",
+      "sha256_reference": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b",
+      "sha256_BGR_travail": "637a740e2ec860977cdd62d65ebb72c04a3eef7e05ba901d3950c29afcc299d6",
+      "sha256_source": "cac369d6e6e2df29a537a79f42a1a124aa8a2445fed49a8e68d857e72dba4f8b",
+      "sha256_annotation": "9934bc0b8b264f37396bb20280c29e15e7fc7baa01663baaef4b11ed877863d5",
+      "sha256_masque": "17f07a2524d2ead5aa6dc6d0f6450efac91dd56ca47a4f139332c936f24f1000"
+    },
+    {
+      "photo": "36725328420",
+      "partition": "dev_explore_R16",
+      "provenance": "juantiagues",
+      "role": "developpement_occupe",
+      "supports": [
+        "36725328420-1"
+      ],
+      "conditions": [
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "dimensions_travail": [
+        1024,
+        768
+      ],
+      "fichier_reference": "vision-lab-r14/vision-lab/data/r14/media/36725328420.jpg",
+      "sha256_reference": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "sha256_BGR_travail": "0e22d4d59978f28b658b6d53bf94d1f34dbaa61ca60a72bcdef25d195830a23e",
+      "sha256_source": "7d77daecd59af34bb982b6028e132751a59a7ec8336230d1066680bc86921d87",
+      "sha256_annotation": "1e0aec68aadf5afb21394c8a3ba2f35002b75c14ca976195c1ed164ad8f57d4d",
+      "sha256_masque": "7fa97c0d2cc96d7b3193e41ac7870b680823d295017818c991a8ff431cef9327"
+    },
+    {
+      "photo": "fl51204504370",
+      "partition": "dev_explore_R16",
+      "provenance": "Moo.The.Cow",
+      "role": "developpement_occupe",
+      "supports": [
+        "salle / deux faces verticales, bloc blanc"
+      ],
+      "conditions": [],
+      "dimensions_travail": [
+        1024,
+        768
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/fl51204504370.jpg",
+      "sha256_reference": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+      "sha256_BGR_travail": "5b417c338aff0786724d166dc9524386ecf7ba6b0b0b864d928b6c920bd4ab21",
+      "sha256_source": "36f158f75efe596179d632f4c3e8d502abef2fe64202c4275f30b6bcbdfc4799",
+      "sha256_annotation": "8666f7dcb6276262b0d99c871de381d77cda8804d758aa914bfeb21fbedada48",
+      "sha256_masque": "046146eca6d46c26e57030586a52e430ad30162eab5d2e3e3a3edc0faa668a8f"
+    },
+    {
+      "photo": "rf-empty-0pHGx6yITFtGgR4Uen1L",
+      "partition": "dev_explore_R16",
+      "provenance": "arrowcounting",
+      "role": "temoin_vide",
+      "supports": [
+        "feuille sur tapis sombre / série arrowcounting"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1408,
+        792
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/rf-empty-0pHGx6yITFtGgR4Uen1L.jpg",
+      "sha256_reference": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "sha256_BGR_travail": "8debda21f03597943f2fc88d56b3a5f62ff34d5ad607797d6fc987b320aaa214",
+      "sha256_source": "fa988ab64a0c7396ba2f828644070e2a0597b08db49ee748716ec6b2368d900a",
+      "sha256_annotation": "39648c3bd45d5eb0153689d4767e1aa530d4fe8f4d18a1ddbc9936c11b9b0c48",
+      "sha256_masque": "3f011bb002c4e48dc8e7c3000adb70432f22e046600892270f96577375d4abc8"
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "partition": "dev_explore_R16",
+      "provenance": "Archery Scoring",
+      "role": "developpement_occupe",
+      "supports": [
+        "papier concentrique sur chevalet bois / série Samsung"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/rf-key-0ijARYt7fTFFlaDVSrdA.jpg",
+      "sha256_reference": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "sha256_BGR_travail": "2ef9ff8d4cf374bac59ee418adcd72efad927dfda0d25703fe412a8ed6fae150",
+      "sha256_source": "70f613130f5adce8252e480a94665efcb79d2265c6a3f56ca9054f6e290590c1",
+      "sha256_annotation": "251d3b6690b41a975a0c1cca1f45b4f247281e254068296ae329125afd9687a1",
+      "sha256_masque": "6566c9769824c46260daf81a422df06c1d24fc4a95291226d3cb96eee237dbca"
+    },
+    {
+      "photo": "wc107063652",
+      "partition": "dev_explore_R16",
+      "provenance": "Jim Barton",
+      "role": "temoin_vide",
+      "supports": [
+        "Hogg Park / toile sur panneaux de mousse"
+      ],
+      "conditions": [
+        "empty",
+        "worn"
+      ],
+      "dimensions_travail": [
+        800,
+        530
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc107063652.jpg",
+      "sha256_reference": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+      "sha256_BGR_travail": "416e8826d9939636145a3c28cf0dc3bbef9c6737ed50d32821feb00bdaafdc30",
+      "sha256_source": "42971b26633ee3f3db0677269aabe38e1df9d84423ec91d5fa35fe4f3a82f9f8",
+      "sha256_annotation": "5a2aaa53db44f13205c8ac70dd8c068a0355ff3319ce153064efe483c334498b",
+      "sha256_masque": "aa8e2672e8cbcc514f2e46ab16d0cf05cbe6eae709e7902ce0ab8cc39b781365"
+    },
+    {
+      "photo": "wc11001401",
+      "partition": "train",
+      "provenance": "4028mdk09",
+      "role": "silhouettes_train",
+      "supports": [
+        "chevalet de paille / Bade-Wurtemberg"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "sha256_reference": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "sha256_BGR_travail": "319b3495df9b3650b502db26cc41a6c00cdadf2fd72bc21c31d2ce06fcd0ed4c",
+      "sha256_source": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "sha256_annotation": "154c0bae107606776a2680ee1c794d0ccb84ea0097496b83eca6f9b6e50cd082",
+      "sha256_masque": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32"
+    },
+    {
+      "photo": "wc130798782",
+      "partition": "dev_explore_R16",
+      "provenance": "N Chadwick",
+      "role": "temoin_vide",
+      "supports": [
+        "Geograph 4645584 / quatre feuilles sous bois"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "dimensions_travail": [
+        640,
+        426
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc130798782.jpg",
+      "sha256_reference": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+      "sha256_BGR_travail": "620d4aeb25bf7733d75d1776bc28bc807ce9dcb8301895bb021a78cf1e928925",
+      "sha256_source": "15de87912d00d7bfdaae8cb551e7422c5fb37c601d626c447d9ac5d325058118",
+      "sha256_annotation": "6b5f2bac65ad9652266d8f5cf878218aa6c9ffc9e9f66d013a76f7c18c9e0235",
+      "sha256_masque": "87eb9da2508aa3f468b4b6a208b8adb6f5f6c6cfa71a4b1c61c428d33b126b96"
+    },
+    {
+      "photo": "wc16492853",
+      "partition": "dev_explore_R16",
+      "provenance": "Ozizo",
+      "role": "developpement_occupe",
+      "supports": [
+        "deux mato / butte de terre"
+      ],
+      "conditions": [],
+      "dimensions_travail": [
+        1408,
+        1056
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc16492853.jpg",
+      "sha256_reference": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+      "sha256_BGR_travail": "ba5dc88fe01235d85f0beb19b92eae4c5a8ff4a2771040a3a4fe30c0d882dedf",
+      "sha256_source": "600ede8d648c8e923edd6c9d16359fda3f632f99f20e8b9e7ea1b98819c4044b",
+      "sha256_annotation": "97c120803bb72166af3ce477986c3c5e7d6fb1af1f7e021d0674d23df5a17aac",
+      "sha256_masque": "97cc47039713165853db35616e53cf5aab8242f8d96b8c2b20b0a79e4213ac5d"
+    },
+    {
+      "photo": "wc82322984-t22",
+      "partition": "dev_explore_R16",
+      "provenance": "Voltmetro",
+      "role": "developpement_occupe",
+      "supports": [
+        "Moscou 2019 / deux faces compound"
+      ],
+      "conditions": [
+        "grouped"
+      ],
+      "dimensions_travail": [
+        1408,
+        792
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc82322984-t22.png",
+      "sha256_reference": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "sha256_BGR_travail": "c8668f93ae4dad60ba7e92eaaa5f1ac0637d2f9f202030e2a8e225456eb54085",
+      "sha256_source": "836ac71ba856bafd50f8460a4598c8b97bf2bfaa84bbe83fbd9f3a2f04375829",
+      "sha256_annotation": "4341e67e462934cd280341f365f07761895ae086d9389dc5ffe6e3492d094d1c",
+      "sha256_masque": "911f5e82464c9e28ecd306b12dc4339faa63629ba7027b8f183654720e2a9f77"
+    }
+  ]
+}

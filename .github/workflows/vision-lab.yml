@@ -84,3 +84,13 @@ jobs:
           PYTEST
       - name: Model, window fusion and decoder tests
         run: python -m unittest -v test_r3.LearningTests test_r6 test_r8 test_r9
+      - name: Required R19 partial supervision tests
+        run: |
+          python - <<'PYTEST'
+          import unittest
+          from test_r19 import ApprentissageR19
+          suite = unittest.defaultTestLoader.loadTestsFromTestCase(ApprentissageR19)
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          if result.testsRun != 4 or result.skipped or not result.wasSuccessful():
+              raise SystemExit(1)
+          PYTEST
