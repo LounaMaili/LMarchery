@@ -112,3 +112,12 @@ jobs:
           if result.testsRun != 4 or result.skipped or not result.wasSuccessful():
               raise SystemExit(1)
           PYTEST
+      - name: Required R22 native instance Dice tests
+        run: |
+          python - <<'PYTEST'
+          import unittest
+          from test_r22_cpu import DiceR22
+          result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(DiceR22))
+          if result.testsRun != 5 or result.skipped or not result.wasSuccessful():
+              raise SystemExit(1)
+          PYTEST

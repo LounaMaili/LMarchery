@@ -1,0 +1,34 @@
+# Protocole figé R22 · Recouvrement des masques par instance
+
+**Question.** À exposition et présence historiques, ajouter un Dice différentiable aux masques admis augmente-t-il les triplets complets sur plusieurs provenances tout en préservant les triplets et entrées déjà couverts ? La comparaison porte sur la lecture de photos de blason après volée. Le diagnostic R21 est réalisé sur les seuls JSON archivés. Le protocole, le code, les contrôles et les résultats de comparabilité sont publiés avant tout ajustement. [Diagnostic préalable](diagnostic.md) · [Vérifications](comparabilite.json) · [Paramètres et empreintes](configuration.json) · [Référence scientifique R21](https://github.com/LounaMaili/LMarchery/blob/3a722f499c55fb208808f04c5907adeeec2ceaa2/vision-lab/r21.md)
+
+## Données et budget
+
+Le train R18 compte neuf photos occupées, huit provenances, neuf supports, 31 masques, 31 axes et 26 entrées admises. Cinq autres entrées ont une position inconnue. Sept vues ont un inventaire physique exhaustif. Les deux vues Crigges partagent leur support et la vue zigazou76 en contient deux. Les unités d’indépendance restent celles de R18. Photos train, géométrie, rééchantillonnage et exclusions sont scellés par leurs empreintes. Aucune nouvelle annotation. Développement et test sont exclus de toute lecture de modèle. Les vues privées restent locales. [Photos, partitions et empreintes](../r21/configuration.json) · [Validités](../r18/validites.json) · [Sources et licences](../r18/sources.json)
+
+Les témoins historiques R21 des graines 9301, 9302 et 9303 sont réutilisés. Avant l’expérience, vérifier les poids et optimiseurs R21 aux deux états, la relecture des mesures depuis leurs sorties décodées, les initialisations appariées, les 768 tirages par graine et l’environnement numérique. Arrêter si une de ces comparaisons échoue. Trois ajustements candidats, séquentiels avec verrou, 768 mises à jour chacun. Chaque trajectoire est observée après 96 et 768 pas sur les neuf photos, soit 54 passages d’évaluation au maximum. Décision au seul pas 768. Torche CPU 4 threads, interop 1, OpenCV 1, OpenBLAS et OMP 1. [Plan exhaustif des présentations](../r21/tirages.json) · [Contrôle préalable](verifier.py) · [Exécution](executer.py)
+
+## Modification unique
+
+Même modèle à douze requêtes, 205 212 paramètres dont 13 828 entraînables, tronc et normalisations R9 gelés. Le tronc ordinary-9301 a pour SHA-256 `14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1`. Même initialisation par graine, lot d’une photo, AdamW (0,001, bêtas 0,9 et 0,999, epsilon 10⁻⁸, décroissance 0,01), écrêtage de norme à 5 et décodage R19. Masque BCE, axe et entrée de poids 1, présence historique de poids 0,25. Les requêtes affectées aux fûts à entrée inconnue gardent leurs champs admis et leur présence positive. Les négatifs de présence suivent le fond vérifié R19 sur toutes les photos. [Architecture](../r19/modele.py) · [Supervision historique](../r19/supervision.py)
+
+À chaque présentation, l’algorithme hongrois et son coût historique sont recalculés sur les sorties courantes. Le choix discret de requête est détaché. L’instrumentation reproduit l’affectation à partir du même tenseur. Aucun numéro de requête historique n’est utilisé pour apprendre.
+
+Pour chaque masque admis de l’identité affectée, **p** est la sigmoïde du logit de sa requête, **a** le nombre natif de ses pixels dans chaque cellule et **n** la somme de ses pixels, des pixels des autres instances admises et du fond vérifié. Une cellule peut inclure des pixels connus et ignorés. Seules les masses connues contribuent.
+
+```
+D_i = (2 × somme(p × a) + 1) / (somme(a) + somme(p × n) + 1)
+L_candidat = L_historique + moyenne_i(1 − D_i)
+```
+
+Chaque identité avec masque admis pèse autant dans la moyenne, y compris celles dont l’entrée est inconnue. Une présentation sans masque admis ajoute zéro. Le coefficient expérimental 1 est fixé pour cet essai. Le terme Dice intervient uniquement après l’affectation, dans la perte optimisée. Les contrôles synthétiques couvrent les masses natives, les cellules ignorées, les gradients historiques à coefficient nul, la permutation des requêtes et la supervision partielle. [Implémentation](regle.py) · [Tests CPU](../test_r22_cpu.py)
+
+## Décompte et décision
+
+- Le masque binaire utilise le seuil de logit zéro et doit atteindre au moins 90 % de son plafond individuel R20 calculé sur les masses natives. L’axe doit couvrir au moins 11 des 21 sondes, l’entrée connue doit être à 10 px au plus en repère 704.
+- Un champ disponible est compté par identité dès qu’une des douze requêtes le satisfait. L’appariement d’un seul champ exige l’unicité des sorties. Le masque à 90 % fait l’objet d’une cardinalité maximale, puis d’une maximisation de la fraction du plafond. Pour les distributions, les masques reçoivent leur attribution R19 de Dice total maximal, avec zéro pour une identité sans recouvrement. Le meilleur masque par identité est aussi publié. Pour chaque attribution, VP est l’intersection, FP l’aire évaluable prédite moins VP et FN l’aire vraie moins VP. Les étiquettes 255 ne contribuent à aucun compte. Quantiles linéaires 0, 25, 50, 75 et 100 %, une voix par identité.
+- Le **triplet de décision** reprend l’appariement R20 sur les 26 identités complètes, de cardinalité maximale puis de distance d’entrée minimale, avant seuil de score. La préservation des entrées se calcule sur les identités de l’appariement de couverture R19 avant seuil. Les identités sont comparées par leur nom stable dans la photo. Crigges est exclu des gains requis et inclus dans toute vérification de perte.
+- Les mesures complémentaires reprennent l’appariement R21 de tous les champs disponibles sur une même requête sur les 31 identités, avant seuil puis à présence ≥ 0,5. Les cinq entrées inconnues sont détaillées à part. Sont également publiés les seuils de score hérités par graine, les sorties supplémentaires, les propositions non appariées établies et non résolues, les fusions et dédoublements R19 (au moins 25 % de l’aire d’une identité). Aucune photo train n’est vide.
+- Une graine est conforme si elle gagne **au moins deux nouveaux triplets sur au moins deux provenances distinctes hors Crigges**, conserve **tous** les triplets complets du témoin et **toutes** ses entrées couvertes avant seuil. La poursuite scientifique exige **au moins deux graines conformes sur trois**. Les trois conditions sont vérifiées sur des ensembles d’identités. Le nombre net ne remplace aucune des vérifications. [Mesure historique](../r20/mesurer.py) · [Mesure et règle R22](lecture.py) · [Rejeu](mesures.py)
+
+Le bilan distingue apprentissage sur ces neuf photos, hypothèses et recommandation. Aucun choix supplémentaire de durée, coefficient, seuil ou graine. À l’issue de ce bilan, R22 s’arrête. Le NO-GO Android, le test réservé et les contrats Desktop D3 sont préservés.
