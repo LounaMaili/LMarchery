@@ -1,0 +1,13 @@
+{
+  "candidat": "R19-instances-v1",
+  "base_R18": "e13f1a3bfd2bb8ec9150815edc81f9e6939375f4",
+  "preuves_R18": "0fa210cda093a9256e8a0092fd4317f561b6bcda",
+  "checkpoint_initial_sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+  "parametres": {"total": 205212, "entrainables": 13828},
+  "architecture": {"tronc": "MobileNetV3 Small features[0:9], projections R7 16,16,24,48 -> 8", "fige": true, "BN": "eval", "entree_grand_cote": 512, "multiple_dimension": 16, "stride": 2, "slots": 12, "dimension": 24, "memoire": [12,12], "canaux_par_slot": ["masque","axe","position_entree"], "localisabilite": "absente du modele et du score"},
+  "score": "sigmoid(presence) * max(softmax spatial du champ entree)",
+  "decodage": {"seuil_logit_masque_et_axe": 0, "connexite": 8, "aire_min_cellules": 3, "ratio_variances": 3, "portee_composante_min": 3, "pas_max_echantillonnage_droite": 0.5, "longueur_fragment_min": 2, "suppression_doublons": false},
+  "ajustement": {"graines": [9301,9302,9303], "mises_a_jour": 96, "lot_photos": 1, "accumulation": 1, "augmentations": [], "optimiseur": "AdamW", "lr": 0.001, "betas": [0.9,0.999], "eps": 1e-8, "weight_decay": 0.01, "gradient_norm_max": 5, "ponderations": {"masque": 1, "axe": 1, "entree": 1, "presence": 0.25}, "intermediaires": []},
+  "evaluation": {"grande_dimension_max": 704, "rayon_contact": 10, "budget_non_appariees_par_photo": 0.25, "maximum_non_appariees": 2, "abstention": 2, "axe_sondes": 21, "axe_min_sondes": 11, "axe_distance": 6, "axe_angle_deg": 20, "couverture_erreur_identite": 0.25},
+  "runtime": {"python": "3.15.2", "torch": "2.14.1+cpu", "torchvision": "0.29.1+cpu", "numpy": "2.5.4", "opencv": "4.13.0.92", "threads_torch": 4, "threads_interop": 1, "threads_cv": 1, "threads_blas": 1, "processus_lourd": 1}
+}
