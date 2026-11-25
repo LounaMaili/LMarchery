@@ -1,0 +1,723 @@
+{
+  "zoom_cellules": 21,
+  "echelle_log10": [
+    -12,
+    0
+  ],
+  "planches": {
+    "gagnon-11-affectee": [
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.012020159243755657,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 7,
+        "fichier": "cartes/temoin-96-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          98,
+          180
+        ],
+        "masse": 0.0023809901127833655,
+        "rang": [
+          142,
+          142
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.01575493959950902,
+        "bras": "dice",
+        "pas": 96,
+        "q": 7,
+        "fichier": "cartes/dice-96-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          109,
+          104
+        ],
+        "masse": 0.0029547593736651834,
+        "rang": [
+          117,
+          117
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.13183425042785415,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 11,
+        "fichier": "cartes/temoin-768-wc71488242/q11.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          109,
+          207
+        ],
+        "masse": 0.6301321853579935,
+        "rang": [
+          1,
+          1
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.3377020692664459,
+        "bras": "dice",
+        "pas": 768,
+        "q": 7,
+        "fichier": "cartes/dice-768-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          93,
+          147
+        ],
+        "masse": 0.39451965371574715,
+        "rang": [
+          2,
+          2
+        ]
+      }
+    ],
+    "gagnon-9-affectee": [
+      {
+        "concurrent": "wc71488242:11",
+        "masse_concurrente": 0.0016173417353115838,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 11,
+        "fichier": "cartes/temoin-96-wc71488242/q11.npz",
+        "origine_zoom": [
+          84,
+          137
+        ],
+        "xy_cible_grille": [
+          93.67142857142858,
+          147.0657142857143
+        ],
+        "pic": [
+          88,
+          131
+        ],
+        "masse": 0.010812839116558504,
+        "rang": [
+          35,
+          35
+        ]
+      },
+      {
+        "concurrent": "wc71488242:11",
+        "masse_concurrente": 0.0018968057026995666,
+        "bras": "dice",
+        "pas": 96,
+        "q": 11,
+        "fichier": "cartes/dice-96-wc71488242/q11.npz",
+        "origine_zoom": [
+          84,
+          137
+        ],
+        "xy_cible_grille": [
+          93.67142857142858,
+          147.0657142857143
+        ],
+        "pic": [
+          88,
+          131
+        ],
+        "masse": 0.014477407481052501,
+        "rang": [
+          28,
+          28
+        ]
+      },
+      {
+        "concurrent": "wc71488242:11",
+        "masse_concurrente": 0.03132805234081815,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 7,
+        "fichier": "cartes/temoin-768-wc71488242/q07.npz",
+        "origine_zoom": [
+          84,
+          137
+        ],
+        "xy_cible_grille": [
+          93.67142857142858,
+          147.0657142857143
+        ],
+        "pic": [
+          94,
+          147
+        ],
+        "masse": 0.8710632688543294,
+        "rang": [
+          1,
+          1
+        ]
+      },
+      {
+        "concurrent": "wc71488242:11",
+        "masse_concurrente": 0.030395129921839015,
+        "bras": "dice",
+        "pas": 768,
+        "q": 11,
+        "fichier": "cartes/dice-768-wc71488242/q11.npz",
+        "origine_zoom": [
+          84,
+          137
+        ],
+        "xy_cible_grille": [
+          93.67142857142858,
+          147.0657142857143
+        ],
+        "pic": [
+          93,
+          147
+        ],
+        "masse": 0.6536669737800906,
+        "rang": [
+          1,
+          1
+        ]
+      }
+    ],
+    "lynch-4-affectee": [
+      {
+        "concurrent": "5115614018:2",
+        "masse_concurrente": 0.21391257562108734,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 2,
+        "fichier": "cartes/temoin-96-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          117,
+          92
+        ],
+        "masse": 0.2124362438285614,
+        "rang": [
+          2,
+          2
+        ]
+      },
+      {
+        "concurrent": "5115614018:2",
+        "masse_concurrente": 0.18669659525950877,
+        "bras": "dice",
+        "pas": 96,
+        "q": 2,
+        "fichier": "cartes/dice-96-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          117,
+          92
+        ],
+        "masse": 0.23815227968758024,
+        "rang": [
+          2,
+          2
+        ]
+      },
+      {
+        "concurrent": "5115614018:3",
+        "masse_concurrente": 0.4409658724421244,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 2,
+        "fichier": "cartes/temoin-768-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          106,
+          97
+        ],
+        "masse": 0.47640094859204873,
+        "rang": [
+          2,
+          2
+        ]
+      },
+      {
+        "concurrent": "5115614018:3",
+        "masse_concurrente": 0.0326076613915237,
+        "bras": "dice",
+        "pas": 768,
+        "q": 2,
+        "fichier": "cartes/dice-768-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          134,
+          101
+        ],
+        "masse": 0.9270728991767062,
+        "rang": [
+          1,
+          1
+        ]
+      }
+    ],
+    "gagnon-11-q7": [
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.012020159243755657,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 7,
+        "fichier": "cartes/temoin-96-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          98,
+          180
+        ],
+        "masse": 0.0023809901127833655,
+        "rang": [
+          142,
+          142
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.01575493959950902,
+        "bras": "dice",
+        "pas": 96,
+        "q": 7,
+        "fichier": "cartes/dice-96-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          109,
+          104
+        ],
+        "masse": 0.0029547593736651834,
+        "rang": [
+          117,
+          117
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.8710632688543294,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 7,
+        "fichier": "cartes/temoin-768-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          94,
+          147
+        ],
+        "masse": 0.03132805234081815,
+        "rang": [
+          6,
+          6
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.3377020692664459,
+        "bras": "dice",
+        "pas": 768,
+        "q": 7,
+        "fichier": "cartes/dice-768-wc71488242/q07.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          93,
+          147
+        ],
+        "masse": 0.39451965371574715,
+        "rang": [
+          2,
+          2
+        ]
+      }
+    ],
+    "gagnon-11-q11": [
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.010812839116558504,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 11,
+        "fichier": "cartes/temoin-96-wc71488242/q11.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          88,
+          131
+        ],
+        "masse": 0.0016173417353115838,
+        "rang": [
+          166,
+          166
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.014477407481052501,
+        "bras": "dice",
+        "pas": 96,
+        "q": 11,
+        "fichier": "cartes/dice-96-wc71488242/q11.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          88,
+          131
+        ],
+        "masse": 0.0018968057026995666,
+        "rang": [
+          138,
+          138
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.13183425042785415,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 11,
+        "fichier": "cartes/temoin-768-wc71488242/q11.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          109,
+          207
+        ],
+        "masse": 0.6301321853579935,
+        "rang": [
+          1,
+          1
+        ]
+      },
+      {
+        "concurrent": "wc71488242:9",
+        "masse_concurrente": 0.6536669737800906,
+        "bras": "dice",
+        "pas": 768,
+        "q": 11,
+        "fichier": "cartes/dice-768-wc71488242/q11.npz",
+        "origine_zoom": [
+          99,
+          197
+        ],
+        "xy_cible_grille": [
+          108.66571428571429,
+          206.6771428571429
+        ],
+        "pic": [
+          93,
+          147
+        ],
+        "masse": 0.030395129921839015,
+        "rang": [
+          7,
+          7
+        ]
+      }
+    ],
+    "lynch-4-q2": [
+      {
+        "concurrent": "5115614018:2",
+        "masse_concurrente": 0.21391257562108734,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 2,
+        "fichier": "cartes/temoin-96-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          117,
+          92
+        ],
+        "masse": 0.2124362438285614,
+        "rang": [
+          2,
+          2
+        ]
+      },
+      {
+        "concurrent": "5115614018:2",
+        "masse_concurrente": 0.18669659525950877,
+        "bras": "dice",
+        "pas": 96,
+        "q": 2,
+        "fichier": "cartes/dice-96-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          117,
+          92
+        ],
+        "masse": 0.23815227968758024,
+        "rang": [
+          2,
+          2
+        ]
+      },
+      {
+        "concurrent": "5115614018:3",
+        "masse_concurrente": 0.4409658724421244,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 2,
+        "fichier": "cartes/temoin-768-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          106,
+          97
+        ],
+        "masse": 0.47640094859204873,
+        "rang": [
+          2,
+          2
+        ]
+      },
+      {
+        "concurrent": "5115614018:3",
+        "masse_concurrente": 0.0326076613915237,
+        "bras": "dice",
+        "pas": 768,
+        "q": 2,
+        "fichier": "cartes/dice-768-5115614018/q02.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          134,
+          101
+        ],
+        "masse": 0.9270728991767062,
+        "rang": [
+          1,
+          1
+        ]
+      }
+    ],
+    "lynch-4-q10": [
+      {
+        "concurrent": "5115614018:1",
+        "masse_concurrente": 0.1523780925234064,
+        "bras": "temoin",
+        "pas": 96,
+        "q": 10,
+        "fichier": "cartes/temoin-96-5115614018/q10.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          117,
+          92
+        ],
+        "masse": 0.18730741040372467,
+        "rang": [
+          3,
+          3
+        ]
+      },
+      {
+        "concurrent": "5115614018:1",
+        "masse_concurrente": 0.14582173428314604,
+        "bras": "dice",
+        "pas": 96,
+        "q": 10,
+        "fichier": "cartes/dice-96-5115614018/q10.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          134,
+          101
+        ],
+        "masse": 0.22047513756817905,
+        "rang": [
+          1,
+          1
+        ]
+      },
+      {
+        "concurrent": "5115614018:3",
+        "masse_concurrente": 0.991240284394241,
+        "bras": "temoin",
+        "pas": 768,
+        "q": 10,
+        "fichier": "cartes/temoin-768-5115614018/q10.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          106,
+          97
+        ],
+        "masse": 0.00032722995862655716,
+        "rang": [
+          13,
+          13
+        ]
+      },
+      {
+        "concurrent": "5115614018:3",
+        "masse_concurrente": 0.9464959021218079,
+        "bras": "dice",
+        "pas": 768,
+        "q": 10,
+        "fichier": "cartes/dice-768-5115614018/q10.npz",
+        "origine_zoom": [
+          124,
+          91
+        ],
+        "xy_cible_grille": [
+          134.38,
+          100.96067415730337
+        ],
+        "pic": [
+          106,
+          97
+        ],
+        "masse": 0.008504717527929886,
+        "rang": [
+          8,
+          8
+        ]
+      }
+    ]
+  }
+}

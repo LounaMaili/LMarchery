@@ -1,0 +1,103 @@
+{
+  "fichiers": [
+    {
+      "nom": "wc71488242.jpg",
+      "role": "Photo publique train wc71488242",
+      "octets": 592714,
+      "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg"
+    },
+    {
+      "nom": "5115614018.png",
+      "role": "Photo publique train 5115614018",
+      "octets": 1108495,
+      "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r8/vision-lab/data/r8/work/5115614018.png"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9302, pas 96, poids",
+      "octets": 897303,
+      "sha256": "99da446685f15aca2a487418d704778aed725a400d6ddda0fd9748f3144cd32c",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/96/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9302, pas 768, poids",
+      "octets": 897303,
+      "sha256": "3eb56f8b87bdeed91fa36be789bcb56c6181d7fbf4dac1331e188e2b72e6e324",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/768/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Dice 9302, pas 96, poids",
+      "octets": 897303,
+      "sha256": "7b9d87a608edee0c9a577136b90e3d252bf9d22b971904838e22ad4928c051b4",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r22/vision-lab/artifacts/r22/dice/9302/96/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Dice 9302, pas 768, poids",
+      "octets": 897303,
+      "sha256": "2011a92e231ac4bc137ce10b997ea9b089f892b38ad1e6ab19fb6291d0cecb31",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r22/vision-lab/artifacts/r22/dice/9302/768/poids.pt"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, temoin-96-wc71488242",
+      "octets": 8244769,
+      "sha256": "f687c82538c1a4a642e1af3e71ab5d87fc6c2d43c2cc78e00eba382338b1006a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/temoin-96-wc71488242/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, temoin-96-5115614018",
+      "octets": 5456901,
+      "sha256": "a04c29243ea7b195983b07db8d2dcf61e0d0d3eaea722b034a76ab27c58a16a4",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/temoin-96-5115614018/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, temoin-768-wc71488242",
+      "octets": 8216963,
+      "sha256": "0a606f90272f5943571d48c6abd493a0276c46cd91c5a968b7b10db9644253e9",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/temoin-768-wc71488242/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, temoin-768-5115614018",
+      "octets": 5420034,
+      "sha256": "298574c897060a9b4cd889ae9815972918130c70ad2207818ed8b43ee56275b2",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/temoin-768-5115614018/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, dice-96-wc71488242",
+      "octets": 8243689,
+      "sha256": "22c5f9f9aee5477539f40af841388015e69ddc7a9f39a40175faaba8e648903b",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/dice-96-wc71488242/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, dice-96-5115614018",
+      "octets": 5452294,
+      "sha256": "30c65945185d43347cd9b8eca9a9f4f4412f00822518f4759e00d3ac33d71593",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/dice-96-5115614018/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, dice-768-wc71488242",
+      "octets": 8180337,
+      "sha256": "d98731210322f4395d3f1a9e4fb03b1fc2301be45aafd4d574247ca060605250",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/dice-768-wc71488242/champs.npz"
+    },
+    {
+      "nom": "champs.npz",
+      "role": "Trois champs et présence, dice-768-5115614018",
+      "octets": 5411522,
+      "sha256": "8212b29e091238056868e8316c7d4356235fd0ac980ca5d657e0585e2a382dab",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r23/vision-lab/artifacts/r23/capture/dice-768-5115614018/champs.npz"
+    }
+  ],
+  "grilles_publiques": "cartes/README.md"
+}
