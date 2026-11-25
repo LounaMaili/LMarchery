@@ -1,0 +1,3628 @@
+{
+  "13-01": {
+    "grille": [
+      192,
+      256
+    ],
+    "travail": [
+      1056,
+      1408
+    ],
+    "evaluation": [
+      528,
+      704
+    ],
+    "pixels_nat_non_ignores": 55264,
+    "cellules_evaluables": 2052,
+    "instances": {
+      "13-01": {
+        "positifs_natifs": 907,
+        "intersection_optimale": 907,
+        "aire_evaluable_sortie_optimale": 907,
+        "denominateur_dice": 1814,
+        "cellules_optimales": 76,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            2,
+            2,
+            8
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            9
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            9,
+            9,
+            3
+          ],
+          [
+            10,
+            10,
+            4
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            2
+          ],
+          [
+            13,
+            13,
+            3
+          ],
+          [
+            14,
+            14,
+            1
+          ],
+          [
+            15,
+            15,
+            3
+          ],
+          [
+            16,
+            16,
+            4
+          ],
+          [
+            17,
+            17,
+            2
+          ],
+          [
+            18,
+            18,
+            4
+          ],
+          [
+            19,
+            19,
+            2
+          ],
+          [
+            20,
+            20,
+            3
+          ],
+          [
+            21,
+            21,
+            5
+          ],
+          [
+            22,
+            22,
+            4
+          ],
+          [
+            23,
+            23,
+            1
+          ],
+          [
+            24,
+            24,
+            2
+          ],
+          [
+            25,
+            25,
+            3
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.7302798724602297,
+        "temoin_grille": {
+          "intersection": 907,
+          "aire": 907,
+          "dice": 1.0,
+          "sondes_axe": 15,
+          "fragments": 4
+        },
+        "cellule_entree": [
+          97,
+          144
+        ],
+        "erreur_centre_px704": 1.48150539933342
+      }
+    }
+  },
+  "70-01": {
+    "grille": [
+      192,
+      256
+    ],
+    "travail": [
+      1056,
+      1408
+    ],
+    "evaluation": [
+      528,
+      704
+    ],
+    "pixels_nat_non_ignores": 55221,
+    "cellules_evaluables": 2049,
+    "instances": {
+      "70-01": {
+        "positifs_natifs": 864,
+        "intersection_optimale": 864,
+        "aire_evaluable_sortie_optimale": 864,
+        "denominateur_dice": 1728,
+        "cellules_optimales": 73,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            8
+          ],
+          [
+            2,
+            2,
+            4
+          ],
+          [
+            3,
+            3,
+            4
+          ],
+          [
+            4,
+            4,
+            1
+          ],
+          [
+            5,
+            5,
+            3
+          ],
+          [
+            6,
+            6,
+            3
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            8,
+            8,
+            3
+          ],
+          [
+            9,
+            9,
+            3
+          ],
+          [
+            10,
+            10,
+            2
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            3
+          ],
+          [
+            13,
+            13,
+            2
+          ],
+          [
+            14,
+            14,
+            2
+          ],
+          [
+            15,
+            15,
+            1
+          ],
+          [
+            16,
+            16,
+            5
+          ],
+          [
+            17,
+            17,
+            5
+          ],
+          [
+            18,
+            18,
+            4
+          ],
+          [
+            19,
+            19,
+            3
+          ],
+          [
+            20,
+            20,
+            2
+          ],
+          [
+            21,
+            21,
+            1
+          ],
+          [
+            22,
+            22,
+            3
+          ],
+          [
+            23,
+            23,
+            3
+          ],
+          [
+            24,
+            24,
+            3
+          ],
+          [
+            25,
+            25,
+            1
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.7138534364404069,
+        "temoin_grille": {
+          "intersection": 864,
+          "aire": 864,
+          "dice": 1.0,
+          "sondes_axe": 17,
+          "fragments": 4
+        },
+        "cellule_entree": [
+          90,
+          150
+        ],
+        "erreur_centre_px704": 1.3822238323617213
+      }
+    }
+  },
+  "7245527662": {
+    "grille": [
+      256,
+      168
+    ],
+    "travail": [
+      1024,
+      677
+    ],
+    "evaluation": [
+      704,
+      465
+    ],
+    "pixels_nat_non_ignores": 178067,
+    "cellules_evaluables": 11731,
+    "instances": {
+      "7245527662:1": {
+        "positifs_natifs": 22607,
+        "intersection_optimale": 22607,
+        "aire_evaluable_sortie_optimale": 22607,
+        "denominateur_dice": 45214,
+        "cellules_optimales": 1574,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            30
+          ],
+          [
+            2,
+            2,
+            29
+          ],
+          [
+            3,
+            3,
+            18
+          ],
+          [
+            4,
+            4,
+            16
+          ],
+          [
+            5,
+            5,
+            27
+          ],
+          [
+            6,
+            6,
+            34
+          ],
+          [
+            7,
+            7,
+            18
+          ],
+          [
+            8,
+            8,
+            6
+          ],
+          [
+            9,
+            9,
+            15
+          ],
+          [
+            10,
+            10,
+            37
+          ],
+          [
+            11,
+            11,
+            23
+          ],
+          [
+            12,
+            12,
+            11
+          ],
+          [
+            13,
+            13,
+            17
+          ],
+          [
+            14,
+            14,
+            25
+          ],
+          [
+            15,
+            15,
+            40
+          ],
+          [
+            16,
+            16,
+            1182
+          ],
+          [
+            18,
+            18,
+            2
+          ],
+          [
+            19,
+            19,
+            1
+          ],
+          [
+            20,
+            20,
+            43
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 8.551174421327394,
+        "temoin_grille": {
+          "intersection": 22607,
+          "aire": 22607,
+          "dice": 1.0,
+          "sondes_axe": 18,
+          "fragments": 15
+        }
+      },
+      "7245527662:2": {
+        "positifs_natifs": 12538,
+        "intersection_optimale": 12537,
+        "aire_evaluable_sortie_optimale": 12537,
+        "denominateur_dice": 25075,
+        "cellules_optimales": 891,
+        "dice_max": 0.9999601196410768,
+        "dice_requis": 0.8999641076769692,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            19
+          ],
+          [
+            1,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            22
+          ],
+          [
+            3,
+            3,
+            15
+          ],
+          [
+            4,
+            4,
+            6
+          ],
+          [
+            5,
+            5,
+            12
+          ],
+          [
+            6,
+            6,
+            18
+          ],
+          [
+            7,
+            7,
+            18
+          ],
+          [
+            8,
+            8,
+            5
+          ],
+          [
+            9,
+            9,
+            17
+          ],
+          [
+            10,
+            10,
+            19
+          ],
+          [
+            11,
+            11,
+            12
+          ],
+          [
+            12,
+            12,
+            5
+          ],
+          [
+            13,
+            13,
+            17
+          ],
+          [
+            14,
+            14,
+            22
+          ],
+          [
+            15,
+            15,
+            18
+          ],
+          [
+            16,
+            16,
+            645
+          ],
+          [
+            18,
+            18,
+            1
+          ],
+          [
+            19,
+            19,
+            1
+          ],
+          [
+            20,
+            20,
+            19
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 7.3261450366959835,
+        "temoin_grille": {
+          "intersection": 12537,
+          "aire": 12537,
+          "dice": 0.9999601196410768,
+          "sondes_axe": 13,
+          "fragments": 8
+        },
+        "cellule_entree": [
+          123,
+          52
+        ],
+        "erreur_centre_px704": 1.155253960087667
+      },
+      "7245527662:3": {
+        "positifs_natifs": 6795,
+        "intersection_optimale": 6795,
+        "aire_evaluable_sortie_optimale": 6796,
+        "denominateur_dice": 13591,
+        "cellules_optimales": 480,
+        "dice_max": 0.9999264218968436,
+        "dice_requis": 0.8999337797071592,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            4,
+            4,
+            31
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            8,
+            8,
+            28
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            1
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            25
+          ],
+          [
+            14,
+            14,
+            2
+          ],
+          [
+            15,
+            15,
+            3
+          ],
+          [
+            16,
+            16,
+            374
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 7.768914206716204,
+        "temoin_grille": {
+          "intersection": 6795,
+          "aire": 6796,
+          "dice": 0.9999264218968436,
+          "sondes_axe": 21,
+          "fragments": 3
+        }
+      },
+      "7245527662:4": {
+        "positifs_natifs": 21299,
+        "intersection_optimale": 21299,
+        "aire_evaluable_sortie_optimale": 21299,
+        "denominateur_dice": 42598,
+        "cellules_optimales": 1462,
+        "dice_max": 1.0,
+        "dice_requis": 0.9000000000000001,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            9
+          ],
+          [
+            4,
+            4,
+            72
+          ],
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            6,
+            6,
+            3
+          ],
+          [
+            7,
+            7,
+            6
+          ],
+          [
+            8,
+            8,
+            60
+          ],
+          [
+            9,
+            9,
+            3
+          ],
+          [
+            10,
+            10,
+            5
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            76
+          ],
+          [
+            13,
+            13,
+            5
+          ],
+          [
+            14,
+            14,
+            3
+          ],
+          [
+            15,
+            15,
+            5
+          ],
+          [
+            16,
+            16,
+            1201
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 8.29745619784869,
+        "temoin_grille": {
+          "intersection": 21299,
+          "aire": 21299,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 7
+        }
+      }
+    }
+  },
+  "5115614018": {
+    "grille": [
+      256,
+      168
+    ],
+    "travail": [
+      1024,
+      683
+    ],
+    "evaluation": [
+      704,
+      470
+    ],
+    "pixels_nat_non_ignores": 29886,
+    "cellules_evaluables": 2057,
+    "instances": {
+      "5115614018:1": {
+        "positifs_natifs": 355,
+        "intersection_optimale": 355,
+        "aire_evaluable_sortie_optimale": 355,
+        "denominateur_dice": 710,
+        "cellules_optimales": 59,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            20
+          ],
+          [
+            5,
+            5,
+            2
+          ],
+          [
+            6,
+            6,
+            2
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            8,
+            8,
+            26
+          ],
+          [
+            9,
+            9,
+            1
+          ],
+          [
+            10,
+            10,
+            1
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.49634693349899967,
+        "temoin_grille": {
+          "intersection": 355,
+          "aire": 355,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          158,
+          75
+        ],
+        "erreur_centre_px704": 0.8314473319733596
+      },
+      "5115614018:2": {
+        "positifs_natifs": 295,
+        "intersection_optimale": 295,
+        "aire_evaluable_sortie_optimale": 295,
+        "denominateur_dice": 590,
+        "cellules_optimales": 53,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            6
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            4,
+            4,
+            14
+          ],
+          [
+            5,
+            5,
+            2
+          ],
+          [
+            6,
+            6,
+            3
+          ],
+          [
+            7,
+            7,
+            8
+          ],
+          [
+            8,
+            8,
+            18
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.4662498443342149,
+        "temoin_grille": {
+          "intersection": 295,
+          "aire": 295,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          117,
+          92
+        ],
+        "erreur_centre_px704": 0.7389889483920932
+      },
+      "5115614018:3": {
+        "positifs_natifs": 152,
+        "intersection_optimale": 152,
+        "aire_evaluable_sortie_optimale": 152,
+        "denominateur_dice": 304,
+        "cellules_optimales": 29,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            4,
+            4,
+            13
+          ],
+          [
+            5,
+            5,
+            1
+          ],
+          [
+            8,
+            8,
+            11
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.4353932142947878,
+        "temoin_grille": {
+          "intersection": 152,
+          "aire": 152,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 2
+        },
+        "cellule_entree": [
+          106,
+          97
+        ],
+        "erreur_centre_px704": 0.7047695322565876
+      },
+      "5115614018:4": {
+        "positifs_natifs": 280,
+        "intersection_optimale": 280,
+        "aire_evaluable_sortie_optimale": 280,
+        "denominateur_dice": 560,
+        "cellules_optimales": 47,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          [
+            4,
+            4,
+            15
+          ],
+          [
+            5,
+            5,
+            1
+          ],
+          [
+            6,
+            6,
+            1
+          ],
+          [
+            7,
+            7,
+            3
+          ],
+          [
+            8,
+            8,
+            22
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.4500375524805599,
+        "temoin_grille": {
+          "intersection": 280,
+          "aire": 280,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          134,
+          101
+        ],
+        "erreur_centre_px704": 1.0507754851540776
+      },
+      "5115614018:5": {
+        "positifs_natifs": 456,
+        "intersection_optimale": 456,
+        "aire_evaluable_sortie_optimale": 456,
+        "denominateur_dice": 912,
+        "cellules_optimales": 59,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            4,
+            4,
+            3
+          ],
+          [
+            5,
+            5,
+            2
+          ],
+          [
+            7,
+            7,
+            3
+          ],
+          [
+            8,
+            8,
+            44
+          ],
+          [
+            10,
+            10,
+            1
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            3
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.48837857791294803,
+        "temoin_grille": {
+          "intersection": 456,
+          "aire": 456,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 1
+        },
+        "cellule_entree": [
+          143,
+          101
+        ],
+        "erreur_centre_px704": 0.9414505404963539
+      }
+    }
+  },
+  "18105652008": {
+    "grille": [
+      256,
+      168
+    ],
+    "travail": [
+      1024,
+      683
+    ],
+    "evaluation": [
+      704,
+      470
+    ],
+    "pixels_nat_non_ignores": 20128,
+    "cellules_evaluables": 1323,
+    "instances": {
+      "18105652008:1": {
+        "positifs_natifs": 262,
+        "intersection_optimale": 262,
+        "aire_evaluable_sortie_optimale": 262,
+        "denominateur_dice": 524,
+        "cellules_optimales": 30,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            4,
+            4,
+            5
+          ],
+          [
+            5,
+            5,
+            1
+          ],
+          [
+            6,
+            6,
+            1
+          ],
+          [
+            8,
+            8,
+            11
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            7
+          ],
+          [
+            14,
+            14,
+            1
+          ],
+          [
+            15,
+            15,
+            1
+          ],
+          [
+            16,
+            16,
+            1
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.8301882772268481,
+        "temoin_grille": {
+          "intersection": 262,
+          "aire": 262,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 2
+        },
+        "cellule_entree": [
+          71,
+          73
+        ],
+        "erreur_centre_px704": 1.1345911096894326
+      },
+      "18105652008:2": {
+        "positifs_natifs": 287,
+        "intersection_optimale": 287,
+        "aire_evaluable_sortie_optimale": 287,
+        "denominateur_dice": 574,
+        "cellules_optimales": 43,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            12
+          ],
+          [
+            5,
+            5,
+            1
+          ],
+          [
+            6,
+            6,
+            2
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            8,
+            8,
+            10
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            2
+          ],
+          [
+            11,
+            11,
+            5
+          ],
+          [
+            12,
+            12,
+            2
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.6359568016133494,
+        "temoin_grille": {
+          "intersection": 287,
+          "aire": 287,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          90,
+          117
+        ],
+        "erreur_centre_px704": 1.0521913933912672
+      }
+    }
+  },
+  "24614689941": {
+    "grille": [
+      256,
+      256
+    ],
+    "travail": [
+      1024,
+      1024
+    ],
+    "evaluation": [
+      704,
+      704
+    ],
+    "pixels_nat_non_ignores": 56618,
+    "cellules_evaluables": 3759,
+    "instances": {
+      "24614689941:1": {
+        "positifs_natifs": 2650,
+        "intersection_optimale": 2650,
+        "aire_evaluable_sortie_optimale": 2650,
+        "denominateur_dice": 5300,
+        "cellules_optimales": 204,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            3,
+            3,
+            4
+          ],
+          [
+            4,
+            4,
+            17
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            8,
+            8,
+            17
+          ],
+          [
+            9,
+            9,
+            3
+          ],
+          [
+            10,
+            10,
+            2
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            16
+          ],
+          [
+            14,
+            14,
+            4
+          ],
+          [
+            15,
+            15,
+            4
+          ],
+          [
+            16,
+            16,
+            126
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 3.350414153470777,
+        "temoin_grille": {
+          "intersection": 2650,
+          "aire": 2650,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 4
+        },
+        "cellule_entree": [
+          154,
+          89
+        ],
+        "erreur_centre_px704": 1.2405828945972814
+      },
+      "24614689941:2": {
+        "positifs_natifs": 1984,
+        "intersection_optimale": 1984,
+        "aire_evaluable_sortie_optimale": 1984,
+        "denominateur_dice": 3968,
+        "cellules_optimales": 160,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            7
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            7
+          ],
+          [
+            4,
+            4,
+            4
+          ],
+          [
+            5,
+            5,
+            6
+          ],
+          [
+            6,
+            6,
+            3
+          ],
+          [
+            7,
+            7,
+            5
+          ],
+          [
+            8,
+            8,
+            4
+          ],
+          [
+            9,
+            9,
+            4
+          ],
+          [
+            10,
+            10,
+            7
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            5
+          ],
+          [
+            13,
+            13,
+            4
+          ],
+          [
+            14,
+            14,
+            9
+          ],
+          [
+            15,
+            15,
+            1
+          ],
+          [
+            16,
+            16,
+            90
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 3.492480661703894,
+        "temoin_grille": {
+          "intersection": 1984,
+          "aire": 1984,
+          "dice": 1.0,
+          "sondes_axe": 20,
+          "fragments": 6
+        },
+        "cellule_entree": [
+          146,
+          96
+        ],
+        "erreur_centre_px704": 1.1528867937415346
+      },
+      "24614689941:3": {
+        "positifs_natifs": 2691,
+        "intersection_optimale": 2691,
+        "aire_evaluable_sortie_optimale": 2691,
+        "denominateur_dice": 5382,
+        "cellules_optimales": 211,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            5
+          ],
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            4,
+            4,
+            15
+          ],
+          [
+            5,
+            5,
+            4
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            8,
+            8,
+            23
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            4
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            16
+          ],
+          [
+            13,
+            13,
+            2
+          ],
+          [
+            14,
+            14,
+            1
+          ],
+          [
+            15,
+            15,
+            4
+          ],
+          [
+            16,
+            16,
+            126
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 3.6808072241069145,
+        "temoin_grille": {
+          "intersection": 2691,
+          "aire": 2691,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 5
+        }
+      }
+    }
+  },
+  "4169106197": {
+    "grille": [
+      256,
+      192
+    ],
+    "travail": [
+      640,
+      480
+    ],
+    "evaluation": [
+      640,
+      480
+    ],
+    "pixels_nat_non_ignores": 12669,
+    "cellules_evaluables": 2142,
+    "instances": {
+      "4169106197:1": {
+        "positifs_natifs": 326,
+        "intersection_optimale": 326,
+        "aire_evaluable_sortie_optimale": 326,
+        "denominateur_dice": 652,
+        "cellules_optimales": 83,
+        "dice_max": 1.0,
+        "dice_requis": 0.9000000000000001,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            2,
+            2,
+            16
+          ],
+          [
+            3,
+            3,
+            17
+          ],
+          [
+            4,
+            4,
+            23
+          ],
+          [
+            5,
+            5,
+            2
+          ],
+          [
+            6,
+            6,
+            16
+          ],
+          [
+            7,
+            7,
+            1
+          ],
+          [
+            8,
+            8,
+            2
+          ],
+          [
+            9,
+            9,
+            2
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.118706991398431,
+        "temoin_grille": {
+          "intersection": 326,
+          "aire": 326,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 6
+        },
+        "cellule_entree": [
+          136,
+          73
+        ],
+        "erreur_centre_px704": 1.2747548783981961
+      }
+    }
+  },
+  "wc71488242": {
+    "grille": [
+      256,
+      256
+    ],
+    "travail": [
+      1280,
+      1280
+    ],
+    "evaluation": [
+      704,
+      704
+    ],
+    "pixels_nat_non_ignores": 69394,
+    "cellules_evaluables": 3329,
+    "instances": {
+      "wc71488242:1": {
+        "positifs_natifs": 1788,
+        "intersection_optimale": 1788,
+        "aire_evaluable_sortie_optimale": 1788,
+        "denominateur_dice": 3576,
+        "cellules_optimales": 119,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            7
+          ],
+          [
+            2,
+            2,
+            5
+          ],
+          [
+            3,
+            3,
+            5
+          ],
+          [
+            5,
+            5,
+            6
+          ],
+          [
+            6,
+            6,
+            3
+          ],
+          [
+            7,
+            7,
+            5
+          ],
+          [
+            8,
+            8,
+            3
+          ],
+          [
+            9,
+            9,
+            4
+          ],
+          [
+            10,
+            10,
+            1
+          ],
+          [
+            11,
+            11,
+            3
+          ],
+          [
+            12,
+            12,
+            5
+          ],
+          [
+            13,
+            13,
+            6
+          ],
+          [
+            14,
+            14,
+            4
+          ],
+          [
+            15,
+            15,
+            3
+          ],
+          [
+            16,
+            16,
+            1
+          ],
+          [
+            17,
+            17,
+            3
+          ],
+          [
+            18,
+            18,
+            6
+          ],
+          [
+            20,
+            20,
+            4
+          ],
+          [
+            21,
+            21,
+            3
+          ],
+          [
+            22,
+            22,
+            6
+          ],
+          [
+            23,
+            23,
+            8
+          ],
+          [
+            24,
+            24,
+            3
+          ],
+          [
+            25,
+            25,
+            25
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.582184407684865,
+        "temoin_grille": {
+          "intersection": 1788,
+          "aire": 1788,
+          "dice": 1.0,
+          "sondes_axe": 18,
+          "fragments": 5
+        },
+        "cellule_entree": [
+          122,
+          54
+        ],
+        "erreur_centre_px704": 0.6667932702915724
+      },
+      "wc71488242:2": {
+        "positifs_natifs": 2171,
+        "intersection_optimale": 2152,
+        "aire_evaluable_sortie_optimale": 2169,
+        "denominateur_dice": 4340,
+        "cellules_optimales": 134,
+        "dice_max": 0.9917050691244239,
+        "dice_requis": 0.8925345622119816,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            1,
+            11,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          [
+            4,
+            4,
+            3
+          ],
+          [
+            5,
+            5,
+            7
+          ],
+          [
+            5,
+            15,
+            1
+          ],
+          [
+            5,
+            24,
+            1
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            3
+          ],
+          [
+            8,
+            8,
+            2
+          ],
+          [
+            8,
+            22,
+            1
+          ],
+          [
+            9,
+            9,
+            3
+          ],
+          [
+            9,
+            16,
+            1
+          ],
+          [
+            10,
+            10,
+            9
+          ],
+          [
+            10,
+            15,
+            1
+          ],
+          [
+            11,
+            11,
+            4
+          ],
+          [
+            12,
+            12,
+            2
+          ],
+          [
+            13,
+            13,
+            2
+          ],
+          [
+            14,
+            14,
+            4
+          ],
+          [
+            14,
+            16,
+            1
+          ],
+          [
+            15,
+            15,
+            8
+          ],
+          [
+            15,
+            18,
+            1
+          ],
+          [
+            16,
+            16,
+            3
+          ],
+          [
+            17,
+            17,
+            2
+          ],
+          [
+            18,
+            18,
+            4
+          ],
+          [
+            19,
+            19,
+            1
+          ],
+          [
+            20,
+            20,
+            11
+          ],
+          [
+            21,
+            21,
+            3
+          ],
+          [
+            22,
+            22,
+            3
+          ],
+          [
+            23,
+            23,
+            1
+          ],
+          [
+            24,
+            24,
+            3
+          ],
+          [
+            25,
+            25,
+            39
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.5897086565008358,
+        "temoin_grille": {
+          "intersection": 2152,
+          "aire": 2169,
+          "dice": 0.9917050691244239,
+          "sondes_axe": 21,
+          "fragments": 8
+        },
+        "cellule_entree": [
+          109,
+          104
+        ],
+        "erreur_centre_px704": 1.1941306290283602
+      },
+      "wc71488242:3": {
+        "positifs_natifs": 1571,
+        "intersection_optimale": 1554,
+        "aire_evaluable_sortie_optimale": 1573,
+        "denominateur_dice": 3144,
+        "cellules_optimales": 97,
+        "dice_max": 0.9885496183206107,
+        "dice_requis": 0.8896946564885497,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            2,
+            16,
+            1
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            18,
+            1
+          ],
+          [
+            4,
+            4,
+            1
+          ],
+          [
+            5,
+            5,
+            10
+          ],
+          [
+            5,
+            15,
+            1
+          ],
+          [
+            6,
+            6,
+            1
+          ],
+          [
+            7,
+            16,
+            1
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            9
+          ],
+          [
+            10,
+            11,
+            1
+          ],
+          [
+            10,
+            15,
+            1
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            13,
+            13,
+            3
+          ],
+          [
+            14,
+            22,
+            1
+          ],
+          [
+            15,
+            15,
+            11
+          ],
+          [
+            16,
+            16,
+            2
+          ],
+          [
+            19,
+            19,
+            5
+          ],
+          [
+            19,
+            24,
+            1
+          ],
+          [
+            20,
+            20,
+            8
+          ],
+          [
+            21,
+            21,
+            3
+          ],
+          [
+            23,
+            23,
+            1
+          ],
+          [
+            24,
+            24,
+            4
+          ],
+          [
+            25,
+            25,
+            25
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.5639475958010394,
+        "temoin_grille": {
+          "intersection": 1554,
+          "aire": 1573,
+          "dice": 0.9885496183206107,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          103,
+          105
+        ],
+        "erreur_centre_px704": 1.1490248749549659
+      },
+      "wc71488242:6": {
+        "positifs_natifs": 2125,
+        "intersection_optimale": 2125,
+        "aire_evaluable_sortie_optimale": 2125,
+        "denominateur_dice": 4250,
+        "cellules_optimales": 141,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            7
+          ],
+          [
+            2,
+            2,
+            7
+          ],
+          [
+            3,
+            3,
+            7
+          ],
+          [
+            4,
+            4,
+            2
+          ],
+          [
+            5,
+            5,
+            1
+          ],
+          [
+            6,
+            6,
+            1
+          ],
+          [
+            7,
+            7,
+            5
+          ],
+          [
+            8,
+            8,
+            8
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            9
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            2
+          ],
+          [
+            13,
+            13,
+            9
+          ],
+          [
+            14,
+            14,
+            4
+          ],
+          [
+            15,
+            15,
+            6
+          ],
+          [
+            16,
+            16,
+            2
+          ],
+          [
+            17,
+            17,
+            5
+          ],
+          [
+            18,
+            18,
+            4
+          ],
+          [
+            19,
+            19,
+            3
+          ],
+          [
+            20,
+            20,
+            9
+          ],
+          [
+            21,
+            21,
+            5
+          ],
+          [
+            22,
+            22,
+            5
+          ],
+          [
+            23,
+            23,
+            3
+          ],
+          [
+            24,
+            24,
+            1
+          ],
+          [
+            25,
+            25,
+            33
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.5230242460682692,
+        "temoin_grille": {
+          "intersection": 2125,
+          "aire": 2125,
+          "dice": 1.0,
+          "sondes_axe": 20,
+          "fragments": 9
+        },
+        "cellule_entree": [
+          78,
+          119
+        ],
+        "erreur_centre_px704": 0.8948178471576571
+      },
+      "wc71488242:7": {
+        "positifs_natifs": 2041,
+        "intersection_optimale": 2041,
+        "aire_evaluable_sortie_optimale": 2041,
+        "denominateur_dice": 4082,
+        "cellules_optimales": 139,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            2,
+            2,
+            7
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          [
+            4,
+            4,
+            7
+          ],
+          [
+            5,
+            5,
+            8
+          ],
+          [
+            6,
+            6,
+            2
+          ],
+          [
+            7,
+            7,
+            7
+          ],
+          [
+            8,
+            8,
+            3
+          ],
+          [
+            9,
+            9,
+            4
+          ],
+          [
+            10,
+            10,
+            4
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            5
+          ],
+          [
+            13,
+            13,
+            9
+          ],
+          [
+            14,
+            14,
+            4
+          ],
+          [
+            15,
+            15,
+            5
+          ],
+          [
+            16,
+            16,
+            1
+          ],
+          [
+            17,
+            17,
+            3
+          ],
+          [
+            18,
+            18,
+            7
+          ],
+          [
+            19,
+            19,
+            3
+          ],
+          [
+            20,
+            20,
+            1
+          ],
+          [
+            21,
+            21,
+            4
+          ],
+          [
+            22,
+            22,
+            9
+          ],
+          [
+            23,
+            23,
+            9
+          ],
+          [
+            24,
+            24,
+            4
+          ],
+          [
+            25,
+            25,
+            24
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.4174321455735728,
+        "temoin_grille": {
+          "intersection": 2041,
+          "aire": 2041,
+          "dice": 1.0,
+          "sondes_axe": 15,
+          "fragments": 6
+        },
+        "cellule_entree": [
+          89,
+          132
+        ],
+        "erreur_centre_px704": 1.475344650152861
+      },
+      "wc71488242:8": {
+        "positifs_natifs": 2243,
+        "intersection_optimale": 2243,
+        "aire_evaluable_sortie_optimale": 2243,
+        "denominateur_dice": 4486,
+        "cellules_optimales": 148,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            8
+          ],
+          [
+            2,
+            2,
+            6
+          ],
+          [
+            3,
+            3,
+            6
+          ],
+          [
+            4,
+            4,
+            2
+          ],
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            6,
+            6,
+            2
+          ],
+          [
+            7,
+            7,
+            7
+          ],
+          [
+            8,
+            8,
+            7
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            5
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            6
+          ],
+          [
+            13,
+            13,
+            7
+          ],
+          [
+            14,
+            14,
+            3
+          ],
+          [
+            15,
+            15,
+            5
+          ],
+          [
+            16,
+            16,
+            2
+          ],
+          [
+            17,
+            17,
+            6
+          ],
+          [
+            18,
+            18,
+            8
+          ],
+          [
+            19,
+            19,
+            3
+          ],
+          [
+            20,
+            20,
+            5
+          ],
+          [
+            21,
+            21,
+            2
+          ],
+          [
+            22,
+            22,
+            6
+          ],
+          [
+            23,
+            23,
+            4
+          ],
+          [
+            24,
+            24,
+            5
+          ],
+          [
+            25,
+            25,
+            35
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.6092240684694428,
+        "temoin_grille": {
+          "intersection": 2243,
+          "aire": 2243,
+          "dice": 1.0,
+          "sondes_axe": 17,
+          "fragments": 6
+        },
+        "cellule_entree": [
+          87,
+          140
+        ],
+        "erreur_centre_px704": 1.4240732754593428
+      },
+      "wc71488242:9": {
+        "positifs_natifs": 2276,
+        "intersection_optimale": 2276,
+        "aire_evaluable_sortie_optimale": 2276,
+        "denominateur_dice": 4552,
+        "cellules_optimales": 150,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            5
+          ],
+          [
+            2,
+            2,
+            7
+          ],
+          [
+            3,
+            3,
+            6
+          ],
+          [
+            5,
+            5,
+            10
+          ],
+          [
+            6,
+            6,
+            1
+          ],
+          [
+            7,
+            7,
+            8
+          ],
+          [
+            8,
+            8,
+            7
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            4
+          ],
+          [
+            11,
+            11,
+            3
+          ],
+          [
+            12,
+            12,
+            6
+          ],
+          [
+            13,
+            13,
+            7
+          ],
+          [
+            14,
+            14,
+            1
+          ],
+          [
+            15,
+            15,
+            9
+          ],
+          [
+            16,
+            16,
+            2
+          ],
+          [
+            17,
+            17,
+            6
+          ],
+          [
+            18,
+            18,
+            4
+          ],
+          [
+            19,
+            19,
+            2
+          ],
+          [
+            20,
+            20,
+            3
+          ],
+          [
+            21,
+            21,
+            3
+          ],
+          [
+            22,
+            22,
+            8
+          ],
+          [
+            23,
+            23,
+            10
+          ],
+          [
+            24,
+            24,
+            5
+          ],
+          [
+            25,
+            25,
+            31
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.5583420255995009,
+        "temoin_grille": {
+          "intersection": 2276,
+          "aire": 2276,
+          "dice": 1.0,
+          "sondes_axe": 18,
+          "fragments": 6
+        },
+        "cellule_entree": [
+          94,
+          147
+        ],
+        "erreur_centre_px704": 0.9214656692421132
+      },
+      "wc71488242:10": {
+        "positifs_natifs": 1528,
+        "intersection_optimale": 1528,
+        "aire_evaluable_sortie_optimale": 1528,
+        "denominateur_dice": 3056,
+        "cellules_optimales": 105,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            7
+          ],
+          [
+            4,
+            4,
+            7
+          ],
+          [
+            5,
+            5,
+            1
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            2
+          ],
+          [
+            8,
+            8,
+            4
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            3
+          ],
+          [
+            11,
+            11,
+            9
+          ],
+          [
+            12,
+            12,
+            5
+          ],
+          [
+            14,
+            14,
+            1
+          ],
+          [
+            16,
+            16,
+            5
+          ],
+          [
+            17,
+            17,
+            9
+          ],
+          [
+            18,
+            18,
+            6
+          ],
+          [
+            22,
+            22,
+            8
+          ],
+          [
+            23,
+            23,
+            5
+          ],
+          [
+            24,
+            24,
+            7
+          ],
+          [
+            25,
+            25,
+            15
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.3860405434301264,
+        "temoin_grille": {
+          "intersection": 1528,
+          "aire": 1528,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 9
+        }
+      },
+      "wc71488242:11": {
+        "positifs_natifs": 2043,
+        "intersection_optimale": 2043,
+        "aire_evaluable_sortie_optimale": 2043,
+        "denominateur_dice": 4086,
+        "cellules_optimales": 136,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            4
+          ],
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            6
+          ],
+          [
+            5,
+            5,
+            6
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            8
+          ],
+          [
+            8,
+            8,
+            4
+          ],
+          [
+            9,
+            9,
+            5
+          ],
+          [
+            10,
+            10,
+            8
+          ],
+          [
+            11,
+            11,
+            2
+          ],
+          [
+            12,
+            12,
+            3
+          ],
+          [
+            13,
+            13,
+            3
+          ],
+          [
+            14,
+            14,
+            7
+          ],
+          [
+            15,
+            15,
+            6
+          ],
+          [
+            16,
+            16,
+            5
+          ],
+          [
+            17,
+            17,
+            5
+          ],
+          [
+            18,
+            18,
+            4
+          ],
+          [
+            19,
+            19,
+            3
+          ],
+          [
+            20,
+            20,
+            3
+          ],
+          [
+            21,
+            21,
+            7
+          ],
+          [
+            22,
+            22,
+            4
+          ],
+          [
+            23,
+            23,
+            4
+          ],
+          [
+            24,
+            24,
+            3
+          ],
+          [
+            25,
+            25,
+            28
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 1.4097393607309363,
+        "temoin_grille": {
+          "intersection": 2043,
+          "aire": 2043,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 9
+        },
+        "cellule_entree": [
+          109,
+          207
+        ],
+        "erreur_centre_px704": 1.278036200822175
+      }
+    }
+  },
+  "wc11001401": {
+    "grille": [
+      192,
+      256
+    ],
+    "travail": [
+      1056,
+      1408
+    ],
+    "evaluation": [
+      528,
+      704
+    ],
+    "pixels_nat_non_ignores": 35938,
+    "cellules_evaluables": 1459,
+    "instances": {
+      "wc11001401:1": {
+        "positifs_natifs": 633,
+        "intersection_optimale": 633,
+        "aire_evaluable_sortie_optimale": 633,
+        "denominateur_dice": 1266,
+        "cellules_optimales": 59,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          [
+            4,
+            4,
+            3
+          ],
+          [
+            5,
+            5,
+            7
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            1
+          ],
+          [
+            8,
+            8,
+            1
+          ],
+          [
+            9,
+            9,
+            3
+          ],
+          [
+            10,
+            10,
+            8
+          ],
+          [
+            11,
+            11,
+            1
+          ],
+          [
+            12,
+            12,
+            4
+          ],
+          [
+            13,
+            13,
+            3
+          ],
+          [
+            14,
+            14,
+            2
+          ],
+          [
+            15,
+            15,
+            7
+          ],
+          [
+            16,
+            16,
+            1
+          ],
+          [
+            17,
+            17,
+            4
+          ],
+          [
+            18,
+            18,
+            3
+          ],
+          [
+            20,
+            20,
+            3
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.5264271875390705,
+        "temoin_grille": {
+          "intersection": 633,
+          "aire": 633,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 2
+        },
+        "cellule_entree": [
+          72,
+          110
+        ],
+        "erreur_centre_px704": 0.7288689868556626
+      },
+      "wc11001401:2": {
+        "positifs_natifs": 632,
+        "intersection_optimale": 632,
+        "aire_evaluable_sortie_optimale": 632,
+        "denominateur_dice": 1264,
+        "cellules_optimales": 55,
+        "dice_max": 1.0,
+        "dice_requis": 0.9000000000000001,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            3
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            1
+          ],
+          [
+            5,
+            5,
+            4
+          ],
+          [
+            6,
+            6,
+            4
+          ],
+          [
+            7,
+            7,
+            1
+          ],
+          [
+            8,
+            8,
+            1
+          ],
+          [
+            10,
+            10,
+            8
+          ],
+          [
+            12,
+            12,
+            8
+          ],
+          [
+            13,
+            13,
+            1
+          ],
+          [
+            14,
+            14,
+            2
+          ],
+          [
+            15,
+            15,
+            5
+          ],
+          [
+            17,
+            17,
+            1
+          ],
+          [
+            18,
+            18,
+            7
+          ],
+          [
+            19,
+            19,
+            2
+          ],
+          [
+            20,
+            20,
+            2
+          ],
+          [
+            21,
+            21,
+            1
+          ],
+          [
+            24,
+            24,
+            1
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.5632672063946493,
+        "temoin_grille": {
+          "intersection": 632,
+          "aire": 632,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 2
+        },
+        "cellule_entree": [
+          69,
+          117
+        ],
+        "erreur_centre_px704": 1.4252192813739224
+      },
+      "wc11001401:3": {
+        "positifs_natifs": 590,
+        "intersection_optimale": 590,
+        "aire_evaluable_sortie_optimale": 590,
+        "denominateur_dice": 1180,
+        "cellules_optimales": 53,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            1
+          ],
+          [
+            3,
+            3,
+            1
+          ],
+          [
+            4,
+            4,
+            1
+          ],
+          [
+            5,
+            5,
+            4
+          ],
+          [
+            6,
+            6,
+            7
+          ],
+          [
+            7,
+            7,
+            1
+          ],
+          [
+            8,
+            8,
+            2
+          ],
+          [
+            9,
+            9,
+            1
+          ],
+          [
+            10,
+            10,
+            2
+          ],
+          [
+            11,
+            11,
+            4
+          ],
+          [
+            12,
+            12,
+            7
+          ],
+          [
+            13,
+            13,
+            2
+          ],
+          [
+            14,
+            14,
+            2
+          ],
+          [
+            15,
+            15,
+            5
+          ],
+          [
+            17,
+            17,
+            1
+          ],
+          [
+            18,
+            18,
+            6
+          ],
+          [
+            19,
+            19,
+            1
+          ],
+          [
+            20,
+            20,
+            2
+          ],
+          [
+            24,
+            24,
+            1
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.5470513651433779,
+        "temoin_grille": {
+          "intersection": 590,
+          "aire": 590,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          68,
+          119
+        ],
+        "erreur_centre_px704": 0.39528470752104744
+      },
+      "wc11001401:4": {
+        "positifs_natifs": 530,
+        "intersection_optimale": 530,
+        "aire_evaluable_sortie_optimale": 530,
+        "denominateur_dice": 1060,
+        "cellules_optimales": 51,
+        "dice_max": 1.0,
+        "dice_requis": 0.9,
+        "histogramme_p_n_effectif": [
+          [
+            2,
+            2,
+            4
+          ],
+          [
+            3,
+            3,
+            3
+          ],
+          [
+            5,
+            5,
+            8
+          ],
+          [
+            6,
+            6,
+            3
+          ],
+          [
+            8,
+            8,
+            2
+          ],
+          [
+            10,
+            10,
+            3
+          ],
+          [
+            11,
+            11,
+            7
+          ],
+          [
+            12,
+            12,
+            4
+          ],
+          [
+            13,
+            13,
+            2
+          ],
+          [
+            14,
+            14,
+            1
+          ],
+          [
+            15,
+            15,
+            2
+          ],
+          [
+            16,
+            16,
+            2
+          ],
+          [
+            17,
+            17,
+            1
+          ],
+          [
+            18,
+            18,
+            6
+          ],
+          [
+            19,
+            19,
+            3
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.5017020494706772,
+        "temoin_grille": {
+          "intersection": 530,
+          "aire": 530,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 4
+        },
+        "cellule_entree": [
+          70,
+          122
+        ],
+        "erreur_centre_px704": 1.4252192813739224
+      },
+      "wc11001401:5": {
+        "positifs_natifs": 631,
+        "intersection_optimale": 631,
+        "aire_evaluable_sortie_optimale": 631,
+        "denominateur_dice": 1262,
+        "cellules_optimales": 55,
+        "dice_max": 1.0,
+        "dice_requis": 0.8999999999999999,
+        "histogramme_p_n_effectif": [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            4,
+            4,
+            1
+          ],
+          [
+            5,
+            5,
+            5
+          ],
+          [
+            6,
+            6,
+            5
+          ],
+          [
+            8,
+            8,
+            1
+          ],
+          [
+            9,
+            9,
+            2
+          ],
+          [
+            10,
+            10,
+            2
+          ],
+          [
+            11,
+            11,
+            3
+          ],
+          [
+            12,
+            12,
+            4
+          ],
+          [
+            13,
+            13,
+            4
+          ],
+          [
+            14,
+            14,
+            4
+          ],
+          [
+            15,
+            15,
+            5
+          ],
+          [
+            16,
+            16,
+            2
+          ],
+          [
+            17,
+            17,
+            2
+          ],
+          [
+            18,
+            18,
+            5
+          ],
+          [
+            19,
+            19,
+            3
+          ],
+          [
+            20,
+            20,
+            1
+          ],
+          [
+            21,
+            21,
+            1
+          ]
+        ],
+        "largeur_moyenne_approx_cellules": 0.5602549378040048,
+        "temoin_grille": {
+          "intersection": 631,
+          "aire": 631,
+          "dice": 1.0,
+          "sondes_axe": 21,
+          "fragments": 3
+        },
+        "cellule_entree": [
+          71,
+          127
+        ],
+        "erreur_centre_px704": 1.5103807466993215
+      }
+    }
+  }
+}
