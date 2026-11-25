@@ -1,0 +1,2560 @@
+[
+  {
+    "graine": 9301,
+    "photo": "70-01",
+    "provenance": "Crigges",
+    "instance": "70-01",
+    "pertes": [
+      "presence_q",
+      "triplet_q"
+    ],
+    "temoin": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [
+            4,
+            8,
+            11
+          ],
+          "axe": [
+            0,
+            1,
+            3,
+            4,
+            5,
+            8,
+            10
+          ],
+          "entree": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            11
+          ]
+        },
+        "masque_90_q": 8,
+        "axe_q": 5,
+        "entree_q": 6,
+        "triplet_q": 4,
+        "triplet_au_seuil_q": 4,
+        "conjoint_disponible_q": [
+          4,
+          8
+        ],
+        "conjoint_q": 8,
+        "presence_q": 8,
+        "masque_R19": {
+          "q": 8,
+          "VP": 860,
+          "FP": 156,
+          "FN": 4,
+          "dice": 0.9148936170212766,
+          "plafond": 1.0,
+          "fraction": 0.9148936170212766
+        },
+        "meilleur_masque": {
+          "q": 8,
+          "VP": 860,
+          "FP": 156,
+          "FN": 4,
+          "dice": 0.9148936170212766,
+          "plafond": 1.0,
+          "fraction": 0.9148936170212766
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 833,
+          "FP": 3722,
+          "FN": 31,
+          "dice": 0.30743679645691085,
+          "plafond": 1.0,
+          "fraction": 0.30743679645691085,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 13,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9994872808456421
+        },
+        {
+          "q": 1,
+          "VP": 862,
+          "FP": 1174,
+          "FN": 2,
+          "dice": 0.5944827586206897,
+          "plafond": 1.0,
+          "fraction": 0.5944827586206897,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999741315841675
+        },
+        {
+          "q": 2,
+          "VP": 850,
+          "FP": 1890,
+          "FN": 14,
+          "dice": 0.4716981132075472,
+          "plafond": 1.0,
+          "fraction": 0.4716981132075472,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 4,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999723434448242
+        },
+        {
+          "q": 3,
+          "VP": 863,
+          "FP": 1740,
+          "FN": 1,
+          "dice": 0.4978367464666859,
+          "plafond": 1.0,
+          "fraction": 0.4978367464666859,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 13,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9999935626983643
+        },
+        {
+          "q": 4,
+          "VP": 850,
+          "FP": 167,
+          "FN": 14,
+          "dice": 0.9037745879851143,
+          "plafond": 1.0,
+          "fraction": 0.9037745879851143,
+          "champs_manquants": [],
+          "sondes_axe": 18,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9999840259552002
+        },
+        {
+          "q": 5,
+          "VP": 846,
+          "FP": 867,
+          "FN": 18,
+          "dice": 0.6565774155995343,
+          "plafond": 1.0,
+          "fraction": 0.6565774155995343,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9997217059135437
+        },
+        {
+          "q": 6,
+          "VP": 849,
+          "FP": 1672,
+          "FN": 15,
+          "dice": 0.5016248153618907,
+          "plafond": 1.0,
+          "fraction": 0.5016248153618907,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9993124008178711
+        },
+        {
+          "q": 7,
+          "VP": 850,
+          "FP": 2449,
+          "FN": 14,
+          "dice": 0.40835935623348546,
+          "plafond": 1.0,
+          "fraction": 0.40835935623348546,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999958276748657
+        },
+        {
+          "q": 8,
+          "VP": 860,
+          "FP": 156,
+          "FN": 4,
+          "dice": 0.9148936170212766,
+          "plafond": 1.0,
+          "fraction": 0.9148936170212766,
+          "champs_manquants": [],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9999929666519165
+        },
+        {
+          "q": 9,
+          "VP": 476,
+          "FP": 107,
+          "FN": 388,
+          "dice": 0.6579129232895646,
+          "plafond": 1.0,
+          "fraction": 0.6579129232895646,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 10,
+          "erreur_entree_px704": 260.6387027062619,
+          "presence": 0.9999945163726807
+        },
+        {
+          "q": 10,
+          "VP": 845,
+          "FP": 305,
+          "FN": 19,
+          "dice": 0.8391261171797418,
+          "plafond": 1.0,
+          "fraction": 0.8391261171797418,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 16,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.999995231628418
+        },
+        {
+          "q": 11,
+          "VP": 862,
+          "FP": 181,
+          "FN": 2,
+          "dice": 0.9040377556371264,
+          "plafond": 1.0,
+          "fraction": 0.9040377556371264,
+          "champs_manquants": [
+            "axe"
+          ],
+          "sondes_axe": 10,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9999841451644897
+        }
+      ],
+      "blocages_minimaux": [
+        []
+      ]
+    },
+    "candidat": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [
+            8
+          ],
+          "axe": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "entree": [
+            2,
+            6,
+            7
+          ]
+        },
+        "masque_90_q": 8,
+        "axe_q": 4,
+        "entree_q": 7,
+        "triplet_q": null,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [],
+        "conjoint_q": null,
+        "presence_q": null,
+        "masque_R19": {
+          "q": 8,
+          "VP": 815,
+          "FP": 115,
+          "FN": 49,
+          "dice": 0.9085841694537347,
+          "plafond": 1.0,
+          "fraction": 0.9085841694537347
+        },
+        "meilleur_masque": {
+          "q": 8,
+          "VP": 815,
+          "FP": 115,
+          "FN": 49,
+          "dice": 0.9085841694537347,
+          "plafond": 1.0,
+          "fraction": 0.9085841694537347
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 569,
+          "FP": 1661,
+          "FN": 295,
+          "dice": 0.367808661926309,
+          "plafond": 1.0,
+          "fraction": 0.367808661926309,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.0002384248364251107
+        },
+        {
+          "q": 1,
+          "VP": 819,
+          "FP": 1332,
+          "FN": 45,
+          "dice": 0.5432835820895522,
+          "plafond": 1.0,
+          "fraction": 0.5432835820895522,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.3846367597579956
+        },
+        {
+          "q": 2,
+          "VP": 841,
+          "FP": 219,
+          "FN": 23,
+          "dice": 0.8742203742203742,
+          "plafond": 1.0,
+          "fraction": 0.8742203742203742,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 19,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.6888739466667175
+        },
+        {
+          "q": 3,
+          "VP": 841,
+          "FP": 1078,
+          "FN": 23,
+          "dice": 0.6043837585339562,
+          "plafond": 1.0,
+          "fraction": 0.6043837585339562,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 19,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.0005059622344560921
+        },
+        {
+          "q": 4,
+          "VP": 749,
+          "FP": 3373,
+          "FN": 115,
+          "dice": 0.300441235459286,
+          "plafond": 1.0,
+          "fraction": 0.300441235459286,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.00023622049775440246
+        },
+        {
+          "q": 5,
+          "VP": 636,
+          "FP": 3301,
+          "FN": 228,
+          "dice": 0.2649448031660071,
+          "plafond": 1.0,
+          "fraction": 0.2649448031660071,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 13,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.0020228500943630934
+        },
+        {
+          "q": 6,
+          "VP": 851,
+          "FP": 808,
+          "FN": 13,
+          "dice": 0.6745937376139517,
+          "plafond": 1.0,
+          "fraction": 0.6745937376139517,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 19,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.1136820837855339
+        },
+        {
+          "q": 7,
+          "VP": 850,
+          "FP": 600,
+          "FN": 14,
+          "dice": 0.7346585998271391,
+          "plafond": 1.0,
+          "fraction": 0.7346585998271391,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 13,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.8855311274528503
+        },
+        {
+          "q": 8,
+          "VP": 815,
+          "FP": 115,
+          "FN": 49,
+          "dice": 0.9085841694537347,
+          "plafond": 1.0,
+          "fraction": 0.9085841694537347,
+          "champs_manquants": [
+            "entree"
+          ],
+          "sondes_axe": 16,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.0013307109475135803
+        },
+        {
+          "q": 9,
+          "VP": 113,
+          "FP": 4980,
+          "FN": 751,
+          "dice": 0.03793855967769011,
+          "plafond": 1.0,
+          "fraction": 0.03793855967769011,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.0008910010801628232
+        },
+        {
+          "q": 10,
+          "VP": 322,
+          "FP": 107,
+          "FN": 542,
+          "dice": 0.4980665119876257,
+          "plafond": 1.0,
+          "fraction": 0.4980665119876257,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 6,
+          "erreur_entree_px704": 194.07259514896762,
+          "presence": 0.0024304273538291454
+        },
+        {
+          "q": 11,
+          "VP": 375,
+          "FP": 5213,
+          "FN": 489,
+          "dice": 0.1162430254184749,
+          "plafond": 1.0,
+          "fraction": 0.1162430254184749,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 260.6387027062619,
+          "presence": 0.674984872341156
+        }
+      ],
+      "blocages_minimaux": [
+        [
+          "entree"
+        ],
+        [
+          "masque"
+        ]
+      ]
+    }
+  },
+  {
+    "graine": 9302,
+    "photo": "70-01",
+    "provenance": "Crigges",
+    "instance": "70-01",
+    "pertes": [
+      "presence_q",
+      "triplet_q"
+    ],
+    "temoin": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [
+            2
+          ],
+          "axe": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "entree": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "masque_90_q": 2,
+        "axe_q": 2,
+        "entree_q": 7,
+        "triplet_q": 2,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [
+          2
+        ],
+        "conjoint_q": 2,
+        "presence_q": 2,
+        "masque_R19": {
+          "q": 2,
+          "VP": 822,
+          "FP": 47,
+          "FN": 42,
+          "dice": 0.9486439699942296,
+          "plafond": 1.0,
+          "fraction": 0.9486439699942296
+        },
+        "meilleur_masque": {
+          "q": 2,
+          "VP": 822,
+          "FP": 47,
+          "FN": 42,
+          "dice": 0.9486439699942296,
+          "plafond": 1.0,
+          "fraction": 0.9486439699942296
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 864,
+          "FP": 608,
+          "FN": 0,
+          "dice": 0.7397260273972602,
+          "plafond": 1.0,
+          "fraction": 0.7397260273972602,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999830722808838
+        },
+        {
+          "q": 1,
+          "VP": 858,
+          "FP": 5217,
+          "FN": 6,
+          "dice": 0.24729788153912668,
+          "plafond": 1.0,
+          "fraction": 0.24729788153912668,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 12,
+          "erreur_entree_px704": 258.3852574063348,
+          "presence": 0.999985933303833
+        },
+        {
+          "q": 2,
+          "VP": 822,
+          "FP": 47,
+          "FN": 42,
+          "dice": 0.9486439699942296,
+          "plafond": 1.0,
+          "fraction": 0.9486439699942296,
+          "champs_manquants": [],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999639987945557
+        },
+        {
+          "q": 3,
+          "VP": 830,
+          "FP": 3754,
+          "FN": 34,
+          "dice": 0.30469897209985314,
+          "plafond": 1.0,
+          "fraction": 0.30469897209985314,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 18,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999805688858032
+        },
+        {
+          "q": 4,
+          "VP": 858,
+          "FP": 2698,
+          "FN": 6,
+          "dice": 0.38823529411764707,
+          "plafond": 1.0,
+          "fraction": 0.38823529411764707,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 17,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999760389328003
+        },
+        {
+          "q": 5,
+          "VP": 862,
+          "FP": 434,
+          "FN": 2,
+          "dice": 0.7981481481481482,
+          "plafond": 1.0,
+          "fraction": 0.7981481481481482,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999356269836426
+        },
+        {
+          "q": 6,
+          "VP": 863,
+          "FP": 3908,
+          "FN": 1,
+          "dice": 0.30629991126885536,
+          "plafond": 1.0,
+          "fraction": 0.30629991126885536,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 14,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9999638795852661
+        },
+        {
+          "q": 7,
+          "VP": 864,
+          "FP": 572,
+          "FN": 0,
+          "dice": 0.7513043478260869,
+          "plafond": 1.0,
+          "fraction": 0.7513043478260869,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 14,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999791383743286
+        },
+        {
+          "q": 8,
+          "VP": 862,
+          "FP": 1291,
+          "FN": 2,
+          "dice": 0.5714285714285714,
+          "plafond": 1.0,
+          "fraction": 0.5714285714285714,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 19,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999675750732422
+        },
+        {
+          "q": 9,
+          "VP": 62,
+          "FP": 1476,
+          "FN": 802,
+          "dice": 0.051623646960865945,
+          "plafond": 1.0,
+          "fraction": 0.051623646960865945,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 2.4809532734953668,
+          "presence": 0.9990549683570862
+        },
+        {
+          "q": 10,
+          "VP": 848,
+          "FP": 1388,
+          "FN": 16,
+          "dice": 0.5470967741935484,
+          "plafond": 1.0,
+          "fraction": 0.5470967741935484,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 18,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999982118606567
+        },
+        {
+          "q": 11,
+          "VP": 862,
+          "FP": 385,
+          "FN": 2,
+          "dice": 0.8166745618190431,
+          "plafond": 1.0,
+          "fraction": 0.8166745618190431,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.9999817609786987
+        }
+      ],
+      "blocages_minimaux": [
+        []
+      ]
+    },
+    "candidat": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [],
+          "axe": [
+            3,
+            6,
+            10,
+            11
+          ],
+          "entree": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            9,
+            10
+          ]
+        },
+        "masque_90_q": null,
+        "axe_q": 10,
+        "entree_q": 2,
+        "triplet_q": null,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [],
+        "conjoint_q": null,
+        "presence_q": null,
+        "masque_R19": {
+          "q": 10,
+          "VP": 845,
+          "FP": 1023,
+          "FN": 19,
+          "dice": 0.6185944363103953,
+          "plafond": 1.0,
+          "fraction": 0.6185944363103953
+        },
+        "meilleur_masque": {
+          "q": 10,
+          "VP": 845,
+          "FP": 1023,
+          "FN": 19,
+          "dice": 0.6185944363103953,
+          "plafond": 1.0,
+          "fraction": 0.6185944363103953
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 632,
+          "FP": 965,
+          "FN": 232,
+          "dice": 0.5136123527021536,
+          "plafond": 1.0,
+          "fraction": 0.5136123527021536,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 7,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.968159019947052
+        },
+        {
+          "q": 1,
+          "VP": 505,
+          "FP": 4204,
+          "FN": 359,
+          "dice": 0.18123093486452538,
+          "plafond": 1.0,
+          "fraction": 0.18123093486452538,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 261.5782276405247,
+          "presence": 0.8821735978126526
+        },
+        {
+          "q": 2,
+          "VP": 568,
+          "FP": 1756,
+          "FN": 296,
+          "dice": 0.35633626097867,
+          "plafond": 1.0,
+          "fraction": 0.35633626097867,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.29299867153167725
+        },
+        {
+          "q": 3,
+          "VP": 491,
+          "FP": 1346,
+          "FN": 373,
+          "dice": 0.3635690485005553,
+          "plafond": 1.0,
+          "fraction": 0.3635690485005553,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.00034961485653184354
+        },
+        {
+          "q": 4,
+          "VP": 419,
+          "FP": 801,
+          "FN": 445,
+          "dice": 0.4021113243761996,
+          "plafond": 1.0,
+          "fraction": 0.4021113243761996,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.0015780696412548423
+        },
+        {
+          "q": 5,
+          "VP": 290,
+          "FP": 3380,
+          "FN": 574,
+          "dice": 0.12792236435818263,
+          "plafond": 1.0,
+          "fraction": 0.12792236435818263,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 5,
+          "erreur_entree_px704": 264.2832603336823,
+          "presence": 0.0007229386828839779
+        },
+        {
+          "q": 6,
+          "VP": 708,
+          "FP": 2295,
+          "FN": 156,
+          "dice": 0.3661753297129558,
+          "plafond": 1.0,
+          "fraction": 0.3661753297129558,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 14,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.0008856343338266015
+        },
+        {
+          "q": 7,
+          "VP": 274,
+          "FP": 2809,
+          "FN": 590,
+          "dice": 0.13883962503166963,
+          "plafond": 1.0,
+          "fraction": 0.13883962503166963,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 8,
+          "erreur_entree_px704": 355.76978437506807,
+          "presence": 0.1317627876996994
+        },
+        {
+          "q": 8,
+          "VP": 329,
+          "FP": 1807,
+          "FN": 535,
+          "dice": 0.21933333333333332,
+          "plafond": 1.0,
+          "fraction": 0.21933333333333332,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 3,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.00040463151526637375
+        },
+        {
+          "q": 9,
+          "VP": 748,
+          "FP": 973,
+          "FN": 116,
+          "dice": 0.5787234042553191,
+          "plafond": 1.0,
+          "fraction": 0.5787234042553191,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 1.3822238323617213,
+          "presence": 0.05581614375114441
+        },
+        {
+          "q": 10,
+          "VP": 845,
+          "FP": 1023,
+          "FN": 19,
+          "dice": 0.6185944363103953,
+          "plafond": 1.0,
+          "fraction": 0.6185944363103953,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.6226705659176646,
+          "presence": 0.9626147150993347
+        },
+        {
+          "q": 11,
+          "VP": 544,
+          "FP": 1225,
+          "FN": 320,
+          "dice": 0.4132168628940372,
+          "plafond": 1.0,
+          "fraction": 0.4132168628940372,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 261.09440584198785,
+          "presence": 0.0012244116514921188
+        }
+      ],
+      "blocages_minimaux": [
+        [
+          "masque"
+        ]
+      ]
+    }
+  },
+  {
+    "graine": 9303,
+    "photo": "13-01",
+    "provenance": "Crigges",
+    "instance": "13-01",
+    "pertes": [
+      "presence_q",
+      "triplet_q"
+    ],
+    "temoin": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "axe": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "entree": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "masque_90_q": 6,
+        "axe_q": 10,
+        "entree_q": 11,
+        "triplet_q": 3,
+        "triplet_au_seuil_q": 11,
+        "conjoint_disponible_q": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "conjoint_q": 10,
+        "presence_q": 10,
+        "masque_R19": {
+          "q": 6,
+          "VP": 907,
+          "FP": 0,
+          "FN": 0,
+          "dice": 1.0,
+          "plafond": 1.0,
+          "fraction": 1.0
+        },
+        "meilleur_masque": {
+          "q": 6,
+          "VP": 907,
+          "FP": 0,
+          "FN": 0,
+          "dice": 1.0,
+          "plafond": 1.0,
+          "fraction": 1.0
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 808,
+          "FP": 42,
+          "FN": 99,
+          "dice": 0.9197495731360273,
+          "plafond": 1.0,
+          "fraction": 0.9197495731360273,
+          "champs_manquants": [
+            "entree"
+          ],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 272.35897345322996,
+          "presence": 0.9999210834503174
+        },
+        {
+          "q": 1,
+          "VP": 903,
+          "FP": 42,
+          "FN": 4,
+          "dice": 0.9751619870410367,
+          "plafond": 1.0,
+          "fraction": 0.9751619870410367,
+          "champs_manquants": [],
+          "sondes_axe": 12,
+          "erreur_entree_px704": 1.7897462338520034,
+          "presence": 0.9994081258773804
+        },
+        {
+          "q": 2,
+          "VP": 903,
+          "FP": 42,
+          "FN": 4,
+          "dice": 0.9751619870410367,
+          "plafond": 1.0,
+          "fraction": 0.9751619870410367,
+          "champs_manquants": [],
+          "sondes_axe": 12,
+          "erreur_entree_px704": 1.7897462338520034,
+          "presence": 0.9984229803085327
+        },
+        {
+          "q": 3,
+          "VP": 903,
+          "FP": 67,
+          "FN": 4,
+          "dice": 0.9621736814064997,
+          "plafond": 1.0,
+          "fraction": 0.9621736814064997,
+          "champs_manquants": [],
+          "sondes_axe": 15,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.999602735042572
+        },
+        {
+          "q": 4,
+          "VP": 906,
+          "FP": 0,
+          "FN": 1,
+          "dice": 0.9994484280198566,
+          "plafond": 1.0,
+          "fraction": 0.9994484280198566,
+          "champs_manquants": [],
+          "sondes_axe": 14,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.9999650716781616
+        },
+        {
+          "q": 5,
+          "VP": 898,
+          "FP": 137,
+          "FN": 9,
+          "dice": 0.9248197734294542,
+          "plafond": 1.0,
+          "fraction": 0.9248197734294542,
+          "champs_manquants": [
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 5,
+          "erreur_entree_px704": 272.35897345322996,
+          "presence": 0.9999233484268188
+        },
+        {
+          "q": 6,
+          "VP": 907,
+          "FP": 0,
+          "FN": 0,
+          "dice": 1.0,
+          "plafond": 1.0,
+          "fraction": 1.0,
+          "champs_manquants": [],
+          "sondes_axe": 12,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.9998970031738281
+        },
+        {
+          "q": 7,
+          "VP": 901,
+          "FP": 12,
+          "FN": 6,
+          "dice": 0.9901098901098901,
+          "plafond": 1.0,
+          "fraction": 0.9901098901098901,
+          "champs_manquants": [],
+          "sondes_axe": 19,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.9999960660934448
+        },
+        {
+          "q": 8,
+          "VP": 907,
+          "FP": 42,
+          "FN": 0,
+          "dice": 0.9773706896551724,
+          "plafond": 1.0,
+          "fraction": 0.9773706896551724,
+          "champs_manquants": [],
+          "sondes_axe": 16,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.999815046787262
+        },
+        {
+          "q": 9,
+          "VP": 907,
+          "FP": 42,
+          "FN": 0,
+          "dice": 0.9773706896551724,
+          "plafond": 1.0,
+          "fraction": 0.9773706896551724,
+          "champs_manquants": [],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.9999556541442871
+        },
+        {
+          "q": 10,
+          "VP": 900,
+          "FP": 67,
+          "FN": 7,
+          "dice": 0.96051227321238,
+          "plafond": 1.0,
+          "fraction": 0.96051227321238,
+          "champs_manquants": [],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.9999988079071045
+        },
+        {
+          "q": 11,
+          "VP": 907,
+          "FP": 42,
+          "FN": 0,
+          "dice": 0.9773706896551724,
+          "plafond": 1.0,
+          "fraction": 0.9773706896551724,
+          "champs_manquants": [],
+          "sondes_axe": 14,
+          "erreur_entree_px704": 1.48150539933342,
+          "presence": 0.9999825954437256
+        }
+      ],
+      "blocages_minimaux": [
+        []
+      ]
+    },
+    "candidat": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [
+            0,
+            5,
+            7,
+            9,
+            10
+          ],
+          "axe": [
+            4,
+            8,
+            11
+          ],
+          "entree": [
+            0,
+            5,
+            7,
+            9,
+            10
+          ]
+        },
+        "masque_90_q": 0,
+        "axe_q": 11,
+        "entree_q": 10,
+        "triplet_q": null,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [],
+        "conjoint_q": null,
+        "presence_q": null,
+        "masque_R19": {
+          "q": 0,
+          "VP": 907,
+          "FP": 35,
+          "FN": 0,
+          "dice": 0.9810708491076258,
+          "plafond": 1.0,
+          "fraction": 0.9810708491076258
+        },
+        "meilleur_masque": {
+          "q": 0,
+          "VP": 907,
+          "FP": 35,
+          "FN": 0,
+          "dice": 0.9810708491076258,
+          "plafond": 1.0,
+          "fraction": 0.9810708491076258
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 907,
+          "FP": 35,
+          "FN": 0,
+          "dice": 0.9810708491076258,
+          "plafond": 1.0,
+          "fraction": 0.9810708491076258,
+          "champs_manquants": [
+            "axe"
+          ],
+          "sondes_axe": 7,
+          "erreur_entree_px704": 1.7897462338520034,
+          "presence": 0.16036680340766907
+        },
+        {
+          "q": 1,
+          "VP": 489,
+          "FP": 130,
+          "FN": 418,
+          "dice": 0.6408912188728703,
+          "plafond": 1.0,
+          "fraction": 0.6408912188728703,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 8,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.0022694426588714123
+        },
+        {
+          "q": 2,
+          "VP": 546,
+          "FP": 0,
+          "FN": 361,
+          "dice": 0.7515485203028217,
+          "plafond": 1.0,
+          "fraction": 0.7515485203028217,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 8,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.023003840819001198
+        },
+        {
+          "q": 3,
+          "VP": 647,
+          "FP": 12,
+          "FN": 260,
+          "dice": 0.8263090676883781,
+          "plafond": 1.0,
+          "fraction": 0.8263090676883781,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.005638335831463337
+        },
+        {
+          "q": 4,
+          "VP": 596,
+          "FP": 0,
+          "FN": 311,
+          "dice": 0.7930805056553559,
+          "plafond": 1.0,
+          "fraction": 0.7930805056553559,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 15,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.8216874599456787
+        },
+        {
+          "q": 5,
+          "VP": 873,
+          "FP": 70,
+          "FN": 34,
+          "dice": 0.9437837837837838,
+          "plafond": 1.0,
+          "fraction": 0.9437837837837838,
+          "champs_manquants": [
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 2.434024799000537,
+          "presence": 0.9364674687385559
+        },
+        {
+          "q": 6,
+          "VP": 402,
+          "FP": 12,
+          "FN": 505,
+          "dice": 0.6086298258894777,
+          "plafond": 1.0,
+          "fraction": 0.6086298258894777,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 8,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.010176260024309158
+        },
+        {
+          "q": 7,
+          "VP": 809,
+          "FP": 0,
+          "FN": 98,
+          "dice": 0.9428904428904429,
+          "plafond": 1.0,
+          "fraction": 0.9428904428904429,
+          "champs_manquants": [
+            "axe"
+          ],
+          "sondes_axe": 7,
+          "erreur_entree_px704": 1.7897462338520034,
+          "presence": 0.4462999701499939
+        },
+        {
+          "q": 8,
+          "VP": 558,
+          "FP": 166,
+          "FN": 349,
+          "dice": 0.6842427958307786,
+          "plafond": 1.0,
+          "fraction": 0.6842427958307786,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 15,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.0012934085680171847
+        },
+        {
+          "q": 9,
+          "VP": 831,
+          "FP": 0,
+          "FN": 76,
+          "dice": 0.956271576524741,
+          "plafond": 1.0,
+          "fraction": 0.956271576524741,
+          "champs_manquants": [
+            "axe"
+          ],
+          "sondes_axe": 1,
+          "erreur_entree_px704": 1.7897462338520034,
+          "presence": 0.11529924720525742
+        },
+        {
+          "q": 10,
+          "VP": 906,
+          "FP": 65,
+          "FN": 1,
+          "dice": 0.9648562300319489,
+          "plafond": 1.0,
+          "fraction": 0.9648562300319489,
+          "champs_manquants": [
+            "axe"
+          ],
+          "sondes_axe": 10,
+          "erreur_entree_px704": 1.7897462338520034,
+          "presence": 0.9972406625747681
+        },
+        {
+          "q": 11,
+          "VP": 564,
+          "FP": 0,
+          "FN": 343,
+          "dice": 0.7668252889191026,
+          "plafond": 1.0,
+          "fraction": 0.7668252889191026,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 17,
+          "erreur_entree_px704": 23.92059275700849,
+          "presence": 0.019848085939884186
+        }
+      ],
+      "blocages_minimaux": [
+        [
+          "axe"
+        ],
+        [
+          "entree",
+          "masque"
+        ]
+      ]
+    }
+  },
+  {
+    "graine": 9303,
+    "photo": "18105652008",
+    "provenance": "zigazou76",
+    "instance": "18105652008:1",
+    "pertes": [
+      "presence_q",
+      "triplet_q"
+    ],
+    "temoin": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [
+            7
+          ],
+          "axe": [
+            0,
+            7,
+            8,
+            9,
+            10
+          ],
+          "entree": [
+            6,
+            7,
+            10
+          ]
+        },
+        "masque_90_q": 7,
+        "axe_q": 0,
+        "entree_q": 10,
+        "triplet_q": 7,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [
+          7
+        ],
+        "conjoint_q": 7,
+        "presence_q": 7,
+        "masque_R19": {
+          "q": 7,
+          "VP": 240,
+          "FP": 8,
+          "FN": 22,
+          "dice": 0.9411764705882353,
+          "plafond": 1.0,
+          "fraction": 0.9411764705882353
+        },
+        "meilleur_masque": {
+          "q": 7,
+          "VP": 240,
+          "FP": 8,
+          "FN": 22,
+          "dice": 0.9411764705882353,
+          "plafond": 1.0,
+          "fraction": 0.9411764705882353
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 252,
+          "FP": 376,
+          "FN": 10,
+          "dice": 0.5662921348314607,
+          "plafond": 1.0,
+          "fraction": 0.5662921348314607,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 260.4296886974075,
+          "presence": 0.9999761581420898
+        },
+        {
+          "q": 1,
+          "VP": 0,
+          "FP": 567,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 8,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9976871013641357
+        },
+        {
+          "q": 2,
+          "VP": 0,
+          "FP": 417,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 133.697723161127,
+          "presence": 0.9964296221733093
+        },
+        {
+          "q": 3,
+          "VP": 6,
+          "FP": 197,
+          "FN": 256,
+          "dice": 0.025806451612903226,
+          "plafond": 1.0,
+          "fraction": 0.025806451612903226,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 8,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9995601773262024
+        },
+        {
+          "q": 4,
+          "VP": 0,
+          "FP": 207,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 7,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9998677968978882
+        },
+        {
+          "q": 5,
+          "VP": 18,
+          "FP": 1411,
+          "FN": 244,
+          "dice": 0.021289178001182733,
+          "plafond": 1.0,
+          "fraction": 0.021289178001182733,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 218.2412969292629,
+          "presence": 0.9999508857727051
+        },
+        {
+          "q": 6,
+          "VP": 0,
+          "FP": 442,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 5,
+          "erreur_entree_px704": 1.7826727086558256,
+          "presence": 0.9996929168701172
+        },
+        {
+          "q": 7,
+          "VP": 240,
+          "FP": 8,
+          "FN": 22,
+          "dice": 0.9411764705882353,
+          "plafond": 1.0,
+          "fraction": 0.9411764705882353,
+          "champs_manquants": [],
+          "sondes_axe": 19,
+          "erreur_entree_px704": 1.7826727086558256,
+          "presence": 0.9999977350234985
+        },
+        {
+          "q": 8,
+          "VP": 0,
+          "FP": 252,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9997661709785461
+        },
+        {
+          "q": 9,
+          "VP": 6,
+          "FP": 222,
+          "FN": 256,
+          "dice": 0.024489795918367346,
+          "plafond": 1.0,
+          "fraction": 0.024489795918367346,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9999632835388184
+        },
+        {
+          "q": 10,
+          "VP": 262,
+          "FP": 464,
+          "FN": 0,
+          "dice": 0.5303643724696356,
+          "plafond": 1.0,
+          "fraction": 0.5303643724696356,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.1345911096894326,
+          "presence": 0.9999994039535522
+        },
+        {
+          "q": 11,
+          "VP": 34,
+          "FP": 88,
+          "FN": 228,
+          "dice": 0.17708333333333334,
+          "plafond": 1.0,
+          "fraction": 0.17708333333333334,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9999450445175171
+        }
+      ],
+      "blocages_minimaux": [
+        []
+      ]
+    },
+    "candidat": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "par_champ": {
+          "masque": [],
+          "axe": [
+            0,
+            7,
+            10
+          ],
+          "entree": [
+            10
+          ]
+        },
+        "masque_90_q": null,
+        "axe_q": 10,
+        "entree_q": 10,
+        "triplet_q": null,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [],
+        "conjoint_q": null,
+        "presence_q": null,
+        "masque_R19": {
+          "q": 10,
+          "VP": 262,
+          "FP": 144,
+          "FN": 0,
+          "dice": 0.7844311377245509,
+          "plafond": 1.0,
+          "fraction": 0.7844311377245509
+        },
+        "meilleur_masque": {
+          "q": 10,
+          "VP": 262,
+          "FP": 144,
+          "FN": 0,
+          "dice": 0.7844311377245509,
+          "plafond": 1.0,
+          "fraction": 0.7844311377245509
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 254,
+          "FP": 592,
+          "FN": 8,
+          "dice": 0.4584837545126354,
+          "plafond": 1.0,
+          "fraction": 0.4584837545126354,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 20,
+          "erreur_entree_px704": 170.33646126855712,
+          "presence": 0.9950079917907715
+        },
+        {
+          "q": 1,
+          "VP": 0,
+          "FP": 3719,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 5,
+          "erreur_entree_px704": 133.697723161127,
+          "presence": 0.015585175715386868
+        },
+        {
+          "q": 2,
+          "VP": 0,
+          "FP": 2101,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 5,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.5672615170478821
+        },
+        {
+          "q": 3,
+          "VP": 0,
+          "FP": 2409,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 7,
+          "erreur_entree_px704": 133.697723161127,
+          "presence": 0.03142176941037178
+        },
+        {
+          "q": 4,
+          "VP": 8,
+          "FP": 546,
+          "FN": 254,
+          "dice": 0.0196078431372549,
+          "plafond": 1.0,
+          "fraction": 0.0196078431372549,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 10,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.9999732971191406
+        },
+        {
+          "q": 5,
+          "VP": 18,
+          "FP": 264,
+          "FN": 244,
+          "dice": 0.0661764705882353,
+          "plafond": 1.0,
+          "fraction": 0.0661764705882353,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": 186.48488075957013,
+          "presence": 0.9995561242103577
+        },
+        {
+          "q": 6,
+          "VP": 0,
+          "FP": 2355,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 7,
+          "erreur_entree_px704": 133.697723161127,
+          "presence": 0.8292838931083679
+        },
+        {
+          "q": 7,
+          "VP": 220,
+          "FP": 106,
+          "FN": 42,
+          "dice": 0.7482993197278912,
+          "plafond": 1.0,
+          "fraction": 0.7482993197278912,
+          "champs_manquants": [
+            "masque",
+            "entree"
+          ],
+          "sondes_axe": 11,
+          "erreur_entree_px704": 133.697723161127,
+          "presence": 0.999982476234436
+        },
+        {
+          "q": 8,
+          "VP": 0,
+          "FP": 3597,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 5,
+          "erreur_entree_px704": 133.697723161127,
+          "presence": 0.008730429224669933
+        },
+        {
+          "q": 9,
+          "VP": 6,
+          "FP": 268,
+          "FN": 256,
+          "dice": 0.022388059701492536,
+          "plafond": 1.0,
+          "fraction": 0.022388059701492536,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.991061270236969
+        },
+        {
+          "q": 10,
+          "VP": 262,
+          "FP": 144,
+          "FN": 0,
+          "dice": 0.7844311377245509,
+          "plafond": 1.0,
+          "fraction": 0.7844311377245509,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": 1.1345911096894326,
+          "presence": 1.0
+        },
+        {
+          "q": 11,
+          "VP": 0,
+          "FP": 1531,
+          "FN": 262,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe",
+            "entree"
+          ],
+          "sondes_axe": 6,
+          "erreur_entree_px704": 134.8172487238534,
+          "presence": 0.954127848148346
+        }
+      ],
+      "blocages_minimaux": [
+        [
+          "masque"
+        ]
+      ]
+    }
+  },
+  {
+    "graine": 9303,
+    "photo": "24614689941",
+    "provenance": "renatomitra",
+    "instance": "24614689941:3",
+    "pertes": [
+      "presence_q"
+    ],
+    "temoin": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "par_champ": {
+          "masque": [
+            5
+          ],
+          "axe": [
+            5
+          ]
+        },
+        "masque_90_q": 5,
+        "axe_q": 5,
+        "entree_q": null,
+        "triplet_q": null,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [
+          5
+        ],
+        "conjoint_q": 5,
+        "presence_q": 5,
+        "masque_R19": {
+          "q": 5,
+          "VP": 2505,
+          "FP": 186,
+          "FN": 186,
+          "dice": 0.9308807134894092,
+          "plafond": 1.0,
+          "fraction": 0.9308807134894092
+        },
+        "meilleur_masque": {
+          "q": 5,
+          "VP": 2505,
+          "FP": 186,
+          "FN": 186,
+          "dice": 0.9308807134894092,
+          "plafond": 1.0,
+          "fraction": 0.9308807134894092
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 0,
+          "FP": 2338,
+          "FN": 2691,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999381303787231
+        },
+        {
+          "q": 1,
+          "VP": 372,
+          "FP": 1583,
+          "FN": 2319,
+          "dice": 0.16013775290572535,
+          "plafond": 1.0,
+          "fraction": 0.16013775290572535,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 2,
+          "erreur_entree_px704": null,
+          "presence": 0.9994138479232788
+        },
+        {
+          "q": 2,
+          "VP": 214,
+          "FP": 1988,
+          "FN": 2477,
+          "dice": 0.08747189863069692,
+          "plafond": 1.0,
+          "fraction": 0.08747189863069692,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 2,
+          "erreur_entree_px704": null,
+          "presence": 0.9983593821525574
+        },
+        {
+          "q": 3,
+          "VP": 64,
+          "FP": 1434,
+          "FN": 2627,
+          "dice": 0.030556218667939842,
+          "plafond": 1.0,
+          "fraction": 0.030556218667939842,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9996097683906555
+        },
+        {
+          "q": 4,
+          "VP": 9,
+          "FP": 2381,
+          "FN": 2682,
+          "dice": 0.0035426097224955716,
+          "plafond": 1.0,
+          "fraction": 0.0035426097224955716,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999713897705078
+        },
+        {
+          "q": 5,
+          "VP": 2505,
+          "FP": 186,
+          "FN": 186,
+          "dice": 0.9308807134894092,
+          "plafond": 1.0,
+          "fraction": 0.9308807134894092,
+          "champs_manquants": [],
+          "sondes_axe": 11,
+          "erreur_entree_px704": null,
+          "presence": 0.9999241828918457
+        },
+        {
+          "q": 6,
+          "VP": 24,
+          "FP": 2800,
+          "FN": 2667,
+          "dice": 0.00870353581142339,
+          "plafond": 1.0,
+          "fraction": 0.00870353581142339,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999328851699829
+        },
+        {
+          "q": 7,
+          "VP": 0,
+          "FP": 3857,
+          "FN": 2691,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999979734420776
+        },
+        {
+          "q": 8,
+          "VP": 19,
+          "FP": 3446,
+          "FN": 2672,
+          "dice": 0.006172839506172839,
+          "plafond": 1.0,
+          "fraction": 0.006172839506172839,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9998558759689331
+        },
+        {
+          "q": 9,
+          "VP": 9,
+          "FP": 2695,
+          "FN": 2682,
+          "dice": 0.003336422613531047,
+          "plafond": 1.0,
+          "fraction": 0.003336422613531047,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999622106552124
+        },
+        {
+          "q": 10,
+          "VP": 0,
+          "FP": 4444,
+          "FN": 2691,
+          "dice": 0.0,
+          "plafond": 1.0,
+          "fraction": 0.0,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999995231628418
+        },
+        {
+          "q": 11,
+          "VP": 9,
+          "FP": 3636,
+          "FN": 2682,
+          "dice": 0.002840909090909091,
+          "plafond": 1.0,
+          "fraction": 0.002840909090909091,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9999874830245972
+        }
+      ],
+      "blocages_minimaux": [
+        []
+      ]
+    },
+    "candidat": {
+      "identite": {
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "par_champ": {
+          "masque": [],
+          "axe": [
+            2,
+            3,
+            5,
+            6,
+            11
+          ]
+        },
+        "masque_90_q": null,
+        "axe_q": 2,
+        "entree_q": null,
+        "triplet_q": null,
+        "triplet_au_seuil_q": null,
+        "conjoint_disponible_q": [],
+        "conjoint_q": null,
+        "presence_q": null,
+        "masque_R19": {
+          "q": 5,
+          "VP": 2589,
+          "FP": 933,
+          "FN": 102,
+          "dice": 0.8334138097537421,
+          "plafond": 1.0,
+          "fraction": 0.8334138097537421
+        },
+        "meilleur_masque": {
+          "q": 5,
+          "VP": 2589,
+          "FP": 933,
+          "FN": 102,
+          "dice": 0.8334138097537421,
+          "plafond": 1.0,
+          "fraction": 0.8334138097537421
+        }
+      },
+      "requetes": [
+        {
+          "q": 0,
+          "VP": 31,
+          "FP": 3782,
+          "FN": 2660,
+          "dice": 0.009532595325953259,
+          "plafond": 1.0,
+          "fraction": 0.009532595325953259,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.20634260773658752
+        },
+        {
+          "q": 1,
+          "VP": 2678,
+          "FP": 2368,
+          "FN": 13,
+          "dice": 0.6922579811296368,
+          "plafond": 1.0,
+          "fraction": 0.6922579811296368,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.001650507329031825
+        },
+        {
+          "q": 2,
+          "VP": 2589,
+          "FP": 2413,
+          "FN": 102,
+          "dice": 0.6730794228519433,
+          "plafond": 1.0,
+          "fraction": 0.6730794228519433,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": null,
+          "presence": 0.028666887432336807
+        },
+        {
+          "q": 3,
+          "VP": 2633,
+          "FP": 2580,
+          "FN": 58,
+          "dice": 0.666244939271255,
+          "plafond": 1.0,
+          "fraction": 0.666244939271255,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": null,
+          "presence": 0.004286632407456636
+        },
+        {
+          "q": 4,
+          "VP": 677,
+          "FP": 2878,
+          "FN": 2014,
+          "dice": 0.21677873839257125,
+          "plafond": 1.0,
+          "fraction": 0.21677873839257125,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9092604517936707
+        },
+        {
+          "q": 5,
+          "VP": 2589,
+          "FP": 933,
+          "FN": 102,
+          "dice": 0.8334138097537421,
+          "plafond": 1.0,
+          "fraction": 0.8334138097537421,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": null,
+          "presence": 0.9706059098243713
+        },
+        {
+          "q": 6,
+          "VP": 2343,
+          "FP": 2939,
+          "FN": 348,
+          "dice": 0.5877336009030478,
+          "plafond": 1.0,
+          "fraction": 0.5877336009030478,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 17,
+          "erreur_entree_px704": null,
+          "presence": 0.006180963478982449
+        },
+        {
+          "q": 7,
+          "VP": 23,
+          "FP": 3545,
+          "FN": 2668,
+          "dice": 0.007349416839750759,
+          "plafond": 1.0,
+          "fraction": 0.007349416839750759,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.4736223518848419
+        },
+        {
+          "q": 8,
+          "VP": 2678,
+          "FP": 2989,
+          "FN": 13,
+          "dice": 0.6408231634362288,
+          "plafond": 1.0,
+          "fraction": 0.6408231634362288,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.0007407166413031518
+        },
+        {
+          "q": 9,
+          "VP": 2113,
+          "FP": 2709,
+          "FN": 578,
+          "dice": 0.5624916810861174,
+          "plafond": 1.0,
+          "fraction": 0.5624916810861174,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 9,
+          "erreur_entree_px704": null,
+          "presence": 0.15189750492572784
+        },
+        {
+          "q": 10,
+          "VP": 15,
+          "FP": 4867,
+          "FN": 2676,
+          "dice": 0.003961441964875215,
+          "plafond": 1.0,
+          "fraction": 0.003961441964875215,
+          "champs_manquants": [
+            "masque",
+            "axe"
+          ],
+          "sondes_axe": 0,
+          "erreur_entree_px704": null,
+          "presence": 0.9995577931404114
+        },
+        {
+          "q": 11,
+          "VP": 2487,
+          "FP": 2773,
+          "FN": 204,
+          "dice": 0.6255816878380078,
+          "plafond": 1.0,
+          "fraction": 0.6255816878380078,
+          "champs_manquants": [
+            "masque"
+          ],
+          "sondes_axe": 21,
+          "erreur_entree_px704": null,
+          "presence": 0.01756158284842968
+        }
+      ],
+      "blocages_minimaux": [
+        [
+          "masque"
+        ]
+      ]
+    }
+  }
+]

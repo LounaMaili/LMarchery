@@ -1,0 +1,433 @@
+{
+  "base_R21": "ec5de10f1364c2f61fd0f5e98ca61e3529620849",
+  "preuves_R21": "3a722f499c55fb208808f04c5907adeeec2ceaa2",
+  "environnement": {
+    "threads_torch": 4,
+    "threads_interop": 1,
+    "threads_cv": 1,
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "opencv": "4.13.0",
+    "python": "3.15.2",
+    "machine": "x86_64"
+  },
+  "initial_R9": {
+    "fichier": "vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+    "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+  },
+  "photos": {
+    "13-01": {
+      "provenance": "Crigges",
+      "pixels_evaluables": 55264,
+      "pixels_ignores": 1431584,
+      "identites": [
+        "13-01"
+      ],
+      "sha256_photo": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "sha256_BGR": "0da198c6feeac093bc6e76a1eeb9a4328a53f0150c7e6631f22aeec05e61d831",
+      "sha256_annotation": "236a683959d10137c92a1c48845d4388cc4af12cd1373b1a046d8216952c02f9",
+      "sha256_masque": "bf61494f45ca6bf1e84475865c3cf5e6753b1d86d8250fc8b0793887aebd4d06"
+    },
+    "70-01": {
+      "provenance": "Crigges",
+      "pixels_evaluables": 55221,
+      "pixels_ignores": 1431627,
+      "identites": [
+        "70-01"
+      ],
+      "sha256_photo": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "sha256_BGR": "46fa788c8a29f52e5c7587f6ac1affa23be863ea78e46a04ba6f2ca7b38f6c5d",
+      "sha256_annotation": "0b4259be7771642e4363f6a011bda6c6bc642d991ed2fda54acad9e9c37a4a27",
+      "sha256_masque": "d8f25fc48ccaf2a1c9cddf2e6eca5992122b0acaa5f6c8a03a1962eab88bdf1f"
+    },
+    "7245527662": {
+      "provenance": "jrladia",
+      "pixels_evaluables": 178067,
+      "pixels_ignores": 515181,
+      "identites": [
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:3",
+        "7245527662:4"
+      ],
+      "sha256_photo": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "sha256_BGR": "49e89bafee15301e4a331f71acfc2322268a854d6d0b409e5e7c12b2eda4c66a",
+      "sha256_annotation": "7a4003f7d2d21eb3ebfb3981222fe84daa90980a9fe1d41fd990fd7241dff9f9",
+      "sha256_masque": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c"
+    },
+    "5115614018": {
+      "provenance": "Danielle Walquist Lynch",
+      "pixels_evaluables": 29886,
+      "pixels_ignores": 669506,
+      "identites": [
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5"
+      ],
+      "sha256_photo": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "sha256_BGR": "a489480ab2145c01758f4387e2b9cbe23bd2b1dd21207b08dba235dd49f6a7f0",
+      "sha256_annotation": "30cef19c24300b34e8406299049f6f0bb24c0cfc86f40add7f14615be6bbf5f2",
+      "sha256_masque": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4"
+    },
+    "18105652008": {
+      "provenance": "zigazou76",
+      "pixels_evaluables": 20128,
+      "pixels_ignores": 679264,
+      "identites": [
+        "18105652008:1",
+        "18105652008:2"
+      ],
+      "sha256_photo": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "sha256_BGR": "b43b8156af85d098b971c13f85ebc8c880e202a797e60baadb5d3b29657b38ab",
+      "sha256_annotation": "77895526f142ac39d377200606319e41b1c92c2fadd2c834b9a4339e0e117f71",
+      "sha256_masque": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d"
+    },
+    "24614689941": {
+      "provenance": "renatomitra",
+      "pixels_evaluables": 56618,
+      "pixels_ignores": 991958,
+      "identites": [
+        "24614689941:1",
+        "24614689941:2",
+        "24614689941:3"
+      ],
+      "sha256_photo": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "sha256_BGR": "1400a1bb4aa3dea1b2c02008658423e615ecfc7933c16cb017503055a97b2a44",
+      "sha256_annotation": "aee7428ccae33a0ffdb2912821f16344d68f6faf3fa2fe9b924e1ae28691166b",
+      "sha256_masque": "e05a381f237277c0b601c4f18fc2efa91fb5ee3c9002bf3df8cdc8e1e4332d59"
+    },
+    "4169106197": {
+      "provenance": "cristina.sanvito",
+      "pixels_evaluables": 12669,
+      "pixels_ignores": 294531,
+      "identites": [
+        "4169106197:1"
+      ],
+      "sha256_photo": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "sha256_BGR": "b6bc999370c759bcd7221598fcc7ebe506c855ee25f719d47cc8a3af74d0d25e",
+      "sha256_annotation": "f273b555eec39b73bf6f86ff599b54b6e042a8e0bfa47e87f0d7a60fcd055c2d",
+      "sha256_masque": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8"
+    },
+    "wc71488242": {
+      "provenance": "Bernard Gagnon",
+      "pixels_evaluables": 69394,
+      "pixels_ignores": 1569006,
+      "identites": [
+        "wc71488242:1",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:11"
+      ],
+      "sha256_photo": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "sha256_BGR": "ae957c45cae309d31cfee7592b0e1fdb1adfaeaeb660ded6f17fe00c1d1ac8be",
+      "sha256_annotation": "86e94a2e24cb1a7360a9b8687fb9f7e642cc1ab5062e4e62db2636e78018dfac",
+      "sha256_masque": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e"
+    },
+    "wc11001401": {
+      "provenance": "4028mdk09",
+      "pixels_evaluables": 35938,
+      "pixels_ignores": 1450910,
+      "identites": [
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5"
+      ],
+      "sha256_photo": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "sha256_BGR": "319b3495df9b3650b502db26cc41a6c00cdadf2fd72bc21c31d2ce06fcd0ed4c",
+      "sha256_annotation": "154c0bae107606776a2680ee1c794d0ccb84ea0097496b83eca6f9b6e50cd082",
+      "sha256_masque": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32"
+    }
+  },
+  "temoins": {
+    "9301": {
+      "initial": "b3e26ad4d2b1741ff876e0d58b1957e7f6c71bcab8b87c4c59e9cdcc5a7c7601",
+      "presentations": 768,
+      "plan_identique": true,
+      "etats": {
+        "96": {
+          "etat": "082d795cef59ffabc6bce45af79cc82f5b3e223a0af5b633b14c24fdb7fc22e4",
+          "fichiers": {
+            "poids": {
+              "nom": "poids.pt",
+              "octets": 897303,
+              "sha256": "f2713c17925e46fc6bf7f956351e43e0fd39d78d78c672da8b30241a01aba244",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/96/poids.pt",
+              "role": "temoin, graine 9301, pas 96, poids"
+            },
+            "optimiseur": {
+              "nom": "optimiseur.pt",
+              "octets": 132981,
+              "sha256": "5d4b7f8180d9f4347c22cb4eed6bdbd7900f0145d8230a162e59359736e41899",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/96/optimiseur.pt",
+              "role": "temoin, graine 9301, pas 96, optimiseur"
+            }
+          },
+          "photos_rejouees": 9,
+          "mesures_identiques": true,
+          "mesures": "r21/mesures/temoin-9301-96.json",
+          "sha256_mesures": "36621a8ad8350ab7a126655a63c2dc0dbade395ef10ee25f836df10988bbecbd"
+        },
+        "768": {
+          "etat": "b3c318ed3e8a7492ca547fd1be73c739be5183a4bbc502200dbd4dd0aa11924f",
+          "fichiers": {
+            "poids": {
+              "nom": "poids.pt",
+              "octets": 897303,
+              "sha256": "dc5d1e70f00fad66c363f4405c1ec4da01b48e2c6b149a78c49f103e190e5f9f",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/768/poids.pt",
+              "role": "temoin, graine 9301, pas 768, poids"
+            },
+            "optimiseur": {
+              "nom": "optimiseur.pt",
+              "octets": 132981,
+              "sha256": "05012cced7a122e244aea9e38c07647f7f47af09aeef74688ea131b2274d8922",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/768/optimiseur.pt",
+              "role": "temoin, graine 9301, pas 768, optimiseur"
+            }
+          },
+          "photos_rejouees": 9,
+          "mesures_identiques": true,
+          "mesures": "r21/mesures/temoin-9301-768.json",
+          "sha256_mesures": "6955e2f24b29ac59da3568c0fca7ab16f78a8d48380b9cd8ccc58d7ab2a2059d"
+        }
+      }
+    },
+    "9302": {
+      "initial": "bfe6ad212266fcf8fcf0d1433acf2ea06740b5ac755dddd7fe821eb96e4122a0",
+      "presentations": 768,
+      "plan_identique": true,
+      "etats": {
+        "96": {
+          "etat": "0b192a3963d7d46c46e7c30b91b9cadbc620454ccbe4aa795078adde03cd426b",
+          "fichiers": {
+            "poids": {
+              "nom": "poids.pt",
+              "octets": 897303,
+              "sha256": "99da446685f15aca2a487418d704778aed725a400d6ddda0fd9748f3144cd32c",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/96/poids.pt",
+              "role": "temoin, graine 9302, pas 96, poids"
+            },
+            "optimiseur": {
+              "nom": "optimiseur.pt",
+              "octets": 132981,
+              "sha256": "98556c90e5328da3d06bd339d41fcbb437ff7085752e0c1f99a8f641c5b689d2",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/96/optimiseur.pt",
+              "role": "temoin, graine 9302, pas 96, optimiseur"
+            }
+          },
+          "photos_rejouees": 9,
+          "mesures_identiques": true,
+          "mesures": "r21/mesures/temoin-9302-96.json",
+          "sha256_mesures": "c4899c60e17dd1c25eb73d0038b4764ac1f8d70ee7c83905a986f4efecccb1ac"
+        },
+        "768": {
+          "etat": "c48f11e686fb9b9a1e49c7cc19e660feee17ad33cf11cb63266a31d34762db4e",
+          "fichiers": {
+            "poids": {
+              "nom": "poids.pt",
+              "octets": 897303,
+              "sha256": "3eb56f8b87bdeed91fa36be789bcb56c6181d7fbf4dac1331e188e2b72e6e324",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/768/poids.pt",
+              "role": "temoin, graine 9302, pas 768, poids"
+            },
+            "optimiseur": {
+              "nom": "optimiseur.pt",
+              "octets": 132981,
+              "sha256": "ee67d712bac397fe16dbe14013cddb01b5ff274efe0e496d043add019e205751",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/768/optimiseur.pt",
+              "role": "temoin, graine 9302, pas 768, optimiseur"
+            }
+          },
+          "photos_rejouees": 9,
+          "mesures_identiques": true,
+          "mesures": "r21/mesures/temoin-9302-768.json",
+          "sha256_mesures": "6676e4a94d39c4396729af5f5f05994280ae6267b6935ae928b2e7b3d2ff358b"
+        }
+      }
+    },
+    "9303": {
+      "initial": "69e238fdfa469f538bbb55f08bb8b7bb2309e1dfd871e53d0fb15b572d079ffc",
+      "presentations": 768,
+      "plan_identique": true,
+      "etats": {
+        "96": {
+          "etat": "a7adf0a66ef004b412b12fc895be79056a72ce14dba5553303e122230a4211f0",
+          "fichiers": {
+            "poids": {
+              "nom": "poids.pt",
+              "octets": 897303,
+              "sha256": "ffb87906d6f314b58b7153ec99e5e08a6ed3c00e050a5fa34792acfb9d1ef16a",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/96/poids.pt",
+              "role": "temoin, graine 9303, pas 96, poids"
+            },
+            "optimiseur": {
+              "nom": "optimiseur.pt",
+              "octets": 132981,
+              "sha256": "8ce4deb8db3c8c0c343d5b0505b2bd433ca6aa2b88ec3a719bfb49847e8922b2",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/96/optimiseur.pt",
+              "role": "temoin, graine 9303, pas 96, optimiseur"
+            }
+          },
+          "photos_rejouees": 9,
+          "mesures_identiques": true,
+          "mesures": "r21/mesures/temoin-9303-96.json",
+          "sha256_mesures": "d8e22467b0fcac8c8072c0c4ec306fb9db1b1fec4385218f3b2a9b1038a0cfe0"
+        },
+        "768": {
+          "etat": "d1413173719805d642a86f6081c523f8690711c5bc64d8d8f1424ac436accb09",
+          "fichiers": {
+            "poids": {
+              "nom": "poids.pt",
+              "octets": 897303,
+              "sha256": "323eb2ddfb231cbd2c59f6831b19843c50ae24a9b57c8ed84b1e1e9d7fe0d8c4",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/768/poids.pt",
+              "role": "temoin, graine 9303, pas 768, poids"
+            },
+            "optimiseur": {
+              "nom": "optimiseur.pt",
+              "octets": 132981,
+              "sha256": "582f1197701ce173794c298d27359296a71ecce7c219f623546f8006b3d5cc8b",
+              "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/768/optimiseur.pt",
+              "role": "temoin, graine 9303, pas 768, optimiseur"
+            }
+          },
+          "photos_rejouees": 9,
+          "mesures_identiques": true,
+          "mesures": "r21/mesures/temoin-9303-768.json",
+          "sha256_mesures": "8df2719d398797ded278d070a28351d113cde9ea6f8630992a6ce348e7528fe6"
+        }
+      }
+    }
+  },
+  "empreintes_entrees": {
+    "r21/inventaires.json": "e03ef229f539aa8cb73bd34567e061646bcdbcc331922c66e42002cd83d24edb",
+    "r21/tirages.json": "2e5dd5afd18d110556dba4c110153900c313f7ba3b6fc18949fb593ea6db0602",
+    "r18/validites.json": "0696d06b15cb444813c02758eab7c873167cb2f32d46a3a93b03931e0cd0727d",
+    "r19/configuration.json": "c69ada4c0367286bb452be059005613446c24a4567810bfc5b6bc01715445767",
+    "r19/tirages.json": "9010c53aa5901cecbfbff775348ee799a70e2046c17c9f90ccec7706a5beb0ae",
+    "r20/plafonds.json": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f",
+    "r19/affecter.py": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f",
+    "r19/decoder.py": "8cf38bf46f20c1c49382cf3bf053a498ce759778664feac6bb6646b8a3129c9c",
+    "r19/donnees.py": "5b8b51fb2df46128ff5601cc713cf2cb72af962efaf52750bb5b7b479faf62ac",
+    "r19/mesures.py": "7dc9fe9a8e31f4b6325d94d638b1acc8f7dab70fddb41b969a374fedd6fdc260",
+    "r19/modele.py": "cd830c3ba13a8ee5b0de249362e9db6e198a683b30e3d5abadddc1d0f456dbb5",
+    "r19/pilote.py": "1cfe54ef0cfdd0353afe0c0799caf119d4b8f953dc5d6675507aebc61953384d",
+    "r19/supervision.py": "51ad9fa63711b50a2e142cb7cfed8a4c3caebfdbb50fb25e5a7ae6e3f9605d0a",
+    "r21/inventorier.py": "da2c54df6f0aa14400f23a8268b93733e2409059716bd4e64dcf759aacf9febd",
+    "r21/regle.py": "c4e44d745606da6001fdb59c83383c8e4379b5bc774394e04bb1f50d98802eb3",
+    "r21/plan.py": "0417bf8f8d754aeb8df6b95798d51f6907cf94595518dcdb7cf9302c996fcbea",
+    "r21/mesures.py": "febeaa6aa1c93e15aa530ee91805b1850a3c70c6b10cb1820595cb5006894fd6",
+    "r21/executer.py": "3d54e7add67c0edca8e33ba76507a74b644c2cc4a4d6306c951d50b9faaa66ab",
+    "r21/configuration.json": "dcb5f629671036b4bd905083191effb84dc159219d7ad657658bf0e9ea5cfb2c",
+    "r21/inventaire-local.json": "197d790a9cf1561450ed7030bbc5f0c6ca729dd56a9640e35a5ce2e69ed41d8b",
+    "r19/donnees.json": "933e4bd81389b5e4effc69150debd3befc6a502471223a8a7eda7c184eaa6372",
+    "r20/champs.py": "6ab20d904846ba0cb2ad99c1bf30a3a0874045f2bf3b42c827127991f0e6d449",
+    "r20/conditionner.py": "8f658dc5efed870f173907a0c39e390d2ea0fb5b0c28721a25599977c7a2a4bd",
+    "r20/corpus.py": "d1112ba20a2bb456f94d89ee93120c8ad13749befa191aa79076d028e3d8a0ea",
+    "r20/figurer.py": "6de1b1c32efea20ac903401772c2af86e00200839d61ff563f5b7c6aaa9210fd",
+    "r20/instrumenter.py": "1c356dcc4fcc3ee008555f519f5a47e2bb34c9fb0f4d7fd9c2b174d5a3763d31",
+    "r20/mesurer.py": "a6894262ed4171fc3038a8215cf5244ef35a08fc0c3e16369710d5fb17b71e71",
+    "r20/operations.py": "8db465fcc2cfcdc01cdfbe6a52f8fb328c307b675ea371b9da70583d34eff2e3",
+    "r20/rejouer.py": "2850d7f73426e7e556138cce8bd9e2ba2116d23bbd310862ba9172d60268f876",
+    "r20/tableaux.py": "917eb0c78b0ea4c155b73ee7e180913ac4349121f4eca2f44a59191c5e520f3c",
+    "r20/verifier_champs.py": "8525df7ff7a6a71b93914132b3aa49b6432b5dc1a5d63f1689a95c5983cd9157",
+    "r21/mesures/temoin-9301-96.json": "36621a8ad8350ab7a126655a63c2dc0dbade395ef10ee25f836df10988bbecbd",
+    "r21/mesures/temoin-9301-768.json": "6955e2f24b29ac59da3568c0fca7ab16f78a8d48380b9cd8ccc58d7ab2a2059d",
+    "r21/archives/temoin/9301/768/controle.json": "39f36ddeaf0382609f4cd92c9b2c0487a3ba0ede15a87fa254bd2376f0054700",
+    "r21/archives/temoin/9301/768/masques/13-01.png": "1d49997793d57950360d3c2ddccbc699568dd6083bca4182d6dad10876558e43",
+    "r21/archives/temoin/9301/768/masques/18105652008.png": "ae5d009e92ce84d41043d6d890da5bfdafba38344dfd100ff908bce3da430371",
+    "r21/archives/temoin/9301/768/masques/24614689941.png": "3f293f1fa4fd310ebbf1b8a6ee33d00d73f475a7215e8603aa90e08eba6c6f96",
+    "r21/archives/temoin/9301/768/masques/4169106197.png": "fc008989128135f5f31ba9c86a21dbb589feb50412f8b11861fe50b181ac7ea1",
+    "r21/archives/temoin/9301/768/masques/5115614018.png": "2e3951155237cd61da0a8d136886ad3cc538c752195ee245ad5f93c6b71a9203",
+    "r21/archives/temoin/9301/768/masques/70-01.png": "770a9040643719876fa8a5d8de60d7957d40f082b1e808ef5a5916900ff23de8",
+    "r21/archives/temoin/9301/768/masques/7245527662.png": "e6a4ca1889ac871a085845a10370287535afb41aed51d784af1986b0902e65ea",
+    "r21/archives/temoin/9301/768/masques/wc11001401.png": "6a2ac867e5ec24a8c4fd6a62532e606ed86a9f12981ad57d2686f0659d4a78af",
+    "r21/archives/temoin/9301/768/masques/wc71488242.png": "e6b49dcc11d8ff3b99c1767cdf3f0eeb7e0fbb3dc8e1a10c035c6460aacd5135",
+    "r21/archives/temoin/9301/768/pertes.json": "2831a00f71537eba4d75ac523c6c26cdcc0f441d6966a71ad856c80642bf327d",
+    "r21/archives/temoin/9301/768/predictions.json": "4b5b8903c7d8b8aa5710fefc8be38691f67f1aec33b8bb6dc8634a87fd42ccf6",
+    "r21/archives/temoin/9301/96/controle.json": "f55dccf0ce5b71f92ef3dd270af5cef65435a52114875cf0fdfe1a1b05e72754",
+    "r21/archives/temoin/9301/96/masques/13-01.png": "b7d6f16743ef9274c48669449be17ffdce5a6a310285e69c6dd9927b3ec65883",
+    "r21/archives/temoin/9301/96/masques/18105652008.png": "d70b1006d499514e9159690dda00ce2fc905295205f353ae28ad400dcff9195c",
+    "r21/archives/temoin/9301/96/masques/24614689941.png": "a6242bc34d2f54b61c0d89c94e76f55a517abbe14237c71a430064f84208ea56",
+    "r21/archives/temoin/9301/96/masques/4169106197.png": "18d3e4a7bbe99615f177408355bb9d7d091bbf77dfd15ad472ce8f417389ebaa",
+    "r21/archives/temoin/9301/96/masques/5115614018.png": "7f9500c2262921128830729fd433a77a40c48e36367a4266cdd6dcc6d97d59a7",
+    "r21/archives/temoin/9301/96/masques/70-01.png": "0d2878c7705f69ef061fc134a8181eff76497c4f138f9318e5cbd1e5f8a92369",
+    "r21/archives/temoin/9301/96/masques/7245527662.png": "d5455fc186f394cd4accfc4198afe0ef59a54be5f1efd7b4667a0a171c319c7b",
+    "r21/archives/temoin/9301/96/masques/wc11001401.png": "b01ecf10683580fcb0b01d31693678445417e850a6896c7ce79539d26b6f92d6",
+    "r21/archives/temoin/9301/96/masques/wc71488242.png": "edf63155b9b5f3511fde7a57eba1e03f2de8138540a42f6c8a128c053c953ff3",
+    "r21/archives/temoin/9301/96/parite.json": "d0d91c3fea79e90bfbc987b4a50d768048be1c91b142c39099ffd73a3dfc8fac",
+    "r21/archives/temoin/9301/96/pertes.json": "8b3be67eb1981303174efbb94c7bb126e98617a7001ad0ad12506438d559da56",
+    "r21/archives/temoin/9301/96/predictions.json": "79bb5f8523fdc2bf9d255f04bb4104e98e2dad6fcf00654037b6b3a86b5edbb4",
+    "r21/archives/temoin/9301/execution.json": "fa4752f207d5a422d1602952ec4262e76bec83bc64891459f2147f97d9611b95",
+    "r21/archives/temoin/9301/progression.jsonl": "481409eb92389ca8f278b2c8194a3a9a9c03faf7104adc4e6c4aedfcfc6bbf3c",
+    "r21/mesures/temoin-9302-96.json": "c4899c60e17dd1c25eb73d0038b4764ac1f8d70ee7c83905a986f4efecccb1ac",
+    "r21/mesures/temoin-9302-768.json": "6676e4a94d39c4396729af5f5f05994280ae6267b6935ae928b2e7b3d2ff358b",
+    "r21/archives/temoin/9302/768/controle.json": "e019e4e27f5fde7d50080a1d1a98637b534443f1321055cac60dd1b60c27f9a5",
+    "r21/archives/temoin/9302/768/masques/13-01.png": "eafb44709cdfd60ed707430c00adc2865cd4475a2427c3e25187939c4e430e4a",
+    "r21/archives/temoin/9302/768/masques/18105652008.png": "6db987b530208e2b378e9214615cf41fb54f5ee276b7eb9990cd2d664cc4d80a",
+    "r21/archives/temoin/9302/768/masques/24614689941.png": "dd1ecb8bb13058ce9f7a7c675e008e05b3796a336eccb41a25bece6cbe57ae6d",
+    "r21/archives/temoin/9302/768/masques/4169106197.png": "b737f9e9001aa19ed680179b0b3ee28ff79aa6f6142abf621b0e38a86ceb336e",
+    "r21/archives/temoin/9302/768/masques/5115614018.png": "c739a0067c3e3c3563c8c72550b0c592b77d9707a8a39e75b143d126cf67446c",
+    "r21/archives/temoin/9302/768/masques/70-01.png": "fe93888f893a164abef8aa779955a88b733b33f78d547e717661783162155b2b",
+    "r21/archives/temoin/9302/768/masques/7245527662.png": "9c3adaf001010e21ea436b1c7ad54d9f1d94d686dfbc5aae0158e4514bee6e72",
+    "r21/archives/temoin/9302/768/masques/wc11001401.png": "f502599d3fa36604018a6a5da19f0792376767feefb1d927037bb49660a3b5c1",
+    "r21/archives/temoin/9302/768/masques/wc71488242.png": "54cb47b66eab2e191f10c872c255fb0636701f103aa7ebe92ac4cc345297e61c",
+    "r21/archives/temoin/9302/768/pertes.json": "39f103ec8bf3dcf7f7b8000e917311cd01e3f024d5367e7c94cc9f0a16438352",
+    "r21/archives/temoin/9302/768/predictions.json": "8084c15a25b63662d47c6e184cc028ced2a1111ce3cff963d35b5ccb286394c1",
+    "r21/archives/temoin/9302/96/controle.json": "66c43fa97308eb67a4b6e6344152bfcee8c85451066c68ecb4810bd027ff52ad",
+    "r21/archives/temoin/9302/96/masques/13-01.png": "37fccee762262e9f090ae761e049df3aa661054ad73115f5ccbcc7c6bc18bac8",
+    "r21/archives/temoin/9302/96/masques/18105652008.png": "4c1a021946b724e2a03898fa72261f63dbf0629e90546079bc90f196249df51c",
+    "r21/archives/temoin/9302/96/masques/24614689941.png": "a59051c0564d15a69164f455096ca94f9efa87027f13439d9c566238f1a52129",
+    "r21/archives/temoin/9302/96/masques/4169106197.png": "73af654512fd8c96e021cfe182748e93e68c7abface432422e009dda6f88fc2a",
+    "r21/archives/temoin/9302/96/masques/5115614018.png": "285585dddffdc89a83764a58420d344d3e497fb3fdcc60295f7909471006c173",
+    "r21/archives/temoin/9302/96/masques/70-01.png": "394518ab277b57b89f5bbd11ef6635ca76c626af51df882f3d7f425c37cec86c",
+    "r21/archives/temoin/9302/96/masques/7245527662.png": "15c5b8761c0b992147d9e75e9f8a84a20ffa15180a2de7da3a6b155475c69b7f",
+    "r21/archives/temoin/9302/96/masques/wc11001401.png": "555ed875cce8d80bc2b07ee581d5e92dc873a2d057e6b25133ddf54ede80e4d8",
+    "r21/archives/temoin/9302/96/masques/wc71488242.png": "66db81b4250c780684df99c0c3c5e96e1d199a70358ae96e41b487a75888038f",
+    "r21/archives/temoin/9302/96/parite.json": "9458a031801217fa3646c7b91433483c30a9ee4a810273de9b2a082966fb669d",
+    "r21/archives/temoin/9302/96/pertes.json": "0833f45642112e1e26f899c09e2644dcd9379b5e30bccc0edc1f6a9a9533baaa",
+    "r21/archives/temoin/9302/96/predictions.json": "ecae74e37aac6d2579a315922fb009b65c19f87598cf9c63242f6c2c833e5968",
+    "r21/archives/temoin/9302/execution.json": "a543b0e3518e96588d4bbd6b85b4370479be4c0c7ddcbe52bf7f53decae64ed9",
+    "r21/archives/temoin/9302/progression.jsonl": "d241dde9064d3dda666a36dcf7dc162db050dcb9b7ce84ddd9686ee7d250cdc3",
+    "r21/mesures/temoin-9303-96.json": "d8e22467b0fcac8c8072c0c4ec306fb9db1b1fec4385218f3b2a9b1038a0cfe0",
+    "r21/mesures/temoin-9303-768.json": "8df2719d398797ded278d070a28351d113cde9ea6f8630992a6ce348e7528fe6",
+    "r21/archives/temoin/9303/768/controle.json": "1b8c52c7fad2b75e6df592fcea1409490d079fa67b0c41701b970838cf23bdd8",
+    "r21/archives/temoin/9303/768/masques/13-01.png": "151fb96f14c6667db5beb93129cc5152b4bdea2173a922a18adda3b03ae4d376",
+    "r21/archives/temoin/9303/768/masques/18105652008.png": "8f4e2da8a2309fc9153913dd888b97943660cdc517c88140a7b784a3b9abf6b3",
+    "r21/archives/temoin/9303/768/masques/24614689941.png": "f364d5bcc852698f88a0ae95bd9927262c2cee7ec3184b9e7e280c2f48be35fc",
+    "r21/archives/temoin/9303/768/masques/4169106197.png": "716d7be09a6942f5cf8d03f8623d64087f20e7804d1bc1cb5f9b12e9baed30c7",
+    "r21/archives/temoin/9303/768/masques/5115614018.png": "5e80c5f635ed97db5abe107f058f9bd3eda5c20e25f66392f04802ac57238eb7",
+    "r21/archives/temoin/9303/768/masques/70-01.png": "0ee0adbc5152b4f14537e85bdf5ffdd67a3040c52321dd4ad8c157697dd06897",
+    "r21/archives/temoin/9303/768/masques/7245527662.png": "7878269fdba9e21d5b468b730fd484e659f13c6bc5b005ec590ee32d8f7618da",
+    "r21/archives/temoin/9303/768/masques/wc11001401.png": "3ac4d68520cf769842892376c1b3384872624ccf0433032ae7ad5960aa85bb0b",
+    "r21/archives/temoin/9303/768/masques/wc71488242.png": "fb550099ecbabdb1bf055c18ed7563d9f893cdaf4cbc659cf8c81fef26c4ba35",
+    "r21/archives/temoin/9303/768/pertes.json": "86d6c0111562579687948af750f4a5655b1fd72757c117950a2437c41793b1be",
+    "r21/archives/temoin/9303/768/predictions.json": "ed45c52e3bdb9d106be840c3c91fcd156074c38b595befcc3120e4a17969b87a",
+    "r21/archives/temoin/9303/96/controle.json": "09162483be1ed8e6d3e9885e6498803462f0adb0902608a8b0af560090825af0",
+    "r21/archives/temoin/9303/96/masques/13-01.png": "514579c152683482036199a731d196e97946822399929ca6b583c2123ec6dd94",
+    "r21/archives/temoin/9303/96/masques/18105652008.png": "a7ed02c361c89391a7ba33401571c7febb1263f7951025df125616a2f25bc54f",
+    "r21/archives/temoin/9303/96/masques/24614689941.png": "5d157c31882849e476e9c388ae7592ef0818f772acae9610fdd03d12d4088715",
+    "r21/archives/temoin/9303/96/masques/4169106197.png": "0f9db03e9c591baf4298a096cfe5ef6c625e45b34ac763aebaf6b926d913bd17",
+    "r21/archives/temoin/9303/96/masques/5115614018.png": "2fe866add77c40e72d512c14712eb94502b353336dca4a656804f8a6c97a53c2",
+    "r21/archives/temoin/9303/96/masques/70-01.png": "98d2df0b84234fbf6e14e47765cfdc63e6a7de36c77be511efb32222ab163a53",
+    "r21/archives/temoin/9303/96/masques/7245527662.png": "56d1fa68b0dca0ae07605c8d265d186c750e0244064f0d89cc38a7c060a74269",
+    "r21/archives/temoin/9303/96/masques/wc11001401.png": "036171eeb5a1bb5bad3e8aff8bf1edd062b94c6afd213d8e58d9f9082a58b5aa",
+    "r21/archives/temoin/9303/96/masques/wc71488242.png": "d3ac6784ef24c9a19746d979309a643180bd946cee5248ac294679eb3968623f",
+    "r21/archives/temoin/9303/96/parite.json": "b028df8b8f52eb72143be414ae38e3952e2ea8a42aee05277c7e17a0731f092a",
+    "r21/archives/temoin/9303/96/pertes.json": "7ebfe698c0c8cfc172858e7626c9ab260a8b4dd86f61f6fdaa5dd40e6f7672f4",
+    "r21/archives/temoin/9303/96/predictions.json": "70cb5e7328f2735bcdea611f354469610464c443753290a78f31cd78228f1811",
+    "r21/archives/temoin/9303/execution.json": "0eb0db025796372334ca46ed4bd4589d4cf777d43f0d8d173b88b7ab40364e3d",
+    "r21/archives/temoin/9303/progression.jsonl": "ef493ed07a6b146ac94ccfb7d03c28bf839fe17ca14a199fe9b759ecf307ba5a"
+  },
+  "comparaison_autorisee": true,
+  "nouvelles_inferences": 0
+}

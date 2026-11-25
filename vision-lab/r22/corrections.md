@@ -1,0 +1,7 @@
+# Historique de publication R22
+
+Le diagnostic, la règle scientifique, les limites d’exécution, les mesures et le code d’ajustement ont été publiés avant l’expérience. [Gel du 25 novembre 2026](https://github.com/LounaMaili/LMarchery/commit/eac6927d1c19a40d371c2528cf50373eba091c1b)
+
+Les preuves initiales contiennent les trois trajectoires et le verdict. Sur GitHub, le contrôle du rejeu intégral a échoué sur la sérialisation d’une distance euclidienne d’entrée dans le rapport Dice 9303 au pas 768. Le même rejeu était identique en octets sur la machine d’exécution. [Première publication des mesures](https://github.com/LounaMaili/LMarchery/commit/e632c7820c7c7891f4c7b47403fc7f8643fac1ea) · [Journal du contrôle initial](https://github.com/LounaMaili/LMarchery/actions/runs/45663859696/job/139380573867)
+
+La correction porte sur le test de portabilité et la commande de revue. Elle compare les deux champs de distance d’entrée à deux ULP au maximum, avec une comparaison exacte de leur côté du seuil inclusif de 10 px. Les pixels, scores, affectations, sorties, coûts enregistrés, identités, données des figures et décision conservent leurs valeurs publiées. Un test de régression refuse un franchissement du seuil même d’une seule ULP et un écart de trois ULP. Le rejeu s’effectue à partir des fichiers publiés. Aucun nouvel ajustement ni nouveau passage de modèle. [Contrôle corrigé](../test_r22_archives.py) · [Commandes de vérification](reproduire.md)

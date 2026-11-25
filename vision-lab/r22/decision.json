@@ -1,0 +1,15 @@
+{
+  "graines_conformes": [
+    9301
+  ],
+  "minimum_graines": 2,
+  "critere_confirme": false,
+  "pas_decision": 768,
+  "ajustements_candidats": 3,
+  "ajustements_temoins": 0,
+  "mises_a_jour": 2304,
+  "lectures_train_candidat": 54,
+  "nouvelles_lectures_dev": 0,
+  "lectures_test": 0,
+  "NO_GO_Android": true
+}
