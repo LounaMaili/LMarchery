@@ -1,0 +1,95 @@
+{
+  "parite_complete": true,
+  "passages_verifies": 8,
+  "nouveaux_passages": 0,
+  "etats": {
+    "temoin-96-wc71488242": {
+      "poids": "99da446685f15aca2a487418d704778aed725a400d6ddda0fd9748f3144cd32c",
+      "champs_locaux": "f687c82538c1a4a642e1af3e71ab5d87fc6c2d43c2cc78e00eba382338b1006a",
+      "points_presences_scores_segments": "5b68e3e9587f2b0af6aa227a2149b4637146b4552e40e5bfd278d91a854fcd1c",
+      "couts_logits_et_affectations": "f19bd2011f58bbe030b5c9cd4de1403680e22269dc1a143f5fb1052c10872f86",
+      "png_sha256": "66db81b4250c780684df99c0c3c5e96e1d199a70358ae96e41b487a75888038f",
+      "plan_uint16": "add3b19c86c7e583fbbadbd5d30ac6124b5b125fdf955ddec7941c65ae20f3b3",
+      "geometrie_sha256": "ce9f970310b2e746ad168ac5de7fa4368cc745392af626494e1764b833068e7f",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "temoin-96-5115614018": {
+      "poids": "99da446685f15aca2a487418d704778aed725a400d6ddda0fd9748f3144cd32c",
+      "champs_locaux": "a04c29243ea7b195983b07db8d2dcf61e0d0d3eaea722b034a76ab27c58a16a4",
+      "points_presences_scores_segments": "6692aad01c272de5724b61ff87840a666f9e4f64b62c0e9cfbb9c5900138c720",
+      "couts_logits_et_affectations": "bd06b2fedbafa46e61980457d98ec03eef0a9037ea814320dcbc0a06642fbd0a",
+      "png_sha256": "285585dddffdc89a83764a58420d344d3e497fb3fdcc60295f7909471006c173",
+      "plan_uint16": "cb41a99d9d0002c9ec0c661f9563538391806eda85dad3ecd1ac1f839d493da8",
+      "geometrie_sha256": "f41f7432598f5461bbf00114cb2e5c824425870e54a2ea91461d9569aa49d55e",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "temoin-768-wc71488242": {
+      "poids": "3eb56f8b87bdeed91fa36be789bcb56c6181d7fbf4dac1331e188e2b72e6e324",
+      "champs_locaux": "0a606f90272f5943571d48c6abd493a0276c46cd91c5a968b7b10db9644253e9",
+      "points_presences_scores_segments": "ad2c042e41569ddbd892916718ef9b31c5c940b86295ecd6a7467145ddddea28",
+      "couts_logits_et_affectations": "8d5639f47525cfcf0bea69fdf0f1d14ed539b675cb1590f6f303c57596625975",
+      "png_sha256": "54cb47b66eab2e191f10c872c255fb0636701f103aa7ebe92ac4cc345297e61c",
+      "plan_uint16": "22780d626df434070d2b788d3a2075f4539ef0a0de32bd84a99fa77a7bcf45ce",
+      "geometrie_sha256": "2c557b4c12fb50f651356ba3beeabbda9fa97622d53721512b7cd5a44f569add",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "temoin-768-5115614018": {
+      "poids": "3eb56f8b87bdeed91fa36be789bcb56c6181d7fbf4dac1331e188e2b72e6e324",
+      "champs_locaux": "298574c897060a9b4cd889ae9815972918130c70ad2207818ed8b43ee56275b2",
+      "points_presences_scores_segments": "a843bdda047ed58b1eda53a0f2b16907185e6f0f3ff4cd29981ff34509f51309",
+      "couts_logits_et_affectations": "6929c4ea0e88bc1995c2844b4be6a6a9b15de38fe27e8449e990b8c44b2a3800",
+      "png_sha256": "c739a0067c3e3c3563c8c72550b0c592b77d9707a8a39e75b143d126cf67446c",
+      "plan_uint16": "f26289c6e7a64ff6aeed6ba540e74277f7246018ea92b1ef0db70ac00fe653d9",
+      "geometrie_sha256": "c6d0427df01d42542f55a7ed51a441df2302df1158aca82e7b63d99b6f3b95d4",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "dice-96-wc71488242": {
+      "poids": "7b9d87a608edee0c9a577136b90e3d252bf9d22b971904838e22ad4928c051b4",
+      "champs_locaux": "22c5f9f9aee5477539f40af841388015e69ddc7a9f39a40175faaba8e648903b",
+      "points_presences_scores_segments": "7fcc1b616c51fb0dd6fe21931e7fd9db15b167deaa9024c1fbca89eed85a8b73",
+      "couts_logits_et_affectations": "c202f0c2f099922491202f176e8dee22be162c6973599dc1f1a485a4d1cd94d6",
+      "png_sha256": "ac9ceb23a47fb132267988402586ceb2db70eb0d1d002e01407885484e664a9d",
+      "plan_uint16": "0f49fa9ca857e9f2223d57de9d417368d6d6697030ec9b04a6eb888578de738f",
+      "geometrie_sha256": "508ead945232afd7cdd8898f9b39204d18b860e52835640ef275c02483a83f42",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "dice-96-5115614018": {
+      "poids": "7b9d87a608edee0c9a577136b90e3d252bf9d22b971904838e22ad4928c051b4",
+      "champs_locaux": "30c65945185d43347cd9b8eca9a9f4f4412f00822518f4759e00d3ac33d71593",
+      "points_presences_scores_segments": "5c37d12cdf4dacddcf243bb45f972555834e3cc4dad954e609586b31acbe566d",
+      "couts_logits_et_affectations": "a8f1bb90f0fb01cb9888976e435cec99d868d5b5890aded352cadfa439dde86c",
+      "png_sha256": "720454a893e997e71fb5311ee707e6b35bd6d25198303ec296e52bc63bb6aa73",
+      "plan_uint16": "d672360fa57ed21cd4136b46cfcf088d8c0223dbc4bae4683b4a800c045f3b57",
+      "geometrie_sha256": "8c1a29a3e380e633567b153c90098893eb734adbb49b4de85442a3b7d2a1903d",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "dice-768-wc71488242": {
+      "poids": "2011a92e231ac4bc137ce10b997ea9b089f892b38ad1e6ab19fb6291d0cecb31",
+      "champs_locaux": "d98731210322f4395d3f1a9e4fb03b1fc2301be45aafd4d574247ca060605250",
+      "points_presences_scores_segments": "51f68fc6bd088ff277ced0f2aa46d2ac12394c4c971a79fba2be2dcb605f378d",
+      "couts_logits_et_affectations": "da52cc728e317ad17251e3e7966518013d88d4c5ae40e7f0a6ef6e7cce5d44be",
+      "png_sha256": "64361ea20f796f4f30f2af7659ba2610bb7530f7405d1319863480d7e0454cc5",
+      "plan_uint16": "05b445b62b1652118619060adf17e8a52808a8564c2ec415793f9f5801afb092",
+      "geometrie_sha256": "5a5625d7376d4951ce149a8b3908b42511766981fcc648cf7ad9c79fb2a75358",
+      "ecarts_distances": [],
+      "parite": true
+    },
+    "dice-768-5115614018": {
+      "poids": "2011a92e231ac4bc137ce10b997ea9b089f892b38ad1e6ab19fb6291d0cecb31",
+      "champs_locaux": "8212b29e091238056868e8316c7d4356235fd0ac980ca5d657e0585e2a382dab",
+      "points_presences_scores_segments": "dca37ac085ecc3e692f033df816d79d091b03e3fae559cfe99b93673ab570318",
+      "couts_logits_et_affectations": "7dd1df580db3ad6756f45de8003c6972ca2a8961ab48f177c227c86215bd391a",
+      "png_sha256": "f1392dddb6599412df7c313b06bd5552bb5e8d11f8567c3b80fa8b74a749d564",
+      "plan_uint16": "1460f095b01d3f80b1c7d1d1c77453252c60d3f71a7a28a4f46434c05c15f25c",
+      "geometrie_sha256": "c7bde3977facaf6174672c97c18a92af5c5572d3adfdf0be1f57c924a3e81c7d",
+      "ecarts_distances": [],
+      "parite": true
+    }
+  }
+}

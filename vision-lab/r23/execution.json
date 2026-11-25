@@ -1,0 +1,139 @@
+{
+  "passages": [
+    {
+      "bras": "temoin",
+      "pas": 96,
+      "photo": "wc71488242",
+      "numero": 1,
+      "fichier": "temoin-96-wc71488242/champs.npz",
+      "octets": 8244769,
+      "sha256": "f687c82538c1a4a642e1af3e71ab5d87fc6c2d43c2cc78e00eba382338b1006a",
+      "forme": [
+        12,
+        3,
+        65536
+      ],
+      "sha256_champs_f32": "e6872ccc3efd27d60dbbc73d2b4f846dc49f33b322e327e2d9035e1e68f7d924"
+    },
+    {
+      "bras": "temoin",
+      "pas": 96,
+      "photo": "5115614018",
+      "numero": 2,
+      "fichier": "temoin-96-5115614018/champs.npz",
+      "octets": 5456901,
+      "sha256": "a04c29243ea7b195983b07db8d2dcf61e0d0d3eaea722b034a76ab27c58a16a4",
+      "forme": [
+        12,
+        3,
+        43008
+      ],
+      "sha256_champs_f32": "6c2adb2aebab540d52b8634651334a75f0bf8af893ed8a67ef8e0caff0d04941"
+    },
+    {
+      "bras": "temoin",
+      "pas": 768,
+      "photo": "wc71488242",
+      "numero": 3,
+      "fichier": "temoin-768-wc71488242/champs.npz",
+      "octets": 8216963,
+      "sha256": "0a606f90272f5943571d48c6abd493a0276c46cd91c5a968b7b10db9644253e9",
+      "forme": [
+        12,
+        3,
+        65536
+      ],
+      "sha256_champs_f32": "faa6aadf3e1614574fa428f368d02b7df3ac7ce70eea62abaee7c5a81d9e4a03"
+    },
+    {
+      "bras": "temoin",
+      "pas": 768,
+      "photo": "5115614018",
+      "numero": 4,
+      "fichier": "temoin-768-5115614018/champs.npz",
+      "octets": 5420034,
+      "sha256": "298574c897060a9b4cd889ae9815972918130c70ad2207818ed8b43ee56275b2",
+      "forme": [
+        12,
+        3,
+        43008
+      ],
+      "sha256_champs_f32": "a3bc9a98d5b70d47b7b2898ff37a6d8230504d2f2eadf7875a18ca220be3c86c"
+    },
+    {
+      "bras": "dice",
+      "pas": 96,
+      "photo": "wc71488242",
+      "numero": 5,
+      "fichier": "dice-96-wc71488242/champs.npz",
+      "octets": 8243689,
+      "sha256": "22c5f9f9aee5477539f40af841388015e69ddc7a9f39a40175faaba8e648903b",
+      "forme": [
+        12,
+        3,
+        65536
+      ],
+      "sha256_champs_f32": "68c9bb13a3502aa7eda3cc5bb965ffc2ccc0f0b09f0b391aebbb8a29b5ff0c81"
+    },
+    {
+      "bras": "dice",
+      "pas": 96,
+      "photo": "5115614018",
+      "numero": 6,
+      "fichier": "dice-96-5115614018/champs.npz",
+      "octets": 5452294,
+      "sha256": "30c65945185d43347cd9b8eca9a9f4f4412f00822518f4759e00d3ac33d71593",
+      "forme": [
+        12,
+        3,
+        43008
+      ],
+      "sha256_champs_f32": "93c119d68e07fca8d798584d2e0401640a86b908793a3e64b87d72b4059b569b"
+    },
+    {
+      "bras": "dice",
+      "pas": 768,
+      "photo": "wc71488242",
+      "numero": 7,
+      "fichier": "dice-768-wc71488242/champs.npz",
+      "octets": 8180337,
+      "sha256": "d98731210322f4395d3f1a9e4fb03b1fc2301be45aafd4d574247ca060605250",
+      "forme": [
+        12,
+        3,
+        65536
+      ],
+      "sha256_champs_f32": "2bba96da3e6363ac52b292cda5e320b1bf669cbb9e26249af58948a63769ff67"
+    },
+    {
+      "bras": "dice",
+      "pas": 768,
+      "photo": "5115614018",
+      "numero": 8,
+      "fichier": "dice-768-5115614018/champs.npz",
+      "octets": 5411522,
+      "sha256": "8212b29e091238056868e8316c7d4356235fd0ac980ca5d657e0585e2a382dab",
+      "forme": [
+        12,
+        3,
+        43008
+      ],
+      "sha256_champs_f32": "48d98703f0b6dba6e4b70a51d220a1728c1b697c3b3adac9c0a5be1761e0ebd9"
+    }
+  ],
+  "nombre": 8,
+  "graine": 9302,
+  "gradient": false,
+  "ajustements": 0,
+  "duree_murale_s": 1.8262096960024792,
+  "cpu_processus_s": 2.729864239,
+  "rss_max_Kio": 476980,
+  "threads_torch": 4,
+  "threads_interop": 1,
+  "threads_cv": 1,
+  "torch": "2.14.1+cpu",
+  "numpy": "2.5.4",
+  "opencv": "4.13.0",
+  "python": "3.15.2",
+  "machine": "x86_64"
+}
