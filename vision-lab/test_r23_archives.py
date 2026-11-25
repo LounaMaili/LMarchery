@@ -5,7 +5,9 @@ import math
 from pathlib import Path
 import tempfile
 import unittest
+from xml.etree import ElementTree as ET
 
+import cv2 as cv
 import numpy as np
 
 from r19.donnees import fingerprint, read
