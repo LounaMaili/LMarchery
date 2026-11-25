@@ -1,0 +1,607 @@
+{
+  "version": "R18-1",
+  "photo": "36725328420",
+  "provenance": "juantiagues",
+  "partition": "dev_explore_R16",
+  "dimensions": [1024, 768],
+  "supports": [
+    "36725328420-1"
+  ],
+  "role": "developpement_occupe",
+  "historique_R17_complet": false,
+  "emprise_diffusee": [
+    0,
+    0,
+    1024,
+    768
+  ],
+  "lecture_vue": "Plusieurs tiges claires et sombres supplémentaires ainsi que leurs empennages se superposent au centre. La vue garde un inventaire partiel et les pixels sans attribution sont ignorés.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [465, 175],
+      [660, 175],
+      [660, 260],
+      [465, 260]
+    ],
+    [
+      [475, 548],
+      [675, 548],
+      [675, 632],
+      [475, 632]
+    ]
+  ],
+  "regions_ignorees": [
+    {
+      "id": "R17-1",
+      "taches": [
+        "masque",
+        "axe",
+        "entree"
+      ],
+      "polygone": [
+        [165, 337],
+        [684, 337],
+        [684, 470],
+        [165, 470]
+      ],
+      "motif": "Rectangle historique conservé, bords inclus."
+    },
+    {
+      "id": "R18-1",
+      "taches": [
+        "masque",
+        "axe"
+      ],
+      "polygone": [
+        [74, 345],
+        [164, 345],
+        [164, 380],
+        [74, 380]
+      ],
+      "motif": "Empennages et départs supplémentaires du groupe gauche sans filiation sûre."
+    },
+    {
+      "id": "R18-2",
+      "taches": [
+        "masque",
+        "axe"
+      ],
+      "polygone": [
+        [645, 313],
+        [697, 313],
+        [697, 343],
+        [645, 343]
+      ],
+      "motif": "Tiges claires convergentes avant le raccord au papier déchiré."
+    }
+  ],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "36725328420:1",
+      "instance_R17": "36725328420:1",
+      "prioritaire": false,
+      "face": "36725328420-1",
+      "historique": {
+        "axe": [
+          [364, 320],
+          [674, 327]
+        ],
+        "entree": null,
+        "etat_entree": "inconnue_ou_ambigue",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Fût clair supérieur. Interruption avant la superposition des deux tubes au voisinage du papier. Entrée historiquement inconnue.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [325.09, 315.55],
+          [340.95, 315.58],
+          [356.79, 316.5],
+          [372.65, 316.71],
+          [377.07, 317.17],
+          [388.49, 317.39],
+          [404.35, 317.53],
+          [420.21, 317.66],
+          [436.07, 317.79],
+          [442.06, 318.26],
+          [451.91, 318.47],
+          [467.78, 318.45],
+          [483.63, 318.61],
+          [499.48, 319.47],
+          [509.05, 319.5],
+          [515.34, 319.47],
+          [531.19, 320.0],
+          [547.03, 320.53],
+          [562.9, 320.54],
+          [577.03, 320.86],
+          [578.74, 321.07],
+          [594.6, 321.4],
+          [610.46, 321.55],
+          [626.31, 321.88],
+          [630.03, 321.78],
+          [642.16, 322.41],
+          [658.02, 322.59],
+          [657.86, 329.51],
+          [642.0, 329.62],
+          [629.88, 328.38],
+          [626.17, 327.95],
+          [610.3, 328.5],
+          [594.45, 328.17],
+          [578.6, 327.67],
+          [576.89, 327.46],
+          [562.75, 327.16],
+          [546.88, 327.52],
+          [531.02, 327.36],
+          [515.17, 327.03],
+          [508.89, 326.55],
+          [499.32, 326.48],
+          [483.47, 325.9],
+          [467.62, 325.32],
+          [451.76, 325.44],
+          [441.91, 324.84],
+          [435.91, 324.85],
+          [420.05, 324.59],
+          [404.19, 324.51],
+          [388.34, 324.08],
+          [376.92, 323.59],
+          [372.49, 323.49],
+          [356.67, 321.74],
+          [340.78, 322.95],
+          [324.95, 321.72]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [325.02, 318.635],
+          [340.865, 319.265],
+          [356.73, 319.12],
+          [372.57, 320.1],
+          [376.995, 320.38],
+          [388.415, 320.735],
+          [404.27, 321.02],
+          [420.13, 321.125],
+          [435.99, 321.32],
+          [441.985, 321.55],
+          [451.835, 321.955],
+          [467.7, 321.885],
+          [483.55, 322.255],
+          [499.4, 322.975],
+          [508.97, 323.025],
+          [515.255, 323.25],
+          [531.105, 323.68],
+          [546.955, 324.025],
+          [562.825, 323.85],
+          [576.96, 324.16],
+          [578.67, 324.37],
+          [594.525, 324.785],
+          [610.38, 325.025],
+          [626.24, 324.915],
+          [629.955, 325.08],
+          [642.08, 326.015],
+          [657.94, 326.05]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "inconnue_ou_ambigue",
+        "xy_lu": null,
+        "motif": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé."
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 2,
+      "instance": "36725328420:2",
+      "instance_R17": "36725328420:2",
+      "prioritaire": false,
+      "face": "36725328420-1",
+      "historique": {
+        "axe": [
+          [327, 353],
+          [641, 335]
+        ],
+        "entree": null,
+        "etat_entree": "inconnue_ou_ambigue",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tige claire montante sous la première. Arrêt avant que les limites du groupe ne fusionnent.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [318.91, 351.71],
+          [334.78, 351.06],
+          [350.64, 350.4],
+          [351.9, 350.5],
+          [366.49, 349.59],
+          [382.34, 348.6],
+          [398.18, 347.61],
+          [411.82, 347.46],
+          [414.06, 347.15],
+          [429.92, 346.4],
+          [445.76, 345.47],
+          [461.61, 344.53],
+          [477.4, 342.55],
+          [479.64, 342.42],
+          [493.28, 342.29],
+          [509.13, 341.33],
+          [524.95, 339.84],
+          [537.57, 339.43],
+          [540.8, 339.05],
+          [556.62, 337.52],
+          [572.46, 336.53],
+          [572.87, 343.66],
+          [557.05, 345.1],
+          [541.27, 347.24],
+          [538.03, 347.46],
+          [525.39, 347.51],
+          [509.54, 348.44],
+          [493.69, 349.38],
+          [480.09, 350.18],
+          [477.84, 350.31],
+          [461.99, 351.22],
+          [446.13, 351.78],
+          [430.3, 353.04],
+          [414.48, 354.47],
+          [412.22, 354.43],
+          [398.62, 355.31],
+          [382.74, 355.62],
+          [366.9, 356.62],
+          [352.29, 357.38],
+          [351.04, 357.46],
+          [335.2, 358.36],
+          [319.31, 358.57]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [319.11, 355.14],
+          [334.99, 354.71],
+          [350.84, 353.93],
+          [352.095, 353.94],
+          [366.695, 353.105],
+          [382.54, 352.11],
+          [398.4, 351.46],
+          [412.02, 350.945],
+          [414.27, 350.81],
+          [430.11, 349.72],
+          [445.945, 348.625],
+          [461.8, 347.875],
+          [477.62, 346.43],
+          [479.865, 346.3],
+          [493.485, 345.835],
+          [509.335, 344.885],
+          [525.17, 343.675],
+          [537.8, 343.445],
+          [541.035, 343.145],
+          [556.835, 341.31],
+          [572.665, 340.095]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "inconnue_ou_ambigue",
+        "xy_lu": null,
+        "motif": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé."
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 3,
+      "instance": "36725328420:3",
+      "instance_R17": "36725328420:3",
+      "prioritaire": false,
+      "face": "36725328420-1",
+      "historique": {
+        "axe": [
+          [330, 361],
+          [581, 362]
+        ],
+        "entree": null,
+        "etat_entree": "occultee",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tige supérieure de la paire claire presque horizontale, lue sur le bord supérieur et la séparation locale de la paire. Entrée cachée.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [336.01, 359.48],
+          [351.08, 358.39],
+          [366.14, 359.81],
+          [376.01, 359.56],
+          [381.21, 359.59],
+          [396.27, 359.55],
+          [411.34, 359.5],
+          [419.01, 359.39],
+          [426.41, 359.32],
+          [441.48, 358.72],
+          [456.54, 358.55],
+          [468.01, 358.58],
+          [471.61, 358.42],
+          [486.68, 358.75],
+          [501.75, 358.25],
+          [516.81, 358.24],
+          [519.01, 358.24],
+          [531.88, 358.31],
+          [546.95, 358.19],
+          [562.01, 358.25],
+          [562.0, 362.47],
+          [546.93, 363.01],
+          [531.86, 362.32],
+          [519.0, 362.32],
+          [516.8, 362.32],
+          [501.73, 362.45],
+          [486.66, 362.09],
+          [471.6, 361.56],
+          [468.0, 361.55],
+          [456.53, 362.53],
+          [441.46, 362.05],
+          [426.4, 362.05],
+          [419.0, 361.49],
+          [411.33, 361.54],
+          [396.27, 360.98],
+          [381.2, 360.82],
+          [376.0, 360.76],
+          [366.13, 360.89],
+          [351.07, 360.91],
+          [336.0, 361.52]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [336.005, 360.5],
+          [351.075, 359.65],
+          [366.135, 360.35],
+          [376.005, 360.16],
+          [381.205, 360.205],
+          [396.27, 360.265],
+          [411.335, 360.52],
+          [419.005, 360.44],
+          [426.405, 360.685],
+          [441.47, 360.385],
+          [456.535, 360.54],
+          [468.005, 360.065],
+          [471.605, 359.99],
+          [486.67, 360.42],
+          [501.74, 360.35],
+          [516.805, 360.28],
+          [519.005, 360.28],
+          [531.87, 360.315],
+          [546.94, 360.6],
+          [562.005, 360.36]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "occultee",
+        "xy_lu": null,
+        "motif": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé."
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 4,
+      "instance": "36725328420:4",
+      "instance_R17": "36725328420:4",
+      "prioritaire": false,
+      "face": "36725328420-1",
+      "historique": {
+        "axe": [
+          [315, 391],
+          [548, 397]
+        ],
+        "entree": null,
+        "etat_entree": "occultee",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Fût clair supérieur des deux tiges qui convergent vers le fruit. Bord supérieur suivi avant la convergence, indépendamment de la proposition R16.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [302.19, 383.57],
+          [315.17, 384.45],
+          [316.67, 384.53],
+          [331.15, 385.48],
+          [333.15, 385.42],
+          [345.63, 386.5],
+          [348.13, 386.5],
+          [360.11, 387.48],
+          [359.98, 392.43],
+          [347.95, 393.55],
+          [345.44, 393.53],
+          [332.94, 393.64],
+          [330.94, 393.6],
+          [316.44, 393.48],
+          [314.94, 393.45],
+          [301.96, 392.34]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [302.075, 387.955],
+          [315.055, 388.95],
+          [316.555, 389.005],
+          [331.045, 389.54],
+          [333.045, 389.53],
+          [345.535, 390.015],
+          [348.04, 390.025],
+          [360.045, 389.955]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "occultee",
+        "xy_lu": null,
+        "motif": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé."
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 5,
+      "instance": "36725328420:5",
+      "instance_R17": "36725328420:5",
+      "prioritaire": false,
+      "face": "36725328420-1",
+      "historique": {
+        "axe": [
+          [115, 399],
+          [253, 409]
+        ],
+        "entree": null,
+        "etat_entree": "inconnue_ou_ambigue",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tube sombre issu de l’empennage bleu et jaune à gauche. Arrêt avant les ligatures et tiges du groupe.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [117.18, 396.65],
+          [132.92, 397.35],
+          [140.11, 398.41],
+          [148.49, 400.32],
+          [163.94, 401.54],
+          [164.18, 401.74],
+          [179.95, 402.03],
+          [179.73, 405.02],
+          [163.9, 405.6],
+          [163.65, 405.58],
+          [148.23, 403.9],
+          [139.76, 403.25],
+          [132.55, 402.38],
+          [116.91, 400.27]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [117.045, 398.46],
+          [132.735, 399.865],
+          [139.935, 400.83],
+          [148.36, 402.11],
+          [163.795, 403.56],
+          [164.04, 403.67],
+          [179.84, 403.525]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "inconnue_ou_ambigue",
+        "xy_lu": null,
+        "motif": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé."
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 6,
+      "instance": "36725328420:6",
+      "instance_R17": "36725328420:6",
+      "prioritaire": false,
+      "face": "36725328420-1",
+      "historique": {
+        "axe": [
+          [392, 498],
+          [604, 495]
+        ],
+        "entree": [617, 495],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tube brun inférieur isolé qui rejoint le jaune en dessous du groupe dense.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [367.96, 495.51],
+          [383.46, 495.47],
+          [395.96, 495.47],
+          [398.96, 495.42],
+          [414.46, 495.35],
+          [429.96, 494.75],
+          [445.45, 494.32],
+          [447.96, 494.46],
+          [460.95, 493.75],
+          [476.45, 493.53],
+          [491.95, 493.49],
+          [494.95, 493.44],
+          [507.45, 493.44],
+          [522.95, 493.22],
+          [538.44, 492.65],
+          [545.94, 492.55],
+          [553.94, 492.45],
+          [569.44, 492.44],
+          [584.93, 491.9],
+          [592.93, 491.63],
+          [600.44, 491.94],
+          [615.93, 491.68],
+          [616.01, 497.38],
+          [600.51, 497.46],
+          [593.01, 497.51],
+          [585.01, 497.57],
+          [569.51, 497.69],
+          [554.02, 498.33],
+          [546.02, 498.4],
+          [538.52, 498.49],
+          [523.02, 498.5],
+          [507.52, 498.52],
+          [495.02, 498.84],
+          [492.02, 498.88],
+          [476.52, 498.93],
+          [461.02, 499.15],
+          [448.01, 498.63],
+          [445.51, 498.51],
+          [430.04, 500.25],
+          [414.54, 500.41],
+          [399.04, 500.58],
+          [396.02, 499.42],
+          [383.54, 500.56],
+          [368.04, 501.06]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [368.0, 498.285],
+          [383.5, 498.015],
+          [395.99, 497.445],
+          [399.0, 498.0],
+          [414.5, 497.88],
+          [430.0, 497.5],
+          [445.48, 496.415],
+          [447.985, 496.545],
+          [460.985, 496.45],
+          [476.485, 496.23],
+          [491.985, 496.185],
+          [494.985, 496.14],
+          [507.485, 495.98],
+          [522.985, 495.86],
+          [538.48, 495.57],
+          [545.98, 495.475],
+          [553.98, 495.39],
+          [569.475, 495.065],
+          [584.97, 494.735],
+          [592.97, 494.57],
+          [600.475, 494.7],
+          [615.97, 494.53]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [617, 495],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}

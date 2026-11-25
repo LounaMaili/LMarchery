@@ -1,0 +1,143 @@
+{
+  "version": "R18-1",
+  "photo": "fl51204504370",
+  "provenance": "Moo.The.Cow",
+  "partition": "dev_explore_R16",
+  "dimensions": [1024, 768],
+  "supports": [
+    "salle / deux faces verticales, bloc blanc"
+  ],
+  "role": "developpement_occupe",
+  "historique_R17_complet": false,
+  "emprise_diffusee": [
+    375,
+    340,
+    645,
+    425
+  ],
+  "lecture_vue": "Une seule flèche plantée dans la feuille de droite est attribuée. Les objets périphériques et les accessoires hors des plages vérifiées restent ignorés. Le contexte publié est recadré pour la confidentialité.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [480, 345],
+      [559, 345],
+      [559, 364],
+      [480, 364]
+    ],
+    [
+      [469, 400],
+      [565, 400],
+      [565, 419],
+      [469, 419]
+    ]
+  ],
+  "regions_ignorees": [
+    {
+      "id": "R17-1",
+      "taches": [
+        "masque",
+        "axe",
+        "entree"
+      ],
+      "polygone": [
+        [378, 445],
+        [420, 445],
+        [420, 665],
+        [378, 665]
+      ],
+      "motif": "Rectangle historique conservé, bords inclus."
+    },
+    {
+      "id": "R18-1",
+      "taches": [
+        "masque",
+        "axe",
+        "entree"
+      ],
+      "polygone": [
+        [902, 595],
+        [951, 595],
+        [951, 767],
+        [902, 767]
+      ],
+      "motif": "Objet allongé en bord inférieur droit. Aucune jonction au blason établie."
+    }
+  ],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "fl51204504370:1",
+      "instance_R17": "fl51204504370:1",
+      "prioritaire": false,
+      "face": "Face de droite, selon la lecture R15",
+      "historique": {
+        "axe": [
+          [562, 379],
+          [390, 381]
+        ],
+        "entree": [562, 379],
+        "etat_entree": "visible",
+        "precision_source_px": 2,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Courte tige horizontale devant la feuille de droite, depuis la fin des ailettes orange. Les objets en bas de la vue restent ignorés.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [429.97, 378.51],
+          [444.42, 378.91],
+          [458.87, 379.29],
+          [463.96, 377.44],
+          [473.31, 378.34],
+          [487.76, 378.72],
+          [501.97, 378.0],
+          [502.19, 377.84],
+          [516.64, 377.72],
+          [531.08, 377.6],
+          [535.97, 377.56],
+          [545.53, 377.54],
+          [559.97, 377.5],
+          [560.0, 380.26],
+          [545.56, 380.51],
+          [536.0, 380.46],
+          [531.12, 380.53],
+          [516.67, 380.88],
+          [502.23, 381.4],
+          [502.01, 381.41],
+          [487.79, 381.54],
+          [473.35, 381.67],
+          [464.0, 380.64],
+          [458.89, 380.58],
+          [444.47, 382.49],
+          [430.02, 382.46]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [429.995, 380.485],
+          [444.445, 380.7],
+          [458.88, 379.935],
+          [463.98, 379.04],
+          [473.33, 380.005],
+          [487.775, 380.13],
+          [501.99, 379.705],
+          [502.21, 379.62],
+          [516.655, 379.3],
+          [531.1, 379.065],
+          [535.985, 379.01],
+          [545.545, 379.025],
+          [559.985, 378.88]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [562, 379],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}

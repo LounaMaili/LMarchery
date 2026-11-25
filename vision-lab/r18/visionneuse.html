@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R18 · Relecture des silhouettes</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f8f8f5;color:#192d36;font:16px/1.48 system-ui,sans-serif}
+main{max-width:1080px;margin:auto;padding:22px}h1{font-size:1.45rem;margin:0 0 16px}
+.controls,fieldset{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px}
+select,button{font:inherit;padding:5px;max-width:100%}fieldset{border:1px solid #bac7c7;border-radius:6px;margin:14px 0;padding:9px 12px}
+legend{padding:0 4px;font-weight:600}label{display:inline-flex;align-items:center;gap:5px}label:has(:disabled){color:#647074}
+canvas{display:block;width:100%;max-height:62vh;object-fit:contain;background:#e4e7e5;border:1px solid #a7b6b6}
+p{margin:.6em 0;font-size:.94rem}.note{min-height:1.5em}a{color:#155875}
+@media(max-width:620px){
+main{padding:12px}.controls{align-items:stretch}.controls label{display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0;gap:2px}
+.controls select{width:100%;min-width:0}fieldset{min-width:0}.note{overflow-wrap:anywhere}
+}
+</style>
+<main>
+<h1>R18 · Relecture des silhouettes</h1>
+<div class="controls">
+<label>Acquisition <select id="photo"></select></label>
+<label>Vue <select id="view"></select></label>
+<button id="reset" type="button">Pixels seuls</button>
+</div>
+<fieldset id="switches"><legend>Calques</legend></fieldset>
+<canvas id="panel" aria-label="Pixels et calques de l’acquisition choisie"></canvas>
+<p id="note" class="note" aria-live="polite"></p>
+<p id="credit"></p>
+<p>Le masque admis représente les centres de pixels retenus. Sur les photos occupées, tout ce qui reste en dehors du fût admis et du fond vérifié est ignoré. L’orange situe une entrée admise, le jaune une entrée lue en zone exclue. Les détails redressés peuvent agrandir différemment la longueur et la largeur.</p>
+</main>
+<script src="figures/calques.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const photo=$('photo'),view=$('view'),panel=$('panel'),ctx=panel.getContext('2d');
+const options={photo:'Pixels sources',valid:'Masque admis',read:'Contour lu',axis:'Axe admis',axesRead:'Axe lu',entry:'Entrée R18',bg:'Fond vérifié',ignore:'Régions ignorées',oldAxis:'Axe R17',oldPoint:'Entrée historique',source:'Polygone Crigges',fix:'Correction R17 relue'};
+const inputs={};
+let image,selected,record,token=0;
+for(const [key,label] of Object.entries(options)){
+  const elem=document.createElement('label'),input=document.createElement('input');
+  input.type='checkbox';input.id='layer-'+key;input.onchange=draw;inputs[key]=input;
+  elem.append(input,document.createTextNode(label));$('switches').appendChild(elem);
+}
+for(const key of new Set(R18.vues.map(s=>s.photo))){
+  const p=R18.photos[key];
+  photo.add(new Option(p.credit.credit+' · '+key,key));
+}
+function active(key){return inputs[key].checked&&!inputs[key].disabled}
+function subjects(){return record.sujets.filter(s=>!selected.instance||selected.instance===s.id)}
+function path(poly,close){
+  ctx.beginPath();poly.forEach(([x,y],i)=>i===0?ctx.moveTo(x,y):ctx.lineTo(x,y));if(close)ctx.closePath();
+}
+function line(poly,color,width=1.6,closed=false){
+  if(!poly||!poly.length)return;
+  // Dessin dans le repère écran pour garder les traits lisibles sous agrandissement anisotrope.
+  const m=selected.travail_vers_panneau;
+  ctx.save();ctx.setTransform(1,0,0,1,.5,.5);
+  path(poly.map(([x,y])=>[m[0][0]*x+m[0][1]*y+m[0][2],m[1][0]*x+m[1][1]*y+m[1][2]]),closed);
+  ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();ctx.restore();
+}
+function marker(xy,color,r=4){
+  if(!xy)return;
+  const [x,y]=xy,m=selected.travail_vers_panneau;
+  ctx.save();ctx.setTransform(1,0,0,1,.5,.5);ctx.beginPath();
+  ctx.arc(m[0][0]*x+m[0][1]*y+m[0][2],m[1][0]*x+m[1][1]*y+m[1][2],r,0,Math.PI*2);
+  ctx.strokeStyle='#132025';ctx.lineWidth=3.5;ctx.stroke();ctx.strokeStyle=color;ctx.lineWidth=1.8;ctx.stroke();ctx.restore();
+}
+function tiles(rects,color){
+  ctx.beginPath();for(const [x,y,w,h] of rects)ctx.rect(x-.5,y-.5,w,h);
+  ctx.fillStyle=color;ctx.fill();
+}
+function draw(){
+  if(!image||!image.complete||!image.naturalWidth)return;
+  const [left,top,w,h]=selected.pixels;
+  ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#e4e7e5';ctx.fillRect(0,0,w,h);
+  if(active('photo'))ctx.drawImage(image,left,top,w,h,0,0,w,h);
+  const [[a,b,tx],[c,d,ty]]=selected.travail_vers_panneau;
+  ctx.setTransform(a,c,b,d,tx+.5,ty+.5);
+  if(active('bg'))tiles(record.fond,'#2f9cb77a');
+  if(active('ignore')){
+    for(const r of record.regions){path(r.polygone,true);ctx.fillStyle='#f5b52645';ctx.fill();line(r.polygone,'#ce820d',1,true)}
+  }
+  for(const s of subjects()){
+    const color=R18.couleurs[(s.i-1)%R18.couleurs.length];
+    if(active('valid'))tiles(s.admis,color+'a8');
+    if(active('read'))for(const poly of s.lus)line(poly,color,1.4,true);
+    if(active('axesRead'))for(const q of s.axe_lu)line(q,'#de65ea',1.4);
+    if(active('axis'))for(const q of s.axes)line(q,'#fffaf1',1.3);
+    if(active('oldAxis'))line(s.ancien_axe,'#8e75ed',1.3);
+    if(active('source'))line(s.ancien_masque,'#4267ff',1.7,true);
+    if(active('oldPoint'))marker(s.ancien_point,'#e65e4c',5);
+    if(active('entry'))marker(s.point,s.entree_valide?'#ff9852':'#fff046');
+  }
+  if(active('fix'))for(const f of record.corrections.filter(f=>!selected.instance||f.instance===selected.instance)){
+    const end=q=>f.champ==='axe'?q[q.length-1]:q;
+    marker(end(f.historique),'#e65e4c',5);marker(end(f.valeur_R18),'#00f4e2',4);
+  }
+  ctx.setTransform(1,0,0,1,0,0);
+}
+function reset(){
+  for(const [key,input] of Object.entries(inputs))input.checked=key==='photo';
+  draw();
+}
+function changeView(){
+  const epoch=++token;selected=R18.vues.find(v=>v.id===view.value);record=R18.photos[selected.photo];
+  const items=subjects();
+  const enabled={photo:true,valid:items.some(s=>s.admis.length),read:items.some(s=>s.lus.length),
+    axis:items.some(s=>s.axes.length),axesRead:items.some(s=>s.axe_lu.length),entry:items.some(s=>s.point),
+    bg:record.fond.length,ignore:record.regions.length,oldAxis:items.some(s=>s.ancien_axe),oldPoint:items.some(s=>s.ancien_point),
+    source:items.some(s=>s.ancien_masque),fix:record.corrections.some(f=>!selected.instance||f.instance===selected.instance)};
+  for(const [key,input] of Object.entries(inputs))input.disabled=!enabled[key];
+  image=new Image();panel.width=selected.pixels[2];panel.height=selected.pixels[3];reset();
+  $('note').textContent=selected.instance?items[0].note:selected.titre;
+  const link=document.createElement('a');link.href=record.credit.notice;link.textContent=record.credit.credit;
+  const terms=document.createElement('a');terms.href=record.credit.licence;terms.textContent=record.credit.nom_licence;
+  $('credit').replaceChildren(link,document.createTextNode(' · '),terms,document.createTextNode(' · Recadrage et calques LMArchery R18'));
+  image.onload=()=>{if(epoch===token)draw()};image.onerror=()=>{if(epoch===token)$('note').textContent='Planche illisible. Garder le dossier figures à côté de la visionneuse.'};
+  image.src='figures/'+selected.fichier;
+}
+function changePhoto(){
+  view.replaceChildren();for(const s of R18.vues.filter(v=>v.photo===photo.value))view.add(new Option(s.titre,s.id));
+  changeView();
+}
+photo.onchange=changePhoto;view.onchange=changeView;$('reset').onclick=reset;changePhoto();
+</script>
+</html>

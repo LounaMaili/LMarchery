@@ -1,0 +1,124 @@
+{
+  "version": "R18-1",
+  "photo": "70-01",
+  "provenance": "Crigges",
+  "partition": "train",
+  "dimensions": [1056, 1408],
+  "supports": [
+    "crigges-4"
+  ],
+  "role": "compatibilite_Crigges",
+  "historique_R17_complet": true,
+  "emprise_diffusee": [
+    0,
+    0,
+    1056,
+    1408
+  ],
+  "lecture_vue": "Champ entier relu. Les plages de fond dessinées et les fragments identifiés délimitent la supervision.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [350, 400],
+      [630, 400],
+      [630, 500],
+      [350, 500]
+    ],
+    [
+      [580, 905],
+      [770, 905],
+      [770, 1040],
+      [580, 1040]
+    ]
+  ],
+  "regions_ignorees": [],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "70-01",
+      "instance_R17": "70-01",
+      "prioritaire": false,
+      "face": "crigges-4",
+      "historique": {
+        "axe": [
+          [230, 722],
+          [514, 829]
+        ],
+        "entree": [496.04348597182496, 824.7627334700898],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": "R8/70-01/70-01"
+      },
+      "correction_R17_revue": "R17-C1",
+      "observation": "La tige noire et sa décoration grise restent continues jusque dans le jaune. Arrêt avant la lèvre sombre. Le bout historique de l’axe dépasse dans le papier.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [286.29, 742.78],
+          [300.93, 748.48],
+          [315.64, 754.02],
+          [324.59, 757.4],
+          [330.33, 759.59],
+          [345.08, 765.03],
+          [359.76, 770.63],
+          [374.44, 776.24],
+          [389.12, 781.84],
+          [403.51, 788.23],
+          [418.63, 792.65],
+          [433.14, 798.71],
+          [438.56, 800.95],
+          [447.81, 804.34],
+          [462.47, 810.01],
+          [477.56, 814.53],
+          [491.97, 820.86],
+          [490.27, 825.37],
+          [475.83, 819.13],
+          [461.2, 813.37],
+          [446.52, 807.78],
+          [437.37, 804.11],
+          [431.65, 802.68],
+          [417.15, 796.59],
+          [402.46, 790.99],
+          [387.72, 785.56],
+          [373.03, 779.98],
+          [358.34, 774.4],
+          [343.65, 768.81],
+          [328.96, 763.23],
+          [323.28, 760.88],
+          [314.28, 757.63],
+          [299.6, 752.02],
+          [284.86, 746.57]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [285.575, 744.675],
+          [300.265, 750.25],
+          [314.96, 755.825],
+          [323.935, 759.14],
+          [329.645, 761.41],
+          [344.365, 766.92],
+          [359.05, 772.515],
+          [373.735, 778.11],
+          [388.42, 783.7],
+          [402.985, 789.61],
+          [417.89, 794.62],
+          [432.395, 800.695],
+          [437.965, 802.53],
+          [447.165, 806.06],
+          [461.835, 811.69],
+          [476.695, 816.83],
+          [491.12, 823.115]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [496.04348597182496, 824.7627334700898],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 4
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}

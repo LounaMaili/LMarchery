@@ -1,0 +1,475 @@
+{
+  "version": "R18-1",
+  "photo": "wc11001401",
+  "provenance": "4028mdk09",
+  "partition": "train",
+  "dimensions": [1056, 1408],
+  "supports": [
+    "chevalet de paille / Bade-Wurtemberg"
+  ],
+  "role": "silhouettes_train",
+  "historique_R17_complet": true,
+  "emprise_diffusee": [
+    0,
+    0,
+    1056,
+    1408
+  ],
+  "lecture_vue": "Champ entier relu. Les plages de fond dessinées et les fragments identifiés délimitent la supervision.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [430, 570],
+      [570, 570],
+      [570, 630],
+      [430, 630]
+    ],
+    [
+      [290, 750],
+      [490, 750],
+      [490, 870],
+      [290, 870]
+    ]
+  ],
+  "regions_ignorees": [],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "wc11001401:1",
+      "instance_R17": "wc11001401:1",
+      "prioritaire": true,
+      "face": "chevalet de paille / Bade-Wurtemberg",
+      "historique": {
+        "axe": [
+          [399, 606],
+          [140, 582]
+        ],
+        "entree": [399, 606],
+        "etat_entree": "visible",
+        "precision_source_px": 3,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Après les ailettes orange isolées du haut, corps noir devant la butte puis la feuille.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [178.93, 584.58],
+          [194.51, 585.92],
+          [210.09, 587.38],
+          [225.69, 588.57],
+          [231.72, 589.26],
+          [241.26, 590.01],
+          [256.83, 591.59],
+          [272.42, 592.9],
+          [280.51, 593.79],
+          [287.98, 594.49],
+          [303.54, 596.09],
+          [319.18, 596.89],
+          [334.76, 598.22],
+          [341.3, 598.84],
+          [350.35, 599.59],
+          [365.88, 601.52],
+          [381.47, 602.78],
+          [397.04, 604.31],
+          [396.73, 607.67],
+          [381.17, 606.01],
+          [365.59, 604.61],
+          [350.02, 603.09],
+          [341.01, 602.07],
+          [334.45, 601.58],
+          [318.89, 599.98],
+          [303.33, 598.38],
+          [287.78, 596.64],
+          [280.26, 596.47],
+          [272.15, 595.72],
+          [256.58, 594.28],
+          [240.98, 593.1],
+          [231.45, 592.22],
+          [225.41, 591.62],
+          [209.85, 589.94],
+          [194.27, 588.52],
+          [178.71, 586.97]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [178.82, 585.775],
+          [194.39, 587.22],
+          [209.97, 588.66],
+          [225.55, 590.095],
+          [231.585, 590.74],
+          [241.12, 591.555],
+          [256.705, 592.935],
+          [272.285, 594.31],
+          [280.385, 595.13],
+          [287.88, 595.565],
+          [303.435, 597.235],
+          [319.035, 598.435],
+          [334.605, 599.9],
+          [341.155, 600.455],
+          [350.185, 601.34],
+          [365.735, 603.065],
+          [381.32, 604.395],
+          [396.885, 605.99]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [399, 606],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 2,
+      "instance": "wc11001401:2",
+      "instance_R17": "wc11001401:2",
+      "prioritaire": true,
+      "face": "chevalet de paille / Bade-Wurtemberg",
+      "historique": {
+        "axe": [
+          [381, 643],
+          [132, 629]
+        ],
+        "entree": [381, 643],
+        "etat_entree": "visible",
+        "precision_source_px": 3,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Flèche supérieure du groupe de quatre sous la première. Les deux bords sont lisibles après l’empennage.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [175.01, 629.94],
+          [190.68, 630.88],
+          [206.35, 631.66],
+          [211.02, 630.89],
+          [222.09, 631.31],
+          [237.76, 632.18],
+          [253.37, 634.05],
+          [261.9, 634.46],
+          [269.02, 635.16],
+          [284.7, 635.93],
+          [300.37, 636.72],
+          [305.81, 637.31],
+          [316.06, 637.13],
+          [331.71, 638.49],
+          [347.39, 639.06],
+          [347.77, 639.08],
+          [363.05, 640.09],
+          [378.72, 640.84],
+          [378.52, 644.46],
+          [362.87, 643.24],
+          [347.58, 642.45],
+          [347.2, 642.43],
+          [331.54, 641.38],
+          [315.87, 640.6],
+          [305.68, 639.6],
+          [300.22, 639.42],
+          [284.52, 639.09],
+          [268.88, 637.8],
+          [261.71, 637.82],
+          [253.2, 637.02],
+          [237.59, 635.22],
+          [221.86, 635.44],
+          [210.84, 634.03],
+          [206.2, 634.35],
+          [190.54, 633.37],
+          [174.84, 632.98]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [174.925, 631.46],
+          [190.61, 632.125],
+          [206.275, 633.005],
+          [210.93, 632.46],
+          [221.975, 633.375],
+          [237.675, 633.7],
+          [253.285, 635.535],
+          [261.805, 636.14],
+          [268.95, 636.48],
+          [284.61, 637.51],
+          [300.295, 638.07],
+          [305.745, 638.455],
+          [315.965, 638.865],
+          [331.625, 639.935],
+          [347.295, 640.745],
+          [347.675, 640.765],
+          [362.96, 641.665],
+          [378.62, 642.65]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [381, 643],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 3,
+      "instance": "wc11001401:3",
+      "instance_R17": "wc11001401:3",
+      "prioritaire": true,
+      "face": "chevalet de paille / Bade-Wurtemberg",
+      "historique": {
+        "axe": [
+          [377, 657],
+          [136, 639]
+        ],
+        "entree": [377, 657],
+        "etat_entree": "visible",
+        "precision_source_px": 3,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tube juste sous le précédent, jusqu’à sa propre jonction dans le jaune.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [180.03, 640.3],
+          [195.06, 641.41],
+          [210.08, 642.79],
+          [215.9, 643.27],
+          [225.19, 642.92],
+          [240.14, 645.18],
+          [255.2, 645.95],
+          [265.75, 647.19],
+          [270.21, 647.41],
+          [285.26, 648.33],
+          [300.29, 649.52],
+          [310.65, 650.2],
+          [315.33, 650.58],
+          [330.33, 652.09],
+          [345.39, 652.89],
+          [354.51, 653.78],
+          [360.42, 654.13],
+          [375.47, 654.98],
+          [375.17, 659.03],
+          [360.16, 657.62],
+          [354.26, 657.13],
+          [345.13, 656.38],
+          [330.09, 655.3],
+          [315.09, 653.79],
+          [310.41, 653.41],
+          [300.06, 652.57],
+          [285.03, 651.34],
+          [270.0, 650.25],
+          [265.55, 649.88],
+          [254.97, 649.05],
+          [239.97, 647.46],
+          [225.0, 645.47],
+          [215.72, 645.69],
+          [209.87, 645.63],
+          [194.84, 644.43],
+          [179.83, 642.96]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [179.93, 641.63],
+          [194.95, 642.92],
+          [209.975, 644.21],
+          [215.81, 644.48],
+          [225.095, 644.195],
+          [240.055, 646.32],
+          [255.085, 647.5],
+          [265.65, 648.535],
+          [270.105, 648.83],
+          [285.145, 649.835],
+          [300.175, 651.045],
+          [310.53, 651.805],
+          [315.21, 652.185],
+          [330.21, 653.695],
+          [345.26, 654.635],
+          [354.385, 655.455],
+          [360.29, 655.875],
+          [375.32, 657.005]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [377, 657],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 4,
+      "instance": "wc11001401:4",
+      "instance_R17": "wc11001401:4",
+      "prioritaire": true,
+      "face": "chevalet de paille / Bade-Wurtemberg",
+      "historique": {
+        "axe": [
+          [385, 675],
+          [150, 654]
+        ],
+        "entree": [385, 675],
+        "etat_entree": "visible",
+        "precision_source_px": 3,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Corps sombre à ailettes orange sous la paire centrale. Le reflet clair reste dans le contour.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [190.95, 656.38],
+          [206.87, 657.97],
+          [222.81, 659.42],
+          [238.86, 659.58],
+          [254.7, 662.08],
+          [270.62, 663.68],
+          [285.54, 665.18],
+          [286.55, 665.14],
+          [302.51, 666.26],
+          [318.48, 667.38],
+          [334.42, 668.78],
+          [335.41, 668.86],
+          [350.34, 670.31],
+          [366.27, 671.84],
+          [382.24, 672.95],
+          [381.93, 676.41],
+          [365.98, 675.12],
+          [350.04, 673.69],
+          [335.11, 672.21],
+          [334.11, 672.26],
+          [318.18, 670.69],
+          [302.26, 669.12],
+          [286.32, 667.69],
+          [285.31, 667.74],
+          [270.4, 666.07],
+          [254.51, 664.18],
+          [238.62, 662.17],
+          [222.69, 660.72],
+          [206.63, 660.69],
+          [190.71, 659.1]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [190.83, 657.74],
+          [206.75, 659.33],
+          [222.75, 660.07],
+          [238.74, 660.875],
+          [254.605, 663.13],
+          [270.51, 664.875],
+          [285.425, 666.46],
+          [286.435, 666.415],
+          [302.385, 667.69],
+          [318.33, 669.035],
+          [334.265, 670.52],
+          [335.26, 670.535],
+          [350.19, 672.0],
+          [366.125, 673.48],
+          [382.085, 674.68]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [385, 675],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 5,
+      "instance": "wc11001401:5",
+      "instance_R17": "wc11001401:5",
+      "prioritaire": true,
+      "face": "chevalet de paille / Bade-Wurtemberg",
+      "historique": {
+        "axe": [
+          [394, 698],
+          [147, 673]
+        ],
+        "entree": [394, 698],
+        "etat_entree": "visible",
+        "precision_source_px": 3,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Fût inférieur à empennage bicolore, jusqu’à la jonction sur l’anneau sombre.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [187.9, 676.04],
+          [203.63, 677.27],
+          [219.32, 678.77],
+          [235.08, 679.72],
+          [240.75, 680.26],
+          [250.76, 681.41],
+          [266.47, 682.73],
+          [282.11, 684.87],
+          [297.47, 685.88],
+          [297.81, 686.32],
+          [313.55, 687.44],
+          [329.2, 689.38],
+          [344.95, 690.34],
+          [354.19, 691.52],
+          [360.62, 692.18],
+          [376.32, 693.63],
+          [391.99, 695.36],
+          [391.64, 698.85],
+          [375.98, 697.02],
+          [360.28, 695.47],
+          [353.84, 694.99],
+          [344.58, 694.05],
+          [328.9, 692.32],
+          [313.21, 690.73],
+          [297.52, 689.14],
+          [297.14, 689.1],
+          [281.83, 687.58],
+          [266.21, 685.33],
+          [250.41, 684.87],
+          [240.41, 683.6],
+          [234.74, 683.05],
+          [219.06, 681.38],
+          [203.38, 679.72],
+          [187.67, 678.32]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [187.785, 677.18],
+          [203.505, 678.495],
+          [219.19, 680.075],
+          [234.91, 681.385],
+          [240.58, 681.93],
+          [250.585, 683.14],
+          [266.34, 684.03],
+          [281.97, 686.225],
+          [297.305, 687.49],
+          [297.665, 687.73],
+          [313.38, 689.085],
+          [329.05, 690.85],
+          [344.765, 692.195],
+          [354.015, 693.255],
+          [360.45, 693.825],
+          [376.15, 695.325],
+          [391.815, 697.105]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [394, 698],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}

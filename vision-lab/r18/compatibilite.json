@@ -1,0 +1,36 @@
+{
+  "identites_source": 129,
+  "verifiees": 2,
+  "non_verifiees": 127,
+  "exemples": [
+    {
+      "photo": "13-01",
+      "instance": "13-01",
+      "reference_polygone": "R8/13-01/13-01",
+      "statut": "compatible_sur_ce_cas_avec_ecarts_de_bord",
+      "source_px": 980,
+      "R18_px": 907,
+      "intersection_px": 881,
+      "union_px": 1006,
+      "iou": 0.8757455268389662,
+      "source_seule_px": 99,
+      "R18_seul_px": 26,
+      "observation": "Les deux contours partent après les ailettes bleues et suivent le corps sombre. Écarts de bord sur la tige et à la lèvre de la perforation. R18 utilise son contour relu."
+    },
+    {
+      "photo": "70-01",
+      "instance": "70-01",
+      "reference_polygone": "R8/70-01/70-01",
+      "statut": "compatible_sur_ce_cas_avec_ecarts_de_bord",
+      "source_px": 834,
+      "R18_px": 864,
+      "intersection_px": 768,
+      "union_px": 930,
+      "iou": 0.8258064516129032,
+      "source_seule_px": 66,
+      "R18_seul_px": 96,
+      "observation": "Les deux contours partent après les ailettes bleues et suivent le corps sombre. Écarts de bord sur la tige et à la lèvre de la perforation. R18 utilise son contour relu."
+    }
+  ],
+  "autres": "Convention non vérifiée individuellement. Les polygones sources R7 et R8 restent les références historiques."
+}

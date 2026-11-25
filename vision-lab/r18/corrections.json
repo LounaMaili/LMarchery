@@ -1,0 +1,71 @@
+{
+  "version": "R18-1",
+  "lecture": "Assistée sur acquisition native, propositions et résultats R17 connus.",
+  "decisions": [
+    {
+      "id": "R17-C1",
+      "champ": "axe",
+      "photo": "70-01",
+      "instance": "70-01",
+      "historique": [
+        [
+          230,
+          722
+        ],
+        [
+          514,
+          829
+        ]
+      ],
+      "proposition_R17": [
+        [
+          230,
+          722
+        ],
+        [
+          495,
+          824
+        ]
+      ],
+      "incertitude_proposee_px": 4,
+      "decision": "proposition_retenue_en_lecture_assistee",
+      "valeur_R18": [
+        [
+          230,
+          722
+        ],
+        [
+          495,
+          824
+        ]
+      ],
+      "incertitude_lecture_px": 4,
+      "motif": "Le bout (514,829) est sur une perforation séparée sur le papier jaune. (495,824) est dans la lèvre sombre à la fin du fût. Cette correction de borne documentaire conserve le contact indépendant. L’axe de supervision commence après l’empennage.",
+      "precision": "Rayon approximatif de lecture dans le repère de travail, sans estimation interlecteurs."
+    },
+    {
+      "id": "R17-C2",
+      "champ": "entree",
+      "photo": "18105652008",
+      "instance": "18105652008:1",
+      "historique": [
+        292.80285714285714,
+        300.0492505353319
+      ],
+      "proposition_R17": [
+        284,
+        299
+      ],
+      "incertitude_proposee_px": 3,
+      "decision": "proposition_retenue_en_lecture_assistee",
+      "valeur_R18": [
+        284,
+        299
+      ],
+      "incertitude_lecture_px": 3,
+      "motif": "Le bord orange émerge du sac à gauche près de (284,299). Le point historique se trouve sur la matière orange plusieurs pixels à droite. La compression et le bord flou limitent la précision.",
+      "precision": "Rayon approximatif de lecture dans le repère de travail, sans estimation interlecteurs."
+    }
+  ],
+  "juantiagues": "Les deux associations de segment R17-23 et R17-24 concernent le développement. Aucun déplacement de la référence historique ne leur est imputé."
+}

@@ -1,0 +1,28 @@
+{
+  "version": "R18-1",
+  "photo": "wc130798782",
+  "provenance": "N Chadwick",
+  "partition": "dev_explore_R16",
+  "dimensions": [640, 426],
+  "supports": [
+    "Geograph 4645584 / quatre feuilles sous bois"
+  ],
+  "role": "temoin_vide",
+  "historique_R17_complet": true,
+  "emprise_diffusee": [
+    0,
+    0,
+    640,
+    426
+  ],
+  "lecture_vue": "Champ entier relu. Témoin historique vide, anciennes perforations ou décor conservés tels quels.",
+  "region_evaluation_temoin": [
+    [0, 0],
+    [639, 0],
+    [639, 425],
+    [0, 425]
+  ],
+  "fond_explicite": [],
+  "regions_ignorees": [],
+  "instances": []
+}

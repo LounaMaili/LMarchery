@@ -1,0 +1,433 @@
+{
+  "version": "R18-1",
+  "photo": "5115614018",
+  "provenance": "Danielle Walquist Lynch",
+  "partition": "train",
+  "dimensions": [1024, 683],
+  "supports": [
+    "lynch"
+  ],
+  "role": "silhouettes_train",
+  "historique_R17_complet": true,
+  "emprise_diffusee": [
+    0,
+    0,
+    1024,
+    683
+  ],
+  "lecture_vue": "Champ entier relu. Les plages de fond dessinées et les fragments identifiés délimitent la supervision.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [430, 140],
+      [600, 140],
+      [600, 231],
+      [430, 231]
+    ],
+    [
+      [500, 455],
+      [665, 455],
+      [665, 530],
+      [500, 530]
+    ]
+  ],
+  "regions_ignorees": [],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "5115614018:1",
+      "instance_R17": "5115614018:1",
+      "prioritaire": true,
+      "face": "lynch",
+      "historique": {
+        "axe": [
+          [449.42, 298.15262172284645],
+          [609.42, 303.2687265917603]
+        ],
+        "entree": [632.46, 305.8267790262172],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Fût indépendant au-dessus du jaune, après les ailettes vertes. L’ombre descend à la jonction.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [454.44, 297.61],
+          [470.42, 298.44],
+          [486.42, 298.73],
+          [489.41, 299.01],
+          [502.4, 299.48],
+          [518.39, 300.14],
+          [534.39, 300.53],
+          [542.38, 300.81],
+          [550.37, 301.27],
+          [566.37, 301.54],
+          [582.35, 302.46],
+          [590.35, 302.55],
+          [598.35, 302.75],
+          [614.34, 303.45],
+          [630.32, 304.26],
+          [630.25, 306.46],
+          [614.27, 305.47],
+          [598.28, 304.88],
+          [590.29, 304.54],
+          [582.29, 304.44],
+          [566.3, 303.67],
+          [550.31, 303.27],
+          [542.31, 302.97],
+          [534.32, 302.51],
+          [518.33, 301.94],
+          [502.34, 301.54],
+          [489.35, 301.08],
+          [486.35, 300.89],
+          [470.36, 300.42],
+          [454.38, 299.59]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [454.41, 298.6],
+          [470.39, 299.43],
+          [486.385, 299.81],
+          [489.38, 300.045],
+          [502.37, 300.51],
+          [518.36, 301.04],
+          [534.355, 301.52],
+          [542.345, 301.89],
+          [550.34, 302.27],
+          [566.335, 302.605],
+          [582.32, 303.45],
+          [590.32, 303.545],
+          [598.315, 303.815],
+          [614.305, 304.46],
+          [630.285, 305.36]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [632.46, 305.8267790262172],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 2,
+      "instance": "5115614018:2",
+      "instance_R17": "5115614018:2",
+      "prioritaire": true,
+      "face": "lynch",
+      "historique": {
+        "axe": [
+          [243.34, 391.5215355805243],
+          [441.74, 377.4522471910112]
+        ],
+        "entree": [468.62, 376.17322097378275],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Portion qui remonte dans la feuille jusqu’à la jonction supérieure du groupe bas. La partie gauche se confond avec une autre flèche sur l’herbe.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [311.36, 389.4],
+          [326.86, 387.39],
+          [342.43, 386.46],
+          [347.21, 385.96],
+          [357.97, 385.02],
+          [373.5, 383.56],
+          [389.06, 382.4],
+          [402.01, 381.17],
+          [404.57, 380.54],
+          [420.13, 379.47],
+          [435.66, 377.9],
+          [441.84, 377.45],
+          [451.2, 376.52],
+          [466.73, 374.98],
+          [466.88, 377.16],
+          [451.34, 378.51],
+          [441.98, 379.44],
+          [435.78, 379.62],
+          [420.27, 381.42],
+          [404.71, 382.53],
+          [402.12, 382.77],
+          [389.2, 384.37],
+          [373.64, 385.51],
+          [358.1, 386.93],
+          [347.33, 387.76],
+          [342.57, 388.46],
+          [327.0, 389.44],
+          [311.44, 390.5]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [311.4, 389.95],
+          [326.93, 388.415],
+          [342.5, 387.46],
+          [347.27, 386.86],
+          [358.035, 385.975],
+          [373.57, 384.535],
+          [389.13, 383.385],
+          [402.065, 381.97],
+          [404.64, 381.535],
+          [420.2, 380.445],
+          [435.72, 378.76],
+          [441.91, 378.445],
+          [451.27, 377.515],
+          [466.805, 376.07]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [468.62, 376.17322097378275],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 3,
+      "instance": "5115614018:3",
+      "instance_R17": "5115614018:3",
+      "prioritaire": true,
+      "face": "lynch",
+      "historique": {
+        "axe": [
+          [275.34000000000003, 395.35861423220973],
+          [417.42, 395.35861423220973]
+        ],
+        "entree": [426.38, 395.35861423220973],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tige presque horizontale sur la feuille blanche. À gauche, plusieurs fûts fins se croisent devant les empennages.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [338.34, 392.47],
+          [352.67, 392.7],
+          [367.01, 393.43],
+          [368.34, 393.46],
+          [381.34, 393.52],
+          [395.67, 394.21],
+          [397.34, 394.35],
+          [410.01, 394.45],
+          [424.34, 394.56],
+          [424.34, 396.56],
+          [410.01, 396.39],
+          [397.34, 395.96],
+          [395.67, 395.83],
+          [381.34, 395.48],
+          [368.34, 394.86],
+          [367.01, 394.82],
+          [352.67, 394.55],
+          [338.34, 394.46]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [338.34, 393.465],
+          [352.67, 393.625],
+          [367.01, 394.125],
+          [368.34, 394.16],
+          [381.34, 394.5],
+          [395.67, 395.02],
+          [397.34, 395.155],
+          [410.01, 395.42],
+          [424.34, 395.56]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [426.38, 395.35861423220973],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 4,
+      "instance": "5115614018:4",
+      "instance_R17": "5115614018:4",
+      "prioritaire": true,
+      "face": "lynch",
+      "historique": {
+        "axe": [
+          [390.54, 400.4747191011236],
+          [524.94, 410.7069288389513]
+        ],
+        "entree": [539.02, 411.98595505617976],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Corps descendant vers la droite, entre la ligature et la première des deux jonctions basses. Une ombre descend ensuite.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [382.66, 398.55],
+          [397.94, 399.5],
+          [406.61, 400.13],
+          [413.2, 400.55],
+          [428.47, 401.52],
+          [443.74, 402.48],
+          [445.54, 402.51],
+          [459.01, 403.43],
+          [474.24, 404.99],
+          [487.44, 405.46],
+          [489.55, 405.49],
+          [504.82, 406.41],
+          [520.1, 407.25],
+          [535.36, 408.4],
+          [535.26, 409.66],
+          [519.93, 409.41],
+          [504.69, 408.07],
+          [489.4, 407.37],
+          [487.34, 406.73],
+          [474.12, 406.54],
+          [458.86, 405.46],
+          [445.39, 404.48],
+          [443.59, 404.46],
+          [428.32, 403.49],
+          [413.05, 402.52],
+          [406.46, 402.11],
+          [397.78, 401.52],
+          [382.51, 400.58]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [382.585, 399.565],
+          [397.86, 400.51],
+          [406.535, 401.12],
+          [413.125, 401.535],
+          [428.395, 402.505],
+          [443.665, 403.47],
+          [445.465, 403.495],
+          [458.935, 404.445],
+          [474.18, 405.765],
+          [487.39, 406.095],
+          [489.475, 406.43],
+          [504.755, 407.24],
+          [520.015, 408.33],
+          [535.31, 409.03]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [539.02, 411.98595505617976],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    },
+    {
+      "indice": 5,
+      "instance": "5115614018:5",
+      "instance_R17": "5115614018:5",
+      "prioritaire": true,
+      "face": "lynch",
+      "historique": {
+        "axe": [
+          [352.14, 414.54400749063666],
+          [550.54, 413.2649812734082]
+        ],
+        "entree": [574.86, 411.98595505617976],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Tige inférieure rectiligne entre les ailettes et la jonction la plus à droite. L’ombre qui part vers le bas est exclue.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [342.13, 412.71],
+          [357.46, 412.49],
+          [372.79, 412.37],
+          [381.13, 412.25],
+          [388.12, 412.1],
+          [403.46, 411.9],
+          [418.79, 411.71],
+          [430.12, 411.64],
+          [434.12, 411.6],
+          [449.46, 411.54],
+          [464.79, 411.49],
+          [480.12, 411.43],
+          [487.12, 411.47],
+          [495.46, 411.4],
+          [510.79, 411.38],
+          [526.12, 411.25],
+          [539.12, 410.94],
+          [541.45, 410.84],
+          [556.79, 411.49],
+          [572.12, 410.83],
+          [572.13, 412.83],
+          [556.8, 413.19],
+          [541.47, 413.04],
+          [539.13, 412.94],
+          [526.13, 412.87],
+          [510.81, 413.94],
+          [495.47, 412.96],
+          [487.13, 413.04],
+          [480.13, 413.31],
+          [464.8, 413.55],
+          [449.47, 413.58],
+          [434.14, 413.71],
+          [430.14, 413.64],
+          [418.8, 413.83],
+          [403.47, 414.06],
+          [388.14, 414.39],
+          [381.14, 414.45],
+          [372.81, 414.45],
+          [357.47, 414.53],
+          [342.14, 414.61]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [342.135, 413.66],
+          [357.465, 413.51],
+          [372.8, 413.41],
+          [381.135, 413.35],
+          [388.13, 413.245],
+          [403.465, 412.98],
+          [418.795, 412.77],
+          [430.13, 412.64],
+          [434.13, 412.655],
+          [449.465, 412.56],
+          [464.795, 412.52],
+          [480.125, 412.37],
+          [487.125, 412.255],
+          [495.465, 412.18],
+          [510.8, 412.66],
+          [526.125, 412.06],
+          [539.125, 411.94],
+          [541.46, 411.94],
+          [556.795, 412.34],
+          [572.125, 411.83]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [574.86, 411.98595505617976],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}

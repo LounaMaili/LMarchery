@@ -1,0 +1,109 @@
+{
+  "version": "R18-1",
+  "photo": "4169106197",
+  "provenance": "cristina.sanvito",
+  "partition": "train",
+  "dimensions": [640, 480],
+  "supports": [
+    "4169106197-1"
+  ],
+  "role": "silhouettes_train",
+  "historique_R17_complet": true,
+  "emprise_diffusee": [
+    0,
+    0,
+    640,
+    480
+  ],
+  "lecture_vue": "Champ entier relu. Les plages de fond dessinées et les fragments identifiés délimitent la supervision.",
+  "region_evaluation_temoin": null,
+  "fond_explicite": [
+    [
+      [300, 220],
+      [420, 220],
+      [420, 300],
+      [300, 300]
+    ],
+    [
+      [410, 119],
+      [450, 119],
+      [450, 180],
+      [410, 180]
+    ]
+  ],
+  "regions_ignorees": [],
+  "instances": [
+    {
+      "indice": 1,
+      "instance": "4169106197:1",
+      "instance_R17": "4169106197:1",
+      "prioritaire": true,
+      "face": "4169106197-1",
+      "historique": {
+        "axe": [
+          [220.0, 168.0],
+          [333.0, 181.0]
+        ],
+        "entree": [341.0, 182.0],
+        "etat_entree": "visible",
+        "precision_source_px": null,
+        "masque_reference": null
+      },
+      "correction_R17_revue": null,
+      "observation": "Fût gris avant les ailettes vertes, jusqu’au jaune. L’ombre très inclinée vers le bas est distincte.",
+      "identite_fragments": "composante_attribuee",
+      "polygones_observes": [
+        [
+          [223.2, 166.45],
+          [237.7, 168.34],
+          [252.02, 169.62],
+          [252.26, 169.78],
+          [266.78, 171.52],
+          [281.27, 173.49],
+          [284.7, 174.35],
+          [295.77, 175.49],
+          [310.28, 177.26],
+          [315.51, 177.78],
+          [324.8, 179.05],
+          [339.33, 180.68],
+          [339.0, 183.53],
+          [324.48, 181.79],
+          [315.21, 180.41],
+          [309.96, 180.07],
+          [295.46, 178.19],
+          [284.45, 176.54],
+          [280.94, 176.36],
+          [266.43, 174.51],
+          [251.93, 172.63],
+          [251.68, 172.6],
+          [237.41, 170.91],
+          [222.9, 169.07]
+        ]
+      ],
+      "axes_observes": [
+        [
+          [223.05, 167.76],
+          [237.555, 169.625],
+          [251.85, 171.11],
+          [252.095, 171.205],
+          [266.605, 173.015],
+          [281.105, 174.925],
+          [284.575, 175.445],
+          [295.615, 176.84],
+          [310.12, 178.665],
+          [315.36, 179.095],
+          [324.64, 180.42],
+          [339.165, 182.105]
+        ]
+      ],
+      "origine_axe": "Milieu local des deux bords lus de chaque portion visible.",
+      "entree": {
+        "etat": "visible",
+        "xy_lu": [341.0, 182.0],
+        "motif": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+        "incertitude_lecture_px": 3
+      },
+      "type_axe": "mediane_des_bords_lus"
+    }
+  ]
+}

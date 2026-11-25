@@ -1,0 +1,896 @@
+{
+  "version": "R18-1",
+  "cas": [
+    {
+      "photo": "13-01",
+      "provenance": "Crigges",
+      "instance": "13-01",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût sombre depuis la sortie des ailettes bleues jusqu’au jaune. L’encoche verte, les ailettes et le trou sont hors contour.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 907,
+      "pixels_admis": 907
+    },
+    {
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "instance": "7245527662:1",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée visible position incertaine"
+      ],
+      "observation": "Du trou sur le bleu au bord droit, la netteté décroît fortement. Deux plages attribuables, avec interruption où les bords se perdent dans les croisements.",
+      "motif_entree": "La lèvre sur le bleu est décelable, mais le point historique tombe dans la large section sombre. La position précise dans l’ouverture reste indécidable.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 22623,
+      "pixels_admis": 22607
+    },
+    {
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "instance": "7245527662:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Le tube oblique avant masque le fût arrière. Deux composantes reliées par l’alignement du corps et sa continuité de teinte de part et d’autre.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 12538,
+      "pixels_admis": 12538
+    },
+    {
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "instance": "7245527662:3",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Corps bicolore horizontal vers le bord droit, interrompu par une tige oblique. Le départ dans la zone du groupe reste sans entrée localisée.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 6890,
+      "pixels_admis": 6795
+    },
+    {
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "instance": "7245527662:4",
+      "champs": [
+        "portion d’axe ignorée",
+        "entrée visible position incertaine"
+      ],
+      "observation": "Corps large devant le rouge et le blanc, du voisinage du trou au bord droit. Les transitions très floues et le papier relevé restent ignorés.",
+      "motif_entree": "Le repère se trouve en retrait du bord sombre sur le rouge, au voisinage du papier décollé. Intervalle visuel trop large pour conserver un point unique.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 21299,
+      "pixels_admis": 21299
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "instance": "5115614018:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût indépendant au-dessus du jaune, après les ailettes vertes. L’ombre descend à la jonction.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 355,
+      "pixels_admis": 355
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "instance": "5115614018:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Portion qui remonte dans la feuille jusqu’à la jonction supérieure du groupe bas. La partie gauche se confond avec une autre flèche sur l’herbe.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 295,
+      "pixels_admis": 295
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "instance": "5115614018:3",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tige presque horizontale sur la feuille blanche. À gauche, plusieurs fûts fins se croisent devant les empennages.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 152,
+      "pixels_admis": 152
+    },
+    {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "instance": "5115614018:5",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tige inférieure rectiligne entre les ailettes et la jonction la plus à droite. L’ombre qui part vers le bas est exclue.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 456,
+      "pixels_admis": 456
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Corps orange devant le bison. Le bord entre matière orange et sac est visible à gauche. Les ailettes blanches et orange sont exclues.",
+      "motif_entree": "R17-C2, proposition confirmée sur les pixels sources.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 262,
+      "pixels_admis": 262
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:3",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée dans une exclusion"
+      ],
+      "observation": "Court corps orange du sac droit, entre le motif imprimé et son empennage blanc. Rectangle R17.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 360,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:4",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Tige noire sous l’orange sur le sac droit. Deux fragments de part et d’autre de l’empennage voisin. Rectangle R17.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 264,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:5",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Fût fin quasi horizontal avec bande claire devant la silhouette sombre du sac droit. Rectangle R17.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 297,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:R18-1",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Tige la plus haute du sac droit. Partie droite avant l’empennage rouge et blanc.",
+      "motif_entree": "Tube documenté dans le groupe droit historiquement ignoré. Aucune coordonnée d’entrée admise.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 388,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:R18-2",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Fût incliné depuis le bord gauche du sac droit vers l’empennage bleu et blanc.",
+      "motif_entree": "Tube documenté dans le groupe droit historiquement ignoré. Aucune coordonnée d’entrée admise.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 245,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:R18-3",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Fût presque horizontal sous l’empennage bleu et blanc voisin. Lacune au recouvrement.",
+      "motif_entree": "Tube documenté dans le groupe droit historiquement ignoré. Aucune coordonnée d’entrée admise.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 216,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:R18-4",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Tige partant plus à droite dans le bas du sac. Légère descente vers les ailettes claires.",
+      "motif_entree": "Tube documenté dans le groupe droit historiquement ignoré. Aucune coordonnée d’entrée admise.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 346,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:R18-5",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Ligne horizontale inférieure partant du bord gauche du sac, avant les ailettes bleues.",
+      "motif_entree": "Tube documenté dans le groupe droit historiquement ignoré. Aucune coordonnée d’entrée admise.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 348,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "instance": "18105652008:R18-6",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Dernier fût du bas, légèrement montant vers l’empennage blanc et rouge.",
+      "motif_entree": "Tube documenté dans le groupe droit historiquement ignoré. Aucune coordonnée d’entrée admise.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 364,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "instance": "24614689941:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Bords flous du tube supérieur en perspective. Seul le corps après les ailettes sombres est attribuable.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2650,
+      "pixels_admis": 2650
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "instance": "24614689941:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Corps oblique inférieur en perspective, après les grandes ailettes jaunes, jusqu’au voisinage du trou.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 1984,
+      "pixels_admis": 1984
+    },
+    {
+      "photo": "24614689941",
+      "provenance": "renatomitra",
+      "instance": "24614689941:3",
+      "champs": [
+        "portion d’axe ignorée",
+        "entrée visible position incertaine"
+      ],
+      "observation": "Fût vertical en perspective, élargi vers le bas. Arrêt avant les ailettes. La perforation voisine complique la localisation exacte de la jonction.",
+      "motif_entree": "La lèvre du fût vertical se mêle à deux perforations noires. Le point historique ne permet pas de choisir la jonction sur ce bord.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2691,
+      "pixels_admis": 2691
+    },
+    {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "instance": "4169106197:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût gris avant les ailettes vertes, jusqu’au jaune. L’ombre très inclinée vers le bas est distincte.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 326,
+      "pixels_admis": 326
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût rayé isolé au-dessus du groupe, après l’empennage vert.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 1788,
+      "pixels_admis": 1788
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:2",
+      "champs": [
+        "portion de masque ignorée"
+      ],
+      "observation": "Tige rayée supérieure, issue des ailettes orange et dont le bout se sépare au-dessus du noir.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2177,
+      "pixels_admis": 2171
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:3",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée"
+      ],
+      "observation": "Partie sombre, entre les empennages du groupe gauche et la jonction sous la tige rayée. Attribution conservée là où les deux contours sont lisibles.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [
+        "R18-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 1826,
+      "pixels_admis": 1571
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:4",
+      "champs": [
+        "masque et axe sans attribution individuelle",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Deux tiges voisines devant le centre noir. Les contours se touchent et les deux identités R17 ne sont pas séparables sur tout le trajet.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [],
+      "regions_documentaires": [
+        "R18-1"
+      ],
+      "pixels_observes": 0,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:5",
+      "champs": [
+        "masque et axe sans attribution individuelle",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Deux tiges voisines devant le centre noir. Le départ sous les ailettes et le bord commun ne permettent pas une attribution individuelle certaine.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [],
+      "regions_documentaires": [
+        "R18-1"
+      ],
+      "pixels_observes": 0,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:6",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tige sombre à ailettes jaune clair vers le bleu. Le reflet longitudinal appartient au fût.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2125,
+      "pixels_admis": 2125
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:7",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tige sombre de la première flèche sous le groupe central, descendant vers le bleu. La pente visible s’écarte du trait ancien près des ailettes.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2041,
+      "pixels_admis": 2041
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:8",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tube rayé de la seconde flèche sous le groupe, entre ailettes jaunes et bord bleu.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2243,
+      "pixels_admis": 2243
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:10",
+      "champs": [
+        "portion d’axe ignorée",
+        "entrée visible position incertaine"
+      ],
+      "observation": "Fût violet isolé au-dessus du décor ondulé. Le repère historique de contact est sur le motif clair voisin.",
+      "motif_entree": "Le centre historique est sur le motif blanc à droite de la tige violette. Le raccord exact au bord noir demeure incertain.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 1528,
+      "pixels_admis": 1528
+    },
+    {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "instance": "wc71488242:11",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tube rayé isolé dans le bas du support, après l’empennage bleu foncé.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2043,
+      "pixels_admis": 2043
+    },
+    {
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "instance": "9436017284:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût violet isolé du milieu jusqu’au bord. Le trait descendant sur la feuille est son ombre.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 4832,
+      "pixels_admis": 4832
+    },
+    {
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "instance": "9436017284:3",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée dans une exclusion"
+      ],
+      "observation": "Tige du groupe bas, partie rouge puis bleu-violet. Les deux portions sont séparées au croisement. Départ dans le rectangle ignoré R17.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 5379,
+      "pixels_admis": 5212
+    },
+    {
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "instance": "9436017284:4",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Grande diagonale basse du groupe. Deux portions identifiables loin du croisement proche des départs. Contact R17 inconnu. La dernière coupe s’arrête dès que le premier des deux bords sort du champ.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 10469,
+      "pixels_admis": 10243
+    },
+    {
+      "photo": "9436017284",
+      "provenance": "surtr",
+      "instance": "9436017284:5",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée dans une exclusion"
+      ],
+      "observation": "Tige plus horizontale du groupe bas, visible sur trois intervalles entre les passages des autres tiges. Le rectangle historique couvre sa jonction.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 4114,
+      "pixels_admis": 4034
+    },
+    {
+      "photo": "37348131162",
+      "provenance": "Special Olympics Oesterreich",
+      "instance": "37348131162:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Corps après les petites ailettes bleues jusqu’au jaune. Le long trait descendant est une ombre.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 706,
+      "pixels_admis": 706
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "instance": "36725328420:1",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Fût clair supérieur. Interruption avant la superposition des deux tubes au voisinage du papier. Entrée historiquement inconnue.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R18-2"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 2288,
+      "pixels_admis": 2196
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "instance": "36725328420:2",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Tige claire montante sous la première. Arrêt avant que les limites du groupe ne fusionnent.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 1835,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "instance": "36725328420:3",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée occultee"
+      ],
+      "observation": "Tige supérieure de la paire claire presque horizontale, lue sur le bord supérieur et la séparation locale de la paire. Entrée cachée.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 663,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "instance": "36725328420:4",
+      "champs": [
+        "masque et axe entièrement dans une exclusion",
+        "entrée occultee"
+      ],
+      "observation": "Fût clair supérieur des deux tiges qui convergent vers le fruit. Bord supérieur suivi avant la convergence, indépendamment de la proposition R16.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 451,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "instance": "36725328420:5",
+      "champs": [
+        "portion de masque ignorée",
+        "portion d’axe ignorée",
+        "entrée inconnue ou ambigue"
+      ],
+      "observation": "Tube sombre issu de l’empennage bleu et jaune à gauche. Arrêt avant les ligatures et tiges du groupe.",
+      "motif_entree": "Absence de jonction localisée attribuable. Le statut de visibilité est conservé.",
+      "regions_intersectees": [
+        "R17-1"
+      ],
+      "regions_documentaires": [],
+      "pixels_observes": 261,
+      "pixels_admis": 202
+    },
+    {
+      "photo": "36725328420",
+      "provenance": "juantiagues",
+      "instance": "36725328420:6",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tube brun inférieur isolé qui rejoint le jaune en dessous du groupe dense.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 1307,
+      "pixels_admis": 1307
+    },
+    {
+      "photo": "fl51204504370",
+      "provenance": "Moo.The.Cow",
+      "instance": "fl51204504370:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Courte tige horizontale devant la feuille de droite, depuis la fin des ailettes orange. Les objets en bas de la vue restent ignorés.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 402,
+      "pixels_admis": 402
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût oblique de gauche, bleu sombre puis décoré, jusqu’au voisinage des ailettes blanches et violettes.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 4858,
+      "pixels_admis": 4858
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût oblique isolé, du centre à la portion avant l’empennage. La décoration blanche reste sur le tube.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 4780,
+      "pixels_admis": 4780
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:3",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Premier des fûts presque verticaux sur l’anneau bleu. Arrêt avant les ailettes.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 3963,
+      "pixels_admis": 3963
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:5",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Partie attribuable depuis le chiffre 5 jusqu’avant la seconde jonction. La suite se superpose à la flèche 6.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 451,
+      "pixels_admis": 451
+    },
+    {
+      "photo": "rf-key-0ijARYt7fTFFlaDVSrdA",
+      "provenance": "Archery Scoring",
+      "instance": "rf-key-0ijARYt7fTFFlaDVSrdA:6",
+      "champs": [
+        "masque et axe sans attribution individuelle"
+      ],
+      "observation": "La seconde jonction présente une petite lèvre distincte à droite du premier fût. En aval, les couleurs et largeurs ne permettent pas de tracer deux bords de fût attribuables.",
+      "motif_entree": "Petite lèvre secondaire au bord droit du premier fût. La coordonnée de la jonction est conservée, avec environ 4 px d’incertitude, même si le contour reste inattribuable.",
+      "regions_intersectees": [],
+      "regions_documentaires": [
+        "R18-1"
+      ],
+      "pixels_observes": 0,
+      "pixels_admis": 0
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "instance": "wc11001401:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Après les ailettes orange isolées du haut, corps noir devant la butte puis la feuille.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 633,
+      "pixels_admis": 633
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "instance": "wc11001401:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Flèche supérieure du groupe de quatre sous la première. Les deux bords sont lisibles après l’empennage.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 632,
+      "pixels_admis": 632
+    },
+    {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "instance": "wc11001401:5",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Fût inférieur à empennage bicolore, jusqu’à la jonction sur l’anneau sombre.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 631,
+      "pixels_admis": 631
+    },
+    {
+      "photo": "wc16492853",
+      "provenance": "Ozizo",
+      "instance": "wc16492853:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tube fiché au mato de gauche, lisible du blanc jusqu’à la ligature rouge. Les autres tiges dans le haut de la photo sont hors de la zone retenue.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 4267,
+      "pixels_admis": 4267
+    },
+    {
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "instance": "wc82322984-t22:1",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Tube supérieur de la feuille de gauche. Portion retenue après le passage devant la bande sombre où les bords se perdent.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 1763,
+      "pixels_admis": 1763
+    },
+    {
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "instance": "wc82322984-t22:2",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Deuxième tube de la feuille gauche, repris lorsque le noir se détache de la feuille. L’ombre verticale est exclue.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 1644,
+      "pixels_admis": 1644
+    },
+    {
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "instance": "wc82322984-t22:3",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Flèche supérieure de la feuille droite. Deux composantes séparées par le montant sombre entre les feuilles.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2229,
+      "pixels_admis": 2229
+    },
+    {
+      "photo": "wc82322984-t22",
+      "provenance": "Voltmetro",
+      "instance": "wc82322984-t22:4",
+      "champs": [
+        "portion d’axe ignorée"
+      ],
+      "observation": "Flèche inférieure de la feuille droite. Deux composantes identifiables de part et d’autre du montant.",
+      "motif_entree": "Jonction relue au voisinage du raccord tube–support dans la vue.",
+      "regions_intersectees": [],
+      "regions_documentaires": [],
+      "pixels_observes": 2241,
+      "pixels_admis": 2241
+    }
+  ],
+  "residuel": "Tout pixel hors contour ou plage de fond admise est ignoré sur les vues occupées. Les portions non tracées ne sont pas extrapolées."
+}
