@@ -9,13 +9,12 @@ CPython 3.15.2, NumPy 2.5.4, OpenCV 4.13.0.92. Le rendu SVG et la construction d
 ```sh
 OUT=$(mktemp -d)
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
-python -m r18.supervision "$OUT"
+python -m r18.supervision "$OUT" --comparer-cartes r18/masques
 python -m r18.bilan "$OUT"
 python -m r18.figurer "$OUT"
 for f in effectifs.json validites.json tableaux.md compatibilite.json champs-exclus.json champs-exclus.md figures/bilan.svg; do
   cmp "r18/$f" "$OUT/$f" || exit 1
 done
-diff -r r18/masques "$OUT/masques"
 python -m unittest -v test_r18
 python -m r18.archiver "$OUT/r18-annotations-revue.zip"
 sha256sum "$OUT/r18-annotations-revue.zip"
@@ -24,6 +23,10 @@ sha256sum "$OUT/r18-annotations-revue.zip"
 La [carte 8 bits de chaque photo](masques/) est en niveaux de gris. 0 est un fond vérifié, 1 à 11 sont les indices locaux des instances et 255 est ignoré. L’identifiant global et l’empreinte du plan brut, en ordre ligne–colonne sans compression, se trouvent dans les [validités](validites.json). La plupart des pixels occupés sont **sans supervision** en dehors des portions attribuées et des plages de fond vérifiées. Sur les quatre témoins, la région d’évaluation couvre le champ entier. Les aires publiées comptent des centres de pixels, sans redimensionnement ni anticrénelage.
 
 La rasterisation utilise la parité des intersections ligne par ligne et inclut les arêtes et sommets. Les exclusions historiques et R18 applicables au masque, puis le conflit d’appartenance à deux identités, rendent le pixel ignoré. Le masque d’une instance rassemble ses composantes. Les tronçons d’axe sont coupés exactement aux bords des cellules exclues pour cette tâche. Une médiane construite entre deux bords lus exige une cellule du fût observé, y compris au dernier pixel du tronçon. Une coordonnée de contact dépend de la crédibilité de la jonction et des exclusions continues propres à l’entrée. Elle ne dépend pas de la rasterisation du masque. [Code de rasterisation et d’admission](supervision.py) · [Comparaison Crigges et champs exclus](bilan.py)
+
+## Correction du contrôle de reproductibilité
+
+La [première livraison de preuves](https://github.com/LounaMaili/LMarchery/commit/32b2a7edeaad31065c204977e673f691d0ae7bff) associait la taille et l’empreinte de compression PNG aux validités numériques. Le [premier contrôle Ubuntu de la tête indexée](https://github.com/LounaMaili/LMarchery/actions/runs/45612495610/job/139199357822) a relevé, dès la première carte, 3 566 octets régénérés contre 3 550 pour le fichier publié. La révision conserve les PNG publiés et déplace taille et SHA du conteneur dans le [registre des encodages](empreintes-masques.json). Le test contrôle le fichier publié contre ce registre, puis compare dimensions, type et tous les pixels des vingt cartes régénérées. Les validités, les aires et le bilan sont contrôlés séparément sur leur contenu numérique. La capsule est reconstruite avec les fichiers de la révision courante. Les annotations, pixels de référence et effectifs de la première livraison sont conservés.
 
 ## Pixels, orientation et figures
 

@@ -11,7 +11,7 @@ import numpy as np
 from r14.mesurer import read
 from r18.bilan import generate as review
 from r18.figurer import render as chart
-from r18.supervision import ROOT, admit, cut_axis, generate, paint
+from r18.supervision import ROOT, admit, compare_masks, cut_axis, generate, paint
 
 
 def area2(a,b,c):
@@ -97,11 +97,17 @@ class AnnotationR18Tests(unittest.TestCase):
                             self.assertFalse(intersects(poly[i],poly[(i+1)%n],poly[j],poly[(j+1)%n]))
 
     def test_inconnu_entrees_et_exclusions_par_tache(self):
+        encodings={p['photo']:p for p in read(ROOT/'empreintes-masques.json')}
+        self.assertEqual(set(encodings),set(self.photos))
         for k,p in self.photos.items():
+            png=ROOT/encodings[k]['fichier']
+            self.assertEqual(sha256(png.read_bytes()).hexdigest(),encodings[k]['sha256_png'])
+            self.assertEqual(png.stat().st_size,encodings[k]['octets'])
             mask=cv.imread(str(ROOT/'masques'/(k+'.png')),cv.IMREAD_GRAYSCALE)
             row=self.valid[k]
             self.assertEqual(list(mask.shape[::-1]),p['dimensions'])
             self.assertEqual(sha256(mask.tobytes()).hexdigest(),row['carte']['sha256_plan_uint8'])
+            self.assertEqual(row['carte']['sha256_plan_uint8'],encodings[k]['sha256_plan_uint8'])
             if p['role']=='temoin_vide':
                 self.assertTrue(np.all(mask==0))
             else:
@@ -148,6 +154,7 @@ class AnnotationR18Tests(unittest.TestCase):
         with TemporaryDirectory() as temp:
             out=Path(temp)
             generate(out);review(out);chart(out)
+            compare_masks(out/'masques',ROOT/'masques')
             for name in ('validites.json','effectifs.json','tableaux.md','compatibilite.json','champs-exclus.json','champs-exclus.md','figures/bilan.svg'):
                 self.assertEqual((out/name).read_bytes(),(ROOT/name).read_bytes(),name)
         old=read('r17/corrections-v2.json')['corrections']

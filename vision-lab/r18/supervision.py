@@ -197,6 +197,7 @@ def generate(out):
     folder = out/'masques'
     folder.mkdir(parents=True, exist_ok=True)
     records = []
+    encodings = []
     for scope in read(ROOT/'perimetre.json')['acquisitions']:
         key = scope['photo']
         p = read(ROOT/'annotations'/(key+'.json'))
@@ -204,9 +205,11 @@ def generate(out):
         name = folder/(key+'.png')
         if not cv.imwrite(str(name), raster, [cv.IMWRITE_PNG_COMPRESSION, 9]):
             raise OSError(name)
-        record['carte'] = dict(fichier='masques/'+name.name, octets=name.stat().st_size,
-            sha256=sha256(name.read_bytes()).hexdigest(), sha256_plan_uint8=sha256(raster.tobytes()).hexdigest())
+        record['carte'] = dict(fichier='masques/'+name.name, sha256_plan_uint8=sha256(raster.tobytes()).hexdigest())
+        encodings.append(dict(photo=key, **record['carte'], octets=name.stat().st_size,
+                              sha256_png=sha256(name.read_bytes()).hexdigest()))
         records.append(record)
+    save(out/'empreintes-masques.json',encodings)
     compact(out/'validites.json', dict(version='R18-1', fond=0, ignore=255, vues=records))
     def group(key):
         subsets = defaultdict(list)
@@ -234,7 +237,23 @@ def generate(out):
     return records
 
 
+def compare_masks(actual, expected):
+    """Vérifier le type, les dimensions et tous les pixels, indépendamment du compresseur PNG."""
+    names = sorted(p.name for p in actual.glob('*.png'))
+    if not names or names != sorted(p.name for p in expected.glob('*.png')):
+        raise ValueError('Cartes absentes ou supplémentaires')
+    for name in names:
+        a = cv.imread(str(actual/name), cv.IMREAD_UNCHANGED)
+        b = cv.imread(str(expected/name), cv.IMREAD_UNCHANGED)
+        if a is None or b is None or a.dtype != np.uint8 or b.dtype != np.uint8 or a.ndim != 2 or not np.array_equal(a, b):
+            raise ValueError('Étiquettes différentes dans '+name)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('out', type=Path)
-    generate(parser.parse_args().out)
+    parser.add_argument('--comparer-cartes',type=Path,help='Cartes PNG de référence publiées')
+    args=parser.parse_args()
+    generate(args.out)
+    if args.comparer_cartes is not None:
+        compare_masks(args.out/'masques',args.comparer_cartes)

@@ -11,7 +11,7 @@ ROOT=Path('r18')
 
 
 def archive(out, manifest=None, worktrees=None):
-    files=[ROOT/f for f in ('visionneuse.html','perimetre.json','validites.json','effectifs.json','corrections.json',
+    files=[ROOT/f for f in ('visionneuse.html','empreintes-masques.json','perimetre.json','validites.json','effectifs.json','corrections.json',
           'compatibilite.json','champs-exclus.json','sources.json','tableaux.md','champs-exclus.md')]
     for folder in ('figures','masques','annotations'):
         files.extend((ROOT/folder).glob('*'))
