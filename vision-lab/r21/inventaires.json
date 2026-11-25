@@ -1,0 +1,799 @@
+{
+  "13-01": {
+    "provenance": "Crigges",
+    "supports": [
+      "crigges-4"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1056,
+      1408
+    ],
+    "lecture_visuelle": "Support numéroté 4 et bords du cadre. Une tige sombre à empennage bleu traverse les anneaux. Les perforations du centre et attaches du papier sont distinctes.",
+    "physiques_documentees": 1,
+    "admissible": true,
+    "actives": 1,
+    "completes": 1,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [],
+    "identites": [
+      {
+        "instance": "13-01",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Fût sombre depuis la sortie des ailettes bleues jusqu’au jaune. L’encoche verte, les ailettes et le trou sont hors contour."
+      }
+    ],
+    "sha256_image": "0da198c6feeac093bc6e76a1eeb9a4328a53f0150c7e6631f22aeec05e61d831",
+    "sha256_annotation": "236a683959d10137c92a1c48845d4388cc4af12cd1373b1a046d8216952c02f9",
+    "sha256_masque": "bf61494f45ca6bf1e84475865c3cf5e6753b1d86d8250fc8b0793887aebd4d06"
+  },
+  "70-01": {
+    "provenance": "Crigges",
+    "supports": [
+      "crigges-4"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1056,
+      1408
+    ],
+    "lecture_visuelle": "Support 4, bord du support voisin et fond du cadre. Une tige à encoche verte et ailettes bleues. Les petites pièces colorées sur les bords sont des attaches.",
+    "physiques_documentees": 1,
+    "admissible": true,
+    "actives": 1,
+    "completes": 1,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [],
+    "identites": [
+      {
+        "instance": "70-01",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "La tige noire et sa décoration grise restent continues jusque dans le jaune. Arrêt avant la lèvre sombre. Le bout historique de l’axe dépasse dans le papier."
+      }
+    ],
+    "sha256_image": "46fa788c8a29f52e5c7587f6ac1affa23be863ea78e46a04ba6f2ca7b38f6c5d",
+    "sha256_annotation": "0b4259be7771642e4363f6a011bda6c6bc642d991ed2fda54acad9e9c37a4a27",
+    "sha256_masque": "d8f25fc48ccaf2a1c9cddf2e6eca5992122b0acaa5f6c8a03a1962eab88bdf1f"
+  },
+  "7245527662": {
+    "provenance": "jrladia",
+    "supports": [
+      "winnipeg"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1024,
+      677
+    ],
+    "lecture_visuelle": "Blason partiellement cadré. Les quatre tiges sortent séparément par la droite, deux obliques et deux presque horizontales. Le recouvrement central et le papier soulevé limitent les jonctions. Le rectangle ignoré coupe le groupe et laisse les corps suivis de part et d’autre.",
+    "physiques_documentees": 4,
+    "admissible": true,
+    "actives": 4,
+    "completes": 1,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [
+      {
+        "id": "R17-1",
+        "taches": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "polygone": [
+          [
+            492.94,
+            261.2136105860113
+          ],
+          [
+            578.7,
+            261.2136105860113
+          ],
+          [
+            578.7,
+            322.64272211720225
+          ],
+          [
+            492.94,
+            322.64272211720225
+          ]
+        ],
+        "motif": "Rectangle historique conservé, bords inclus."
+      }
+    ],
+    "identites": [
+      {
+        "instance": "7245527662:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "entree_lue": "visible_position_incertaine",
+        "lecture_du_fut": "Du trou sur le bleu au bord droit, la netteté décroît fortement. Deux plages attribuables, avec interruption où les bords se perdent dans les croisements."
+      },
+      {
+        "instance": "7245527662:2",
+        "indice": 2,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Le tube oblique avant masque le fût arrière. Deux composantes reliées par l’alignement du corps et sa continuité de teinte de part et d’autre."
+      },
+      {
+        "instance": "7245527662:3",
+        "indice": 3,
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Corps bicolore horizontal vers le bord droit, interrompu par une tige oblique. Le départ dans la zone du groupe reste sans entrée localisée."
+      },
+      {
+        "instance": "7245527662:4",
+        "indice": 4,
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "entree_lue": "visible_position_incertaine",
+        "lecture_du_fut": "Corps large devant le rouge et le blanc, du voisinage du trou au bord droit. Les transitions très floues et le papier relevé restent ignorés."
+      }
+    ],
+    "sha256_image": "49e89bafee15301e4a331f71acfc2322268a854d6d0b409e5e7c12b2eda4c66a",
+    "sha256_annotation": "7a4003f7d2d21eb3ebfb3981222fe84daa90980a9fe1d41fd990fd7241dff9f9",
+    "sha256_masque": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c"
+  },
+  "5115614018": {
+    "provenance": "Danielle Walquist Lynch",
+    "supports": [
+      "lynch"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1024,
+      683
+    ],
+    "lecture_visuelle": "Butte blanche, feuille et pied. Une flèche isolée en haut et quatre dans le groupe inférieur. Les ombres partent des jonctions vers le bas. Les empennages et les portions séparables du groupe rendent compte des cinq corps.",
+    "physiques_documentees": 5,
+    "admissible": true,
+    "actives": 5,
+    "completes": 5,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [],
+    "identites": [
+      {
+        "instance": "5115614018:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Fût indépendant au-dessus du jaune, après les ailettes vertes. L’ombre descend à la jonction."
+      },
+      {
+        "instance": "5115614018:2",
+        "indice": 2,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Portion qui remonte dans la feuille jusqu’à la jonction supérieure du groupe bas. La partie gauche se confond avec une autre flèche sur l’herbe."
+      },
+      {
+        "instance": "5115614018:3",
+        "indice": 3,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tige presque horizontale sur la feuille blanche. À gauche, plusieurs fûts fins se croisent devant les empennages."
+      },
+      {
+        "instance": "5115614018:4",
+        "indice": 4,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Corps descendant vers la droite, entre la ligature et la première des deux jonctions basses. Une ombre descend ensuite."
+      },
+      {
+        "instance": "5115614018:5",
+        "indice": 5,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tige inférieure rectiligne entre les ailettes et la jonction la plus à droite. L’ombre qui part vers le bas est exclue."
+      }
+    ],
+    "sha256_image": "a489480ab2145c01758f4387e2b9cbe23bd2b1dd21207b08dba235dd49f6a7f0",
+    "sha256_annotation": "30cef19c24300b34e8406299049f6f0bb24c0cfc86f40add7f14615be6bbf5f2",
+    "sha256_masque": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4"
+  },
+  "18105652008": {
+    "provenance": "zigazou76",
+    "supports": [
+      "18105652008-1",
+      "18105652008-2"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1024,
+      683
+    ],
+    "lecture_visuelle": "Deux sacs dans le cadre. Deux flèches actives à gauche. À droite, neuf identités documentaires recouvrent notamment les six relevées lors de R18. Le rectangle exclu contient des présences physiques.",
+    "physiques_documentees": 11,
+    "admissible": false,
+    "actives": 2,
+    "completes": 2,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [
+      "18105652008:3",
+      "18105652008:4",
+      "18105652008:5",
+      "18105652008:R18-1",
+      "18105652008:R18-2",
+      "18105652008:R18-3",
+      "18105652008:R18-4",
+      "18105652008:R18-5",
+      "18105652008:R18-6"
+    ],
+    "presences_hors_inventaire": "inventaire actif incomplet",
+    "drapeau_historique": false,
+    "exclusions": [
+      {
+        "id": "R17-1",
+        "taches": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "polygone": [
+          [
+            526.86,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            365.8629550321199
+          ],
+          [
+            902.8142857142857,
+            522.3533190578158
+          ],
+          [
+            526.86,
+            522.3533190578158
+          ]
+        ],
+        "motif": "Rectangle historique conservé, bords inclus."
+      }
+    ],
+    "identites": [
+      {
+        "instance": "18105652008:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Corps orange devant le bison. Le bord entre matière orange et sac est visible à gauche. Les ailettes blanches et orange sont exclues."
+      },
+      {
+        "instance": "18105652008:2",
+        "indice": 2,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Fût noir inférieur devant le bison, avant les ailettes orange. Contraste faible sur le motif sombre."
+      },
+      {
+        "instance": "18105652008:3",
+        "indice": 3,
+        "champs": [],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Court corps orange du sac droit, entre le motif imprimé et son empennage blanc. Rectangle R17."
+      },
+      {
+        "instance": "18105652008:4",
+        "indice": 4,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Tige noire sous l’orange sur le sac droit. Deux fragments de part et d’autre de l’empennage voisin. Rectangle R17."
+      },
+      {
+        "instance": "18105652008:5",
+        "indice": 5,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Fût fin quasi horizontal avec bande claire devant la silhouette sombre du sac droit. Rectangle R17."
+      },
+      {
+        "instance": "18105652008:R18-1",
+        "indice": 6,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Tige la plus haute du sac droit. Partie droite avant l’empennage rouge et blanc."
+      },
+      {
+        "instance": "18105652008:R18-2",
+        "indice": 7,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Fût incliné depuis le bord gauche du sac droit vers l’empennage bleu et blanc."
+      },
+      {
+        "instance": "18105652008:R18-3",
+        "indice": 8,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Fût presque horizontal sous l’empennage bleu et blanc voisin. Lacune au recouvrement."
+      },
+      {
+        "instance": "18105652008:R18-4",
+        "indice": 9,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Tige partant plus à droite dans le bas du sac. Légère descente vers les ailettes claires."
+      },
+      {
+        "instance": "18105652008:R18-5",
+        "indice": 10,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Ligne horizontale inférieure partant du bord gauche du sac, avant les ailettes bleues."
+      },
+      {
+        "instance": "18105652008:R18-6",
+        "indice": 11,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Dernier fût du bas, légèrement montant vers l’empennage blanc et rouge."
+      }
+    ],
+    "sha256_image": "b43b8156af85d098b971c13f85ebc8c880e202a797e60baadb5d3b29657b38ab",
+    "sha256_annotation": "77895526f142ac39d377200606319e41b1c92c2fadd2c834b9a4339e0e117f71",
+    "sha256_masque": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d"
+  },
+  "24614689941": {
+    "provenance": "renatomitra",
+    "supports": [
+      "24614689941-1"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1024,
+      1024
+    ],
+    "lecture_visuelle": "Trois empennages et trois corps convergent vers le blason central. Les portions des blasons voisins visibles au bord du cadre ne montrent pas d’autre fût. Le corps venant du bas garde une jonction incertaine.",
+    "physiques_documentees": 3,
+    "admissible": true,
+    "actives": 3,
+    "completes": 2,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [],
+    "identites": [
+      {
+        "instance": "24614689941:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Bords flous du tube supérieur en perspective. Seul le corps après les ailettes sombres est attribuable."
+      },
+      {
+        "instance": "24614689941:2",
+        "indice": 2,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Corps oblique inférieur en perspective, après les grandes ailettes jaunes, jusqu’au voisinage du trou."
+      },
+      {
+        "instance": "24614689941:3",
+        "indice": 3,
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "entree_lue": "visible_position_incertaine",
+        "lecture_du_fut": "Fût vertical en perspective, élargi vers le bas. Arrêt avant les ailettes. La perforation voisine complique la localisation exacte de la jonction."
+      }
+    ],
+    "sha256_image": "1400a1bb4aa3dea1b2c02008658423e615ecfc7933c16cb017503055a97b2a44",
+    "sha256_annotation": "aee7428ccae33a0ffdb2912821f16344d68f6faf3fa2fe9b924e1ae28691166b",
+    "sha256_masque": "e05a381f237277c0b601c4f18fc2efa91fb5ee3c9002bf3df8cdc8e1e4332d59"
+  },
+  "4169106197": {
+    "provenance": "cristina.sanvito",
+    "supports": [
+      "4169106197-1"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      640,
+      480
+    ],
+    "lecture_visuelle": "Les trois spots, le panneau rouge et le bois autour sont visibles. Une flèche à ailettes vertes entre dans le spot 2. La longue trace oblique descendante est son ombre.",
+    "physiques_documentees": 1,
+    "admissible": true,
+    "actives": 1,
+    "completes": 1,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [],
+    "identites": [
+      {
+        "instance": "4169106197:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Fût gris avant les ailettes vertes, jusqu’au jaune. L’ombre très inclinée vers le bas est distincte."
+      }
+    ],
+    "sha256_image": "b6bc999370c759bcd7221598fcc7ebe506c855ee25f719d47cc8a3af74d0d25e",
+    "sha256_annotation": "f273b555eec39b73bf6f86ff599b54b6e042a8e0bfa47e87f0d7a60fcd055c2d",
+    "sha256_masque": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8"
+  },
+  "wc71488242": {
+    "provenance": "Bernard Gagnon",
+    "supports": [
+      "wc71488242-1"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "lecture_visuelle": "Butte verticale, groupe central et fûts isolés au-dessous. Les identités 4 et 5 restent accolées devant le centre et documentées sans champ actif. Les exclusions du groupe sont conservées.",
+    "physiques_documentees": 11,
+    "admissible": false,
+    "actives": 9,
+    "completes": 8,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [
+      "wc71488242:4",
+      "wc71488242:5"
+    ],
+    "presences_hors_inventaire": "inventaire actif incomplet",
+    "drapeau_historique": false,
+    "exclusions": [
+      {
+        "id": "R17-1",
+        "taches": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "polygone": [
+          [
+            464.87142857142857,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            567.2714285714286
+          ],
+          [
+            548.9857142857143,
+            633.1
+          ],
+          [
+            464.87142857142857,
+            633.1
+          ]
+        ],
+        "motif": "Rectangle historique conservé, bords inclus."
+      },
+      {
+        "id": "R18-1",
+        "taches": [
+          "masque",
+          "axe"
+        ],
+        "polygone": [
+          [
+            197,
+            467
+          ],
+          [
+            248,
+            481
+          ],
+          [
+            535,
+            596
+          ],
+          [
+            533,
+            620
+          ],
+          [
+            487,
+            604
+          ],
+          [
+            194,
+            492
+          ]
+        ],
+        "motif": "Deux fûts au centre, bords accolés vers le noir et empennages superposés à gauche. Identités 4 et 5 indécidables."
+      }
+    ],
+    "identites": [
+      {
+        "instance": "wc71488242:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Fût rayé isolé au-dessus du groupe, après l’empennage vert."
+      },
+      {
+        "instance": "wc71488242:2",
+        "indice": 2,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tige rayée supérieure, issue des ailettes orange et dont le bout se sépare au-dessus du noir."
+      },
+      {
+        "instance": "wc71488242:3",
+        "indice": 3,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Partie sombre, entre les empennages du groupe gauche et la jonction sous la tige rayée. Attribution conservée là où les deux contours sont lisibles."
+      },
+      {
+        "instance": "wc71488242:4",
+        "indice": 4,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Deux tiges voisines devant le centre noir. Les contours se touchent et les deux identités R17 ne sont pas séparables sur tout le trajet."
+      },
+      {
+        "instance": "wc71488242:5",
+        "indice": 5,
+        "champs": [],
+        "entree_lue": "inconnue_ou_ambigue",
+        "lecture_du_fut": "Deux tiges voisines devant le centre noir. Le départ sous les ailettes et le bord commun ne permettent pas une attribution individuelle certaine."
+      },
+      {
+        "instance": "wc71488242:6",
+        "indice": 6,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tige sombre à ailettes jaune clair vers le bleu. Le reflet longitudinal appartient au fût."
+      },
+      {
+        "instance": "wc71488242:7",
+        "indice": 7,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tige sombre de la première flèche sous le groupe central, descendant vers le bleu. La pente visible s’écarte du trait ancien près des ailettes."
+      },
+      {
+        "instance": "wc71488242:8",
+        "indice": 8,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tube rayé de la seconde flèche sous le groupe, entre ailettes jaunes et bord bleu."
+      },
+      {
+        "instance": "wc71488242:9",
+        "indice": 9,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tube noir de la flèche à ailettes rouges et blanches, jusqu’à la partie grise du support."
+      },
+      {
+        "instance": "wc71488242:10",
+        "indice": 10,
+        "champs": [
+          "masque",
+          "axe"
+        ],
+        "entree_lue": "visible_position_incertaine",
+        "lecture_du_fut": "Fût violet isolé au-dessus du décor ondulé. Le repère historique de contact est sur le motif clair voisin."
+      },
+      {
+        "instance": "wc71488242:11",
+        "indice": 11,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tube rayé isolé dans le bas du support, après l’empennage bleu foncé."
+      }
+    ],
+    "sha256_image": "ae957c45cae309d31cfee7592b0e1fdb1adfaeaeb660ded6f17fe00c1d1ac8be",
+    "sha256_annotation": "86e94a2e24cb1a7360a9b8687fb9f7e642cc1ab5062e4e62db2636e78018dfac",
+    "sha256_masque": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e"
+  },
+  "wc11001401": {
+    "provenance": "4028mdk09",
+    "supports": [
+      "chevalet de paille / Bade-Wurtemberg"
+    ],
+    "champ_entier_xyxy": [
+      0,
+      0,
+      1056,
+      1408
+    ],
+    "lecture_visuelle": "Butte ronde, chevalet, herbe et rubalise de droite. Cinq fûts à ailettes colorées viennent de gauche, un en haut et quatre groupés en bas. Les piquets à rubalise sont visibles à droite du chevalet.",
+    "physiques_documentees": 5,
+    "admissible": true,
+    "actives": 5,
+    "completes": 5,
+    "capacite_requetes": 12,
+    "capacite_suffisante": true,
+    "documentaires_sans_cible": [],
+    "presences_hors_inventaire": "aucune autre présence observable relevée dans le champ",
+    "drapeau_historique": true,
+    "exclusions": [],
+    "identites": [
+      {
+        "instance": "wc11001401:1",
+        "indice": 1,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Après les ailettes orange isolées du haut, corps noir devant la butte puis la feuille."
+      },
+      {
+        "instance": "wc11001401:2",
+        "indice": 2,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Flèche supérieure du groupe de quatre sous la première. Les deux bords sont lisibles après l’empennage."
+      },
+      {
+        "instance": "wc11001401:3",
+        "indice": 3,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Tube juste sous le précédent, jusqu’à sa propre jonction dans le jaune."
+      },
+      {
+        "instance": "wc11001401:4",
+        "indice": 4,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Corps sombre à ailettes orange sous la paire centrale. Le reflet clair reste dans le contour."
+      },
+      {
+        "instance": "wc11001401:5",
+        "indice": 5,
+        "champs": [
+          "masque",
+          "axe",
+          "entree"
+        ],
+        "entree_lue": "visible",
+        "lecture_du_fut": "Fût inférieur à empennage bicolore, jusqu’à la jonction sur l’anneau sombre."
+      }
+    ],
+    "sha256_image": "319b3495df9b3650b502db26cc41a6c00cdadf2fd72bc21c31d2ce06fcd0ed4c",
+    "sha256_annotation": "154c0bae107606776a2680ee1c794d0ccb84ea0097496b83eca6f9b6e50cd082",
+    "sha256_masque": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32"
+  }
+}

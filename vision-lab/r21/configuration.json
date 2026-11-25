@@ -1,0 +1,339 @@
+{
+  "base_R20": "17eac118306a1c37e44343fe06c47f7d90888e8a",
+  "preuves_R20": "46ae03b871bf6d1579dff96de4d32f7db64d959b",
+  "bras": [
+    "temoin",
+    "candidat"
+  ],
+  "graines": [
+    9301,
+    9302,
+    9303
+  ],
+  "pas": [
+    96,
+    768
+  ],
+  "decision_pas": 768,
+  "initial_R9": {
+    "fichier": "vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt",
+    "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1"
+  },
+  "etats_initiaux_par_graine": {
+    "9301": "b3e26ad4d2b1741ff876e0d58b1957e7f6c71bcab8b87c4c59e9cdcc5a7c7601",
+    "9302": "bfe6ad212266fcf8fcf0d1433acf2ea06740b5ac755dddd7fe821eb96e4122a0",
+    "9303": "69e238fdfa469f538bbb55f08bb8b7bb2309e1dfd871e53d0fb15b572d079ffc"
+  },
+  "poids_temoin_historiques": {
+    "9301": {
+      "fichier": "vision-lab-r19/vision-lab/artifacts/r19/pilote/9301/final.pt",
+      "sha256": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "seuil_R19": 0.3804555184458067
+    },
+    "9302": {
+      "fichier": "vision-lab-r19/vision-lab/artifacts/r19/pilote/9302/final.pt",
+      "sha256": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "seuil_R19": 2.0
+    },
+    "9303": {
+      "fichier": "vision-lab-r19/vision-lab/artifacts/r19/pilote/9303/final.pt",
+      "sha256": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "seuil_R19": 0.8823924768829947
+    }
+  },
+  "admises": [
+    "13-01",
+    "70-01",
+    "7245527662",
+    "5115614018",
+    "24614689941",
+    "4169106197",
+    "wc11001401"
+  ],
+  "partielles": [
+    "18105652008",
+    "wc71488242"
+  ],
+  "multifleches_admises": [
+    "7245527662",
+    "5115614018",
+    "24614689941",
+    "wc11001401"
+  ],
+  "portes_franchies": true,
+  "photos": [
+    {
+      "photo": "13-01",
+      "partition": "train",
+      "provenance": "Crigges",
+      "role": "compatibilite_Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "sha256_reference": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "sha256_BGR_travail": "0da198c6feeac093bc6e76a1eeb9a4328a53f0150c7e6631f22aeec05e61d831",
+      "sha256_source": "ce9c9e6e4c86f2ccb21c8c522ce2770e4bd9a1fdbae493db3504583826c5fea6",
+      "sha256_annotation": "236a683959d10137c92a1c48845d4388cc4af12cd1373b1a046d8216952c02f9",
+      "sha256_masque": "bf61494f45ca6bf1e84475865c3cf5e6753b1d86d8250fc8b0793887aebd4d06"
+    },
+    {
+      "photo": "70-01",
+      "partition": "train",
+      "provenance": "Crigges",
+      "role": "compatibilite_Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "sha256_reference": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "sha256_BGR_travail": "46fa788c8a29f52e5c7587f6ac1affa23be863ea78e46a04ba6f2ca7b38f6c5d",
+      "sha256_source": "6b1c83b854db8bc399d1a0d79eb068b53182e6c321860fc512ab220ee6c8e239",
+      "sha256_annotation": "0b4259be7771642e4363f6a011bda6c6bc642d991ed2fda54acad9e9c37a4a27",
+      "sha256_masque": "d8f25fc48ccaf2a1c9cddf2e6eca5992122b0acaa5f6c8a03a1962eab88bdf1f"
+    },
+    {
+      "photo": "7245527662",
+      "partition": "train",
+      "provenance": "jrladia",
+      "role": "silhouettes_train",
+      "supports": [
+        "winnipeg"
+      ],
+      "conditions": [
+        "worn",
+        "multiple"
+      ],
+      "dimensions_travail": [
+        1024,
+        677
+      ],
+      "fichier_reference": "vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "sha256_reference": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "sha256_BGR_travail": "49e89bafee15301e4a331f71acfc2322268a854d6d0b409e5e7c12b2eda4c66a",
+      "sha256_source": "6980ee05e701f0ad3cc125dc1a9a9e6956c96d74cbf6d59df5418a13c915a8a5",
+      "sha256_annotation": "7a4003f7d2d21eb3ebfb3981222fe84daa90980a9fe1d41fd990fd7241dff9f9",
+      "sha256_masque": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c"
+    },
+    {
+      "photo": "5115614018",
+      "partition": "train",
+      "provenance": "Danielle Walquist Lynch",
+      "role": "silhouettes_train",
+      "supports": [
+        "lynch"
+      ],
+      "conditions": [
+        "worn",
+        "grouped"
+      ],
+      "dimensions_travail": [
+        1024,
+        683
+      ],
+      "fichier_reference": "vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "sha256_reference": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "sha256_BGR_travail": "a489480ab2145c01758f4387e2b9cbe23bd2b1dd21207b08dba235dd49f6a7f0",
+      "sha256_source": "60b56e339834a10035447e39346e986aaa47ac1ebf93f982962288c060bb0546",
+      "sha256_annotation": "30cef19c24300b34e8406299049f6f0bb24c0cfc86f40add7f14615be6bbf5f2",
+      "sha256_masque": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4"
+    },
+    {
+      "photo": "18105652008",
+      "partition": "train",
+      "provenance": "zigazou76",
+      "role": "silhouettes_train",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "occlusion"
+      ],
+      "dimensions_travail": [
+        1024,
+        683
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "sha256_reference": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "sha256_BGR_travail": "b43b8156af85d098b971c13f85ebc8c880e202a797e60baadb5d3b29657b38ab",
+      "sha256_source": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "sha256_annotation": "77895526f142ac39d377200606319e41b1c92c2fadd2c834b9a4339e0e117f71",
+      "sha256_masque": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d"
+    },
+    {
+      "photo": "24614689941",
+      "partition": "train",
+      "provenance": "renatomitra",
+      "role": "silhouettes_train",
+      "supports": [
+        "24614689941-1"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1024,
+        1024
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "sha256_reference": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "sha256_BGR_travail": "1400a1bb4aa3dea1b2c02008658423e615ecfc7933c16cb017503055a97b2a44",
+      "sha256_source": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "sha256_annotation": "aee7428ccae33a0ffdb2912821f16344d68f6faf3fa2fe9b924e1ae28691166b",
+      "sha256_masque": "e05a381f237277c0b601c4f18fc2efa91fb5ee3c9002bf3df8cdc8e1e4332d59"
+    },
+    {
+      "photo": "4169106197",
+      "partition": "train",
+      "provenance": "cristina.sanvito",
+      "role": "silhouettes_train",
+      "supports": [
+        "4169106197-1"
+      ],
+      "conditions": [
+        "single"
+      ],
+      "dimensions_travail": [
+        640,
+        480
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "sha256_reference": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "sha256_BGR_travail": "b6bc999370c759bcd7221598fcc7ebe506c855ee25f719d47cc8a3af74d0d25e",
+      "sha256_source": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "sha256_annotation": "f273b555eec39b73bf6f86ff599b54b6e042a8e0bfa47e87f0d7a60fcd055c2d",
+      "sha256_masque": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8"
+    },
+    {
+      "photo": "wc71488242",
+      "partition": "train",
+      "provenance": "Bernard Gagnon",
+      "role": "silhouettes_train",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "dimensions_travail": [
+        1280,
+        1280
+      ],
+      "fichier_reference": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "sha256_reference": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "sha256_BGR_travail": "ae957c45cae309d31cfee7592b0e1fdb1adfaeaeb660ded6f17fe00c1d1ac8be",
+      "sha256_source": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "sha256_annotation": "86e94a2e24cb1a7360a9b8687fb9f7e642cc1ab5062e4e62db2636e78018dfac",
+      "sha256_masque": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e"
+    },
+    {
+      "photo": "wc11001401",
+      "partition": "train",
+      "provenance": "4028mdk09",
+      "role": "silhouettes_train",
+      "supports": [
+        "chevalet de paille / Bade-Wurtemberg"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "dimensions_travail": [
+        1056,
+        1408
+      ],
+      "fichier_reference": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "sha256_reference": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "sha256_BGR_travail": "319b3495df9b3650b502db26cc41a6c00cdadf2fd72bc21c31d2ce06fcd0ed4c",
+      "sha256_source": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "sha256_annotation": "154c0bae107606776a2680ee1c794d0ccb84ea0097496b83eca6f9b6e50cd082",
+      "sha256_masque": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32"
+    }
+  ],
+  "taille_lot": 1,
+  "cycles": 96,
+  "expositions": {
+    "7245527662": 96,
+    "4169106197": 96,
+    "wc71488242": 96,
+    "5115614018": 96,
+    "18105652008": 96,
+    "wc11001401": 96,
+    "24614689941": 96,
+    "13-01": 48,
+    "70-01": 48
+  },
+  "seuil_presence": 0.5,
+  "requêtes": 12,
+  "parametres": {
+    "total": 205212,
+    "entrainables": 13828
+  },
+  "architectures_pertes": "r19/configuration.json",
+  "poids_pertes": {
+    "masque": 1,
+    "axe": 1,
+    "entree": 1,
+    "presence": 0.25
+  },
+  "optimiseur": {
+    "nom": "AdamW",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "foreach": false
+  },
+  "ecretage": 5,
+  "torch_threads": 4,
+  "interop": 1,
+  "opencv_threads": 1,
+  "blas_threads": 1,
+  "empreintes": {
+    "r21/inventaires.json": "e03ef229f539aa8cb73bd34567e061646bcdbcc331922c66e42002cd83d24edb",
+    "r21/tirages.json": "2e5dd5afd18d110556dba4c110153900c313f7ba3b6fc18949fb593ea6db0602",
+    "r18/validites.json": "0696d06b15cb444813c02758eab7c873167cb2f32d46a3a93b03931e0cd0727d",
+    "r19/configuration.json": "c69ada4c0367286bb452be059005613446c24a4567810bfc5b6bc01715445767",
+    "r19/tirages.json": "9010c53aa5901cecbfbff775348ee799a70e2046c17c9f90ccec7706a5beb0ae",
+    "r20/plafonds.json": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f",
+    "r19/affecter.py": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f",
+    "r19/decoder.py": "8cf38bf46f20c1c49382cf3bf053a498ce759778664feac6bb6646b8a3129c9c",
+    "r19/donnees.py": "5b8b51fb2df46128ff5601cc713cf2cb72af962efaf52750bb5b7b479faf62ac",
+    "r19/mesures.py": "7dc9fe9a8e31f4b6325d94d638b1acc8f7dab70fddb41b969a374fedd6fdc260",
+    "r19/modele.py": "cd830c3ba13a8ee5b0de249362e9db6e198a683b30e3d5abadddc1d0f456dbb5",
+    "r19/pilote.py": "1cfe54ef0cfdd0353afe0c0799caf119d4b8f953dc5d6675507aebc61953384d",
+    "r19/supervision.py": "51ad9fa63711b50a2e142cb7cfed8a4c3caebfdbb50fb25e5a7ae6e3f9605d0a",
+    "r21/inventorier.py": "da2c54df6f0aa14400f23a8268b93733e2409059716bd4e64dcf759aacf9febd",
+    "r21/regle.py": "c4e44d745606da6001fdb59c83383c8e4379b5bc774394e04bb1f50d98802eb3",
+    "r21/plan.py": "0417bf8f8d754aeb8df6b95798d51f6907cf94595518dcdb7cf9302c996fcbea",
+    "r21/mesures.py": "febeaa6aa1c93e15aa530ee91805b1850a3c70c6b10cb1820595cb5006894fd6",
+    "r21/executer.py": "3d54e7add67c0edca8e33ba76507a74b644c2cc4a4d6306c951d50b9faaa66ab"
+  }
+}

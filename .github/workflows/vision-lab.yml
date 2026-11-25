@@ -103,3 +103,12 @@ jobs:
           if result.testsRun != 1 or result.skipped or not result.wasSuccessful():
               raise SystemExit(1)
           PYTEST
+      - name: Required R21 presence and partial supervision tests
+        run: |
+          python - <<'PYTEST'
+          import unittest
+          from test_r21_cpu import PresenceR21
+          result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(PresenceR21))
+          if result.testsRun != 4 or result.skipped or not result.wasSuccessful():
+              raise SystemExit(1)
+          PYTEST

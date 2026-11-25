@@ -1,0 +1,43 @@
+# R21 · Présence des requêtes sans instance supplémentaire
+
+**Question.** Une cible de présence négative pour les requêtes non affectées sur les vues dont toutes les flèches sont représentées réduit-elle les sorties supplémentaires tout en conservant les instances correctement apprises ? Le contrôle porte exclusivement sur les neuf photos train de R18. Les critères R20 et le pilote R19 clos fournissent les références. [Preuves R20](https://github.com/LounaMaili/LMarchery/blob/46ae03b871bf6d1579dff96de4d32f7db64d959b/vision-lab/r20.md) · [Tête R20](https://github.com/LounaMaili/LMarchery/commit/17eac118306a1c37e44343fe06c47f7d90888e8a) · [Configuration complète](configuration.json)
+
+## Porte de données et intervention
+
+La première phase a vérifié la photo entière, la continuité des corps, les présences aux bords et les identités R18, y compris celles sans champ admis. Sept photos de six provenances couvrent toutes les flèches observables. Les quatre scènes multiflèches proviennent de jrladia, Danielle Walquist Lynch, renatomitra et 4028mdk09. Les 20 identités actives comprennent quatre fûts à entrée inconnue. Les deux autres photos, de zigazou76 et Bernard Gagnon, ont 11 cibles actives, dont 10 complètes, et 11 identités documentées sans cible. Toutes sont occupées. Le train a huit provenances et neuf supports. Les images et référentiels sont ceux de R18 et R19, sans nouvelle annotation. [Lecture assistée](inventaires.md) · [Registre figé des vues](inventaires.json) · [Validités R18](../r18/validites.json)
+
+- **Témoin.** Exécuter les quatre pertes R19 et l’affectation hongroise d’origine. La présence est positive pour chaque requête affectée. Une sortie sans cible reçoit une présence négative seulement si son masque non vide et son entrée sont entièrement sur le fond vérifié selon R19.
+- **Candidat.** Sur les sept vues certifiées, garder les mêmes requêtes affectées pour une sortie donnée et superviser toutes les autres avec une présence négative. Le statut décrit l’absence d’une instance *supplémentaire* dans l’inventaire. La moyenne des présences positives et la moyenne des négatives sont pondérées également lorsque les deux existent, comme dans R19. Sur les deux vues incomplètes, appeler la règle R19 d’origine. Les termes de masque, d’axe et d’entrée gardent leurs cibles et leurs pixels admis.
+- À chaque présentation, recalculer le coût et l’affectation à partir des champs courants, avec une possibilité de permutation des requêtes. Conserver les listes exactes de positifs et de négatifs par mise à jour. La lecture des numéros q dans les archives R20 sert au diagnostic préalable. [Règle différentiable](regle.py) · [Pertes R19](../r19/supervision.py)
+
+## Comparaison unique et parité obligatoire
+
+Chaque bras part du tronc initial R9 ordinary-9301 de SHA-256 `14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1`. Les graines 9301, 9302 et 9303 définissent chacune une initialisation de tête, identique entre les deux bras et vérifiée avant le premier pas. Les empreintes canoniques portent sur le nom, le type, la forme et les octets de chaque paramètre et tampon du réseau. Conserver les douze requêtes, le tronc et les BatchNorm gelés, le grand côté 512, le lot d’une photo, le prétraitement et le décodage R19. Les poids masque, axe et entrée valent 1, celui de la présence 0,25. AdamW à 0,001, β (0,9 et 0,999), ε 10⁻⁸, décroissance 0,01, norme écrêtée à 5. [Modèle](../r19/modele.py) · [Plans des trois graines](tirages.json) · [Empreintes des initialisations et du code](configuration.json)
+
+Exécuter les trois témoins dans l’ordre des graines puis les trois candidats, séquentiellement. Pour chaque graine, permuter les huit provenances à chacun des 96 cycles avec le même générateur NumPy que R19, poursuivi au-delà du douzième cycle. Alterner les vues Crigges en commençant par 13-01. Chaque ajustement effectue **768 mises à jour**, 48 présentations de chaque vue Crigges et 96 de chacune des sept autres. Le préfixe de 96 pas doit être exactement le tirage R19 de la graine. Le modèle du témoin à ce pas doit aussi reproduire **tous** les paramètres et tampons du poids R19 correspondant bit à bit, indépendamment du conteneur .pt. Une divergence interrompt la comparaison pour explication. Les variables d’évaluation ne modifient ni l’état du modèle ni le générateur. CPU à quatre threads Torch, un interop, un OpenCV, un BLAS et un seul processus lourd. [Exécution](executer.py) · [Génération du plan et empreinte tensorielle](plan.py)
+
+Les deux états, 96 et 768, sont conservés avec l’optimiseur et lus sur les neuf photos train. Les six ajustements totalisent 4 608 mises à jour et 108 lectures train d’évaluation. **L’état 768 seul décide**. Les 96 pas servent à établir la parité et à mesurer l’effet de l’exposition sous la règle historique. Aucun allongement, tri de graine, nouveau seuil ou nouvelle lecture du développement ou du test réservé.
+
+## Mesure de présence au seuil 0,5
+
+L’unité de prédiction est une requête d’une photo, l’unité de référence une flèche physique avec au moins une tâche active. Émettre toute requête dont la probabilité de présence (sigmoïde du logit de présence seul) est ≥ 0,5, ex æquo inclus. Une paire requête–flèche est admissible seulement si la **même** requête valide chaque champ disponible pour cette flèche.
+
+- Masque admis, Dice sur les pixels évaluables ≥ 90 % du plafond individuel de représentation R20, avec le test entier R20.
+- Axe admis, au moins 11 des 21 sondes R19 sur les seuls tronçons admis, à 6 px et 20° au plus.
+- Entrée admise, erreur euclidienne ≤ 10 px dans le repère R19 de grand côté 704. Une entrée inconnue ne participe ni au critère ni au coût.
+
+Maximiser la cardinalité un à un parmi les sorties émises. Pour départager les optima, minimiser la somme des coûts moyens sur les champs admis. Les coûts sont 1 moins la fraction de plafond Dice bornée à 1, 1 moins la fraction de sondes réussies, et la distance d’entrée divisée par 10 bornée à 1. Les égalités suivent l’ordre des références R18 et des requêtes R19. Publier les arêtes, le couple retenu et les identités gagnées, perdues ou préservées. [Mesure et règle de décision exécutables](mesures.py) · [Plafonds individuels R20](../r20/plafonds.json)
+
+Compter séparément les instances représentées (nombre de paires), manquées (références actives moins paires) et les sorties supplémentaires (requêtes émises moins paires). Pour les vues certifiées, le dénominateur est **20 identités sur 7 photos**, au plus 84 sorties. Sur les 2 vues partielles, documenter les sorties sans appariement aux 11 références actives et les désigner comme telles. Leur nombre peut inclure des flèches documentaires exclues. Les triplets R20 sur le train entier ont **26 références complètes**. Leur appariement utilise les douze requêtes *avant tout seuil* et la règle R20 originale, avec départage par la distance d’entrée.
+
+## Décision préenregistrée
+
+Pour qu’une graine confirme l’hypothèse au pas 768, le candidat doit satisfaire **toutes** ces conditions par rapport au témoin apparié.
+
+1. Réduire strictement le nombre de sorties supplémentaires à présence ≥ 0,5 sur les sept vues certifiées.
+2. Conserver **chaque identité** correctement représentée du témoin sur ces sept vues et représenter au moins une identité. Un gain sur une autre flèche ne compense pas une identité perdue.
+3. Conserver **chaque identité** satisfaisant le triplet R20 du témoin avant seuil sur les neuf photos train.
+
+Conclure à un effet confirmé dans cette expérience si au moins deux des trois graines satisfont la règle. Publier également la troisième. Distinguer un meilleur filtrage des présences, un gain de triplets appris et une variation des sorties sur les vues partielles. Les neuf vues occupées n’offrent aucun dénominateur pour les déclenchements sur témoins vides. Les contacts avant seuil et aux seuils de score final hérités 0,3804555184458067, 2 et 0,8823924768829947 restent descriptifs. Chaque résultat inclut masques/axes indépendants, coordonnées répétées, fusions et dédoublements selon R20, scores de présence et finaux, erreurs de localisation et statuts des propositions non appariées. [Contrôles du périmètre, du seuil et de la décision](../test_r21.py) · [Contrôles des pertes et des affectations](../test_r21_cpu.py)
+
+Le bilan distinguera le témoin 96 → 768 et le contraste candidat − témoin à 768, pour les domaines certifié et partiel et pour chaque graine. Le résultat mesure l’apprentissage sur ce train. Le NO-GO Android reste en vigueur, le test reste fermé et les contrats Desktop D3 sont préservés. Le laboratoire s’arrête au bilan et à une recommandation.
