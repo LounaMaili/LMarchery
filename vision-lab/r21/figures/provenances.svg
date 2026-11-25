@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1030" height="508" viewBox="0 0 1030 508" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Où les sorties et les identités changent-elles ?</title>
+  <desc>Pas 768, candidat moins témoin. Les chiffres sont présentés séparément pour chaque graine et chaque provenance.</desc>
+  <rect x="0" y="0" width="1030" height="508" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Où les sorties et les identités changent-elles ?</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Pas 768, candidat moins témoin. Les chiffres sont présentés séparément pour chaque graine et chaque provenance.</text>
+  <text x="273" y="110" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">Sorties supplémentaires</text>
+  <text x="288" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9301</text>
+  <text x="352" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9302</text>
+  <text x="416" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9303</text>
+  <text x="512" y="110" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">Instances représentées</text>
+  <text x="527" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9301</text>
+  <text x="591" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9302</text>
+  <text x="655" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9303</text>
+  <text x="763" y="110" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">Triplets avant seuil</text>
+  <text x="778" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9301</text>
+  <text x="842" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9302</text>
+  <text x="906" y="136" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">9303</text>
+  <text x="29" y="175" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Crigges</text>
+  <rect x="260" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-17</text>
+  <rect x="324" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-17</text>
+  <rect x="388" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-17</text>
+  <rect x="499" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="527" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="563" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="591" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="627" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="655" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="750" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="778" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="814" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="842" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="878" y="155" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="906" y="173" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <text x="29" y="211" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">jrladia</text>
+  <rect x="260" y="191" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-6</text>
+  <rect x="324" y="191" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-8</text>
+  <rect x="388" y="191" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-8</text>
+  <rect x="499" y="191" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="191" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="591" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="627" y="191" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="655" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="750" y="191" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="191" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="842" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="878" y="191" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="906" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <text x="29" y="247" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Danielle Walquist Lynch</text>
+  <rect x="260" y="227" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-7</text>
+  <rect x="324" y="227" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-7</text>
+  <rect x="388" y="227" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-8</text>
+  <rect x="499" y="227" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="227" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="591" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="627" y="227" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="655" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="750" y="227" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="227" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="842" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="878" y="227" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="906" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <text x="29" y="283" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">zigazou76</text>
+  <rect x="260" y="263" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-7</text>
+  <rect x="324" y="263" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-4</text>
+  <rect x="388" y="263" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-2</text>
+  <rect x="499" y="263" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="263" width="55" height="27" rx="3" fill="#fae2c6" />
+  <text x="591" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">+1</text>
+  <rect x="627" y="263" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="655" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="750" y="263" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="263" width="55" height="27" rx="3" fill="#fae2c6" />
+  <text x="842" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">+1</text>
+  <rect x="878" y="263" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="906" y="281" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <text x="29" y="319" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">renatomitra</text>
+  <rect x="260" y="299" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-8</text>
+  <rect x="324" y="299" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-10</text>
+  <rect x="388" y="299" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-8</text>
+  <rect x="499" y="299" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="299" width="55" height="27" rx="3" fill="#fae2c6" />
+  <text x="591" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">+1</text>
+  <rect x="627" y="299" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="655" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-1</text>
+  <rect x="750" y="299" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="299" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="842" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="878" y="299" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="906" y="317" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <text x="29" y="355" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">cristina.sanvito</text>
+  <rect x="260" y="335" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-9</text>
+  <rect x="324" y="335" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-9</text>
+  <rect x="388" y="335" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-10</text>
+  <rect x="499" y="335" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="335" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="591" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="627" y="335" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="655" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="750" y="335" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="335" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="842" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="878" y="335" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="906" y="353" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <text x="29" y="391" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Bernard Gagnon</text>
+  <rect x="260" y="371" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-2</text>
+  <rect x="324" y="371" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-5</text>
+  <rect x="388" y="371" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-3</text>
+  <rect x="499" y="371" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="371" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="591" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="627" y="371" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="655" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="750" y="371" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="371" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="842" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="878" y="371" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="906" y="389" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <text x="29" y="427" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">4028mdk09</text>
+  <rect x="260" y="407" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="288" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-7</text>
+  <rect x="324" y="407" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="352" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-7</text>
+  <rect x="388" y="407" width="55" height="27" rx="3" fill="#c3e0dd" />
+  <text x="416" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">-8</text>
+  <rect x="499" y="407" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="527" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="563" y="407" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="591" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="627" y="407" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="655" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="750" y="407" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="778" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="814" y="407" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="842" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <rect x="878" y="407" width="55" height="27" rx="3" fill="#ebeeeb" />
+  <text x="906" y="425" font-size="13" font-weight="bold" text-anchor="middle" fill="#20313b">0</text>
+  <text x="29" y="478" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">Bleu-vert pour une diminution, orange pour une augmentation. Les identités échangées sont détaillées dans la table des gains et pertes.</text>
+</svg>

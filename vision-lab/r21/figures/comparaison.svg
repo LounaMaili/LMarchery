@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="542" viewBox="0 0 990 542" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Effet de la règle au pas 768</title>
+  <desc>Chaque paire compare les mêmes 768 présentations. Les nombres en bout de ligne donnent le témoin puis le candidat.</desc>
+  <rect x="0" y="0" width="990" height="542" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Effet de la règle au pas 768</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Chaque paire compare les mêmes 768 présentations. Les nombres en bout de ligne donnent le témoin puis le candidat.</text>
+  <rect x="31" y="82" width="20" height="8" fill="#15717b" />
+  <text x="57" y="90" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">Témoin</text>
+  <rect x="148" y="82" width="20" height="8" fill="#ac5326" />
+  <text x="174" y="90" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">Candidat</text>
+  <text x="32" y="132" font-size="16" font-weight="bold" text-anchor="start" fill="#20313b">Sorties supplémentaires · 7 vues</text>
+  <text x="32" y="166" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="80" y="157" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="157" width="260.64285714285717" height="6" fill="#15717b" rx="2" />
+  <rect x="80" y="166" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="166" width="89.0" height="6" fill="#ac5326" rx="2" />
+  <text x="360" y="168" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">82 → 28</text>
+  <text x="32" y="205" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="80" y="196" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="196" width="260.64285714285717" height="6" fill="#15717b" rx="2" />
+  <rect x="80" y="205" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="205" width="76.28571428571429" height="6" fill="#ac5326" rx="2" />
+  <text x="360" y="207" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">82 → 24</text>
+  <text x="32" y="244" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="80" y="235" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="235" width="257.4642857142857" height="6" fill="#15717b" rx="2" />
+  <rect x="80" y="244" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="244" width="69.92857142857143" height="6" fill="#ac5326" rx="2" />
+  <text x="360" y="246" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">81 → 22</text>
+  <text x="514" y="132" font-size="16" font-weight="bold" text-anchor="start" fill="#20313b">Instances représentées · 20 admises</text>
+  <text x="514" y="166" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="562" y="157" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="157" width="26.7" height="6" fill="#15717b" rx="2" />
+  <rect x="562" y="166" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="166" width="13.35" height="6" fill="#ac5326" rx="2" />
+  <text x="842" y="168" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">2 → 1</text>
+  <text x="514" y="205" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="562" y="196" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="196" width="26.7" height="6" fill="#15717b" rx="2" />
+  <rect x="562" y="205" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="205" width="26.7" height="6" fill="#ac5326" rx="2" />
+  <text x="842" y="207" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">2 → 2</text>
+  <text x="514" y="244" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="562" y="235" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="235" width="40.05" height="6" fill="#15717b" rx="2" />
+  <rect x="562" y="244" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="244" width="13.35" height="6" fill="#ac5326" rx="2" />
+  <text x="842" y="246" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">3 → 1</text>
+  <text x="32" y="321" font-size="16" font-weight="bold" text-anchor="start" fill="#20313b">Triplets avant seuil · 26 admis</text>
+  <text x="32" y="355" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="80" y="346" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="346" width="20.53846153846154" height="6" fill="#15717b" rx="2" />
+  <rect x="80" y="355" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="355" width="10.26923076923077" height="6" fill="#ac5326" rx="2" />
+  <text x="360" y="357" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">2 → 1</text>
+  <text x="32" y="394" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="80" y="385" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="385" width="20.53846153846154" height="6" fill="#15717b" rx="2" />
+  <rect x="80" y="394" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="394" width="20.53846153846154" height="6" fill="#ac5326" rx="2" />
+  <text x="360" y="396" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">2 → 2</text>
+  <text x="32" y="433" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="80" y="424" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="424" width="30.807692307692307" height="6" fill="#15717b" rx="2" />
+  <rect x="80" y="433" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="80" y="433" width="10.26923076923077" height="6" fill="#ac5326" rx="2" />
+  <text x="360" y="435" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">3 → 1</text>
+  <text x="514" y="321" font-size="16" font-weight="bold" text-anchor="start" fill="#20313b">Sorties sans appariement · 2 vues partielles</text>
+  <text x="514" y="355" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <rect x="562" y="346" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="346" width="267.0" height="6" fill="#15717b" rx="2" />
+  <rect x="562" y="355" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="355" width="166.875" height="6" fill="#ac5326" rx="2" />
+  <text x="842" y="357" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">24 → 15</text>
+  <text x="514" y="394" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <rect x="562" y="385" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="385" width="267.0" height="6" fill="#15717b" rx="2" />
+  <rect x="562" y="394" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="394" width="166.875" height="6" fill="#ac5326" rx="2" />
+  <text x="842" y="396" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">24 → 15</text>
+  <text x="514" y="433" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <rect x="562" y="424" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="424" width="255.875" height="6" fill="#15717b" rx="2" />
+  <rect x="562" y="433" width="267" height="6" fill="#e0e4e2" rx="2" />
+  <rect x="562" y="433" width="200.25" height="6" fill="#ac5326" rx="2" />
+  <text x="842" y="435" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">23 → 18</text>
+  <text x="32" y="505" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">Sur les vues partielles, une sortie non appariée peut correspondre à une flèche documentaire sans cible active.</text>
+</svg>

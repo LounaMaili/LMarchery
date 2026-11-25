@@ -1,0 +1,10 @@
+{
+  "phase": "train",
+  "pas_decision": 768,
+  "graines_conformes": [],
+  "critere_confirme": false,
+  "ajustements": 6,
+  "mises_a_jour": 4608,
+  "nouvelles_inferences_dev": 0,
+  "inferences_test": 0
+}

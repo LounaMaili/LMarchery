@@ -1,0 +1,209 @@
+{
+  "fichiers": [
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Tronc initial commun R9",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Contrôle de parité historique R19 9301",
+      "octets": 897303,
+      "sha256": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9301/final.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Contrôle de parité historique R19 9302",
+      "octets": 897303,
+      "sha256": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9302/final.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Contrôle de parité historique R19 9303",
+      "octets": 897303,
+      "sha256": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9303/final.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9301, pas 96, poids",
+      "octets": 897303,
+      "sha256": "f2713c17925e46fc6bf7f956351e43e0fd39d78d78c672da8b30241a01aba244",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/96/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "temoin, graine 9301, pas 96, optimiseur",
+      "octets": 132981,
+      "sha256": "5d4b7f8180d9f4347c22cb4eed6bdbd7900f0145d8230a162e59359736e41899",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/96/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9301, pas 768, poids",
+      "octets": 897303,
+      "sha256": "dc5d1e70f00fad66c363f4405c1ec4da01b48e2c6b149a78c49f103e190e5f9f",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/768/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "temoin, graine 9301, pas 768, optimiseur",
+      "octets": 132981,
+      "sha256": "05012cced7a122e244aea9e38c07647f7f47af09aeef74688ea131b2274d8922",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9301/768/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9302, pas 96, poids",
+      "octets": 897303,
+      "sha256": "99da446685f15aca2a487418d704778aed725a400d6ddda0fd9748f3144cd32c",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/96/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "temoin, graine 9302, pas 96, optimiseur",
+      "octets": 132981,
+      "sha256": "98556c90e5328da3d06bd339d41fcbb437ff7085752e0c1f99a8f641c5b689d2",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/96/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9302, pas 768, poids",
+      "octets": 897303,
+      "sha256": "3eb56f8b87bdeed91fa36be789bcb56c6181d7fbf4dac1331e188e2b72e6e324",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/768/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "temoin, graine 9302, pas 768, optimiseur",
+      "octets": 132981,
+      "sha256": "ee67d712bac397fe16dbe14013cddb01b5ff274efe0e496d043add019e205751",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9302/768/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9303, pas 96, poids",
+      "octets": 897303,
+      "sha256": "ffb87906d6f314b58b7153ec99e5e08a6ed3c00e050a5fa34792acfb9d1ef16a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/96/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "temoin, graine 9303, pas 96, optimiseur",
+      "octets": 132981,
+      "sha256": "8ce4deb8db3c8c0c343d5b0505b2bd433ca6aa2b88ec3a719bfb49847e8922b2",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/96/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "temoin, graine 9303, pas 768, poids",
+      "octets": 897303,
+      "sha256": "323eb2ddfb231cbd2c59f6831b19843c50ae24a9b57c8ed84b1e1e9d7fe0d8c4",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/768/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "temoin, graine 9303, pas 768, optimiseur",
+      "octets": 132981,
+      "sha256": "582f1197701ce173794c298d27359296a71ecce7c219f623546f8006b3d5cc8b",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/temoin/9303/768/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "candidat, graine 9301, pas 96, poids",
+      "octets": 897303,
+      "sha256": "0154d906a04e9c5f020dd91002271132dfaf76afe8049c3a1cb658708ea723c7",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9301/96/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "candidat, graine 9301, pas 96, optimiseur",
+      "octets": 132981,
+      "sha256": "1ee19eaa09cd66d9a1ec1176a65a4296b59e388911afa743403b3d9598a99197",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9301/96/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "candidat, graine 9301, pas 768, poids",
+      "octets": 897303,
+      "sha256": "29098e20aae59443cd59fe81b6609ad1b077840455aff1595b4ba95c0d7b8437",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9301/768/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "candidat, graine 9301, pas 768, optimiseur",
+      "octets": 132981,
+      "sha256": "6b037e40fb1e1c9150035c532a530a0e19f31e9d7f20092c00f87ed00ff4b59b",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9301/768/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "candidat, graine 9302, pas 96, poids",
+      "octets": 897303,
+      "sha256": "e6fd53a79ef9d4eab00ea44b56e933c20cafecbd35f863544c85a156f4bb8b38",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9302/96/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "candidat, graine 9302, pas 96, optimiseur",
+      "octets": 132981,
+      "sha256": "79f16357e9b562005c79968afa60211ac8ca78131c5d7e888c7378f6cb28b2f1",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9302/96/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "candidat, graine 9302, pas 768, poids",
+      "octets": 897303,
+      "sha256": "a3b26a9fe52aae7bc4ddf35ee93fe77e4b708aabcdb66f91af800b42dfbd1f37",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9302/768/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "candidat, graine 9302, pas 768, optimiseur",
+      "octets": 132981,
+      "sha256": "85cd97d25128825eeeba58fbc66c60a7e799468dbbc7103f43121589a1a5b744",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9302/768/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "candidat, graine 9303, pas 96, poids",
+      "octets": 897303,
+      "sha256": "3fa78adb4e021a75815c0218602495f67025e05916758b08b0e54466590e782a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9303/96/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "candidat, graine 9303, pas 96, optimiseur",
+      "octets": 132981,
+      "sha256": "7d672eb7eed0dae3c7192e217176aa2863f06742b964dbc54c6b8d470d703b2d",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9303/96/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "candidat, graine 9303, pas 768, poids",
+      "octets": 897303,
+      "sha256": "4926349142853c07d2062229263aa7a72ca98cf9c816c33b7ab16693740c783a",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9303/768/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "candidat, graine 9303, pas 768, optimiseur",
+      "octets": 132981,
+      "sha256": "54e8586674980ded9ad4979bece20bcb8efe6ba9e9d2429ab2c0becb2b2c67fc",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/comparaison/candidat/9303/768/optimiseur.pt"
+    },
+    {
+      "nom": "r21-etats-et-sorties.zip",
+      "role": "Six trajectoires, douze états réseau et optimiseur, sorties et mesures de perte",
+      "octets": 20940521,
+      "sha256": "dd3f58d707ec09ea44b2981a7a953004d59b01b8f4c7e2272a4d6ab78a63ab46",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r21/vision-lab/artifacts/r21/r21-etats-et-sorties.zip"
+    }
+  ],
+  "photos": "configuration.json",
+  "corpus": "../r18/inventaire-local.json"
+}
