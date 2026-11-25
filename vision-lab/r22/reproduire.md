@@ -11,7 +11,8 @@ python -m r22.diagnostic "$out_r22/diagnostic"
 python -m r22.mesures "$out_r22"
 python -m r22.presenter "$out_r22"
 diff -r r22/diagnostic "$out_r22/diagnostic"
-diff -r --exclude=README.md r22/mesures "$out_r22/mesures"
+cmp r22/mesures/groupes.json "$out_r22/mesures/groupes.json"
+cmp r22/mesures/contrastes.json "$out_r22/mesures/contrastes.json"
 diff -r r22/identites "$out_r22/identites"
 diff -r --exclude=README.md r22/figures "$out_r22/figures"
 for nom in decision.json pertes-et-expositions.json tableaux.md identites.md transitions.md reculs.md
@@ -20,6 +21,8 @@ do
 done
 python -m unittest -v test_r22 test_r22_archives
 ```
+
+Le test de rejeu compare tous les champs des six rapports bruts. Pour les seules distances euclidiennes d’entrée, il autorise deux unités du dernier bit (ULP) entre noyaux CPU et exige un résultat identique au critère inclusif de 10 px. Tous les autres champs, les valeurs des figures et la décision restent comparés exactement. [Historique de la vérification](corrections.md)
 
 Le diagnostic utilise les JSON de R21. Le rejeu R22 relit les sorties décodées du candidat, dont les PNG uint16 où chaque bit identifie le masque d’une requête. Il reprend les plafonds R20, les cartes de référence R18 et les entrées R21 déjà vérifiées pour les témoins. Le calcul des figures et des tableaux utilise les fichiers de mesures et les identités par état. [Sorties candidates archivées](archives/dice) · [Témoins historiques](../r21/archives/temoin) · [Données numériques des figures](figures/donnees.json)
 
