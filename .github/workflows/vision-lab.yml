@@ -94,3 +94,12 @@ jobs:
           if result.testsRun != 4 or result.skipped or not result.wasSuccessful():
               raise SystemExit(1)
           PYTEST
+      - name: Required R20 loss instrumentation test
+        run: |
+          python - <<'PYTEST'
+          import unittest
+          from test_r20_cpu import CoutsR20
+          result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(CoutsR20))
+          if result.testsRun != 1 or result.skipped or not result.wasSuccessful():
+              raise SystemExit(1)
+          PYTEST

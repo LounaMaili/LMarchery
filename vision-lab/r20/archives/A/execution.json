@@ -1,0 +1,232 @@
+{
+  "lectures": [
+    {
+      "graine": 9301,
+      "photo": "13-01",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 1,
+      "inference_decodage_ecriture_masque_s": 0.18271063000065624,
+      "perte_observee": 2.6121184825897217
+    },
+    {
+      "graine": 9301,
+      "photo": "70-01",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 2,
+      "inference_decodage_ecriture_masque_s": 0.13676458900044963,
+      "perte_observee": 2.4606740474700928
+    },
+    {
+      "graine": 9301,
+      "photo": "7245527662",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 3,
+      "inference_decodage_ecriture_masque_s": 0.09638023500156123,
+      "perte_observee": 3.955893039703369
+    },
+    {
+      "graine": 9301,
+      "photo": "5115614018",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 4,
+      "inference_decodage_ecriture_masque_s": 0.12231297399921459,
+      "perte_observee": 5.780515193939209
+    },
+    {
+      "graine": 9301,
+      "photo": "18105652008",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 5,
+      "inference_decodage_ecriture_masque_s": 0.11115389900078299,
+      "perte_observee": 6.069976806640625
+    },
+    {
+      "graine": 9301,
+      "photo": "24614689941",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 6,
+      "inference_decodage_ecriture_masque_s": 0.12134416899971256,
+      "perte_observee": 2.553508758544922
+    },
+    {
+      "graine": 9301,
+      "photo": "4169106197",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 7,
+      "inference_decodage_ecriture_masque_s": 0.17079945000114094,
+      "perte_observee": 2.239250898361206
+    },
+    {
+      "graine": 9301,
+      "photo": "wc71488242",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 8,
+      "inference_decodage_ecriture_masque_s": 0.12251154300065537,
+      "perte_observee": 7.178769111633301
+    },
+    {
+      "graine": 9301,
+      "photo": "wc11001401",
+      "sha256_checkpoint": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "passage": 9,
+      "inference_decodage_ecriture_masque_s": 0.08039677899978415,
+      "perte_observee": 4.467484951019287
+    },
+    {
+      "graine": 9302,
+      "photo": "13-01",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 10,
+      "inference_decodage_ecriture_masque_s": 0.15364059100102168,
+      "perte_observee": 2.361175060272217
+    },
+    {
+      "graine": 9302,
+      "photo": "70-01",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 11,
+      "inference_decodage_ecriture_masque_s": 0.15654550300132541,
+      "perte_observee": 1.9510505199432373
+    },
+    {
+      "graine": 9302,
+      "photo": "7245527662",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 12,
+      "inference_decodage_ecriture_masque_s": 0.1661239180011762,
+      "perte_observee": 2.1174166202545166
+    },
+    {
+      "graine": 9302,
+      "photo": "5115614018",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 13,
+      "inference_decodage_ecriture_masque_s": 0.2429282470002363,
+      "perte_observee": 4.6683220863342285
+    },
+    {
+      "graine": 9302,
+      "photo": "18105652008",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 14,
+      "inference_decodage_ecriture_masque_s": 0.31080142999962845,
+      "perte_observee": 5.351737976074219
+    },
+    {
+      "graine": 9302,
+      "photo": "24614689941",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 15,
+      "inference_decodage_ecriture_masque_s": 0.1373958060012228,
+      "perte_observee": 3.137610912322998
+    },
+    {
+      "graine": 9302,
+      "photo": "4169106197",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 16,
+      "inference_decodage_ecriture_masque_s": 0.2221243490002962,
+      "perte_observee": 1.8462393283843994
+    },
+    {
+      "graine": 9302,
+      "photo": "wc71488242",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 17,
+      "inference_decodage_ecriture_masque_s": 0.330095696999706,
+      "perte_observee": 6.836904048919678
+    },
+    {
+      "graine": 9302,
+      "photo": "wc11001401",
+      "sha256_checkpoint": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "passage": 18,
+      "inference_decodage_ecriture_masque_s": 0.161934621999535,
+      "perte_observee": 4.752788066864014
+    },
+    {
+      "graine": 9303,
+      "photo": "13-01",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 19,
+      "inference_decodage_ecriture_masque_s": 0.19049477500084322,
+      "perte_observee": 3.2644760608673096
+    },
+    {
+      "graine": 9303,
+      "photo": "70-01",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 20,
+      "inference_decodage_ecriture_masque_s": 0.1816690559990093,
+      "perte_observee": 1.766546368598938
+    },
+    {
+      "graine": 9303,
+      "photo": "7245527662",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 21,
+      "inference_decodage_ecriture_masque_s": 0.0880218740003329,
+      "perte_observee": 3.039449453353882
+    },
+    {
+      "graine": 9303,
+      "photo": "5115614018",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 22,
+      "inference_decodage_ecriture_masque_s": 0.2503082840012212,
+      "perte_observee": 5.546940803527832
+    },
+    {
+      "graine": 9303,
+      "photo": "18105652008",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 23,
+      "inference_decodage_ecriture_masque_s": 0.2914902129996335,
+      "perte_observee": 7.331549644470215
+    },
+    {
+      "graine": 9303,
+      "photo": "24614689941",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 24,
+      "inference_decodage_ecriture_masque_s": 0.13284157199996116,
+      "perte_observee": 3.0478532314300537
+    },
+    {
+      "graine": 9303,
+      "photo": "4169106197",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 25,
+      "inference_decodage_ecriture_masque_s": 0.19410281400087115,
+      "perte_observee": 1.942199468612671
+    },
+    {
+      "graine": 9303,
+      "photo": "wc71488242",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 26,
+      "inference_decodage_ecriture_masque_s": 0.15150492300017504,
+      "perte_observee": 6.3527607917785645
+    },
+    {
+      "graine": 9303,
+      "photo": "wc11001401",
+      "sha256_checkpoint": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "passage": 27,
+      "inference_decodage_ecriture_masque_s": 0.2551159760005248,
+      "perte_observee": 5.041934013366699
+    }
+  ],
+  "mises_a_jour": 0,
+  "duree_murale_s": 5.919059403000574,
+  "cpu_processus_s": 8.762279400999999,
+  "rss_max_Kio": 523512,
+  "threads_torch": 4,
+  "threads_interop": 1,
+  "threads_cv": 1,
+  "torch": "2.14.1+cpu",
+  "numpy": "2.5.4",
+  "opencv": "4.13.0",
+  "python": "3.15.2",
+  "machine": "x86_64"
+}

@@ -1,0 +1,75 @@
+{
+  "fichiers": [
+    {
+      "nom": "ordinary-9301.pt",
+      "role": "Initialisation du tronc R9",
+      "octets": 865807,
+      "sha256": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r9/vision-lab/artifacts/r9/train/ordinary-9301.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Poids final R19 utilisé pour A, graine 9301",
+      "octets": 897303,
+      "sha256": "7378c65802f52e35ec928f99e6f4bbea58177dbdec547d624ba9f9f6877f683e",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9301/final.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Poids final R19 utilisé pour A, graine 9302",
+      "octets": 897303,
+      "sha256": "f2bb86e42d78ea78f9ab895a620707f0ec1cf20ce8e6666013cff360cadf6bba",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9302/final.pt"
+    },
+    {
+      "nom": "final.pt",
+      "role": "Poids final R19 utilisé pour A, graine 9303",
+      "octets": 897303,
+      "sha256": "1b23541343c1f7fcdf85d8659bf32509bcea8ff5b39c818d759dec674f0cc88d",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r19/vision-lab/artifacts/r19/pilote/9303/final.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "État B à 0 mises à jour, réseau",
+      "octets": 897303,
+      "sha256": "0d9f71ad6bda0d9428f1d418def386a5617f16eebb199ff2610dc3c0388b83d7",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r20/vision-lab/artifacts/r20/essai/B/0000/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "État B à 0 mises à jour, AdamW et générateur CPU",
+      "octets": 7038,
+      "sha256": "fa7daba54edc7b5437f5fec5e512938a2feb7f0deca6998fd069af85f6870ed7",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r20/vision-lab/artifacts/r20/essai/B/0000/optimiseur.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "État B à 96 mises à jour, réseau",
+      "octets": 897303,
+      "sha256": "0f060e9acb15bbe802bfa8591731ea88cc90db5d1009159cb56a1be4ee124670",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r20/vision-lab/artifacts/r20/essai/B/0096/poids.pt"
+    },
+    {
+      "nom": "optimiseur.pt",
+      "role": "État B à 96 mises à jour, AdamW et générateur CPU",
+      "octets": 132981,
+      "sha256": "01a350b2f5550f39119d37a300eebd82256edd16eb962c501e50c2556b611756",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r20/vision-lab/artifacts/r20/essai/B/0096/optimiseur.pt"
+    },
+    {
+      "nom": "r20-etats-et-sorties.zip",
+      "role": "Capsule complète des sorties A, de la trajectoire et des états B",
+      "octets": 20042884,
+      "sha256": "783a4bfd7b1fa03e3a2fbd1d1c1125f68ed6a579222d4b2e9b3255ea3ddc9ee4",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r20/vision-lab/artifacts/r20/r20-etats-et-sorties.zip"
+    }
+  ],
+  "photos_train": "configuration.json",
+  "sources_licences": "../r18/sources.json",
+  "conservation_sources": "../r18/inventaire-local.json",
+  "contenu_public": "archives/",
+  "etats_B": [
+    0,
+    96
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "photo": "24614689941",
+  "graine": 9301,
+  "sha256_depart": "14fb7ec245d31274b0481096b7fe878523ae99670bb33236c9201d78ec0dded1",
+  "mises_a_jour": 96,
+  "passages_avant": 97,
+  "controles": [
+    0,
+    96
+  ],
+  "premier_succes": 96,
+  "anomalies_non_finies": 0,
+  "duree_murale_s": 5.852372874000139,
+  "cpu_processus_s": 20.612845451000002,
+  "rss_max_Kio": 512576,
+  "threads_torch": 4,
+  "threads_interop": 1,
+  "threads_cv": 1,
+  "torch": "2.14.1+cpu",
+  "numpy": "2.5.4",
+  "opencv": "4.13.0",
+  "python": "3.15.2",
+  "machine": "x86_64"
+}
