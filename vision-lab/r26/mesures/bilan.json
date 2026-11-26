@@ -1,0 +1,675 @@
+{
+  "etats": {
+    "dice-9301": {
+      "par_provenance": {
+        "Crigges": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "jrladia": {
+          "entrees": 1,
+          "masques": 4,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 6,
+          "identites_dedoublees": 4
+        },
+        "Danielle Walquist Lynch": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 11,
+          "identites_dedoublees": 5
+        },
+        "zigazou76": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 1,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "renatomitra": {
+          "entrees": 2,
+          "masques": 3,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 3
+        },
+        "cristina.sanvito": {
+          "entrees": 1,
+          "masques": 1,
+          "triplet": 1,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "Bernard Gagnon": {
+          "entrees": 8,
+          "masques": 9,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 9
+        },
+        "4028mdk09": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        }
+      },
+      "ensemble": {
+        "entrees": 26,
+        "masques": 31,
+        "triplet": 4,
+        "axe_parfait": 5,
+        "masque_seul": 5,
+        "masques_31": 6,
+        "separes_31": 6,
+        "sorties_fusionnees": 51,
+        "identites_dedoublees": 30
+      }
+    },
+    "dice-9302": {
+      "par_provenance": {
+        "Crigges": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "jrladia": {
+          "entrees": 1,
+          "masques": 4,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 9,
+          "identites_dedoublees": 4
+        },
+        "Danielle Walquist Lynch": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        },
+        "zigazou76": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 1,
+          "identites_dedoublees": 2
+        },
+        "renatomitra": {
+          "entrees": 2,
+          "masques": 3,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 6,
+          "identites_dedoublees": 3
+        },
+        "cristina.sanvito": {
+          "entrees": 1,
+          "masques": 1,
+          "triplet": 1,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "Bernard Gagnon": {
+          "entrees": 8,
+          "masques": 9,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 9
+        },
+        "4028mdk09": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        }
+      },
+      "ensemble": {
+        "entrees": 26,
+        "masques": 31,
+        "triplet": 5,
+        "axe_parfait": 5,
+        "masque_seul": 5,
+        "masques_31": 5,
+        "separes_31": 5,
+        "sorties_fusionnees": 52,
+        "identites_dedoublees": 31
+      }
+    },
+    "dice-9303": {
+      "par_provenance": {
+        "Crigges": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "jrladia": {
+          "entrees": 1,
+          "masques": 4,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 4
+        },
+        "Danielle Walquist Lynch": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 11,
+          "identites_dedoublees": 5
+        },
+        "zigazou76": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 1,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "renatomitra": {
+          "entrees": 2,
+          "masques": 3,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 11,
+          "identites_dedoublees": 2
+        },
+        "cristina.sanvito": {
+          "entrees": 1,
+          "masques": 1,
+          "triplet": 1,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "Bernard Gagnon": {
+          "entrees": 8,
+          "masques": 9,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 9
+        },
+        "4028mdk09": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        }
+      },
+      "ensemble": {
+        "entrees": 26,
+        "masques": 31,
+        "triplet": 4,
+        "axe_parfait": 5,
+        "masque_seul": 5,
+        "masques_31": 6,
+        "separes_31": 6,
+        "sorties_fusionnees": 54,
+        "identites_dedoublees": 30
+      }
+    },
+    "bloc8-9301": {
+      "par_provenance": {
+        "Crigges": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "jrladia": {
+          "entrees": 1,
+          "masques": 4,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 3,
+          "identites_dedoublees": 4
+        },
+        "Danielle Walquist Lynch": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 5
+        },
+        "zigazou76": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 1,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "renatomitra": {
+          "entrees": 2,
+          "masques": 3,
+          "triplet": 0,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 9,
+          "identites_dedoublees": 3
+        },
+        "cristina.sanvito": {
+          "entrees": 1,
+          "masques": 1,
+          "triplet": 1,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "Bernard Gagnon": {
+          "entrees": 8,
+          "masques": 9,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 9
+        },
+        "4028mdk09": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 5
+        }
+      },
+      "ensemble": {
+        "entrees": 26,
+        "masques": 31,
+        "triplet": 4,
+        "axe_parfait": 6,
+        "masque_seul": 6,
+        "masques_31": 8,
+        "separes_31": 8,
+        "sorties_fusionnees": 44,
+        "identites_dedoublees": 31
+      }
+    },
+    "bloc8-9302": {
+      "par_provenance": {
+        "Crigges": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "jrladia": {
+          "entrees": 1,
+          "masques": 4,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 11,
+          "identites_dedoublees": 3
+        },
+        "Danielle Walquist Lynch": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        },
+        "zigazou76": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 2,
+          "identites_dedoublees": 2
+        },
+        "renatomitra": {
+          "entrees": 2,
+          "masques": 3,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 9,
+          "identites_dedoublees": 3
+        },
+        "cristina.sanvito": {
+          "entrees": 1,
+          "masques": 1,
+          "triplet": 0,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "Bernard Gagnon": {
+          "entrees": 8,
+          "masques": 9,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 11,
+          "identites_dedoublees": 9
+        },
+        "4028mdk09": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        }
+      },
+      "ensemble": {
+        "entrees": 26,
+        "masques": 31,
+        "triplet": 4,
+        "axe_parfait": 5,
+        "masque_seul": 5,
+        "masques_31": 6,
+        "separes_31": 6,
+        "sorties_fusionnees": 57,
+        "identites_dedoublees": 30
+      }
+    },
+    "bloc8-9303": {
+      "par_provenance": {
+        "Crigges": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "jrladia": {
+          "entrees": 1,
+          "masques": 4,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 4
+        },
+        "Danielle Walquist Lynch": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 5
+        },
+        "zigazou76": {
+          "entrees": 2,
+          "masques": 2,
+          "triplet": 2,
+          "axe_parfait": 2,
+          "masque_seul": 2,
+          "masques_31": 2,
+          "separes_31": 2,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 2
+        },
+        "renatomitra": {
+          "entrees": 2,
+          "masques": 3,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 10,
+          "identites_dedoublees": 3
+        },
+        "cristina.sanvito": {
+          "entrees": 1,
+          "masques": 1,
+          "triplet": 1,
+          "axe_parfait": 1,
+          "masque_seul": 1,
+          "masques_31": 1,
+          "separes_31": 1,
+          "sorties_fusionnees": 0,
+          "identites_dedoublees": 1
+        },
+        "Bernard Gagnon": {
+          "entrees": 8,
+          "masques": 9,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 12,
+          "identites_dedoublees": 8
+        },
+        "4028mdk09": {
+          "entrees": 5,
+          "masques": 5,
+          "triplet": 0,
+          "axe_parfait": 0,
+          "masque_seul": 0,
+          "masques_31": 0,
+          "separes_31": 0,
+          "sorties_fusionnees": 11,
+          "identites_dedoublees": 5
+        }
+      },
+      "ensemble": {
+        "entrees": 26,
+        "masques": 31,
+        "triplet": 5,
+        "axe_parfait": 5,
+        "masque_seul": 5,
+        "masques_31": 7,
+        "separes_31": 7,
+        "sorties_fusionnees": 55,
+        "identites_dedoublees": 30
+      }
+    }
+  },
+  "cartes_par_etat": {
+    "dice-9301": {
+      "cartes": 48,
+      "entier": 18,
+      "au_moins_99": 34,
+      "au_moins_95": 38,
+      "identique_masque": 25
+    },
+    "dice-9302": {
+      "cartes": 48,
+      "entier": 11,
+      "au_moins_99": 37,
+      "au_moins_95": 43,
+      "identique_masque": 13
+    },
+    "dice-9303": {
+      "cartes": 36,
+      "entier": 4,
+      "au_moins_99": 14,
+      "au_moins_95": 22,
+      "identique_masque": 12
+    },
+    "bloc8-9301": {
+      "cartes": 48,
+      "entier": 21,
+      "au_moins_99": 40,
+      "au_moins_95": 43,
+      "identique_masque": 26
+    },
+    "bloc8-9302": {
+      "cartes": 48,
+      "entier": 6,
+      "au_moins_99": 35,
+      "au_moins_95": 45,
+      "identique_masque": 7
+    },
+    "bloc8-9303": {
+      "cartes": 36,
+      "entier": 3,
+      "au_moins_99": 10,
+      "au_moins_95": 24,
+      "identique_masque": 20
+    }
+  },
+  "cartes_ensemble": {
+    "cartes": 264,
+    "entier": 63,
+    "au_moins_99": 170,
+    "au_moins_95": 215,
+    "identique_masque": 103
+  },
+  "cas_PCA": 8,
+  "cas_PCA_avec_masque": 0
+}
