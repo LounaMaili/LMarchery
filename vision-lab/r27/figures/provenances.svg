@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="857" viewBox="0 0 1020 857" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Masques séparés par provenance</title>
+  <desc>Effectifs appariés. Chaque panneau est gradué jusqu’au nombre de masques évaluables de la provenance.</desc>
+  <rect x="0" y="0" width="1020" height="857" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Masques séparés par provenance</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Effectifs appariés. Chaque panneau est gradué jusqu’au nombre de masques évaluables de la provenance.</text>
+  <line x1="34" y1="85" x2="56" y2="85" stroke="#087e87" stroke-width="3" />
+  <text x="61" y="89" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">9301</text>
+  <line x1="129" y1="85" x2="151" y2="85" stroke="#aa4a0a" stroke-width="3" />
+  <text x="156" y="89" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">9302</text>
+  <line x1="224" y1="85" x2="246" y2="85" stroke="#7052ae" stroke-width="3" />
+  <text x="251" y="89" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">9303</text>
+  <text x="62" y="124" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Crigges · 2 masques</text>
+  <line x1="62" y1="240.0" x2="470" y2="240.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="244.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="62" y1="188.5" x2="470" y2="188.5" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="192.5" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">1</text>
+  <line x1="62" y1="137.0" x2="470" y2="137.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="141.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">2</text>
+  <line x1="62.0" y1="240" x2="62.0" y2="244" stroke="#64777d" />
+  <text x="62.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="113.0" y1="240" x2="113.0" y2="244" stroke="#64777d" />
+  <text x="113.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="198.0" y1="240" x2="198.0" y2="244" stroke="#64777d" />
+  <text x="198.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="334.0" y1="240" x2="334.0" y2="244" stroke="#64777d" />
+  <text x="334.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="470.0" y1="240" x2="470.0" y2="244" stroke="#64777d" />
+  <text x="470.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="62" y1="137" x2="62" y2="240" stroke="#64777d" />
+  <polyline points="62.00,240.00 113.00,240.00 198.00,137.00 334.00,188.50 470.00,137.00" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="62.0" cy="240.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="113.0" cy="240.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="198.0" cy="137.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="334.0" cy="188.5" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="470.0" cy="137.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="62.00,240.00 113.00,137.00 198.00,137.00 334.00,137.00 470.00,137.00" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="62.0" cy="240.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="113.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="198.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="334.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="470.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="62.0" cy="240.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="567" y="124" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">jrladia · 4 masques</text>
+  <line x1="567" y1="240.0" x2="975" y2="240.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="244.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="567" y1="188.5" x2="975" y2="188.5" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="192.5" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">2</text>
+  <line x1="567" y1="137.0" x2="975" y2="137.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="141.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">4</text>
+  <line x1="567.0" y1="240" x2="567.0" y2="244" stroke="#64777d" />
+  <text x="567.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="618.0" y1="240" x2="618.0" y2="244" stroke="#64777d" />
+  <text x="618.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="703.0" y1="240" x2="703.0" y2="244" stroke="#64777d" />
+  <text x="703.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="839.0" y1="240" x2="839.0" y2="244" stroke="#64777d" />
+  <text x="839.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="975.0" y1="240" x2="975.0" y2="244" stroke="#64777d" />
+  <text x="975.0" y="256" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="567" y1="137" x2="567" y2="240" stroke="#64777d" />
+  <polyline points="567.00,240.00 618.00,214.25 703.00,214.25 839.00,162.75 975.00,162.75" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="567.0" cy="240.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="618.0" cy="214.25" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="703.0" cy="214.25" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="839.0" cy="162.75" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="975.0" cy="162.75" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="567.00,240.00 618.00,188.50 703.00,137.00 839.00,137.00 975.00,137.00" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="567.0" cy="240.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="618.0" cy="188.5" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="703.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="839.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="975.0" cy="137.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="567.0" cy="240.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="62" y="298" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Danielle Walquist Lynch · 5 masques</text>
+  <line x1="62" y1="414.0" x2="470" y2="414.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="418.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="62" y1="372.8" x2="470" y2="372.8" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="376.8" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">2</text>
+  <line x1="62" y1="311.0" x2="470" y2="311.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="315.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">5</text>
+  <line x1="62.0" y1="414" x2="62.0" y2="418" stroke="#64777d" />
+  <text x="62.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="113.0" y1="414" x2="113.0" y2="418" stroke="#64777d" />
+  <text x="113.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="198.0" y1="414" x2="198.0" y2="418" stroke="#64777d" />
+  <text x="198.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="334.0" y1="414" x2="334.0" y2="418" stroke="#64777d" />
+  <text x="334.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="470.0" y1="414" x2="470.0" y2="418" stroke="#64777d" />
+  <text x="470.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="62" y1="311" x2="62" y2="414" stroke="#64777d" />
+  <polyline points="62.00,414.00 113.00,372.80 198.00,393.40 334.00,393.40 470.00,393.40" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="62.0" cy="414.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="113.0" cy="372.8" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="198.0" cy="393.4" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="334.0" cy="393.4" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="470.0" cy="393.4" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="62.00,414.00 113.00,393.40 198.00,372.80 334.00,393.40 470.00,352.20" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="62.0" cy="414.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="113.0" cy="393.4" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="198.0" cy="372.8" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="334.0" cy="393.4" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="470.0" cy="352.2" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="62.0" cy="414.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="567" y="298" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">zigazou76 · 2 masques</text>
+  <line x1="567" y1="414.0" x2="975" y2="414.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="418.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="567" y1="362.5" x2="975" y2="362.5" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="366.5" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">1</text>
+  <line x1="567" y1="311.0" x2="975" y2="311.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="315.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">2</text>
+  <line x1="567.0" y1="414" x2="567.0" y2="418" stroke="#64777d" />
+  <text x="567.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="618.0" y1="414" x2="618.0" y2="418" stroke="#64777d" />
+  <text x="618.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="703.0" y1="414" x2="703.0" y2="418" stroke="#64777d" />
+  <text x="703.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="839.0" y1="414" x2="839.0" y2="418" stroke="#64777d" />
+  <text x="839.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="975.0" y1="414" x2="975.0" y2="418" stroke="#64777d" />
+  <text x="975.0" y="430" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="567" y1="311" x2="567" y2="414" stroke="#64777d" />
+  <polyline points="567.00,414.00 618.00,311.00 703.00,311.00 839.00,311.00 975.00,311.00" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="567.0" cy="414.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="618.0" cy="311.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="703.0" cy="311.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="839.0" cy="311.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="975.0" cy="311.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="567.00,414.00 618.00,311.00 703.00,311.00 839.00,311.00 975.00,311.00" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="567.0" cy="414.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="618.0" cy="311.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="703.0" cy="311.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="839.0" cy="311.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="975.0" cy="311.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="567.0" cy="414.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="62" y="472" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">renatomitra · 3 masques</text>
+  <line x1="62" y1="588.0" x2="470" y2="588.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="592.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="62" y1="553.6666666666666" x2="470" y2="553.6666666666666" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="557.6666666666666" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">1</text>
+  <line x1="62" y1="485.0" x2="470" y2="485.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="489.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">3</text>
+  <line x1="62.0" y1="588" x2="62.0" y2="592" stroke="#64777d" />
+  <text x="62.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="113.0" y1="588" x2="113.0" y2="592" stroke="#64777d" />
+  <text x="113.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="198.0" y1="588" x2="198.0" y2="592" stroke="#64777d" />
+  <text x="198.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="334.0" y1="588" x2="334.0" y2="592" stroke="#64777d" />
+  <text x="334.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="470.0" y1="588" x2="470.0" y2="592" stroke="#64777d" />
+  <text x="470.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="62" y1="485" x2="62" y2="588" stroke="#64777d" />
+  <polyline points="62.00,588.00 113.00,485.00 198.00,485.00 334.00,519.33 470.00,485.00" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="62.0" cy="588.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="113.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="198.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="334.0" cy="519.33" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="470.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="62.00,588.00 113.00,485.00 198.00,485.00 334.00,485.00 470.00,485.00" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="62.0" cy="588.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="113.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="198.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="334.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="470.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="62.0" cy="588.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="567" y="472" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">cristina.sanvito · 1 masque</text>
+  <line x1="567" y1="588.0" x2="975" y2="588.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="592.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="567" y1="485.0" x2="975" y2="485.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="489.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">1</text>
+  <line x1="567.0" y1="588" x2="567.0" y2="592" stroke="#64777d" />
+  <text x="567.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="618.0" y1="588" x2="618.0" y2="592" stroke="#64777d" />
+  <text x="618.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="703.0" y1="588" x2="703.0" y2="592" stroke="#64777d" />
+  <text x="703.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="839.0" y1="588" x2="839.0" y2="592" stroke="#64777d" />
+  <text x="839.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="975.0" y1="588" x2="975.0" y2="592" stroke="#64777d" />
+  <text x="975.0" y="604" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="567" y1="485" x2="567" y2="588" stroke="#64777d" />
+  <polyline points="567.00,588.00 618.00,485.00 703.00,485.00 839.00,485.00 975.00,485.00" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="567.0" cy="588.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="618.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="703.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="839.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="975.0" cy="485.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="567.00,588.00 618.00,485.00 703.00,485.00 839.00,485.00 975.00,485.00" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="567.0" cy="588.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="618.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="703.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="839.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="975.0" cy="485.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="567.0" cy="588.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="62" y="646" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">Bernard Gagnon · 9 masques</text>
+  <line x1="62" y1="762.0" x2="470" y2="762.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="766.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="62" y1="716.2222222222222" x2="470" y2="716.2222222222222" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="720.2222222222222" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">4</text>
+  <line x1="62" y1="659.0" x2="470" y2="659.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="57" y="663.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">9</text>
+  <line x1="62.0" y1="762" x2="62.0" y2="766" stroke="#64777d" />
+  <text x="62.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="113.0" y1="762" x2="113.0" y2="766" stroke="#64777d" />
+  <text x="113.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="198.0" y1="762" x2="198.0" y2="766" stroke="#64777d" />
+  <text x="198.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="334.0" y1="762" x2="334.0" y2="766" stroke="#64777d" />
+  <text x="334.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="470.0" y1="762" x2="470.0" y2="766" stroke="#64777d" />
+  <text x="470.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="62" y1="659" x2="62" y2="762" stroke="#64777d" />
+  <polyline points="62.00,762.00 113.00,762.00 198.00,750.56 334.00,762.00 470.00,750.56" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="62.0" cy="762.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="113.0" cy="762.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="198.0" cy="750.56" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="334.0" cy="762.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="470.0" cy="750.56" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="62.00,762.00 113.00,750.56 198.00,762.00 334.00,750.56 470.00,762.00" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="62.0" cy="762.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="113.0" cy="750.56" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="198.0" cy="762.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="334.0" cy="750.56" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="470.0" cy="762.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="62.0" cy="762.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="567" y="646" font-size="15" font-weight="bold" text-anchor="start" fill="#20313b">4028mdk09 · 5 masques</text>
+  <line x1="567" y1="762.0" x2="975" y2="762.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="766.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="567" y1="720.8" x2="975" y2="720.8" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="724.8" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">2</text>
+  <line x1="567" y1="659.0" x2="975" y2="659.0" stroke="#d4dce0" stroke-width="1" />
+  <text x="562" y="663.0" font-size="11" font-weight="normal" text-anchor="end" fill="#20313b">5</text>
+  <line x1="567.0" y1="762" x2="567.0" y2="766" stroke="#64777d" />
+  <text x="567.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="618.0" y1="762" x2="618.0" y2="766" stroke="#64777d" />
+  <text x="618.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">96</text>
+  <line x1="703.0" y1="762" x2="703.0" y2="766" stroke="#64777d" />
+  <text x="703.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">256</text>
+  <line x1="839.0" y1="762" x2="839.0" y2="766" stroke="#64777d" />
+  <text x="839.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <line x1="975.0" y1="762" x2="975.0" y2="766" stroke="#64777d" />
+  <text x="975.0" y="778" font-size="10" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="567" y1="659" x2="567" y2="762" stroke="#64777d" />
+  <polyline points="567.00,762.00 618.00,720.80 703.00,679.60 839.00,741.40 975.00,679.60" fill="none" stroke="#7052ae" stroke-width="2.2" stroke-dasharray="6 4" />
+  <circle cx="567.0" cy="762.0" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="618.0" cy="720.8" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="703.0" cy="679.6" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="839.0" cy="741.4" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <circle cx="975.0" cy="679.6" r="2.8" fill="#7052ae" stroke="#7052ae" stroke-width="1.8" />
+  <polyline points="567.00,762.00 618.00,741.40 703.00,700.20 839.00,700.20 975.00,720.80" fill="none" stroke="#aa4a0a" stroke-width="2.2" />
+  <circle cx="567.0" cy="762.0" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="618.0" cy="741.4" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="703.0" cy="700.2" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="839.0" cy="700.2" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="975.0" cy="720.8" r="2.8" fill="#aa4a0a" stroke="#aa4a0a" stroke-width="1.8" />
+  <circle cx="567.0" cy="762.0" r="4" fill="white" stroke="#087e87" stroke-width="1.8" />
+  <text x="45" y="835" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Les abscisses comptent les pas SGD. Les deux photos Crigges appartiennent à une même provenance.</text>
+</svg>

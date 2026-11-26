@@ -1,0 +1,143 @@
+{
+  "GO_capacite": null,
+  "statut": "non_concluant_technique",
+  "graines": {
+    "9301": {
+      "statut": "incomplet",
+      "controles_manquants": [
+        96,
+        256,
+        512,
+        768
+      ],
+      "conforme": null,
+      "stable": null
+    },
+    "9302": {
+      "perdus": [],
+      "nouveaux_hors_Crigges": [
+        "24614689941:1",
+        "24614689941:2",
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:4",
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:3",
+        "7245527662:4",
+        "wc11001401:1",
+        "wc11001401:2"
+      ],
+      "provenances": [
+        "4028mdk09",
+        "Danielle Walquist Lynch",
+        "jrladia",
+        "renatomitra"
+      ],
+      "delta_separes": 0,
+      "jaccard": 0.7,
+      "delta_dice_median": -0.0028782004817109,
+      "stable": false,
+      "conforme": false,
+      "statut": "complet",
+      "proteges": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01"
+      ],
+      "conserves": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01"
+      ],
+      "gagnes_depuis_512": [
+        "5115614018:2",
+        "5115614018:4",
+        "wc11001401:2"
+      ],
+      "perdus_depuis_512": [
+        "wc11001401:3",
+        "wc11001401:5",
+        "wc71488242:3"
+      ],
+      "fusions_R22": 52,
+      "fusions_R27": 5,
+      "maximum_fusions": 39,
+      "dedoublements_R22": 31,
+      "dedoublements_R27": 18,
+      "maximum_dedoublements": 23
+    },
+    "9303": {
+      "perdus": [],
+      "nouveaux_hors_Crigges": [
+        "24614689941:1",
+        "24614689941:2",
+        "5115614018:1",
+        "7245527662:3",
+        "7245527662:4",
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:4",
+        "wc11001401:5",
+        "wc71488242:3"
+      ],
+      "provenances": [
+        "4028mdk09",
+        "Bernard Gagnon",
+        "Danielle Walquist Lynch",
+        "jrladia",
+        "renatomitra"
+      ],
+      "delta_separes": 6,
+      "jaccard": 0.6470588235294118,
+      "delta_dice_median": 0.0489643665207782,
+      "stable": false,
+      "conforme": false,
+      "statut": "complet",
+      "proteges": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01",
+        "7245527662:1"
+      ],
+      "conserves": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01",
+        "7245527662:1"
+      ],
+      "gagnes_depuis_512": [
+        "24614689941:2",
+        "70-01",
+        "wc11001401:2",
+        "wc11001401:4",
+        "wc11001401:5",
+        "wc71488242:3"
+      ],
+      "perdus_depuis_512": [],
+      "fusions_R22": 54,
+      "fusions_R27": 6,
+      "maximum_fusions": 40,
+      "dedoublements_R22": 30,
+      "dedoublements_R27": 17,
+      "maximum_dedoublements": 22
+    }
+  },
+  "graines_conformes_observees": 0,
+  "maximum_conformes_si_tous_manquants_conformes": 1,
+  "GO_logiquement_possible_avec_les_fins_manquantes": false,
+  "graines_completes": 2,
+  "NO_GO_Android": true
+}

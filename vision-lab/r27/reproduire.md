@@ -39,3 +39,27 @@ data/r27/env/bin/python -m r27.essai
 ```
 
 Pour reproduire la chronologie observée, le premier gel conserve la version initiale. La poursuite sur le dossier authentique interrompu utilise `python -m r27.essai --apres-arret-9301`. Le pilote vérifie le SHA initial, les neuf lectures, les trois pas et l’absence de lancement des graines suivantes. [Incident et correction](incident.md)
+
+### Revue des résultats depuis un checkout GitHub
+
+L’environnement léger du laboratoire (Python 3.15.2, NumPy 2.5.4 et OpenCV 4.13.0) suffit pour relire les NPZ publics et les cartes indexées de référence. Le rejeu utilise les sorties autonomes déjà enregistrées. Les photographies et les checkpoints sont nécessaires seulement pour reproduire le calcul du modèle. Les commandes suivantes réécrivent les mesures dans un répertoire temporaire et contrôlent les fichiers publiés, les figures et les journaux. [Index des lectures](sorties/index.json) · [Test de revue](../test_r27.py)
+
+```bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+out_r27=$(mktemp -d)
+python -m r27.bilan "$out_r27"
+python - "$out_r27" <<'PY'
+from pathlib import Path
+import sys
+from r27.diagnostic import diagnose
+from r27.figurer import figures
+from r27.tableaux import tables
+out = Path(sys.argv[1])
+diagnose(out)
+figures(out/'figures')
+tables(out/'tableaux.md')
+PY
+python -m unittest -v test_r27
+```
+
+Sur le poste qui conserve les capsules, `python -m r27.archiver` relit les vrais journaux, inventorie les checkpoints et transfère les sorties NPZ en conservant leurs octets. Les NPZ identiques partagent une seule copie GitHub et gardent une entrée pour chaque lecture effectivement réalisée. Dans l’environnement CPU 3.9.19, `data/r27/env/bin/python -m r27.relire` recolle les probabilités des sorties archivées et vérifie bit à bit les masques. Il contrôle aussi les tenseurs gelés persistants, les états de momentum et les RNG de chaque checkpoint local. [Inventaire de conservation](inventaire-local.json) · [Relecture native et checkpoints](mesures/relecture-collage.json)

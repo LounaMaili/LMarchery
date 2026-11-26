@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="870" height="902" viewBox="0 0 870 902" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Conservation des identités entre 512 et 768</title>
+  <desc>Un point plein indique un masque séparé. Un contour sombre repère une identité protégée pour la graine.</desc>
+  <rect x="0" y="0" width="870" height="902" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Conservation des identités entre 512 et 768</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Un point plein indique un masque séparé. Un contour sombre repère une identité protégée pour la graine.</text>
+  <text x="30" y="114" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">Provenance</text>
+  <text x="257" y="114" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">Identité R18</text>
+  <text x="511" y="94" font-size="14" font-weight="bold" text-anchor="middle" fill="#20313b">9302 · Jaccard 0,70</text>
+  <text x="480" y="114" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <text x="542" y="114" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <text x="719" y="94" font-size="14" font-weight="bold" text-anchor="middle" fill="#20313b">9303 · Jaccard 0,65</text>
+  <text x="688" y="114" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">512</text>
+  <text x="750" y="114" font-size="13" font-weight="normal" text-anchor="middle" fill="#20313b">768</text>
+  <line x1="30" y1="125" x2="829" y2="125" stroke="#d4dce0" />
+  <text x="30" y="142" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Crigges</text>
+  <text x="257" y="142" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">13-01</text>
+  <rect x="466" y="129" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="480" cy="137.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="129" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="542" cy="137.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="129" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="688" cy="137.5" r="5" fill="#7052ae" />
+  <rect x="736" y="129" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="137.5" r="5" fill="#7052ae" />
+  <line x1="30" y1="148" x2="829" y2="148" stroke="#d4dce0" />
+  <text x="30" y="165" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Crigges</text>
+  <text x="257" y="165" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">70-01</text>
+  <rect x="466" y="152" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="480" cy="160.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="152" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="542" cy="160.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="152" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <rect x="736" y="152" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="160.5" r="5" fill="#7052ae" />
+  <line x1="30" y1="171" x2="829" y2="171" stroke="#d4dce0" />
+  <text x="30" y="188" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">jrladia</text>
+  <text x="257" y="188" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">7245527662:1</text>
+  <rect x="466" y="175" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="183.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="175" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="183.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="175" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="688" cy="183.5" r="5" fill="#7052ae" />
+  <rect x="736" y="175" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="183.5" r="5" fill="#7052ae" />
+  <text x="257" y="211" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">7245527662:2</text>
+  <rect x="466" y="198" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="206.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="198" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="206.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="198" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="198" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="234" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">7245527662:3</text>
+  <rect x="466" y="221" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="229.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="221" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="229.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="221" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="688" cy="229.5" r="5" fill="#7052ae" />
+  <rect x="736" y="221" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="229.5" r="5" fill="#7052ae" />
+  <text x="257" y="257" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">7245527662:4</text>
+  <rect x="466" y="244" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="252.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="244" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="252.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="244" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="688" cy="252.5" r="5" fill="#7052ae" />
+  <rect x="736" y="244" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="252.5" r="5" fill="#7052ae" />
+  <line x1="30" y1="263" x2="829" y2="263" stroke="#d4dce0" />
+  <text x="30" y="280" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Danielle Walquist Lynch</text>
+  <text x="257" y="280" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">5115614018:1</text>
+  <rect x="466" y="267" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="275.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="267" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="275.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="267" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="688" cy="275.5" r="5" fill="#7052ae" />
+  <rect x="736" y="267" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="275.5" r="5" fill="#7052ae" />
+  <text x="257" y="303" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">5115614018:2</text>
+  <rect x="466" y="290" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="290" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="298.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="290" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="290" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="326" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">5115614018:3</text>
+  <rect x="466" y="313" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="313" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="313" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="313" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="349" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">5115614018:4</text>
+  <rect x="466" y="336" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="336" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="344.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="336" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="336" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="372" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">5115614018:5</text>
+  <rect x="466" y="359" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="359" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="359" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="359" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <line x1="30" y1="378" x2="829" y2="378" stroke="#d4dce0" />
+  <text x="30" y="395" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">zigazou76</text>
+  <text x="257" y="395" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">18105652008:1</text>
+  <rect x="466" y="382" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="480" cy="390.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="382" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="542" cy="390.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="382" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="688" cy="390.5" r="5" fill="#7052ae" />
+  <rect x="736" y="382" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="390.5" r="5" fill="#7052ae" />
+  <text x="257" y="418" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">18105652008:2</text>
+  <rect x="466" y="405" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="480" cy="413.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="405" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="542" cy="413.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="405" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="688" cy="413.5" r="5" fill="#7052ae" />
+  <rect x="736" y="405" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="413.5" r="5" fill="#7052ae" />
+  <line x1="30" y1="424" x2="829" y2="424" stroke="#d4dce0" />
+  <text x="30" y="441" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">renatomitra</text>
+  <text x="257" y="441" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">24614689941:1</text>
+  <rect x="466" y="428" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="436.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="428" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="436.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="428" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="688" cy="436.5" r="5" fill="#7052ae" />
+  <rect x="736" y="428" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="436.5" r="5" fill="#7052ae" />
+  <text x="257" y="464" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">24614689941:2</text>
+  <rect x="466" y="451" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="459.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="451" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="459.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="451" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="451" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="459.5" r="5" fill="#7052ae" />
+  <text x="257" y="487" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">24614689941:3</text>
+  <rect x="466" y="474" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="480" cy="482.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="474" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="542" cy="482.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="474" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="688" cy="482.5" r="5" fill="#7052ae" />
+  <rect x="736" y="474" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="482.5" r="5" fill="#7052ae" />
+  <line x1="30" y1="493" x2="829" y2="493" stroke="#d4dce0" />
+  <text x="30" y="510" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">cristina.sanvito</text>
+  <text x="257" y="510" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">4169106197:1</text>
+  <rect x="466" y="497" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="480" cy="505.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="497" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="542" cy="505.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="497" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="688" cy="505.5" r="5" fill="#7052ae" />
+  <rect x="736" y="497" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#344852" />
+  <circle cx="750" cy="505.5" r="5" fill="#7052ae" />
+  <line x1="30" y1="516" x2="829" y2="516" stroke="#d4dce0" />
+  <text x="30" y="533" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Bernard Gagnon</text>
+  <text x="257" y="533" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:1</text>
+  <rect x="466" y="520" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="520" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="520" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="520" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="556" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:2</text>
+  <rect x="466" y="543" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="543" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="543" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="543" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="579" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:3</text>
+  <rect x="466" y="566" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="574.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="566" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="566" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="566" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="574.5" r="5" fill="#7052ae" />
+  <text x="257" y="602" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:6</text>
+  <rect x="466" y="589" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="589" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="589" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="589" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="625" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:7</text>
+  <rect x="466" y="612" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="612" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="612" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="612" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="648" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:8</text>
+  <rect x="466" y="635" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="635" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="635" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="635" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="671" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:9</text>
+  <rect x="466" y="658" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="658" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="658" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="658" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="694" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:10</text>
+  <rect x="466" y="681" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="681" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="681" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="681" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="717" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc71488242:11</text>
+  <rect x="466" y="704" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="704" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="704" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="704" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <line x1="30" y1="723" x2="829" y2="723" stroke="#d4dce0" />
+  <text x="30" y="740" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">4028mdk09</text>
+  <text x="257" y="740" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc11001401:1</text>
+  <rect x="466" y="727" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="735.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="727" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="735.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="727" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="688" cy="735.5" r="5" fill="#7052ae" />
+  <rect x="736" y="727" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="735.5" r="5" fill="#7052ae" />
+  <text x="257" y="763" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc11001401:2</text>
+  <rect x="466" y="750" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="750" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="542" cy="758.5" r="5" fill="#aa4a0a" />
+  <rect x="674" y="750" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="750" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="758.5" r="5" fill="#7052ae" />
+  <text x="257" y="786" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc11001401:3</text>
+  <rect x="466" y="773" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="781.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="773" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="773" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="773" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <text x="257" y="809" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc11001401:4</text>
+  <rect x="466" y="796" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="528" y="796" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="796" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="796" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="804.5" r="5" fill="#7052ae" />
+  <text x="257" y="832" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">wc11001401:5</text>
+  <rect x="466" y="819" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="480" cy="827.5" r="5" fill="#aa4a0a" />
+  <rect x="528" y="819" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="674" y="819" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <rect x="736" y="819" width="28" height="17" rx="3" fill="#f0f2ee" stroke="#e0e4e0" />
+  <circle cx="750" cy="827.5" r="5" fill="#7052ae" />
+  <text x="30" y="875" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Les 31 lignes représentent des identités physiques. La graine 9301 ne dispose pas de ces deux contrôles.</text>
+</svg>

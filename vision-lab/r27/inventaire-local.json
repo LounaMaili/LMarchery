@@ -1,0 +1,1071 @@
+{
+  "repere": "vision-lab/ de la branche R27, sauf les neuf photos depuis build/worktrees",
+  "photos": [
+    {
+      "nom": "13-01.png",
+      "role": "Photo train 13-01",
+      "octets": 1731722,
+      "sha256": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "emplacement": "vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "droits": {
+        "credit": "Crigges",
+        "notice": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "titre": "13/01.png",
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "nom_licence": "CC BY 4.0"
+      }
+    },
+    {
+      "nom": "70-01.png",
+      "role": "Photo train 70-01",
+      "octets": 1791284,
+      "sha256": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "emplacement": "vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "droits": {
+        "credit": "Crigges",
+        "notice": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "titre": "70/01.png",
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "nom_licence": "CC BY 4.0"
+      }
+    },
+    {
+      "nom": "7245527662.png",
+      "role": "Photo train 7245527662",
+      "octets": 780209,
+      "sha256": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "emplacement": "vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "droits": {
+        "credit": "jrladia",
+        "notice": "https://www.flickr.com/photos/34859133@N06/7245527662",
+        "titre": "Heartland Archery | Winnipeg",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "5115614018.png",
+      "role": "Photo train 5115614018",
+      "octets": 1108495,
+      "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "emplacement": "vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "droits": {
+        "credit": "Danielle Walquist Lynch",
+        "notice": "https://www.flickr.com/photos/25195310@N02/5115614018",
+        "titre": "Corey's archery target",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "18105652008.jpg",
+      "role": "Photo train 18105652008",
+      "octets": 426302,
+      "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "droits": {
+        "credit": "zigazou76",
+        "notice": "https://www.flickr.com/photos/38712296@N07/18105652008",
+        "titre": "Cibles pour le tir à l’arc",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "24614689941.jpg",
+      "role": "Photo train 24614689941",
+      "octets": 99973,
+      "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "droits": {
+        "credit": "renatomitra",
+        "notice": "https://www.flickr.com/photos/groovenite/24614689941",
+        "titre": "Heute hatte ich meine erste Lektion im Bogenschiessen. #arrow #archery #target #fokus",
+        "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "nom_licence": "CC BY-SA 2.0"
+      }
+    },
+    {
+      "nom": "4169106197.jpg",
+      "role": "Photo train 4169106197",
+      "octets": 97351,
+      "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "droits": {
+        "credit": "cristina.sanvito",
+        "notice": "https://www.flickr.com/photos/40385177@N07/4169106197",
+        "titre": "centro!",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "wc71488242.jpg",
+      "role": "Photo train wc71488242",
+      "octets": 592714,
+      "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "droits": {
+        "credit": "Bernard Gagnon",
+        "notice": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+        "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+        "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+        "nom_licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "nom": "wc11001401.jpg",
+      "role": "Photo train wc11001401",
+      "octets": 4316454,
+      "sha256": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "emplacement": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "droits": {
+        "credit": "4028mdk09",
+        "notice": "https://commons.wikimedia.org/wiki/File:Archery_shooting_at_a_WA_target_in_Northern_Baden,_Wuerttemberg,_Germany.jpg",
+        "titre": "wc11001401",
+        "licence": "https://creativecommons.org/licenses/by-sa/3.0",
+        "nom_licence": "CC BY-SA 3.0"
+      }
+    }
+  ],
+  "environnement": "environnement.json",
+  "capsules": [
+    {
+      "nom": "pas-000.pt",
+      "role": "Poids, SGD, RNG · 9301 / 0",
+      "fichier": "artifacts/r27/essai/9301/pas-000.pt",
+      "octets": 176217817,
+      "sha256": "ccafb9ec11020f572c606697d5d4caf3ceea1a21e849f941bcb619259b02ab31"
+    },
+    {
+      "nom": "000-13-01.npz",
+      "role": "Lecture autonome · 9301 / 0 / 13-01",
+      "fichier": "artifacts/r27/essai/9301/000-13-01.npz",
+      "octets": 78635,
+      "sha256": "222bd1efd22698c645282bc65b5adcc0b531bf67bb2d7daa441363b10ac3fdf7"
+    },
+    {
+      "nom": "000-70-01.npz",
+      "role": "Lecture autonome · 9301 / 0 / 70-01",
+      "fichier": "artifacts/r27/essai/9301/000-70-01.npz",
+      "octets": 74188,
+      "sha256": "93d75011c7a4b84fcb926cac5680243a381665f8924e7a9ee5e137aac3d6573c"
+    },
+    {
+      "nom": "000-7245527662.npz",
+      "role": "Lecture autonome · 9301 / 0 / 7245527662",
+      "fichier": "artifacts/r27/essai/9301/000-7245527662.npz",
+      "octets": 67644,
+      "sha256": "f5186774326329790481e8d61087dde848c92c433cdd02aa87c054733c0725d9"
+    },
+    {
+      "nom": "000-5115614018.npz",
+      "role": "Lecture autonome · 9301 / 0 / 5115614018",
+      "fichier": "artifacts/r27/essai/9301/000-5115614018.npz",
+      "octets": 68898,
+      "sha256": "95dda12185cabd3f4e0fcf09f6982f54a66626e461656ece9d6347e7c09ab907"
+    },
+    {
+      "nom": "000-18105652008.npz",
+      "role": "Lecture autonome · 9301 / 0 / 18105652008",
+      "fichier": "artifacts/r27/essai/9301/000-18105652008.npz",
+      "octets": 64962,
+      "sha256": "d1b5018a7aec4ec2e0356c3ebb7a9374e0ba6ab78f738ba0bcb4188530608f7d"
+    },
+    {
+      "nom": "000-24614689941.npz",
+      "role": "Lecture autonome · 9301 / 0 / 24614689941",
+      "fichier": "artifacts/r27/essai/9301/000-24614689941.npz",
+      "octets": 73764,
+      "sha256": "ffa2cee1246f1a9712a9cbcd94ceba293262d65a0c457e79faf6d527c0816808"
+    },
+    {
+      "nom": "000-4169106197.npz",
+      "role": "Lecture autonome · 9301 / 0 / 4169106197",
+      "fichier": "artifacts/r27/essai/9301/000-4169106197.npz",
+      "octets": 61680,
+      "sha256": "86af779ff2f8540f9ab25633fc974804f306cc7454d7be75f8e7d4120d99e454"
+    },
+    {
+      "nom": "000-wc71488242.npz",
+      "role": "Lecture autonome · 9301 / 0 / wc71488242",
+      "fichier": "artifacts/r27/essai/9301/000-wc71488242.npz",
+      "octets": 73673,
+      "sha256": "4a80121b0a2d146a759e5d0a1ec17fcefbb6e3f45bb8cb7d1bdd495f38a786b4"
+    },
+    {
+      "nom": "000-wc11001401.npz",
+      "role": "Lecture autonome · 9301 / 0 / wc11001401",
+      "fichier": "artifacts/r27/essai/9301/000-wc11001401.npz",
+      "octets": 72827,
+      "sha256": "5f6a89f4bff9559c9927eea10f21a348c457d86c3b5a3260b71501a8d356ddbf"
+    },
+    {
+      "nom": "pas.jsonl.gz",
+      "role": "Journal complet des mises à jour et indices utilisés · 9301",
+      "fichier": "artifacts/r27/essai/9301/pas.jsonl.gz",
+      "octets": 3914,
+      "sha256": "7e25ebb6ee3a15a2bac5c6f5d6a9626ca1d68c467f23f5bcc53a69a4d8d10dcc"
+    },
+    {
+      "nom": "pas-000.pt",
+      "role": "Poids, SGD, RNG · 9302 / 0",
+      "fichier": "artifacts/r27/essai/9302/pas-000.pt",
+      "octets": 176217817,
+      "sha256": "df5006f534c66c0db9140bf7747eb9b93e5130b4da6ac5139add8321b20c9e3a"
+    },
+    {
+      "nom": "000-13-01.npz",
+      "role": "Lecture autonome · 9302 / 0 / 13-01",
+      "fichier": "artifacts/r27/essai/9302/000-13-01.npz",
+      "octets": 78635,
+      "sha256": "222bd1efd22698c645282bc65b5adcc0b531bf67bb2d7daa441363b10ac3fdf7"
+    },
+    {
+      "nom": "000-70-01.npz",
+      "role": "Lecture autonome · 9302 / 0 / 70-01",
+      "fichier": "artifacts/r27/essai/9302/000-70-01.npz",
+      "octets": 74188,
+      "sha256": "93d75011c7a4b84fcb926cac5680243a381665f8924e7a9ee5e137aac3d6573c"
+    },
+    {
+      "nom": "000-7245527662.npz",
+      "role": "Lecture autonome · 9302 / 0 / 7245527662",
+      "fichier": "artifacts/r27/essai/9302/000-7245527662.npz",
+      "octets": 67644,
+      "sha256": "f5186774326329790481e8d61087dde848c92c433cdd02aa87c054733c0725d9"
+    },
+    {
+      "nom": "000-5115614018.npz",
+      "role": "Lecture autonome · 9302 / 0 / 5115614018",
+      "fichier": "artifacts/r27/essai/9302/000-5115614018.npz",
+      "octets": 68898,
+      "sha256": "95dda12185cabd3f4e0fcf09f6982f54a66626e461656ece9d6347e7c09ab907"
+    },
+    {
+      "nom": "000-18105652008.npz",
+      "role": "Lecture autonome · 9302 / 0 / 18105652008",
+      "fichier": "artifacts/r27/essai/9302/000-18105652008.npz",
+      "octets": 64962,
+      "sha256": "d1b5018a7aec4ec2e0356c3ebb7a9374e0ba6ab78f738ba0bcb4188530608f7d"
+    },
+    {
+      "nom": "000-24614689941.npz",
+      "role": "Lecture autonome · 9302 / 0 / 24614689941",
+      "fichier": "artifacts/r27/essai/9302/000-24614689941.npz",
+      "octets": 73764,
+      "sha256": "ffa2cee1246f1a9712a9cbcd94ceba293262d65a0c457e79faf6d527c0816808"
+    },
+    {
+      "nom": "000-4169106197.npz",
+      "role": "Lecture autonome · 9302 / 0 / 4169106197",
+      "fichier": "artifacts/r27/essai/9302/000-4169106197.npz",
+      "octets": 61680,
+      "sha256": "86af779ff2f8540f9ab25633fc974804f306cc7454d7be75f8e7d4120d99e454"
+    },
+    {
+      "nom": "000-wc71488242.npz",
+      "role": "Lecture autonome · 9302 / 0 / wc71488242",
+      "fichier": "artifacts/r27/essai/9302/000-wc71488242.npz",
+      "octets": 73673,
+      "sha256": "4a80121b0a2d146a759e5d0a1ec17fcefbb6e3f45bb8cb7d1bdd495f38a786b4"
+    },
+    {
+      "nom": "000-wc11001401.npz",
+      "role": "Lecture autonome · 9302 / 0 / wc11001401",
+      "fichier": "artifacts/r27/essai/9302/000-wc11001401.npz",
+      "octets": 72827,
+      "sha256": "5f6a89f4bff9559c9927eea10f21a348c457d86c3b5a3260b71501a8d356ddbf"
+    },
+    {
+      "nom": "pas-096.pt",
+      "role": "Poids, SGD, RNG · 9302 / 96",
+      "fichier": "artifacts/r27/essai/9302/pas-096.pt",
+      "octets": 244700133,
+      "sha256": "27040d64f0e63b7d918e8f901de822e46172f723e7dc32753d40972e6a9eacf6"
+    },
+    {
+      "nom": "096-13-01.npz",
+      "role": "Lecture autonome · 9302 / 96 / 13-01",
+      "fichier": "artifacts/r27/essai/9302/096-13-01.npz",
+      "octets": 59872,
+      "sha256": "ac68ef7058789b8bd4cb01d27a3a264a1a17f3f178145bcf86c6a40b464b771b"
+    },
+    {
+      "nom": "096-70-01.npz",
+      "role": "Lecture autonome · 9302 / 96 / 70-01",
+      "fichier": "artifacts/r27/essai/9302/096-70-01.npz",
+      "octets": 59018,
+      "sha256": "2612e933aef737be6e10a1639f5508337d5da1955053c8afc1b1b23687241cc1"
+    },
+    {
+      "nom": "096-7245527662.npz",
+      "role": "Lecture autonome · 9302 / 96 / 7245527662",
+      "fichier": "artifacts/r27/essai/9302/096-7245527662.npz",
+      "octets": 61601,
+      "sha256": "640e3ba20bcbe133616b88088cad1dda63a0e13c64730ccb1aed062e2a873e95"
+    },
+    {
+      "nom": "096-5115614018.npz",
+      "role": "Lecture autonome · 9302 / 96 / 5115614018",
+      "fichier": "artifacts/r27/essai/9302/096-5115614018.npz",
+      "octets": 55988,
+      "sha256": "e87a1ce15523bbbd3d90fc8c44fd968ba437340b0dfe7b5d36de7b50ec0bf5dc"
+    },
+    {
+      "nom": "096-18105652008.npz",
+      "role": "Lecture autonome · 9302 / 96 / 18105652008",
+      "fichier": "artifacts/r27/essai/9302/096-18105652008.npz",
+      "octets": 57225,
+      "sha256": "5d5ca66e07127888f010b18fe0d45741f4bfeace09ebcbed183bf5b2451dcf76"
+    },
+    {
+      "nom": "096-24614689941.npz",
+      "role": "Lecture autonome · 9302 / 96 / 24614689941",
+      "fichier": "artifacts/r27/essai/9302/096-24614689941.npz",
+      "octets": 57533,
+      "sha256": "8be5f00a9add86378688cfe9b886ed490c95fe840baf34c65c4b0669dc0a1dfe"
+    },
+    {
+      "nom": "096-4169106197.npz",
+      "role": "Lecture autonome · 9302 / 96 / 4169106197",
+      "fichier": "artifacts/r27/essai/9302/096-4169106197.npz",
+      "octets": 55677,
+      "sha256": "df6b6df4ff7d6b285bd11ced07fdadea14ffebe1ae1b955b1bc1520cd3d167cb"
+    },
+    {
+      "nom": "096-wc71488242.npz",
+      "role": "Lecture autonome · 9302 / 96 / wc71488242",
+      "fichier": "artifacts/r27/essai/9302/096-wc71488242.npz",
+      "octets": 61733,
+      "sha256": "416026108ea508302b1b67f6e5c2c088ec278817db0dc792e2a2324736e5f058"
+    },
+    {
+      "nom": "096-wc11001401.npz",
+      "role": "Lecture autonome · 9302 / 96 / wc11001401",
+      "fichier": "artifacts/r27/essai/9302/096-wc11001401.npz",
+      "octets": 59948,
+      "sha256": "bfedc0619801e722b0a547707a3b129121a6ccaca9cbb2dedca3b021ce8a1af7"
+    },
+    {
+      "nom": "pas-256.pt",
+      "role": "Poids, SGD, RNG · 9302 / 256",
+      "fichier": "artifacts/r27/essai/9302/pas-256.pt",
+      "octets": 244700133,
+      "sha256": "652668aec93b185c98cafa0c7614f1b9898524d19d8e61b3c0b9fe86d73464ef"
+    },
+    {
+      "nom": "256-13-01.npz",
+      "role": "Lecture autonome · 9302 / 256 / 13-01",
+      "fichier": "artifacts/r27/essai/9302/256-13-01.npz",
+      "octets": 58835,
+      "sha256": "887603598f150ffcd90c5c2be562cbc7ca8eee8a44900f3d0254fbfad456a656"
+    },
+    {
+      "nom": "256-70-01.npz",
+      "role": "Lecture autonome · 9302 / 256 / 70-01",
+      "fichier": "artifacts/r27/essai/9302/256-70-01.npz",
+      "octets": 58888,
+      "sha256": "85992b0f5b2a5d4778057a42eac445ea857cc406480dbf36842e28b9347303ae"
+    },
+    {
+      "nom": "256-7245527662.npz",
+      "role": "Lecture autonome · 9302 / 256 / 7245527662",
+      "fichier": "artifacts/r27/essai/9302/256-7245527662.npz",
+      "octets": 62289,
+      "sha256": "b0f3c45757b9fb52675290ff24f04276ed4864efd21bc5b9617cb6846f638d0d"
+    },
+    {
+      "nom": "256-5115614018.npz",
+      "role": "Lecture autonome · 9302 / 256 / 5115614018",
+      "fichier": "artifacts/r27/essai/9302/256-5115614018.npz",
+      "octets": 54277,
+      "sha256": "da8e65622995e810d0e564134fc70565f56ee149e8b45b93e6ea049d3c39eb4d"
+    },
+    {
+      "nom": "256-18105652008.npz",
+      "role": "Lecture autonome · 9302 / 256 / 18105652008",
+      "fichier": "artifacts/r27/essai/9302/256-18105652008.npz",
+      "octets": 54917,
+      "sha256": "fa2166054c2ed54438ccb0d33adfc71d24725f3e77c64a7cf0053e4ee4051ec9"
+    },
+    {
+      "nom": "256-24614689941.npz",
+      "role": "Lecture autonome · 9302 / 256 / 24614689941",
+      "fichier": "artifacts/r27/essai/9302/256-24614689941.npz",
+      "octets": 59418,
+      "sha256": "fe8ab7f664a102ca17a723a397f229e42cbf419688dc3cec67e173d419db3de6"
+    },
+    {
+      "nom": "256-4169106197.npz",
+      "role": "Lecture autonome · 9302 / 256 / 4169106197",
+      "fichier": "artifacts/r27/essai/9302/256-4169106197.npz",
+      "octets": 55271,
+      "sha256": "7dfe4582695c1767c009c16795443fa35cf0cf6506e484a1d1f441772c37f573"
+    },
+    {
+      "nom": "256-wc71488242.npz",
+      "role": "Lecture autonome · 9302 / 256 / wc71488242",
+      "fichier": "artifacts/r27/essai/9302/256-wc71488242.npz",
+      "octets": 62779,
+      "sha256": "0b79b929d0c9382b9ba1675720ab09aea2ebc388ca765ec2b7be488f9db2c8f9"
+    },
+    {
+      "nom": "256-wc11001401.npz",
+      "role": "Lecture autonome · 9302 / 256 / wc11001401",
+      "fichier": "artifacts/r27/essai/9302/256-wc11001401.npz",
+      "octets": 59621,
+      "sha256": "a7b2b36492f159246b052a597051220c1c1eeb8ad6b6dbcafb1d13be20d16d8a"
+    },
+    {
+      "nom": "pas-512.pt",
+      "role": "Poids, SGD, RNG · 9302 / 512",
+      "fichier": "artifacts/r27/essai/9302/pas-512.pt",
+      "octets": 244700133,
+      "sha256": "54d644500e997e3a7cc80d7fe8120f85aff51688816fc6f347220c5478c10894"
+    },
+    {
+      "nom": "512-13-01.npz",
+      "role": "Lecture autonome · 9302 / 512 / 13-01",
+      "fichier": "artifacts/r27/essai/9302/512-13-01.npz",
+      "octets": 58247,
+      "sha256": "00004cb163d81f0e8c7f81c90d0e451999a2600644f743b0fe39aecd2f8165b8"
+    },
+    {
+      "nom": "512-70-01.npz",
+      "role": "Lecture autonome · 9302 / 512 / 70-01",
+      "fichier": "artifacts/r27/essai/9302/512-70-01.npz",
+      "octets": 57723,
+      "sha256": "1b5101861e73286c40a17a7ac0866dd535437bcbba334103359c0e30f5f384e0"
+    },
+    {
+      "nom": "512-7245527662.npz",
+      "role": "Lecture autonome · 9302 / 512 / 7245527662",
+      "fichier": "artifacts/r27/essai/9302/512-7245527662.npz",
+      "octets": 63562,
+      "sha256": "29a6eca8ba05434d3b853bfe8a77e027b43a1d70a975bf8873eeda517ee252c6"
+    },
+    {
+      "nom": "512-5115614018.npz",
+      "role": "Lecture autonome · 9302 / 512 / 5115614018",
+      "fichier": "artifacts/r27/essai/9302/512-5115614018.npz",
+      "octets": 55067,
+      "sha256": "85d67d663ed4fd616df3119bc897a27d03909e5352b7e897035ef30852134fc5"
+    },
+    {
+      "nom": "512-18105652008.npz",
+      "role": "Lecture autonome · 9302 / 512 / 18105652008",
+      "fichier": "artifacts/r27/essai/9302/512-18105652008.npz",
+      "octets": 55464,
+      "sha256": "bbc554c717906045b9b52baf3318d2b5646142695679fbbba6d622acecccf41f"
+    },
+    {
+      "nom": "512-24614689941.npz",
+      "role": "Lecture autonome · 9302 / 512 / 24614689941",
+      "fichier": "artifacts/r27/essai/9302/512-24614689941.npz",
+      "octets": 59911,
+      "sha256": "3cf5700a7f4fbff341049fe8461204f79389951ff9a0a2617c5b047488b67469"
+    },
+    {
+      "nom": "512-4169106197.npz",
+      "role": "Lecture autonome · 9302 / 512 / 4169106197",
+      "fichier": "artifacts/r27/essai/9302/512-4169106197.npz",
+      "octets": 52844,
+      "sha256": "746c96dfe594ba5edfa8e4d4c1e154b6193970567d0788ddd2d5c4aa5cd49424"
+    },
+    {
+      "nom": "512-wc71488242.npz",
+      "role": "Lecture autonome · 9302 / 512 / wc71488242",
+      "fichier": "artifacts/r27/essai/9302/512-wc71488242.npz",
+      "octets": 62706,
+      "sha256": "93a1d8db31b20854ed31961093e5c17bf9c51a5000692cbe3ad76695e0a049f7"
+    },
+    {
+      "nom": "512-wc11001401.npz",
+      "role": "Lecture autonome · 9302 / 512 / wc11001401",
+      "fichier": "artifacts/r27/essai/9302/512-wc11001401.npz",
+      "octets": 60559,
+      "sha256": "ea8775e18b73efc8731daceba772444598e8b216316371b5ae4042e65c273e76"
+    },
+    {
+      "nom": "pas-768.pt",
+      "role": "Poids, SGD, RNG · 9302 / 768",
+      "fichier": "artifacts/r27/essai/9302/pas-768.pt",
+      "octets": 244700133,
+      "sha256": "0a179e47c11891819f3b1da952aa091f4c0e83238a4d7cf3acfd8636230c34c8"
+    },
+    {
+      "nom": "768-13-01.npz",
+      "role": "Lecture autonome · 9302 / 768 / 13-01",
+      "fichier": "artifacts/r27/essai/9302/768-13-01.npz",
+      "octets": 58731,
+      "sha256": "6eb9a96c3696ef816663b3787f41ccd1320f458ca565f09fb905ff77df90b995"
+    },
+    {
+      "nom": "768-70-01.npz",
+      "role": "Lecture autonome · 9302 / 768 / 70-01",
+      "fichier": "artifacts/r27/essai/9302/768-70-01.npz",
+      "octets": 58513,
+      "sha256": "0f6a58ea513d9378cbf5e1c156e2796f4968bea397ce47a5f6d2059717aca6bc"
+    },
+    {
+      "nom": "768-7245527662.npz",
+      "role": "Lecture autonome · 9302 / 768 / 7245527662",
+      "fichier": "artifacts/r27/essai/9302/768-7245527662.npz",
+      "octets": 62586,
+      "sha256": "6f73a654e0710df4d4884a8e6bf8104d0acfc8bc475223245f68e778c4f4641a"
+    },
+    {
+      "nom": "768-5115614018.npz",
+      "role": "Lecture autonome · 9302 / 768 / 5115614018",
+      "fichier": "artifacts/r27/essai/9302/768-5115614018.npz",
+      "octets": 53856,
+      "sha256": "388316cb1774e0236f68cf6e79f979dfbb4fc5a6ca4e17d38a35d0082a04ed51"
+    },
+    {
+      "nom": "768-18105652008.npz",
+      "role": "Lecture autonome · 9302 / 768 / 18105652008",
+      "fichier": "artifacts/r27/essai/9302/768-18105652008.npz",
+      "octets": 55192,
+      "sha256": "cbbc92e01a2ccd29694d0cd5a62fb2206bfa149b21802643ccb4b097aacba24d"
+    },
+    {
+      "nom": "768-24614689941.npz",
+      "role": "Lecture autonome · 9302 / 768 / 24614689941",
+      "fichier": "artifacts/r27/essai/9302/768-24614689941.npz",
+      "octets": 61231,
+      "sha256": "e4838395eb70397c61c6e602c571800e3f6ea6a1e170946697de704c34258f66"
+    },
+    {
+      "nom": "768-4169106197.npz",
+      "role": "Lecture autonome · 9302 / 768 / 4169106197",
+      "fichier": "artifacts/r27/essai/9302/768-4169106197.npz",
+      "octets": 54260,
+      "sha256": "f5dc8267982d3f3ec901b1524208d95b3f89945adcf13eac6c3e6a9df27c41fc"
+    },
+    {
+      "nom": "768-wc71488242.npz",
+      "role": "Lecture autonome · 9302 / 768 / wc71488242",
+      "fichier": "artifacts/r27/essai/9302/768-wc71488242.npz",
+      "octets": 62100,
+      "sha256": "b84398c1545a07e2923976510c08b45976c552c040ac8ee3f41ceb77f1ddbfa3"
+    },
+    {
+      "nom": "768-wc11001401.npz",
+      "role": "Lecture autonome · 9302 / 768 / wc11001401",
+      "fichier": "artifacts/r27/essai/9302/768-wc11001401.npz",
+      "octets": 60371,
+      "sha256": "4ed5e651a4609976d9fdd5708c76925b2bac91bea8280248a610f72e6438cc5f"
+    },
+    {
+      "nom": "pas.jsonl.gz",
+      "role": "Journal complet des mises à jour et indices utilisés · 9302",
+      "fichier": "artifacts/r27/essai/9302/pas.jsonl.gz",
+      "octets": 822119,
+      "sha256": "dae34cfcabaf86b7aa312dfd786e53f929ba93865f0a02aa304653d482a77517"
+    },
+    {
+      "nom": "pas-000.pt",
+      "role": "Poids, SGD, RNG · 9303 / 0",
+      "fichier": "artifacts/r27/essai/9303/pas-000.pt",
+      "octets": 176217881,
+      "sha256": "2be7fc75444e44b02f61ab553c4cee2c1baedc7e617288b6c74a59a8c1528f7f"
+    },
+    {
+      "nom": "000-13-01.npz",
+      "role": "Lecture autonome · 9303 / 0 / 13-01",
+      "fichier": "artifacts/r27/essai/9303/000-13-01.npz",
+      "octets": 78635,
+      "sha256": "222bd1efd22698c645282bc65b5adcc0b531bf67bb2d7daa441363b10ac3fdf7"
+    },
+    {
+      "nom": "000-70-01.npz",
+      "role": "Lecture autonome · 9303 / 0 / 70-01",
+      "fichier": "artifacts/r27/essai/9303/000-70-01.npz",
+      "octets": 74188,
+      "sha256": "93d75011c7a4b84fcb926cac5680243a381665f8924e7a9ee5e137aac3d6573c"
+    },
+    {
+      "nom": "000-7245527662.npz",
+      "role": "Lecture autonome · 9303 / 0 / 7245527662",
+      "fichier": "artifacts/r27/essai/9303/000-7245527662.npz",
+      "octets": 67644,
+      "sha256": "f5186774326329790481e8d61087dde848c92c433cdd02aa87c054733c0725d9"
+    },
+    {
+      "nom": "000-5115614018.npz",
+      "role": "Lecture autonome · 9303 / 0 / 5115614018",
+      "fichier": "artifacts/r27/essai/9303/000-5115614018.npz",
+      "octets": 68898,
+      "sha256": "95dda12185cabd3f4e0fcf09f6982f54a66626e461656ece9d6347e7c09ab907"
+    },
+    {
+      "nom": "000-18105652008.npz",
+      "role": "Lecture autonome · 9303 / 0 / 18105652008",
+      "fichier": "artifacts/r27/essai/9303/000-18105652008.npz",
+      "octets": 64962,
+      "sha256": "d1b5018a7aec4ec2e0356c3ebb7a9374e0ba6ab78f738ba0bcb4188530608f7d"
+    },
+    {
+      "nom": "000-24614689941.npz",
+      "role": "Lecture autonome · 9303 / 0 / 24614689941",
+      "fichier": "artifacts/r27/essai/9303/000-24614689941.npz",
+      "octets": 73764,
+      "sha256": "ffa2cee1246f1a9712a9cbcd94ceba293262d65a0c457e79faf6d527c0816808"
+    },
+    {
+      "nom": "000-4169106197.npz",
+      "role": "Lecture autonome · 9303 / 0 / 4169106197",
+      "fichier": "artifacts/r27/essai/9303/000-4169106197.npz",
+      "octets": 61680,
+      "sha256": "86af779ff2f8540f9ab25633fc974804f306cc7454d7be75f8e7d4120d99e454"
+    },
+    {
+      "nom": "000-wc71488242.npz",
+      "role": "Lecture autonome · 9303 / 0 / wc71488242",
+      "fichier": "artifacts/r27/essai/9303/000-wc71488242.npz",
+      "octets": 73673,
+      "sha256": "4a80121b0a2d146a759e5d0a1ec17fcefbb6e3f45bb8cb7d1bdd495f38a786b4"
+    },
+    {
+      "nom": "000-wc11001401.npz",
+      "role": "Lecture autonome · 9303 / 0 / wc11001401",
+      "fichier": "artifacts/r27/essai/9303/000-wc11001401.npz",
+      "octets": 72827,
+      "sha256": "5f6a89f4bff9559c9927eea10f21a348c457d86c3b5a3260b71501a8d356ddbf"
+    },
+    {
+      "nom": "pas-096.pt",
+      "role": "Poids, SGD, RNG · 9303 / 96",
+      "fichier": "artifacts/r27/essai/9303/pas-096.pt",
+      "octets": 244700133,
+      "sha256": "51da4995369185757da64b7db19225d2f8bdf3db31faab86e7598c47e2028239"
+    },
+    {
+      "nom": "096-13-01.npz",
+      "role": "Lecture autonome · 9303 / 96 / 13-01",
+      "fichier": "artifacts/r27/essai/9303/096-13-01.npz",
+      "octets": 58802,
+      "sha256": "9ef6fe449a311a5a6b141d509fd9e47f06233c4d2f924f8b14d4096ce9c2a8e1"
+    },
+    {
+      "nom": "096-70-01.npz",
+      "role": "Lecture autonome · 9303 / 96 / 70-01",
+      "fichier": "artifacts/r27/essai/9303/096-70-01.npz",
+      "octets": 58287,
+      "sha256": "4a84c90a0f2b20a5887cb996440cf453dadf3292dab573f9bb49e955ef78cbcb"
+    },
+    {
+      "nom": "096-7245527662.npz",
+      "role": "Lecture autonome · 9303 / 96 / 7245527662",
+      "fichier": "artifacts/r27/essai/9303/096-7245527662.npz",
+      "octets": 59906,
+      "sha256": "df1e6d0af5769f06b44c11eccb2fde7611ad57c5fe9c238cc8ac191714603eb5"
+    },
+    {
+      "nom": "096-5115614018.npz",
+      "role": "Lecture autonome · 9303 / 96 / 5115614018",
+      "fichier": "artifacts/r27/essai/9303/096-5115614018.npz",
+      "octets": 55155,
+      "sha256": "436621a7f8b678f43ea84e27cd554d00462ed17fff693a3d9eace4fd8e6be2b5"
+    },
+    {
+      "nom": "096-18105652008.npz",
+      "role": "Lecture autonome · 9303 / 96 / 18105652008",
+      "fichier": "artifacts/r27/essai/9303/096-18105652008.npz",
+      "octets": 56798,
+      "sha256": "64209b8e7e98cfa4f8cbe292968614dce77c5c01c2022ba0ca8270e7ce192d83"
+    },
+    {
+      "nom": "096-24614689941.npz",
+      "role": "Lecture autonome · 9303 / 96 / 24614689941",
+      "fichier": "artifacts/r27/essai/9303/096-24614689941.npz",
+      "octets": 57043,
+      "sha256": "412e1e058b451bfd8494e3b75a9b48e91552dbb260c5e48b176f93de97f633c3"
+    },
+    {
+      "nom": "096-4169106197.npz",
+      "role": "Lecture autonome · 9303 / 96 / 4169106197",
+      "fichier": "artifacts/r27/essai/9303/096-4169106197.npz",
+      "octets": 55308,
+      "sha256": "9071fa128aefe8578626125111d93528f6d0153bf052c4d845dcab2cb6e00536"
+    },
+    {
+      "nom": "096-wc71488242.npz",
+      "role": "Lecture autonome · 9303 / 96 / wc71488242",
+      "fichier": "artifacts/r27/essai/9303/096-wc71488242.npz",
+      "octets": 61097,
+      "sha256": "97823c53ca4dc989ce0cd346d3af711d96ec3167141fa988ebf27567e5fcc9e6"
+    },
+    {
+      "nom": "096-wc11001401.npz",
+      "role": "Lecture autonome · 9303 / 96 / wc11001401",
+      "fichier": "artifacts/r27/essai/9303/096-wc11001401.npz",
+      "octets": 58477,
+      "sha256": "a561d4813ebc2e040cb99ea663cf4dcb4afbd174afd6ecc046621c304acf1e58"
+    },
+    {
+      "nom": "pas-256.pt",
+      "role": "Poids, SGD, RNG · 9303 / 256",
+      "fichier": "artifacts/r27/essai/9303/pas-256.pt",
+      "octets": 244700133,
+      "sha256": "8400db4c1ef52ce71287f91367409489d9d586a102af4ca16a89c08d44bbd541"
+    },
+    {
+      "nom": "256-13-01.npz",
+      "role": "Lecture autonome · 9303 / 256 / 13-01",
+      "fichier": "artifacts/r27/essai/9303/256-13-01.npz",
+      "octets": 58994,
+      "sha256": "fe783f1dd578137e85cae7d97f0b90b59659349458d45986657d5eefed5c59b5"
+    },
+    {
+      "nom": "256-70-01.npz",
+      "role": "Lecture autonome · 9303 / 256 / 70-01",
+      "fichier": "artifacts/r27/essai/9303/256-70-01.npz",
+      "octets": 58936,
+      "sha256": "d980dd486641c87438259c9b8c91060a92049943010f1c6a7f89017aea9c0bc8"
+    },
+    {
+      "nom": "256-7245527662.npz",
+      "role": "Lecture autonome · 9303 / 256 / 7245527662",
+      "fichier": "artifacts/r27/essai/9303/256-7245527662.npz",
+      "octets": 61119,
+      "sha256": "5730e7fc27859a5ec8b668becf4bd2e2f3d76b24d5b6f4c35d3b079084b1658b"
+    },
+    {
+      "nom": "256-5115614018.npz",
+      "role": "Lecture autonome · 9303 / 256 / 5115614018",
+      "fichier": "artifacts/r27/essai/9303/256-5115614018.npz",
+      "octets": 54343,
+      "sha256": "3fc2e4a4dd6b484174582b0ea1e252b6123191b878fcd144ff1fb3a63796054f"
+    },
+    {
+      "nom": "256-18105652008.npz",
+      "role": "Lecture autonome · 9303 / 256 / 18105652008",
+      "fichier": "artifacts/r27/essai/9303/256-18105652008.npz",
+      "octets": 55641,
+      "sha256": "3fa5086a9493759e4eb6f4cf384db792fb574b1a46fe68aa2c48027f73fca0fc"
+    },
+    {
+      "nom": "256-24614689941.npz",
+      "role": "Lecture autonome · 9303 / 256 / 24614689941",
+      "fichier": "artifacts/r27/essai/9303/256-24614689941.npz",
+      "octets": 58515,
+      "sha256": "675a3a93f5c245c9c23cb62a623bc49cf5b9f0286c8627aa41932f187417d3f0"
+    },
+    {
+      "nom": "256-4169106197.npz",
+      "role": "Lecture autonome · 9303 / 256 / 4169106197",
+      "fichier": "artifacts/r27/essai/9303/256-4169106197.npz",
+      "octets": 54317,
+      "sha256": "8546ef420d54235813a4003697404da2b1d0e692b898921b369c391b391fb4ad"
+    },
+    {
+      "nom": "256-wc71488242.npz",
+      "role": "Lecture autonome · 9303 / 256 / wc71488242",
+      "fichier": "artifacts/r27/essai/9303/256-wc71488242.npz",
+      "octets": 62335,
+      "sha256": "62c28d32541d957a7606943b434c77735eb9265cd82e6fbfe577f9baceccf020"
+    },
+    {
+      "nom": "256-wc11001401.npz",
+      "role": "Lecture autonome · 9303 / 256 / wc11001401",
+      "fichier": "artifacts/r27/essai/9303/256-wc11001401.npz",
+      "octets": 59789,
+      "sha256": "cef4ce8547fb7c6f2e45ae27d3f49cd7254024728c72381c78a4fa8c8d241498"
+    },
+    {
+      "nom": "pas-512.pt",
+      "role": "Poids, SGD, RNG · 9303 / 512",
+      "fichier": "artifacts/r27/essai/9303/pas-512.pt",
+      "octets": 244700133,
+      "sha256": "1f845cd6f74349297ee5483bad0e5ce90bb6c1d2a9234f9ed7cd6f50d7d9d039"
+    },
+    {
+      "nom": "512-13-01.npz",
+      "role": "Lecture autonome · 9303 / 512 / 13-01",
+      "fichier": "artifacts/r27/essai/9303/512-13-01.npz",
+      "octets": 58892,
+      "sha256": "2965f90a0ad83767c44404ae963035549c38d0527dee4a388111809fef2362af"
+    },
+    {
+      "nom": "512-70-01.npz",
+      "role": "Lecture autonome · 9303 / 512 / 70-01",
+      "fichier": "artifacts/r27/essai/9303/512-70-01.npz",
+      "octets": 58303,
+      "sha256": "5fb02e89c2bfcae44e5b7481be9da8d077a3f3de63d13bdb4f27855fc00da129"
+    },
+    {
+      "nom": "512-7245527662.npz",
+      "role": "Lecture autonome · 9303 / 512 / 7245527662",
+      "fichier": "artifacts/r27/essai/9303/512-7245527662.npz",
+      "octets": 62096,
+      "sha256": "87b04c44a84e7818e8b0594ce3e6fc0f35aad3071cc6e86f66ba2ea3b8f8cb30"
+    },
+    {
+      "nom": "512-5115614018.npz",
+      "role": "Lecture autonome · 9303 / 512 / 5115614018",
+      "fichier": "artifacts/r27/essai/9303/512-5115614018.npz",
+      "octets": 53119,
+      "sha256": "a69f7945f0182d99fdf063d81d75505ec65cdce935d4dc60c4a0b272dd8b12ba"
+    },
+    {
+      "nom": "512-18105652008.npz",
+      "role": "Lecture autonome · 9303 / 512 / 18105652008",
+      "fichier": "artifacts/r27/essai/9303/512-18105652008.npz",
+      "octets": 55777,
+      "sha256": "95ed3b3e9f8ba0c43e8f365159236444afd7f35d02fad527e21dcbd1e017899a"
+    },
+    {
+      "nom": "512-24614689941.npz",
+      "role": "Lecture autonome · 9303 / 512 / 24614689941",
+      "fichier": "artifacts/r27/essai/9303/512-24614689941.npz",
+      "octets": 59509,
+      "sha256": "39c711c49ef83bba717378b6c60d9b8ba1616554cc6f614279c5b3b12426a09d"
+    },
+    {
+      "nom": "512-4169106197.npz",
+      "role": "Lecture autonome · 9303 / 512 / 4169106197",
+      "fichier": "artifacts/r27/essai/9303/512-4169106197.npz",
+      "octets": 52997,
+      "sha256": "2e87596a4b91f7be55f928e1fd36edcf929b081419d4343915734b972feade81"
+    },
+    {
+      "nom": "512-wc71488242.npz",
+      "role": "Lecture autonome · 9303 / 512 / wc71488242",
+      "fichier": "artifacts/r27/essai/9303/512-wc71488242.npz",
+      "octets": 62486,
+      "sha256": "11eaf5dce497be346acb3cb75bef6bf263dc73ce8eda86fe12e1b41a43f38626"
+    },
+    {
+      "nom": "512-wc11001401.npz",
+      "role": "Lecture autonome · 9303 / 512 / wc11001401",
+      "fichier": "artifacts/r27/essai/9303/512-wc11001401.npz",
+      "octets": 60423,
+      "sha256": "d850af9aa2c772a8db518019e13d3d6af31eb6b8adc02b61d4cd3ae94b276804"
+    },
+    {
+      "nom": "pas-768.pt",
+      "role": "Poids, SGD, RNG · 9303 / 768",
+      "fichier": "artifacts/r27/essai/9303/pas-768.pt",
+      "octets": 244700133,
+      "sha256": "d6833daa58b60cacb7e4e33894256ff8782deb38be3c7f1aaa3159c7016df4f2"
+    },
+    {
+      "nom": "768-13-01.npz",
+      "role": "Lecture autonome · 9303 / 768 / 13-01",
+      "fichier": "artifacts/r27/essai/9303/768-13-01.npz",
+      "octets": 57730,
+      "sha256": "9c05c7ef3194b3d9fe6f30203c226f54ef8f66e8d3aedf13a32be166841efb96"
+    },
+    {
+      "nom": "768-70-01.npz",
+      "role": "Lecture autonome · 9303 / 768 / 70-01",
+      "fichier": "artifacts/r27/essai/9303/768-70-01.npz",
+      "octets": 57132,
+      "sha256": "f31bae80951701e18887513591ce401d676f80fadb9d2773f92069cbf52d1314"
+    },
+    {
+      "nom": "768-7245527662.npz",
+      "role": "Lecture autonome · 9303 / 768 / 7245527662",
+      "fichier": "artifacts/r27/essai/9303/768-7245527662.npz",
+      "octets": 61070,
+      "sha256": "1203878b337b230f695ca1586225d2535c1941a184dc0c4e59b214e361a3a6d9"
+    },
+    {
+      "nom": "768-5115614018.npz",
+      "role": "Lecture autonome · 9303 / 768 / 5115614018",
+      "fichier": "artifacts/r27/essai/9303/768-5115614018.npz",
+      "octets": 54661,
+      "sha256": "6259ca44a77aea033053eac6921d383c9d617733c775cafdb067de2e30a8e936"
+    },
+    {
+      "nom": "768-18105652008.npz",
+      "role": "Lecture autonome · 9303 / 768 / 18105652008",
+      "fichier": "artifacts/r27/essai/9303/768-18105652008.npz",
+      "octets": 55207,
+      "sha256": "90e9ca48864d74274e6824fc0e755daae5644ac28897e230255a3ec797e28833"
+    },
+    {
+      "nom": "768-24614689941.npz",
+      "role": "Lecture autonome · 9303 / 768 / 24614689941",
+      "fichier": "artifacts/r27/essai/9303/768-24614689941.npz",
+      "octets": 59560,
+      "sha256": "2ecb86287584d75d44568bd9548ca9ceef0a8f2761f70107e14a57347f056016"
+    },
+    {
+      "nom": "768-4169106197.npz",
+      "role": "Lecture autonome · 9303 / 768 / 4169106197",
+      "fichier": "artifacts/r27/essai/9303/768-4169106197.npz",
+      "octets": 53414,
+      "sha256": "5e10f4c2af8fe1c40ca14167566e9e251dbf7382ae157ad39381e1330003b7dc"
+    },
+    {
+      "nom": "768-wc71488242.npz",
+      "role": "Lecture autonome · 9303 / 768 / wc71488242",
+      "fichier": "artifacts/r27/essai/9303/768-wc71488242.npz",
+      "octets": 62557,
+      "sha256": "d775b700e3de4d2d1a8356908f6664f2869ac97de511714886287caa9695e2ff"
+    },
+    {
+      "nom": "768-wc11001401.npz",
+      "role": "Lecture autonome · 9303 / 768 / wc11001401",
+      "fichier": "artifacts/r27/essai/9303/768-wc11001401.npz",
+      "octets": 60909,
+      "sha256": "e143eb3574350c304b789a2f50bbc258accdc760cd2eb6911b854988c8ee6e6b"
+    },
+    {
+      "nom": "pas.jsonl.gz",
+      "role": "Journal complet des mises à jour et indices utilisés · 9303",
+      "fichier": "artifacts/r27/essai/9303/pas.jsonl.gz",
+      "octets": 821662,
+      "sha256": "05d588d4754307f7673fc1884a641cdd1f2bba9c6f7dc8b9e1d20a90626b3c04"
+    },
+    {
+      "nom": "lancement.json",
+      "role": "Provenance et chronologie du pilote",
+      "fichier": "artifacts/r27/essai/lancement.json",
+      "octets": 616,
+      "sha256": "9f69285e283c680cb9f84c64b1e3f5553db7bad0ed1fddd71044c33926777d5e"
+    },
+    {
+      "nom": "suite.json",
+      "role": "Provenance et chronologie du pilote",
+      "fichier": "artifacts/r27/essai/suite.json",
+      "octets": 135,
+      "sha256": "ff747e1c969cfab1321820458fa7afccc724d99b610011eff9c62f93b6ec8648"
+    },
+    {
+      "nom": "fin.json",
+      "role": "Provenance et chronologie du pilote",
+      "fichier": "artifacts/r27/essai/fin.json",
+      "octets": 80,
+      "sha256": "8e48a2599aa7553e5a56b0bfc3a2b081dbea8377eef967eb019eb0681ecd26f2"
+    },
+    {
+      "nom": "model_final_f10217.pkl",
+      "role": "Poids COCO complets de départ",
+      "fichier": "data/r27/model_final_f10217.pkl",
+      "octets": 177841981,
+      "sha256": "9a737e290372f1f70994ebcbd89d8004dbb3ae30a605fd915a190fa4a782dd66"
+    },
+    {
+      "nom": "13-01.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/13-01.npy",
+      "octets": 589952,
+      "sha256": "8359ef221aecbc062954057888d8733d7ebbd71d1dea1950c6bbbacc074c1be9"
+    },
+    {
+      "nom": "70-01.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/70-01.npy",
+      "octets": 589952,
+      "sha256": "d025ea3ea67d0ba0a25b1f4ccaf408f11a1549c5aa92e70f7d43448510dcafaa"
+    },
+    {
+      "nom": "7245527662.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/7245527662.npy",
+      "octets": 516224,
+      "sha256": "d61c82c96e60c6a0b271e57f1d71a260023115899ffd99446da9723e310920f1"
+    },
+    {
+      "nom": "5115614018.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/5115614018.npy",
+      "octets": 516224,
+      "sha256": "b62946c39753dbfb551b9cc57043e907faebc4d7b2917fad95186bb3d9e4cf85"
+    },
+    {
+      "nom": "18105652008.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/18105652008.npy",
+      "octets": 516224,
+      "sha256": "5e80a47f55ec271d5955f29b6f3ad5e9e95597d9216ee8e1ae556914fbe0ac30"
+    },
+    {
+      "nom": "24614689941.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/24614689941.npy",
+      "octets": 786560,
+      "sha256": "3f02adffd0d06f6efbf6e0733b83f80d20a6e6235c8b0ed783528443382a1702"
+    },
+    {
+      "nom": "4169106197.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/4169106197.npy",
+      "octets": 589952,
+      "sha256": "4b19aa5637b9de09ae283a94042d9db5ba6884ae067d46c99191899ca47280a4"
+    },
+    {
+      "nom": "wc71488242.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/wc71488242.npy",
+      "octets": 786560,
+      "sha256": "44755a77bede3191f929730888b99d9010443b1dbe845721089224882532cbd0"
+    },
+    {
+      "nom": "wc11001401.npy",
+      "role": "Raster BGR R19 transmis au modèle",
+      "fichier": "data/r27/inputs/wc11001401.npy",
+      "octets": 589952,
+      "sha256": "129d4c56df73fbc1bcdf7f1555b6c4678c347f6d43fe92d155a2f9511b6b748e"
+    }
+  ],
+  "compteurs": {
+    "lectures": 99,
+    "mises_a_jour": 1539
+  },
+  "erreur_avant_SGD": {
+    "graine": 9301,
+    "tentative": 4
+  },
+  "lancement": {
+    "commit": "a3d693a0489ed23d20859984c58f4db2fc22f5bc",
+    "environnement": {
+      "versions": [
+        "3.9.19",
+        "1.10.1+cpu",
+        "0.11.2+cpu",
+        "0.6"
+      ],
+      "numpy": "1.23.5",
+      "opencv": "4.8.1",
+      "plateforme": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+      "machine": "x86_64",
+      "threads_torch": 4,
+      "threads_interop": 1,
+      "threads_cv": 1,
+      "omp_blas_mkl": 1,
+      "deterministe": true,
+      "precision": "float32"
+    },
+    "graines": [
+      9301,
+      9302,
+      9303
+    ],
+    "controles": [
+      0,
+      96,
+      256,
+      512,
+      768
+    ],
+    "debut_epoch": 1795717188.9465837
+  },
+  "suite": {
+    "commit": "70e65fb612317e94307b3ac4d6b6728b60e5569b",
+    "graines": [
+      9302,
+      9303
+    ],
+    "debut_epoch": 1795717355.0069528
+  },
+  "fin": {
+    "mises_a_jour": 1539,
+    "lectures": 99,
+    "fin_epoch": 1795718764.2358437
+  }
+}
