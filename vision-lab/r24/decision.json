@@ -1,0 +1,13 @@
+{
+  "graines_conformes": [],
+  "minimum": 2,
+  "poursuite_scientifique": false,
+  "pas_decision": 768,
+  "ajustements_candidats": 3,
+  "mises_a_jour": 2304,
+  "ajustements_temoins": 0,
+  "nouvelles_lectures_train": 54,
+  "nouvelles_lectures_developpement": 0,
+  "lectures_test": 0,
+  "NO_GO_Android": true
+}
