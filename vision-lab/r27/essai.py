@@ -1,5 +1,6 @@
 """Pilote séquentiel CPU. Un seul lancement neuf, trois graines et cinq contrôles."""
 import gzip
+import argparse
 import json
 import math
 import os
@@ -66,6 +67,18 @@ def norm(values):
     return math.sqrt(sum(float(t.detach().norm()) ** 2 for t in values))
 
 
+def audited_clip(params):
+    # Contrôler directement le même coefficient pour chaque élément FP32. Une
+    # seconde réduction FP32 de millions de carrés introduit son propre arrondi.
+    gradients = [p.grad.detach().clone() for p in params]
+    initial = torch.nn.utils.clip_grad_norm_(params, 5., error_if_nonfinite=True)
+    factor = (5. / (initial + 1e-6)).clamp(max=1.)
+    for parameter, original in zip(params, gradients):
+        if not torch.equal(parameter.grad, original.mul_(factor)):
+            raise ArithmeticError('Le gradient ne porte pas le coefficient global attendu')
+    return float(initial), float(factor), norm(p.grad for p in params)
+
+
 def update(model, optim, bgr, target, expected):
     start = time.monotonic()
     params = [(n, p) for n, p in model.named_parameters() if p.requires_grad]
@@ -79,9 +92,7 @@ def update(model, optim, bgr, target, expected):
     assert all(p.grad is None for _, p in frozen(model))
     by_group = {g: [p for n, p in params if group(n) == g] for g in ('rpn', 'boite', 'masque')}
     gradients = {g: norm(p.grad for p in pp) for g, pp in by_group.items()}
-    unclipped = float(torch.nn.utils.clip_grad_norm_([p for _, p in params], 5., error_if_nonfinite=True))
-    after_clip = norm(p.grad for _, p in params)
-    assert after_clip <= 5.00002
+    unclipped, factor, after_clip = audited_clip([p for _, p in params])
     before = [p.detach().clone() for _, p in params]
     optim.step()
     movement = {g: norm(p.detach() - old for (n, p), old in zip(params, before) if group(n) == g)
@@ -91,7 +102,8 @@ def update(model, optim, bgr, target, expected):
     checksum = fingerprint(frozen(model))
     assert checksum == expected, 'Modification d’un tenseur gelé'
     return dict(pertes={k: float(v.detach()) for k, v in losses.items()}, echantillonnage=sampling,
-                gradients=gradients, norme_avant=unclipped, norme_apres=after_clip, ecrete=unclipped > 5.,
+                gradients=gradients, norme_avant=unclipped, norme_apres=after_clip, coefficient_global=factor,
+                ecrete=unclipped > 5.,
                 deplacement=movement, sha256_geles=checksum, secondes=time.monotonic() - start,
                 rss_max_Kio=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
 
@@ -130,7 +142,7 @@ def control(model, optim, seed, step, photos, specs, path):
     print(f'{seed} pas {step}, {len(photos)} lectures archivées', flush=True)
 
 
-def run():
+def run(continuation=False):
     runtime = configure()
     gate = read('r27/barriere.json')
     assert gate['reussite'] and gate['environnement']['versions'] == runtime['versions']
@@ -142,10 +154,23 @@ def run():
     photos, targets, specs, draws = load_train()
     assert set(draws) == set(map(str, SEEDS))
     output = OUT / 'essai'
-    output.mkdir(exist_ok=False)
-    write(output / 'lancement.json', dict(commit=commit, environnement=runtime, graines=SEEDS,
-                                          controles=CHECKS, debut_epoch=time.time()))
-    for seed in SEEDS:
+    if continuation:
+        recorded = read(output / 'lancement.json')
+        assert recorded['commit'] == 'a3d693a0489ed23d20859984c58f4db2fc22f5bc'
+        stopped = output / '9301'
+        with gzip.open(stopped/'pas.jsonl.gz', 'rt') as stream:
+            old_steps = [json.loads(line)['pas'] for line in stream]
+        assert old_steps == [1, 2, 3] and len(list(stopped.glob('000-*.npz'))) == 9
+        assert list(stopped.glob('pas-*.pt')) == [stopped/'pas-000.pt']
+        assert not any((output/str(s)).exists() for s in SEEDS[1:])
+        seeds = SEEDS[1:]
+        write(output/'suite.json', dict(commit=commit, graines=seeds, debut_epoch=time.time()))
+    else:
+        output.mkdir(exist_ok=False)
+        write(output / 'lancement.json', dict(commit=commit, environnement=runtime, graines=SEEDS,
+                                              controles=CHECKS, debut_epoch=time.time()))
+        seeds = SEEDS
+    for seed in seeds:
         path = output / str(seed)
         path.mkdir()
         model, record = initialize()
@@ -161,7 +186,13 @@ def run():
             for row in schedule:
                 step, key = row['pas'], row['photo']
                 assert specs[key]['provenance'] == row['provenance']
-                stats = update(model, optim, photos[key], targets[key], expected)
+                try:
+                    stats = update(model, optim, photos[key], targets[key], expected)
+                except Exception:
+                    torch.save(dict(modele=model.state_dict(), optimiseur=optim.state_dict(), tentative=step,
+                                    rng_torch=torch.get_rng_state(), rng_numpy=np.random.get_state(),
+                                    rng_python=random.getstate()), path/'arret-technique.pt')
+                    raise
                 log.write(json.dumps(dict(**row, **stats), ensure_ascii=False, separators=(',', ':'), allow_nan=False) + '\n')
                 if step % 8 == 0:
                     log.flush()
@@ -169,8 +200,11 @@ def run():
                 if step in CHECKS:
                     control(model, optim, seed, step, photos, specs, path)
         del model, optim
-    write(output / 'fin.json', dict(mises_a_jour=2304, lectures=135, fin_epoch=time.time()))
+    write(output / 'fin.json', dict(mises_a_jour=1539 if continuation else 2304,
+                                    lectures=99 if continuation else 135, fin_epoch=time.time()))
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--apres-arret-9301', action='store_true')
+    run(parser.parse_args().apres_arret_9301)

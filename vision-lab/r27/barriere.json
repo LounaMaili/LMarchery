@@ -1,6 +1,6 @@
 {
   "reussite": true,
-  "tests": 6,
+  "tests": 7,
   "environnement": {
     "versions": [
       "3.9.19",
@@ -1447,6 +1447,7 @@
     },
     "norme_avant": 20.410558700561523,
     "norme_apres": 4.999994200844441,
+    "coefficient_global": 0.24497121572494507,
     "ecrete": true,
     "deplacement": {
       "rpn": 0.004932393270032202,
@@ -1454,10 +1455,17 @@
       "masque": 0.0008031788812925488
     },
     "sha256_geles": "6b09280504095930f929449af80391eda0ee53a4c8186d6f166a76c674250c17",
-    "secondes": 0.5461153149990423,
-    "rss_max_Kio": 987776
+    "secondes": 0.555505053998786,
+    "rss_max_Kio": 1032836
   },
   "sorties_autonomes": 12,
+  "controle_reduction_FP32": {
+    "elements": 4194304,
+    "avant": 6.132584095001221,
+    "coefficient": 0.815316915512085,
+    "apres_reduction_FP32": 5.036706447601318,
+    "apres_reduction_FP64": 5.009307384518072
+  },
   "exemple_sous_cellulaire": {
     "positifs_comptes": 112,
     "pic_occupation": 0.25,

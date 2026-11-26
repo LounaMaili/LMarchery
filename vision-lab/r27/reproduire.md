@@ -37,3 +37,5 @@ Dans un checkout du gel, une fois la branche distante récupérée et les entré
 git fetch origin codex/vision-lab-r27
 data/r27/env/bin/python -m r27.essai
 ```
+
+Pour reproduire la chronologie observée, le premier gel conserve la version initiale. La poursuite sur le dossier authentique interrompu utilise `python -m r27.essai --apres-arret-9301`. Le pilote vérifie le SHA initial, les neuf lectures, les trois pas et l’absence de lancement des graines suivantes. [Incident et correction](incident.md)

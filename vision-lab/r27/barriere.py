@@ -12,7 +12,7 @@ from detectron2.layers.mask_ops import paste_masks_in_image
 from detectron2.modeling.box_regression import Box2BoxTransform
 from detectron2.structures import Boxes
 
-from r27.essai import configure, optimizer, seed_rng, update, write
+from r27.essai import audited_clip, configure, optimizer, seed_rng, update, write
 from r27.modele import WEIGHTS, autonomous, fingerprint, frozen, group, initialize, suppress
 from r27.supervision import NativeTargets, label, mask_loss, region_losses, sample
 
@@ -41,6 +41,16 @@ def synthetic():
 
 
 class Geometry(unittest.TestCase):
+    def test_global_clip_across_long_vectors(self):
+        p = torch.nn.Parameter(torch.ones(4096,1024))
+        p.grad = torch.full_like(p,.003)
+        initial, factor, measured = audited_clip([p])
+        self.assertGreater(measured,5.00002)
+        self.assertEqual(float(p.grad.min()),float(p.grad.max()))
+        # La seconde réduction FP32 peut excéder 5 en présence du multiplicateur exact.
+        EVIDENCE['controle_reduction_FP32'] = dict(elements=p.numel(),avant=initial,coefficient=factor,
+            apres_reduction_FP32=measured,apres_reduction_FP64=float(p.grad.double().norm()))
+
     def test_cells_oracle_thin_occluded_boundary_and_padding(self):
         mask = np.full((70, 85), 255, np.uint8)
         mask[10:28, 9:37] = 0
@@ -221,6 +231,6 @@ if __name__ == '__main__':
     env = configure()
     suite = unittest.defaultTestLoader.loadTestsFromModule(__import__(__name__,fromlist=['']))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
-    if not result.wasSuccessful() or result.skipped or result.testsRun != 6:
+    if not result.wasSuccessful() or result.skipped or result.testsRun != 7:
         raise SystemExit(1)
     write(DEST/'barriere.json',dict(reussite=True,tests=result.testsRun,environnement=env,**EVIDENCE))
