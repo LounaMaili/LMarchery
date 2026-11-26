@@ -1,0 +1,372 @@
+{
+  "tete_R24": "33946bbe308847bb406384a8f6bb70fa0188b5af",
+  "preuves_R24": "2323ba7afbce831b96e10bc8a8bf1badf4da0339",
+  "bras": [
+    "dice",
+    "bloc8"
+  ],
+  "graines": [
+    9301,
+    9302,
+    9303
+  ],
+  "etat": 768,
+  "poids": {
+    "dice-9301": {
+      "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9301/768/poids.pt",
+      "sha256": "194ec9f5cbbcbd033281f2359c4006322791bfd154bbfb13924b59b35ec4e134",
+      "octets": 897303,
+      "etat": "122182f15148f7addca2ad084594d2914f0910797f37c4f76a1b0752de366d67"
+    },
+    "dice-9302": {
+      "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9302/768/poids.pt",
+      "sha256": "2011a92e231ac4bc137ce10b997ea9b089f892b38ad1e6ab19fb6291d0cecb31",
+      "octets": 897303,
+      "etat": "ddbe6ffd1ccb1acadcce3b0be5402b38136e99a1f3bdb0ba7fa69c0ed077ab45"
+    },
+    "dice-9303": {
+      "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9303/768/poids.pt",
+      "sha256": "e4d01adc50ec5476fe6d02276b727626de8c5b85cf07b0a5fd05a1e749b58bd8",
+      "octets": 897303,
+      "etat": "187d49267e38331e2954c3242627c9c011e052c5aec64cc67e357e089ba6675f"
+    },
+    "bloc8-9301": {
+      "fichier": "vision-lab-r24/vision-lab/artifacts/r24/bloc8/9301/768/poids.pt",
+      "sha256": "d39249a82a838383cddbefc3ea77efaf5512d5544895d6a771c93916343c8ab4",
+      "octets": 897303,
+      "etat": "e1ef62fe61d5cfdc1a482c4d47f5bfaeec4d93370585d041fe96c7474edc309f"
+    },
+    "bloc8-9302": {
+      "fichier": "vision-lab-r24/vision-lab/artifacts/r24/bloc8/9302/768/poids.pt",
+      "sha256": "f431d018cf731a35ab13cfaf0d48e7270a2381841e23f6bf0f59882d8c5420c6",
+      "octets": 897303,
+      "etat": "c1fa5334d8f681ef1c8335bbddf47856c05ba3452a2d51ffd479005560b098fa"
+    },
+    "bloc8-9303": {
+      "fichier": "vision-lab-r24/vision-lab/artifacts/r24/bloc8/9303/768/poids.pt",
+      "sha256": "ded37d589f0ea65b3e1388db3c8cda6a648c448dd29c748e82e3d31c04cb14aa",
+      "octets": 897303,
+      "etat": "88c0bf47df54fe87a92a5796a2d7d3b2030e0382b008f2394ea130696c8a90dd"
+    }
+  },
+  "photos": {
+    "18105652008": {
+      "photo": "18105652008",
+      "provenance": "zigazou76",
+      "fichier": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "sha256_BGR": "b43b8156af85d098b971c13f85ebc8c880e202a797e60baadb5d3b29657b38ab",
+      "sha256_RGB": "aa0dfaff26ffe4fe3f3e45913b3740b4ebfdbc58522ebebf13bddf646593f540",
+      "sha256_annotation": "77895526f142ac39d377200606319e41b1c92c2fadd2c834b9a4339e0e117f71",
+      "sha256_masque_R18": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d",
+      "grille": [
+        256,
+        168
+      ],
+      "repere_704": [
+        704,
+        470
+      ]
+    },
+    "4169106197": {
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "fichier": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "sha256_BGR": "b6bc999370c759bcd7221598fcc7ebe506c855ee25f719d47cc8a3af74d0d25e",
+      "sha256_RGB": "18b3d7de34e88e6846fb618231210e821e17b06656a0c8563681ae1fe6dc9314",
+      "sha256_annotation": "f273b555eec39b73bf6f86ff599b54b6e042a8e0bfa47e87f0d7a60fcd055c2d",
+      "sha256_masque_R18": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8",
+      "grille": [
+        256,
+        192
+      ],
+      "repere_704": [
+        640,
+        480
+      ]
+    },
+    "5115614018": {
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "fichier": "vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "sha256_BGR": "a489480ab2145c01758f4387e2b9cbe23bd2b1dd21207b08dba235dd49f6a7f0",
+      "sha256_RGB": "42eb2c0e1d77e5938fa5f34e2eeb590910d35739b6cf6ec9402e606c5afccfb6",
+      "sha256_annotation": "30cef19c24300b34e8406299049f6f0bb24c0cfc86f40add7f14615be6bbf5f2",
+      "sha256_masque_R18": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4",
+      "grille": [
+        256,
+        168
+      ],
+      "repere_704": [
+        704,
+        470
+      ]
+    },
+    "7245527662": {
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "fichier": "vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "sha256": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "sha256_BGR": "49e89bafee15301e4a331f71acfc2322268a854d6d0b409e5e7c12b2eda4c66a",
+      "sha256_RGB": "f6f76fc7b7f1a83b785d67306bd3d65957324b64d711299884af32d732a5acab",
+      "sha256_annotation": "7a4003f7d2d21eb3ebfb3981222fe84daa90980a9fe1d41fd990fd7241dff9f9",
+      "sha256_masque_R18": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c",
+      "grille": [
+        256,
+        168
+      ],
+      "repere_704": [
+        704,
+        465
+      ]
+    },
+    "wc11001401": {
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "fichier": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "sha256": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "sha256_BGR": "319b3495df9b3650b502db26cc41a6c00cdadf2fd72bc21c31d2ce06fcd0ed4c",
+      "sha256_RGB": "dabb3e0b1b752f47d16449a210e90fbec469a8e713080bb72099937ed0f029d9",
+      "sha256_annotation": "154c0bae107606776a2680ee1c794d0ccb84ea0097496b83eca6f9b6e50cd082",
+      "sha256_masque_R18": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32",
+      "grille": [
+        192,
+        256
+      ],
+      "repere_704": [
+        528,
+        704
+      ]
+    },
+    "wc71488242": {
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "fichier": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "sha256_BGR": "ae957c45cae309d31cfee7592b0e1fdb1adfaeaeb660ded6f17fe00c1d1ac8be",
+      "sha256_RGB": "c98604882c231f37eb0895075cf5a0bf0321dbbe3eadea1fd83fdc99e5c488c9",
+      "sha256_annotation": "86e94a2e24cb1a7360a9b8687fb9f7e642cc1ab5062e4e62db2636e78018dfac",
+      "sha256_masque_R18": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e",
+      "grille": [
+        256,
+        256
+      ],
+      "repere_704": [
+        704,
+        704
+      ]
+    }
+  },
+  "environnement": {
+    "threads_torch": 4,
+    "threads_interop": 1,
+    "threads_cv": 1,
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "opencv": "4.13.0",
+    "python": "3.15.2",
+    "machine": "x86_64"
+  },
+  "reemploi": {
+    "fichier": "vision-lab-r23/vision-lab/artifacts/r23/capture/dice-768-wc71488242/champs.npz",
+    "sha256": "d98731210322f4395d3f1a9e4fb03b1fc2301be45aafd4d574247ca060605250",
+    "octets": 8180337,
+    "champs_sha256": "2bba96da3e6363ac52b292cda5e320b1bf669cbb9e26249af58948a63769ff67"
+  },
+  "cas": [
+    {
+      "bras": "dice",
+      "graine": 9301,
+      "photo": "5115614018",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9301,
+      "photo": "5115614018",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9301,
+      "photo": "7245527662",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9301,
+      "photo": "7245527662",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9301,
+      "photo": "wc11001401",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9301,
+      "photo": "wc11001401",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9301,
+      "photo": "wc71488242",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9301,
+      "photo": "wc71488242",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9302,
+      "photo": "4169106197",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9302,
+      "photo": "4169106197",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9302,
+      "photo": "7245527662",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9302,
+      "photo": "7245527662",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9302,
+      "photo": "wc11001401",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9302,
+      "photo": "wc11001401",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9302,
+      "photo": "wc71488242",
+      "appel": false
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9302,
+      "photo": "wc71488242",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9303,
+      "photo": "wc11001401",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9303,
+      "photo": "wc11001401",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9303,
+      "photo": "wc71488242",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9303,
+      "photo": "wc71488242",
+      "appel": true
+    },
+    {
+      "bras": "dice",
+      "graine": 9303,
+      "photo": "18105652008",
+      "appel": true
+    },
+    {
+      "bras": "bloc8",
+      "graine": 9303,
+      "photo": "18105652008",
+      "appel": true
+    }
+  ],
+  "plafond_demande": 22,
+  "appels_prevus": 21,
+  "entrainement": false,
+  "partition": "train",
+  "geometrie": {
+    "distance704": 6,
+    "angle_non_oriente_deg": 20,
+    "sondes": 21,
+    "sondes_requises": 11,
+    "connectivite": 8,
+    "seuil_logits": 0,
+    "exaequo_segment_descriptif_px": 1e-10
+  },
+  "empreintes_gel": {
+    "r25/analyser.py": "5fd5486c938a71a454a5508ed1d7a06edbe273e2c437d69b5b1fa53ad13d42e9",
+    "r25/capturer.py": "3fa759936408c4632dd344d6365d0bb480725c69a941222fd63b426de2e0086d",
+    "r25/commun.py": "4f90ac84013fc5454fd43988ed70fdc635e265909ab1d91995deff57e81c0ae2",
+    "r25/composantes.py": "78efb9e389ea0486a30952e0f1ee8d04d11bcb37b069358d74bf1c54a335d45e",
+    "r25/exporter.py": "cb01088ad0b8f77d01188dd6a2a968bf3dbe340a303a56d0420b643774411902",
+    "r25/figer.py": "7d9f5ff68ac6fc774457fb483bd7726300e5bec2b71a5ce53195901cf7b81a64",
+    "r25/geometrie.py": "c57211153d1e1e203304481ba2df8cf66c5440b64135348bdcab9baad9b1f7df",
+    "r25/parite.py": "ce2568470929e6bd9089f15db5dd08013e8d250812ae4badd1a295649ff2003d",
+    "r25/perimetre.py": "0cf6c058b71fd0218c9be7d7ca356b0010191affcbfb7b37f65a2fc37b86f3cb",
+    "r25/sondes.py": "60cf277cce6f993191a39d085590e26c129ce221b2ee9e08f55d0ad072e520d5",
+    "r25/protocole.md": "1ee72959732e13ebc7edae96a756507007d23d90df827178f882b4524c9723bf",
+    "r25/diagnostic-archives.json": "01753f6141682c3567b11ee9dc47ede907e26fb6765e90610c77b36295696842",
+    "test_r25.py": "1f922fede33666be200d33073210f6db5abce7f6b4648e2fb1468063c2bb2681",
+    "r18/validites.json": "0696d06b15cb444813c02758eab7c873167cb2f32d46a3a93b03931e0cd0727d",
+    "r18/sources.json": "391d5d53429f03bca2551c65f592dd767625ae2cff3ae262088bc32d33aed24e",
+    "r19/donnees.json": "933e4bd81389b5e4effc69150debd3befc6a502471223a8a7eda7c184eaa6372",
+    "r19/donnees.py": "5b8b51fb2df46128ff5601cc713cf2cb72af962efaf52750bb5b7b479faf62ac",
+    "r19/modele.py": "cd830c3ba13a8ee5b0de249362e9db6e198a683b30e3d5abadddc1d0f456dbb5",
+    "r19/pilote.py": "1cfe54ef0cfdd0353afe0c0799caf119d4b8f953dc5d6675507aebc61953384d",
+    "r19/decoder.py": "8cf38bf46f20c1c49382cf3bf053a498ce759778664feac6bb6646b8a3129c9c",
+    "r19/mesures.py": "7dc9fe9a8e31f4b6325d94d638b1acc8f7dab70fddb41b969a374fedd6fdc260",
+    "r19/affecter.py": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f",
+    "r20/corpus.py": "d1112ba20a2bb456f94d89ee93120c8ad13749befa191aa79076d028e3d8a0ea",
+    "r22/verifier.py": "07c4f268b0dca337f10f6da8a617bbd426aceef2e41b4524b0caecd96af35b46",
+    "r23/execution.json": "999c7e5da75d45f850a714bd0815e11d10a68aca2571f95ba232e52d0d939a69",
+    "r23/parite.json": "970e8a50bb38676c6cb878e7b6019ac258a70453abee8680df9e39287e4c626e",
+    "r24/comparabilite.json": "4fd139a97c750f8357efc2a90dbc0bce3ea0c82d36ce0410466c99a19d9f8df1",
+    "r22/archives/dice/9301/768/controle.json": "c185c45d6d51df1a9aec9ad7b0c8c2baead843dff2bc8d381f84f563a257196f",
+    "r22/archives/dice/9301/768/predictions.json": "04ef26114853e980f1522a5da0d9159c29699b5b229b45cefc16be82fdb9e62b",
+    "r22/mesures/dice-9301-768.json": "ce8c4ec673daba3e289a9b1fc8c0f4a108ebb54e2f480dff928dd5845de8ea9f",
+    "r22/archives/dice/9302/768/controle.json": "de586cf4579df3e26890fa58b363f849b573de15f0b2163204307f55563c0435",
+    "r22/archives/dice/9302/768/predictions.json": "41f6fa6a5d02578be72ad291237ae5a7e87329b5f848e48dc423c1c8c8fa37a0",
+    "r22/mesures/dice-9302-768.json": "af50f306ac6008cb7595c9f9bf3bf10f5fb197f6902323e5cd1657ea59bf9393",
+    "r22/archives/dice/9303/768/controle.json": "2234493c0f5910db06c88d329576d7cddc56e257a9c0ebdcabaa5c1271e9497e",
+    "r22/archives/dice/9303/768/predictions.json": "94b7277af4ad30dfacfdcd9c659604609099871a3ddb59ac09d4db794be22060",
+    "r22/mesures/dice-9303-768.json": "b2a91f9654ffbb71904e603bfa2cdbb6de533e199676578400b07fb126e269bd",
+    "r24/archives/bloc8/9301/768/controle.json": "fa1dd72151e518d68011b837033326ca4915051d0e33538d6fc926eb3529d231",
+    "r24/archives/bloc8/9301/768/predictions.json": "1348a0296843548fed17ad780e801defc68d9aeac468ed6f50b6c320353ac280",
+    "r24/mesures/bloc8-9301-768.json": "b6b7f09bbff41b8abba0e6ab993b259d96677f1bcfc00d98b150f94cb0922765",
+    "r24/archives/bloc8/9302/768/controle.json": "434a3ad5d8a3073f79708b1c2d2b23a0417bfe2a6584cf9ffbf334557bc74130",
+    "r24/archives/bloc8/9302/768/predictions.json": "05bcdd1d083e756ee41c67532271a51ac3c28e25c440f8a183aaef6e76394040",
+    "r24/mesures/bloc8-9302-768.json": "a8f023e26157bc9b032459758235c4dae77a57d8ff423cb62f6ff0168caebcff",
+    "r24/archives/bloc8/9303/768/controle.json": "8ff0de74b99ea34d2dfe209080f41a47d15b58c027450b0e0e9f49659eaf608f",
+    "r24/archives/bloc8/9303/768/predictions.json": "24385d598891e27647d38bd162f2475b9a701c295bdc9f75c456635c79d5e920",
+    "r24/mesures/bloc8-9303-768.json": "c94f15d91881ff034769b617fc239069e412c8a8406f8a8928ccecfb2d2d9a0c"
+  }
+}
