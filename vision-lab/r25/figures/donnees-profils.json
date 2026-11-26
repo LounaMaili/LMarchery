@@ -1,0 +1,211 @@
+{
+  "limites": [
+    {
+      "etape": "axe_seuille",
+      "pertes": 0,
+      "gains": 0,
+      "identites": [],
+      "provenances": []
+    },
+    {
+      "etape": "intersection_masque",
+      "pertes": 0,
+      "gains": 0,
+      "identites": [],
+      "provenances": []
+    },
+    {
+      "etape": "taille_composante",
+      "pertes": 0,
+      "gains": 0,
+      "identites": [],
+      "provenances": []
+    },
+    {
+      "etape": "elongation_PCA",
+      "pertes": 1,
+      "gains": 0,
+      "identites": [
+        "4169106197:1"
+      ],
+      "provenances": [
+        "cristina.sanvito"
+      ]
+    },
+    {
+      "etape": "portee_PCA",
+      "pertes": 0,
+      "gains": 0,
+      "identites": [],
+      "provenances": []
+    },
+    {
+      "etape": "ligne_PCA",
+      "pertes": 6,
+      "gains": 2,
+      "identites": [
+        "5115614018:2",
+        "7245527662:2",
+        "7245527662:3",
+        "wc11001401:2",
+        "wc11001401:5",
+        "wc71488242:1",
+        "wc71488242:6"
+      ],
+      "provenances": [
+        "4028mdk09",
+        "Bernard Gagnon",
+        "Danielle Walquist Lynch",
+        "jrladia"
+      ]
+    },
+    {
+      "etape": "decoupe_composante",
+      "pertes": 1,
+      "gains": 1,
+      "identites": [
+        "wc71488242:8"
+      ],
+      "provenances": [
+        "Bernard Gagnon"
+      ]
+    },
+    {
+      "etape": "portions_trop_courtes",
+      "pertes": 0,
+      "gains": 2,
+      "identites": [
+        "wc11001401:4",
+        "wc71488242:9"
+      ],
+      "provenances": [
+        "4028mdk09",
+        "Bernard Gagnon"
+      ]
+    },
+    {
+      "etape": "orientation",
+      "pertes": 4,
+      "gains": 0,
+      "identites": [
+        "5115614018:5",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc71488242:10"
+      ],
+      "provenances": [
+        "4028mdk09",
+        "Bernard Gagnon",
+        "Danielle Walquist Lynch"
+      ]
+    },
+    {
+      "etape": "attribution",
+      "pertes": 1,
+      "gains": 0,
+      "identites": [
+        "wc71488242:3"
+      ],
+      "provenances": [
+        "Bernard Gagnon"
+      ]
+    }
+  ],
+  "conserves": 27,
+  "profils_conserves": {
+    "dice": {
+      "axe": {
+        "minimum": 21,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "intersection": {
+        "minimum": 17,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "taille": {
+        "minimum": 17,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "elongation": {
+        "minimum": 15,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "portee": {
+        "minimum": 13,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "pca": {
+        "minimum": 12,
+        "mediane": 19,
+        "maximum": 21
+      },
+      "interieur": {
+        "minimum": 12,
+        "mediane": 18,
+        "maximum": 21
+      },
+      "segment": {
+        "minimum": 12,
+        "mediane": 17,
+        "maximum": 21
+      },
+      "oriente": {
+        "minimum": 11,
+        "mediane": 16,
+        "maximum": 21
+      }
+    },
+    "bloc8": {
+      "axe": {
+        "minimum": 21,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "intersection": {
+        "minimum": 12,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "taille": {
+        "minimum": 12,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "elongation": {
+        "minimum": 12,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "portee": {
+        "minimum": 12,
+        "mediane": 21,
+        "maximum": 21
+      },
+      "pca": {
+        "minimum": 11,
+        "mediane": 17,
+        "maximum": 21
+      },
+      "interieur": {
+        "minimum": 11,
+        "mediane": 17,
+        "maximum": 21
+      },
+      "segment": {
+        "minimum": 11,
+        "mediane": 15,
+        "maximum": 21
+      },
+      "oriente": {
+        "minimum": 11,
+        "mediane": 14,
+        "maximum": 21
+      }
+    }
+  }
+}

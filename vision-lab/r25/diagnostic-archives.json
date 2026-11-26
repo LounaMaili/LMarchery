@@ -1,0 +1,276 @@
+{
+  "etats": {
+    "dice-9301": {
+      "photos": 9,
+      "axes": 31,
+      "cellules_verifiees": 372,
+      "apparies": 25
+    },
+    "bloc8-9301": {
+      "photos": 9,
+      "axes": 31,
+      "cellules_verifiees": 372,
+      "apparies": 20
+    },
+    "dice-9302": {
+      "photos": 9,
+      "axes": 31,
+      "cellules_verifiees": 372,
+      "apparies": 23
+    },
+    "bloc8-9302": {
+      "photos": 9,
+      "axes": 31,
+      "cellules_verifiees": 372,
+      "apparies": 21
+    },
+    "dice-9303": {
+      "photos": 9,
+      "axes": 31,
+      "cellules_verifiees": 372,
+      "apparies": 23
+    },
+    "bloc8-9303": {
+      "photos": 9,
+      "axes": 31,
+      "cellules_verifiees": 372,
+      "apparies": 22
+    }
+  },
+  "bilan": {
+    "9301": {
+      "conserves": 19,
+      "pertes": 6,
+      "gains": 1,
+      "absents_deux": 5
+    },
+    "9302": {
+      "conserves": 18,
+      "pertes": 5,
+      "gains": 3,
+      "absents_deux": 5
+    },
+    "9303": {
+      "conserves": 21,
+      "pertes": 2,
+      "gains": 1,
+      "absents_deux": 7
+    }
+  },
+  "transitions": [
+    {
+      "graine": 9301,
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "identite": "7245527662:3",
+      "statut": "pertes",
+      "dice_q": 10,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9301,
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "identite": "5115614018:2",
+      "statut": "pertes",
+      "dice_q": 0,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9301,
+      "photo": "5115614018",
+      "provenance": "Danielle Walquist Lynch",
+      "identite": "5115614018:5",
+      "statut": "pertes",
+      "dice_q": 5,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9301,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:8",
+      "statut": "pertes",
+      "dice_q": 11,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9301,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:9",
+      "statut": "gains",
+      "dice_q": null,
+      "bloc8_q": 9,
+      "concurrence": []
+    },
+    {
+      "graine": 9301,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:10",
+      "statut": "pertes",
+      "dice_q": 7,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9301,
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "identite": "wc11001401:2",
+      "statut": "pertes",
+      "dice_q": 3,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "7245527662",
+      "provenance": "jrladia",
+      "identite": "7245527662:2",
+      "statut": "pertes",
+      "dice_q": 0,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "4169106197",
+      "provenance": "cristina.sanvito",
+      "identite": "4169106197:1",
+      "statut": "pertes",
+      "dice_q": 0,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:3",
+      "statut": "pertes",
+      "dice_q": 8,
+      "bloc8_q": null,
+      "concurrence": [
+        {
+          "q": 7,
+          "sondes": 11,
+          "attribution": [
+            {
+              "identite": "wc71488242:9",
+              "sondes": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "graine": 9302,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:6",
+      "statut": "gains",
+      "dice_q": null,
+      "bloc8_q": 1,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:8",
+      "statut": "gains",
+      "dice_q": null,
+      "bloc8_q": 11,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "identite": "wc11001401:2",
+      "statut": "gains",
+      "dice_q": null,
+      "bloc8_q": 3,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "identite": "wc11001401:3",
+      "statut": "pertes",
+      "dice_q": 5,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9302,
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "identite": "wc11001401:5",
+      "statut": "pertes",
+      "dice_q": 11,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9303,
+      "photo": "wc71488242",
+      "provenance": "Bernard Gagnon",
+      "identite": "wc71488242:1",
+      "statut": "pertes",
+      "dice_q": 10,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9303,
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "identite": "wc11001401:2",
+      "statut": "pertes",
+      "dice_q": 0,
+      "bloc8_q": null,
+      "concurrence": []
+    },
+    {
+      "graine": 9303,
+      "photo": "wc11001401",
+      "provenance": "4028mdk09",
+      "identite": "wc11001401:4",
+      "statut": "gains",
+      "dice_q": null,
+      "bloc8_q": 2,
+      "concurrence": []
+    }
+  ],
+  "cristina_min_sans_angle": [
+    18.122031,
+    23.668532,
+    29.2166,
+    34.76122,
+    40.307288,
+    36.477572,
+    33.051738,
+    30.262856,
+    28.193281,
+    26.235722,
+    24.281976,
+    22.907962,
+    22.760644,
+    23.934995,
+    26.253766,
+    29.4492,
+    32.904799,
+    30.796352,
+    29.553101,
+    29.451509,
+    30.381176
+  ]
+}

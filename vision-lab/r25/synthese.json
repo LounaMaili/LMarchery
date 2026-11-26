@@ -1,0 +1,80 @@
+{
+  "cas_logiques": 22,
+  "graines": [
+    9301,
+    9302,
+    9303
+  ],
+  "observations_identite_graine": 58,
+  "profils": {
+    "pertes": {
+      "elongation_PCA": {
+        "cas": 1,
+        "provenances": [
+          "cristina.sanvito"
+        ]
+      },
+      "ligne_PCA": {
+        "cas": 6,
+        "provenances": [
+          "4028mdk09",
+          "Bernard Gagnon",
+          "Danielle Walquist Lynch",
+          "jrladia"
+        ]
+      },
+      "decoupe_composante": {
+        "cas": 1,
+        "provenances": [
+          "Bernard Gagnon"
+        ]
+      },
+      "orientation": {
+        "cas": 4,
+        "provenances": [
+          "4028mdk09",
+          "Bernard Gagnon",
+          "Danielle Walquist Lynch"
+        ]
+      },
+      "attribution": {
+        "cas": 1,
+        "provenances": [
+          "Bernard Gagnon"
+        ]
+      }
+    },
+    "gains": {
+      "ligne_PCA": {
+        "cas": 2,
+        "provenances": [
+          "4028mdk09",
+          "Bernard Gagnon"
+        ]
+      },
+      "decoupe_composante": {
+        "cas": 1,
+        "provenances": [
+          "Bernard Gagnon"
+        ]
+      },
+      "portions_trop_courtes": {
+        "cas": 2,
+        "provenances": [
+          "4028mdk09",
+          "Bernard Gagnon"
+        ]
+      }
+    }
+  },
+  "statuts": {
+    "conserves": 27,
+    "pertes": 13,
+    "absents_deux": 13,
+    "gains": 5
+  },
+  "nouveaux_entrainements": 0,
+  "test_ferme": true,
+  "developpement_ferme": true,
+  "NO_GO_Android": true
+}

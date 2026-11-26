@@ -1,0 +1,3445 @@
+[
+  {
+    "planche": "9301-5115614018-2.svg",
+    "graine": 9301,
+    "photo": "5115614018",
+    "identite": "5115614018:2",
+    "provenance": "Danielle Walquist Lynch",
+    "repere": [
+      704,
+      470
+    ],
+    "origine_xy704": [
+      190.0,
+      211.76678500958118
+    ],
+    "pas_px704": 0.7651608910891089,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          214.0,
+          268.17767858742206
+        ],
+        [
+          224.608125,
+          267.12818448023427
+        ],
+        [
+          235.3125,
+          266.47101024890185
+        ],
+        [
+          238.591875,
+          266.0581259150805
+        ],
+        [
+          245.9928125,
+          265.449121522694
+        ],
+        [
+          256.67312499999997,
+          264.4581991215227
+        ],
+        [
+          267.370625,
+          263.6668374816984
+        ],
+        [
+          276.2634375,
+          262.6931185944363
+        ],
+        [
+          278.03375,
+          262.3937774524158
+        ],
+        [
+          288.73125,
+          261.64370424597365
+        ],
+        [
+          299.40125,
+          260.48418740849195
+        ],
+        [
+          303.656875,
+          260.2674231332357
+        ],
+        [
+          310.09187499999996,
+          259.62745241581257
+        ],
+        [
+          320.5625,
+          258.65261172877
+        ]
+      ]
+    ],
+    "requetes": [
+      0,
+      11
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9301-5115614018/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 20,
+          "elongation": 20,
+          "portee": 20,
+          "pca": 15,
+          "interieur": 15,
+          "segment": 15,
+          "oriente": 15
+        },
+        "sondes_proches": 1968127,
+        "sondes_orientees": 1968127,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9301-5115614018/q00",
+        "comptes": {
+          "axe": 20,
+          "masque": 18,
+          "intersection": 16,
+          "taille": 12,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 4,
+          "interieur": 4,
+          "segment": 4,
+          "oriente": 0
+        },
+        "sondes_proches": 120,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 11,
+        "trace": "dice-9301-5115614018/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 11,
+        "trace": "bloc8-9301-5115614018/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 19,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 10,
+          "interieur": 10,
+          "segment": 10,
+          "oriente": 5
+        },
+        "sondes_proches": 1306368,
+        "sondes_orientees": 253952,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9301-5115614018-5.svg",
+    "graine": 9301,
+    "photo": "5115614018",
+    "identite": "5115614018:5",
+    "provenance": "Danielle Walquist Lynch",
+    "repere": [
+      704,
+      470
+    ],
+    "origine_xy704": [
+      211.3125,
+      215.07716214550658
+    ],
+    "pas_px704": 1.0191444925742574,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          235.3125,
+          284.4978351809245
+        ],
+        [
+          245.6009375,
+          284.3970717423133
+        ],
+        [
+          256.14375,
+          284.3282576866764
+        ],
+        [
+          261.8740625,
+          284.2869692532943
+        ],
+        [
+          266.683125,
+          284.2147144948755
+        ],
+        [
+          277.2259375,
+          284.03235724743774
+        ],
+        [
+          287.7653125,
+          283.88784773060024
+        ],
+        [
+          295.558125,
+          283.7983894582723
+        ],
+        [
+          298.308125,
+          283.80871156661783
+        ],
+        [
+          308.8509375,
+          283.7433382137628
+        ],
+        [
+          319.3903125,
+          283.71581259150804
+        ],
+        [
+          329.9296875,
+          283.6125915080527
+        ],
+        [
+          334.7421875,
+          283.53345534407026
+        ],
+        [
+          340.4759375,
+          283.4818448023426
+        ],
+        [
+          351.01875,
+          283.8121522693997
+        ],
+        [
+          361.5546875,
+          283.39926793557834
+        ],
+        [
+          370.4921875,
+          283.31669106881407
+        ],
+        [
+          372.0975,
+          283.31669106881407
+        ],
+        [
+          382.6403125,
+          283.59194729136163
+        ],
+        [
+          393.1796875,
+          283.24099560761346
+        ]
+      ]
+    ],
+    "requetes": [
+      5,
+      0
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 5,
+        "trace": "dice-9301-5115614018/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 16,
+          "elongation": 16,
+          "portee": 16,
+          "pca": 16,
+          "interieur": 16,
+          "segment": 15,
+          "oriente": 15
+        },
+        "sondes_proches": 998303,
+        "sondes_orientees": 998303,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 5,
+        "trace": "bloc8-9301-5115614018/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 20,
+          "taille": 20,
+          "elongation": 19,
+          "portee": 19,
+          "pca": 14,
+          "interieur": 11,
+          "segment": 11,
+          "oriente": 6
+        },
+        "sondes_proches": 2089856,
+        "sondes_orientees": 2064384,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9301-5115614018/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 17,
+          "taille": 17,
+          "elongation": 17,
+          "portee": 15,
+          "pca": 8,
+          "interieur": 8,
+          "segment": 7,
+          "oriente": 5
+        },
+        "sondes_proches": 458782,
+        "sondes_orientees": 262174,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9301-5115614018/q00",
+        "comptes": {
+          "axe": 20,
+          "masque": 20,
+          "intersection": 15,
+          "taille": 15,
+          "elongation": 15,
+          "portee": 15,
+          "pca": 10,
+          "interieur": 9,
+          "segment": 8,
+          "oriente": 8
+        },
+        "sondes_proches": 2088960,
+        "sondes_orientees": 2088960,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9301-7245527662-3.svg",
+    "graine": 9301,
+    "photo": "7245527662",
+    "identite": "7245527662:3",
+    "provenance": "jrladia",
+    "repere": [
+      704,
+      465
+    ],
+    "origine_xy704": [
+      353.0,
+      95.1759142828154
+    ],
+    "pas_px704": 1.7351485148514851,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          397.5625,
+          205.50770704246514
+        ],
+        [
+          404.2003125,
+          205.6488552437223
+        ],
+        [
+          410.480625,
+          205.92359675036928
+        ],
+        [
+          413.7221875,
+          205.9613737075332
+        ],
+        [
+          423.22343750000005,
+          206.77872968980796
+        ],
+        [
+          431.07125,
+          207.15649926144755
+        ],
+        [
+          432.741875,
+          207.173670605613
+        ],
+        [
+          442.270625,
+          207.38316100443132
+        ],
+        [
+          451.7890625,
+          207.77123338257016
+        ],
+        [
+          461.3109375,
+          208.03910635155097
+        ]
+      ],
+      [
+        [
+          614.8125,
+          214.98806314623337
+        ],
+        [
+          625.19375,
+          215.54985228951256
+        ],
+        [
+          635.9221875000001,
+          216.0649926144756
+        ],
+        [
+          646.6540625,
+          216.58356720827177
+        ],
+        [
+          646.7365625,
+          216.64881831610043
+        ],
+        [
+          657.3824999999999,
+          217.09870753323486
+        ],
+        [
+          668.114375,
+          217.61384785819791
+        ],
+        [
+          678.8462499999999,
+          218.07060561299852
+        ],
+        [
+          679.01125,
+          218.19767355982273
+        ],
+        [
+          689.5746875,
+          218.5857459379616
+        ],
+        [
+          700.0625,
+          219.0891710281161
+        ]
+      ]
+    ],
+    "requetes": [
+      10,
+      11
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 10,
+        "trace": "dice-9301-7245527662/q10",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 18,
+          "elongation": 16,
+          "portee": 16,
+          "pca": 16,
+          "interieur": 16,
+          "segment": 16,
+          "oriente": 16
+        },
+        "sondes_proches": 2097120,
+        "sondes_orientees": 2097120,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 10,
+        "trace": "bloc8-9301-7245527662/q10",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 19,
+          "elongation": 19,
+          "portee": 19,
+          "pca": 3,
+          "interieur": 3,
+          "segment": 3,
+          "oriente": 3
+        },
+        "sondes_proches": 14,
+        "sondes_orientees": 14,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 11,
+        "trace": "dice-9301-7245527662/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 14,
+          "intersection": 14,
+          "taille": 14,
+          "elongation": 14,
+          "portee": 14,
+          "pca": 3,
+          "interieur": 2,
+          "segment": 2,
+          "oriente": 2
+        },
+        "sondes_proches": 384,
+        "sondes_orientees": 384,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 11,
+        "trace": "bloc8-9301-7245527662/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 8,
+          "intersection": 8,
+          "taille": 8,
+          "elongation": 8,
+          "portee": 8,
+          "pca": 7,
+          "interieur": 7,
+          "segment": 7,
+          "oriente": 7
+        },
+        "sondes_proches": 4064,
+        "sondes_orientees": 4064,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9301-wc11001401-2.svg",
+    "graine": 9301,
+    "photo": "wc11001401",
+    "identite": "wc11001401:2",
+    "provenance": "4028mdk09",
+    "repere": [
+      528,
+      704
+    ],
+    "origine_xy704": [
+      63.21249999999999,
+      268.2228593139487
+    ],
+    "pas_px704": 0.7415222772277228,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          87.2125,
+          315.48
+        ],
+        [
+          95.055,
+          315.8125
+        ],
+        [
+          102.8875,
+          316.2525
+        ],
+        [
+          105.215,
+          315.98
+        ],
+        [
+          110.7375,
+          316.4375
+        ],
+        [
+          118.5875,
+          316.6
+        ],
+        [
+          126.3925,
+          317.5175
+        ],
+        [
+          130.6525,
+          317.82
+        ],
+        [
+          134.225,
+          317.99
+        ],
+        [
+          142.055,
+          318.505
+        ],
+        [
+          149.8975,
+          318.785
+        ],
+        [
+          152.6225,
+          318.9775
+        ],
+        [
+          157.7325,
+          319.1825
+        ],
+        [
+          165.5625,
+          319.7175
+        ],
+        [
+          173.3975,
+          320.1225
+        ],
+        [
+          173.5875,
+          320.1325
+        ],
+        [
+          181.23,
+          320.5825
+        ],
+        [
+          189.0,
+          321.07122605363986
+        ]
+      ]
+    ],
+    "requetes": [
+      3,
+      0
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 3,
+        "trace": "dice-9301-wc11001401/q03",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 20,
+          "segment": 20,
+          "oriente": 20
+        },
+        "sondes_proches": 2097143,
+        "sondes_orientees": 2097143,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 3,
+        "trace": "bloc8-9301-wc11001401/q03",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 16,
+          "elongation": 16,
+          "portee": 16,
+          "pca": 7,
+          "interieur": 7,
+          "segment": 3,
+          "oriente": 3
+        },
+        "sondes_proches": 448,
+        "sondes_orientees": 448,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9301-wc11001401/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 20,
+          "elongation": 19,
+          "portee": 19,
+          "pca": 15,
+          "interieur": 13,
+          "segment": 11,
+          "oriente": 9
+        },
+        "sondes_proches": 127228,
+        "sondes_orientees": 127036,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9301-wc11001401/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 19,
+          "elongation": 19,
+          "portee": 18,
+          "pca": 17,
+          "interieur": 13,
+          "segment": 11,
+          "oriente": 9
+        },
+        "sondes_proches": 1574908,
+        "sondes_orientees": 2044,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9301-wc71488242-8.svg",
+    "graine": 9301,
+    "photo": "wc71488242",
+    "identite": "wc71488242:8",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      67.515,
+      295.48991731949906
+    ],
+    "pas_px704": 0.9610643564356434,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          91.51500000000001,
+          337.31825000000003
+        ],
+        [
+          99.49275000000002,
+          340.368
+        ],
+        [
+          107.56950000000002,
+          343.09875000000005
+        ],
+        [
+          115.70675000000001,
+          345.64250000000004
+        ],
+        [
+          115.99825000000001,
+          345.63425000000007
+        ],
+        [
+          123.8495,
+          348.15875
+        ],
+        [
+          132.04175,
+          350.5375
+        ],
+        [
+          140.25875000000002,
+          352.82275000000004
+        ],
+        [
+          143.8145,
+          354.349
+        ],
+        [
+          148.34375,
+          355.52875000000006
+        ],
+        [
+          156.54149999999998,
+          357.87450000000007
+        ],
+        [
+          164.5825,
+          360.7235
+        ],
+        [
+          172.7225,
+          363.25350000000003
+        ],
+        [
+          173.22025000000002,
+          363.51200000000006
+        ],
+        [
+          180.80200000000002,
+          365.98150000000004
+        ],
+        [
+          188.98600000000002,
+          368.38225000000006
+        ],
+        [
+          197.19475,
+          370.69225
+        ],
+        [
+          205.30175000000003,
+          373.324
+        ],
+        [
+          210.04275,
+          374.754
+        ],
+        [
+          213.45275,
+          375.82650000000007
+        ],
+        [
+          221.55700000000002,
+          378.48025
+        ],
+        [
+          229.67225000000002,
+          381.08725
+        ],
+        [
+          237.65,
+          383.40527275780994
+        ]
+      ]
+    ],
+    "requetes": [
+      11,
+      5
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 11,
+        "trace": "dice-9301-wc71488242/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 19,
+          "interieur": 18,
+          "segment": 16,
+          "oriente": 16
+        },
+        "sondes_proches": 774142,
+        "sondes_orientees": 774142,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 11,
+        "trace": "bloc8-9301-wc71488242/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 14,
+          "intersection": 14,
+          "taille": 11,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 5,
+        "trace": "dice-9301-wc71488242/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 17,
+          "elongation": 15,
+          "portee": 15,
+          "pca": 6,
+          "interieur": 2,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 5,
+        "trace": "bloc8-9301-wc71488242/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 18,
+          "taille": 18,
+          "elongation": 14,
+          "portee": 14,
+          "pca": 11,
+          "interieur": 9,
+          "segment": 6,
+          "oriente": 6
+        },
+        "sondes_proches": 2016,
+        "sondes_orientees": 2016,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9301-wc71488242-9.svg",
+    "graine": 9301,
+    "photo": "wc71488242",
+    "identite": "wc71488242:9",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      81.19350000000001,
+      313.05666336633664
+    ],
+    "pas_px704": 0.990769801980198,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          105.1935,
+          354.195
+        ],
+        [
+          113.10525000000001,
+          357.20075
+        ],
+        [
+          121.14900000000002,
+          359.7995
+        ],
+        [
+          129.15975,
+          362.48625000000004
+        ],
+        [
+          132.25075,
+          363.47075
+        ],
+        [
+          137.30800000000002,
+          364.76875
+        ],
+        [
+          145.30225000000002,
+          367.51325
+        ],
+        [
+          153.23875,
+          370.44200000000006
+        ],
+        [
+          161.29625000000001,
+          373.00225000000006
+        ],
+        [
+          161.51350000000002,
+          373.07375
+        ],
+        [
+          169.28775000000002,
+          375.75225000000006
+        ],
+        [
+          177.29850000000002,
+          378.45825
+        ],
+        [
+          185.35325000000003,
+          381.024
+        ],
+        [
+          193.37500000000003,
+          383.68325000000004
+        ],
+        [
+          198.97675,
+          385.93000000000006
+        ],
+        [
+          201.35000000000002,
+          386.49100000000004
+        ],
+        [
+          209.34700000000004,
+          389.23275000000007
+        ],
+        [
+          217.31375,
+          392.06525000000005
+        ],
+        [
+          225.30800000000002,
+          394.80425
+        ],
+        [
+          228.15975000000003,
+          395.7805
+        ],
+        [
+          233.31050000000002,
+          397.5377500000001
+        ],
+        [
+          241.31300000000005,
+          400.26575
+        ],
+        [
+          249.31275000000002,
+          402.99100000000004
+        ],
+        [
+          257.329,
+          405.67225
+        ]
+      ]
+    ],
+    "requetes": [
+      9
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 9,
+        "trace": "dice-9301-wc71488242/q09",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 9,
+          "portee": 9,
+          "pca": 9,
+          "interieur": 7,
+          "segment": 5,
+          "oriente": 5
+        },
+        "sondes_proches": 62,
+        "sondes_orientees": 62,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 9,
+        "trace": "bloc8-9301-wc71488242/q09",
+        "comptes": {
+          "axe": 21,
+          "masque": 16,
+          "intersection": 16,
+          "taille": 15,
+          "elongation": 15,
+          "portee": 15,
+          "pca": 15,
+          "interieur": 15,
+          "segment": 14,
+          "oriente": 14
+        },
+        "sondes_proches": 116735,
+        "sondes_orientees": 116735,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9301-wc71488242-10.svg",
+    "graine": 9301,
+    "photo": "wc71488242",
+    "identite": "wc71488242:10",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      104.2,
+      402.20527293194795
+    ],
+    "pas_px704": 0.8202970297029704,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          128.20000000000002,
+          443.0231264190724
+        ],
+        [
+          136.5765,
+          444.86525000000006
+        ],
+        [
+          144.99425000000002,
+          447.01025000000004
+        ],
+        [
+          153.43125,
+          449.06175
+        ],
+        [
+          155.9145,
+          449.6502500000001
+        ],
+        [
+          161.83800000000002,
+          451.22600000000006
+        ],
+        [
+          170.33550000000002,
+          453.02725000000004
+        ],
+        [
+          178.78625000000002,
+          455.01275000000004
+        ],
+        [
+          184.79775,
+          456.55825000000004
+        ],
+        [
+          187.18750000000003,
+          457.21000000000004
+        ],
+        [
+          195.60250000000002,
+          459.36875000000003
+        ],
+        [
+          204.02300000000002,
+          461.48075000000006
+        ],
+        [
+          210.43050000000002,
+          462.8915
+        ],
+        [
+          212.47650000000002,
+          463.46625000000006
+        ],
+        [
+          220.88875000000002,
+          465.6195
+        ],
+        [
+          229.30100000000002,
+          467.77275000000003
+        ],
+        [
+          232.83475,
+          468.53175000000005
+        ],
+        [
+          237.72425,
+          469.8985
+        ],
+        [
+          245.90000000000003,
+          472.12751845472445
+        ]
+      ]
+    ],
+    "requetes": [
+      7,
+      1
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 7,
+        "trace": "dice-9301-wc71488242/q07",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 19,
+          "segment": 19,
+          "oriente": 19
+        },
+        "sondes_proches": 2097127,
+        "sondes_orientees": 2097127,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 7,
+        "trace": "bloc8-9301-wc71488242/q07",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 13,
+          "elongation": 9,
+          "portee": 6,
+          "pca": 6,
+          "interieur": 6,
+          "segment": 6,
+          "oriente": 5
+        },
+        "sondes_proches": 2064384,
+        "sondes_orientees": 1015808,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 1,
+        "trace": "dice-9301-wc71488242/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 18,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 12,
+          "interieur": 12,
+          "segment": 12,
+          "oriente": 12
+        },
+        "sondes_proches": 2096640,
+        "sondes_orientees": 2096640,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 1,
+        "trace": "bloc8-9301-wc71488242/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 13,
+          "intersection": 13,
+          "taille": 10,
+          "elongation": 10,
+          "portee": 10,
+          "pca": 10,
+          "interieur": 10,
+          "segment": 10,
+          "oriente": 10
+        },
+        "sondes_proches": 16368,
+        "sondes_orientees": 16368,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-4169106197-1.svg",
+    "graine": 9302,
+    "photo": "4169106197",
+    "identite": "4169106197:1",
+    "provenance": "cristina.sanvito",
+    "repere": [
+      640,
+      480
+    ],
+    "origine_xy704": [
+      199.49999999999997,
+      120.27139255070799
+    ],
+    "pas_px704": 0.8102227722772278,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          223.5,
+          167.81785935884176
+        ],
+        [
+          237.555,
+          169.625
+        ],
+        [
+          251.85,
+          171.11
+        ],
+        [
+          252.095,
+          171.205
+        ],
+        [
+          266.605,
+          173.015
+        ],
+        [
+          281.105,
+          174.925
+        ],
+        [
+          284.575,
+          175.445
+        ],
+        [
+          295.615,
+          176.84
+        ],
+        [
+          310.12,
+          178.665
+        ],
+        [
+          315.36,
+          179.095
+        ],
+        [
+          324.64,
+          180.42
+        ],
+        [
+          339.165,
+          182.105
+        ]
+      ]
+    ],
+    "requetes": [
+      0
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9302-4169106197/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 21,
+          "segment": 21,
+          "oriente": 21
+        },
+        "sondes_proches": 2097151,
+        "sondes_orientees": 2097151,
+        "triplet_admissible": true
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9302-4169106197/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-7245527662-2.svg",
+    "graine": 9302,
+    "photo": "7245527662",
+    "identite": "7245527662:2",
+    "provenance": "jrladia",
+    "repere": [
+      704,
+      465
+    ],
+    "origine_xy704": [
+      307.625,
+      73.88641398962795
+    ],
+    "pas_px704": 1.9597772277227723,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          344.625,
+          143.87877389893274
+        ],
+        [
+          353.21875,
+          146.57943131462332
+        ],
+        [
+          356.93812499999996,
+          147.5994091580502
+        ],
+        [
+          362.011875,
+          149.33371491875923
+        ],
+        [
+          370.7809375,
+          152.16011816838994
+        ],
+        [
+          378.333125,
+          155.15823485967502
+        ],
+        [
+          379.4846875,
+          155.17197193500738
+        ],
+        [
+          387.9375,
+          158.2968412646507
+        ]
+      ],
+      [
+        [
+          460.8125,
+          184.5394828322392
+        ],
+        [
+          470.705625,
+          188.11004431314623
+        ],
+        [
+          480.805,
+          191.75723781388479
+        ],
+        [
+          490.93875,
+          195.28766617429838
+        ],
+        [
+          498.8003125,
+          198.17245199409157
+        ],
+        [
+          501.0003125,
+          199.03788774002953
+        ],
+        [
+          511.06875,
+          202.76750369276218
+        ],
+        [
+          521.1440625,
+          206.5005539143279
+        ],
+        [
+          531.3053125,
+          209.9451255539143
+        ],
+        [
+          541.3771875,
+          213.67817577548004
+        ],
+        [
+          551.48,
+          217.2944608567208
+        ],
+        [
+          558.2278125,
+          219.93884785819793
+        ],
+        [
+          561.5690625,
+          220.96912850812407
+        ],
+        [
+          571.6168749999999,
+          224.76399556868535
+        ],
+        [
+          581.6853125,
+          228.5039143279173
+        ],
+        [
+          591.8225,
+          232.0171713441654
+        ],
+        [
+          601.92875,
+          235.64375923190545
+        ],
+        [
+          611.8665625,
+          239.78548744460855
+        ],
+        [
+          619.5699999999999,
+          242.47108567208272
+        ],
+        [
+          621.9728124999999,
+          243.40177252584934
+        ],
+        [
+          632.06875,
+          247.0489660265879
+        ],
+        [
+          642.1853125,
+          250.63434268833086
+        ],
+        [
+          652.246875,
+          254.3948670605613
+        ],
+        [
+          662.3840625,
+          257.92529542097486
+        ],
+        [
+          672.4971875,
+          261.51067208271786
+        ],
+        [
+          673.2465625,
+          261.90904726735596
+        ],
+        [
+          682.6171875,
+          265.0926144756278
+        ],
+        [
+          692.5,
+          268.4639798228974
+        ]
+      ]
+    ],
+    "requetes": [
+      0,
+      5
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9302-7245527662/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 19,
+          "elongation": 19,
+          "portee": 19,
+          "pca": 16,
+          "interieur": 16,
+          "segment": 16,
+          "oriente": 15
+        },
+        "sondes_proches": 98303,
+        "sondes_orientees": 32767,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9302-7245527662/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 2,
+          "intersection": 2,
+          "taille": 2,
+          "elongation": 1,
+          "portee": 1,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 5,
+        "trace": "dice-9302-7245527662/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 7,
+          "intersection": 7,
+          "taille": 6,
+          "elongation": 6,
+          "portee": 6,
+          "pca": 4,
+          "interieur": 4,
+          "segment": 4,
+          "oriente": 4
+        },
+        "sondes_proches": 16832,
+        "sondes_orientees": 16832,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 5,
+        "trace": "bloc8-9302-7245527662/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 20,
+          "elongation": 20,
+          "portee": 20,
+          "pca": 10,
+          "interieur": 10,
+          "segment": 10,
+          "oriente": 10
+        },
+        "sondes_proches": 1052615,
+        "sondes_orientees": 1052615,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-wc11001401-2.svg",
+    "graine": 9302,
+    "photo": "wc11001401",
+    "identite": "wc11001401:2",
+    "provenance": "4028mdk09",
+    "repere": [
+      528,
+      704
+    ],
+    "origine_xy704": [
+      63.21249999999999,
+      268.2228593139487
+    ],
+    "pas_px704": 0.7415222772277228,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          87.2125,
+          315.48
+        ],
+        [
+          95.055,
+          315.8125
+        ],
+        [
+          102.8875,
+          316.2525
+        ],
+        [
+          105.215,
+          315.98
+        ],
+        [
+          110.7375,
+          316.4375
+        ],
+        [
+          118.5875,
+          316.6
+        ],
+        [
+          126.3925,
+          317.5175
+        ],
+        [
+          130.6525,
+          317.82
+        ],
+        [
+          134.225,
+          317.99
+        ],
+        [
+          142.055,
+          318.505
+        ],
+        [
+          149.8975,
+          318.785
+        ],
+        [
+          152.6225,
+          318.9775
+        ],
+        [
+          157.7325,
+          319.1825
+        ],
+        [
+          165.5625,
+          319.7175
+        ],
+        [
+          173.3975,
+          320.1225
+        ],
+        [
+          173.5875,
+          320.1325
+        ],
+        [
+          181.23,
+          320.5825
+        ],
+        [
+          189.0,
+          321.07122605363986
+        ]
+      ]
+    ],
+    "requetes": [
+      3
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 3,
+        "trace": "dice-9302-wc11001401/q03",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 19,
+          "portee": 19,
+          "pca": 10,
+          "interieur": 10,
+          "segment": 9,
+          "oriente": 5
+        },
+        "sondes_proches": 4067,
+        "sondes_orientees": 1984,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 3,
+        "trace": "bloc8-9302-wc11001401/q03",
+        "comptes": {
+          "axe": 21,
+          "masque": 18,
+          "intersection": 18,
+          "taille": 18,
+          "elongation": 18,
+          "portee": 18,
+          "pca": 18,
+          "interieur": 18,
+          "segment": 18,
+          "oriente": 18
+        },
+        "sondes_proches": 2097144,
+        "sondes_orientees": 2097144,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-wc11001401-3.svg",
+    "graine": 9302,
+    "photo": "wc11001401",
+    "identite": "wc11001401:3",
+    "provenance": "4028mdk09",
+    "repere": [
+      528,
+      704
+    ],
+    "origine_xy704": [
+      65.715,
+      275.7235396039604
+    ],
+    "pas_px704": 0.7212623762376237,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          89.715,
+          320.565
+        ],
+        [
+          97.225,
+          321.21
+        ],
+        [
+          104.7375,
+          321.855
+        ],
+        [
+          107.655,
+          321.99
+        ],
+        [
+          112.2975,
+          321.8475
+        ],
+        [
+          119.7775,
+          322.91
+        ],
+        [
+          127.2925,
+          323.5
+        ],
+        [
+          132.575,
+          324.0175
+        ],
+        [
+          134.8025,
+          324.165
+        ],
+        [
+          142.3225,
+          324.6675
+        ],
+        [
+          149.8375,
+          325.2725
+        ],
+        [
+          155.015,
+          325.6525
+        ],
+        [
+          157.355,
+          325.8425
+        ],
+        [
+          164.855,
+          326.5975
+        ],
+        [
+          172.38,
+          327.0675
+        ],
+        [
+          176.9425,
+          327.4775
+        ],
+        [
+          179.895,
+          327.6875
+        ],
+        [
+          187.41,
+          328.2525
+        ]
+      ]
+    ],
+    "requetes": [
+      5,
+      2
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 5,
+        "trace": "dice-9302-wc11001401/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 19,
+          "elongation": 19,
+          "portee": 19,
+          "pca": 19,
+          "interieur": 19,
+          "segment": 17,
+          "oriente": 17
+        },
+        "sondes_proches": 131071,
+        "sondes_orientees": 131071,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 5,
+        "trace": "bloc8-9302-wc11001401/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 2,
+        "trace": "dice-9302-wc11001401/q02",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 18,
+          "taille": 18,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 2,
+        "trace": "bloc8-9302-wc11001401/q02",
+        "comptes": {
+          "axe": 19,
+          "masque": 21,
+          "intersection": 19,
+          "taille": 17,
+          "elongation": 17,
+          "portee": 17,
+          "pca": 14,
+          "interieur": 13,
+          "segment": 13,
+          "oriente": 5
+        },
+        "sondes_proches": 1019423,
+        "sondes_orientees": 31,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-wc11001401-5.svg",
+    "graine": 9302,
+    "photo": "wc11001401",
+    "identite": "wc11001401:5",
+    "provenance": "4028mdk09",
+    "repere": [
+      528,
+      704
+    ],
+    "origine_xy704": [
+      69.64249999999998,
+      293.2361569056482
+    ],
+    "pas_px704": 0.7418688118811883,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          93.6425,
+          338.34
+        ],
+        [
+          101.5025,
+          338.9975
+        ],
+        [
+          109.345,
+          339.7875
+        ],
+        [
+          117.205,
+          340.4425
+        ],
+        [
+          120.04,
+          340.715
+        ],
+        [
+          125.0425,
+          341.32
+        ],
+        [
+          132.92,
+          341.765
+        ],
+        [
+          140.735,
+          342.8625
+        ],
+        [
+          148.4025,
+          343.495
+        ],
+        [
+          148.5825,
+          343.615
+        ],
+        [
+          156.44,
+          344.2925
+        ],
+        [
+          164.275,
+          345.175
+        ],
+        [
+          172.1325,
+          345.8475
+        ],
+        [
+          176.7575,
+          346.3775
+        ],
+        [
+          179.975,
+          346.6625
+        ],
+        [
+          187.825,
+          347.4125
+        ],
+        [
+          195.5,
+          348.2846034152569
+        ]
+      ]
+    ],
+    "requetes": [
+      11,
+      7
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 11,
+        "trace": "dice-9302-wc11001401/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 18,
+          "elongation": 17,
+          "portee": 17,
+          "pca": 14,
+          "interieur": 14,
+          "segment": 12,
+          "oriente": 12
+        },
+        "sondes_proches": 2089080,
+        "sondes_orientees": 2089080,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 11,
+        "trace": "bloc8-9302-wc11001401/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 19,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 7,
+        "trace": "dice-9302-wc11001401/q07",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 20,
+          "elongation": 17,
+          "portee": 17,
+          "pca": 12,
+          "interieur": 10,
+          "segment": 10,
+          "oriente": 9
+        },
+        "sondes_proches": 2093057,
+        "sondes_orientees": 2093056,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 7,
+        "trace": "bloc8-9302-wc11001401/q07",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 8,
+          "interieur": 8,
+          "segment": 8,
+          "oriente": 8
+        },
+        "sondes_proches": 2088960,
+        "sondes_orientees": 2088960,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-wc71488242-3.svg",
+    "graine": 9302,
+    "photo": "wc71488242",
+    "identite": "wc71488242:3",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      149.3,
+      231.29364283644856
+    ],
+    "pas_px704": 0.7821782178217822,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          173.3,
+          279.2601517541037
+        ],
+        [
+          180.77725000000004,
+          279.9725
+        ],
+        [
+          182.54275,
+          279.97525
+        ],
+        [
+          189.33525,
+          280.5885
+        ],
+        [
+          197.90425000000002,
+          281.1055
+        ],
+        [
+          206.4045,
+          282.38975000000005
+        ],
+        [
+          214.85250000000002,
+          282.99475000000007
+        ],
+        [
+          214.9625,
+          283.00300000000004
+        ],
+        [
+          223.504,
+          283.8115
+        ],
+        [
+          232.06750000000002,
+          284.38075000000003
+        ],
+        [
+          240.62550000000005,
+          284.99675
+        ],
+        [
+          242.24250000000004,
+          285.48075000000006
+        ],
+        [
+          249.15600000000003,
+          285.96475000000004
+        ],
+        [
+          257.71125,
+          286.58900000000006
+        ],
+        [
+          266.26375,
+          287.30675
+        ],
+        [
+          270.2045,
+          287.68625000000003
+        ],
+        [
+          274.819,
+          287.9585
+        ],
+        [
+          283.3,
+          288.92119332473396
+        ]
+      ]
+    ],
+    "requetes": [
+      8,
+      7
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 8,
+        "trace": "dice-9302-wc71488242/q08",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 21,
+          "segment": 16,
+          "oriente": 16
+        },
+        "sondes_proches": 1638396,
+        "sondes_orientees": 1638396,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 8,
+        "trace": "bloc8-9302-wc71488242/q08",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 19,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 7,
+        "trace": "dice-9302-wc71488242/q07",
+        "comptes": {
+          "axe": 21,
+          "masque": 19,
+          "intersection": 19,
+          "taille": 16,
+          "elongation": 16,
+          "portee": 16,
+          "pca": 15,
+          "interieur": 12,
+          "segment": 11,
+          "oriente": 11
+        },
+        "sondes_proches": 32752,
+        "sondes_orientees": 32752,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 7,
+        "trace": "bloc8-9302-wc71488242/q07",
+        "comptes": {
+          "axe": 21,
+          "masque": 12,
+          "intersection": 12,
+          "taille": 12,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 11,
+          "interieur": 11,
+          "segment": 11,
+          "oriente": 11
+        },
+        "sondes_proches": 131008,
+        "sondes_orientees": 131008,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-wc71488242-6.svg",
+    "graine": 9302,
+    "photo": "wc71488242",
+    "identite": "wc71488242:6",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      43.150000000000006,
+      242.90400834499218
+    ],
+    "pas_px704": 0.974664603960396,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          67.15,
+          290.53048822463774
+        ],
+        [
+          75.29825000000001,
+          292.23475
+        ],
+        [
+          83.474,
+          294.6795000000001
+        ],
+        [
+          91.75700000000002,
+          296.70625
+        ],
+        [
+          95.28800000000001,
+          297.32225000000005
+        ],
+        [
+          99.98225000000001,
+          298.95025000000004
+        ],
+        [
+          108.39725000000001,
+          300.438
+        ],
+        [
+          116.70775,
+          302.34650000000005
+        ],
+        [
+          124.98525000000001,
+          304.39250000000004
+        ],
+        [
+          131.15625,
+          305.78125
+        ],
+        [
+          133.1995,
+          306.67775
+        ],
+        [
+          141.62275,
+          308.14625
+        ],
+        [
+          149.8205,
+          310.50025000000005
+        ],
+        [
+          157.98525,
+          312.9945
+        ],
+        [
+          164.21125000000004,
+          314.17150000000004
+        ],
+        [
+          166.27925000000002,
+          314.96625000000006
+        ],
+        [
+          174.52925000000002,
+          317.10575000000006
+        ],
+        [
+          182.95800000000003,
+          318.5495
+        ],
+        [
+          191.22175000000001,
+          320.64225
+        ],
+        [
+          194.651,
+          321.668
+        ],
+        [
+          199.58725,
+          322.3335
+        ],
+        [
+          207.82075,
+          324.55
+        ],
+        [
+          216.03225,
+          326.8572500000001
+        ]
+      ]
+    ],
+    "requetes": [
+      1,
+      6
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 1,
+        "trace": "dice-9302-wc71488242/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 14,
+          "elongation": 14,
+          "portee": 14,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 1,
+        "trace": "bloc8-9302-wc71488242/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 18,
+          "segment": 16,
+          "oriente": 16
+        },
+        "sondes_proches": 2093183,
+        "sondes_orientees": 2093183,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 6,
+        "trace": "dice-9302-wc71488242/q06",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 17,
+          "elongation": 17,
+          "portee": 17,
+          "pca": 1,
+          "interieur": 1,
+          "segment": 1,
+          "oriente": 1
+        },
+        "sondes_proches": 1048576,
+        "sondes_orientees": 1048576,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 6,
+        "trace": "bloc8-9302-wc71488242/q06",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 19,
+          "interieur": 19,
+          "segment": 15,
+          "oriente": 15
+        },
+        "sondes_proches": 2093308,
+        "sondes_orientees": 2093308,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9302-wc71488242-8.svg",
+    "graine": 9302,
+    "photo": "wc71488242",
+    "identite": "wc71488242:8",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      67.515,
+      295.48991731949906
+    ],
+    "pas_px704": 0.9610643564356434,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          91.51500000000001,
+          337.31825000000003
+        ],
+        [
+          99.49275000000002,
+          340.368
+        ],
+        [
+          107.56950000000002,
+          343.09875000000005
+        ],
+        [
+          115.70675000000001,
+          345.64250000000004
+        ],
+        [
+          115.99825000000001,
+          345.63425000000007
+        ],
+        [
+          123.8495,
+          348.15875
+        ],
+        [
+          132.04175,
+          350.5375
+        ],
+        [
+          140.25875000000002,
+          352.82275000000004
+        ],
+        [
+          143.8145,
+          354.349
+        ],
+        [
+          148.34375,
+          355.52875000000006
+        ],
+        [
+          156.54149999999998,
+          357.87450000000007
+        ],
+        [
+          164.5825,
+          360.7235
+        ],
+        [
+          172.7225,
+          363.25350000000003
+        ],
+        [
+          173.22025000000002,
+          363.51200000000006
+        ],
+        [
+          180.80200000000002,
+          365.98150000000004
+        ],
+        [
+          188.98600000000002,
+          368.38225000000006
+        ],
+        [
+          197.19475,
+          370.69225
+        ],
+        [
+          205.30175000000003,
+          373.324
+        ],
+        [
+          210.04275,
+          374.754
+        ],
+        [
+          213.45275,
+          375.82650000000007
+        ],
+        [
+          221.55700000000002,
+          378.48025
+        ],
+        [
+          229.67225000000002,
+          381.08725
+        ],
+        [
+          237.65,
+          383.40527275780994
+        ]
+      ]
+    ],
+    "requetes": [
+      11,
+      4
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 11,
+        "trace": "dice-9302-wc71488242/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 15,
+          "elongation": 15,
+          "portee": 15,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 11,
+        "trace": "bloc8-9302-wc71488242/q11",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 20,
+          "segment": 16,
+          "oriente": 14
+        },
+        "sondes_proches": 2097027,
+        "sondes_orientees": 2097024,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 4,
+        "trace": "dice-9302-wc71488242/q04",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 20,
+          "taille": 16,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 7,
+          "interieur": 7,
+          "segment": 5,
+          "oriente": 4
+        },
+        "sondes_proches": 122944,
+        "sondes_orientees": 122880,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 4,
+        "trace": "bloc8-9302-wc71488242/q04",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 19,
+          "elongation": 3,
+          "portee": 3,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9303-wc11001401-2.svg",
+    "graine": 9303,
+    "photo": "wc11001401",
+    "identite": "wc11001401:2",
+    "provenance": "4028mdk09",
+    "repere": [
+      528,
+      704
+    ],
+    "origine_xy704": [
+      63.21249999999999,
+      268.2228593139487
+    ],
+    "pas_px704": 0.7415222772277228,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          87.2125,
+          315.48
+        ],
+        [
+          95.055,
+          315.8125
+        ],
+        [
+          102.8875,
+          316.2525
+        ],
+        [
+          105.215,
+          315.98
+        ],
+        [
+          110.7375,
+          316.4375
+        ],
+        [
+          118.5875,
+          316.6
+        ],
+        [
+          126.3925,
+          317.5175
+        ],
+        [
+          130.6525,
+          317.82
+        ],
+        [
+          134.225,
+          317.99
+        ],
+        [
+          142.055,
+          318.505
+        ],
+        [
+          149.8975,
+          318.785
+        ],
+        [
+          152.6225,
+          318.9775
+        ],
+        [
+          157.7325,
+          319.1825
+        ],
+        [
+          165.5625,
+          319.7175
+        ],
+        [
+          173.3975,
+          320.1225
+        ],
+        [
+          173.5875,
+          320.1325
+        ],
+        [
+          181.23,
+          320.5825
+        ],
+        [
+          189.0,
+          321.07122605363986
+        ]
+      ]
+    ],
+    "requetes": [
+      0,
+      1
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9303-wc11001401/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 17,
+          "intersection": 17,
+          "taille": 16,
+          "elongation": 16,
+          "portee": 16,
+          "pca": 17,
+          "interieur": 17,
+          "segment": 15,
+          "oriente": 15
+        },
+        "sondes_proches": 32767,
+        "sondes_orientees": 32767,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9303-wc11001401/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 15,
+          "intersection": 15,
+          "taille": 15,
+          "elongation": 0,
+          "portee": 0,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 1,
+        "trace": "dice-9303-wc11001401/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 20,
+          "taille": 15,
+          "elongation": 7,
+          "portee": 7,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 1,
+        "trace": "bloc8-9303-wc11001401/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 20,
+          "elongation": 20,
+          "portee": 20,
+          "pca": 8,
+          "interieur": 7,
+          "segment": 6,
+          "oriente": 5
+        },
+        "sondes_proches": 63,
+        "sondes_orientees": 55,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9303-wc11001401-4.svg",
+    "graine": 9303,
+    "photo": "wc11001401",
+    "identite": "wc11001401:4",
+    "provenance": "4028mdk09",
+    "repere": [
+      528,
+      704
+    ],
+    "origine_xy704": [
+      71.16499999999999,
+      284.8606621287129
+    ],
+    "pas_px704": 0.7110272277227723,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          95.165,
+          328.62
+        ],
+        [
+          103.125,
+          329.415
+        ],
+        [
+          111.125,
+          329.785
+        ],
+        [
+          119.12,
+          330.1875
+        ],
+        [
+          127.0525,
+          331.315
+        ],
+        [
+          135.005,
+          332.1875
+        ],
+        [
+          142.4625,
+          332.98
+        ],
+        [
+          142.9675,
+          332.9575
+        ],
+        [
+          150.9425,
+          333.595
+        ],
+        [
+          158.915,
+          334.2675
+        ],
+        [
+          166.8825,
+          335.01
+        ],
+        [
+          167.38,
+          335.0175
+        ],
+        [
+          174.845,
+          335.75
+        ],
+        [
+          182.8125,
+          336.49
+        ],
+        [
+          190.7925,
+          337.09
+        ]
+      ]
+    ],
+    "requetes": [
+      2,
+      1
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 2,
+        "trace": "dice-9303-wc11001401/q02",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 18,
+          "elongation": 11,
+          "portee": 8,
+          "pca": 9,
+          "interieur": 5,
+          "segment": 5,
+          "oriente": 1
+        },
+        "sondes_proches": 3841,
+        "sondes_orientees": 1,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 2,
+        "trace": "bloc8-9303-wc11001401/q02",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 21,
+          "interieur": 20,
+          "segment": 20,
+          "oriente": 20
+        },
+        "sondes_proches": 2096895,
+        "sondes_orientees": 2096895,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 1,
+        "trace": "dice-9303-wc11001401/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 15,
+          "elongation": 15,
+          "portee": 15,
+          "pca": 13,
+          "interieur": 11,
+          "segment": 8,
+          "oriente": 8
+        },
+        "sondes_proches": 520193,
+        "sondes_orientees": 520193,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 1,
+        "trace": "bloc8-9303-wc11001401/q01",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 12,
+          "interieur": 12,
+          "segment": 10,
+          "oriente": 10
+        },
+        "sondes_proches": 2072064,
+        "sondes_orientees": 2072064,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9303-wc71488242-1.svg",
+    "graine": 9303,
+    "photo": "wc71488242",
+    "identite": "wc71488242:1",
+    "provenance": "Bernard Gagnon",
+    "repere": [
+      704,
+      704
+    ],
+    "origine_xy704": [
+      192.75,
+      73.2942414161952
+    ],
+    "pas_px704": 0.8174925742574257,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          216.75000000000003,
+          107.76473035714287
+        ],
+        [
+          224.395,
+          110.82000000000001
+        ],
+        [
+          232.32325000000003,
+          113.26750000000001
+        ],
+        [
+          234.35825,
+          113.88625
+        ],
+        [
+          240.00125,
+          116.40800000000002
+        ],
+        [
+          247.85250000000002,
+          119.05350000000001
+        ],
+        [
+          255.65975000000003,
+          121.83650000000002
+        ],
+        [
+          260.1175,
+          123.52775000000001
+        ],
+        [
+          263.54675000000003,
+          124.38575000000002
+        ],
+        [
+          271.31,
+          127.29800000000002
+        ],
+        [
+          279.1035,
+          130.114
+        ],
+        [
+          287.007,
+          132.61375
+        ],
+        [
+          289.7735,
+          133.69725000000003
+        ],
+        [
+          294.8005,
+          135.42975
+        ],
+        [
+          302.60775,
+          138.2045
+        ],
+        [
+          310.41775,
+          140.97925
+        ],
+        [
+          317.72725,
+          143.72650000000002
+        ],
+        [
+          318.19475000000006,
+          143.842
+        ],
+        [
+          326.0075,
+          146.603
+        ],
+        [
+          333.8835,
+          149.18525
+        ]
+      ]
+    ],
+    "requetes": [
+      10,
+      0
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 10,
+        "trace": "dice-9303-wc71488242/q10",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 15,
+          "interieur": 13,
+          "segment": 13,
+          "oriente": 11
+        },
+        "sondes_proches": 2096131,
+        "sondes_orientees": 2096128,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 10,
+        "trace": "bloc8-9303-wc71488242/q10",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "dice",
+        "q": 0,
+        "trace": "dice-9303-wc71488242/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 16,
+          "intersection": 16,
+          "taille": 14,
+          "elongation": 12,
+          "portee": 12,
+          "pca": 12,
+          "interieur": 11,
+          "segment": 8,
+          "oriente": 8
+        },
+        "sondes_proches": 522240,
+        "sondes_orientees": 522240,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 0,
+        "trace": "bloc8-9303-wc71488242/q00",
+        "comptes": {
+          "axe": 21,
+          "masque": 16,
+          "intersection": 14,
+          "taille": 10,
+          "elongation": 10,
+          "portee": 7,
+          "pca": 6,
+          "interieur": 5,
+          "segment": 3,
+          "oriente": 3
+        },
+        "sondes_proches": 229376,
+        "sondes_orientees": 229376,
+        "triplet_admissible": false
+      }
+    ]
+  },
+  {
+    "planche": "9303-18105652008-2.svg",
+    "graine": 9303,
+    "photo": "18105652008",
+    "identite": "18105652008:2",
+    "provenance": "zigazou76",
+    "repere": [
+      704,
+      470
+    ],
+    "origine_xy704": [
+      225.19312500000004,
+      282.0777922243977
+    ],
+    "pas_px704": 0.6133152846534653,
+    "dimensions": [
+      202,
+      135
+    ],
+    "axe_reference_xy704": [
+      [
+        [
+          249.193125,
+          327.49187408491946
+        ],
+        [
+          260.00406250000003,
+          326.0674231332357
+        ],
+        [
+          265.5659375,
+          325.4033674963397
+        ],
+        [
+          270.84250000000003,
+          324.8769399707174
+        ],
+        [
+          281.70500000000004,
+          323.93418740849194
+        ],
+        [
+          288.15375,
+          323.2873352855051
+        ],
+        [
+          292.5434375,
+          322.757467057101
+        ],
+        [
+          303.409375,
+          321.8422401171303
+        ],
+        [
+          308.015625,
+          321.5188140556369
+        ],
+        [
+          314.27531250000004,
+          320.93389458272327
+        ],
+        [
+          325.0828125,
+          319.46127379209366
+        ]
+      ]
+    ],
+    "requetes": [
+      8,
+      5
+    ],
+    "panneaux": [
+      {
+        "bras": "dice",
+        "q": 8,
+        "trace": "dice-9303-18105652008/q08",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 0,
+          "interieur": 0,
+          "segment": 0,
+          "oriente": 0
+        },
+        "sondes_proches": 0,
+        "sondes_orientees": 0,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 8,
+        "trace": "bloc8-9303-18105652008/q08",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 21,
+          "pca": 18,
+          "interieur": 18,
+          "segment": 18,
+          "oriente": 13
+        },
+        "sondes_proches": 2097020,
+        "sondes_orientees": 2096896,
+        "triplet_admissible": true
+      },
+      {
+        "bras": "dice",
+        "q": 5,
+        "trace": "dice-9303-18105652008/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 21,
+          "intersection": 21,
+          "taille": 21,
+          "elongation": 21,
+          "portee": 18,
+          "pca": 20,
+          "interieur": 18,
+          "segment": 18,
+          "oriente": 18
+        },
+        "sondes_proches": 262143,
+        "sondes_orientees": 262143,
+        "triplet_admissible": false
+      },
+      {
+        "bras": "bloc8",
+        "q": 5,
+        "trace": "bloc8-9303-18105652008/q05",
+        "comptes": {
+          "axe": 21,
+          "masque": 20,
+          "intersection": 20,
+          "taille": 18,
+          "elongation": 18,
+          "portee": 18,
+          "pca": 12,
+          "interieur": 11,
+          "segment": 11,
+          "oriente": 11
+        },
+        "sondes_proches": 4094,
+        "sondes_orientees": 4094,
+        "triplet_admissible": false
+      }
+    ]
+  }
+]
