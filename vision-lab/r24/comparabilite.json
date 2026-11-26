@@ -1,0 +1,876 @@
+{
+  "environnement": {
+    "threads_torch": 4,
+    "threads_interop": 1,
+    "threads_cv": 1,
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "opencv": "4.13.0",
+    "python": "3.15.2",
+    "machine": "x86_64"
+  },
+  "groupes": {
+    "tete": {
+      "queries": {
+        "dimensions": [
+          12,
+          24
+        ],
+        "elements": 288
+      },
+      "basis.0.weight": {
+        "dimensions": [
+          24,
+          34,
+          3,
+          3
+        ],
+        "elements": 7344
+      },
+      "basis.0.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "basis.1.weight": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "basis.1.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "basis.3.weight": {
+        "dimensions": [
+          24,
+          24,
+          1,
+          1
+        ],
+        "elements": 576
+      },
+      "basis.3.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "key.weight": {
+        "dimensions": [
+          24,
+          24
+        ],
+        "elements": 576
+      },
+      "key.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "value.weight": {
+        "dimensions": [
+          24,
+          24
+        ],
+        "elements": 576
+      },
+      "value.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "update.0.weight": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "update.0.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "update.1.weight": {
+        "dimensions": [
+          48,
+          24
+        ],
+        "elements": 1152
+      },
+      "update.1.bias": {
+        "dimensions": [
+          48
+        ],
+        "elements": 48
+      },
+      "update.3.weight": {
+        "dimensions": [
+          24,
+          48
+        ],
+        "elements": 1152
+      },
+      "update.3.bias": {
+        "dimensions": [
+          24
+        ],
+        "elements": 24
+      },
+      "coefficients.weight": {
+        "dimensions": [
+          75,
+          24
+        ],
+        "elements": 1800
+      },
+      "coefficients.bias": {
+        "dimensions": [
+          75
+        ],
+        "elements": 75
+      },
+      "presence.weight": {
+        "dimensions": [
+          1,
+          24
+        ],
+        "elements": 24
+      },
+      "presence.bias": {
+        "dimensions": [
+          1
+        ],
+        "elements": 1
+      }
+    },
+    "bloc8": {
+      "features.8.block.0.0.weight": {
+        "dimensions": [
+          144,
+          48,
+          1,
+          1
+        ],
+        "elements": 6912
+      },
+      "features.8.block.1.0.weight": {
+        "dimensions": [
+          144,
+          1,
+          5,
+          5
+        ],
+        "elements": 3600
+      },
+      "features.8.block.2.fc1.weight": {
+        "dimensions": [
+          40,
+          144,
+          1,
+          1
+        ],
+        "elements": 5760
+      },
+      "features.8.block.2.fc1.bias": {
+        "dimensions": [
+          40
+        ],
+        "elements": 40
+      },
+      "features.8.block.2.fc2.weight": {
+        "dimensions": [
+          144,
+          40,
+          1,
+          1
+        ],
+        "elements": 5760
+      },
+      "features.8.block.2.fc2.bias": {
+        "dimensions": [
+          144
+        ],
+        "elements": 144
+      },
+      "features.8.block.3.0.weight": {
+        "dimensions": [
+          48,
+          144,
+          1,
+          1
+        ],
+        "elements": 6912
+      }
+    }
+  },
+  "graines": {
+    "9301": {
+      "initial": "b3e26ad4d2b1741ff876e0d58b1957e7f6c71bcab8b87c4c59e9cdcc5a7c7601",
+      "groupes_initiaux": {
+        "tete": "66373d60ec623ba0593cf14c332aee5430db3cb47cddef745d70dbcab1ed086f",
+        "bloc8": "d1dd304e68d2d379ee615bc397b1b6a0f842be6afd3fbf0463fe3d4d3c284f0f"
+      },
+      "gel_initial": "9f6b082a216754b74c82986a482f8d5be0e0ea2d7364d1c14b216e9be38c1042",
+      "union_entrees_finales": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:1",
+        "24614689941:2",
+        "4169106197:1",
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5",
+        "70-01",
+        "7245527662:2",
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5",
+        "wc71488242:1",
+        "wc71488242:11",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9"
+      ],
+      "tenseurs_geles": 171,
+      "etats_R22": {
+        "96": {
+          "fichiers": {
+            "poids": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9301/96/poids.pt",
+              "octets": 897303,
+              "sha256": "fe69c44cbd8c9a6a3dd06776fcebd810e34a82bbb1c545824bd978e43d8735fc"
+            },
+            "optimiseur": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9301/96/optimiseur.pt",
+              "octets": 132981,
+              "sha256": "7328bd1177af65358a8925041adefd3f43419f0d92abce417f8c8c4f563dd1f3"
+            }
+          },
+          "etat": "b89fd4f768fdd86e32fd3ae6f075ebb288f570be54dda158919908427537e645",
+          "mesures_identiques": 9,
+          "ecart_initial": {
+            "tete": {
+              "l2": 2.154758820080772,
+              "max_abs": 0.06987269967794418
+            },
+            "bloc8": {
+              "l2": 0.0,
+              "max_abs": 0.0
+            }
+          }
+        },
+        "768": {
+          "fichiers": {
+            "poids": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9301/768/poids.pt",
+              "octets": 897303,
+              "sha256": "194ec9f5cbbcbd033281f2359c4006322791bfd154bbfb13924b59b35ec4e134"
+            },
+            "optimiseur": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9301/768/optimiseur.pt",
+              "octets": 132981,
+              "sha256": "a354069a4c66faa850fee5e8f33e38fb36ad9ad3e71f2627ff68a1bdfacb5587"
+            }
+          },
+          "etat": "122182f15148f7addca2ad084594d2914f0910797f37c4f76a1b0752de366d67",
+          "mesures_identiques": 9,
+          "ecart_initial": {
+            "tete": {
+              "l2": 6.407389596106522,
+              "max_abs": 0.6340380907058716
+            },
+            "bloc8": {
+              "l2": 0.0,
+              "max_abs": 0.0
+            }
+          }
+        }
+      },
+      "presentations": 768
+    },
+    "9302": {
+      "initial": "bfe6ad212266fcf8fcf0d1433acf2ea06740b5ac755dddd7fe821eb96e4122a0",
+      "groupes_initiaux": {
+        "tete": "b8ab8b62e0816a3c77dfaadfe5bf3de341540063d4480af94342e47ff190e42f",
+        "bloc8": "d1dd304e68d2d379ee615bc397b1b6a0f842be6afd3fbf0463fe3d4d3c284f0f"
+      },
+      "gel_initial": "9f6b082a216754b74c82986a482f8d5be0e0ea2d7364d1c14b216e9be38c1042",
+      "union_entrees_finales": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:1",
+        "24614689941:2",
+        "4169106197:1",
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5",
+        "70-01",
+        "7245527662:2",
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5",
+        "wc71488242:1",
+        "wc71488242:11",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9"
+      ],
+      "tenseurs_geles": 171,
+      "etats_R22": {
+        "96": {
+          "fichiers": {
+            "poids": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9302/96/poids.pt",
+              "octets": 897303,
+              "sha256": "7b9d87a608edee0c9a577136b90e3d252bf9d22b971904838e22ad4928c051b4"
+            },
+            "optimiseur": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9302/96/optimiseur.pt",
+              "octets": 132981,
+              "sha256": "36dab54142815e857bceb0dfdc375d4c303c3618681c02d4429dbda4354685af"
+            }
+          },
+          "etat": "914f8f651eabd60dec206b97a5f0f883fff609268870bfe5da9df2152cff556d",
+          "mesures_identiques": 9,
+          "ecart_initial": {
+            "tete": {
+              "l2": 2.1544071359874573,
+              "max_abs": 0.07604895532131195
+            },
+            "bloc8": {
+              "l2": 0.0,
+              "max_abs": 0.0
+            }
+          }
+        },
+        "768": {
+          "fichiers": {
+            "poids": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9302/768/poids.pt",
+              "octets": 897303,
+              "sha256": "2011a92e231ac4bc137ce10b997ea9b089f892b38ad1e6ab19fb6291d0cecb31"
+            },
+            "optimiseur": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9302/768/optimiseur.pt",
+              "octets": 132981,
+              "sha256": "48fdd9291f01af5b854ca9f9a435d3565ebe1920896a9ed4a1e52035eced0e9b"
+            }
+          },
+          "etat": "ddbe6ffd1ccb1acadcce3b0be5402b38136e99a1f3bdb0ba7fa69c0ed077ab45",
+          "mesures_identiques": 9,
+          "ecart_initial": {
+            "tete": {
+              "l2": 6.651210624174449,
+              "max_abs": 0.6788277924060822
+            },
+            "bloc8": {
+              "l2": 0.0,
+              "max_abs": 0.0
+            }
+          }
+        }
+      },
+      "presentations": 768
+    },
+    "9303": {
+      "initial": "69e238fdfa469f538bbb55f08bb8b7bb2309e1dfd871e53d0fb15b572d079ffc",
+      "groupes_initiaux": {
+        "tete": "017247f06b3d4d0f40c4e88233fba2ab1ef85374eca522efce5e79e9ddce1bb1",
+        "bloc8": "d1dd304e68d2d379ee615bc397b1b6a0f842be6afd3fbf0463fe3d4d3c284f0f"
+      },
+      "gel_initial": "9f6b082a216754b74c82986a482f8d5be0e0ea2d7364d1c14b216e9be38c1042",
+      "union_entrees_finales": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:1",
+        "24614689941:2",
+        "4169106197:1",
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5",
+        "70-01",
+        "7245527662:2",
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5",
+        "wc71488242:1",
+        "wc71488242:11",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9"
+      ],
+      "tenseurs_geles": 171,
+      "etats_R22": {
+        "96": {
+          "fichiers": {
+            "poids": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9303/96/poids.pt",
+              "octets": 897303,
+              "sha256": "3d1d35a32fa7c6e1e0a39832f1ed486960e1d9f88a7d6041fe1f2b3f2cab7b18"
+            },
+            "optimiseur": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9303/96/optimiseur.pt",
+              "octets": 132981,
+              "sha256": "0752c3b9ce720ce74dcf641df8d5976212b4fb9e989d1f04da6a251457202784"
+            }
+          },
+          "etat": "ea5838e2faca70eeb5784fb8e00bbec31666100f575dff9e4af4ce87ca9dce53",
+          "mesures_identiques": 9,
+          "ecart_initial": {
+            "tete": {
+              "l2": 2.2178107175477715,
+              "max_abs": 0.09770208597183228
+            },
+            "bloc8": {
+              "l2": 0.0,
+              "max_abs": 0.0
+            }
+          }
+        },
+        "768": {
+          "fichiers": {
+            "poids": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9303/768/poids.pt",
+              "octets": 897303,
+              "sha256": "e4d01adc50ec5476fe6d02276b727626de8c5b85cf07b0a5fd05a1e749b58bd8"
+            },
+            "optimiseur": {
+              "fichier": "vision-lab-r22/vision-lab/artifacts/r22/dice/9303/768/optimiseur.pt",
+              "octets": 132981,
+              "sha256": "17298083bc908ac18182bd83b62d47c571748f37bdbfec1488721150b862e2a5"
+            }
+          },
+          "etat": "187d49267e38331e2954c3242627c9c011e052c5aec64cc67e357e089ba6675f",
+          "mesures_identiques": 9,
+          "ecart_initial": {
+            "tete": {
+              "l2": 6.958012407380427,
+              "max_abs": 0.6077423691749573
+            },
+            "bloc8": {
+              "l2": 0.0,
+              "max_abs": 0.0
+            }
+          }
+        }
+      },
+      "presentations": 768
+    }
+  },
+  "cibles": {
+    "13-01": {
+      "rgb": "7570cbea887976474f221edffe1caa3b42aacad5653b0bd590e94e5697a43140",
+      "cibles": "11eeb50e889dfc2999ba31526d9cbb9b3acfd5ee487180f3bd3a3bd1c6740b2d",
+      "identites": [
+        "13-01"
+      ],
+      "masses_entree": {
+        "13-01": 1.0
+      },
+      "entrees_inconnues": []
+    },
+    "70-01": {
+      "rgb": "f47aee475a3573d7fe04635ad1fb7a9a1c111f370f684028495806e822b61f13",
+      "cibles": "46f257abb189c5c273156d01d8ced1a69d22eb2a11520892edbcaa72fcc01109",
+      "identites": [
+        "70-01"
+      ],
+      "masses_entree": {
+        "70-01": 1.0
+      },
+      "entrees_inconnues": []
+    },
+    "7245527662": {
+      "rgb": "f6f76fc7b7f1a83b785d67306bd3d65957324b64d711299884af32d732a5acab",
+      "cibles": "e6501489be3bdc2c9b1e21ab51ec6d938c7149a69201e8fc0fa06753d1ba1394",
+      "identites": [
+        "7245527662:1",
+        "7245527662:2",
+        "7245527662:3",
+        "7245527662:4"
+      ],
+      "masses_entree": {
+        "7245527662:1": 0.0,
+        "7245527662:2": 1.0,
+        "7245527662:3": 0.0,
+        "7245527662:4": 0.0
+      },
+      "entrees_inconnues": [
+        "7245527662:1",
+        "7245527662:3",
+        "7245527662:4"
+      ]
+    },
+    "5115614018": {
+      "rgb": "42eb2c0e1d77e5938fa5f34e2eeb590910d35739b6cf6ec9402e606c5afccfb6",
+      "cibles": "21ff5d2d3b0c2b51bf9d4eff85c555077f8a6129c9f729322e2cc2988b3b2e34",
+      "identites": [
+        "5115614018:1",
+        "5115614018:2",
+        "5115614018:3",
+        "5115614018:4",
+        "5115614018:5"
+      ],
+      "masses_entree": {
+        "5115614018:1": 0.9999999403953552,
+        "5115614018:2": 1.0,
+        "5115614018:3": 1.0,
+        "5115614018:4": 0.9999999403953552,
+        "5115614018:5": 1.0
+      },
+      "entrees_inconnues": []
+    },
+    "18105652008": {
+      "rgb": "aa0dfaff26ffe4fe3f3e45913b3740b4ebfdbc58522ebebf13bddf646593f540",
+      "cibles": "c100faaa49c25452c142992f27b8ba89829f3965262925fcfc727cec7e1ac711",
+      "identites": [
+        "18105652008:1",
+        "18105652008:2"
+      ],
+      "masses_entree": {
+        "18105652008:1": 1.0,
+        "18105652008:2": 1.0
+      },
+      "entrees_inconnues": []
+    },
+    "24614689941": {
+      "rgb": "37980db656470ddabe1a1e132f359dd06a6eaac0bf62f5824b241e7eb0ce840a",
+      "cibles": "b4fcbde01a86132f616e1d16c61e0f6f9e65ff5036c441070bd0e7b3221de348",
+      "identites": [
+        "24614689941:1",
+        "24614689941:2",
+        "24614689941:3"
+      ],
+      "masses_entree": {
+        "24614689941:1": 1.0,
+        "24614689941:2": 1.0,
+        "24614689941:3": 0.0
+      },
+      "entrees_inconnues": [
+        "24614689941:3"
+      ]
+    },
+    "4169106197": {
+      "rgb": "18b3d7de34e88e6846fb618231210e821e17b06656a0c8563681ae1fe6dc9314",
+      "cibles": "0093fe404c88fd88e951d7b6f039e0066ffbf6661808581f818bf65d701db1a6",
+      "identites": [
+        "4169106197:1"
+      ],
+      "masses_entree": {
+        "4169106197:1": 1.0
+      },
+      "entrees_inconnues": []
+    },
+    "wc71488242": {
+      "rgb": "c98604882c231f37eb0895075cf5a0bf0321dbbe3eadea1fd83fdc99e5c488c9",
+      "cibles": "6256737d4888d74474d382a3c915aac5532505706f383d4d32c289cf1eabf9b1",
+      "identites": [
+        "wc71488242:1",
+        "wc71488242:2",
+        "wc71488242:3",
+        "wc71488242:6",
+        "wc71488242:7",
+        "wc71488242:8",
+        "wc71488242:9",
+        "wc71488242:10",
+        "wc71488242:11"
+      ],
+      "masses_entree": {
+        "wc71488242:1": 0.9999999403953552,
+        "wc71488242:2": 1.0,
+        "wc71488242:3": 1.0,
+        "wc71488242:6": 1.0,
+        "wc71488242:7": 1.0,
+        "wc71488242:8": 1.0,
+        "wc71488242:9": 1.0,
+        "wc71488242:10": 0.0,
+        "wc71488242:11": 1.0
+      },
+      "entrees_inconnues": [
+        "wc71488242:10"
+      ]
+    },
+    "wc11001401": {
+      "rgb": "dabb3e0b1b752f47d16449a210e90fbec469a8e713080bb72099937ed0f029d9",
+      "cibles": "29f5669ac2a2b6f3083fe3dd2586cd427fdf7d03a53f2bcec9be66b7d193ff08",
+      "identites": [
+        "wc11001401:1",
+        "wc11001401:2",
+        "wc11001401:3",
+        "wc11001401:4",
+        "wc11001401:5"
+      ],
+      "masses_entree": {
+        "wc11001401:1": 1.0,
+        "wc11001401:2": 1.0,
+        "wc11001401:3": 1.0,
+        "wc11001401:4": 1.0,
+        "wc11001401:5": 1.0
+      },
+      "entrees_inconnues": []
+    }
+  },
+  "empreintes_historiques": {
+    "r22/conditionner.py": "f6787bb02a6a143bacd91d409d1595edb5c6065df4b80276e0cf3c91471d9a4f",
+    "r22/diagnostic.py": "fcf3e6fcfa9976be5578d58ba5aa7484c4af8015cfe09fc03a1a9fcfe9484fab",
+    "r22/executer.py": "5d266dfffa77bcdde8e8f58a9a0d31d08b228d211868ba350b33d14288ece3c8",
+    "r22/figer.py": "c7788be2822ae1f514448d7811cf4421cb3071b78387753b355b35c310f1a2f7",
+    "r22/lecture.py": "976dab680c688f0c6e909b594677bd39cee4727b3e79fd88fa30730740a980c2",
+    "r22/mesures.py": "5f398e3f1177e44f4d8e7dff2e086c9982496c360d2a364a8e5d32ced01aa454",
+    "r22/presenter.py": "584e6af074e8e45a66645eb1d335633a9581f21009d05d53b6e87f98a2b40f7b",
+    "r22/regle.py": "f8ba277a3e3dac24b8edfa4d6cf5427e428c8a9676428c8192ed0034002753d4",
+    "r22/verifier.py": "07c4f268b0dca337f10f6da8a617bbd426aceef2e41b4524b0caecd96af35b46",
+    "r22/protocole.md": "ad709fb5e5d24525c8d4a48b9fee7d5d42b9c4bb41f98fdf84c8d3c021ecfb21",
+    "r22/comparabilite.json": "12ce69fdca23106a71d6e2035b1a071c8d72cbad84b08c45aca911de7efa82ae",
+    "r22/diagnostic/blocages.json": "f06bc17de57fb8a1cb2227040f7b7f897326d5d539b4336abd92ec1039c142cd",
+    "r22/diagnostic/candidat-9301.json": "d4d1e6e5de07493f44e267899ad4ff0364c6543212ff4aed16e0a4475e7b53b3",
+    "r22/diagnostic/candidat-9302.json": "7d95427aef50facf32b113cff680d3ec47e2212dd82893f568eee5fd4fcbfdde",
+    "r22/diagnostic/candidat-9303.json": "5e6bcad61d539c2812628ee1f4e46889954b0e8860edd891354a897d149afda3",
+    "r22/diagnostic/synthese.json": "1d0744c2fa0023e5b8af6ddb1a69644a19f0d97464772d47f89131cd25c0edf5",
+    "r22/diagnostic/temoin-9301.json": "b52e9e1b3126cdab87802d776b23e14787b1e881740c332200514c75952e81b2",
+    "r22/diagnostic/temoin-9302.json": "60131476e78ccc113df1614edbfe382411e14d3ef4bee127e9dccf38b92aab43",
+    "r22/diagnostic/temoin-9303.json": "40eeb8b7dae5891101a51b9763ef8a3d7d4cefc483b5ae12133429f1f5ea23cc",
+    "test_r22.py": "90ad2338e8febc41a2812f8ed4f2047b87278d171fcd6233e00d9be014761b35",
+    "test_r22_cpu.py": "cd53c7d12cae9136f9679b8d26affdcfbc591d2fab03c596caba1b5375a2868f",
+    "r21/inventaires.json": "e03ef229f539aa8cb73bd34567e061646bcdbcc331922c66e42002cd83d24edb",
+    "r21/tirages.json": "2e5dd5afd18d110556dba4c110153900c313f7ba3b6fc18949fb593ea6db0602",
+    "r18/validites.json": "0696d06b15cb444813c02758eab7c873167cb2f32d46a3a93b03931e0cd0727d",
+    "r19/configuration.json": "c69ada4c0367286bb452be059005613446c24a4567810bfc5b6bc01715445767",
+    "r19/tirages.json": "9010c53aa5901cecbfbff775348ee799a70e2046c17c9f90ccec7706a5beb0ae",
+    "r20/plafonds.json": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f",
+    "r19/affecter.py": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f",
+    "r19/decoder.py": "8cf38bf46f20c1c49382cf3bf053a498ce759778664feac6bb6646b8a3129c9c",
+    "r19/donnees.py": "5b8b51fb2df46128ff5601cc713cf2cb72af962efaf52750bb5b7b479faf62ac",
+    "r19/mesures.py": "7dc9fe9a8e31f4b6325d94d638b1acc8f7dab70fddb41b969a374fedd6fdc260",
+    "r19/modele.py": "cd830c3ba13a8ee5b0de249362e9db6e198a683b30e3d5abadddc1d0f456dbb5",
+    "r19/pilote.py": "1cfe54ef0cfdd0353afe0c0799caf119d4b8f953dc5d6675507aebc61953384d",
+    "r19/supervision.py": "51ad9fa63711b50a2e142cb7cfed8a4c3caebfdbb50fb25e5a7ae6e3f9605d0a",
+    "r21/inventorier.py": "da2c54df6f0aa14400f23a8268b93733e2409059716bd4e64dcf759aacf9febd",
+    "r21/regle.py": "c4e44d745606da6001fdb59c83383c8e4379b5bc774394e04bb1f50d98802eb3",
+    "r21/plan.py": "0417bf8f8d754aeb8df6b95798d51f6907cf94595518dcdb7cf9302c996fcbea",
+    "r21/mesures.py": "febeaa6aa1c93e15aa530ee91805b1850a3c70c6b10cb1820595cb5006894fd6",
+    "r21/executer.py": "3d54e7add67c0edca8e33ba76507a74b644c2cc4a4d6306c951d50b9faaa66ab",
+    "r21/configuration.json": "dcb5f629671036b4bd905083191effb84dc159219d7ad657658bf0e9ea5cfb2c",
+    "r21/inventaire-local.json": "197d790a9cf1561450ed7030bbc5f0c6ca729dd56a9640e35a5ce2e69ed41d8b",
+    "r19/donnees.json": "933e4bd81389b5e4effc69150debd3befc6a502471223a8a7eda7c184eaa6372",
+    "r20/champs.py": "6ab20d904846ba0cb2ad99c1bf30a3a0874045f2bf3b42c827127991f0e6d449",
+    "r20/conditionner.py": "8f658dc5efed870f173907a0c39e390d2ea0fb5b0c28721a25599977c7a2a4bd",
+    "r20/corpus.py": "d1112ba20a2bb456f94d89ee93120c8ad13749befa191aa79076d028e3d8a0ea",
+    "r20/figurer.py": "6de1b1c32efea20ac903401772c2af86e00200839d61ff563f5b7c6aaa9210fd",
+    "r20/instrumenter.py": "1c356dcc4fcc3ee008555f519f5a47e2bb34c9fb0f4d7fd9c2b174d5a3763d31",
+    "r20/mesurer.py": "a6894262ed4171fc3038a8215cf5244ef35a08fc0c3e16369710d5fb17b71e71",
+    "r20/operations.py": "8db465fcc2cfcdc01cdfbe6a52f8fb328c307b675ea371b9da70583d34eff2e3",
+    "r20/rejouer.py": "2850d7f73426e7e556138cce8bd9e2ba2116d23bbd310862ba9172d60268f876",
+    "r20/tableaux.py": "917eb0c78b0ea4c155b73ee7e180913ac4349121f4eca2f44a59191c5e520f3c",
+    "r20/verifier_champs.py": "8525df7ff7a6a71b93914132b3aa49b6432b5dc1a5d63f1689a95c5983cd9157",
+    "r21/mesures/temoin-9301-96.json": "36621a8ad8350ab7a126655a63c2dc0dbade395ef10ee25f836df10988bbecbd",
+    "r21/mesures/temoin-9301-768.json": "6955e2f24b29ac59da3568c0fca7ab16f78a8d48380b9cd8ccc58d7ab2a2059d",
+    "r21/archives/temoin/9301/768/controle.json": "39f36ddeaf0382609f4cd92c9b2c0487a3ba0ede15a87fa254bd2376f0054700",
+    "r21/archives/temoin/9301/768/masques/13-01.png": "1d49997793d57950360d3c2ddccbc699568dd6083bca4182d6dad10876558e43",
+    "r21/archives/temoin/9301/768/masques/18105652008.png": "ae5d009e92ce84d41043d6d890da5bfdafba38344dfd100ff908bce3da430371",
+    "r21/archives/temoin/9301/768/masques/24614689941.png": "3f293f1fa4fd310ebbf1b8a6ee33d00d73f475a7215e8603aa90e08eba6c6f96",
+    "r21/archives/temoin/9301/768/masques/4169106197.png": "fc008989128135f5f31ba9c86a21dbb589feb50412f8b11861fe50b181ac7ea1",
+    "r21/archives/temoin/9301/768/masques/5115614018.png": "2e3951155237cd61da0a8d136886ad3cc538c752195ee245ad5f93c6b71a9203",
+    "r21/archives/temoin/9301/768/masques/70-01.png": "770a9040643719876fa8a5d8de60d7957d40f082b1e808ef5a5916900ff23de8",
+    "r21/archives/temoin/9301/768/masques/7245527662.png": "e6a4ca1889ac871a085845a10370287535afb41aed51d784af1986b0902e65ea",
+    "r21/archives/temoin/9301/768/masques/wc11001401.png": "6a2ac867e5ec24a8c4fd6a62532e606ed86a9f12981ad57d2686f0659d4a78af",
+    "r21/archives/temoin/9301/768/masques/wc71488242.png": "e6b49dcc11d8ff3b99c1767cdf3f0eeb7e0fbb3dc8e1a10c035c6460aacd5135",
+    "r21/archives/temoin/9301/768/pertes.json": "2831a00f71537eba4d75ac523c6c26cdcc0f441d6966a71ad856c80642bf327d",
+    "r21/archives/temoin/9301/768/predictions.json": "4b5b8903c7d8b8aa5710fefc8be38691f67f1aec33b8bb6dc8634a87fd42ccf6",
+    "r21/archives/temoin/9301/96/controle.json": "f55dccf0ce5b71f92ef3dd270af5cef65435a52114875cf0fdfe1a1b05e72754",
+    "r21/archives/temoin/9301/96/masques/13-01.png": "b7d6f16743ef9274c48669449be17ffdce5a6a310285e69c6dd9927b3ec65883",
+    "r21/archives/temoin/9301/96/masques/18105652008.png": "d70b1006d499514e9159690dda00ce2fc905295205f353ae28ad400dcff9195c",
+    "r21/archives/temoin/9301/96/masques/24614689941.png": "a6242bc34d2f54b61c0d89c94e76f55a517abbe14237c71a430064f84208ea56",
+    "r21/archives/temoin/9301/96/masques/4169106197.png": "18d3e4a7bbe99615f177408355bb9d7d091bbf77dfd15ad472ce8f417389ebaa",
+    "r21/archives/temoin/9301/96/masques/5115614018.png": "7f9500c2262921128830729fd433a77a40c48e36367a4266cdd6dcc6d97d59a7",
+    "r21/archives/temoin/9301/96/masques/70-01.png": "0d2878c7705f69ef061fc134a8181eff76497c4f138f9318e5cbd1e5f8a92369",
+    "r21/archives/temoin/9301/96/masques/7245527662.png": "d5455fc186f394cd4accfc4198afe0ef59a54be5f1efd7b4667a0a171c319c7b",
+    "r21/archives/temoin/9301/96/masques/wc11001401.png": "b01ecf10683580fcb0b01d31693678445417e850a6896c7ce79539d26b6f92d6",
+    "r21/archives/temoin/9301/96/masques/wc71488242.png": "edf63155b9b5f3511fde7a57eba1e03f2de8138540a42f6c8a128c053c953ff3",
+    "r21/archives/temoin/9301/96/parite.json": "d0d91c3fea79e90bfbc987b4a50d768048be1c91b142c39099ffd73a3dfc8fac",
+    "r21/archives/temoin/9301/96/pertes.json": "8b3be67eb1981303174efbb94c7bb126e98617a7001ad0ad12506438d559da56",
+    "r21/archives/temoin/9301/96/predictions.json": "79bb5f8523fdc2bf9d255f04bb4104e98e2dad6fcf00654037b6b3a86b5edbb4",
+    "r21/archives/temoin/9301/execution.json": "fa4752f207d5a422d1602952ec4262e76bec83bc64891459f2147f97d9611b95",
+    "r21/archives/temoin/9301/progression.jsonl": "481409eb92389ca8f278b2c8194a3a9a9c03faf7104adc4e6c4aedfcfc6bbf3c",
+    "r21/mesures/temoin-9302-96.json": "c4899c60e17dd1c25eb73d0038b4764ac1f8d70ee7c83905a986f4efecccb1ac",
+    "r21/mesures/temoin-9302-768.json": "6676e4a94d39c4396729af5f5f05994280ae6267b6935ae928b2e7b3d2ff358b",
+    "r21/archives/temoin/9302/768/controle.json": "e019e4e27f5fde7d50080a1d1a98637b534443f1321055cac60dd1b60c27f9a5",
+    "r21/archives/temoin/9302/768/masques/13-01.png": "eafb44709cdfd60ed707430c00adc2865cd4475a2427c3e25187939c4e430e4a",
+    "r21/archives/temoin/9302/768/masques/18105652008.png": "6db987b530208e2b378e9214615cf41fb54f5ee276b7eb9990cd2d664cc4d80a",
+    "r21/archives/temoin/9302/768/masques/24614689941.png": "dd1ecb8bb13058ce9f7a7c675e008e05b3796a336eccb41a25bece6cbe57ae6d",
+    "r21/archives/temoin/9302/768/masques/4169106197.png": "b737f9e9001aa19ed680179b0b3ee28ff79aa6f6142abf621b0e38a86ceb336e",
+    "r21/archives/temoin/9302/768/masques/5115614018.png": "c739a0067c3e3c3563c8c72550b0c592b77d9707a8a39e75b143d126cf67446c",
+    "r21/archives/temoin/9302/768/masques/70-01.png": "fe93888f893a164abef8aa779955a88b733b33f78d547e717661783162155b2b",
+    "r21/archives/temoin/9302/768/masques/7245527662.png": "9c3adaf001010e21ea436b1c7ad54d9f1d94d686dfbc5aae0158e4514bee6e72",
+    "r21/archives/temoin/9302/768/masques/wc11001401.png": "f502599d3fa36604018a6a5da19f0792376767feefb1d927037bb49660a3b5c1",
+    "r21/archives/temoin/9302/768/masques/wc71488242.png": "54cb47b66eab2e191f10c872c255fb0636701f103aa7ebe92ac4cc345297e61c",
+    "r21/archives/temoin/9302/768/pertes.json": "39f103ec8bf3dcf7f7b8000e917311cd01e3f024d5367e7c94cc9f0a16438352",
+    "r21/archives/temoin/9302/768/predictions.json": "8084c15a25b63662d47c6e184cc028ced2a1111ce3cff963d35b5ccb286394c1",
+    "r21/archives/temoin/9302/96/controle.json": "66c43fa97308eb67a4b6e6344152bfcee8c85451066c68ecb4810bd027ff52ad",
+    "r21/archives/temoin/9302/96/masques/13-01.png": "37fccee762262e9f090ae761e049df3aa661054ad73115f5ccbcc7c6bc18bac8",
+    "r21/archives/temoin/9302/96/masques/18105652008.png": "4c1a021946b724e2a03898fa72261f63dbf0629e90546079bc90f196249df51c",
+    "r21/archives/temoin/9302/96/masques/24614689941.png": "a59051c0564d15a69164f455096ca94f9efa87027f13439d9c566238f1a52129",
+    "r21/archives/temoin/9302/96/masques/4169106197.png": "73af654512fd8c96e021cfe182748e93e68c7abface432422e009dda6f88fc2a",
+    "r21/archives/temoin/9302/96/masques/5115614018.png": "285585dddffdc89a83764a58420d344d3e497fb3fdcc60295f7909471006c173",
+    "r21/archives/temoin/9302/96/masques/70-01.png": "394518ab277b57b89f5bbd11ef6635ca76c626af51df882f3d7f425c37cec86c",
+    "r21/archives/temoin/9302/96/masques/7245527662.png": "15c5b8761c0b992147d9e75e9f8a84a20ffa15180a2de7da3a6b155475c69b7f",
+    "r21/archives/temoin/9302/96/masques/wc11001401.png": "555ed875cce8d80bc2b07ee581d5e92dc873a2d057e6b25133ddf54ede80e4d8",
+    "r21/archives/temoin/9302/96/masques/wc71488242.png": "66db81b4250c780684df99c0c3c5e96e1d199a70358ae96e41b487a75888038f",
+    "r21/archives/temoin/9302/96/parite.json": "9458a031801217fa3646c7b91433483c30a9ee4a810273de9b2a082966fb669d",
+    "r21/archives/temoin/9302/96/pertes.json": "0833f45642112e1e26f899c09e2644dcd9379b5e30bccc0edc1f6a9a9533baaa",
+    "r21/archives/temoin/9302/96/predictions.json": "ecae74e37aac6d2579a315922fb009b65c19f87598cf9c63242f6c2c833e5968",
+    "r21/archives/temoin/9302/execution.json": "a543b0e3518e96588d4bbd6b85b4370479be4c0c7ddcbe52bf7f53decae64ed9",
+    "r21/archives/temoin/9302/progression.jsonl": "d241dde9064d3dda666a36dcf7dc162db050dcb9b7ce84ddd9686ee7d250cdc3",
+    "r21/mesures/temoin-9303-96.json": "d8e22467b0fcac8c8072c0c4ec306fb9db1b1fec4385218f3b2a9b1038a0cfe0",
+    "r21/mesures/temoin-9303-768.json": "8df2719d398797ded278d070a28351d113cde9ea6f8630992a6ce348e7528fe6",
+    "r21/archives/temoin/9303/768/controle.json": "1b8c52c7fad2b75e6df592fcea1409490d079fa67b0c41701b970838cf23bdd8",
+    "r21/archives/temoin/9303/768/masques/13-01.png": "151fb96f14c6667db5beb93129cc5152b4bdea2173a922a18adda3b03ae4d376",
+    "r21/archives/temoin/9303/768/masques/18105652008.png": "8f4e2da8a2309fc9153913dd888b97943660cdc517c88140a7b784a3b9abf6b3",
+    "r21/archives/temoin/9303/768/masques/24614689941.png": "f364d5bcc852698f88a0ae95bd9927262c2cee7ec3184b9e7e280c2f48be35fc",
+    "r21/archives/temoin/9303/768/masques/4169106197.png": "716d7be09a6942f5cf8d03f8623d64087f20e7804d1bc1cb5f9b12e9baed30c7",
+    "r21/archives/temoin/9303/768/masques/5115614018.png": "5e80c5f635ed97db5abe107f058f9bd3eda5c20e25f66392f04802ac57238eb7",
+    "r21/archives/temoin/9303/768/masques/70-01.png": "0ee0adbc5152b4f14537e85bdf5ffdd67a3040c52321dd4ad8c157697dd06897",
+    "r21/archives/temoin/9303/768/masques/7245527662.png": "7878269fdba9e21d5b468b730fd484e659f13c6bc5b005ec590ee32d8f7618da",
+    "r21/archives/temoin/9303/768/masques/wc11001401.png": "3ac4d68520cf769842892376c1b3384872624ccf0433032ae7ad5960aa85bb0b",
+    "r21/archives/temoin/9303/768/masques/wc71488242.png": "fb550099ecbabdb1bf055c18ed7563d9f893cdaf4cbc659cf8c81fef26c4ba35",
+    "r21/archives/temoin/9303/768/pertes.json": "86d6c0111562579687948af750f4a5655b1fd72757c117950a2437c41793b1be",
+    "r21/archives/temoin/9303/768/predictions.json": "ed45c52e3bdb9d106be840c3c91fcd156074c38b595befcc3120e4a17969b87a",
+    "r21/archives/temoin/9303/96/controle.json": "09162483be1ed8e6d3e9885e6498803462f0adb0902608a8b0af560090825af0",
+    "r21/archives/temoin/9303/96/masques/13-01.png": "514579c152683482036199a731d196e97946822399929ca6b583c2123ec6dd94",
+    "r21/archives/temoin/9303/96/masques/18105652008.png": "a7ed02c361c89391a7ba33401571c7febb1263f7951025df125616a2f25bc54f",
+    "r21/archives/temoin/9303/96/masques/24614689941.png": "5d157c31882849e476e9c388ae7592ef0818f772acae9610fdd03d12d4088715",
+    "r21/archives/temoin/9303/96/masques/4169106197.png": "0f9db03e9c591baf4298a096cfe5ef6c625e45b34ac763aebaf6b926d913bd17",
+    "r21/archives/temoin/9303/96/masques/5115614018.png": "2fe866add77c40e72d512c14712eb94502b353336dca4a656804f8a6c97a53c2",
+    "r21/archives/temoin/9303/96/masques/70-01.png": "98d2df0b84234fbf6e14e47765cfdc63e6a7de36c77be511efb32222ab163a53",
+    "r21/archives/temoin/9303/96/masques/7245527662.png": "56d1fa68b0dca0ae07605c8d265d186c750e0244064f0d89cc38a7c060a74269",
+    "r21/archives/temoin/9303/96/masques/wc11001401.png": "036171eeb5a1bb5bad3e8aff8bf1edd062b94c6afd213d8e58d9f9082a58b5aa",
+    "r21/archives/temoin/9303/96/masques/wc71488242.png": "d3ac6784ef24c9a19746d979309a643180bd946cee5248ac294679eb3968623f",
+    "r21/archives/temoin/9303/96/parite.json": "b028df8b8f52eb72143be414ae38e3952e2ea8a42aee05277c7e17a0731f092a",
+    "r21/archives/temoin/9303/96/pertes.json": "7ebfe698c0c8cfc172858e7626c9ab260a8b4dd86f61f6fdaa5dd40e6f7672f4",
+    "r21/archives/temoin/9303/96/predictions.json": "70cb5e7328f2735bcdea611f354469610464c443753290a78f31cd78228f1811",
+    "r21/archives/temoin/9303/execution.json": "0eb0db025796372334ca46ed4bd4589d4cf777d43f0d8d173b88b7ab40364e3d",
+    "r21/archives/temoin/9303/progression.jsonl": "ef493ed07a6b146ac94ccfb7d03c28bf839fe17ca14a199fe9b759ecf307ba5a",
+    "r22/mesures/dice-9301-96.json": "edb32350878b3955c302788338cd472bc0e51ce301495cc4c9358c2c93b7b2c6",
+    "r22/mesures/dice-9301-768.json": "ce8c4ec673daba3e289a9b1fc8c0f4a108ebb54e2f480dff928dd5845de8ea9f",
+    "r22/archives/dice/9301/768/controle.json": "c185c45d6d51df1a9aec9ad7b0c8c2baead843dff2bc8d381f84f563a257196f",
+    "r22/archives/dice/9301/768/masques/13-01.png": "380b10e8b82538b75b8718bc9fb75c07495d1bfff74bdc3ee6c028e13f8fbb69",
+    "r22/archives/dice/9301/768/masques/18105652008.png": "2172aa2e2c62529a7f7afe3c1a088bddd0a61f09e7dfb4bdec11d45de25d6d23",
+    "r22/archives/dice/9301/768/masques/24614689941.png": "e86a0b6aab11bb42e76c2543a2ce673afebe1c92e6f160e722cbdbb96cf0fe8c",
+    "r22/archives/dice/9301/768/masques/4169106197.png": "f6b20f21c2e70d5be2d4d1734a83324dcfdcc67d301941cc9a02c5bda5579870",
+    "r22/archives/dice/9301/768/masques/5115614018.png": "053231e41c66fcb18c80b04cec10f41532d8a25e697930f05c7cff2949399f1c",
+    "r22/archives/dice/9301/768/masques/70-01.png": "cee49138981e08bd62049afebc8c675e053844903b054824495fb977ee8b275f",
+    "r22/archives/dice/9301/768/masques/7245527662.png": "ad02e586c6c648bc5637513006ac2482a91dab8fa8f5e7f65492151e009ee415",
+    "r22/archives/dice/9301/768/masques/wc11001401.png": "75a37d4586e31b7dc6b0e8018623acca0a651a77564eb07d067d1e28d3d2dc39",
+    "r22/archives/dice/9301/768/masques/wc71488242.png": "2f76af4e8c8ad7515ff185a40c8172f3b209db1abfe4eefb9fa5ff82fbc7de1c",
+    "r22/archives/dice/9301/768/pertes.json": "6d98141664ce65950e1204525b5ed637e973fa59b7980f945e31c79173ceaec8",
+    "r22/archives/dice/9301/768/predictions.json": "04ef26114853e980f1522a5da0d9159c29699b5b229b45cefc16be82fdb9e62b",
+    "r22/archives/dice/9301/96/controle.json": "f58191f62b419a786960315fd6a08a23d1c0266a448fc2ee2f315c1327211702",
+    "r22/archives/dice/9301/96/masques/13-01.png": "0371e0cd19b0b588ba5e7c3326991114e6a1e34210dd5b27f0181591f5f91a02",
+    "r22/archives/dice/9301/96/masques/18105652008.png": "6fdf8bece8337cd50c9e83db0bded5e711592b10c654ce627d29283ab0833ebc",
+    "r22/archives/dice/9301/96/masques/24614689941.png": "f1bad35b05dbb566aa004f19f3dec9ed3f5ef140bb3eaf2ab2bf20a86af74159",
+    "r22/archives/dice/9301/96/masques/4169106197.png": "9956495a9b3ecf65dcf5e97ace73bd7984bfa108c6972c03b2a3bf12cd2819b1",
+    "r22/archives/dice/9301/96/masques/5115614018.png": "82c6ea3181df8fbb2bce24e40bb406b2bc6ac059e2d727ba32b24584212526ed",
+    "r22/archives/dice/9301/96/masques/70-01.png": "31a9cc8f25e9ba8fcecb463f7c105ae22b7858a37a1c4641415ecab9b89b2c05",
+    "r22/archives/dice/9301/96/masques/7245527662.png": "510c25088ed9d198d24f209e4c157df950c6ca15c5ba5769bafbaa50d38d35bc",
+    "r22/archives/dice/9301/96/masques/wc11001401.png": "2bc0da7593ae06bd232c36483140e6d57b19cf1db7cabd1216501c5cc671b856",
+    "r22/archives/dice/9301/96/masques/wc71488242.png": "531ef58c987746ccd2ea4b9c817433eeb5d717a949ba6176c54895bac329b282",
+    "r22/archives/dice/9301/96/pertes.json": "9fc26eee0a11802678dbabf61f4186bd6676d6b03d65e4663f82432f18ee3739",
+    "r22/archives/dice/9301/96/predictions.json": "cedadffe59a4b1c997197aa71a3a3adf70bb1c57caaa91721a56a51cd689a56d",
+    "r22/archives/dice/9301/execution.json": "801e91e78b548d2eb46278ab8ed5463b68b5f90e159e43ce383d57dd5f2d5d4f",
+    "r22/archives/dice/9301/progression.jsonl": "95d63be7d65934c85a56c48f9a65dffccceceb0275be279f115a665b540297a3",
+    "r22/mesures/dice-9302-96.json": "a88d3e74ac08ce58a944d5ab943f5cc0233428f7a1fa92bc4314579383a75f90",
+    "r22/mesures/dice-9302-768.json": "af50f306ac6008cb7595c9f9bf3bf10f5fb197f6902323e5cd1657ea59bf9393",
+    "r22/archives/dice/9302/768/controle.json": "de586cf4579df3e26890fa58b363f849b573de15f0b2163204307f55563c0435",
+    "r22/archives/dice/9302/768/masques/13-01.png": "840fc33cf6babfd6e82a3126f8ce935e6ec1f88b9cccfd07efaa5482bad011be",
+    "r22/archives/dice/9302/768/masques/18105652008.png": "b01a73c02e86a4f1941397a17d545e27305a7faf610c7074857cef299c3f78c4",
+    "r22/archives/dice/9302/768/masques/24614689941.png": "46cfe38fd066be84dc1aa7a16e64456c5582723376b9b7ccd2893daf7c82cca2",
+    "r22/archives/dice/9302/768/masques/4169106197.png": "a4976af3a87702c12f1f5992e7d79516629ab4588da0a1381068ac0546f0c8c5",
+    "r22/archives/dice/9302/768/masques/5115614018.png": "f1392dddb6599412df7c313b06bd5552bb5e8d11f8567c3b80fa8b74a749d564",
+    "r22/archives/dice/9302/768/masques/70-01.png": "c98c94ea9920090c08ded8d1ee088cc701e2c975c70098437af0cb1479fc5dcc",
+    "r22/archives/dice/9302/768/masques/7245527662.png": "77adf7ea9456da47172b6188497dae98e00a8c3ee9b80e6f9dbe0683d858fb8c",
+    "r22/archives/dice/9302/768/masques/wc11001401.png": "af8eceb15d39e52518a3cd0ff8dd19ffb9171e1faa9fe36268929a58117ad64d",
+    "r22/archives/dice/9302/768/masques/wc71488242.png": "64361ea20f796f4f30f2af7659ba2610bb7530f7405d1319863480d7e0454cc5",
+    "r22/archives/dice/9302/768/pertes.json": "8c519f546706654050aa57a2e0c43b6b103dc0aa3a4d9f5a1eb2f8b289891366",
+    "r22/archives/dice/9302/768/predictions.json": "41f6fa6a5d02578be72ad291237ae5a7e87329b5f848e48dc423c1c8c8fa37a0",
+    "r22/archives/dice/9302/96/controle.json": "c858e836787495eb3c0b3e21f00e596982c2de978215b267ae662dfb1081116e",
+    "r22/archives/dice/9302/96/masques/13-01.png": "fcfae3e54b9f3c826303bf54cae915a56878251a26215d7fae4b89cc02a6bee2",
+    "r22/archives/dice/9302/96/masques/18105652008.png": "73c4a66cdb6472736b06d3d052adbb348c2c2a11690424d8eec508173a3e6aa2",
+    "r22/archives/dice/9302/96/masques/24614689941.png": "a932370fb858ff6aab45b6c7c25b165b6542e841a8ed0b8a6504834f2665275c",
+    "r22/archives/dice/9302/96/masques/4169106197.png": "97edb56e7af2d3befd92343cac6288d7418c88630b6d96ef61f9a77e196b979b",
+    "r22/archives/dice/9302/96/masques/5115614018.png": "720454a893e997e71fb5311ee707e6b35bd6d25198303ec296e52bc63bb6aa73",
+    "r22/archives/dice/9302/96/masques/70-01.png": "48856a8c1e235dce3fbd83877a4e69a4355ee0f59086480cc9f691c3c15df6d6",
+    "r22/archives/dice/9302/96/masques/7245527662.png": "d3216c5513bcb7b1851e61f7167717cc952de90f078da957ceb1b0cdc0355704",
+    "r22/archives/dice/9302/96/masques/wc11001401.png": "5e80ef349b306f68ae022ae759a8cd19804415a066b748d38c397be52fa22419",
+    "r22/archives/dice/9302/96/masques/wc71488242.png": "ac9ceb23a47fb132267988402586ceb2db70eb0d1d002e01407885484e664a9d",
+    "r22/archives/dice/9302/96/pertes.json": "351dfadf6e85a27f3dbdf49f4c2e06cefbe9c945a0469307c9ce7cfc568cd51b",
+    "r22/archives/dice/9302/96/predictions.json": "c570542e2de2ba3e2ff6ae90f121cb478ae5c3437e6b8d59c0ec3dba52117354",
+    "r22/archives/dice/9302/execution.json": "3870471b5f1012eabec1eb4d8cf32f612c143a4680a4b7b78cdfb5385b607223",
+    "r22/archives/dice/9302/progression.jsonl": "be6b61ba240bbdb284b6b7b0837174e98d3bd325da9af3d1c40b2a90b6635993",
+    "r22/mesures/dice-9303-96.json": "6e45d2bd2a514d854763de504fb4bc167c072b39af2f1d5e1fa2eb5e5f6ef7f4",
+    "r22/mesures/dice-9303-768.json": "b2a91f9654ffbb71904e603bfa2cdbb6de533e199676578400b07fb126e269bd",
+    "r22/archives/dice/9303/768/controle.json": "2234493c0f5910db06c88d329576d7cddc56e257a9c0ebdcabaa5c1271e9497e",
+    "r22/archives/dice/9303/768/masques/13-01.png": "adedea2939e5eea31e7f61624e29383c9defb6730477861e25cf3a790d6d855d",
+    "r22/archives/dice/9303/768/masques/18105652008.png": "10b83abe9f04fe4f95c831ad185aee0a9ac736d089b904778a0bd2b52a429f24",
+    "r22/archives/dice/9303/768/masques/24614689941.png": "d8df9cd5f9481b862007f24b503e2d6dbe5207eef24defcb196a26a8e1463a10",
+    "r22/archives/dice/9303/768/masques/4169106197.png": "a704c484dfaa2501168a8e55ced6c610a3f447f0b555f38869431897dd7455f7",
+    "r22/archives/dice/9303/768/masques/5115614018.png": "eed54935bc21982704787354af3ae693c93cb5693106d82fa2cf0fe1fae84a19",
+    "r22/archives/dice/9303/768/masques/70-01.png": "619efdb38fea6ac84211565c290dcb226d9100a79cef7418e537a3ccbdbff12c",
+    "r22/archives/dice/9303/768/masques/7245527662.png": "f25c9461f0a27eb46b16f62c4ed83bd9d5963bfae7880141d504c2e3931eeb4f",
+    "r22/archives/dice/9303/768/masques/wc11001401.png": "65f9b16d816b60be0d97caa58fb6c26e40b342d285b2a1d3c0814ede1ccae2db",
+    "r22/archives/dice/9303/768/masques/wc71488242.png": "4e821940f5bbb6180557b833d36585c0b9a1d7b1f86bbfcf75dd338aeeaf8c89",
+    "r22/archives/dice/9303/768/pertes.json": "8dfdd68f6d8054aeca94e0783e17c12dc15a593ba8f998a3fe9719a69e88da01",
+    "r22/archives/dice/9303/768/predictions.json": "94b7277af4ad30dfacfdcd9c659604609099871a3ddb59ac09d4db794be22060",
+    "r22/archives/dice/9303/96/controle.json": "a10df58700e6df849e1d256acd304da0901b76dd639a3623749e9b2334528169",
+    "r22/archives/dice/9303/96/masques/13-01.png": "6e7f062a11bc58787990f1f2043b8fbfb684285062254a30d6400559556a61e2",
+    "r22/archives/dice/9303/96/masques/18105652008.png": "f5d84e50284c4078984a5da7785d5369aa31a0b69658dcf1baceea6700915b0d",
+    "r22/archives/dice/9303/96/masques/24614689941.png": "f27248e5c05db1d30cd54d7e888410e399af2598ff5cc37aa3fd67b0c8746f37",
+    "r22/archives/dice/9303/96/masques/4169106197.png": "558d646be61700ba890b8bb146ed7d7d6b21621597dcc867de1a8dee12f9e43e",
+    "r22/archives/dice/9303/96/masques/5115614018.png": "128b90b75ca0fa0c8e1fbb3e02e118d4a270ffbdd0e6a02b2f8dd057144952f3",
+    "r22/archives/dice/9303/96/masques/70-01.png": "ff704465800ff0dc8f8ad47d416c9e41705ac551367d04b94d62236a1f8860bb",
+    "r22/archives/dice/9303/96/masques/7245527662.png": "e285a995de41c536ed61693ef168867575212215fdd97773ca005b1197932098",
+    "r22/archives/dice/9303/96/masques/wc11001401.png": "9a39444e0a9f3551a0c41145134b286df1c37e2c38b56d700a566e64daea0e6d",
+    "r22/archives/dice/9303/96/masques/wc71488242.png": "b6ab03b0a413ae5ac24d5d9da144085f251967016886c6fb999d6b9802fb0b8f",
+    "r22/archives/dice/9303/96/pertes.json": "96d2f92961f9ccd8c31f819965c992f7f3fe5c76bd724824a2cf9f148e3c7f29",
+    "r22/archives/dice/9303/96/predictions.json": "1c921d391df7e00dea5033be5ef59b94fcba58edd7851b67d463cb98b3cb2842",
+    "r22/archives/dice/9303/execution.json": "280ac291ec53847261572aef78fab5e0936b59071c31c2c5bfae9424d6cd3ad6",
+    "r22/archives/dice/9303/progression.jsonl": "30a61180248f208188ebf4b005401cd81dceb4c9746c8e30e8563358a5cc59d8",
+    "r22/configuration.json": "2c09a2408c0d396954633ec061000e96d483e2519441a81eae5b691d72b8574a",
+    "r18/sources.json": "391d5d53429f03bca2551c65f592dd767625ae2cff3ae262088bc32d33aed24e",
+    "r7/model.py": "3a4b0f753a99b773baf2ae77ae6aa73581c8d4a8392738bf704f73d21900b89f",
+    "r21/publier.py": "87235439dacd9caabb593355a6013d22a3cbb49213c194fad6b10bc68800cddf"
+  },
+  "nouveaux_passages": 0,
+  "comparabilite_verifiee": true
+}
