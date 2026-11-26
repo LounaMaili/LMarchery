@@ -121,3 +121,12 @@ jobs:
           if result.testsRun != 5 or result.skipped or not result.wasSuccessful():
               raise SystemExit(1)
           PYTEST
+      - name: Required R24 convolution and frozen-buffer tests
+        run: |
+          python - <<'PYTEST'
+          import unittest
+          from test_r24_cpu import AdaptationR24
+          result = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(AdaptationR24))
+          if result.testsRun != 2 or result.skipped or not result.wasSuccessful():
+              raise SystemExit(1)
+          PYTEST
