@@ -1,0 +1,2262 @@
+{
+  "9301-96": {
+    "source": "r22/mesures/dice-9301-96.json",
+    "sha256": "edb32350878b3955c302788338cd472bc0e51ce301495cc4c9358c2c93b7b2c6",
+    "ensemble": {
+      "photos": 9,
+      "identites": 31,
+      "sorties": 108,
+      "admis": 2,
+      "separes": 2,
+      "sorties_fusionnees": 46,
+      "identites_dedoublees": 27,
+      "identites_separees": [
+        "13-01",
+        "70-01"
+      ],
+      "identites_admises": [
+        "13-01",
+        "70-01"
+      ],
+      "dice_median": 0.204149377593361
+    },
+    "groupes": {
+      "provenance/Crigges": {
+        "photos": 2,
+        "identites": 2,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.9462177570216896
+      },
+      "condition/single": {
+        "photos": 3,
+        "identites": 3,
+        "sorties": 36,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.909821941412981
+      },
+      "condition/worn": {
+        "photos": 7,
+        "identites": 28,
+        "sorties": 84,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 46,
+        "identites_dedoublees": 25,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.19377101260781113
+      },
+      "inventaire/complet": {
+        "photos": 7,
+        "identites": 20,
+        "sorties": 84,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 34,
+        "identites_dedoublees": 17,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.20089345038129924
+      },
+      "provenance/jrladia": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.24286563658461874
+      },
+      "condition/multiple": {
+        "photos": 4,
+        "identites": 18,
+        "sorties": 48,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 22,
+        "identites_dedoublees": 15,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.2346087516087516
+      },
+      "provenance/Danielle Walquist Lynch": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.10458911419423693
+      },
+      "condition/grouped": {
+        "photos": 5,
+        "identites": 24,
+        "sorties": 60,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 36,
+        "identites_dedoublees": 20,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.1871132679723449
+      },
+      "provenance/zigazou76": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3273809523809524
+      },
+      "condition/occlusion": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 10,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.20505822416302766
+      },
+      "inventaire/partiel": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 10,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.20505822416302766
+      },
+      "provenance/renatomitra": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.35514485514485516
+      },
+      "provenance/cristina.sanvito": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.746177370030581
+      },
+      "provenance/Bernard Gagnon": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.18990450204638473
+      },
+      "provenance/4028mdk09": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.17476521028991426
+      }
+    },
+    "par_photo": {
+      "13-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.9826135726303982
+      },
+      "70-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "70-01"
+        ],
+        "identites_admises": [
+          "70-01"
+        ],
+        "dice_median": 0.909821941412981
+      },
+      "7245527662": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.24286563658461874
+      },
+      "5115614018": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.10458911419423693
+      },
+      "18105652008": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3273809523809524
+      },
+      "24614689941": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.35514485514485516
+      },
+      "4169106197": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.746177370030581
+      },
+      "wc71488242": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.18990450204638473
+      },
+      "wc11001401": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.17476521028991426
+      }
+    }
+  },
+  "9301-768": {
+    "source": "r22/mesures/dice-9301-768.json",
+    "sha256": "ce8c4ec673daba3e289a9b1fc8c0f4a108ebb54e2f480dff928dd5845de8ea9f",
+    "ensemble": {
+      "photos": 9,
+      "identites": 31,
+      "sorties": 108,
+      "admis": 6,
+      "separes": 6,
+      "sorties_fusionnees": 51,
+      "identites_dedoublees": 30,
+      "identites_separees": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01"
+      ],
+      "identites_admises": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01"
+      ],
+      "dice_median": 0.43434343434343436
+    },
+    "groupes": {
+      "provenance/Crigges": {
+        "photos": 2,
+        "identites": 2,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.9759238521836506
+      },
+      "condition/single": {
+        "photos": 3,
+        "identites": 3,
+        "sorties": 36,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "dice_median": 1.0
+      },
+      "condition/worn": {
+        "photos": 7,
+        "identites": 28,
+        "sorties": 84,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 51,
+        "identites_dedoublees": 28,
+        "identites_separees": [
+          "13-01",
+          "24614689941:3",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "24614689941:3",
+          "70-01"
+        ],
+        "dice_median": 0.4251440182025114
+      },
+      "inventaire/complet": {
+        "photos": 7,
+        "identites": 20,
+        "sorties": 84,
+        "admis": 4,
+        "separes": 4,
+        "sorties_fusionnees": 39,
+        "identites_dedoublees": 20,
+        "identites_separees": [
+          "13-01",
+          "24614689941:3",
+          "4169106197:1",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "24614689941:3",
+          "4169106197:1",
+          "70-01"
+        ],
+        "dice_median": 0.5111900795865792
+      },
+      "provenance/jrladia": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 6,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.7448398755788894
+      },
+      "condition/multiple": {
+        "photos": 4,
+        "identites": 18,
+        "sorties": 48,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 28,
+        "identites_dedoublees": 17,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "dice_median": 0.4744782521462114
+      },
+      "provenance/Danielle Walquist Lynch": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.43434343434343436
+      },
+      "condition/grouped": {
+        "photos": 5,
+        "identites": 24,
+        "sorties": 60,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 45,
+        "identites_dedoublees": 23,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "dice_median": 0.35543822654864404
+      },
+      "provenance/zigazou76": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 1.0
+      },
+      "condition/occlusion": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 10,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.2965125211245967
+      },
+      "inventaire/partiel": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 10,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.2965125211245967
+      },
+      "provenance/renatomitra": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "24614689941:3"
+        ],
+        "dice_median": 0.7524440239672028
+      },
+      "provenance/cristina.sanvito": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "4169106197:1"
+        ],
+        "identites_admises": [
+          "4169106197:1"
+        ],
+        "dice_median": 1.0
+      },
+      "provenance/Bernard Gagnon": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.28267515923566877
+      },
+      "provenance/4028mdk09": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3375712406839106
+      }
+    },
+    "par_photo": {
+      "13-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 1.0
+      },
+      "70-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "70-01"
+        ],
+        "identites_admises": [
+          "70-01"
+        ],
+        "dice_median": 0.9518477043673013
+      },
+      "7245527662": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 6,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.7448398755788894
+      },
+      "5115614018": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.43434343434343436
+      },
+      "18105652008": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 1.0
+      },
+      "24614689941": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "24614689941:3"
+        ],
+        "dice_median": 0.7524440239672028
+      },
+      "4169106197": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "4169106197:1"
+        ],
+        "identites_admises": [
+          "4169106197:1"
+        ],
+        "dice_median": 1.0
+      },
+      "wc71488242": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.28267515923566877
+      },
+      "wc11001401": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3375712406839106
+      }
+    }
+  },
+  "9302-96": {
+    "source": "r22/mesures/dice-9302-96.json",
+    "sha256": "a88d3e74ac08ce58a944d5ab943f5cc0233428f7a1fa92bc4314579383a75f90",
+    "ensemble": {
+      "photos": 9,
+      "identites": 31,
+      "sorties": 108,
+      "admis": 1,
+      "separes": 1,
+      "sorties_fusionnees": 60,
+      "identites_dedoublees": 30,
+      "identites_separees": [
+        "13-01"
+      ],
+      "identites_admises": [
+        "13-01"
+      ],
+      "dice_median": 0.20749682337992376
+    },
+    "groupes": {
+      "provenance/Crigges": {
+        "photos": 2,
+        "identites": 2,
+        "sorties": 24,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.7573932926829268
+      },
+      "condition/single": {
+        "photos": 3,
+        "identites": 3,
+        "sorties": 36,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.5647865853658537
+      },
+      "condition/worn": {
+        "photos": 7,
+        "identites": 28,
+        "sorties": 84,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 57,
+        "identites_dedoublees": 27,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.1983354365574842
+      },
+      "inventaire/complet": {
+        "photos": 7,
+        "identites": 20,
+        "sorties": 84,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 45,
+        "identites_dedoublees": 19,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.21441005056501677
+      },
+      "provenance/jrladia": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.27259692246046174
+      },
+      "condition/multiple": {
+        "photos": 4,
+        "identites": 18,
+        "sorties": 48,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 36,
+        "identites_dedoublees": 17,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.21217421586815116
+      },
+      "provenance/Danielle Walquist Lynch": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.10172317954419122
+      },
+      "condition/grouped": {
+        "photos": 5,
+        "identites": 24,
+        "sorties": 60,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 49,
+        "identites_dedoublees": 23,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.19730649301568293
+      },
+      "provenance/zigazou76": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 3,
+        "identites_dedoublees": 2,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.4692697447590094
+      },
+      "condition/occlusion": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 15,
+        "identites_dedoublees": 11,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.20749682337992376
+      },
+      "inventaire/partiel": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 15,
+        "identites_dedoublees": 11,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.20749682337992376
+      },
+      "provenance/renatomitra": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 2,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3408123791102515
+      },
+      "provenance/cristina.sanvito": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.2838522809558291
+      },
+      "provenance/Bernard Gagnon": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.19767212467942394
+      },
+      "provenance/4028mdk09": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.19899874843554444
+      }
+    },
+    "par_photo": {
+      "13-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.95
+      },
+      "70-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.5647865853658537
+      },
+      "7245527662": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.27259692246046174
+      },
+      "5115614018": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.10172317954419122
+      },
+      "18105652008": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 3,
+        "identites_dedoublees": 2,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.4692697447590094
+      },
+      "24614689941": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 2,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3408123791102515
+      },
+      "4169106197": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.2838522809558291
+      },
+      "wc71488242": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.19767212467942394
+      },
+      "wc11001401": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.19899874843554444
+      }
+    }
+  },
+  "9302-768": {
+    "source": "r22/mesures/dice-9302-768.json",
+    "sha256": "af50f306ac6008cb7595c9f9bf3bf10f5fb197f6902323e5cd1657ea59bf9393",
+    "ensemble": {
+      "photos": 9,
+      "identites": 31,
+      "sorties": 108,
+      "admis": 5,
+      "separes": 5,
+      "sorties_fusionnees": 52,
+      "identites_dedoublees": 31,
+      "identites_separees": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "4169106197:1",
+        "70-01"
+      ],
+      "identites_admises": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "4169106197:1",
+        "70-01"
+      ],
+      "dice_median": 0.4188034188034188
+    },
+    "groupes": {
+      "provenance/Crigges": {
+        "photos": 2,
+        "identites": 2,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.998868749344527
+      },
+      "condition/single": {
+        "photos": 3,
+        "identites": 3,
+        "sorties": 36,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "dice_median": 0.9988412514484357
+      },
+      "condition/worn": {
+        "photos": 7,
+        "identites": 28,
+        "sorties": 84,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 51,
+        "identites_dedoublees": 28,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.38913495419309374
+      },
+      "inventaire/complet": {
+        "photos": 7,
+        "identites": 20,
+        "sorties": 84,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 39,
+        "identites_dedoublees": 20,
+        "identites_separees": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "dice_median": 0.43879846308310166
+      },
+      "provenance/jrladia": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 9,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.5678279680135474
+      },
+      "condition/multiple": {
+        "photos": 4,
+        "identites": 18,
+        "sorties": 48,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 28,
+        "identites_dedoublees": 18,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.43639897994958177
+      },
+      "provenance/Danielle Walquist Lynch": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3660606060606061
+      },
+      "condition/grouped": {
+        "photos": 5,
+        "identites": 24,
+        "sorties": 60,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 43,
+        "identites_dedoublees": 24,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.3520150040038774
+      },
+      "provenance/zigazou76": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 1,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 1.0
+      },
+      "condition/occlusion": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 13,
+        "identites_dedoublees": 11,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.24753324753324754
+      },
+      "inventaire/partiel": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 13,
+        "identites_dedoublees": 11,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.24753324753324754
+      },
+      "provenance/renatomitra": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 6,
+        "identites_dedoublees": 3,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.8359046283309958
+      },
+      "provenance/cristina.sanvito": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "4169106197:1"
+        ],
+        "identites_admises": [
+          "4169106197:1"
+        ],
+        "dice_median": 0.9969230769230769
+      },
+      "provenance/Bernard Gagnon": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.22987164527421236
+      },
+      "provenance/4028mdk09": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.33575934012615233
+      }
+    },
+    "par_photo": {
+      "13-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.9988962472406181
+      },
+      "70-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "70-01"
+        ],
+        "identites_admises": [
+          "70-01"
+        ],
+        "dice_median": 0.9988412514484357
+      },
+      "7245527662": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 9,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.5678279680135474
+      },
+      "5115614018": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3660606060606061
+      },
+      "18105652008": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 1,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 1.0
+      },
+      "24614689941": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 6,
+        "identites_dedoublees": 3,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.8359046283309958
+      },
+      "4169106197": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "4169106197:1"
+        ],
+        "identites_admises": [
+          "4169106197:1"
+        ],
+        "dice_median": 0.9969230769230769
+      },
+      "wc71488242": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.22987164527421236
+      },
+      "wc11001401": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.33575934012615233
+      }
+    }
+  },
+  "9303-96": {
+    "source": "r22/mesures/dice-9303-96.json",
+    "sha256": "6e45d2bd2a514d854763de504fb4bc167c072b39af2f1d5e1fa2eb5e5f6ef7f4",
+    "ensemble": {
+      "photos": 9,
+      "identites": 31,
+      "sorties": 108,
+      "admis": 2,
+      "separes": 2,
+      "sorties_fusionnees": 46,
+      "identites_dedoublees": 23,
+      "identites_separees": [
+        "13-01",
+        "70-01"
+      ],
+      "identites_admises": [
+        "13-01",
+        "70-01"
+      ],
+      "dice_median": 0.17248459958932238
+    },
+    "groupes": {
+      "provenance/Crigges": {
+        "photos": 2,
+        "identites": 2,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.9797152624685288
+      },
+      "condition/single": {
+        "photos": 3,
+        "identites": 3,
+        "sorties": 36,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.9770742358078602
+      },
+      "condition/worn": {
+        "photos": 7,
+        "identites": 28,
+        "sorties": 84,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 46,
+        "identites_dedoublees": 22,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.17055901087193565
+      },
+      "inventaire/complet": {
+        "photos": 7,
+        "identites": 20,
+        "sorties": 84,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 34,
+        "identites_dedoublees": 15,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.18428805686988167
+      },
+      "provenance/jrladia": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 1,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.18428805686988167
+      },
+      "condition/multiple": {
+        "photos": 4,
+        "identites": 18,
+        "sorties": 48,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 25,
+        "identites_dedoublees": 11,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.21921876209858726
+      },
+      "provenance/Danielle Walquist Lynch": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.1527647610121837
+      },
+      "condition/grouped": {
+        "photos": 5,
+        "identites": 24,
+        "sorties": 60,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 45,
+        "identites_dedoublees": 19,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.15828857710490607
+      },
+      "provenance/zigazou76": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 0,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.26446867834062954
+      },
+      "condition/occlusion": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 8,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.17248459958932238
+      },
+      "inventaire/partiel": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 8,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.17248459958932238
+      },
+      "provenance/renatomitra": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 2,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.43135498320268756
+      },
+      "provenance/cristina.sanvito": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.779050736497545
+      },
+      "provenance/Bernard Gagnon": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 8,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.17248459958932238
+      },
+      "provenance/4028mdk09": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 9,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.15220483641536273
+      }
+    },
+    "par_photo": {
+      "13-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 0.9770742358078602
+      },
+      "70-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "70-01"
+        ],
+        "identites_admises": [
+          "70-01"
+        ],
+        "dice_median": 0.9823562891291975
+      },
+      "7245527662": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 1,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.18428805686988167
+      },
+      "5115614018": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.1527647610121837
+      },
+      "18105652008": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 0,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.26446867834062954
+      },
+      "24614689941": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 2,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.43135498320268756
+      },
+      "4169106197": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.779050736497545
+      },
+      "wc71488242": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 8,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.17248459958932238
+      },
+      "wc11001401": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 9,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.15220483641536273
+      }
+    }
+  },
+  "9303-768": {
+    "source": "r22/mesures/dice-9303-768.json",
+    "sha256": "b2a91f9654ffbb71904e603bfa2cdbb6de533e199676578400b07fb126e269bd",
+    "ensemble": {
+      "photos": 9,
+      "identites": 31,
+      "sorties": 108,
+      "admis": 6,
+      "separes": 6,
+      "sorties_fusionnees": 54,
+      "identites_dedoublees": 30,
+      "identites_separees": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01"
+      ],
+      "identites_admises": [
+        "13-01",
+        "18105652008:1",
+        "18105652008:2",
+        "24614689941:3",
+        "4169106197:1",
+        "70-01"
+      ],
+      "dice_median": 0.4120300751879699
+    },
+    "groupes": {
+      "provenance/Crigges": {
+        "photos": 2,
+        "identites": 2,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "13-01",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "70-01"
+        ],
+        "dice_median": 0.9991304347826087
+      },
+      "condition/single": {
+        "photos": 3,
+        "identites": 3,
+        "sorties": 36,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 3,
+        "identites_separees": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "4169106197:1",
+          "70-01"
+        ],
+        "dice_median": 1.0
+      },
+      "condition/worn": {
+        "photos": 7,
+        "identites": 28,
+        "sorties": 84,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 54,
+        "identites_dedoublees": 27,
+        "identites_separees": [
+          "13-01",
+          "24614689941:3",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "24614689941:3",
+          "70-01"
+        ],
+        "dice_median": 0.35787021227103777
+      },
+      "inventaire/complet": {
+        "photos": 7,
+        "identites": 20,
+        "sorties": 84,
+        "admis": 4,
+        "separes": 4,
+        "sorties_fusionnees": 44,
+        "identites_dedoublees": 19,
+        "identites_separees": [
+          "13-01",
+          "24614689941:3",
+          "4169106197:1",
+          "70-01"
+        ],
+        "identites_admises": [
+          "13-01",
+          "24614689941:3",
+          "4169106197:1",
+          "70-01"
+        ],
+        "dice_median": 0.4346212572105907
+      },
+      "provenance/jrladia": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.6954633594048012
+      },
+      "condition/multiple": {
+        "photos": 4,
+        "identites": 18,
+        "sorties": 48,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 31,
+        "identites_dedoublees": 17,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "dice_median": 0.4495401260355826
+      },
+      "provenance/Danielle Walquist Lynch": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3315068493150685
+      },
+      "condition/grouped": {
+        "photos": 5,
+        "identites": 24,
+        "sorties": 60,
+        "admis": 3,
+        "separes": 3,
+        "sorties_fusionnees": 44,
+        "identites_dedoublees": 23,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2",
+          "24614689941:3"
+        ],
+        "dice_median": 0.35323089046493306
+      },
+      "provenance/zigazou76": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 1.0
+      },
+      "condition/occlusion": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 11,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.32880961613028303
+      },
+      "inventaire/partiel": {
+        "photos": 2,
+        "identites": 11,
+        "sorties": 24,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 11,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 0.32880961613028303
+      },
+      "provenance/renatomitra": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "24614689941:3"
+        ],
+        "dice_median": 0.796023091725465
+      },
+      "provenance/cristina.sanvito": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "4169106197:1"
+        ],
+        "identites_admises": [
+          "4169106197:1"
+        ],
+        "dice_median": 1.0
+      },
+      "provenance/Bernard Gagnon": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.26828160484481456
+      },
+      "provenance/4028mdk09": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.35185185185185186
+      }
+    },
+    "par_photo": {
+      "13-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "13-01"
+        ],
+        "identites_admises": [
+          "13-01"
+        ],
+        "dice_median": 1.0
+      },
+      "70-01": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "70-01"
+        ],
+        "identites_admises": [
+          "70-01"
+        ],
+        "dice_median": 0.9982608695652174
+      },
+      "7245527662": {
+        "photos": 1,
+        "identites": 4,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 4,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.6954633594048012
+      },
+      "5115614018": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.3315068493150685
+      },
+      "18105652008": {
+        "photos": 1,
+        "identites": 2,
+        "sorties": 12,
+        "admis": 2,
+        "separes": 2,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "identites_admises": [
+          "18105652008:1",
+          "18105652008:2"
+        ],
+        "dice_median": 1.0
+      },
+      "24614689941": {
+        "photos": 1,
+        "identites": 3,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 11,
+        "identites_dedoublees": 2,
+        "identites_separees": [
+          "24614689941:3"
+        ],
+        "identites_admises": [
+          "24614689941:3"
+        ],
+        "dice_median": 0.796023091725465
+      },
+      "4169106197": {
+        "photos": 1,
+        "identites": 1,
+        "sorties": 12,
+        "admis": 1,
+        "separes": 1,
+        "sorties_fusionnees": 0,
+        "identites_dedoublees": 1,
+        "identites_separees": [
+          "4169106197:1"
+        ],
+        "identites_admises": [
+          "4169106197:1"
+        ],
+        "dice_median": 1.0
+      },
+      "wc71488242": {
+        "photos": 1,
+        "identites": 9,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 10,
+        "identites_dedoublees": 9,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.26828160484481456
+      },
+      "wc11001401": {
+        "photos": 1,
+        "identites": 5,
+        "sorties": 12,
+        "admis": 0,
+        "separes": 0,
+        "sorties_fusionnees": 12,
+        "identites_dedoublees": 5,
+        "identites_separees": [],
+        "identites_admises": [],
+        "dice_median": 0.35185185185185186
+      }
+    }
+  }
+}

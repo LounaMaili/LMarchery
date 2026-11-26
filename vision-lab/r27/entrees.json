@@ -1,0 +1,107 @@
+{
+  "opencv": "4.13.0",
+  "numpy": "2.5.4",
+  "sha256_train": "40d8665fdcfea189e59908c1cf4f6b7cc1c4778c51a7672f08caeb488d68ecc7",
+  "sha256_tirages": "2e5dd5afd18d110556dba4c110153900c313f7ba3b6fc18949fb593ea6db0602",
+  "photos": {
+    "13-01": {
+      "fichier": "data/r27/inputs/13-01.npy",
+      "octets": 589952,
+      "sha256": "8359ef221aecbc062954057888d8733d7ebbd71d1dea1950c6bbbacc074c1be9",
+      "sha256_pixels": "91fce55ed4e33950dcb45a9dc56bdef28222aaf95e7d8b79d7e28542f5edc88d",
+      "dimensions_xy": [
+        384,
+        512
+      ],
+      "sha256_original": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe"
+    },
+    "70-01": {
+      "fichier": "data/r27/inputs/70-01.npy",
+      "octets": 589952,
+      "sha256": "d025ea3ea67d0ba0a25b1f4ccaf408f11a1549c5aa92e70f7d43448510dcafaa",
+      "sha256_pixels": "2582c2954bbe77f92c93ffe6d4a65563d3d5c273eaa21bb2b64eaafc8cacb9d2",
+      "dimensions_xy": [
+        384,
+        512
+      ],
+      "sha256_original": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888"
+    },
+    "7245527662": {
+      "fichier": "data/r27/inputs/7245527662.npy",
+      "octets": 516224,
+      "sha256": "d61c82c96e60c6a0b271e57f1d71a260023115899ffd99446da9723e310920f1",
+      "sha256_pixels": "239b28897b1c7a978da70cbdb84adb892626fa0445df95c722bb1f6ee7e74a22",
+      "dimensions_xy": [
+        512,
+        336
+      ],
+      "sha256_original": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302"
+    },
+    "5115614018": {
+      "fichier": "data/r27/inputs/5115614018.npy",
+      "octets": 516224,
+      "sha256": "b62946c39753dbfb551b9cc57043e907faebc4d7b2917fad95186bb3d9e4cf85",
+      "sha256_pixels": "f1df35ab40ff2511e0af6788f9d7bd48bd37d3912ca6284b402455dd7f0ef00e",
+      "dimensions_xy": [
+        512,
+        336
+      ],
+      "sha256_original": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d"
+    },
+    "18105652008": {
+      "fichier": "data/r27/inputs/18105652008.npy",
+      "octets": 516224,
+      "sha256": "5e80a47f55ec271d5955f29b6f3ad5e9e95597d9216ee8e1ae556914fbe0ac30",
+      "sha256_pixels": "9d7bd18e09a979185eedcb1b9bbaee3a900703e3883561a74da2ebda9bb22e4f",
+      "dimensions_xy": [
+        512,
+        336
+      ],
+      "sha256_original": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f"
+    },
+    "24614689941": {
+      "fichier": "data/r27/inputs/24614689941.npy",
+      "octets": 786560,
+      "sha256": "3f02adffd0d06f6efbf6e0733b83f80d20a6e6235c8b0ed783528443382a1702",
+      "sha256_pixels": "9969080a454b62ec93c0dff5c4ac202acf5be0f6d1449156e19de6b8ee837f65",
+      "dimensions_xy": [
+        512,
+        512
+      ],
+      "sha256_original": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888"
+    },
+    "4169106197": {
+      "fichier": "data/r27/inputs/4169106197.npy",
+      "octets": 589952,
+      "sha256": "4b19aa5637b9de09ae283a94042d9db5ba6884ae067d46c99191899ca47280a4",
+      "sha256_pixels": "b1ef4518a9f449cac3c171fe07d11cd0643beeb586d7061adfe4aec59a838de6",
+      "dimensions_xy": [
+        512,
+        384
+      ],
+      "sha256_original": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5"
+    },
+    "wc71488242": {
+      "fichier": "data/r27/inputs/wc71488242.npy",
+      "octets": 786560,
+      "sha256": "44755a77bede3191f929730888b99d9010443b1dbe845721089224882532cbd0",
+      "sha256_pixels": "ab2a536a2d4d594ae63e512f969133ef47c04ba8531fbab7b97f59832b55b4d1",
+      "dimensions_xy": [
+        512,
+        512
+      ],
+      "sha256_original": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491"
+    },
+    "wc11001401": {
+      "fichier": "data/r27/inputs/wc11001401.npy",
+      "octets": 589952,
+      "sha256": "129d4c56df73fbc1bcdf7f1555b6c4678c347f6d43fe92d155a2f9511b6b748e",
+      "sha256_pixels": "48221d0cc0fd957ab39d5a39f110a142e71974d910578aef4cf879fa1edbfc66",
+      "dimensions_xy": [
+        384,
+        512
+      ],
+      "sha256_original": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f"
+    }
+  }
+}
