@@ -1,0 +1,9 @@
+{
+  "fichier": "libtorch_cpu.so",
+  "segment": "PT_GNU_STACK",
+  "avant": "RWE",
+  "apres": "RW",
+  "octet": 180,
+  "sha256_original": "be3a8fddc596f40dd625eeaa68ed6c4b584a8888a465c0e134797b9b7abb76fc",
+  "sha256_installe": "54bf4b45c7fa44076b1264fff123738c551aff78204d71c49e1599b39a656ad0"
+}
