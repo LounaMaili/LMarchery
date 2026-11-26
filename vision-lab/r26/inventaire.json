@@ -1,0 +1,179 @@
+{
+  "repere_chemins_photos": "répertoire build/worktrees du dépôt",
+  "photos": [
+    {
+      "nom": "13-01.png",
+      "role": "Photo train 13-01",
+      "octets": 1731722,
+      "sha256": "073895a2f0d3ad859314ac0a3c90ce4e82d752b6951afc047e9dc36ee84a91fe",
+      "emplacement": "vision-lab-r7/vision-lab/data/r7/pilot/work/13-01.png",
+      "droits": {
+        "credit": "Crigges",
+        "notice": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "titre": "13/01.png",
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "nom_licence": "CC BY 4.0"
+      }
+    },
+    {
+      "nom": "70-01.png",
+      "role": "Photo train 70-01",
+      "octets": 1791284,
+      "sha256": "e990724cd3a2300ef87648f00ae69d06f4c381614c5ec3ae52764999edff5888",
+      "emplacement": "vision-lab-r7/vision-lab/data/r7/pilot/work/70-01.png",
+      "droits": {
+        "credit": "Crigges",
+        "notice": "https://www.kaggle.com/datasets/crigges/arrow-sequences",
+        "titre": "70/01.png",
+        "licence": "https://creativecommons.org/licenses/by/4.0/",
+        "nom_licence": "CC BY 4.0"
+      }
+    },
+    {
+      "nom": "7245527662.png",
+      "role": "Photo train 7245527662",
+      "octets": 780209,
+      "sha256": "f7646bd13249a1bc6454fff72d6306f8fc7672bccbd749a5e9ea1f4ba5743302",
+      "emplacement": "vision-lab-r8/vision-lab/data/r8/work/7245527662.png",
+      "droits": {
+        "credit": "jrladia",
+        "notice": "https://www.flickr.com/photos/34859133@N06/7245527662",
+        "titre": "Heartland Archery | Winnipeg",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "5115614018.png",
+      "role": "Photo train 5115614018",
+      "octets": 1108495,
+      "sha256": "0108ab1f09876ffef5ac17b27643d59f51a5b7994f0b6a65cc1510d70ff5052d",
+      "emplacement": "vision-lab-r8/vision-lab/data/r8/work/5115614018.png",
+      "droits": {
+        "credit": "Danielle Walquist Lynch",
+        "notice": "https://www.flickr.com/photos/25195310@N02/5115614018",
+        "titre": "Corey's archery target",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "18105652008.jpg",
+      "role": "Photo train 18105652008",
+      "octets": 426302,
+      "sha256": "bcec83470ce12df7997ed2a527c6b2f26abbbc0dccc5fb8da0e30e927f69900f",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/18105652008.jpg",
+      "droits": {
+        "credit": "zigazou76",
+        "notice": "https://www.flickr.com/photos/38712296@N07/18105652008",
+        "titre": "Cibles pour le tir à l’arc",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "24614689941.jpg",
+      "role": "Photo train 24614689941",
+      "octets": 99973,
+      "sha256": "b1015585f9c3825dcbb8b7d8f43d8cf177c27baee996ecf6f32bc2d18859a888",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/24614689941.jpg",
+      "droits": {
+        "credit": "renatomitra",
+        "notice": "https://www.flickr.com/photos/groovenite/24614689941",
+        "titre": "Heute hatte ich meine erste Lektion im Bogenschiessen. #arrow #archery #target #fokus",
+        "licence": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "nom_licence": "CC BY-SA 2.0"
+      }
+    },
+    {
+      "nom": "4169106197.jpg",
+      "role": "Photo train 4169106197",
+      "octets": 97351,
+      "sha256": "8de766647da35c89acadb6bc9368f24b7f1b4d5e978a8293f5f6989f997fa6d5",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/4169106197.jpg",
+      "droits": {
+        "credit": "cristina.sanvito",
+        "notice": "https://www.flickr.com/photos/40385177@N07/4169106197",
+        "titre": "centro!",
+        "licence": "https://creativecommons.org/licenses/by/2.0/",
+        "nom_licence": "CC BY 2.0"
+      }
+    },
+    {
+      "nom": "wc71488242.jpg",
+      "role": "Photo train wc71488242",
+      "octets": 592714,
+      "sha256": "213074e88726cc4afe23180254c2f9768eb5f99564b7baf0045da0c696177491",
+      "emplacement": "vision-lab-r12/vision-lab/data/r12/media/wc71488242.jpg",
+      "droits": {
+        "credit": "Bernard Gagnon",
+        "notice": "https://commons.wikimedia.org/wiki/File:Changlimithang_Archery_Ground,_Thimphu_08.jpg",
+        "titre": "File:Changlimithang Archery Ground, Thimphu 08.jpg",
+        "licence": "https://creativecommons.org/licenses/by-sa/4.0",
+        "nom_licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "nom": "wc11001401.jpg",
+      "role": "Photo train wc11001401",
+      "octets": 4316454,
+      "sha256": "41705756c446e38358b8fb1b72454d713b0bd4246011aa6ab878f9233906300f",
+      "emplacement": "vision-lab-r15/vision-lab/data/r15/media/wc11001401.jpg",
+      "droits": {
+        "credit": "4028mdk09",
+        "notice": "https://commons.wikimedia.org/wiki/File:Archery_shooting_at_a_WA_target_in_Northern_Baden,_Wuerttemberg,_Germany.jpg",
+        "titre": "wc11001401",
+        "licence": "https://creativecommons.org/licenses/by-sa/3.0",
+        "nom_licence": "CC BY-SA 3.0"
+      }
+    }
+  ],
+  "poids_historiques": [
+    {
+      "nom": "poids.pt",
+      "role": "Checkpoint final dice-9301",
+      "octets": 897303,
+      "sha256": "194ec9f5cbbcbd033281f2359c4006322791bfd154bbfb13924b59b35ec4e134",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r22/vision-lab/artifacts/r22/dice/9301/768/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Checkpoint final dice-9302",
+      "octets": 897303,
+      "sha256": "2011a92e231ac4bc137ce10b997ea9b089f892b38ad1e6ab19fb6291d0cecb31",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r22/vision-lab/artifacts/r22/dice/9302/768/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Checkpoint final dice-9303",
+      "octets": 897303,
+      "sha256": "e4d01adc50ec5476fe6d02276b727626de8c5b85cf07b0a5fd05a1e749b58bd8",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r22/vision-lab/artifacts/r22/dice/9303/768/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Checkpoint final bloc8-9301",
+      "octets": 897303,
+      "sha256": "d39249a82a838383cddbefc3ea77efaf5512d5544895d6a771c93916343c8ab4",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r24/vision-lab/artifacts/r24/bloc8/9301/768/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Checkpoint final bloc8-9302",
+      "octets": 897303,
+      "sha256": "f431d018cf731a35ab13cfaf0d48e7270a2381841e23f6bf0f59882d8c5420c6",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r24/vision-lab/artifacts/r24/bloc8/9302/768/poids.pt"
+    },
+    {
+      "nom": "poids.pt",
+      "role": "Checkpoint final bloc8-9303",
+      "octets": 897303,
+      "sha256": "ded37d589f0ea65b3e1388db3c8cda6a648c448dd29c748e82e3d31c04cb14aa",
+      "emplacement": "/home/erwan/projets/LMarchery/build/worktrees/vision-lab-r24/vision-lab/artifacts/r24/bloc8/9303/768/poids.pt"
+    }
+  ],
+  "archives_R25": "../r25/inventaire-local.json",
+  "empreintes_cartes": "../r25/cartes/inventaire.json",
+  "poids_editeurs": "poids-editeurs.json",
+  "nouvelle_capsule_locale": null
+}

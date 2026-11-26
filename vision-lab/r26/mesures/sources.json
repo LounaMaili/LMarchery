@@ -1,0 +1,56 @@
+{
+  "revision_R25": "5cee1e0b287faab138f0d8ae4e961dec7b0b9ed8",
+  "fichiers": [
+    {
+      "fichier": "r18/validites.json",
+      "octets": 117603,
+      "sha256": "0696d06b15cb444813c02758eab7c873167cb2f32d46a3a93b03931e0cd0727d"
+    },
+    {
+      "fichier": "r20/plafonds.json",
+      "octets": 61307,
+      "sha256": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f"
+    },
+    {
+      "fichier": "r25/bilan-identites.json",
+      "octets": 26777,
+      "sha256": "1ce34e7b2fafaed0cc9fc84b59648ed28a18d7268e037d84589ea3f18f4a2366"
+    },
+    {
+      "fichier": "r25/cartes/inventaire.json",
+      "octets": 96752,
+      "sha256": "c3dcfd944a0ed7094ba892adb55970e218b7963b65c9b96f38da8fe135173c47"
+    },
+    {
+      "fichier": "r22/mesures/dice-9301-768.json",
+      "octets": 190681,
+      "sha256": "ce8c4ec673daba3e289a9b1fc8c0f4a108ebb54e2f480dff928dd5845de8ea9f"
+    },
+    {
+      "fichier": "r22/mesures/dice-9302-768.json",
+      "octets": 184510,
+      "sha256": "af50f306ac6008cb7595c9f9bf3bf10f5fb197f6902323e5cd1657ea59bf9393"
+    },
+    {
+      "fichier": "r22/mesures/dice-9303-768.json",
+      "octets": 184450,
+      "sha256": "b2a91f9654ffbb71904e603bfa2cdbb6de533e199676578400b07fb126e269bd"
+    },
+    {
+      "fichier": "r24/mesures/bloc8-9301-768.json",
+      "octets": 188588,
+      "sha256": "b6b7f09bbff41b8abba0e6ab993b259d96677f1bcfc00d98b150f94cb0922765"
+    },
+    {
+      "fichier": "r24/mesures/bloc8-9302-768.json",
+      "octets": 184355,
+      "sha256": "a8f023e26157bc9b032459758235c4dae77a57d8ff423cb62f6ff0168caebcff"
+    },
+    {
+      "fichier": "r24/mesures/bloc8-9303-768.json",
+      "octets": 184507,
+      "sha256": "c94f15d91881ff034769b617fc239069e412c8a8406f8a8928ccecfb2d2d9a0c"
+    }
+  ],
+  "empreintes_des_264_cartes": "r25/cartes/inventaire.json"
+}

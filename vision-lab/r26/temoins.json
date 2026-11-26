@@ -1,0 +1,44 @@
+{
+  "9301": {
+    "identites": [
+      "13-01",
+      "18105652008:1",
+      "18105652008:2",
+      "24614689941:1",
+      "24614689941:3",
+      "4169106197:1",
+      "70-01",
+      "7245527662:1"
+    ],
+    "minimum_separes_si_conforme": 14,
+    "maximum_fusions": 38,
+    "maximum_dedoublements": 22
+  },
+  "9302": {
+    "identites": [
+      "13-01",
+      "18105652008:1",
+      "18105652008:2",
+      "24614689941:3",
+      "4169106197:1",
+      "70-01"
+    ],
+    "minimum_separes_si_conforme": 12,
+    "maximum_fusions": 39,
+    "maximum_dedoublements": 23
+  },
+  "9303": {
+    "identites": [
+      "13-01",
+      "18105652008:1",
+      "18105652008:2",
+      "24614689941:3",
+      "4169106197:1",
+      "70-01",
+      "7245527662:1"
+    ],
+    "minimum_separes_si_conforme": 13,
+    "maximum_fusions": 40,
+    "maximum_dedoublements": 22
+  }
+}

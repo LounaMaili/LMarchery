@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="486" viewBox="0 0 1000 486" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Ce que pourrait changer un axe parfait</title>
+  <desc>Mesures rétrospectives sur le train. Les deux panneaux ont des unités et des dénominateurs distincts.</desc>
+  <rect x="0" y="0" width="1000" height="486" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Ce que pourrait changer un axe parfait</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Mesures rétrospectives sur le train. Les deux panneaux ont des unités et des dénominateurs distincts.</text>
+  <text x="35" y="110" font-size="18" font-weight="bold" text-anchor="start" fill="#20313b">Triplets appariés sur 26 entrées connues</text>
+  <text x="35" y="134" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">● Mesuré     ○ Borne avec axe parfait</text>
+  <text x="521" y="110" font-size="18" font-weight="bold" text-anchor="start" fill="#20313b">Occupation de la grille au seuil historique</text>
+  <text x="521" y="134" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">264 requêtes sur les 22 captures de R25</text>
+  <line x1="155" y1="164" x2="155" y2="387" stroke="#dbdfd9" />
+  <text x="155" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">0</text>
+  <line x1="194" y1="164" x2="194" y2="387" stroke="#dbdfd9" />
+  <text x="194" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">1</text>
+  <line x1="233" y1="164" x2="233" y2="387" stroke="#dbdfd9" />
+  <text x="233" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">2</text>
+  <line x1="272" y1="164" x2="272" y2="387" stroke="#dbdfd9" />
+  <text x="272" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">3</text>
+  <line x1="311" y1="164" x2="311" y2="387" stroke="#dbdfd9" />
+  <text x="311" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">4</text>
+  <line x1="350" y1="164" x2="350" y2="387" stroke="#dbdfd9" />
+  <text x="350" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">5</text>
+  <line x1="389" y1="164" x2="389" y2="387" stroke="#dbdfd9" />
+  <text x="389" y="407" font-size="12" font-weight="normal" text-anchor="middle" fill="#20313b">6</text>
+  <text x="35" y="186" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Dice · 9301</text>
+  <line x1="311" y1="182" x2="350" y2="182" stroke="#506283" stroke-width="3" />
+  <circle cx="350" cy="182" r="7" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="311" cy="182" r="4" fill="#506283" />
+  <text x="409" y="186" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">4 → 5</text>
+  <text x="35" y="223" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Dice · 9302</text>
+  <line x1="350" y1="219" x2="350" y2="219" stroke="#506283" stroke-width="3" />
+  <circle cx="350" cy="219" r="7" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="350" cy="219" r="4" fill="#506283" />
+  <text x="409" y="223" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">5 → 5</text>
+  <text x="35" y="260" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Dice · 9303</text>
+  <line x1="311" y1="256" x2="350" y2="256" stroke="#506283" stroke-width="3" />
+  <circle cx="350" cy="256" r="7" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="311" cy="256" r="4" fill="#506283" />
+  <text x="409" y="260" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">4 → 5</text>
+  <text x="35" y="297" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Bloc 8 · 9301</text>
+  <line x1="311" y1="293" x2="389" y2="293" stroke="#506283" stroke-width="3" />
+  <circle cx="389" cy="293" r="7" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="311" cy="293" r="4" fill="#506283" />
+  <text x="409" y="297" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">4 → 6</text>
+  <text x="35" y="334" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Bloc 8 · 9302</text>
+  <line x1="311" y1="330" x2="350" y2="330" stroke="#506283" stroke-width="3" />
+  <circle cx="350" cy="330" r="7" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="311" cy="330" r="4" fill="#506283" />
+  <text x="409" y="334" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">4 → 5</text>
+  <text x="35" y="371" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Bloc 8 · 9303</text>
+  <line x1="350" y1="367" x2="350" y2="367" stroke="#506283" stroke-width="3" />
+  <circle cx="350" cy="367" r="7" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="350" cy="367" r="4" fill="#506283" />
+  <text x="409" y="371" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">5 → 5</text>
+  <text x="521" y="166" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Axe positif sur toute la grille</text>
+  <rect x="521" y="174" width="345" height="14" fill="#e8ece6" />
+  <rect x="521" y="174" width="82.32954545454545" height="14" fill="#167c76" />
+  <text x="879" y="186" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">63</text>
+  <text x="521" y="228" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Axe positif sur ≥ 99 %</text>
+  <rect x="521" y="236" width="345" height="14" fill="#e8ece6" />
+  <rect x="521" y="236" width="222.1590909090909" height="14" fill="#167c76" />
+  <text x="879" y="248" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">170</text>
+  <text x="521" y="290" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Axe positif sur ≥ 95 %</text>
+  <rect x="521" y="298" width="345" height="14" fill="#e8ece6" />
+  <rect x="521" y="298" width="280.96590909090907" height="14" fill="#167c76" />
+  <text x="879" y="310" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">215</text>
+  <text x="521" y="352" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Intersection identique au masque</text>
+  <rect x="521" y="360" width="345" height="14" fill="#e8ece6" />
+  <rect x="521" y="360" width="134.60227272727272" height="14" fill="#167c76" />
+  <text x="879" y="372" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">103</text>
+  <text x="35" y="454" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">La borne masque seul coïncide avec la borne axe parfait dans les six états. Les trois premières barres de densité se recouvrent.</text>
+</svg>
