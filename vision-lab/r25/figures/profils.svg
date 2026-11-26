@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="477" viewBox="0 0 1000 477" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Du support proche à l’axe attribué</title>
+  <desc>Train · six états au pas 768 · chaque couple identité–graine compte une fois dans son groupe.</desc>
+  <rect x="0" y="0" width="1000" height="477" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Du support proche à l’axe attribué</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Train · six états au pas 768 · chaque couple identité–graine compte une fois dans son groupe.</text>
+  <text x="36" y="110" font-size="18" font-weight="bold" text-anchor="start" fill="#20313b">18 transitions</text>
+  <text x="36" y="132" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Dernière limite observée dans le bras en défaut</text>
+  <text x="260" y="163" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Pertes</text>
+  <text x="370" y="163" font-size="13" font-weight="bold" text-anchor="start" fill="#20313b">Gains</text>
+  <text x="36" y="195" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">critère d’élongation</text>
+  <rect x="260" y="186" width="12" height="10" fill="#506283" />
+  <text x="277" y="196" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1</text>
+  <rect x="370" y="186" width="0" height="10" fill="#a95b29" />
+  <text x="375" y="196" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">0</text>
+  <text x="36" y="230" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">ligne de PCA</text>
+  <rect x="260" y="221" width="72" height="10" fill="#506283" />
+  <text x="337" y="231" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">6</text>
+  <rect x="370" y="221" width="24" height="10" fill="#a95b29" />
+  <text x="399" y="231" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2</text>
+  <text x="36" y="265" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">découpe par la composante</text>
+  <rect x="260" y="256" width="12" height="10" fill="#506283" />
+  <text x="277" y="266" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1</text>
+  <rect x="370" y="256" width="12" height="10" fill="#a95b29" />
+  <text x="387" y="266" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1</text>
+  <text x="36" y="300" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">portions intérieures trop courtes</text>
+  <rect x="260" y="291" width="0" height="10" fill="#506283" />
+  <text x="265" y="301" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">0</text>
+  <rect x="370" y="291" width="24" height="10" fill="#a95b29" />
+  <text x="399" y="301" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2</text>
+  <text x="36" y="335" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">orientation</text>
+  <rect x="260" y="326" width="48" height="10" fill="#506283" />
+  <text x="313" y="336" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">4</text>
+  <rect x="370" y="326" width="0" height="10" fill="#a95b29" />
+  <text x="375" y="336" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">0</text>
+  <text x="36" y="370" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">attribution</text>
+  <rect x="260" y="361" width="12" height="10" fill="#506283" />
+  <text x="277" y="371" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1</text>
+  <rect x="370" y="361" width="0" height="10" fill="#a95b29" />
+  <text x="375" y="371" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">0</text>
+  <text x="480" y="110" font-size="18" font-weight="bold" text-anchor="start" fill="#20313b">27 axes appariés dans les deux bras</text>
+  <text x="480" y="132" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Médiane sur 21 sondes, sur la requête attribuée dans chaque bras</text>
+  <line x1="504" y1="322.0" x2="937" y2="322.0" stroke="#d9dcd8" />
+  <text x="496" y="326.0" font-size="12" font-weight="normal" text-anchor="end" fill="#20313b">0</text>
+  <line x1="504" y1="273.6666666666667" x2="937" y2="273.6666666666667" stroke="#d9dcd8" />
+  <text x="496" y="277.6666666666667" font-size="12" font-weight="normal" text-anchor="end" fill="#20313b">7</text>
+  <line x1="504" y1="225.33333333333331" x2="937" y2="225.33333333333331" stroke="#d9dcd8" />
+  <text x="496" y="229.33333333333331" font-size="12" font-weight="normal" text-anchor="end" fill="#20313b">14</text>
+  <line x1="504" y1="177.0" x2="937" y2="177.0" stroke="#d9dcd8" />
+  <text x="496" y="181.0" font-size="12" font-weight="normal" text-anchor="end" fill="#20313b">21</text>
+  <text x="504.0" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Axe</text>
+  <text x="558.125" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Inter.</text>
+  <text x="612.25" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Taille</text>
+  <text x="666.375" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Élong.</text>
+  <text x="720.5" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Portée</text>
+  <text x="774.625" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">PCA</text>
+  <text x="828.75" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Intér.</text>
+  <text x="882.875" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Seg.</text>
+  <text x="937.0" y="343" font-size="11" font-weight="normal" text-anchor="middle" fill="#20313b">Orient.</text>
+  <polyline points="504.00,177.00 558.12,177.00 612.25,177.00 666.38,177.00 720.50,177.00 774.62,190.81 828.75,197.71 882.88,204.62 937.00,211.52" stroke="#506283" fill="none" stroke-width="2" />
+  <circle cx="504.0" cy="177.0" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="558.125" cy="177.0" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="612.25" cy="177.0" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="666.375" cy="177.0" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="720.5" cy="177.0" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="774.625" cy="190.8095238095238" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="828.75" cy="197.71428571428572" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="882.875" cy="204.61904761904762" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <circle cx="937.0" cy="211.52380952380952" r="5" fill="#fbfaf7" stroke="#506283" stroke-width="2" />
+  <polyline points="504.00,177.00 558.12,177.00 612.25,177.00 666.38,177.00 720.50,177.00 774.62,204.62 828.75,204.62 882.88,218.43 937.00,225.33" stroke="#a95b29" fill="none" stroke-width="2" />
+  <rect x="501.5" y="174.5" width="5" height="5" fill="#a95b29" />
+  <rect x="555.625" y="174.5" width="5" height="5" fill="#a95b29" />
+  <rect x="609.75" y="174.5" width="5" height="5" fill="#a95b29" />
+  <rect x="663.875" y="174.5" width="5" height="5" fill="#a95b29" />
+  <rect x="718.0" y="174.5" width="5" height="5" fill="#a95b29" />
+  <rect x="772.125" y="202.11904761904762" width="5" height="5" fill="#a95b29" />
+  <rect x="826.25" y="202.11904761904762" width="5" height="5" fill="#a95b29" />
+  <rect x="880.375" y="215.92857142857144" width="5" height="5" fill="#a95b29" />
+  <rect x="934.5" y="222.83333333333331" width="5" height="5" fill="#a95b29" />
+  <text x="510" y="379" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">○  Dice R22</text>
+  <text x="659" y="379" font-size="14" font-weight="bold" text-anchor="start" fill="#20313b">■  Bloc 8 R24</text>
+  <text x="36" y="434" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Les étapes sans transition sont dans les données. Les courbes décrivent des axes conservés, sélectionnés par leur issue.</text>
+</svg>
