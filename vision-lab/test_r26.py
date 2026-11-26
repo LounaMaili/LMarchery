@@ -8,6 +8,8 @@ import numpy as np
 from r19.donnees import read
 from r26.archives import ROOT, assignment, density, run
 from r26.figurer import draw
+from r26.preparer import prepare
+from r26.decision import capacity
 
 
 def cardinality(edges):
@@ -64,3 +66,49 @@ class ArchivesR26(unittest.TestCase):
 
     def test_deux_identites_ne_partagent_pas_une_requete(self):
         self.assertEqual(assignment({'a':[0,1],'b':[0]},{'a':[0,.3],'b':[0,0]}),{'a':1,'b':0})
+
+
+class ProtocoleR26(unittest.TestCase):
+    def test_manifeste_protections_et_budget(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            dest=Path(tmp)
+            prepare(dest)
+            for name in ('train.json','temoins.json','inventaire.json'):
+                self.assertEqual((dest/name).read_bytes(),(ROOT/name).read_bytes(),name)
+        conf=read(ROOT/'configuration.json')
+        train=read(ROOT/'train.json')['photos']
+        self.assertEqual((len(train),len({p['provenance'] for p in train.values()})),(9,8))
+        self.assertEqual(sum(len(p['instances']) for p in train.values()),31)
+        self.assertEqual([sum(p['pixels'][k] for p in train.values()) for k in ('fut','fond_verifie','ignores')],
+                         [95550,417635,9033567])
+        self.assertEqual(conf['pas_par_graine']*len(conf['graines']),conf['maximum_mises_a_jour'])
+        self.assertEqual(len(train)*len(conf['graines'])*len(conf['controles_candidat']),conf['maximum_lectures_evaluation_train'])
+        self.assertEqual(conf['sha256_depart'],read(ROOT/'poids-editeurs.json')['detectron2']['sha256'])
+        ref=read(ROOT/'temoins.json')
+        for k,r in ref.items():
+            self.assertEqual(len(r['identites'])+conf['decision']['nouveaux_separes_hors_Crigges'],r['minimum_separes_si_conforme'])
+            base=read(ROOT/'mesures/bilan.json')['etats']['dice-'+k]['ensemble']
+            ratio=conf['decision']['part_max_fusions_et_dedoublements_vs_R22']
+            self.assertEqual(r['maximum_fusions'],base['sorties_fusionnees']*ratio[0]//ratio[1])
+            self.assertEqual(r['maximum_dedoublements'],base['identites_dedoublees']*ratio[0]//ratio[1])
+
+    def test_decision_prospective_sur_identites_fictives(self):
+        config=read(ROOT/'configuration.json')
+        sources={str(n):str(n%3) for n in range(10)}
+        protected={str(s):dict(identites=['0'],maximum_fusions=4,maximum_dedoublements=3) for s in config['graines']}
+        clean=[str(n) for n in range(7)]
+        end={s:dict(separes=clean.copy(),dice_median=.82,sorties_fusionnees=4,identites_dedoublees=3) for s in protected}
+        mid={s:dict(separes=clean.copy(),dice_median=.8) for s in protected}
+        def verdict():
+            return capacity(end,mid,sources,protected,config)['GO_capacite']
+        self.assertTrue(verdict())
+        end['9301']['sorties_fusionnees']=5
+        self.assertTrue(verdict())
+        mid['9302']['dice_median']=.79
+        self.assertFalse(verdict())
+        mid['9302']['dice_median']=.8
+        end['9301']['separes'].remove('0')
+        self.assertFalse(verdict())
+        end['9301']['separes'].append('0')
+        sources['1']='Crigges'
+        self.assertFalse(verdict())

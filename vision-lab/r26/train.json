@@ -1,0 +1,823 @@
+{
+  "lecture": "assistée, sans adjudication humaine indépendante",
+  "code_ignore": 255,
+  "code_fond_verifie": 0,
+  "photos": {
+    "13-01": {
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "dimensions": [
+        1056,
+        1408
+      ],
+      "entree_modele_xy": [
+        384,
+        512
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 907,
+        "fond_verifie": 54357,
+        "ignores": 1431584
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "13-01": {
+          "indice": 1,
+          "positifs": 907,
+          "boite_xyxy": [
+            336,
+            677,
+            534,
+            794
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/13-01.json",
+      "sha256_annotation": "236a683959d10137c92a1c48845d4388cc4af12cd1373b1a046d8216952c02f9",
+      "masque": "r18/masques/13-01.png",
+      "sha256_masque": "bf61494f45ca6bf1e84475865c3cf5e6753b1d86d8250fc8b0793887aebd4d06",
+      "sha256_BGR_travail": "0da198c6feeac093bc6e76a1eeb9a4328a53f0150c7e6631f22aeec05e61d831"
+    },
+    "70-01": {
+      "provenance": "Crigges",
+      "supports": [
+        "crigges-4"
+      ],
+      "conditions": [
+        "single",
+        "worn"
+      ],
+      "dimensions": [
+        1056,
+        1408
+      ],
+      "entree_modele_xy": [
+        384,
+        512
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 864,
+        "fond_verifie": 54357,
+        "ignores": 1431627
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "70-01": {
+          "indice": 1,
+          "positifs": 864,
+          "boite_xyxy": [
+            286,
+            744,
+            492,
+            826
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/70-01.json",
+      "sha256_annotation": "0b4259be7771642e4363f6a011bda6c6bc642d991ed2fda54acad9e9c37a4a27",
+      "masque": "r18/masques/70-01.png",
+      "sha256_masque": "d8f25fc48ccaf2a1c9cddf2e6eca5992122b0acaa5f6c8a03a1962eab88bdf1f",
+      "sha256_BGR_travail": "46fa788c8a29f52e5c7587f6ac1affa23be863ea78e46a04ba6f2ca7b38f6c5d"
+    },
+    "7245527662": {
+      "provenance": "jrladia",
+      "supports": [
+        "winnipeg"
+      ],
+      "conditions": [
+        "worn",
+        "multiple"
+      ],
+      "dimensions": [
+        1024,
+        677
+      ],
+      "entree_modele_xy": [
+        512,
+        336
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 63239,
+        "fond_verifie": 114828,
+        "ignores": 515181
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "7245527662:1": {
+          "indice": 1,
+          "positifs": 22607,
+          "boite_xyxy": [
+            174,
+            90,
+            1012,
+            420
+          ],
+          "fragments_8": 2,
+          "axe_valide": true,
+          "entree_valide": false,
+          "etat_entree": "visible_position_incertaine",
+          "dice_plafond_R20": 1.0
+        },
+        "7245527662:2": {
+          "indice": 2,
+          "positifs": 12538,
+          "boite_xyxy": [
+            499,
+            202,
+            1013,
+            407
+          ],
+          "fragments_8": 2,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 0.9999601196410768
+        },
+        "7245527662:3": {
+          "indice": 3,
+          "positifs": 6795,
+          "boite_xyxy": [
+            579,
+            288,
+            1020,
+            338
+          ],
+          "fragments_8": 2,
+          "axe_valide": true,
+          "entree_valide": false,
+          "etat_entree": "inconnue_ou_ambigue",
+          "dice_plafond_R20": 0.9999264218968436
+        },
+        "7245527662:4": {
+          "indice": 4,
+          "positifs": 21299,
+          "boite_xyxy": [
+            376,
+            392,
+            1013,
+            453
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": false,
+          "etat_entree": "visible_position_incertaine",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/7245527662.json",
+      "sha256_annotation": "7a4003f7d2d21eb3ebfb3981222fe84daa90980a9fe1d41fd990fd7241dff9f9",
+      "masque": "r18/masques/7245527662.png",
+      "sha256_masque": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c",
+      "sha256_BGR_travail": "49e89bafee15301e4a331f71acfc2322268a854d6d0b409e5e7c12b2eda4c66a"
+    },
+    "5115614018": {
+      "provenance": "Danielle Walquist Lynch",
+      "supports": [
+        "lynch"
+      ],
+      "conditions": [
+        "worn",
+        "grouped"
+      ],
+      "dimensions": [
+        1024,
+        683
+      ],
+      "entree_modele_xy": [
+        512,
+        336
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 1538,
+        "fond_verifie": 28348,
+        "ignores": 669506
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "5115614018:1": {
+          "indice": 1,
+          "positifs": 355,
+          "boite_xyxy": [
+            455,
+            298,
+            631,
+            307
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "5115614018:2": {
+          "indice": 2,
+          "positifs": 295,
+          "boite_xyxy": [
+            312,
+            376,
+            467,
+            391
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "5115614018:3": {
+          "indice": 3,
+          "positifs": 152,
+          "boite_xyxy": [
+            339,
+            393,
+            425,
+            397
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "5115614018:4": {
+          "indice": 4,
+          "positifs": 280,
+          "boite_xyxy": [
+            383,
+            399,
+            536,
+            410
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "5115614018:5": {
+          "indice": 5,
+          "positifs": 456,
+          "boite_xyxy": [
+            343,
+            411,
+            573,
+            415
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/5115614018.json",
+      "sha256_annotation": "30cef19c24300b34e8406299049f6f0bb24c0cfc86f40add7f14615be6bbf5f2",
+      "masque": "r18/masques/5115614018.png",
+      "sha256_masque": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4",
+      "sha256_BGR_travail": "a489480ab2145c01758f4387e2b9cbe23bd2b1dd21207b08dba235dd49f6a7f0"
+    },
+    "18105652008": {
+      "provenance": "zigazou76",
+      "supports": [
+        "18105652008-1",
+        "18105652008-2"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "occlusion"
+      ],
+      "dimensions": [
+        1024,
+        683
+      ],
+      "entree_modele_xy": [
+        512,
+        336
+      ],
+      "inventaire_R21_complet": false,
+      "documentaires_sans_cible": [
+        "18105652008:3",
+        "18105652008:4",
+        "18105652008:5",
+        "18105652008:R18-1",
+        "18105652008:R18-2",
+        "18105652008:R18-3",
+        "18105652008:R18-4",
+        "18105652008:R18-5",
+        "18105652008:R18-6"
+      ],
+      "pixels": {
+        "fut": 549,
+        "fond_verifie": 19579,
+        "ignores": 679264
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "18105652008:1": {
+          "indice": 1,
+          "positifs": 262,
+          "boite_xyxy": [
+            286,
+            297,
+            364,
+            303
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "18105652008:2": {
+          "indice": 2,
+          "positifs": 287,
+          "boite_xyxy": [
+            363,
+            464,
+            474,
+            478
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/18105652008.json",
+      "sha256_annotation": "77895526f142ac39d377200606319e41b1c92c2fadd2c834b9a4339e0e117f71",
+      "masque": "r18/masques/18105652008.png",
+      "sha256_masque": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d",
+      "sha256_BGR_travail": "b43b8156af85d098b971c13f85ebc8c880e202a797e60baadb5d3b29657b38ab"
+    },
+    "24614689941": {
+      "provenance": "renatomitra",
+      "supports": [
+        "24614689941-1"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "worn"
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "entree_modele_xy": [
+        512,
+        512
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 7325,
+        "fond_verifie": 49293,
+        "ignores": 991958
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "24614689941:1": {
+          "indice": 1,
+          "positifs": 2650,
+          "boite_xyxy": [
+            412,
+            354,
+            610,
+            383
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "24614689941:2": {
+          "indice": 2,
+          "positifs": 1984,
+          "boite_xyxy": [
+            439,
+            383,
+            580,
+            428
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "24614689941:3": {
+          "indice": 3,
+          "positifs": 2691,
+          "boite_xyxy": [
+            584,
+            374,
+            618,
+            558
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": false,
+          "etat_entree": "visible_position_incertaine",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/24614689941.json",
+      "sha256_annotation": "aee7428ccae33a0ffdb2912821f16344d68f6faf3fa2fe9b924e1ae28691166b",
+      "masque": "r18/masques/24614689941.png",
+      "sha256_masque": "e05a381f237277c0b601c4f18fc2efa91fb5ee3c9002bf3df8cdc8e1e4332d59",
+      "sha256_BGR_travail": "1400a1bb4aa3dea1b2c02008658423e615ecfc7933c16cb017503055a97b2a44"
+    },
+    "4169106197": {
+      "provenance": "cristina.sanvito",
+      "supports": [
+        "4169106197-1"
+      ],
+      "conditions": [
+        "single"
+      ],
+      "dimensions": [
+        640,
+        480
+      ],
+      "entree_modele_xy": [
+        512,
+        384
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 326,
+        "fond_verifie": 12343,
+        "ignores": 294531
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "4169106197:1": {
+          "indice": 1,
+          "positifs": 326,
+          "boite_xyxy": [
+            223,
+            167,
+            340,
+            184
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/4169106197.json",
+      "sha256_annotation": "f273b555eec39b73bf6f86ff599b54b6e042a8e0bfa47e87f0d7a60fcd055c2d",
+      "masque": "r18/masques/4169106197.png",
+      "sha256_masque": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8",
+      "sha256_BGR_travail": "b6bc999370c759bcd7221598fcc7ebe506c855ee25f719d47cc8a3af74d0d25e"
+    },
+    "wc71488242": {
+      "provenance": "Bernard Gagnon",
+      "supports": [
+        "wc71488242-1"
+      ],
+      "conditions": [
+        "multiple",
+        "grouped",
+        "worn",
+        "occlusion"
+      ],
+      "dimensions": [
+        1280,
+        1280
+      ],
+      "entree_modele_xy": [
+        512,
+        512
+      ],
+      "inventaire_R21_complet": false,
+      "documentaires_sans_cible": [
+        "wc71488242:4",
+        "wc71488242:5"
+      ],
+      "pixels": {
+        "fut": 17786,
+        "fond_verifie": 51608,
+        "ignores": 1569006
+      },
+      "pixels_conflit_deja_ignores": 6,
+      "instances": {
+        "wc71488242:1": {
+          "indice": 1,
+          "positifs": 1788,
+          "boite_xyxy": [
+            394,
+            193,
+            609,
+            276
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc71488242:2": {
+          "indice": 2,
+          "positifs": 2171,
+          "boite_xyxy": [
+            272,
+            477,
+            542,
+            527
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 0.9917050691244239
+        },
+        "wc71488242:3": {
+          "indice": 3,
+          "positifs": 1571,
+          "boite_xyxy": [
+            306,
+            504,
+            516,
+            530
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 0.9885496183206107
+        },
+        "wc71488242:6": {
+          "indice": 6,
+          "positifs": 2125,
+          "boite_xyxy": [
+            122,
+            526,
+            395,
+            599
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc71488242:7": {
+          "indice": 7,
+          "positifs": 2041,
+          "boite_xyxy": [
+            168,
+            572,
+            445,
+            663
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc71488242:8": {
+          "indice": 8,
+          "positifs": 2243,
+          "boite_xyxy": [
+            166,
+            610,
+            435,
+            702
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc71488242:9": {
+          "indice": 9,
+          "positifs": 2276,
+          "boite_xyxy": [
+            191,
+            641,
+            470,
+            742
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc71488242:10": {
+          "indice": 10,
+          "positifs": 1528,
+          "boite_xyxy": [
+            233,
+            803,
+            449,
+            863
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": false,
+          "etat_entree": "visible_position_incertaine",
+          "dice_plafond_R20": 1.0
+        },
+        "wc71488242:11": {
+          "indice": 11,
+          "positifs": 2043,
+          "boite_xyxy": [
+            258,
+            982,
+            545,
+            1037
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/wc71488242.json",
+      "sha256_annotation": "86e94a2e24cb1a7360a9b8687fb9f7e642cc1ab5062e4e62db2636e78018dfac",
+      "masque": "r18/masques/wc71488242.png",
+      "sha256_masque": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e",
+      "sha256_BGR_travail": "ae957c45cae309d31cfee7592b0e1fdb1adfaeaeb660ded6f17fe00c1d1ac8be"
+    },
+    "wc11001401": {
+      "provenance": "4028mdk09",
+      "supports": [
+        "chevalet de paille / Bade-Wurtemberg"
+      ],
+      "conditions": [
+        "grouped",
+        "worn"
+      ],
+      "dimensions": [
+        1056,
+        1408
+      ],
+      "entree_modele_xy": [
+        384,
+        512
+      ],
+      "inventaire_R21_complet": true,
+      "documentaires_sans_cible": [],
+      "pixels": {
+        "fut": 3016,
+        "fond_verifie": 32922,
+        "ignores": 1450910
+      },
+      "pixels_conflit_deja_ignores": 0,
+      "instances": {
+        "wc11001401:1": {
+          "indice": 1,
+          "positifs": 633,
+          "boite_xyxy": [
+            179,
+            585,
+            397,
+            608
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc11001401:2": {
+          "indice": 2,
+          "positifs": 632,
+          "boite_xyxy": [
+            175,
+            630,
+            379,
+            645
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc11001401:3": {
+          "indice": 3,
+          "positifs": 590,
+          "boite_xyxy": [
+            180,
+            641,
+            376,
+            660
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc11001401:4": {
+          "indice": 4,
+          "positifs": 530,
+          "boite_xyxy": [
+            191,
+            657,
+            383,
+            677
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        },
+        "wc11001401:5": {
+          "indice": 5,
+          "positifs": 631,
+          "boite_xyxy": [
+            188,
+            677,
+            392,
+            699
+          ],
+          "fragments_8": 1,
+          "axe_valide": true,
+          "entree_valide": true,
+          "etat_entree": "visible",
+          "dice_plafond_R20": 1.0
+        }
+      },
+      "annotation": "r18/annotations/wc11001401.json",
+      "sha256_annotation": "154c0bae107606776a2680ee1c794d0ccb84ea0097496b83eca6f9b6e50cd082",
+      "masque": "r18/masques/wc11001401.png",
+      "sha256_masque": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32",
+      "sha256_BGR_travail": "319b3495df9b3650b502db26cc41a6c00cdadf2fd72bc21c31d2ce06fcd0ed4c"
+    }
+  },
+  "tirages": "r21/tirages.json",
+  "sha256_tirages": "2e5dd5afd18d110556dba4c110153900c313f7ba3b6fc18949fb593ea6db0602",
+  "expositions": {
+    "9301": {
+      "7245527662": 96,
+      "4169106197": 96,
+      "wc71488242": 96,
+      "5115614018": 96,
+      "18105652008": 96,
+      "wc11001401": 96,
+      "24614689941": 96,
+      "13-01": 48,
+      "70-01": 48
+    },
+    "9302": {
+      "7245527662": 96,
+      "5115614018": 96,
+      "18105652008": 96,
+      "4169106197": 96,
+      "13-01": 48,
+      "wc71488242": 96,
+      "wc11001401": 96,
+      "24614689941": 96,
+      "70-01": 48
+    },
+    "9303": {
+      "4169106197": 96,
+      "18105652008": 96,
+      "7245527662": 96,
+      "13-01": 48,
+      "5115614018": 96,
+      "wc11001401": 96,
+      "wc71488242": 96,
+      "24614689941": 96,
+      "70-01": 48
+    }
+  }
+}
