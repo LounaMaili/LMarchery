@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="513" viewBox="0 0 1050 513" role="img" font-family="DejaVu Sans, sans-serif">
+  <title>Où les douze sorties perdent-elles des places ?</title>
+  <desc>Par provenance et graine, décomposition des identités disponibles après NMS. Une unité représente un fût.</desc>
+  <rect x="0" y="0" width="1050" height="513" fill="#fbfaf7" />
+  <text x="30" y="37" font-size="24" font-weight="bold" text-anchor="start" fill="#20313b">Où les douze sorties perdent-elles des places ?</text>
+  <text x="30" y="62" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Par provenance et graine, décomposition des identités disponibles après NMS. Une unité représente un fût.</text>
+  <rect x="31" y="82" width="15" height="15" fill="#347c70" />
+  <text x="52" y="95" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Appariables à des boîtes distinctes</text>
+  <rect x="390" y="82" width="15" height="15" fill="#c86131" />
+  <text x="411" y="95" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Sans boîte suffisante</text>
+  <rect x="690" y="82" width="15" height="15" fill="#8366aa" />
+  <text x="711" y="95" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Perte par partage de boîtes</text>
+  <text x="246" y="135" font-size="16" font-weight="bold" text-anchor="start" fill="#20313b">Graine 9302</text>
+  <text x="649" y="135" font-size="16" font-weight="bold" text-anchor="start" fill="#20313b">Graine 9303</text>
+  <text x="31" y="175" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">Crigges</text>
+  <rect x="246" y="163" width="62" height="16" fill="#347c70" />
+  <text x="315" y="176" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2 / 0 / 0</text>
+  <rect x="649" y="163" width="62" height="16" fill="#347c70" />
+  <text x="718" y="176" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2 / 0 / 0</text>
+  <text x="31" y="215" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">jrladia</text>
+  <rect x="246" y="203" width="124" height="16" fill="#347c70" />
+  <text x="377" y="216" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">4 / 0 / 0</text>
+  <rect x="649" y="203" width="93" height="16" fill="#347c70" />
+  <rect x="742" y="203" width="31" height="16" fill="#8366aa" />
+  <text x="780" y="216" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">3 / 0 / 1</text>
+  <text x="31" y="255" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">Danielle Walquist Lynch</text>
+  <rect x="246" y="243" width="124" height="16" fill="#347c70" />
+  <rect x="370" y="243" width="31" height="16" fill="#8366aa" />
+  <text x="408" y="256" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">4 / 0 / 1</text>
+  <rect x="649" y="243" width="62" height="16" fill="#347c70" />
+  <rect x="711" y="243" width="93" height="16" fill="#8366aa" />
+  <text x="811" y="256" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2 / 0 / 3</text>
+  <text x="31" y="295" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">zigazou76</text>
+  <rect x="246" y="283" width="62" height="16" fill="#347c70" />
+  <text x="315" y="296" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2 / 0 / 0</text>
+  <rect x="649" y="283" width="62" height="16" fill="#347c70" />
+  <text x="718" y="296" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2 / 0 / 0</text>
+  <text x="31" y="335" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">renatomitra</text>
+  <rect x="246" y="323" width="93" height="16" fill="#347c70" />
+  <text x="346" y="336" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">3 / 0 / 0</text>
+  <rect x="649" y="323" width="93" height="16" fill="#347c70" />
+  <text x="749" y="336" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">3 / 0 / 0</text>
+  <text x="31" y="375" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">cristina.sanvito</text>
+  <rect x="246" y="363" width="31" height="16" fill="#347c70" />
+  <text x="284" y="376" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1 / 0 / 0</text>
+  <rect x="649" y="363" width="31" height="16" fill="#347c70" />
+  <text x="687" y="376" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1 / 0 / 0</text>
+  <text x="31" y="415" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">Bernard Gagnon</text>
+  <rect x="246" y="403" width="31" height="16" fill="#347c70" />
+  <rect x="277" y="403" width="248" height="16" fill="#c86131" />
+  <text x="532" y="416" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1 / 8 / 0</text>
+  <rect x="649" y="403" width="31" height="16" fill="#347c70" />
+  <rect x="680" y="403" width="248" height="16" fill="#c86131" />
+  <text x="935" y="416" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">1 / 8 / 0</text>
+  <text x="31" y="455" font-size="14" font-weight="normal" text-anchor="start" fill="#20313b">4028mdk09</text>
+  <rect x="246" y="443" width="62" height="16" fill="#347c70" />
+  <rect x="308" y="443" width="93" height="16" fill="#c86131" />
+  <text x="408" y="456" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">2 / 3 / 0</text>
+  <rect x="649" y="443" width="155" height="16" fill="#347c70" />
+  <text x="811" y="456" font-size="12" font-weight="normal" text-anchor="start" fill="#20313b">5 / 0 / 0</text>
+  <text x="31" y="493" font-size="13" font-weight="normal" text-anchor="start" fill="#20313b">Chiffres au bout de chaque barre dans l’ordre de la légende. Les deux vues Crigges sont réunies.</text>
+</svg>

@@ -1,0 +1,3445 @@
+{
+  "9302-13-01": {
+    "13-01": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-70-01": {
+    "70-01": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-7245527662": {
+    "7245527662:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "7245527662:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "7245527662:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "7245527662:4": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-5115614018": {
+    "5115614018:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:4": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:5": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-18105652008": {
+    "18105652008:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "18105652008:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-24614689941": {
+    "24614689941:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "24614689941:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "24614689941:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-4169106197": {
+    "4169106197:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9302-wc71488242": {
+    "wc71488242:1": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 666,
+              "rang_score": 484,
+              "score": 0.8369930386543274,
+              "rang_admission": 484,
+              "rang_nms": 123,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 765,
+              "rang_score": 727,
+              "score": 0.24149033427238464,
+              "rang_admission": 727,
+              "rang_nms": 207,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7483374168708435,
+                0.909423604757548,
+                0.909423604757548
+              ]
+            },
+            {
+              "j": 767,
+              "rang_score": 913,
+              "score": 0.04880863055586815,
+              "rang_admission": 913,
+              "rang_nms": 242,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 833,
+              "rang_score": 609,
+              "score": 0.4988003373146057,
+              "rang_admission": 609,
+              "rang_nms": 176,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 862,
+              "rang_score": 154,
+              "score": 0.9933316111564636,
+              "rang_admission": 154,
+              "rang_nms": 43,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.916691911541957,
+                0.9388724035608309,
+                0.9388724035608309
+              ]
+            },
+            {
+              "j": 975,
+              "rang_score": 489,
+              "score": 0.8275432586669922,
+              "rang_admission": 489,
+              "rang_nms": 126,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8952734012974977,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 978,
+              "rang_score": 732,
+              "score": 0.23238077759742737,
+              "rang_admission": 732,
+              "rang_nms": 210,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 992,
+              "rang_score": 571,
+              "score": 0.5952655076980591,
+              "rang_admission": 571,
+              "rang_nms": 162,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.893906588308073,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:2": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 478,
+              "rang_score": 765,
+              "score": 0.17684365808963776,
+              "rang_admission": 765,
+              "rang_nms": 219,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 586,
+              "rang_score": 75,
+              "score": 0.9974712133407593,
+              "rang_admission": 75,
+              "rang_nms": 21,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8597689075630253,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 687,
+              "rang_score": 341,
+              "score": 0.9683623313903809,
+              "rang_admission": 341,
+              "rang_nms": 83,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8780361757105943,
+                0.9336935166994106,
+                0.9336935166994106
+              ]
+            },
+            {
+              "j": 778,
+              "rang_score": 556,
+              "score": 0.6286828517913818,
+              "rang_admission": 556,
+              "rang_nms": 156,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9109606220215701,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 812,
+              "rang_score": 538,
+              "score": 0.6707848310470581,
+              "rang_admission": 538,
+              "rang_nms": 144,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7706681766704416,
+                0.8929117797042325,
+                0.8929117797042325
+              ]
+            },
+            {
+              "j": 869,
+              "rang_score": 915,
+              "score": 0.04648866876959801,
+              "rang_admission": 915,
+              "rang_nms": 243,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 908,
+              "rang_score": 560,
+              "score": 0.6185758113861084,
+              "rang_admission": 560,
+              "rang_nms": 159,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 927,
+              "rang_score": 521,
+              "score": 0.7430788278579712,
+              "rang_admission": 521,
+              "rang_nms": 136,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.6874244256348246,
+                0.9355234126011277,
+                0.9355234126011277
+              ]
+            },
+            {
+              "j": 950,
+              "rang_score": 422,
+              "score": 0.9264817833900452,
+              "rang_admission": 422,
+              "rang_nms": 102,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 978,
+              "rang_score": 732,
+              "score": 0.23238077759742737,
+              "rang_admission": 732,
+              "rang_nms": 210,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc71488242:6": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 244,
+              "rang_score": 147,
+              "score": 0.9939693212509155,
+              "rang_admission": 147,
+              "rang_nms": 41,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9451476793248945,
+                0.9451476793248945
+              ]
+            },
+            {
+              "j": 247,
+              "rang_score": 131,
+              "score": 0.9951436519622803,
+              "rang_admission": 131,
+              "rang_nms": 38,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9721886336154776,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 447,
+              "rang_score": 162,
+              "score": 0.9931250810623169,
+              "rang_admission": 162,
+              "rang_nms": 46,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.2952266345768151,
+                0.9003880983182406,
+                0.9003880983182406
+              ]
+            },
+            {
+              "j": 478,
+              "rang_score": 765,
+              "score": 0.17684365808963776,
+              "rang_admission": 765,
+              "rang_nms": 219,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9839827874731054,
+                0.9839827874731054
+              ]
+            },
+            {
+              "j": 701,
+              "rang_score": 298,
+              "score": 0.9792488813400269,
+              "rang_admission": 298,
+              "rang_nms": 76,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.922140502155719,
+                0.9412057797708022,
+                0.9412057797708022
+              ]
+            },
+            {
+              "j": 812,
+              "rang_score": 538,
+              "score": 0.6707848310470581,
+              "rang_admission": 538,
+              "rang_nms": 144,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9983502238981853,
+                0.9854380520410599,
+                0.9854380520410599
+              ]
+            },
+            {
+              "j": 869,
+              "rang_score": 915,
+              "score": 0.04648866876959801,
+              "rang_admission": 915,
+              "rang_nms": 243,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.5885088010627698,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 908,
+              "rang_score": 560,
+              "score": 0.6185758113861084,
+              "rang_admission": 560,
+              "rang_nms": 159,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8419618528610354,
+                0.9245951417004049,
+                0.9245951417004049
+              ]
+            },
+            {
+              "j": 927,
+              "rang_score": 521,
+              "score": 0.7430788278579712,
+              "rang_admission": 521,
+              "rang_nms": 136,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 978,
+              "rang_score": 732,
+              "score": 0.23238077759742737,
+              "rang_admission": 732,
+              "rang_nms": 210,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:7": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 244,
+              "rang_score": 147,
+              "score": 0.9939693212509155,
+              "rang_admission": 147,
+              "rang_nms": 41,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 402,
+              "rang_score": 113,
+              "score": 0.9961274266242981,
+              "rang_admission": 113,
+              "rang_nms": 33,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8367056141350813,
+                0.912046908315565,
+                0.912046908315565
+              ]
+            },
+            {
+              "j": 447,
+              "rang_score": 162,
+              "score": 0.9931250810623169,
+              "rang_admission": 162,
+              "rang_nms": 46,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9562771669649706,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 478,
+              "rang_score": 765,
+              "score": 0.17684365808963776,
+              "rang_admission": 765,
+              "rang_nms": 219,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 701,
+              "rang_score": 298,
+              "score": 0.9792488813400269,
+              "rang_admission": 298,
+              "rang_nms": 76,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7822195704057279,
+                0.9378090033827738,
+                0.9378090033827738
+              ]
+            },
+            {
+              "j": 908,
+              "rang_score": 560,
+              "score": 0.6185758113861084,
+              "rang_admission": 560,
+              "rang_nms": 159,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9511819116135662,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 927,
+              "rang_score": 521,
+              "score": 0.7430788278579712,
+              "rang_admission": 521,
+              "rang_nms": 136,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.931133804660906,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 971,
+              "rang_score": 110,
+              "score": 0.9961601495742798,
+              "rang_admission": 110,
+              "rang_nms": 31,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 978,
+              "rang_score": 732,
+              "score": 0.23238077759742737,
+              "rang_admission": 732,
+              "rang_nms": 210,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9163790814972126,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:8": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 447,
+              "rang_score": 162,
+              "score": 0.9931250810623169,
+              "rang_admission": 162,
+              "rang_nms": 46,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 478,
+              "rang_score": 765,
+              "score": 0.17684365808963776,
+              "rang_admission": 765,
+              "rang_nms": 219,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 701,
+              "rang_score": 298,
+              "score": 0.9792488813400269,
+              "rang_admission": 298,
+              "rang_nms": 76,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8197842672980794,
+                0.9045177045177045,
+                0.9045177045177045
+              ]
+            },
+            {
+              "j": 908,
+              "rang_score": 560,
+              "score": 0.6185758113861084,
+              "rang_admission": 560,
+              "rang_nms": 159,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9394799054373523,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 925,
+              "rang_score": 102,
+              "score": 0.9965139031410217,
+              "rang_admission": 102,
+              "rang_nms": 28,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.802455953016551,
+                0.9392291321825491,
+                0.9392291321825491
+              ]
+            },
+            {
+              "j": 927,
+              "rang_score": 521,
+              "score": 0.7430788278579712,
+              "rang_admission": 521,
+              "rang_nms": 136,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9545560475413657,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 971,
+              "rang_score": 110,
+              "score": 0.9961601495742798,
+              "rang_admission": 110,
+              "rang_nms": 31,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 978,
+              "rang_score": 732,
+              "score": 0.23238077759742737,
+              "rang_admission": 732,
+              "rang_nms": 210,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.5695153061224489,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:9": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 478,
+              "rang_score": 765,
+              "score": 0.17684365808963776,
+              "rang_admission": 765,
+              "rang_nms": 219,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 684,
+              "rang_score": 186,
+              "score": 0.9912484884262085,
+              "rang_admission": 186,
+              "rang_nms": 51,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8746600741656366,
+                0.9070828331332533,
+                0.9070828331332533
+              ]
+            },
+            {
+              "j": 905,
+              "rang_score": 37,
+              "score": 0.9986664056777954,
+              "rang_admission": 37,
+              "rang_nms": 14,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9752363800090049,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 908,
+              "rang_score": 560,
+              "score": 0.6185758113861084,
+              "rang_admission": 560,
+              "rang_nms": 159,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9926974994467802,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 927,
+              "rang_score": 521,
+              "score": 0.7430788278579712,
+              "rang_admission": 521,
+              "rang_nms": 136,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8799212598425197,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 971,
+              "rang_score": 110,
+              "score": 0.9961601495742798,
+              "rang_admission": 110,
+              "rang_nms": 31,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:10": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 318,
+              "rang_score": 157,
+              "score": 0.9933134913444519,
+              "rang_admission": 157,
+              "rang_nms": 44,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9960578186596584,
+                0.9630132337970818,
+                0.9630132337970818
+              ]
+            },
+            {
+              "j": 478,
+              "rang_score": 765,
+              "score": 0.17684365808963776,
+              "rang_admission": 765,
+              "rang_nms": 219,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 707,
+              "rang_score": 388,
+              "score": 0.9524605870246887,
+              "rang_admission": 388,
+              "rang_nms": 97,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 784,
+              "rang_score": 362,
+              "score": 0.9623223543167114,
+              "rang_admission": 362,
+              "rang_nms": 86,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 888,
+              "rang_score": 252,
+              "score": 0.9848793148994446,
+              "rang_admission": 252,
+              "rang_nms": 64,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9186128803963199,
+                0.990419557317476,
+                0.990419557317476
+              ]
+            },
+            {
+              "j": 908,
+              "rang_score": 560,
+              "score": 0.6185758113861084,
+              "rang_admission": 560,
+              "rang_nms": 159,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 971,
+              "rang_score": 110,
+              "score": 0.9961601495742798,
+              "rang_admission": 110,
+              "rang_nms": 31,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 995,
+              "rang_score": 832,
+              "score": 0.1042599007487297,
+              "rang_admission": 832,
+              "rang_nms": 232,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.901904419690981,
+                0.901904419690981
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:11": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 138,
+              "rang_score": 50,
+              "score": 0.9981828331947327,
+              "rang_admission": 50,
+              "rang_nms": 16,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7373300370828183,
+                0.9204755614266843,
+                0.9204755614266843
+              ]
+            },
+            {
+              "j": 866,
+              "rang_score": 255,
+              "score": 0.9845440983772278,
+              "rang_admission": 255,
+              "rang_nms": 65,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 972,
+              "rang_score": 373,
+              "score": 0.958861231803894,
+              "rang_admission": 373,
+              "rang_nms": 92,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8305666857469949,
+                0.9645210339584389,
+                0.9645210339584389
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9302-wc11001401": {
+    "wc11001401:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc11001401:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc11001401:3": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 283,
+              "rang_score": 349,
+              "score": 0.6488134264945984,
+              "rang_admission": 349,
+              "rang_nms": 139,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9957446808510638,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 421,
+              "rang_score": 477,
+              "score": 0.4665849506855011,
+              "rang_admission": 477,
+              "rang_nms": 190,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9649122807017544,
+                0.9511111111111111,
+                0.9511111111111111
+              ]
+            },
+            {
+              "j": 561,
+              "rang_score": 158,
+              "score": 0.9238436818122864,
+              "rang_admission": 158,
+              "rang_nms": 58,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 567,
+              "rang_score": 165,
+              "score": 0.9121838808059692,
+              "rang_admission": 165,
+              "rang_nms": 64,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9991518235793045,
+                0.9359783588818755,
+                0.9359783588818755
+              ]
+            },
+            {
+              "j": 745,
+              "rang_score": 952,
+              "score": 0.019076330587267876,
+              "rang_admission": 952,
+              "rang_nms": 332,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 757,
+              "rang_score": 209,
+              "score": 0.8705735206604004,
+              "rang_admission": 209,
+              "rang_nms": 80,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 943,
+              "rang_score": 538,
+              "score": 0.3866157531738281,
+              "rang_admission": 538,
+              "rang_nms": 214,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 970,
+              "rang_score": 191,
+              "score": 0.8874112367630005,
+              "rang_admission": 191,
+              "rang_nms": 73,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.6696730552423901,
+                0.9194139194139194,
+                0.9194139194139194
+              ]
+            },
+            {
+              "j": 991,
+              "rang_score": 476,
+              "score": 0.4693399667739868,
+              "rang_admission": 476,
+              "rang_nms": 189,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7393162393162394,
+                0.9359783588818755,
+                0.9359783588818755
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 933,
+              "score": 0.025838209316134453,
+              "rang_admission": 933,
+              "rang_nms": 327,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc11001401:4": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 283,
+              "rang_score": 349,
+              "score": 0.6488134264945984,
+              "rang_admission": 349,
+              "rang_nms": 139,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9718719689621726,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 421,
+              "rang_score": 477,
+              "score": 0.4665849506855011,
+              "rang_admission": 477,
+              "rang_nms": 190,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.2764227642276423,
+                0.9546351084812623,
+                0.9546351084812623
+              ]
+            },
+            {
+              "j": 492,
+              "rang_score": 313,
+              "score": 0.7080278992652893,
+              "rang_admission": 313,
+              "rang_nms": 128,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9094650205761317,
+                0.9094650205761317
+              ]
+            },
+            {
+              "j": 561,
+              "rang_score": 158,
+              "score": 0.9238436818122864,
+              "rang_admission": 158,
+              "rang_nms": 58,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 745,
+              "rang_score": 952,
+              "score": 0.019076330587267876,
+              "rang_admission": 952,
+              "rang_nms": 332,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 757,
+              "rang_score": 209,
+              "score": 0.8705735206604004,
+              "rang_admission": 209,
+              "rang_nms": 80,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 762,
+              "rang_score": 401,
+              "score": 0.5686464905738831,
+              "rang_admission": 401,
+              "rang_nms": 158,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.99335232668566,
+                0.9484126984126984,
+                0.9484126984126984
+              ]
+            },
+            {
+              "j": 855,
+              "rang_score": 915,
+              "score": 0.03173188120126724,
+              "rang_admission": 915,
+              "rang_nms": 321,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7529411764705882,
+                0.9271255060728745,
+                0.9271255060728745
+              ]
+            },
+            {
+              "j": 943,
+              "rang_score": 538,
+              "score": 0.3866157531738281,
+              "rang_admission": 538,
+              "rang_nms": 214,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 955,
+              "rang_score": 912,
+              "score": 0.03572561591863632,
+              "rang_admission": 912,
+              "rang_nms": 320,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9856459330143541,
+                0.9856459330143541
+              ]
+            },
+            {
+              "j": 970,
+              "rang_score": 191,
+              "score": 0.8874112367630005,
+              "rang_admission": 191,
+              "rang_nms": 73,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.0,
+                0.9473684210526315,
+                0.9473684210526315
+              ]
+            },
+            {
+              "j": 991,
+              "rang_score": 476,
+              "score": 0.4693399667739868,
+              "rang_admission": 476,
+              "rang_nms": 189,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.6716791979949874,
+                0.9094650205761317,
+                0.9094650205761317
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 933,
+              "score": 0.025838209316134453,
+              "rang_admission": 933,
+              "rang_nms": 327,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc11001401:5": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 120,
+              "rang_score": 33,
+              "score": 0.9929084777832031,
+              "rang_admission": 33,
+              "rang_nms": 14,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 492,
+              "rang_score": 313,
+              "score": 0.7080278992652893,
+              "rang_admission": 313,
+              "rang_nms": 128,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9045138888888888,
+                0.9045138888888888
+              ]
+            },
+            {
+              "j": 561,
+              "rang_score": 158,
+              "score": 0.9238436818122864,
+              "rang_admission": 158,
+              "rang_nms": 58,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8958880139982502,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 710,
+              "rang_score": 450,
+              "score": 0.5023693442344666,
+              "rang_admission": 450,
+              "rang_nms": 183,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9697959183673469,
+                0.9697959183673469
+              ]
+            },
+            {
+              "j": 745,
+              "rang_score": 952,
+              "score": 0.019076330587267876,
+              "rang_admission": 952,
+              "rang_nms": 332,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 757,
+              "rang_score": 209,
+              "score": 0.8705735206604004,
+              "rang_admission": 209,
+              "rang_nms": 80,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 762,
+              "rang_score": 401,
+              "score": 0.5686464905738831,
+              "rang_admission": 401,
+              "rang_nms": 158,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 855,
+              "rang_score": 915,
+              "score": 0.03173188120126724,
+              "rang_admission": 915,
+              "rang_nms": 321,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.714867617107943,
+                0.911130284728214,
+                0.911130284728214
+              ]
+            },
+            {
+              "j": 943,
+              "rang_score": 538,
+              "score": 0.3866157531738281,
+              "rang_admission": 538,
+              "rang_nms": 214,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 955,
+              "rang_score": 912,
+              "score": 0.03572561591863632,
+              "rang_admission": 912,
+              "rang_nms": 320,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9952229299363057,
+                0.9871589085072231,
+                0.9871589085072231
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 933,
+              "score": 0.025838209316134453,
+              "rang_admission": 933,
+              "rang_nms": 327,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9952229299363057,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9303-13-01": {
+    "13-01": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-70-01": {
+    "70-01": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-7245527662": {
+    "7245527662:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "7245527662:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "7245527662:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "7245527662:4": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-5115614018": {
+    "5115614018:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:4": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "5115614018:5": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-18105652008": {
+    "18105652008:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "18105652008:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-24614689941": {
+    "24614689941:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "24614689941:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "24614689941:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-4169106197": {
+    "4169106197:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  },
+  "9303-wc71488242": {
+    "wc71488242:1": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 363,
+              "rang_score": 52,
+              "score": 0.997819185256958,
+              "rang_admission": 52,
+              "rang_nms": 14,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9985998319798376,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 645,
+              "rang_score": 562,
+              "score": 0.6446902751922607,
+              "rang_admission": 562,
+              "rang_nms": 151,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 793,
+              "rang_score": 849,
+              "score": 0.09384593367576599,
+              "rang_admission": 849,
+              "rang_nms": 238,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 795,
+              "rang_score": 976,
+              "score": 0.009226789698004723,
+              "rang_admission": 976,
+              "rang_nms": 264,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8123546994354035,
+                0.9110840438489647,
+                0.9110840438489647
+              ]
+            },
+            {
+              "j": 851,
+              "rang_score": 616,
+              "score": 0.49787017703056335,
+              "rang_admission": 616,
+              "rang_nms": 179,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 964,
+              "rang_score": 472,
+              "score": 0.8759836554527283,
+              "rang_admission": 472,
+              "rang_nms": 115,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 732,
+              "score": 0.2582571804523468,
+              "rang_admission": 732,
+              "rang_nms": 209,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9974768713204374,
+                0.9974768713204374
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:2": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 606,
+              "rang_score": 542,
+              "score": 0.7011134624481201,
+              "rang_admission": 542,
+              "rang_nms": 145,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 644,
+              "rang_score": 313,
+              "score": 0.978060781955719,
+              "rang_admission": 313,
+              "rang_nms": 74,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.79221140472879,
+                0.9068479355488419,
+                0.9068479355488419
+              ]
+            },
+            {
+              "j": 767,
+              "rang_score": 498,
+              "score": 0.8315140604972839,
+              "rang_admission": 498,
+              "rang_nms": 122,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8546557636507518,
+                0.9373470386686246,
+                0.9373470386686246
+              ]
+            },
+            {
+              "j": 801,
+              "rang_score": 541,
+              "score": 0.7093429565429688,
+              "rang_admission": 541,
+              "rang_nms": 144,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9109606220215701,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 881,
+              "rang_score": 944,
+              "score": 0.026359733194112778,
+              "rang_admission": 944,
+              "rang_nms": 259,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 942,
+              "rang_score": 506,
+              "score": 0.8149803876876831,
+              "rang_admission": 506,
+              "rang_nms": 126,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.6842424242424242,
+                0.9027040687389436,
+                0.9027040687389436
+              ]
+            },
+            {
+              "j": 979,
+              "rang_score": 457,
+              "score": 0.8948537707328796,
+              "rang_admission": 457,
+              "rang_nms": 110,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 991,
+              "rang_score": 707,
+              "score": 0.2912549078464508,
+              "rang_admission": 707,
+              "rang_nms": 200,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8760031063939943,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 732,
+              "score": 0.2582571804523468,
+              "rang_admission": 732,
+              "rang_nms": 209,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc71488242:6": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 140,
+              "rang_score": 137,
+              "score": 0.9943675398826599,
+              "rang_admission": 137,
+              "rang_nms": 38,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9213197969543148,
+                0.9544895448954489,
+                0.9544895448954489
+              ]
+            },
+            {
+              "j": 249,
+              "rang_score": 243,
+              "score": 0.9864431619644165,
+              "rang_admission": 243,
+              "rang_nms": 59,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9550036882222769,
+                0.9550036882222769
+              ]
+            },
+            {
+              "j": 472,
+              "rang_score": 128,
+              "score": 0.9946646690368652,
+              "rang_admission": 128,
+              "rang_nms": 33,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.5263522884882108,
+                0.9122088558996673,
+                0.9122088558996673
+              ]
+            },
+            {
+              "j": 488,
+              "rang_score": 250,
+              "score": 0.9861531257629395,
+              "rang_admission": 250,
+              "rang_nms": 61,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8522819335673778,
+                0.9144316730523627,
+                0.9144316730523627
+              ]
+            },
+            {
+              "j": 606,
+              "rang_score": 542,
+              "score": 0.7011134624481201,
+              "rang_admission": 542,
+              "rang_nms": 145,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9671931956257594,
+                0.9671931956257594
+              ]
+            },
+            {
+              "j": 625,
+              "rang_score": 543,
+              "score": 0.6975650191307068,
+              "rang_admission": 543,
+              "rang_nms": 146,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 729,
+              "rang_score": 895,
+              "score": 0.0579058974981308,
+              "rang_admission": 895,
+              "rang_nms": 247,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.1822070145423439,
+                0.9409419386992275,
+                0.9409419386992275
+              ]
+            },
+            {
+              "j": 881,
+              "rang_score": 944,
+              "score": 0.026359733194112778,
+              "rang_admission": 944,
+              "rang_nms": 259,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.5176142309033833,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 942,
+              "rang_score": 506,
+              "score": 0.8149803876876831,
+              "rang_admission": 506,
+              "rang_nms": 126,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 732,
+              "score": 0.2582571804523468,
+              "rang_admission": 732,
+              "rang_nms": 209,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:7": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 240,
+              "rang_score": 90,
+              "score": 0.9962066411972046,
+              "rang_admission": 90,
+              "rang_nms": 25,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.689987163029525,
+                0.9240906694781233,
+                0.9240906694781233
+              ]
+            },
+            {
+              "j": 249,
+              "rang_score": 243,
+              "score": 0.9864431619644165,
+              "rang_admission": 243,
+              "rang_nms": 59,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 472,
+              "rang_score": 128,
+              "score": 0.9946646690368652,
+              "rang_admission": 128,
+              "rang_nms": 33,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 606,
+              "rang_score": 542,
+              "score": 0.7011134624481201,
+              "rang_admission": 542,
+              "rang_nms": 145,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 942,
+              "rang_score": 506,
+              "score": 0.8149803876876831,
+              "rang_admission": 506,
+              "rang_nms": 126,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9288900551036473,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 987,
+              "rang_score": 57,
+              "score": 0.9975029826164246,
+              "rang_admission": 57,
+              "rang_nms": 15,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 732,
+              "score": 0.2582571804523468,
+              "rang_admission": 732,
+              "rang_nms": 209,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9589390461616935,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:8": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 295,
+              "rang_score": 65,
+              "score": 0.9972537159919739,
+              "rang_admission": 65,
+              "rang_nms": 18,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9486758846965081,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 472,
+              "rang_score": 128,
+              "score": 0.9946646690368652,
+              "rang_admission": 128,
+              "rang_nms": 33,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                0.9984371511498102,
+                0.9984371511498102
+              ]
+            },
+            {
+              "j": 606,
+              "rang_score": 542,
+              "score": 0.7011134624481201,
+              "rang_admission": 542,
+              "rang_nms": 145,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 936,
+              "rang_score": 81,
+              "score": 0.9966791868209839,
+              "rang_admission": 81,
+              "rang_nms": 23,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8154211777132294,
+                0.9846084200995926,
+                0.9846084200995926
+              ]
+            },
+            {
+              "j": 942,
+              "rang_score": 506,
+              "score": 0.8149803876876831,
+              "rang_admission": 506,
+              "rang_nms": 126,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.952358710882765,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 987,
+              "rang_score": 57,
+              "score": 0.9975029826164246,
+              "rang_admission": 57,
+              "rang_nms": 15,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 999,
+              "rang_score": 732,
+              "score": 0.2582571804523468,
+              "rang_admission": 732,
+              "rang_nms": 209,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.6418407508325764,
+                0.9959713518352731,
+                0.9959713518352731
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:9": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 472,
+              "rang_score": 128,
+              "score": 0.9946646690368652,
+              "rang_admission": 128,
+              "rang_nms": 33,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9848349687778769,
+                0.9256549445362284,
+                0.9256549445362284
+              ]
+            },
+            {
+              "j": 593,
+              "rang_score": 152,
+              "score": 0.9935676455497742,
+              "rang_admission": 152,
+              "rang_nms": 42,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8068152031454784,
+                0.9286891033184279,
+                0.9286891033184279
+              ]
+            },
+            {
+              "j": 606,
+              "rang_score": 542,
+              "score": 0.7011134624481201,
+              "rang_admission": 542,
+              "rang_nms": 145,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 936,
+              "rang_score": 81,
+              "score": 0.9966791868209839,
+              "rang_admission": 81,
+              "rang_nms": 23,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 942,
+              "rang_score": 506,
+              "score": 0.8149803876876831,
+              "rang_admission": 506,
+              "rang_nms": 126,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8777120315581854,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 987,
+              "rang_score": 57,
+              "score": 0.9975029826164246,
+              "rang_admission": 57,
+              "rang_nms": 15,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:10": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 29,
+              "rang_score": 108,
+              "score": 0.9957054257392883,
+              "rang_admission": 108,
+              "rang_nms": 29,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7287853577371048,
+                0.945479641131815,
+                0.945479641131815
+              ]
+            },
+            {
+              "j": 606,
+              "rang_score": 542,
+              "score": 0.7011134624481201,
+              "rang_admission": 542,
+              "rang_nms": 145,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 731,
+              "rang_score": 356,
+              "score": 0.970058262348175,
+              "rang_admission": 356,
+              "rang_nms": 85,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 742,
+              "rang_score": 143,
+              "score": 0.9941142201423645,
+              "rang_admission": 143,
+              "rang_nms": 40,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7154266498528794,
+                0.9143872113676732,
+                0.9143872113676732
+              ]
+            },
+            {
+              "j": 766,
+              "rang_score": 441,
+              "score": 0.9127832651138306,
+              "rang_admission": 441,
+              "rang_nms": 103,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.6000916170407696,
+                0.9186128803963199,
+                0.9186128803963199
+              ]
+            },
+            {
+              "j": 796,
+              "rang_score": 265,
+              "score": 0.9838849306106567,
+              "rang_admission": 265,
+              "rang_nms": 64,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 906,
+              "rang_score": 190,
+              "score": 0.9917812943458557,
+              "rang_admission": 190,
+              "rang_nms": 48,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.874401473296501,
+                0.9782681377465731,
+                0.9782681377465731
+              ]
+            },
+            {
+              "j": 913,
+              "rang_score": 284,
+              "score": 0.9819815754890442,
+              "rang_admission": 284,
+              "rang_nms": 68,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.8362528560548362,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 958,
+              "rang_score": 531,
+              "score": 0.7446472644805908,
+              "rang_admission": 531,
+              "rang_nms": 137,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 987,
+              "rang_score": 57,
+              "score": 0.9975029826164246,
+              "rang_admission": 57,
+              "rang_nms": 15,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 991,
+              "rang_score": 707,
+              "score": 0.2912549078464508,
+              "rang_admission": 707,
+              "rang_nms": 200,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.0,
+                0.9050519527051236,
+                0.9050519527051236
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "wc71488242:11": {
+      "dernier_possible": "nms",
+      "diagnostic_final": "final",
+      "pertes_de_derniere_arete": [
+        {
+          "avant": "nms",
+          "apres": "final",
+          "ancetres": [
+            {
+              "j": 129,
+              "rang_score": 105,
+              "score": 0.9958752989768982,
+              "rang_admission": 105,
+              "rang_nms": 27,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9216152019002375,
+                0.9995102840352595,
+                0.9995102840352595
+              ]
+            },
+            {
+              "j": 871,
+              "rang_score": 295,
+              "score": 0.9800766110420227,
+              "rang_admission": 295,
+              "rang_nms": 69,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.9893643334157803,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "j": 980,
+              "rang_score": 317,
+              "score": 0.9770703315734863,
+              "rang_admission": 317,
+              "rang_nms": 77,
+              "q_final": null,
+              "motif": "plafond",
+              "supprime_par_j": null,
+              "iou_NMS": null,
+              "score_supprimeur": null,
+              "rang_nms_supprimeur": null,
+              "q_final_supprimeur": null,
+              "bornes_rpn_regression_bornee": [
+                0.7893333333333333,
+                0.9723340040241448,
+                0.9723340040241448
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9303-wc11001401": {
+    "wc11001401:1": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc11001401:2": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc11001401:3": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc11001401:4": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    },
+    "wc11001401:5": {
+      "dernier_possible": "final",
+      "diagnostic_final": "possible_final",
+      "pertes_de_derniere_arete": []
+    }
+  }
+}
