@@ -1,0 +1,400 @@
+{
+  "repere": "vision-lab/ du worktree R29",
+  "capsules": [
+    {
+      "nom": "9302-13-01-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-13-01-observations.npz",
+      "octets": 62553,
+      "sha256": "5658808b6b56e7702e4096739d6857691cd46a7e92a3589d9bc439e05444672b"
+    },
+    {
+      "nom": "9302-13-01-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-13-01-historique.npz",
+      "octets": 58731,
+      "sha256": "6eb9a96c3696ef816663b3787f41ccd1320f458ca565f09fb905ff77df90b995"
+    },
+    {
+      "nom": "9302-13-01-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-13-01-etages.npz",
+      "octets": 24128,
+      "sha256": "f56981a6de8faade544a56ae8df033d3b26642a7dd051fbfdb1df5133aac538e"
+    },
+    {
+      "nom": "9302-70-01-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-70-01-observations.npz",
+      "octets": 63155,
+      "sha256": "614d2fdc22bfe2d3f71c6e53a1c8f26858b15f3beb0a2505fa34e7f6c8d67b12"
+    },
+    {
+      "nom": "9302-70-01-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-70-01-historique.npz",
+      "octets": 58513,
+      "sha256": "0f6a58ea513d9378cbf5e1c156e2796f4968bea397ce47a5f6d2059717aca6bc"
+    },
+    {
+      "nom": "9302-70-01-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-70-01-etages.npz",
+      "octets": 23946,
+      "sha256": "b78fd6a83b797381186704827b9324ddb1e6a85c78b029459373f75850b84c0a"
+    },
+    {
+      "nom": "9302-7245527662-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-7245527662-observations.npz",
+      "octets": 62983,
+      "sha256": "4cf9e3a324af92d628c02bda0103cbf16ebe2996067283c9fd4307e76ac835f5"
+    },
+    {
+      "nom": "9302-7245527662-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-7245527662-historique.npz",
+      "octets": 62586,
+      "sha256": "6f73a654e0710df4d4884a8e6bf8104d0acfc8bc475223245f68e778c4f4641a"
+    },
+    {
+      "nom": "9302-7245527662-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-7245527662-etages.npz",
+      "octets": 23719,
+      "sha256": "00a2295adff2ba8c5154b2dfb46c2c095b626589f4ef398abe80f69c681c899a"
+    },
+    {
+      "nom": "9302-5115614018-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-5115614018-observations.npz",
+      "octets": 62789,
+      "sha256": "d314652e21abf615460cd8aa13cb1aaec68e08fef35667307dad1f067a8fe4fe"
+    },
+    {
+      "nom": "9302-5115614018-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-5115614018-historique.npz",
+      "octets": 53856,
+      "sha256": "388316cb1774e0236f68cf6e79f979dfbb4fc5a6ca4e17d38a35d0082a04ed51"
+    },
+    {
+      "nom": "9302-5115614018-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-5115614018-etages.npz",
+      "octets": 23749,
+      "sha256": "f63dd8a5558c52b1ceadceec3e0774fa74f75a3fb514d6d010bc216aac714e60"
+    },
+    {
+      "nom": "9302-18105652008-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-18105652008-observations.npz",
+      "octets": 62487,
+      "sha256": "0c18e0170a74db316b1f4f0e11197078e6f07488e99fd8d9210f7116dd4ea2e9"
+    },
+    {
+      "nom": "9302-18105652008-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-18105652008-historique.npz",
+      "octets": 55192,
+      "sha256": "cbbc92e01a2ccd29694d0cd5a62fb2206bfa149b21802643ccb4b097aacba24d"
+    },
+    {
+      "nom": "9302-18105652008-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-18105652008-etages.npz",
+      "octets": 24014,
+      "sha256": "a8de05465a7a93b2f278d9d1e017ce3270a29cd886dfcd3dd0d9078cada57790"
+    },
+    {
+      "nom": "9302-24614689941-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-24614689941-observations.npz",
+      "octets": 60422,
+      "sha256": "f2354ce0d13fde84364a5842708f56c03a790ce14e2627e70710a2c5fb842a71"
+    },
+    {
+      "nom": "9302-24614689941-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-24614689941-historique.npz",
+      "octets": 61231,
+      "sha256": "e4838395eb70397c61c6e602c571800e3f6ea6a1e170946697de704c34258f66"
+    },
+    {
+      "nom": "9302-24614689941-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-24614689941-etages.npz",
+      "octets": 24272,
+      "sha256": "83ff12339a211edf36012d06d237853cd76a67e0207401d57f3a3a0707d4e4c2"
+    },
+    {
+      "nom": "9302-4169106197-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-4169106197-observations.npz",
+      "octets": 63428,
+      "sha256": "70894cb9445faa4db04ae3158a94920eff294182a1d54fda1aeb4f622e9dbf5e"
+    },
+    {
+      "nom": "9302-4169106197-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-4169106197-historique.npz",
+      "octets": 54260,
+      "sha256": "f5dc8267982d3f3ec901b1524208d95b3f89945adcf13eac6c3e6a9df27c41fc"
+    },
+    {
+      "nom": "9302-4169106197-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-4169106197-etages.npz",
+      "octets": 24032,
+      "sha256": "df8fcaf6f689677f5e574f893323d0d9a6042063a1dd22d73898b6b66e4116be"
+    },
+    {
+      "nom": "9302-wc71488242-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-wc71488242-observations.npz",
+      "octets": 61357,
+      "sha256": "39c6bb7b4b166af06256751a0219fea30b5940c86fe0fcdd843614ba3b573a28"
+    },
+    {
+      "nom": "9302-wc71488242-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-wc71488242-historique.npz",
+      "octets": 62100,
+      "sha256": "b84398c1545a07e2923976510c08b45976c552c040ac8ee3f41ceb77f1ddbfa3"
+    },
+    {
+      "nom": "9302-wc71488242-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-wc71488242-etages.npz",
+      "octets": 24297,
+      "sha256": "ee527710133d7ec45b9092f60477e012e3e47f10c6580ae9c43d923646655f7e"
+    },
+    {
+      "nom": "9302-wc11001401-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9302-wc11001401-observations.npz",
+      "octets": 62613,
+      "sha256": "055daddd34b993ef88ba53a90629b532f57ea1e06ab9f93e7ae7e36102310856"
+    },
+    {
+      "nom": "9302-wc11001401-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9302-wc11001401-historique.npz",
+      "octets": 60371,
+      "sha256": "4ed5e651a4609976d9fdd5708c76925b2bac91bea8280248a610f72e6438cc5f"
+    },
+    {
+      "nom": "9302-wc11001401-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9302-wc11001401-etages.npz",
+      "octets": 23861,
+      "sha256": "7b2c068a5b77699a2ec9d5bb73e57d7b788c17f8257fc8cad87b9eed02945a37"
+    },
+    {
+      "nom": "9303-13-01-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-13-01-observations.npz",
+      "octets": 62700,
+      "sha256": "8332b6a86aec36e3dc3512154251cc7593192f9ea0cd5439d41289b06117bf5b"
+    },
+    {
+      "nom": "9303-13-01-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-13-01-historique.npz",
+      "octets": 57730,
+      "sha256": "9c05c7ef3194b3d9fe6f30203c226f54ef8f66e8d3aedf13a32be166841efb96"
+    },
+    {
+      "nom": "9303-13-01-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-13-01-etages.npz",
+      "octets": 24178,
+      "sha256": "5676065e2f0ece25cc20d672450ce131769213146e4b31929765095dbedb506c"
+    },
+    {
+      "nom": "9303-70-01-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-70-01-observations.npz",
+      "octets": 63265,
+      "sha256": "60bbabb6bd8581d6aa62de87bd369a2ca054e4a4f727ffe07239d151fa9eb6e6"
+    },
+    {
+      "nom": "9303-70-01-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-70-01-historique.npz",
+      "octets": 57132,
+      "sha256": "f31bae80951701e18887513591ce401d676f80fadb9d2773f92069cbf52d1314"
+    },
+    {
+      "nom": "9303-70-01-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-70-01-etages.npz",
+      "octets": 23986,
+      "sha256": "6582736184bca65b5bd55aa01ed860399c88ce38adb58895d30168b2eba850cb"
+    },
+    {
+      "nom": "9303-7245527662-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-7245527662-observations.npz",
+      "octets": 62989,
+      "sha256": "7672ace5353acdef75d60033855741a50654721e70ec2da342e3be1f2547bfc2"
+    },
+    {
+      "nom": "9303-7245527662-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-7245527662-historique.npz",
+      "octets": 61070,
+      "sha256": "1203878b337b230f695ca1586225d2535c1941a184dc0c4e59b214e361a3a6d9"
+    },
+    {
+      "nom": "9303-7245527662-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-7245527662-etages.npz",
+      "octets": 23839,
+      "sha256": "2dac4392b753d7fb2c5bef08bfcbcfe200f6906c866dd5d04c71326626065afe"
+    },
+    {
+      "nom": "9303-5115614018-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-5115614018-observations.npz",
+      "octets": 62929,
+      "sha256": "3b2a58355cc15cae112330a89c0dc3e9fff36ccb806c7129850ae6f3b8eb0c28"
+    },
+    {
+      "nom": "9303-5115614018-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-5115614018-historique.npz",
+      "octets": 54661,
+      "sha256": "6259ca44a77aea033053eac6921d383c9d617733c775cafdb067de2e30a8e936"
+    },
+    {
+      "nom": "9303-5115614018-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-5115614018-etages.npz",
+      "octets": 23765,
+      "sha256": "b73ba1b4bb440899aa7587c07ece391e424343c85c4355d60ff7c591ee0604b4"
+    },
+    {
+      "nom": "9303-18105652008-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-18105652008-observations.npz",
+      "octets": 62561,
+      "sha256": "a752f6de7a63cf7b04e2e4d926913607edb9a06ae5c16ff446bda669545ea1d8"
+    },
+    {
+      "nom": "9303-18105652008-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-18105652008-historique.npz",
+      "octets": 55207,
+      "sha256": "90e9ca48864d74274e6824fc0e755daae5644ac28897e230255a3ec797e28833"
+    },
+    {
+      "nom": "9303-18105652008-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-18105652008-etages.npz",
+      "octets": 24056,
+      "sha256": "c052739e01208b165c7979950b5cf49395f390577b88d2f3d73d8e1467af2e83"
+    },
+    {
+      "nom": "9303-24614689941-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-24614689941-observations.npz",
+      "octets": 60639,
+      "sha256": "4d266da397b41ecdc96ac5d5c5f7a3e3003c46611cd24b29f0e9f01f4ced1439"
+    },
+    {
+      "nom": "9303-24614689941-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-24614689941-historique.npz",
+      "octets": 59560,
+      "sha256": "2ecb86287584d75d44568bd9548ca9ceef0a8f2761f70107e14a57347f056016"
+    },
+    {
+      "nom": "9303-24614689941-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-24614689941-etages.npz",
+      "octets": 24306,
+      "sha256": "e15fff5b977119a88a05f72d0903af1bf902faa64966689c141b19f65fab4587"
+    },
+    {
+      "nom": "9303-4169106197-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-4169106197-observations.npz",
+      "octets": 63462,
+      "sha256": "a851905ce6fc800ed2d2f93fe83d77782cde4b0b42cc3897f4fa43ff0f37b06d"
+    },
+    {
+      "nom": "9303-4169106197-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-4169106197-historique.npz",
+      "octets": 53414,
+      "sha256": "5e10f4c2af8fe1c40ca14167566e9e251dbf7382ae157ad39381e1330003b7dc"
+    },
+    {
+      "nom": "9303-4169106197-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-4169106197-etages.npz",
+      "octets": 24032,
+      "sha256": "82429b58db3c6c2043ea5d47f6ee49854b401d21c6ddabbd2023d1b36eb6d292"
+    },
+    {
+      "nom": "9303-wc71488242-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-wc71488242-observations.npz",
+      "octets": 61506,
+      "sha256": "db2fbff6872a26ee5659e45d03623fa2168cbab743a7a9745e1a901effec72c3"
+    },
+    {
+      "nom": "9303-wc71488242-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-wc71488242-historique.npz",
+      "octets": 62557,
+      "sha256": "d775b700e3de4d2d1a8356908f6664f2869ac97de511714886287caa9695e2ff"
+    },
+    {
+      "nom": "9303-wc71488242-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-wc71488242-etages.npz",
+      "octets": 24267,
+      "sha256": "44aee29e036ac03aa5bbadd49d8c4b7bbf8b56f20817ffeba93b57d94d8f5056"
+    },
+    {
+      "nom": "9303-wc11001401-observations.npz",
+      "role": "Observations dans le repère modèle",
+      "fichier": "artifacts/r29/passage/9303-wc11001401-observations.npz",
+      "octets": 62755,
+      "sha256": "7ca5ccb09034c2776d999dececd4a413bf2b735937a86d0f08200378ecb61f4d"
+    },
+    {
+      "nom": "9303-wc11001401-historique.npz",
+      "role": "Champs autonomes authentiques",
+      "fichier": "artifacts/r29/passage/9303-wc11001401-historique.npz",
+      "octets": 60909,
+      "sha256": "e143eb3574350c304b789a2f50bbc258accdc760cd2eb6911b854988c8ee6e6b"
+    },
+    {
+      "nom": "9303-wc11001401-etages.npz",
+      "role": "Reconstruction de sélection",
+      "fichier": "artifacts/r29/passage/9303-wc11001401-etages.npz",
+      "octets": 23926,
+      "sha256": "009529a633e22994b5f72c518de2f4ac1f5f8901cd7e70701c64435a5b70da01"
+    }
+  ],
+  "conservation_R27": "r27/inventaire-local.json",
+  "checkpoints_R27": {
+    "9302": {
+      "nom": "pas-768.pt",
+      "role": "Poids, SGD, RNG · 9302 / 768",
+      "fichier": "artifacts/r27/essai/9302/pas-768.pt",
+      "octets": 244700133,
+      "sha256": "0a179e47c11891819f3b1da952aa091f4c0e83238a4d7cf3acfd8636230c34c8"
+    },
+    "9303": {
+      "nom": "pas-768.pt",
+      "role": "Poids, SGD, RNG · 9303 / 768",
+      "fichier": "artifacts/r27/essai/9303/pas-768.pt",
+      "octets": 244700133,
+      "sha256": "d6833daa58b60cacb7e4e33894256ff8782deb38be3c7f1aaa3159c7016df4f2"
+    }
+  }
+}

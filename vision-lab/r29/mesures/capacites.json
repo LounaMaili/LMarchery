@@ -1,0 +1,1689 @@
+{
+  "9302": {
+    "ensemble": {
+      "photos": 9,
+      "etages": {
+        "rpn": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 1671,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "regression": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 2214,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "bornage": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 2214,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "admission": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 2214,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "nms": {
+          "boites": 2959,
+          "identites": 31,
+          "arêtes": 340,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 108,
+          "identites": 31,
+          "arêtes": 35,
+          "individuelles": 20,
+          "un_a_un": 19,
+          "deficit_partage": 1
+        }
+      },
+      "changements": {
+        "regression": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 192,
+          "aretes_gagnees": 735
+        },
+        "bornage": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 0,
+          "aretes_gagnees": 0
+        },
+        "admission": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 0,
+          "aretes_gagnees": 0
+        },
+        "nms": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 1874,
+          "aretes_gagnees": 0
+        },
+        "final": {
+          "pertes_individuelles": 11,
+          "gains_individuels": 0,
+          "aretes_perdues": 305,
+          "aretes_gagnees": 0
+        }
+      },
+      "regression": {
+        "boites_avec_borne_amelioree": 4865,
+        "boites_avec_borne_degradee": 1468,
+        "boites_avec_borne_identique": 24667
+      },
+      "dernier_retrait": {
+        "possible_final": 20,
+        "final": 11
+      }
+    },
+    "provenances": {
+      "Crigges": {
+        "photos": 2,
+        "etages": {
+          "rpn": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 84,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 124,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 124,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 124,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 678,
+            "identites": 2,
+            "arêtes": 17,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 24,
+            "identites": 2,
+            "arêtes": 2,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 40
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 107,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 15,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 437,
+          "boites_avec_borne_degradee": 58,
+          "boites_avec_borne_identique": 1505
+        },
+        "dernier_retrait": {
+          "possible_final": 2
+        }
+      },
+      "jrladia": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 86,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 184,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 184,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 184,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 364,
+            "identites": 4,
+            "arêtes": 12,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 4,
+            "arêtes": 7,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 7,
+            "aretes_gagnees": 105
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 172,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 5,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 994,
+          "boites_avec_borne_degradee": 251,
+          "boites_avec_borne_identique": 2755
+        },
+        "dernier_retrait": {
+          "possible_final": 4
+        }
+      },
+      "Danielle Walquist Lynch": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 358,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 466,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 466,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 466,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 359,
+            "identites": 5,
+            "arêtes": 86,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 5,
+            "arêtes": 8,
+            "individuelles": 5,
+            "un_a_un": 4,
+            "deficit_partage": 1
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 24,
+            "aretes_gagnees": 132
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 380,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 78,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 621,
+          "boites_avec_borne_degradee": 136,
+          "boites_avec_borne_identique": 4243
+        },
+        "dernier_retrait": {
+          "possible_final": 5
+        }
+      },
+      "zigazou76": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 141,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 189,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 189,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 189,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 333,
+            "identites": 2,
+            "arêtes": 30,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 2,
+            "arêtes": 2,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 5,
+            "aretes_gagnees": 53
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 159,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 28,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 139,
+          "boites_avec_borne_degradee": 43,
+          "boites_avec_borne_identique": 1818
+        },
+        "dernier_retrait": {
+          "possible_final": 2
+        }
+      },
+      "renatomitra": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 301,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 409,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 409,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 409,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 238,
+            "identites": 3,
+            "arêtes": 48,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 3,
+            "arêtes": 10,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 18,
+            "aretes_gagnees": 126
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 361,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 38,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 784,
+          "boites_avec_borne_degradee": 272,
+          "boites_avec_borne_identique": 1944
+        },
+        "dernier_retrait": {
+          "possible_final": 3
+        }
+      },
+      "cristina.sanvito": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 49,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 70,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 70,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 70,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 373,
+            "identites": 1,
+            "arêtes": 11,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 1,
+            "arêtes": 3,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 4,
+            "aretes_gagnees": 25
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 59,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 8,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 149,
+          "boites_avec_borne_degradee": 18,
+          "boites_avec_borne_identique": 833
+        },
+        "dernier_retrait": {
+          "possible_final": 1
+        }
+      },
+      "Bernard Gagnon": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 433,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 583,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 583,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 583,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 265,
+            "identites": 9,
+            "arêtes": 81,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 9,
+            "arêtes": 1,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 60,
+            "aretes_gagnees": 210
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 502,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 8,
+            "gains_individuels": 0,
+            "aretes_perdues": 80,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 1356,
+          "boites_avec_borne_degradee": 393,
+          "boites_avec_borne_identique": 7251
+        },
+        "dernier_retrait": {
+          "final": 8,
+          "possible_final": 1
+        }
+      },
+      "4028mdk09": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 219,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 189,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 189,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 189,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 349,
+            "identites": 5,
+            "arêtes": 55,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 5,
+            "arêtes": 2,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 74,
+            "aretes_gagnees": 44
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 134,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 3,
+            "gains_individuels": 0,
+            "aretes_perdues": 53,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 385,
+          "boites_avec_borne_degradee": 297,
+          "boites_avec_borne_identique": 4318
+        },
+        "dernier_retrait": {
+          "possible_final": 2,
+          "final": 3
+        }
+      }
+    }
+  },
+  "9303": {
+    "ensemble": {
+      "photos": 9,
+      "etages": {
+        "rpn": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 1627,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "regression": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 2139,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "bornage": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 2139,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "admission": {
+          "boites": 9000,
+          "identites": 31,
+          "arêtes": 2139,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "nms": {
+          "boites": 2984,
+          "identites": 31,
+          "arêtes": 327,
+          "individuelles": 31,
+          "un_a_un": 31,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 108,
+          "identites": 31,
+          "arêtes": 36,
+          "individuelles": 23,
+          "un_a_un": 19,
+          "deficit_partage": 4
+        }
+      },
+      "changements": {
+        "regression": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 186,
+          "aretes_gagnees": 698
+        },
+        "bornage": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 0,
+          "aretes_gagnees": 0
+        },
+        "admission": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 0,
+          "aretes_gagnees": 0
+        },
+        "nms": {
+          "pertes_individuelles": 0,
+          "gains_individuels": 0,
+          "aretes_perdues": 1812,
+          "aretes_gagnees": 0
+        },
+        "final": {
+          "pertes_individuelles": 8,
+          "gains_individuels": 0,
+          "aretes_perdues": 291,
+          "aretes_gagnees": 0
+        }
+      },
+      "regression": {
+        "boites_avec_borne_amelioree": 4910,
+        "boites_avec_borne_degradee": 1361,
+        "boites_avec_borne_identique": 24729
+      },
+      "dernier_retrait": {
+        "possible_final": 23,
+        "final": 8
+      }
+    },
+    "provenances": {
+      "Crigges": {
+        "photos": 2,
+        "etages": {
+          "rpn": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 79,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 110,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 110,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 2000,
+            "identites": 2,
+            "arêtes": 110,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 682,
+            "identites": 2,
+            "arêtes": 13,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 24,
+            "identites": 2,
+            "arêtes": 2,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 1,
+            "aretes_gagnees": 32
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 97,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 11,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 483,
+          "boites_avec_borne_degradee": 32,
+          "boites_avec_borne_identique": 1485
+        },
+        "dernier_retrait": {
+          "possible_final": 2
+        }
+      },
+      "jrladia": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 75,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 160,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 160,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 4,
+            "arêtes": 160,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 357,
+            "identites": 4,
+            "arêtes": 14,
+            "individuelles": 4,
+            "un_a_un": 4,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 4,
+            "arêtes": 7,
+            "individuelles": 4,
+            "un_a_un": 3,
+            "deficit_partage": 1
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 5,
+            "aretes_gagnees": 90
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 146,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 7,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 941,
+          "boites_avec_borne_degradee": 276,
+          "boites_avec_borne_identique": 2783
+        },
+        "dernier_retrait": {
+          "possible_final": 4
+        }
+      },
+      "Danielle Walquist Lynch": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 338,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 443,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 443,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 443,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 365,
+            "identites": 5,
+            "arêtes": 77,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 5,
+            "arêtes": 6,
+            "individuelles": 5,
+            "un_a_un": 2,
+            "deficit_partage": 3
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 15,
+            "aretes_gagnees": 120
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 366,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 71,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 592,
+          "boites_avec_borne_degradee": 125,
+          "boites_avec_borne_identique": 4283
+        },
+        "dernier_retrait": {
+          "possible_final": 5
+        }
+      },
+      "zigazou76": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 143,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 189,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 189,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 2,
+            "arêtes": 189,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 333,
+            "identites": 2,
+            "arêtes": 33,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 2,
+            "arêtes": 3,
+            "individuelles": 2,
+            "un_a_un": 2,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 6,
+            "aretes_gagnees": 52
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 156,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 30,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 137,
+          "boites_avec_borne_degradee": 28,
+          "boites_avec_borne_identique": 1835
+        },
+        "dernier_retrait": {
+          "possible_final": 2
+        }
+      },
+      "renatomitra": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 283,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 385,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 385,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 3,
+            "arêtes": 385,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 248,
+            "identites": 3,
+            "arêtes": 48,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 3,
+            "arêtes": 10,
+            "individuelles": 3,
+            "un_a_un": 3,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 20,
+            "aretes_gagnees": 122
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 337,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 38,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 767,
+          "boites_avec_borne_degradee": 246,
+          "boites_avec_borne_identique": 1987
+        },
+        "dernier_retrait": {
+          "possible_final": 3
+        }
+      },
+      "cristina.sanvito": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 51,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 68,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 68,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 1,
+            "arêtes": 68,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 374,
+            "identites": 1,
+            "arêtes": 9,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 1,
+            "arêtes": 2,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 4,
+            "aretes_gagnees": 21
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 59,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 7,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 155,
+          "boites_avec_borne_degradee": 9,
+          "boites_avec_borne_identique": 836
+        },
+        "dernier_retrait": {
+          "possible_final": 1
+        }
+      },
+      "Bernard Gagnon": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 424,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 567,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 567,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 9,
+            "arêtes": 567,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 273,
+            "identites": 9,
+            "arêtes": 79,
+            "individuelles": 9,
+            "un_a_un": 9,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 9,
+            "arêtes": 1,
+            "individuelles": 1,
+            "un_a_un": 1,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 63,
+            "aretes_gagnees": 206
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 488,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 8,
+            "gains_individuels": 0,
+            "aretes_perdues": 78,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 1387,
+          "boites_avec_borne_degradee": 367,
+          "boites_avec_borne_identique": 7246
+        },
+        "dernier_retrait": {
+          "final": 8,
+          "possible_final": 1
+        }
+      },
+      "4028mdk09": {
+        "photos": 1,
+        "etages": {
+          "rpn": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 234,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "regression": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 217,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "bornage": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 217,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "admission": {
+            "boites": 1000,
+            "identites": 5,
+            "arêtes": 217,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "nms": {
+            "boites": 352,
+            "identites": 5,
+            "arêtes": 54,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          },
+          "final": {
+            "boites": 12,
+            "identites": 5,
+            "arêtes": 5,
+            "individuelles": 5,
+            "un_a_un": 5,
+            "deficit_partage": 0
+          }
+        },
+        "changements": {
+          "regression": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 72,
+            "aretes_gagnees": 55
+          },
+          "bornage": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "admission": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 0,
+            "aretes_gagnees": 0
+          },
+          "nms": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 163,
+            "aretes_gagnees": 0
+          },
+          "final": {
+            "pertes_individuelles": 0,
+            "gains_individuels": 0,
+            "aretes_perdues": 49,
+            "aretes_gagnees": 0
+          }
+        },
+        "regression": {
+          "boites_avec_borne_amelioree": 448,
+          "boites_avec_borne_degradee": 278,
+          "boites_avec_borne_identique": 4274
+        },
+        "dernier_retrait": {
+          "possible_final": 5
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "ordre": [
+    "rpn",
+    "regression",
+    "bornage",
+    "admission",
+    "nms",
+    "final"
+  ],
+  "capacites": {
+    "9302": {
+      "rpn": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 1671,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "regression": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 2214,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "bornage": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 2214,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "admission": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 2214,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "nms": {
+        "boites": 2959,
+        "identites": 31,
+        "arêtes": 340,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "final": {
+        "boites": 108,
+        "identites": 31,
+        "arêtes": 35,
+        "individuelles": 20,
+        "un_a_un": 19,
+        "deficit_partage": 1
+      }
+    },
+    "9303": {
+      "rpn": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 1627,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "regression": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 2139,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "bornage": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 2139,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "admission": {
+        "boites": 9000,
+        "identites": 31,
+        "arêtes": 2139,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "nms": {
+        "boites": 2984,
+        "identites": 31,
+        "arêtes": 327,
+        "individuelles": 31,
+        "un_a_un": 31,
+        "deficit_partage": 0
+      },
+      "final": {
+        "boites": 108,
+        "identites": 31,
+        "arêtes": 36,
+        "individuelles": 23,
+        "un_a_un": 19,
+        "deficit_partage": 4
+      }
+    }
+  },
+  "provenances": {
+    "9302": {
+      "Crigges": {
+        "nms": {
+          "boites": 678,
+          "identites": 2,
+          "arêtes": 17,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 24,
+          "identites": 2,
+          "arêtes": 2,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        }
+      },
+      "jrladia": {
+        "nms": {
+          "boites": 364,
+          "identites": 4,
+          "arêtes": 12,
+          "individuelles": 4,
+          "un_a_un": 4,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 4,
+          "arêtes": 7,
+          "individuelles": 4,
+          "un_a_un": 4,
+          "deficit_partage": 0
+        }
+      },
+      "Danielle Walquist Lynch": {
+        "nms": {
+          "boites": 359,
+          "identites": 5,
+          "arêtes": 86,
+          "individuelles": 5,
+          "un_a_un": 5,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 5,
+          "arêtes": 8,
+          "individuelles": 5,
+          "un_a_un": 4,
+          "deficit_partage": 1
+        }
+      },
+      "zigazou76": {
+        "nms": {
+          "boites": 333,
+          "identites": 2,
+          "arêtes": 30,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 2,
+          "arêtes": 2,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        }
+      },
+      "renatomitra": {
+        "nms": {
+          "boites": 238,
+          "identites": 3,
+          "arêtes": 48,
+          "individuelles": 3,
+          "un_a_un": 3,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 3,
+          "arêtes": 10,
+          "individuelles": 3,
+          "un_a_un": 3,
+          "deficit_partage": 0
+        }
+      },
+      "cristina.sanvito": {
+        "nms": {
+          "boites": 373,
+          "identites": 1,
+          "arêtes": 11,
+          "individuelles": 1,
+          "un_a_un": 1,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 1,
+          "arêtes": 3,
+          "individuelles": 1,
+          "un_a_un": 1,
+          "deficit_partage": 0
+        }
+      },
+      "Bernard Gagnon": {
+        "nms": {
+          "boites": 265,
+          "identites": 9,
+          "arêtes": 81,
+          "individuelles": 9,
+          "un_a_un": 9,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 9,
+          "arêtes": 1,
+          "individuelles": 1,
+          "un_a_un": 1,
+          "deficit_partage": 0
+        }
+      },
+      "4028mdk09": {
+        "nms": {
+          "boites": 349,
+          "identites": 5,
+          "arêtes": 55,
+          "individuelles": 5,
+          "un_a_un": 5,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 5,
+          "arêtes": 2,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        }
+      }
+    },
+    "9303": {
+      "Crigges": {
+        "nms": {
+          "boites": 682,
+          "identites": 2,
+          "arêtes": 13,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 24,
+          "identites": 2,
+          "arêtes": 2,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        }
+      },
+      "jrladia": {
+        "nms": {
+          "boites": 357,
+          "identites": 4,
+          "arêtes": 14,
+          "individuelles": 4,
+          "un_a_un": 4,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 4,
+          "arêtes": 7,
+          "individuelles": 4,
+          "un_a_un": 3,
+          "deficit_partage": 1
+        }
+      },
+      "Danielle Walquist Lynch": {
+        "nms": {
+          "boites": 365,
+          "identites": 5,
+          "arêtes": 77,
+          "individuelles": 5,
+          "un_a_un": 5,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 5,
+          "arêtes": 6,
+          "individuelles": 5,
+          "un_a_un": 2,
+          "deficit_partage": 3
+        }
+      },
+      "zigazou76": {
+        "nms": {
+          "boites": 333,
+          "identites": 2,
+          "arêtes": 33,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 2,
+          "arêtes": 3,
+          "individuelles": 2,
+          "un_a_un": 2,
+          "deficit_partage": 0
+        }
+      },
+      "renatomitra": {
+        "nms": {
+          "boites": 248,
+          "identites": 3,
+          "arêtes": 48,
+          "individuelles": 3,
+          "un_a_un": 3,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 3,
+          "arêtes": 10,
+          "individuelles": 3,
+          "un_a_un": 3,
+          "deficit_partage": 0
+        }
+      },
+      "cristina.sanvito": {
+        "nms": {
+          "boites": 374,
+          "identites": 1,
+          "arêtes": 9,
+          "individuelles": 1,
+          "un_a_un": 1,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 1,
+          "arêtes": 2,
+          "individuelles": 1,
+          "un_a_un": 1,
+          "deficit_partage": 0
+        }
+      },
+      "Bernard Gagnon": {
+        "nms": {
+          "boites": 273,
+          "identites": 9,
+          "arêtes": 79,
+          "individuelles": 9,
+          "un_a_un": 9,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 9,
+          "arêtes": 1,
+          "individuelles": 1,
+          "un_a_un": 1,
+          "deficit_partage": 0
+        }
+      },
+      "4028mdk09": {
+        "nms": {
+          "boites": 352,
+          "identites": 5,
+          "arêtes": 54,
+          "individuelles": 5,
+          "un_a_un": 5,
+          "deficit_partage": 0
+        },
+        "final": {
+          "boites": 12,
+          "identites": 5,
+          "arêtes": 5,
+          "individuelles": 5,
+          "un_a_un": 5,
+          "deficit_partage": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1774 @@
+{
+  "gel": "710971e44f7ac8e059a8a917777b1e191eb7d267",
+  "environnement": {
+    "versions": [
+      "3.9.19",
+      "1.10.1+cpu",
+      "0.11.2+cpu",
+      "0.6"
+    ],
+    "numpy": "1.23.5",
+    "opencv": "4.8.1",
+    "plateforme": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "threads_torch": 4,
+    "threads_interop": 1,
+    "threads_cv": 1,
+    "omp_blas_mkl": 1,
+    "deterministe": true,
+    "precision": "float32"
+  },
+  "budget": 18,
+  "passages": 18,
+  "appels_masque_intermediaires": 0,
+  "marqueurs": [
+    "1 9302 768 13-01",
+    "5 9302 768 18105652008",
+    "6 9302 768 24614689941",
+    "7 9302 768 4169106197",
+    "4 9302 768 5115614018",
+    "2 9302 768 70-01",
+    "3 9302 768 7245527662",
+    "9 9302 768 wc11001401",
+    "8 9302 768 wc71488242",
+    "10 9303 768 13-01",
+    "14 9303 768 18105652008",
+    "15 9303 768 24614689941",
+    "16 9303 768 4169106197",
+    "13 9303 768 5115614018",
+    "11 9303 768 70-01",
+    "12 9303 768 7245527662",
+    "18 9303 768 wc11001401",
+    "17 9303 768 wc71488242"
+  ],
+  "traces": {
+    "9302-13-01": {
+      "numero": 1,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "13-01",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-13-01.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "8ca80cc6f6558a93276dcb1b4c483da57cf695fed36bf549a8f1537465ed3e4c",
+          "sha256_R27": "8ca80cc6f6558a93276dcb1b4c483da57cf695fed36bf549a8f1537465ed3e4c",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "a6041d998bd2230ada9e5423487eec732fe158d607e2b32945f9d1219080ba21",
+          "sha256_R27": "a6041d998bd2230ada9e5423487eec732fe158d607e2b32945f9d1219080ba21",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "d01ebd45271a5f2d23365a09b049543ae1ff8d45e5408ce9c3d1d3abd3a745b0",
+          "sha256_R27": "d01ebd45271a5f2d23365a09b049543ae1ff8d45e5408ce9c3d1d3abd3a745b0",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "380fde7d074b6ad12c406fca5589fd0475481aa669c4180c8e8a5e2d99e85b3b",
+          "sha256_R27": "380fde7d074b6ad12c406fca5589fd0475481aa669c4180c8e8a5e2d99e85b3b",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "2f510e5e1986be9a0a79dd6ccce9eaa1a3e39cd9d01f72b618d27068694d127d",
+          "sha256_R27": "2f510e5e1986be9a0a79dd6ccce9eaa1a3e39cd9d01f72b618d27068694d127d",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "960d18fca426bbbeb2014ed1b0d59ab2bb3a9e3a8bce5f2efc5dc9d3b36dc245",
+          "sha256_R27": "960d18fca426bbbeb2014ed1b0d59ab2bb3a9e3a8bce5f2efc5dc9d3b36dc245",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "ef7bdd2fdf761a7e06ac61d8f5839d167f3fcb003aa9fba2eeff0718c670dcec",
+          "sha256_R27": "ef7bdd2fdf761a7e06ac61d8f5839d167f3fcb003aa9fba2eeff0718c670dcec",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1408,
+            1056
+          ],
+          "sha256_instrumente": "86230521d31886cf460048ce4b7dbb1f5d36359d5b62414f41bebbef5880a111",
+          "sha256_R27": "86230521d31886cf460048ce4b7dbb1f5d36359d5b62414f41bebbef5880a111",
+          "identique": true
+        }
+      },
+      "fichier": "9302-13-01.npz",
+      "octets": 93749,
+      "sha256": "58012f1367c85da27e5d0d8b0b8d3c05fb3352b0392597bb523144593bef0f1a"
+    },
+    "9302-70-01": {
+      "numero": 2,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "70-01",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-70-01.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "97c7706079f5fdc62968d6c07113f20124fb77817d2e2e4c15f54b712fe7d204",
+          "sha256_R27": "97c7706079f5fdc62968d6c07113f20124fb77817d2e2e4c15f54b712fe7d204",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "9c1d0476b8ed02c7c79d92d1323db03c65decf7e3b6582d5e44e76054b4887a3",
+          "sha256_R27": "9c1d0476b8ed02c7c79d92d1323db03c65decf7e3b6582d5e44e76054b4887a3",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "39f070b3b445fb8858aac577e188556161f281779d10ebcef12193ee11e0d74e",
+          "sha256_R27": "39f070b3b445fb8858aac577e188556161f281779d10ebcef12193ee11e0d74e",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "6eee6b16b64ab94aed01673012daaead0b9139d3f59f52120f2cee4b2eecc1d5",
+          "sha256_R27": "6eee6b16b64ab94aed01673012daaead0b9139d3f59f52120f2cee4b2eecc1d5",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "e31e99e80ab772c3f74886b45fa45ca76c8f15677ea6bf078aab3e067631846a",
+          "sha256_R27": "e31e99e80ab772c3f74886b45fa45ca76c8f15677ea6bf078aab3e067631846a",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "02d45da7b3f30fd267ae84a3dc5f93a69c119d1c385bda15086ad39e2645b87c",
+          "sha256_R27": "02d45da7b3f30fd267ae84a3dc5f93a69c119d1c385bda15086ad39e2645b87c",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "1638d66e935690a577fec04feb7694dd916752ee91a57f30c7278788cf4620cc",
+          "sha256_R27": "1638d66e935690a577fec04feb7694dd916752ee91a57f30c7278788cf4620cc",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1408,
+            1056
+          ],
+          "sha256_instrumente": "9b830e7f938cbaeed5537d9545aea756e04896a206e4bb5d58d04e63474d1c43",
+          "sha256_R27": "9b830e7f938cbaeed5537d9545aea756e04896a206e4bb5d58d04e63474d1c43",
+          "identique": true
+        }
+      },
+      "fichier": "9302-70-01.npz",
+      "octets": 94167,
+      "sha256": "364ad552c9760879ff941cd0caefe740d172930a20ace4ebc36a2bdc21a4a329"
+    },
+    "9302-7245527662": {
+      "numero": 3,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "7245527662",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-7245527662.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "9d05460f7a15be3b28b8a29c9ad10f186f23da5b0e002251bdebd9f95216c2b4",
+          "sha256_R27": "9d05460f7a15be3b28b8a29c9ad10f186f23da5b0e002251bdebd9f95216c2b4",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "b53817aa82366a72ed23cb8fec0548fcff6becf2e3b7ecda19dd268d153470e5",
+          "sha256_R27": "b53817aa82366a72ed23cb8fec0548fcff6becf2e3b7ecda19dd268d153470e5",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "e3df792d150bd35c34d46aab1aef770b6bcbd9521e42dca541785fc5732727f6",
+          "sha256_R27": "e3df792d150bd35c34d46aab1aef770b6bcbd9521e42dca541785fc5732727f6",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "f566d890c12f04eafda68349481df2c6aba1308374729499da4c17d7b7f9a940",
+          "sha256_R27": "f566d890c12f04eafda68349481df2c6aba1308374729499da4c17d7b7f9a940",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "3494957e0674f254204a2f0d14bcd3a2141d5ba43c4aa4343f28efccbc69a78e",
+          "sha256_R27": "3494957e0674f254204a2f0d14bcd3a2141d5ba43c4aa4343f28efccbc69a78e",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "f1e208481e0472fffef2d78763d909e30443ede1d8e6599519077b900a1d471b",
+          "sha256_R27": "f1e208481e0472fffef2d78763d909e30443ede1d8e6599519077b900a1d471b",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "cf85e96da08372bf0db91d32867de3e7893feb6bc5d7deb95fcbaa2a37767da9",
+          "sha256_R27": "cf85e96da08372bf0db91d32867de3e7893feb6bc5d7deb95fcbaa2a37767da9",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            677,
+            1024
+          ],
+          "sha256_instrumente": "1879ac4425d422d4c267451260c08039b97fcb0c0d20408361fdd205432915d1",
+          "sha256_R27": "1879ac4425d422d4c267451260c08039b97fcb0c0d20408361fdd205432915d1",
+          "identique": true
+        }
+      },
+      "fichier": "9302-7245527662.npz",
+      "octets": 93721,
+      "sha256": "34a0bffdea74b0f290d6420ac4b75c7de0c1fa1c6ad3be5f4900f3857d6ba2d1"
+    },
+    "9302-5115614018": {
+      "numero": 4,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "5115614018",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-5115614018.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "e72e80b99fef19e720f57311af54ac1aa335c7618f621edc8941c2169e0bd6ef",
+          "sha256_R27": "e72e80b99fef19e720f57311af54ac1aa335c7618f621edc8941c2169e0bd6ef",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "bf0bfb0eefcc3a97f05ec24fe15fa68ef73207a7f5ea89aaf85a7d2a545515ee",
+          "sha256_R27": "bf0bfb0eefcc3a97f05ec24fe15fa68ef73207a7f5ea89aaf85a7d2a545515ee",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "0643ea286253b5906861f1148dddaf8bb77e3c9075c58e559105b23194a5682b",
+          "sha256_R27": "0643ea286253b5906861f1148dddaf8bb77e3c9075c58e559105b23194a5682b",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "3c20dd79a47c6fbc3a75fadefc0c2b086d024802e90fb98f77f632b9453c084d",
+          "sha256_R27": "3c20dd79a47c6fbc3a75fadefc0c2b086d024802e90fb98f77f632b9453c084d",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "ed2999c1de2347977d4ff4e6144edeaa6fcf3dadbede40894766e0294f61c209",
+          "sha256_R27": "ed2999c1de2347977d4ff4e6144edeaa6fcf3dadbede40894766e0294f61c209",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "0bfa8da7c4a62ad5c0201a4c97552d66591762bc742abb2f22a790cbec1a91fb",
+          "sha256_R27": "0bfa8da7c4a62ad5c0201a4c97552d66591762bc742abb2f22a790cbec1a91fb",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "7acb36deece6f7b67c1e9ea5213d5e418c8eb0b67e48c402f15da82ff0dc7b5f",
+          "sha256_R27": "7acb36deece6f7b67c1e9ea5213d5e418c8eb0b67e48c402f15da82ff0dc7b5f",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            683,
+            1024
+          ],
+          "sha256_instrumente": "0cf29a4a09c6e42a1f9822a4e8e8b9decb7641d418ac093154f596bedf96f7d0",
+          "sha256_R27": "0cf29a4a09c6e42a1f9822a4e8e8b9decb7641d418ac093154f596bedf96f7d0",
+          "identique": true
+        }
+      },
+      "fichier": "9302-5115614018.npz",
+      "octets": 93540,
+      "sha256": "798eb2f34dee7634def9b743a5eff7d1125e91274012bdb536babce8cc068140"
+    },
+    "9302-18105652008": {
+      "numero": 5,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "18105652008",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-18105652008.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "facf10dca89d93b6a191c95b16abfd422dc861cf6cf37a9e17076d542fad7600",
+          "sha256_R27": "facf10dca89d93b6a191c95b16abfd422dc861cf6cf37a9e17076d542fad7600",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "16e759352988e2b85c4bb7a43ffbb76f6171333d33a4f146544618852c5bb5b9",
+          "sha256_R27": "16e759352988e2b85c4bb7a43ffbb76f6171333d33a4f146544618852c5bb5b9",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "5513e9eb7a770a17362306938cce80718ddf1e4887f3a226a95c6827d523cd27",
+          "sha256_R27": "5513e9eb7a770a17362306938cce80718ddf1e4887f3a226a95c6827d523cd27",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "f7e2ba3fa0ccf8dcdb0c2ccbe386d80d0a7779785be44d115bb16e5ca393aab6",
+          "sha256_R27": "f7e2ba3fa0ccf8dcdb0c2ccbe386d80d0a7779785be44d115bb16e5ca393aab6",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "446b1f05a8334beb5173696a664de138bbe5e4885dcc631779d20ee7c99896d1",
+          "sha256_R27": "446b1f05a8334beb5173696a664de138bbe5e4885dcc631779d20ee7c99896d1",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "a8a212b5f7dc8e19668a1c2876383c6fb8179ffc182c5ff1cda03087e377c7dd",
+          "sha256_R27": "a8a212b5f7dc8e19668a1c2876383c6fb8179ffc182c5ff1cda03087e377c7dd",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "a28f8e2a02010f17e14288cc025cd93c0e60bf8dd327669a02b8ea771de900ad",
+          "sha256_R27": "a28f8e2a02010f17e14288cc025cd93c0e60bf8dd327669a02b8ea771de900ad",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            683,
+            1024
+          ],
+          "sha256_instrumente": "51f8ad9e1ca66d8ff59ad8bdbbcc56d4b4aec8a5499f5418c225aa60109cd3bd",
+          "sha256_R27": "51f8ad9e1ca66d8ff59ad8bdbbcc56d4b4aec8a5499f5418c225aa60109cd3bd",
+          "identique": true
+        }
+      },
+      "fichier": "9302-18105652008.npz",
+      "octets": 93565,
+      "sha256": "5e56f62ff5df2aa5794f9625614546f6d741ce882dfefde4665c96e700e49586"
+    },
+    "9302-24614689941": {
+      "numero": 6,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "24614689941",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-24614689941.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "1e6a5078b07175f78855f65618cc51302a510af3d542cc82859b5097b7e340a4",
+          "sha256_R27": "1e6a5078b07175f78855f65618cc51302a510af3d542cc82859b5097b7e340a4",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "fbea03a16b22bb64563f8504bdb9148413880d70b45c704d39b975724b39e69b",
+          "sha256_R27": "fbea03a16b22bb64563f8504bdb9148413880d70b45c704d39b975724b39e69b",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "cadbf17a5502a64e0dcffe97daacbe590d9c65f447de7372301f83e4212d9f60",
+          "sha256_R27": "cadbf17a5502a64e0dcffe97daacbe590d9c65f447de7372301f83e4212d9f60",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "5c3a3f5f2e71f58048edcbc2f29e0d9a96bdeac01154d83f74723e0fdb17ce95",
+          "sha256_R27": "5c3a3f5f2e71f58048edcbc2f29e0d9a96bdeac01154d83f74723e0fdb17ce95",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "72739b2f2889dd748cbb58393566a1d5acacfd1c7aa3a24c22d1df5edc093e7f",
+          "sha256_R27": "72739b2f2889dd748cbb58393566a1d5acacfd1c7aa3a24c22d1df5edc093e7f",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "a929a67648626e778d932f43ebd4054659f45b8519750cf711b693a37aec3e20",
+          "sha256_R27": "a929a67648626e778d932f43ebd4054659f45b8519750cf711b693a37aec3e20",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "a0c7e63b35478ebdc824984ba0133c7cc5e0a79c0fd541db576717ca6839d41a",
+          "sha256_R27": "a0c7e63b35478ebdc824984ba0133c7cc5e0a79c0fd541db576717ca6839d41a",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256_instrumente": "f51b3664fe889d8c32f82061e8b0d835d7af7e8fcca064c86227f053a96b1057",
+          "sha256_R27": "f51b3664fe889d8c32f82061e8b0d835d7af7e8fcca064c86227f053a96b1057",
+          "identique": true
+        }
+      },
+      "fichier": "9302-24614689941.npz",
+      "octets": 91729,
+      "sha256": "67b0849359efc14158b3366686c1dbc584174d2466917d79966636e8ad06816f"
+    },
+    "9302-4169106197": {
+      "numero": 7,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "4169106197",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-4169106197.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "4796a80c79236e2a69f81979741097a56fb39bae651f4367d1be321c188c2e90",
+          "sha256_R27": "4796a80c79236e2a69f81979741097a56fb39bae651f4367d1be321c188c2e90",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "5fd90511a7bce3630f5ca985b00fbdb8e67392680a314c89333952e0c7c39b29",
+          "sha256_R27": "5fd90511a7bce3630f5ca985b00fbdb8e67392680a314c89333952e0c7c39b29",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "eed3213df717d15c8724fda4bb3ccb667ca14fd59e271bcf2d802db17b42450b",
+          "sha256_R27": "eed3213df717d15c8724fda4bb3ccb667ca14fd59e271bcf2d802db17b42450b",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "c34bddf2c7960f7b9a9793bd03646d796e08d393f1a1729b984f5769f58738e5",
+          "sha256_R27": "c34bddf2c7960f7b9a9793bd03646d796e08d393f1a1729b984f5769f58738e5",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "bd40d78324d60144a061c0b4324910a962c8bc4942a06b850a69dcdc2bbc0f47",
+          "sha256_R27": "bd40d78324d60144a061c0b4324910a962c8bc4942a06b850a69dcdc2bbc0f47",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "f6fe45409f96776a4dd73a827a968b33aa178e6dacfb7ce1374c6f453c341d45",
+          "sha256_R27": "f6fe45409f96776a4dd73a827a968b33aa178e6dacfb7ce1374c6f453c341d45",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "46c46c2e40254e7cf2ed8ce46aeb4232dcc4272d543a8d0c34f3081c79fe4a09",
+          "sha256_R27": "46c46c2e40254e7cf2ed8ce46aeb4232dcc4272d543a8d0c34f3081c79fe4a09",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            480,
+            640
+          ],
+          "sha256_instrumente": "ceed4276589dfb580f60d8cad26a416d1032c54774049dea4b67bdb8873e34dc",
+          "sha256_R27": "ceed4276589dfb580f60d8cad26a416d1032c54774049dea4b67bdb8873e34dc",
+          "identique": true
+        }
+      },
+      "fichier": "9302-4169106197.npz",
+      "octets": 94552,
+      "sha256": "f912634cc6856d4d8a182c2dac72c07c6649c3a5e3dca535aba43df36c7fc399"
+    },
+    "9302-wc71488242": {
+      "numero": 8,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "wc71488242",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-wc71488242.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "d0a809a853daf75927eac908758f43dd4e5b45f9e99402acfa48ced0c2bd2dea",
+          "sha256_R27": "d0a809a853daf75927eac908758f43dd4e5b45f9e99402acfa48ced0c2bd2dea",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "86bef1d8dbf6dee9bfbd9c4dc110eefb7b6069637f5432892f923c81ed4c1428",
+          "sha256_R27": "86bef1d8dbf6dee9bfbd9c4dc110eefb7b6069637f5432892f923c81ed4c1428",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "254a2399f03aa888797ec54602cb7c032cb2b9fc7f25d82db2010eabbb00d4e0",
+          "sha256_R27": "254a2399f03aa888797ec54602cb7c032cb2b9fc7f25d82db2010eabbb00d4e0",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "e037596944d15e6bb5f0ec3ac98e99eec218646b0bc680615b45d471be106df4",
+          "sha256_R27": "e037596944d15e6bb5f0ec3ac98e99eec218646b0bc680615b45d471be106df4",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "5564e968eb190945d74d249e5d2d6f814ae682207ba03cfec8b76c79a44edd99",
+          "sha256_R27": "5564e968eb190945d74d249e5d2d6f814ae682207ba03cfec8b76c79a44edd99",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "5443812aa838fa26d33682354709db60d88062a4552be11627f7cf796dc42117",
+          "sha256_R27": "5443812aa838fa26d33682354709db60d88062a4552be11627f7cf796dc42117",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "fd5e9da145067fa7a2e23745d4ddf931eabf80e5b3b5fc095dcf800b533439d4",
+          "sha256_R27": "fd5e9da145067fa7a2e23745d4ddf931eabf80e5b3b5fc095dcf800b533439d4",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1280,
+            1280
+          ],
+          "sha256_instrumente": "72990b20a3c36f749c4597c5a1eddc39bb6b6a6c997178b77d0dae6b64605794",
+          "sha256_R27": "72990b20a3c36f749c4597c5a1eddc39bb6b6a6c997178b77d0dae6b64605794",
+          "identique": true
+        }
+      },
+      "fichier": "9302-wc71488242.npz",
+      "octets": 92632,
+      "sha256": "bf48fc3e0179f18d428bf25231013c19db889731a50f3a889244a73dfe227965"
+    },
+    "9302-wc11001401": {
+      "numero": 9,
+      "graine": 9302,
+      "pas": 768,
+      "photo": "wc11001401",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9302-768-wc11001401.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "6eae4d22a5d60934e822d01a289379cba0a18a47fa96c67e52447e42b4e6f3a7",
+          "sha256_R27": "6eae4d22a5d60934e822d01a289379cba0a18a47fa96c67e52447e42b4e6f3a7",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "9eeb31fe721920b054ccbc9d1d135aa1777db0c5547ec83b294dbb3cd33778d2",
+          "sha256_R27": "9eeb31fe721920b054ccbc9d1d135aa1777db0c5547ec83b294dbb3cd33778d2",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "8a5bd399761634a71a3ebdd5411f9f19f6562b7d908afa6a78aa6b81e77a73a6",
+          "sha256_R27": "8a5bd399761634a71a3ebdd5411f9f19f6562b7d908afa6a78aa6b81e77a73a6",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "2641e541bef1e7adb620df134836872d8628eb9bafbfd570d8e20c24baebcba0",
+          "sha256_R27": "2641e541bef1e7adb620df134836872d8628eb9bafbfd570d8e20c24baebcba0",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "652d31d7edaf1cf4725975a4b40292b4d4165ab6fe19206c7d3151abec1f3b8b",
+          "sha256_R27": "652d31d7edaf1cf4725975a4b40292b4d4165ab6fe19206c7d3151abec1f3b8b",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "7a600aab4bf17699356fd8f4984d6d4e10782cf05be910647d86df798f024753",
+          "sha256_R27": "7a600aab4bf17699356fd8f4984d6d4e10782cf05be910647d86df798f024753",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "6df9972b3b63554df0a3198357051029cedae4b655e23471ad2370062604f3b6",
+          "sha256_R27": "6df9972b3b63554df0a3198357051029cedae4b655e23471ad2370062604f3b6",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1408,
+            1056
+          ],
+          "sha256_instrumente": "c86c862202886f3fe19a6ddaeedcd9cfc6dcfd215b0c0d7b0af7f32f2d83dd18",
+          "sha256_R27": "c86c862202886f3fe19a6ddaeedcd9cfc6dcfd215b0c0d7b0af7f32f2d83dd18",
+          "identique": true
+        }
+      },
+      "fichier": "9302-wc11001401.npz",
+      "octets": 93482,
+      "sha256": "c7f191ea8ebf9989907d0bcebac997ac77f922ca62c401a681d4e60578e4dd98"
+    },
+    "9303-13-01": {
+      "numero": 10,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "13-01",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-13-01.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "874d1bbffa49454efd9471ec04a95fb05279244701c82235636134280e4a92b1",
+          "sha256_R27": "874d1bbffa49454efd9471ec04a95fb05279244701c82235636134280e4a92b1",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "cf36c874b9656b06ad31c8c793ce30bc9084d239b1a5053c71405e9f5f61bb80",
+          "sha256_R27": "cf36c874b9656b06ad31c8c793ce30bc9084d239b1a5053c71405e9f5f61bb80",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "f36381cf8603b6c293eeda64de2eacde6097a7a3fdae9d01cc4750102e2b0173",
+          "sha256_R27": "f36381cf8603b6c293eeda64de2eacde6097a7a3fdae9d01cc4750102e2b0173",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "53329c6cf5e3f122f6812707938a15dbad467891b46b904d4f417afa72e9ac14",
+          "sha256_R27": "53329c6cf5e3f122f6812707938a15dbad467891b46b904d4f417afa72e9ac14",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "5ad931e22e3941b97175549c74de8df8d240ff1a702eaae13ffda55331b77e01",
+          "sha256_R27": "5ad931e22e3941b97175549c74de8df8d240ff1a702eaae13ffda55331b77e01",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "399938ea40de0df5b89c6dfa8613ebcb46c93b3148c907112d644cc5e419f8d0",
+          "sha256_R27": "399938ea40de0df5b89c6dfa8613ebcb46c93b3148c907112d644cc5e419f8d0",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "a1c62b5b8576acc4f590f40b1eda629f00c1ee01948da015375831ed1d51113d",
+          "sha256_R27": "a1c62b5b8576acc4f590f40b1eda629f00c1ee01948da015375831ed1d51113d",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1408,
+            1056
+          ],
+          "sha256_instrumente": "0ab42d659f6aa2312497c44de0f004fe70593df7bdba5ca087efe9aa6a896129",
+          "sha256_R27": "0ab42d659f6aa2312497c44de0f004fe70593df7bdba5ca087efe9aa6a896129",
+          "identique": true
+        }
+      },
+      "fichier": "9303-13-01.npz",
+      "octets": 93954,
+      "sha256": "72fcf7b8a5987198be66aabf73355e0fe5d555c1fbbf4bf477685604887a2773"
+    },
+    "9303-70-01": {
+      "numero": 11,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "70-01",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-70-01.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "9d30ac41e686d9d608af8f14c070eb10c789971e5f63cccc96d16b74fb0bfdce",
+          "sha256_R27": "9d30ac41e686d9d608af8f14c070eb10c789971e5f63cccc96d16b74fb0bfdce",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "18930a0bab841fd9fc2475c66cd4e18e2b88d3c110a920da2b55785faf94f55a",
+          "sha256_R27": "18930a0bab841fd9fc2475c66cd4e18e2b88d3c110a920da2b55785faf94f55a",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "609a800f88de9ea7b04efcae13872588a125b01fdac139585be82b12c1a375b2",
+          "sha256_R27": "609a800f88de9ea7b04efcae13872588a125b01fdac139585be82b12c1a375b2",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "bf3f97f27789bb3911dbd33fcbc565cc575529a5ada60a62f59a2fe1326f67dc",
+          "sha256_R27": "bf3f97f27789bb3911dbd33fcbc565cc575529a5ada60a62f59a2fe1326f67dc",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "1859c3963d66c53d444d17a7198383881c361872c450968d1119a2d47778c687",
+          "sha256_R27": "1859c3963d66c53d444d17a7198383881c361872c450968d1119a2d47778c687",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "dcecd572a5f86a09d07d8d5f45e9be3f13c8cbb52fea64057d85de298e73729c",
+          "sha256_R27": "dcecd572a5f86a09d07d8d5f45e9be3f13c8cbb52fea64057d85de298e73729c",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "fa1bc28538b89e779808439e861a435c2a215b4c797ad24e13cd8d2a238ae1e8",
+          "sha256_R27": "fa1bc28538b89e779808439e861a435c2a215b4c797ad24e13cd8d2a238ae1e8",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1408,
+            1056
+          ],
+          "sha256_instrumente": "3835a25b22fbad7fdbdbe0eb2dd3852eb7322dca986aba959d1912b492e55839",
+          "sha256_R27": "3835a25b22fbad7fdbdbe0eb2dd3852eb7322dca986aba959d1912b492e55839",
+          "identique": true
+        }
+      },
+      "fichier": "9303-70-01.npz",
+      "octets": 94308,
+      "sha256": "0c2c54ab5b2e6e7be605e4a0a55af21db699460e80bf2c54ab8a1bfe9604df68"
+    },
+    "9303-7245527662": {
+      "numero": 12,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "7245527662",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-7245527662.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "931fd32f0e7af3ebe03b23f9d28c03e6cbab0478fe70a234062912dc8b715482",
+          "sha256_R27": "931fd32f0e7af3ebe03b23f9d28c03e6cbab0478fe70a234062912dc8b715482",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "1cbee65be771e67bcba35b0510a5ca51770b8f21e86759eb36baa105716d7bee",
+          "sha256_R27": "1cbee65be771e67bcba35b0510a5ca51770b8f21e86759eb36baa105716d7bee",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "90b20274e45e50d10084dc398df3d47ae0f52551ec1b6bf8f1b6b72ccc1a4f0e",
+          "sha256_R27": "90b20274e45e50d10084dc398df3d47ae0f52551ec1b6bf8f1b6b72ccc1a4f0e",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "e82c90659df1b391d8c6833720246a09ed55a4b2379b4f9a226efc3406570d70",
+          "sha256_R27": "e82c90659df1b391d8c6833720246a09ed55a4b2379b4f9a226efc3406570d70",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "c642dec00e3ac2b0796f0765df15a01ff309d2072d31e37b2f171c55ca741e82",
+          "sha256_R27": "c642dec00e3ac2b0796f0765df15a01ff309d2072d31e37b2f171c55ca741e82",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "1d159055a7a673f0f4a5dab3187b061e99713f15eade529b7832a8ae64c31666",
+          "sha256_R27": "1d159055a7a673f0f4a5dab3187b061e99713f15eade529b7832a8ae64c31666",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "f42f45d83b87ae6715deefae3e25a15251203dcf67bfa6a47a0641c178079f69",
+          "sha256_R27": "f42f45d83b87ae6715deefae3e25a15251203dcf67bfa6a47a0641c178079f69",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            677,
+            1024
+          ],
+          "sha256_instrumente": "f264ab461eb36a46990ce564adce48cc270d84e65187c2f1a560c44ec1de8f6d",
+          "sha256_R27": "f264ab461eb36a46990ce564adce48cc270d84e65187c2f1a560c44ec1de8f6d",
+          "identique": true
+        }
+      },
+      "fichier": "9303-7245527662.npz",
+      "octets": 93853,
+      "sha256": "a0700546f4339003cc19e55a8ed833c4faeb5e7ebb0f4c4ea82609feaba0712a"
+    },
+    "9303-5115614018": {
+      "numero": 13,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "5115614018",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-5115614018.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "13803b6a2d8b9ac16f3ef4200c4d2069d48e163c54916f78856d49c1fb6c5233",
+          "sha256_R27": "13803b6a2d8b9ac16f3ef4200c4d2069d48e163c54916f78856d49c1fb6c5233",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "c835832dfd45caec61620eb418aa098e0cef24d980eae540ab4f5616892c4b4e",
+          "sha256_R27": "c835832dfd45caec61620eb418aa098e0cef24d980eae540ab4f5616892c4b4e",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "161a376c324b80354dccf0cc4bfcb2d8e687eed8bbaa382387c52fbad9fa8299",
+          "sha256_R27": "161a376c324b80354dccf0cc4bfcb2d8e687eed8bbaa382387c52fbad9fa8299",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "d19ff1da92881ed0e2df11fdfec6d9ad04842ada987d5b54e4f138ee1105ad89",
+          "sha256_R27": "d19ff1da92881ed0e2df11fdfec6d9ad04842ada987d5b54e4f138ee1105ad89",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "8539b1906bcd1796daebdfae7e5228a9e71848d682e54a15b68e1acc174a2d40",
+          "sha256_R27": "8539b1906bcd1796daebdfae7e5228a9e71848d682e54a15b68e1acc174a2d40",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "bf90196b4b555ef583a3fb3b6fb10ff4933341c49c57aa237420ce48a7d22266",
+          "sha256_R27": "bf90196b4b555ef583a3fb3b6fb10ff4933341c49c57aa237420ce48a7d22266",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "ea92aeb472d8fe6559bfc418a663a5ef15a88940bb58ba779b416367e3579b1e",
+          "sha256_R27": "ea92aeb472d8fe6559bfc418a663a5ef15a88940bb58ba779b416367e3579b1e",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            683,
+            1024
+          ],
+          "sha256_instrumente": "adc5cc2cf24d148f24a399cd2f22f5b2203773cb1e0db98de065318539323fad",
+          "sha256_R27": "adc5cc2cf24d148f24a399cd2f22f5b2203773cb1e0db98de065318539323fad",
+          "identique": true
+        }
+      },
+      "fichier": "9303-5115614018.npz",
+      "octets": 93687,
+      "sha256": "43f417c0c42b554940e2bbb2473e69580fd4bd6bb7633225328d2fa9205b749d"
+    },
+    "9303-18105652008": {
+      "numero": 14,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "18105652008",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-18105652008.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "52629f12cb6b564e6f18b080c1c662451962fdffc5e492a5fc342f3934dfdf39",
+          "sha256_R27": "52629f12cb6b564e6f18b080c1c662451962fdffc5e492a5fc342f3934dfdf39",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "1f804d1b4c047f199b6c97d2718b51f1a7e8a6bffed5e2f48ca3ee617e989f0a",
+          "sha256_R27": "1f804d1b4c047f199b6c97d2718b51f1a7e8a6bffed5e2f48ca3ee617e989f0a",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "8373574d9707ace6ec20d1618077d15542d9a8c953ecd41e6d8f8845a8757cc7",
+          "sha256_R27": "8373574d9707ace6ec20d1618077d15542d9a8c953ecd41e6d8f8845a8757cc7",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "44af4deec549124707e5b666c31b414fe0507363eb5700641aba9001ddefda82",
+          "sha256_R27": "44af4deec549124707e5b666c31b414fe0507363eb5700641aba9001ddefda82",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "655ac466c8379fe4f4dbaff3817dfdc337b5265db15fc60da973346cd8499128",
+          "sha256_R27": "655ac466c8379fe4f4dbaff3817dfdc337b5265db15fc60da973346cd8499128",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "64157756a1f95b9e52b50fd19026f9feb2d6fd1ce59201a84d651f2330d6ee56",
+          "sha256_R27": "64157756a1f95b9e52b50fd19026f9feb2d6fd1ce59201a84d651f2330d6ee56",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "323fd07f166a3139cf4849dead0378ab81fb265c945338d53af44b58d1cdabd9",
+          "sha256_R27": "323fd07f166a3139cf4849dead0378ab81fb265c945338d53af44b58d1cdabd9",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            683,
+            1024
+          ],
+          "sha256_instrumente": "cb6f210ecebe21a262f29d260e5b0bd5ab24dc8e5e947c7b836b8e49c9a3f216",
+          "sha256_R27": "cb6f210ecebe21a262f29d260e5b0bd5ab24dc8e5e947c7b836b8e49c9a3f216",
+          "identique": true
+        }
+      },
+      "fichier": "9303-18105652008.npz",
+      "octets": 93683,
+      "sha256": "162cff46777668f913beef649c0d88c58e66a6d9483764f03217ffe64581119e"
+    },
+    "9303-24614689941": {
+      "numero": 15,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "24614689941",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-24614689941.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "fca9f887bcd7d3cbdbfe487c04066328b3d9f1bdece0786bd0d0284a9b4bd42f",
+          "sha256_R27": "fca9f887bcd7d3cbdbfe487c04066328b3d9f1bdece0786bd0d0284a9b4bd42f",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "730199df546b48c22da58553c57cae1f2bbeac3e3bd1f1429f480820be192fcc",
+          "sha256_R27": "730199df546b48c22da58553c57cae1f2bbeac3e3bd1f1429f480820be192fcc",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "541b1791fd1af0aa135e42b34fbe0ad8c65333546f68f9402a1ed48fc68515a4",
+          "sha256_R27": "541b1791fd1af0aa135e42b34fbe0ad8c65333546f68f9402a1ed48fc68515a4",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "92676d819a95d02cd514bf70adc911023c517037eb39a9deee093f5656d621b0",
+          "sha256_R27": "92676d819a95d02cd514bf70adc911023c517037eb39a9deee093f5656d621b0",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "169d4487f74dc29b84c0e44a57f11a20bc5c2a90c4d5e2032612752e960a6bd9",
+          "sha256_R27": "169d4487f74dc29b84c0e44a57f11a20bc5c2a90c4d5e2032612752e960a6bd9",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "aab2d9fa38125fcc7d7b92a87f6e054c84fa09dac255046a11e73f40657ebd3f",
+          "sha256_R27": "aab2d9fa38125fcc7d7b92a87f6e054c84fa09dac255046a11e73f40657ebd3f",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "cc96c47701e5907aa7264d4f9811ed68868a7955723876f62d7b2e3eb7b88be6",
+          "sha256_R27": "cc96c47701e5907aa7264d4f9811ed68868a7955723876f62d7b2e3eb7b88be6",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1024,
+            1024
+          ],
+          "sha256_instrumente": "b011b9ab1163109beb25e0d489045de491944ec928ae6c6350ddcc1518af1603",
+          "sha256_R27": "b011b9ab1163109beb25e0d489045de491944ec928ae6c6350ddcc1518af1603",
+          "identique": true
+        }
+      },
+      "fichier": "9303-24614689941.npz",
+      "octets": 91980,
+      "sha256": "fa47f7e051aab6a41987b129b01368b0c531f1466b8460e9ea119a2e34dcfea8"
+    },
+    "9303-4169106197": {
+      "numero": 16,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "4169106197",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-4169106197.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "914d95935f5942a5c7412fc3e6173b0243c204b565134e7eb5e1d2629f7bd469",
+          "sha256_R27": "914d95935f5942a5c7412fc3e6173b0243c204b565134e7eb5e1d2629f7bd469",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "279427f6a8ba8594102d96b19417af6bc003f4d9fa984a2f70330d973e344b4a",
+          "sha256_R27": "279427f6a8ba8594102d96b19417af6bc003f4d9fa984a2f70330d973e344b4a",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "cbb4d59f6428c537cda60a8f6bfc112f938dbffbbf881f003cd27173c2eb3384",
+          "sha256_R27": "cbb4d59f6428c537cda60a8f6bfc112f938dbffbbf881f003cd27173c2eb3384",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "1656ebc179b465dd2aed9784cefa2ddbc32a6f04f9e1b662f1f22269c2eef3ab",
+          "sha256_R27": "1656ebc179b465dd2aed9784cefa2ddbc32a6f04f9e1b662f1f22269c2eef3ab",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "3c9e94b630f53110ed8230a94754576bb832b3f74f35b41aa1a1a9d641d72def",
+          "sha256_R27": "3c9e94b630f53110ed8230a94754576bb832b3f74f35b41aa1a1a9d641d72def",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "ee40df88a0b26c67e5f04f5fe309ec7ad9c53537f4ed6522084ea3f50cb45f6c",
+          "sha256_R27": "ee40df88a0b26c67e5f04f5fe309ec7ad9c53537f4ed6522084ea3f50cb45f6c",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "fc8cc3722d00747ae51fba7506092ab90e475957ca80f8a04f0d3ec19cfc61f1",
+          "sha256_R27": "fc8cc3722d00747ae51fba7506092ab90e475957ca80f8a04f0d3ec19cfc61f1",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            480,
+            640
+          ],
+          "sha256_instrumente": "8c6120f3b6ea359ad91b7cc734ea501897650e5f97fdc58db6986afaaedada0e",
+          "sha256_R27": "8c6120f3b6ea359ad91b7cc734ea501897650e5f97fdc58db6986afaaedada0e",
+          "identique": true
+        }
+      },
+      "fichier": "9303-4169106197.npz",
+      "octets": 94590,
+      "sha256": "1b627841080ea91053fbbb0b1e0e670acda7df5466775ffa543b9448ba29f66f"
+    },
+    "9303-wc71488242": {
+      "numero": 17,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "wc71488242",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-wc71488242.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "1b17585be833b9475fa38309119dc9e74d7ef7aa5fe95717a0f114dfa47750b2",
+          "sha256_R27": "1b17585be833b9475fa38309119dc9e74d7ef7aa5fe95717a0f114dfa47750b2",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "032eb81d6729703a22a5e3eacccd536d98a8970e766760a2378040366767df6d",
+          "sha256_R27": "032eb81d6729703a22a5e3eacccd536d98a8970e766760a2378040366767df6d",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "8676306857cb34d44968b0a3cc35547256c82e69aad3d8d1a73faca3554c0560",
+          "sha256_R27": "8676306857cb34d44968b0a3cc35547256c82e69aad3d8d1a73faca3554c0560",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "dabd6577a19c0f77427c6940f79077e19f3f4e97b6db3ec42874307b42cde16a",
+          "sha256_R27": "dabd6577a19c0f77427c6940f79077e19f3f4e97b6db3ec42874307b42cde16a",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "cde38d66e22060e33f92efc2b999028cafc75d5aa490679d2d39bd823cc89c40",
+          "sha256_R27": "cde38d66e22060e33f92efc2b999028cafc75d5aa490679d2d39bd823cc89c40",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "25ccd795cb6877c743aebfa8994d0a176fe9392efcb212216cd11249c7e42f27",
+          "sha256_R27": "25ccd795cb6877c743aebfa8994d0a176fe9392efcb212216cd11249c7e42f27",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "ed502e6f537ed3c3a30c736899fdf55fd0ea397701a990de6a7c6ce81b74ca21",
+          "sha256_R27": "ed502e6f537ed3c3a30c736899fdf55fd0ea397701a990de6a7c6ce81b74ca21",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1280,
+            1280
+          ],
+          "sha256_instrumente": "b34e9180677bdafee376977d20c866da229a8e1d37c8cbdf18a78bc2668c4dd2",
+          "sha256_R27": "b34e9180677bdafee376977d20c866da229a8e1d37c8cbdf18a78bc2668c4dd2",
+          "identique": true
+        }
+      },
+      "fichier": "9303-wc71488242.npz",
+      "octets": 92757,
+      "sha256": "6b016ef9723ec3c0bdca7ba10a5006d4d953cc818a1038fb34f56eddd2c04cc8"
+    },
+    "9303-wc11001401": {
+      "numero": 18,
+      "graine": 9303,
+      "pas": 768,
+      "photo": "wc11001401",
+      "appels": [
+        "rpn",
+        "roi",
+        "selection",
+        "masque"
+      ],
+      "photo_entiere": 1,
+      "origine_R27": "r27/sorties/9303-768-wc11001401.npz",
+      "champs": {
+        "rpn_boites": {
+          "dtype": "float32",
+          "dimensions": [
+            1000,
+            4
+          ],
+          "sha256_instrumente": "b18d57325088737f3816a8e89c944265a0728ff9966d03363f98c1041445b073",
+          "sha256_R27": "b18d57325088737f3816a8e89c944265a0728ff9966d03363f98c1041445b073",
+          "identique": true
+        },
+        "rpn_logits": {
+          "dtype": "float32",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "8a044f346bc1da916ab8aca00fec1a35781361d61b73ff4c94e31dcaf26042de",
+          "sha256_R27": "8a044f346bc1da916ab8aca00fec1a35781361d61b73ff4c94e31dcaf26042de",
+          "identique": true
+        },
+        "rpn_ancres": {
+          "dtype": "int64",
+          "dimensions": [
+            1000
+          ],
+          "sha256_instrumente": "33456a8b849c0d6d856159d0b3e86eb804a6ad21a38e5461b13defccdb6a9888",
+          "sha256_R27": "33456a8b849c0d6d856159d0b3e86eb804a6ad21a38e5461b13defccdb6a9888",
+          "identique": true
+        },
+        "boites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            4
+          ],
+          "sha256_instrumente": "fb21b996a11a7d80ff66a210316adca4c0219a9cc25f0a9ec53a4fe8c6a1b2da",
+          "sha256_R27": "fb21b996a11a7d80ff66a210316adca4c0219a9cc25f0a9ec53a4fe8c6a1b2da",
+          "identique": true
+        },
+        "scores": {
+          "dtype": "float32",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "0a0e96cf1998fbbcdc3d956c1a96ff6880a064707b638dbcf24f0fe9b5b5f5ef",
+          "sha256_R27": "0a0e96cf1998fbbcdc3d956c1a96ff6880a064707b638dbcf24f0fe9b5b5f5ef",
+          "identique": true
+        },
+        "propositions": {
+          "dtype": "int64",
+          "dimensions": [
+            12
+          ],
+          "sha256_instrumente": "ceacdd1285d8b763c68c47a42e72d36152516f2fc70f3044d201e1f9dff1d94e",
+          "sha256_R27": "ceacdd1285d8b763c68c47a42e72d36152516f2fc70f3044d201e1f9dff1d94e",
+          "identique": true
+        },
+        "probabilites": {
+          "dtype": "float32",
+          "dimensions": [
+            12,
+            28,
+            28
+          ],
+          "sha256_instrumente": "bf6a84fa29cb563ad423c49a8b10b1a0f8a76db2651f5cc08d2ad9a66493961a",
+          "sha256_R27": "bf6a84fa29cb563ad423c49a8b10b1a0f8a76db2651f5cc08d2ad9a66493961a",
+          "identique": true
+        },
+        "masques": {
+          "dtype": "uint16",
+          "dimensions": [
+            1408,
+            1056
+          ],
+          "sha256_instrumente": "399ce02f4cbb5f913bbb821df8c86b4b583a73cee14571a4584fc2bd7ae5b275",
+          "sha256_R27": "399ce02f4cbb5f913bbb821df8c86b4b583a73cee14571a4584fc2bd7ae5b275",
+          "identique": true
+        }
+      },
+      "fichier": "9303-wc11001401.npz",
+      "octets": 93683,
+      "sha256": "f62aefd5104ab1cbce1d73311e3f502d3d36074073d886076c99eba0638de7ed"
+    }
+  }
+}

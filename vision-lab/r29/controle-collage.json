@@ -1,0 +1,16 @@
+{
+  "boites_verifiees_pixel_par_pixel": 162,
+  "etats": 18,
+  "origines_RPN": [
+    0,
+    499,
+    999
+  ],
+  "geometries": [
+    "rpn",
+    "regression",
+    "borne"
+  ],
+  "ecarts": 0,
+  "passages_modele": 0
+}
