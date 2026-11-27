@@ -1,0 +1,32 @@
+{
+  "reference_R27": "3eff2b26f857808f60920db7c78157e9162bd71b",
+  "gel_R28": "78a9c6cec6268ff9e92d6fbeec7ae6eb3838b4f6",
+  "sources_R27": {
+    "r27/sorties/index.json": "b520484961056c9dee0c88527cc4eca7f17750c3f7bf03ab2de428008077ecf1",
+    "r26/train.json": "40d8665fdcfea189e59908c1cf4f6b7cc1c4778c51a7672f08caeb488d68ecc7",
+    "r20/plafonds.json": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f",
+    "r27/mesurer.py": "494dd30b179c9570d9bbef88632eb9d8325a1306b805152c866c4a6533b1b76b",
+    "r26/archives.py": "659faaf6cc08dea1e8edaa83b14608708a2d43ed71c257cff0a75f73e707d0ec",
+    "r19/affecter.py": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f",
+    "r27/bilan.py": "0fc1bbfdd391ca80930cc3f3e19c0ce32f88743da57b5746fce5d90968e340ec"
+  },
+  "quatre_mesures_identiques": true,
+  "quatre_agregats_identiques": true,
+  "etats_photo": 36,
+  "sorties": 432,
+  "etats_identite": 124,
+  "couples": 1488,
+  "transitions": 12,
+  "repartition_annoncee": {
+    "bascule_boite": 2,
+    "seuil_masque_boite_couvrante": 10,
+    "appariement_seul": 0
+  },
+  "repartition_observee": {
+    "appariement_seul": 0,
+    "bascule_boite": 2,
+    "seuil_masque_boite_couvrante": 10
+  },
+  "accord_revue": true,
+  "passages_modele": 0
+}

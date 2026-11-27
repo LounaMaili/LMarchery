@@ -1,0 +1,323 @@
+{
+  "reference_R27": "3eff2b26f857808f60920db7c78157e9162bd71b",
+  "gel_R28": "78a9c6cec6268ff9e92d6fbeec7ae6eb3838b4f6",
+  "fichiers": {
+    "r27/sorties/index.json": {
+      "role": "Référence R27 figée",
+      "octets": 20592,
+      "sha256": "b520484961056c9dee0c88527cc4eca7f17750c3f7bf03ab2de428008077ecf1"
+    },
+    "r26/train.json": {
+      "role": "Référence R27 figée",
+      "octets": 20883,
+      "sha256": "40d8665fdcfea189e59908c1cf4f6b7cc1c4778c51a7672f08caeb488d68ecc7"
+    },
+    "r20/plafonds.json": {
+      "role": "Référence R27 figée",
+      "octets": 61307,
+      "sha256": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f"
+    },
+    "r27/mesurer.py": {
+      "role": "Référence R27 figée",
+      "octets": 6340,
+      "sha256": "494dd30b179c9570d9bbef88632eb9d8325a1306b805152c866c4a6533b1b76b"
+    },
+    "r26/archives.py": {
+      "role": "Référence R27 figée",
+      "octets": 8501,
+      "sha256": "659faaf6cc08dea1e8edaa83b14608708a2d43ed71c257cff0a75f73e707d0ec"
+    },
+    "r19/affecter.py": {
+      "role": "Référence R27 figée",
+      "octets": 2018,
+      "sha256": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f"
+    },
+    "r27/bilan.py": {
+      "role": "Référence R27 figée",
+      "octets": 8299,
+      "sha256": "0fc1bbfdd391ca80930cc3f3e19c0ce32f88743da57b5746fce5d90968e340ec"
+    },
+    "r27/mesures/9302-512.json": {
+      "role": "Contrôle historique rejoué",
+      "octets": 95582,
+      "sha256": "a95e07a3d23738ef2dc7a1bb1fe374be22e0b7f95e33d6d139c778c31c53d938"
+    },
+    "r27/mesures/9302-768.json": {
+      "role": "Contrôle historique rejoué",
+      "octets": 95489,
+      "sha256": "7c23f1cba18c8a299fd6633fecff8378db5b89757cc45d6b914d68f7722f92a5"
+    },
+    "r27/mesures/9303-512.json": {
+      "role": "Contrôle historique rejoué",
+      "octets": 95365,
+      "sha256": "8a4c80975eb45adbdd85a9089eea9b1c32dd87396bddfa64956728ed019ac2d5"
+    },
+    "r27/mesures/9303-768.json": {
+      "role": "Contrôle historique rejoué",
+      "octets": 95199,
+      "sha256": "155fc8bc59ae36833022173ad88cbb5e948f2168f731d8d422de466cc6d928fb"
+    },
+    "r27/mesures/courbes.json": {
+      "role": "Agrégats R27 des quatre contrôles relus",
+      "octets": 14531,
+      "sha256": "cec284e9b48a189bfe245ed642e29ecbeec5a02df8e2ef570375ff6cb0d5e29c"
+    },
+    "r27/environnement.json": {
+      "role": "Origine des roues et de CPython",
+      "octets": 22785,
+      "sha256": "facf690cf9452240c4e3498097a61b9222ab047baad995af0449f6b74a18ca30"
+    },
+    "r27/inventaire-local.json": {
+      "role": "Registre historique des capsules locales",
+      "octets": 40569,
+      "sha256": "8a9d2c0ffd5b7b0a21df23f2cbbaf1cb53923d04c40e7dcf54ab9500b51e41e5"
+    },
+    "r27/requirements.lock": {
+      "role": "Dépendances de collage R27",
+      "octets": 5137,
+      "sha256": "b4bf49a32f36a6d15c300db1f938fe1901ffa0dca261abb508d6c64eb5776868"
+    },
+    "r27/pile-elf.json": {
+      "role": "Adaptation ELF historique",
+      "octets": 293,
+      "sha256": "45f462f369edb533a204cd2122910ed7ca19f99b4e034b0a62f344f9b765f0b1"
+    },
+    "requirements-ci.txt": {
+      "role": "Dépendances de mesure",
+      "octets": 289,
+      "sha256": "b4650e1278664203008043d8cabcb086a6768a8318731709ad2dda53e785e5c5"
+    },
+    "r26/inventaire.json": {
+      "role": "Sources, crédits et licences",
+      "octets": 7348,
+      "sha256": "ed75564f7b06099b9d7bfdbfb69e6b163b98429fba894e1d76043268c5b801d8"
+    },
+    "r18/masques/13-01.png": {
+      "role": "Carte indexée native du train 13-01",
+      "octets": 3550,
+      "sha256": "bf61494f45ca6bf1e84475865c3cf5e6753b1d86d8250fc8b0793887aebd4d06"
+    },
+    "r18/masques/70-01.png": {
+      "role": "Carte indexée native du train 70-01",
+      "octets": 3485,
+      "sha256": "d8f25fc48ccaf2a1c9cddf2e6eca5992122b0acaa5f6c8a03a1962eab88bdf1f"
+    },
+    "r18/masques/7245527662.png": {
+      "role": "Carte indexée native du train 7245527662",
+      "octets": 3475,
+      "sha256": "dd1f1a54aac5ce78700f3decdcff7abdc2b27db3ebf82a0793cda3d69da4d13c"
+    },
+    "r18/masques/5115614018.png": {
+      "role": "Carte indexée native du train 5115614018",
+      "octets": 1840,
+      "sha256": "faeda15833b9f4433c0138b0514fcc77c291be744224014c812f6617b017d8c4"
+    },
+    "r18/masques/18105652008.png": {
+      "role": "Carte indexée native du train 18105652008",
+      "octets": 1746,
+      "sha256": "742f3480829a88a56ffb6c0c4a004a3ba5862e5838d2c3794f2c59b35ad80f2d"
+    },
+    "r18/masques/24614689941.png": {
+      "role": "Carte indexée native du train 24614689941",
+      "octets": 2744,
+      "sha256": "e05a381f237277c0b601c4f18fc2efa91fb5ee3c9002bf3df8cdc8e1e4332d59"
+    },
+    "r18/masques/4169106197.png": {
+      "role": "Carte indexée native du train 4169106197",
+      "octets": 1025,
+      "sha256": "3475c4e6f4b60e34883e8c43075aa872e332ad091ea4b332645cb1f3c1c3fcf8"
+    },
+    "r18/masques/wc71488242.png": {
+      "role": "Carte indexée native du train wc71488242",
+      "octets": 5109,
+      "sha256": "3dda8833e52bf305ef9934d9ae10a3d4266e3651a3be353b2ce64c856d3e174e"
+    },
+    "r18/masques/wc11001401.png": {
+      "role": "Carte indexée native du train wc11001401",
+      "octets": 3756,
+      "sha256": "e72720a37ceb6acd3f42fd7b19b7f6e7382b0ada447ad04a05683f22a6bb8d32"
+    },
+    "r27/sorties/9302-512-13-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-13-01",
+      "octets": 58247,
+      "sha256": "00004cb163d81f0e8c7f81c90d0e451999a2600644f743b0fe39aecd2f8165b8"
+    },
+    "r27/sorties/9302-512-70-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-70-01",
+      "octets": 57723,
+      "sha256": "1b5101861e73286c40a17a7ac0866dd535437bcbba334103359c0e30f5f384e0"
+    },
+    "r27/sorties/9302-512-7245527662.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-7245527662",
+      "octets": 63562,
+      "sha256": "29a6eca8ba05434d3b853bfe8a77e027b43a1d70a975bf8873eeda517ee252c6"
+    },
+    "r27/sorties/9302-512-5115614018.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-5115614018",
+      "octets": 55067,
+      "sha256": "85d67d663ed4fd616df3119bc897a27d03909e5352b7e897035ef30852134fc5"
+    },
+    "r27/sorties/9302-512-18105652008.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-18105652008",
+      "octets": 55464,
+      "sha256": "bbc554c717906045b9b52baf3318d2b5646142695679fbbba6d622acecccf41f"
+    },
+    "r27/sorties/9302-512-24614689941.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-24614689941",
+      "octets": 59911,
+      "sha256": "3cf5700a7f4fbff341049fe8461204f79389951ff9a0a2617c5b047488b67469"
+    },
+    "r27/sorties/9302-512-4169106197.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-4169106197",
+      "octets": 52844,
+      "sha256": "746c96dfe594ba5edfa8e4d4c1e154b6193970567d0788ddd2d5c4aa5cd49424"
+    },
+    "r27/sorties/9302-512-wc71488242.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-wc71488242",
+      "octets": 62706,
+      "sha256": "93a1d8db31b20854ed31961093e5c17bf9c51a5000692cbe3ad76695e0a049f7"
+    },
+    "r27/sorties/9302-512-wc11001401.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-512-wc11001401",
+      "octets": 60559,
+      "sha256": "ea8775e18b73efc8731daceba772444598e8b216316371b5ae4042e65c273e76"
+    },
+    "r27/sorties/9302-768-13-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-13-01",
+      "octets": 58731,
+      "sha256": "6eb9a96c3696ef816663b3787f41ccd1320f458ca565f09fb905ff77df90b995"
+    },
+    "r27/sorties/9302-768-70-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-70-01",
+      "octets": 58513,
+      "sha256": "0f6a58ea513d9378cbf5e1c156e2796f4968bea397ce47a5f6d2059717aca6bc"
+    },
+    "r27/sorties/9302-768-7245527662.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-7245527662",
+      "octets": 62586,
+      "sha256": "6f73a654e0710df4d4884a8e6bf8104d0acfc8bc475223245f68e778c4f4641a"
+    },
+    "r27/sorties/9302-768-5115614018.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-5115614018",
+      "octets": 53856,
+      "sha256": "388316cb1774e0236f68cf6e79f979dfbb4fc5a6ca4e17d38a35d0082a04ed51"
+    },
+    "r27/sorties/9302-768-18105652008.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-18105652008",
+      "octets": 55192,
+      "sha256": "cbbc92e01a2ccd29694d0cd5a62fb2206bfa149b21802643ccb4b097aacba24d"
+    },
+    "r27/sorties/9302-768-24614689941.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-24614689941",
+      "octets": 61231,
+      "sha256": "e4838395eb70397c61c6e602c571800e3f6ea6a1e170946697de704c34258f66"
+    },
+    "r27/sorties/9302-768-4169106197.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-4169106197",
+      "octets": 54260,
+      "sha256": "f5dc8267982d3f3ec901b1524208d95b3f89945adcf13eac6c3e6a9df27c41fc"
+    },
+    "r27/sorties/9302-768-wc71488242.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-wc71488242",
+      "octets": 62100,
+      "sha256": "b84398c1545a07e2923976510c08b45976c552c040ac8ee3f41ceb77f1ddbfa3"
+    },
+    "r27/sorties/9302-768-wc11001401.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9302-768-wc11001401",
+      "octets": 60371,
+      "sha256": "4ed5e651a4609976d9fdd5708c76925b2bac91bea8280248a610f72e6438cc5f"
+    },
+    "r27/sorties/9303-512-13-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-13-01",
+      "octets": 58892,
+      "sha256": "2965f90a0ad83767c44404ae963035549c38d0527dee4a388111809fef2362af"
+    },
+    "r27/sorties/9303-512-70-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-70-01",
+      "octets": 58303,
+      "sha256": "5fb02e89c2bfcae44e5b7481be9da8d077a3f3de63d13bdb4f27855fc00da129"
+    },
+    "r27/sorties/9303-512-7245527662.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-7245527662",
+      "octets": 62096,
+      "sha256": "87b04c44a84e7818e8b0594ce3e6fc0f35aad3071cc6e86f66ba2ea3b8f8cb30"
+    },
+    "r27/sorties/9303-512-5115614018.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-5115614018",
+      "octets": 53119,
+      "sha256": "a69f7945f0182d99fdf063d81d75505ec65cdce935d4dc60c4a0b272dd8b12ba"
+    },
+    "r27/sorties/9303-512-18105652008.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-18105652008",
+      "octets": 55777,
+      "sha256": "95ed3b3e9f8ba0c43e8f365159236444afd7f35d02fad527e21dcbd1e017899a"
+    },
+    "r27/sorties/9303-512-24614689941.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-24614689941",
+      "octets": 59509,
+      "sha256": "39c711c49ef83bba717378b6c60d9b8ba1616554cc6f614279c5b3b12426a09d"
+    },
+    "r27/sorties/9303-512-4169106197.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-4169106197",
+      "octets": 52997,
+      "sha256": "2e87596a4b91f7be55f928e1fd36edcf929b081419d4343915734b972feade81"
+    },
+    "r27/sorties/9303-512-wc71488242.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-wc71488242",
+      "octets": 62486,
+      "sha256": "11eaf5dce497be346acb3cb75bef6bf263dc73ce8eda86fe12e1b41a43f38626"
+    },
+    "r27/sorties/9303-512-wc11001401.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-512-wc11001401",
+      "octets": 60423,
+      "sha256": "d850af9aa2c772a8db518019e13d3d6af31eb6b8adc02b61d4cd3ae94b276804"
+    },
+    "r27/sorties/9303-768-13-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-13-01",
+      "octets": 57730,
+      "sha256": "9c05c7ef3194b3d9fe6f30203c226f54ef8f66e8d3aedf13a32be166841efb96"
+    },
+    "r27/sorties/9303-768-70-01.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-70-01",
+      "octets": 57132,
+      "sha256": "f31bae80951701e18887513591ce401d676f80fadb9d2773f92069cbf52d1314"
+    },
+    "r27/sorties/9303-768-7245527662.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-7245527662",
+      "octets": 61070,
+      "sha256": "1203878b337b230f695ca1586225d2535c1941a184dc0c4e59b214e361a3a6d9"
+    },
+    "r27/sorties/9303-768-5115614018.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-5115614018",
+      "octets": 54661,
+      "sha256": "6259ca44a77aea033053eac6921d383c9d617733c775cafdb067de2e30a8e936"
+    },
+    "r27/sorties/9303-768-18105652008.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-18105652008",
+      "octets": 55207,
+      "sha256": "90e9ca48864d74274e6824fc0e755daae5644ac28897e230255a3ec797e28833"
+    },
+    "r27/sorties/9303-768-24614689941.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-24614689941",
+      "octets": 59560,
+      "sha256": "2ecb86287584d75d44568bd9548ca9ceef0a8f2761f70107e14a57347f056016"
+    },
+    "r27/sorties/9303-768-4169106197.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-4169106197",
+      "octets": 53414,
+      "sha256": "5e10f4c2af8fe1c40ca14167566e9e251dbf7382ae157ad39381e1330003b7dc"
+    },
+    "r27/sorties/9303-768-wc71488242.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-wc71488242",
+      "octets": 62557,
+      "sha256": "d775b700e3de4d2d1a8356908f6664f2869ac97de511714886287caa9695e2ff"
+    },
+    "r27/sorties/9303-768-wc11001401.npz": {
+      "role": "Probabilités, sorties et RPN archivés 9303-768-wc11001401",
+      "octets": 60909,
+      "sha256": "e143eb3574350c304b789a2f50bbc258accdc760cd2eb6911b854988c8ee6e6b"
+    }
+  },
+  "cartes_pleines": "supports/index.json",
+  "nouveaux_poids_ou_capsules_volumineuses": []
+}

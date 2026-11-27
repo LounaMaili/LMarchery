@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="405" viewBox="0 0 820 405" role="img" aria-labelledby="title desc">
+  <title id="title">Identités séparées et borne globale</title>
+  <desc id="desc">Quatre contrôles du train R27. Colonnes groupées pour le témoin plein, le masque appris et la borne un à un.</desc>
+  <rect width="820" height="405" fill="#ffffff" />
+  <g font-family="sans-serif" fill="#263540">
+    <text x="26" y="35" font-size="25" font-weight="bold">Identités séparées sur 31</text>
+    <text x="26" y="62" font-size="15">Chaque groupe reprend les douze mêmes boîtes finales par photo.</text>
+    <rect x="40" y="84" width="15" height="15" fill="#8c729d" />
+    <text x="63" y="97" font-size="14">Grille pleine</text>
+    <rect x="260" y="84" width="15" height="15" fill="#087767" />
+    <text x="283" y="97" font-size="14">Masque appris</text>
+    <rect x="480" y="84" width="15" height="15" fill="#436aa5" />
+    <text x="503" y="97" font-size="14">Borne un à un</text>
+    <line x1="49" y1="334" x2="793" y2="334" stroke="#dce3e8" />
+    <text x="40" y="338" font-size="13" text-anchor="end">0</text>
+    <line x1="49" y1="299" x2="793" y2="299" stroke="#dce3e8" />
+    <text x="40" y="303" font-size="13" text-anchor="end">5</text>
+    <line x1="49" y1="264" x2="793" y2="264" stroke="#dce3e8" />
+    <text x="40" y="268" font-size="13" text-anchor="end">10</text>
+    <line x1="49" y1="229" x2="793" y2="229" stroke="#dce3e8" />
+    <text x="40" y="233" font-size="13" text-anchor="end">15</text>
+    <line x1="49" y1="194" x2="793" y2="194" stroke="#dce3e8" />
+    <text x="40" y="198" font-size="13" text-anchor="end">20</text>
+    <line x1="49" y1="159" x2="793" y2="159" stroke="#dce3e8" />
+    <text x="40" y="163" font-size="13" text-anchor="end">25</text>
+    <line x1="49" y1="117" x2="793" y2="117" stroke="#dce3e8" />
+    <text x="40" y="121" font-size="13" text-anchor="end">31</text>
+    <rect x="79" y="250" width="30" height="84" fill="#8c729d" />
+    <text x="94" y="243" font-size="15" text-anchor="middle" font-weight="bold">12</text>
+    <rect x="115" y="215" width="30" height="119" fill="#087767" />
+    <text x="130" y="208" font-size="15" text-anchor="middle" font-weight="bold">17</text>
+    <rect x="151" y="201" width="30" height="133" fill="#436aa5" />
+    <text x="166" y="194" font-size="15" text-anchor="middle" font-weight="bold">19</text>
+    <text x="130" y="361" font-size="15" text-anchor="middle">9302 / 512</text>
+    <rect x="263" y="243" width="30" height="91" fill="#8c729d" />
+    <text x="278" y="236" font-size="15" text-anchor="middle" font-weight="bold">13</text>
+    <rect x="299" y="215" width="30" height="119" fill="#087767" />
+    <text x="314" y="208" font-size="15" text-anchor="middle" font-weight="bold">17</text>
+    <rect x="335" y="201" width="30" height="133" fill="#436aa5" />
+    <text x="350" y="194" font-size="15" text-anchor="middle" font-weight="bold">19</text>
+    <text x="314" y="361" font-size="15" text-anchor="middle">9302 / 768</text>
+    <rect x="447" y="271" width="30" height="63" fill="#8c729d" />
+    <text x="462" y="264" font-size="15" text-anchor="middle" font-weight="bold">9</text>
+    <rect x="483" y="257" width="30" height="77" fill="#087767" />
+    <text x="498" y="250" font-size="15" text-anchor="middle" font-weight="bold">11</text>
+    <rect x="519" y="236" width="30" height="98" fill="#436aa5" />
+    <text x="534" y="229" font-size="15" text-anchor="middle" font-weight="bold">14</text>
+    <text x="498" y="361" font-size="15" text-anchor="middle">9303 / 512</text>
+    <rect x="631" y="243" width="30" height="91" fill="#8c729d" />
+    <text x="646" y="236" font-size="15" text-anchor="middle" font-weight="bold">13</text>
+    <rect x="667" y="215" width="30" height="119" fill="#087767" />
+    <text x="682" y="208" font-size="15" text-anchor="middle" font-weight="bold">17</text>
+    <rect x="703" y="201" width="30" height="133" fill="#436aa5" />
+    <text x="718" y="194" font-size="15" text-anchor="middle" font-weight="bold">19</text>
+    <text x="682" y="361" font-size="15" text-anchor="middle">9303 / 768</text>
+    <text x="415" y="388" font-size="13" text-anchor="middle">Graine / pas</text>
+  </g>
+</svg>

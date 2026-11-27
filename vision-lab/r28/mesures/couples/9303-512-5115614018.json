@@ -1,0 +1,2870 @@
+{
+  "provenance": "Danielle Walquist Lynch",
+  "supports": [
+    "lynch"
+  ],
+  "sorties": [
+    {
+      "q": 0,
+      "q_RPN": 20,
+      "score": 0.9995562434196472,
+      "boite": [
+        421.2581481933594,
+        294.2960510253906,
+        614.4097900390625,
+        304.794921875
+      ],
+      "boite_RPN": [
+        403.3865966796875,
+        292.45953369140625,
+        601.708984375,
+        304.19732666015625
+      ],
+      "logit_RPN": 8.994780540466309,
+      "ancre_RPN": 15156,
+      "appris": {
+        "aire": 2048,
+        "aire_evaluable": 306,
+        "fond": 0,
+        "ignore": 1742,
+        "identites_25": [
+          "5115614018:1"
+        ],
+        "statut": "apparie"
+      },
+      "plein": {
+        "aire": 2123,
+        "aire_evaluable": 306,
+        "fond": 0,
+        "ignore": 1817,
+        "identites_25": [
+          "5115614018:1"
+        ],
+        "statut": "apparie"
+      }
+    },
+    {
+      "q": 1,
+      "q_RPN": 57,
+      "score": 0.9992519021034241,
+      "boite": [
+        343.3584899902344,
+        403.7158203125,
+        577.528564453125,
+        410.9255676269531
+      ],
+      "boite_RPN": [
+        335.34906005859375,
+        403.80157470703125,
+        576.4423217773438,
+        410.92694091796875
+      ],
+      "logit_RPN": 7.126438140869141,
+      "ancre_RPN": 20517,
+      "appris": {
+        "aire": 1570,
+        "aire_evaluable": 156,
+        "fond": 0,
+        "ignore": 1414,
+        "identites_25": [
+          "5115614018:4"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1645,
+        "aire_evaluable": 156,
+        "fond": 0,
+        "ignore": 1489,
+        "identites_25": [
+          "5115614018:4"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 2,
+      "q_RPN": 76,
+      "score": 0.9987843632698059,
+      "boite": [
+        348.8387451171875,
+        400.9055480957031,
+        566.953369140625,
+        407.83282470703125
+      ],
+      "boite_RPN": [
+        343.3132019042969,
+        400.9255065917969,
+        576.919921875,
+        407.8219299316406
+      ],
+      "logit_RPN": 6.230622291564941,
+      "ancre_RPN": 20508,
+      "appris": {
+        "aire": 1414,
+        "aire_evaluable": 204,
+        "fond": 0,
+        "ignore": 1210,
+        "identites_25": [
+          "5115614018:4"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1526,
+        "aire_evaluable": 204,
+        "fond": 0,
+        "ignore": 1322,
+        "identites_25": [
+          "5115614018:4"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 3,
+      "q_RPN": 105,
+      "score": 0.9987730383872986,
+      "boite": [
+        363.01910400390625,
+        397.8663635253906,
+        543.5055541992188,
+        406.4332275390625
+      ],
+      "boite_RPN": [
+        349.68035888671875,
+        397.7423400878906,
+        531.1351928710938,
+        406.1470031738281
+      ],
+      "logit_RPN": 5.418910503387451,
+      "ancre_RPN": 20115,
+      "appris": {
+        "aire": 1307,
+        "aire_evaluable": 174,
+        "fond": 0,
+        "ignore": 1133,
+        "identites_25": [
+          "5115614018:4"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1448,
+        "aire_evaluable": 174,
+        "fond": 0,
+        "ignore": 1274,
+        "identites_25": [
+          "5115614018:4"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 4,
+      "q_RPN": 204,
+      "score": 0.9987009763717651,
+      "boite": [
+        332.8502197265625,
+        407.2843933105469,
+        589.1786499023438,
+        413.566162109375
+      ],
+      "boite_RPN": [
+        330.8659973144531,
+        407.31903076171875,
+        591.084228515625,
+        413.7018127441406
+      ],
+      "logit_RPN": 3.080256700515747,
+      "ancre_RPN": 20523,
+      "appris": {
+        "aire": 1505,
+        "aire_evaluable": 279,
+        "fond": 0,
+        "ignore": 1226,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1790,
+        "aire_evaluable": 465,
+        "fond": 0,
+        "ignore": 1325,
+        "identites_25": [
+          "5115614018:4",
+          "5115614018:5"
+        ],
+        "statut": "fusion"
+      }
+    },
+    {
+      "q": 5,
+      "q_RPN": 460,
+      "score": 0.99864262342453,
+      "boite": [
+        298.7391052246094,
+        409.3525085449219,
+        505.8208923339844,
+        418.78302001953125
+      ],
+      "boite_RPN": [
+        282.16357421875,
+        409.5906982421875,
+        484.09381103515625,
+        418.8814392089844
+      ],
+      "logit_RPN": 0.8678796291351318,
+      "ancre_RPN": 21258,
+      "appris": {
+        "aire": 1850,
+        "aire_evaluable": 333,
+        "fond": 0,
+        "ignore": 1517,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 2070,
+        "aire_evaluable": 333,
+        "fond": 0,
+        "ignore": 1737,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 6,
+      "q_RPN": 191,
+      "score": 0.9986359477043152,
+      "boite": [
+        329.51409912109375,
+        387.30157470703125,
+        438.19952392578125,
+        393.77703857421875
+      ],
+      "boite_RPN": [
+        332.6753234863281,
+        387.7491149902344,
+        436.2917175292969,
+        394.3196716308594
+      ],
+      "logit_RPN": 3.252762794494629,
+      "ancre_RPN": 20097,
+      "appris": {
+        "aire": 742,
+        "aire_evaluable": 60,
+        "fond": 0,
+        "ignore": 682,
+        "identites_25": [],
+        "statut": "non_resolu"
+      },
+      "plein": {
+        "aire": 756,
+        "aire_evaluable": 64,
+        "fond": 0,
+        "ignore": 692,
+        "identites_25": [],
+        "statut": "non_resolu"
+      }
+    },
+    {
+      "q": 7,
+      "q_RPN": 68,
+      "score": 0.9984198808670044,
+      "boite": [
+        312.4581298828125,
+        380.24407958984375,
+        467.8692626953125,
+        390.3045349121094
+      ],
+      "boite_RPN": [
+        311.0337829589844,
+        381.901123046875,
+        465.0889587402344,
+        391.6142578125
+      ],
+      "logit_RPN": 6.504651069641113,
+      "ancre_RPN": 19719,
+      "appris": {
+        "aire": 1522,
+        "aire_evaluable": 202,
+        "fond": 0,
+        "ignore": 1320,
+        "identites_25": [
+          "5115614018:2"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1560,
+        "aire_evaluable": 213,
+        "fond": 0,
+        "ignore": 1347,
+        "identites_25": [
+          "5115614018:2"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 8,
+      "q_RPN": 8,
+      "score": 0.9981926083564758,
+      "boite": [
+        415.51104736328125,
+        291.1466064453125,
+        583.2075805664062,
+        301.97454833984375
+      ],
+      "boite_RPN": [
+        403.0108947753906,
+        288.8575744628906,
+        574.9598388671875,
+        301.1737976074219
+      ],
+      "logit_RPN": 11.075474739074707,
+      "ancre_RPN": 14769,
+      "appris": {
+        "aire": 1790,
+        "aire_evaluable": 151,
+        "fond": 0,
+        "ignore": 1639,
+        "identites_25": [
+          "5115614018:1"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1837,
+        "aire_evaluable": 151,
+        "fond": 0,
+        "ignore": 1686,
+        "identites_25": [
+          "5115614018:1"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 9,
+      "q_RPN": 520,
+      "score": 0.9977557063102722,
+      "boite": [
+        333.3208923339844,
+        412.8409118652344,
+        493.1880798339844,
+        423.5016174316406
+      ],
+      "boite_RPN": [
+        329.14239501953125,
+        413.6826477050781,
+        472.6153564453125,
+        424.9620666503906
+      ],
+      "logit_RPN": 0.5628535747528076,
+      "ancre_RPN": 21252,
+      "appris": {
+        "aire": 1507,
+        "aire_evaluable": 213,
+        "fond": 0,
+        "ignore": 1294,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1754,
+        "aire_evaluable": 214,
+        "fond": 0,
+        "ignore": 1540,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 10,
+      "q_RPN": 125,
+      "score": 0.997735857963562,
+      "boite": [
+        318.5731201171875,
+        385.3847961425781,
+        465.8199462890625,
+        392.1235656738281
+      ],
+      "boite_RPN": [
+        316.2644348144531,
+        386.564697265625,
+        468.0658874511719,
+        392.87811279296875
+      ],
+      "logit_RPN": 4.946440696716309,
+      "ancre_RPN": 20100,
+      "appris": {
+        "aire": 1002,
+        "aire_evaluable": 106,
+        "fond": 0,
+        "ignore": 896,
+        "identites_25": [
+          "5115614018:2"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1029,
+        "aire_evaluable": 106,
+        "fond": 0,
+        "ignore": 923,
+        "identites_25": [
+          "5115614018:2"
+        ],
+        "statut": "dedoublement"
+      }
+    },
+    {
+      "q": 11,
+      "q_RPN": 290,
+      "score": 0.9976981282234192,
+      "boite": [
+        341.5543212890625,
+        405.1510925292969,
+        484.77325439453125,
+        414.1479797363281
+      ],
+      "boite_RPN": [
+        337.67645263671875,
+        405.2254333496094,
+        468.38861083984375,
+        414.1380920410156
+      ],
+      "logit_RPN": 2.128142833709717,
+      "ancre_RPN": 20868,
+      "appris": {
+        "aire": 1269,
+        "aire_evaluable": 264,
+        "fond": 0,
+        "ignore": 1005,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      },
+      "plein": {
+        "aire": 1287,
+        "aire_evaluable": 271,
+        "fond": 0,
+        "ignore": 1016,
+        "identites_25": [
+          "5115614018:5"
+        ],
+        "statut": "dedoublement"
+      }
+    }
+  ],
+  "identites": {
+    "5115614018:1": {
+      "identite": "5115614018:1",
+      "provenance": "Danielle Walquist Lynch",
+      "indice": 1,
+      "boite_reference": [
+        455,
+        298,
+        631,
+        307
+      ],
+      "positifs": 355,
+      "seuil_dice": 0.9,
+      "entree_valide": true,
+      "meilleur_RPN": {
+        "q": 159,
+        "iou": 0.6855095301126605,
+        "boite": [
+          455.52581787109375,
+          298.52996826171875,
+          682.5795288085938,
+          306.27960205078125
+        ],
+        "logit": 4.03367280960083,
+        "ancre": 13665
+      },
+      "meilleure_boite": {
+        "q": 0,
+        "boite": [
+          421.2581481933594,
+          294.2960510253906,
+          614.4097900390625,
+          304.794921875
+        ],
+        "score": 0.9995562434196472,
+        "iou_boite": 0.4283538273993309,
+        "dice": 0.9258698940998488,
+        "marge": 0.025869894099848745
+      },
+      "meilleur_dice": {
+        "q": 0,
+        "boite": [
+          421.2581481933594,
+          294.2960510253906,
+          614.4097900390625,
+          304.794921875
+        ],
+        "score": 0.9995562434196472,
+        "iou_boite": 0.4283538273993309,
+        "dice": 0.9258698940998488,
+        "marge": 0.025869894099848745
+      },
+      "meme_q_meilleurs": true,
+      "appris": {
+        "admissibles": [
+          0
+        ],
+        "separes": [
+          0
+        ],
+        "q_admis": 0,
+        "q_separe": 0,
+        "q_dice_total": 0,
+        "dice_attribue": 0.9258698940998488,
+        "meilleur_q": 0,
+        "meilleur_dice": 0.9258698940998488,
+        "couverture_25": [
+          0,
+          8
+        ],
+        "dedoublee": true,
+        "q_en_fusion": []
+      },
+      "plein": {
+        "admissibles": [
+          0
+        ],
+        "separes": [
+          0
+        ],
+        "q_admis": 0,
+        "q_separe": 0,
+        "q_dice_total": 0,
+        "dice_attribue": 0.9258698940998488,
+        "meilleur_q": 0,
+        "meilleur_dice": 0.9258698940998488,
+        "couverture_25": [
+          0,
+          8
+        ],
+        "dedoublee": true,
+        "q_en_fusion": []
+      },
+      "oracle": {
+        "admissibles": [
+          0
+        ],
+        "q_attribue": 0,
+        "meilleur_q": 0,
+        "meilleur_dice": 0.9258698940998488
+      },
+      "couples": [
+        {
+          "q": 0,
+          "iou_boite": 0.4283538273993309,
+          "dice_appris": 0.9258698940998488,
+          "dice_plein": 0.9258698940998488,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": 0.025869894099848745,
+          "marge_plein": 0.025869894099848745,
+          "appris_admis": true,
+          "plein_admis": true,
+          "appris_separe": true,
+          "plein_separe": true,
+          "intersection_omega": 306,
+          "dice_oracle": 0.9258698940998488,
+          "marge_oracle": 0.025869894099848745,
+          "oracle_suffisant": true,
+          "pixels_appris": {
+            "identite": 306,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1742
+          },
+          "fraction_ignoree_appris": 0.8505859375,
+          "pixels_plein": {
+            "identite": 306,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1817
+          },
+          "fraction_ignoree_plein": 0.855864342910975
+        },
+        {
+          "q": 1,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1414
+          },
+          "fraction_ignoree_appris": 0.9006369426751593,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1489
+          },
+          "fraction_ignoree_plein": 0.9051671732522797
+        },
+        {
+          "q": 2,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1210
+          },
+          "fraction_ignoree_appris": 0.8557284299858557,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1322
+          },
+          "fraction_ignoree_plein": 0.8663171690694627
+        },
+        {
+          "q": 3,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1133
+          },
+          "fraction_ignoree_appris": 0.8668706962509564,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1274
+          },
+          "fraction_ignoree_plein": 0.8798342541436464
+        },
+        {
+          "q": 4,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 279,
+            "fond_certifie": 0,
+            "ignores": 1226
+          },
+          "fraction_ignoree_appris": 0.8146179401993355,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 465,
+            "fond_certifie": 0,
+            "ignores": 1325
+          },
+          "fraction_ignoree_plein": 0.7402234636871509
+        },
+        {
+          "q": 5,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1517
+          },
+          "fraction_ignoree_appris": 0.82,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1737
+          },
+          "fraction_ignoree_plein": 0.8391304347826087
+        },
+        {
+          "q": 6,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 60,
+            "fond_certifie": 0,
+            "ignores": 682
+          },
+          "fraction_ignoree_appris": 0.9191374663072777,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 64,
+            "fond_certifie": 0,
+            "ignores": 692
+          },
+          "fraction_ignoree_plein": 0.9153439153439153
+        },
+        {
+          "q": 7,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 202,
+            "fond_certifie": 0,
+            "ignores": 1320
+          },
+          "fraction_ignoree_appris": 0.8672798948751642,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1347
+          },
+          "fraction_ignoree_plein": 0.8634615384615385
+        },
+        {
+          "q": 8,
+          "iou_boite": 0.17630613172463155,
+          "dice_appris": 0.5968379446640316,
+          "dice_plein": 0.5968379446640316,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.3031620553359684,
+          "marge_plein": -0.3031620553359684,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 151,
+          "dice_oracle": 0.5968379446640316,
+          "marge_oracle": -0.3031620553359684,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 151,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1639
+          },
+          "fraction_ignoree_appris": 0.9156424581005587,
+          "pixels_plein": {
+            "identite": 151,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1686
+          },
+          "fraction_ignoree_plein": 0.9178007621121393
+        },
+        {
+          "q": 9,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1294
+          },
+          "fraction_ignoree_appris": 0.8586595885865959,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 214,
+            "fond_certifie": 0,
+            "ignores": 1540
+          },
+          "fraction_ignoree_plein": 0.8779931584948689
+        },
+        {
+          "q": 10,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 896
+          },
+          "fraction_ignoree_appris": 0.8942115768463074,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 923
+          },
+          "fraction_ignoree_plein": 0.8969873663751214
+        },
+        {
+          "q": 11,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 264,
+            "fond_certifie": 0,
+            "ignores": 1005
+          },
+          "fraction_ignoree_appris": 0.7919621749408984,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 271,
+            "fond_certifie": 0,
+            "ignores": 1016
+          },
+          "fraction_ignoree_plein": 0.7894327894327894
+        }
+      ]
+    },
+    "5115614018:2": {
+      "identite": "5115614018:2",
+      "provenance": "Danielle Walquist Lynch",
+      "indice": 2,
+      "boite_reference": [
+        312,
+        376,
+        467,
+        391
+      ],
+      "positifs": 295,
+      "seuil_dice": 0.9,
+      "entree_valide": true,
+      "meilleur_RPN": {
+        "q": 47,
+        "iou": 0.8851099246569935,
+        "boite": [
+          315.7826843261719,
+          375.2515563964844,
+          462.7312316894531,
+          391.3767395019531
+        ],
+        "logit": 7.606024742126465,
+        "ancre": 18195
+      },
+      "meilleure_boite": {
+        "q": 7,
+        "boite": [
+          312.4581298828125,
+          380.24407958984375,
+          467.8692626953125,
+          390.3045349121094
+        ],
+        "score": 0.9984198808670044,
+        "iou_boite": 0.6662088020793786,
+        "dice": 0.8128772635814889,
+        "marge": -0.0871227364185111
+      },
+      "meilleur_dice": {
+        "q": 7,
+        "boite": [
+          312.4581298828125,
+          380.24407958984375,
+          467.8692626953125,
+          390.3045349121094
+        ],
+        "score": 0.9984198808670044,
+        "iou_boite": 0.6662088020793786,
+        "dice": 0.8128772635814889,
+        "marge": -0.0871227364185111
+      },
+      "meme_q_meilleurs": true,
+      "appris": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 7,
+        "dice_attribue": 0.8128772635814889,
+        "meilleur_q": 7,
+        "meilleur_dice": 0.8128772635814889,
+        "couverture_25": [
+          7,
+          10
+        ],
+        "dedoublee": true,
+        "q_en_fusion": []
+      },
+      "plein": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 7,
+        "dice_attribue": 0.8385826771653543,
+        "meilleur_q": 7,
+        "meilleur_dice": 0.8385826771653543,
+        "couverture_25": [
+          7,
+          10
+        ],
+        "dedoublee": true,
+        "q_en_fusion": []
+      },
+      "oracle": {
+        "admissibles": [],
+        "q_attribue": null,
+        "meilleur_q": 7,
+        "meilleur_dice": 0.8385826771653543
+      },
+      "couples": [
+        {
+          "q": 0,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1742
+          },
+          "fraction_ignoree_appris": 0.8505859375,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1817
+          },
+          "fraction_ignoree_plein": 0.855864342910975
+        },
+        {
+          "q": 1,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1414
+          },
+          "fraction_ignoree_appris": 0.9006369426751593,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1489
+          },
+          "fraction_ignoree_plein": 0.9051671732522797
+        },
+        {
+          "q": 2,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1210
+          },
+          "fraction_ignoree_appris": 0.8557284299858557,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1322
+          },
+          "fraction_ignoree_plein": 0.8663171690694627
+        },
+        {
+          "q": 3,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1133
+          },
+          "fraction_ignoree_appris": 0.8668706962509564,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1274
+          },
+          "fraction_ignoree_plein": 0.8798342541436464
+        },
+        {
+          "q": 4,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 279,
+            "fond_certifie": 0,
+            "ignores": 1226
+          },
+          "fraction_ignoree_appris": 0.8146179401993355,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 465,
+            "fond_certifie": 0,
+            "ignores": 1325
+          },
+          "fraction_ignoree_plein": 0.7402234636871509
+        },
+        {
+          "q": 5,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1517
+          },
+          "fraction_ignoree_appris": 0.82,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1737
+          },
+          "fraction_ignoree_plein": 0.8391304347826087
+        },
+        {
+          "q": 6,
+          "iou_boite": 0.1530231879492033,
+          "dice_appris": 0.24788732394366197,
+          "dice_plein": 0.24512534818941503,
+          "delta_dice_appris_moins_plein": 0.0027619757542469425,
+          "marge_appris": -0.652112676056338,
+          "marge_plein": -0.654874651810585,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 44,
+          "dice_oracle": 0.25958702064896755,
+          "marge_oracle": -0.6404129793510325,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 44,
+            "autres_identites": 16,
+            "fond_certifie": 0,
+            "ignores": 682
+          },
+          "fraction_ignoree_appris": 0.9191374663072777,
+          "pixels_plein": {
+            "identite": 44,
+            "autres_identites": 20,
+            "fond_certifie": 0,
+            "ignores": 692
+          },
+          "fraction_ignoree_plein": 0.9153439153439153
+        },
+        {
+          "q": 7,
+          "iou_boite": 0.6662088020793786,
+          "dice_appris": 0.8128772635814889,
+          "dice_plein": 0.8385826771653543,
+          "delta_dice_appris_moins_plein": -0.025705413583865355,
+          "marge_appris": -0.0871227364185111,
+          "marge_plein": -0.06141732283464574,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 213,
+          "dice_oracle": 0.8385826771653543,
+          "marge_oracle": -0.06141732283464574,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 202,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1320
+          },
+          "fraction_ignoree_appris": 0.8672798948751642,
+          "pixels_plein": {
+            "identite": 213,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1347
+          },
+          "fraction_ignoree_plein": 0.8634615384615385
+        },
+        {
+          "q": 8,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1639
+          },
+          "fraction_ignoree_appris": 0.9156424581005587,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1686
+          },
+          "fraction_ignoree_plein": 0.9178007621121393
+        },
+        {
+          "q": 9,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1294
+          },
+          "fraction_ignoree_appris": 0.8586595885865959,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 214,
+            "fond_certifie": 0,
+            "ignores": 1540
+          },
+          "fraction_ignoree_plein": 0.8779931584948689
+        },
+        {
+          "q": 10,
+          "iou_boite": 0.3319977414166919,
+          "dice_appris": 0.5286783042394015,
+          "dice_plein": 0.5286783042394015,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.3713216957605985,
+          "marge_plein": -0.3713216957605985,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 106,
+          "dice_oracle": 0.5286783042394015,
+          "marge_oracle": -0.3713216957605985,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 106,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 896
+          },
+          "fraction_ignoree_appris": 0.8942115768463074,
+          "pixels_plein": {
+            "identite": 106,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 923
+          },
+          "fraction_ignoree_plein": 0.8969873663751214
+        },
+        {
+          "q": 11,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 264,
+            "fond_certifie": 0,
+            "ignores": 1005
+          },
+          "fraction_ignoree_appris": 0.7919621749408984,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 271,
+            "fond_certifie": 0,
+            "ignores": 1016
+          },
+          "fraction_ignoree_plein": 0.7894327894327894
+        }
+      ]
+    },
+    "5115614018:3": {
+      "identite": "5115614018:3",
+      "provenance": "Danielle Walquist Lynch",
+      "indice": 3,
+      "boite_reference": [
+        339,
+        393,
+        425,
+        397
+      ],
+      "positifs": 152,
+      "seuil_dice": 0.9,
+      "entree_valide": true,
+      "meilleur_RPN": {
+        "q": 238,
+        "iou": 0.5632511188828557,
+        "boite": [
+          336.18017578125,
+          393.1266174316406,
+          437.6737060546875,
+          398.84637451171875
+        ],
+        "logit": 2.5604522228240967,
+        "ancre": 20481
+      },
+      "meilleure_boite": {
+        "q": 6,
+        "boite": [
+          329.51409912109375,
+          387.30157470703125,
+          438.19952392578125,
+          393.77703857421875
+        ],
+        "score": 0.9986359477043152,
+        "iou_boite": 0.06812214337853957,
+        "dice": 0.1509433962264151,
+        "marge": -0.749056603773585
+      },
+      "meilleur_dice": {
+        "q": 6,
+        "boite": [
+          329.51409912109375,
+          387.30157470703125,
+          438.19952392578125,
+          393.77703857421875
+        ],
+        "score": 0.9986359477043152,
+        "iou_boite": 0.06812214337853957,
+        "dice": 0.1509433962264151,
+        "marge": -0.749056603773585
+      },
+      "meme_q_meilleurs": true,
+      "appris": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 6,
+        "dice_attribue": 0.1509433962264151,
+        "meilleur_q": 6,
+        "meilleur_dice": 0.1509433962264151,
+        "couverture_25": [],
+        "dedoublee": false,
+        "q_en_fusion": []
+      },
+      "plein": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 6,
+        "dice_attribue": 0.18518518518518517,
+        "meilleur_q": 6,
+        "meilleur_dice": 0.18518518518518517,
+        "couverture_25": [],
+        "dedoublee": false,
+        "q_en_fusion": []
+      },
+      "oracle": {
+        "admissibles": [],
+        "q_attribue": null,
+        "meilleur_q": 6,
+        "meilleur_dice": 0.23255813953488372
+      },
+      "couples": [
+        {
+          "q": 0,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1742
+          },
+          "fraction_ignoree_appris": 0.8505859375,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1817
+          },
+          "fraction_ignoree_plein": 0.855864342910975
+        },
+        {
+          "q": 1,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1414
+          },
+          "fraction_ignoree_appris": 0.9006369426751593,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1489
+          },
+          "fraction_ignoree_plein": 0.9051671732522797
+        },
+        {
+          "q": 2,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1210
+          },
+          "fraction_ignoree_appris": 0.8557284299858557,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1322
+          },
+          "fraction_ignoree_plein": 0.8663171690694627
+        },
+        {
+          "q": 3,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1133
+          },
+          "fraction_ignoree_appris": 0.8668706962509564,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1274
+          },
+          "fraction_ignoree_plein": 0.8798342541436464
+        },
+        {
+          "q": 4,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 279,
+            "fond_certifie": 0,
+            "ignores": 1226
+          },
+          "fraction_ignoree_appris": 0.8146179401993355,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 465,
+            "fond_certifie": 0,
+            "ignores": 1325
+          },
+          "fraction_ignoree_plein": 0.7402234636871509
+        },
+        {
+          "q": 5,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1517
+          },
+          "fraction_ignoree_appris": 0.82,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1737
+          },
+          "fraction_ignoree_plein": 0.8391304347826087
+        },
+        {
+          "q": 6,
+          "iou_boite": 0.06812214337853957,
+          "dice_appris": 0.1509433962264151,
+          "dice_plein": 0.18518518518518517,
+          "delta_dice_appris_moins_plein": -0.034241788958770086,
+          "marge_appris": -0.749056603773585,
+          "marge_plein": -0.7148148148148148,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 20,
+          "dice_oracle": 0.23255813953488372,
+          "marge_oracle": -0.6674418604651163,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 16,
+            "autres_identites": 44,
+            "fond_certifie": 0,
+            "ignores": 682
+          },
+          "fraction_ignoree_appris": 0.9191374663072777,
+          "pixels_plein": {
+            "identite": 20,
+            "autres_identites": 44,
+            "fond_certifie": 0,
+            "ignores": 692
+          },
+          "fraction_ignoree_plein": 0.9153439153439153
+        },
+        {
+          "q": 7,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 202,
+            "fond_certifie": 0,
+            "ignores": 1320
+          },
+          "fraction_ignoree_appris": 0.8672798948751642,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1347
+          },
+          "fraction_ignoree_plein": 0.8634615384615385
+        },
+        {
+          "q": 8,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1639
+          },
+          "fraction_ignoree_appris": 0.9156424581005587,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1686
+          },
+          "fraction_ignoree_plein": 0.9178007621121393
+        },
+        {
+          "q": 9,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1294
+          },
+          "fraction_ignoree_appris": 0.8586595885865959,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 214,
+            "fond_certifie": 0,
+            "ignores": 1540
+          },
+          "fraction_ignoree_plein": 0.8779931584948689
+        },
+        {
+          "q": 10,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 896
+          },
+          "fraction_ignoree_appris": 0.8942115768463074,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 923
+          },
+          "fraction_ignoree_plein": 0.8969873663751214
+        },
+        {
+          "q": 11,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 264,
+            "fond_certifie": 0,
+            "ignores": 1005
+          },
+          "fraction_ignoree_appris": 0.7919621749408984,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 271,
+            "fond_certifie": 0,
+            "ignores": 1016
+          },
+          "fraction_ignoree_plein": 0.7894327894327894
+        }
+      ]
+    },
+    "5115614018:4": {
+      "identite": "5115614018:4",
+      "provenance": "Danielle Walquist Lynch",
+      "indice": 4,
+      "boite_reference": [
+        383,
+        399,
+        536,
+        410
+      ],
+      "positifs": 280,
+      "seuil_dice": 0.9,
+      "entree_valide": true,
+      "meilleur_RPN": {
+        "q": 32,
+        "iou": 0.7476382945254286,
+        "boite": [
+          372.4303283691406,
+          397.8327941894531,
+          545.50048828125,
+          409.2127380371094
+        ],
+        "logit": 8.546195983886719,
+        "ancre": 19368
+      },
+      "meilleure_boite": {
+        "q": 3,
+        "boite": [
+          363.01910400390625,
+          397.8663635253906,
+          543.5055541992188,
+          406.4332275390625
+        ],
+        "score": 0.9987730383872986,
+        "iou_boite": 0.54365574382008,
+        "dice": 0.7665198237885462,
+        "marge": -0.1334801762114538
+      },
+      "meilleur_dice": {
+        "q": 2,
+        "boite": [
+          348.8387451171875,
+          400.9055480957031,
+          566.953369140625,
+          407.83282470703125
+        ],
+        "score": 0.9987843632698059,
+        "iou_boite": 0.49664481740599126,
+        "dice": 0.8429752066115702,
+        "marge": -0.057024793388429806
+      },
+      "meme_q_meilleurs": false,
+      "appris": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 2,
+        "dice_attribue": 0.8429752066115702,
+        "meilleur_q": 2,
+        "meilleur_dice": 0.8429752066115702,
+        "couverture_25": [
+          1,
+          2,
+          3
+        ],
+        "dedoublee": true,
+        "q_en_fusion": []
+      },
+      "plein": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 2,
+        "dice_attribue": 0.8429752066115702,
+        "meilleur_q": 2,
+        "meilleur_dice": 0.8429752066115702,
+        "couverture_25": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "dedoublee": true,
+        "q_en_fusion": [
+          4
+        ]
+      },
+      "oracle": {
+        "admissibles": [],
+        "q_attribue": null,
+        "meilleur_q": 2,
+        "meilleur_dice": 0.8429752066115702
+      },
+      "couples": [
+        {
+          "q": 0,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1742
+          },
+          "fraction_ignoree_appris": 0.8505859375,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1817
+          },
+          "fraction_ignoree_plein": 0.855864342910975
+        },
+        {
+          "q": 1,
+          "iou_boite": 0.39898269189119123,
+          "dice_appris": 0.7155963302752294,
+          "dice_plein": 0.7155963302752294,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.18440366972477062,
+          "marge_plein": -0.18440366972477062,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 156,
+          "dice_oracle": 0.7155963302752294,
+          "marge_oracle": -0.18440366972477062,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 156,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1414
+          },
+          "fraction_ignoree_appris": 0.9006369426751593,
+          "pixels_plein": {
+            "identite": 156,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1489
+          },
+          "fraction_ignoree_plein": 0.9051671732522797
+        },
+        {
+          "q": 2,
+          "iou_boite": 0.49664481740599126,
+          "dice_appris": 0.8429752066115702,
+          "dice_plein": 0.8429752066115702,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.057024793388429806,
+          "marge_plein": -0.057024793388429806,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 204,
+          "dice_oracle": 0.8429752066115702,
+          "marge_oracle": -0.057024793388429806,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 204,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1210
+          },
+          "fraction_ignoree_appris": 0.8557284299858557,
+          "pixels_plein": {
+            "identite": 204,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1322
+          },
+          "fraction_ignoree_plein": 0.8663171690694627
+        },
+        {
+          "q": 3,
+          "iou_boite": 0.54365574382008,
+          "dice_appris": 0.7665198237885462,
+          "dice_plein": 0.7665198237885462,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.1334801762114538,
+          "marge_plein": -0.1334801762114538,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 174,
+          "dice_oracle": 0.7665198237885462,
+          "marge_oracle": -0.1334801762114538,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 174,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1133
+          },
+          "fraction_ignoree_appris": 0.8668706962509564,
+          "pixels_plein": {
+            "identite": 174,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1274
+          },
+          "fraction_ignoree_plein": 0.8798342541436464
+        },
+        {
+          "q": 4,
+          "iou_boite": 0.14438150340333536,
+          "dice_appris": 0.16815742397137745,
+          "dice_plein": 0.19865771812080538,
+          "delta_dice_appris_moins_plein": -0.030500294149427926,
+          "marge_appris": -0.7318425760286226,
+          "marge_plein": -0.7013422818791947,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 74,
+          "dice_oracle": 0.4180790960451977,
+          "marge_oracle": -0.4819209039548023,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 47,
+            "autres_identites": 232,
+            "fond_certifie": 0,
+            "ignores": 1226
+          },
+          "fraction_ignoree_appris": 0.8146179401993355,
+          "pixels_plein": {
+            "identite": 74,
+            "autres_identites": 391,
+            "fond_certifie": 0,
+            "ignores": 1325
+          },
+          "fraction_ignoree_plein": 0.7402234636871509
+        },
+        {
+          "q": 5,
+          "iou_boite": 0.02236147085025665,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1517
+          },
+          "fraction_ignoree_appris": 0.82,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 333,
+            "fond_certifie": 0,
+            "ignores": 1737
+          },
+          "fraction_ignoree_plein": 0.8391304347826087
+        },
+        {
+          "q": 6,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 60,
+            "fond_certifie": 0,
+            "ignores": 682
+          },
+          "fraction_ignoree_appris": 0.9191374663072777,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 64,
+            "fond_certifie": 0,
+            "ignores": 692
+          },
+          "fraction_ignoree_plein": 0.9153439153439153
+        },
+        {
+          "q": 7,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 202,
+            "fond_certifie": 0,
+            "ignores": 1320
+          },
+          "fraction_ignoree_appris": 0.8672798948751642,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1347
+          },
+          "fraction_ignoree_plein": 0.8634615384615385
+        },
+        {
+          "q": 8,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1639
+          },
+          "fraction_ignoree_appris": 0.9156424581005587,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1686
+          },
+          "fraction_ignoree_plein": 0.9178007621121393
+        },
+        {
+          "q": 9,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1294
+          },
+          "fraction_ignoree_appris": 0.8586595885865959,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 214,
+            "fond_certifie": 0,
+            "ignores": 1540
+          },
+          "fraction_ignoree_plein": 0.8779931584948689
+        },
+        {
+          "q": 10,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 896
+          },
+          "fraction_ignoree_appris": 0.8942115768463074,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 923
+          },
+          "fraction_ignoree_plein": 0.8969873663751214
+        },
+        {
+          "q": 11,
+          "iou_boite": 0.1991452886142657,
+          "dice_appris": 0.12867647058823528,
+          "dice_plein": 0.14519056261343014,
+          "delta_dice_appris_moins_plein": -0.016514092025194854,
+          "marge_appris": -0.7713235294117647,
+          "marge_plein": -0.7548094373865699,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 40,
+          "dice_oracle": 0.25,
+          "marge_oracle": -0.65,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 35,
+            "autres_identites": 229,
+            "fond_certifie": 0,
+            "ignores": 1005
+          },
+          "fraction_ignoree_appris": 0.7919621749408984,
+          "pixels_plein": {
+            "identite": 40,
+            "autres_identites": 231,
+            "fond_certifie": 0,
+            "ignores": 1016
+          },
+          "fraction_ignoree_plein": 0.7894327894327894
+        }
+      ]
+    },
+    "5115614018:5": {
+      "identite": "5115614018:5",
+      "provenance": "Danielle Walquist Lynch",
+      "indice": 5,
+      "boite_reference": [
+        343,
+        411,
+        573,
+        415
+      ],
+      "positifs": 456,
+      "seuil_dice": 0.9,
+      "entree_valide": true,
+      "meilleur_RPN": {
+        "q": 130,
+        "iou": 0.4068789497849274,
+        "boite": [
+          362.7777404785156,
+          406.1180114746094,
+          561.7320556640625,
+          415.32476806640625
+        ],
+        "logit": 4.671258926391602,
+        "ancre": 20535
+      },
+      "meilleure_boite": {
+        "q": 4,
+        "boite": [
+          332.8502197265625,
+          407.2843933105469,
+          589.1786499023438,
+          413.566162109375
+        ],
+        "score": 0.9987009763717651,
+        "iou_boite": 0.3042390622313476,
+        "dice": 0.6312925170068027,
+        "marge": -0.26870748299319736
+      },
+      "meilleur_dice": {
+        "q": 5,
+        "boite": [
+          298.7391052246094,
+          409.3525085449219,
+          505.8208923339844,
+          418.78302001953125
+        ],
+        "score": 0.99864262342453,
+        "iou_boite": 0.2931592158397152,
+        "dice": 0.844106463878327,
+        "marge": -0.055893536121673026
+      },
+      "meme_q_meilleurs": false,
+      "appris": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 5,
+        "dice_attribue": 0.844106463878327,
+        "meilleur_q": 5,
+        "meilleur_dice": 0.844106463878327,
+        "couverture_25": [
+          4,
+          5,
+          9,
+          11
+        ],
+        "dedoublee": true,
+        "q_en_fusion": []
+      },
+      "plein": {
+        "admissibles": [],
+        "separes": [],
+        "q_admis": null,
+        "q_separe": null,
+        "q_dice_total": 4,
+        "dice_attribue": 0.8490770901194354,
+        "meilleur_q": 4,
+        "meilleur_dice": 0.8490770901194354,
+        "couverture_25": [
+          4,
+          5,
+          9,
+          11
+        ],
+        "dedoublee": true,
+        "q_en_fusion": [
+          4
+        ]
+      },
+      "oracle": {
+        "admissibles": [
+          4
+        ],
+        "q_attribue": 4,
+        "meilleur_q": 4,
+        "meilleur_dice": 0.9232585596221959
+      },
+      "couples": [
+        {
+          "q": 0,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1742
+          },
+          "fraction_ignoree_appris": 0.8505859375,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 306,
+            "fond_certifie": 0,
+            "ignores": 1817
+          },
+          "fraction_ignoree_plein": 0.855864342910975
+        },
+        {
+          "q": 1,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1414
+          },
+          "fraction_ignoree_appris": 0.9006369426751593,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 156,
+            "fond_certifie": 0,
+            "ignores": 1489
+          },
+          "fraction_ignoree_plein": 0.9051671732522797
+        },
+        {
+          "q": 2,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1210
+          },
+          "fraction_ignoree_appris": 0.8557284299858557,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 204,
+            "fond_certifie": 0,
+            "ignores": 1322
+          },
+          "fraction_ignoree_plein": 0.8663171690694627
+        },
+        {
+          "q": 3,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1133
+          },
+          "fraction_ignoree_appris": 0.8668706962509564,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 174,
+            "fond_certifie": 0,
+            "ignores": 1274
+          },
+          "fraction_ignoree_plein": 0.8798342541436464
+        },
+        {
+          "q": 4,
+          "iou_boite": 0.3042390622313476,
+          "dice_appris": 0.6312925170068027,
+          "dice_plein": 0.8490770901194354,
+          "delta_dice_appris_moins_plein": -0.21778457311263277,
+          "marge_appris": -0.26870748299319736,
+          "marge_plein": -0.05092290988056458,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 391,
+          "dice_oracle": 0.9232585596221959,
+          "marge_oracle": 0.023258559622195918,
+          "oracle_suffisant": true,
+          "pixels_appris": {
+            "identite": 232,
+            "autres_identites": 47,
+            "fond_certifie": 0,
+            "ignores": 1226
+          },
+          "fraction_ignoree_appris": 0.8146179401993355,
+          "pixels_plein": {
+            "identite": 391,
+            "autres_identites": 74,
+            "fond_certifie": 0,
+            "ignores": 1325
+          },
+          "fraction_ignoree_plein": 0.7402234636871509
+        },
+        {
+          "q": 5,
+          "iou_boite": 0.2931592158397152,
+          "dice_appris": 0.844106463878327,
+          "dice_plein": 0.844106463878327,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.055893536121673026,
+          "marge_plein": -0.055893536121673026,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 333,
+          "dice_oracle": 0.844106463878327,
+          "marge_oracle": -0.055893536121673026,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 333,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1517
+          },
+          "fraction_ignoree_appris": 0.82,
+          "pixels_plein": {
+            "identite": 333,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1737
+          },
+          "fraction_ignoree_plein": 0.8391304347826087
+        },
+        {
+          "q": 6,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 60,
+            "fond_certifie": 0,
+            "ignores": 682
+          },
+          "fraction_ignoree_appris": 0.9191374663072777,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 64,
+            "fond_certifie": 0,
+            "ignores": 692
+          },
+          "fraction_ignoree_plein": 0.9153439153439153
+        },
+        {
+          "q": 7,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 202,
+            "fond_certifie": 0,
+            "ignores": 1320
+          },
+          "fraction_ignoree_appris": 0.8672798948751642,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 213,
+            "fond_certifie": 0,
+            "ignores": 1347
+          },
+          "fraction_ignoree_plein": 0.8634615384615385
+        },
+        {
+          "q": 8,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1639
+          },
+          "fraction_ignoree_appris": 0.9156424581005587,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 151,
+            "fond_certifie": 0,
+            "ignores": 1686
+          },
+          "fraction_ignoree_plein": 0.9178007621121393
+        },
+        {
+          "q": 9,
+          "iou_boite": 0.14098495383621162,
+          "dice_appris": 0.6367713004484304,
+          "dice_plein": 0.6388059701492538,
+          "delta_dice_appris_moins_plein": -0.0020346697008233328,
+          "marge_appris": -0.2632286995515696,
+          "marge_plein": -0.26119402985074625,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 214,
+          "dice_oracle": 0.6388059701492538,
+          "marge_oracle": -0.26119402985074625,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 213,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1294
+          },
+          "fraction_ignoree_appris": 0.8586595885865959,
+          "pixels_plein": {
+            "identite": 214,
+            "autres_identites": 0,
+            "fond_certifie": 0,
+            "ignores": 1540
+          },
+          "fraction_ignoree_plein": 0.8779931584948689
+        },
+        {
+          "q": 10,
+          "iou_boite": 0.0,
+          "dice_appris": 0.0,
+          "dice_plein": 0.0,
+          "delta_dice_appris_moins_plein": 0.0,
+          "marge_appris": -0.9,
+          "marge_plein": -0.9,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 0,
+          "dice_oracle": 0.0,
+          "marge_oracle": -0.9,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 896
+          },
+          "fraction_ignoree_appris": 0.8942115768463074,
+          "pixels_plein": {
+            "identite": 0,
+            "autres_identites": 106,
+            "fond_certifie": 0,
+            "ignores": 923
+          },
+          "fraction_ignoree_plein": 0.8969873663751214
+        },
+        {
+          "q": 11,
+          "iou_boite": 0.25325895807147575,
+          "dice_appris": 0.6361111111111111,
+          "dice_plein": 0.6354883081155434,
+          "delta_dice_appris_moins_plein": 0.0006228029955677172,
+          "marge_appris": -0.26388888888888895,
+          "marge_plein": -0.26451169188445667,
+          "appris_admis": false,
+          "plein_admis": false,
+          "appris_separe": false,
+          "plein_separe": false,
+          "intersection_omega": 231,
+          "dice_oracle": 0.6724890829694323,
+          "marge_oracle": -0.2275109170305677,
+          "oracle_suffisant": false,
+          "pixels_appris": {
+            "identite": 229,
+            "autres_identites": 35,
+            "fond_certifie": 0,
+            "ignores": 1005
+          },
+          "fraction_ignoree_appris": 0.7919621749408984,
+          "pixels_plein": {
+            "identite": 231,
+            "autres_identites": 40,
+            "fond_certifie": 0,
+            "ignores": 1016
+          },
+          "fraction_ignoree_plein": 0.7894327894327894
+        }
+      ]
+    }
+  },
+  "effectifs_appris": {
+    "photos": 1,
+    "identites": 5,
+    "propositions_RPN": 1000,
+    "sorties": 12,
+    "rpn_50": 4,
+    "boites_50": 2,
+    "admis": 1,
+    "separes": 1,
+    "sorties_fusionnees": 0,
+    "identites_dedoublees": 4,
+    "masques_vides": 0,
+    "non_apparies": 11,
+    "fond_pixels_incidence": 0,
+    "fond_pixels_union": 0,
+    "fond_disponible": 28348,
+    "ignore_pixels_incidence": 15078,
+    "photos_silencieuses": 0,
+    "temoins_vides": 0,
+    "non_apparies_faux_fond_verifie": 0,
+    "non_apparies_non_resolu": 1,
+    "non_apparies_fusion": 0,
+    "non_apparies_dedoublement": 10,
+    "non_apparies_vide": 0
+  },
+  "effectifs_plein": {
+    "photos": 1,
+    "identites": 5,
+    "propositions_RPN": 1000,
+    "sorties": 12,
+    "rpn_50": 4,
+    "boites_50": 2,
+    "admis": 1,
+    "separes": 1,
+    "sorties_fusionnees": 1,
+    "identites_dedoublees": 4,
+    "masques_vides": 0,
+    "non_apparies": 11,
+    "fond_pixels_incidence": 0,
+    "fond_pixels_union": 0,
+    "fond_disponible": 28348,
+    "ignore_pixels_incidence": 16168,
+    "photos_silencieuses": 0,
+    "temoins_vides": 0,
+    "non_apparies_faux_fond_verifie": 0,
+    "non_apparies_non_resolu": 1,
+    "non_apparies_fusion": 1,
+    "non_apparies_dedoublement": 9,
+    "non_apparies_vide": 0
+  },
+  "graine": 9303,
+  "pas": 512,
+  "photo": "5115614018"
+}
