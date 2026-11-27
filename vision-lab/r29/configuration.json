@@ -1,0 +1,63 @@
+{
+  "reference_R27": "3eff2b26f857808f60920db7c78157e9162bd71b",
+  "reference_R28": "4774a6978c340c0b9d7a4bdb0b5fe333d94a980f",
+  "base": "ebd238a86fa1d2bf910eed3e362926f7928a63bf",
+  "photos": [
+    "13-01",
+    "70-01",
+    "7245527662",
+    "5115614018",
+    "18105652008",
+    "24614689941",
+    "4169106197",
+    "wc71488242",
+    "wc11001401"
+  ],
+  "graines": [
+    9302,
+    9303
+  ],
+  "pas": 768,
+  "budget_passages": 18,
+  "seuil_score_strict": 0,
+  "NMS_finale_IoU_stricte": 0.5,
+  "plafond": 12,
+  "grille": [
+    28,
+    28
+  ],
+  "seuil_collage_inclusif": 0.5,
+  "fraction_plafond_R20": 0.9,
+  "checkpoints": {
+    "9302": {
+      "nom": "pas-768.pt",
+      "role": "Poids, SGD, RNG · 9302 / 768",
+      "fichier": "artifacts/r27/essai/9302/pas-768.pt",
+      "octets": 244700133,
+      "sha256": "0a179e47c11891819f3b1da952aa091f4c0e83238a4d7cf3acfd8636230c34c8"
+    },
+    "9303": {
+      "nom": "pas-768.pt",
+      "role": "Poids, SGD, RNG · 9303 / 768",
+      "fichier": "artifacts/r27/essai/9303/pas-768.pt",
+      "octets": 244700133,
+      "sha256": "d6833daa58b60cacb7e4e33894256ff8782deb38be3c7f1aaa3159c7016df4f2"
+    }
+  },
+  "sources": {
+    "r26/train.json": "40d8665fdcfea189e59908c1cf4f6b7cc1c4778c51a7672f08caeb488d68ecc7",
+    "r20/plafonds.json": "f159c8474448a26b43a87e059cbfeeffeb13a109a2698961eb945b9dcd12ed1f",
+    "r26/archives.py": "659faaf6cc08dea1e8edaa83b14608708a2d43ed71c257cff0a75f73e707d0ec",
+    "r19/affecter.py": "374fe212a4ed963a0e49a49afd699f700a7d9e5088982f7209e5612eebf8117f",
+    "r27/modele.py": "ed9a9cfe4e440fc010529c139bf2c86a3b401dd8b1f700ab11eb41a8da82d61a",
+    "r27/essai.py": "ea89a285c80d283fda98093c2c68755e8f9e6bff4c8460ffbd9224ac432d0ff9",
+    "r27/entrees.json": "dd7901e0e3fa4d330c6057e4ae17da45085be6fe8080181fc7e26edf03d6bede",
+    "r27/inventaire-local.json": "8a9d2c0ffd5b7b0a21df23f2cbbaf1cb53923d04c40e7dcf54ab9500b51e41e5",
+    "r27/sorties/index.json": "b520484961056c9dee0c88527cc4eca7f17750c3f7bf03ab2de428008077ecf1",
+    "r27/tenseurs.json": "cfe0fadcb1787071b13bac4491a1ecac8d385214ee1f5af493bfadd9c253b569",
+    "r28/coller.py": "3a8c16db205345c967107e28f69504785e3f1e49ba7327be9325149fe8f9f742",
+    "r28/couples.py": "89081c5f3792d07f07c9f3f86219942da256d23758a2bd286901eadc47b7020e",
+    "r28/supports/index.json": "9a07e30fdc7556f977bd7967ac469f54e49e3360af7ee75a819e4e58b3a6a62f",
+    "r28/mesures/comparaison.json": "ea8ee636707f5e0286e33365caa0bac27771ba40de01a337eb9339e3712ca989"
+  }
+}
